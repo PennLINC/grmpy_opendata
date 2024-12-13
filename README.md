@@ -1,10 +1,9 @@
-# paper-template
-A template repository for scientific projects.
+# grmpy open data release curation
 
 ## File organization on CUBIC
 
 ```
-/path/to/project/
+/cbica/projects/grmpy/
     |-  code/           # Local clone of the GitHub repository
         |-  figures/    # Any figures for the manuscript
         |_  data/       # Tabular data that may be shared on GitHub
