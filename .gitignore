@@ -203,3 +203,8 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# log files
+log/
+/log/
+**/log/
