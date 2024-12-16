@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=dcm2bids_conversion  # Job name
-#SBATCH --array=0-230
+#SBATCH --array=0-1
 #SBATCH --time=24:00:00                 # Maximum runtime
 #SBATCH --cpus-per-task=4               # Number of CPUs per task
 #SBATCH --mem=8G                        # Memory per job
@@ -11,17 +11,20 @@
 bids="/cbica/projects/grmpy/data/bids"
 
 # Step 1: Get all subject IDs
-subjects=($(ls -d ${bids}/sourcedata/GRMPY_822831/SUBJECTS/* | xargs -n 1 basename))
+# subjects=($(ls -d ${bids}/sourcedata/GRMPY_822831/SUBJECTS/* | xargs -n 1 basename))
+subjects=("95257" "20120")  # For debugging
 
 # Step 2: Select the current subject based on the SLURM array task ID
 subID=${subjects[${SLURM_ARRAY_TASK_ID}]}
 
 # Step 3: Find all DICOM directories for all sessions of the current subject
-session_dirs=$(find ${bids}/sourcedata/GRMPY_822831/SUBJECTS/${subID}/SESSIONS/*/ACQUISITIONS -maxdepth 0 -type d)
+mapfile -t session_dirs < <(find ${bids}/sourcedata/GRMPY_822831/SUBJECTS/${subID}/SESSIONS/*/ACQUISITIONS -maxdepth 0 -type d)
 
 # Step 4: Process each session
 session_num=1  # Initialize session counter
 for session_dir in "${session_dirs[@]}"; do
+
+    echo "Processing session ${session_num} for subject ${subID} in directory ${session_dir}"  # For debugging
 
     ~/miniforge3/envs/dcmconv/bin/dcm2bids -p ${subID} \
         -s ${session_num} \
