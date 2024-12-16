@@ -1,0 +1,249 @@
+{
+    "descriptions": [
+        {
+            "datatype": "anat",
+            "suffix": "T1w",
+            "criteria": {
+                "SeriesDescription": "MPRAGE_TI1100_ipat2"
+            }
+        },
+        {
+            "datatype": "anat",
+            "suffix": "T2w",
+            "criteria": {
+                "SeriesDescription": "T2_sagittal_SPACE"
+            }
+        },
+        {
+            "datatype": "anat",
+            "suffix": "angio",
+            "criteria": {
+                "SeriesDescription": "TOF_3D_multi-slab*",
+                "ImageType": [
+                    "ORIGINAL",
+                    "PRIMARY",
+                    "M",
+                    "ND",
+                    "NORM"
+                ]
+            }
+        },
+        {
+            "datatype": "anat",
+            "suffix": "minIP",
+            "custom_entities": "acq-sagittal",
+            "criteria": {
+                "SeriesDescription": "TOF_3D_multi-slab*MIP_SAG"
+            }
+        },
+        {
+            "datatype": "anat",
+            "suffix": "minIP",
+            "custom_entities": "acq-coronal",
+            "criteria": {
+                "SeriesDescription": "TOF_3D_multi-slab*MIP_COR"
+            }
+        },
+        {
+            "datatype": "anat",
+            "suffix": "minIP",
+            "custom_entities": "acq-axial",
+            "criteria": {
+                "SeriesDescription": "TOF_3D_multi-slab*MIP_TRA"
+            }
+        },
+        {
+            "id": "task_rest_acq_mb",
+            "datatype": "func",
+            "suffix": "bold",
+            "custom_entities": "task-rest_acq-multiband",
+            "criteria": {
+                "SeriesDescription": "restingBOLD_mb6_1200",
+                "ImageType": [
+                    "ORIGINAL",
+                    "PRIMARY",
+                    "M",
+                    "MB",
+                    "ND",
+                    "NORM",
+                    "MOSAIC"
+                ]
+            },
+            "sidecar_changes": {
+                "TaskName": "Resting State",
+                "B0FieldSource": "fMRI"
+            }
+        },
+        {
+            "id": "task_rest_acq_sb",
+            "datatype": "func",
+            "suffix": "bold",
+            "custom_entities": "task-rest_acq-singleband",
+            "criteria": {
+                "SeriesDescription": "bbl1_restbold1_124mb",
+                "ImageType": [
+                    "ORIGINAL",
+                    "PRIMARY",
+                    "M",
+                    "ND",
+                    "NORM",
+                    "MOSAIC"
+                ]
+            },
+            "sidecar_changes": {
+                "TaskName": "Resting State",
+                "B0FieldSource": "fMRI"
+            }
+        },
+        {
+            "id": "task_fracback",
+            "datatype": "func",
+            "suffix": "bold",
+            "custom_entities": "task-fracback_acq-singleband",
+            "criteria": {
+                "SeriesDescription": "bbl1_fracback1_231mb"
+            },
+            "sidecar_changes": {
+                "TaskName": "Fractal N-Back",
+                "B0FieldSource": "fMRI"
+            }
+        },
+        {
+            "id": "task_face",
+            "datatype": "func",
+            "suffix": "bold",
+            "custom_entities": "task-face_acq-singleband",
+            "criteria": {
+                "SeriesDescription": "bbl1_face1_178mb"
+            },
+            "sidecar_changes": {
+                "TaskName": "Face",
+                "B0FieldSource": "fMRI"
+            }
+        },
+        {
+            "datatype": "perf",
+            "suffix": "m0scan",
+            "criteria": {
+                "SeriesDescription": "ASL_3DSpiral_OnlineRecon_M0"
+            }
+        },
+        {
+            "datatype": "perf",
+            "suffix": "asl",
+            "criteria": {
+                "SeriesDescription": "ASL_3DSpiral_OnlineRecon_ASL"
+            },
+            "sidecar_changes": {
+                "ArterialSpinLabelingType": "CASL",
+                "M0Type": "Separate"
+            }
+        },
+        {
+            "id": "dwi",
+            "datatype": "dwi",
+            "suffix": "dwi",
+            "custom_entities": "acq-multiband_dir-AP",
+            "criteria": {
+                "SeriesDescription": "DTI_MultiShell_117dir",
+                "ImageType": [
+                    "ORIGINAL",
+                    "PRIMARY",
+                    "DIFFUSION",
+                    "NONE",
+                    "MB",
+                    "ND",
+                    "NORM",
+                    "MOSAIC"
+                ]
+            },
+            "sidecar_changes": {
+                "B0FieldSource": "DWI"
+            }
+        },
+        {
+            "datatype": "fmap",
+            "suffix": "magnitude1",
+            "criteria": {
+                "SeriesDescription": "B0map",
+                "ImageType": [
+                    "ORIGINAL",
+                    "PRIMARY",
+                    "M",
+                    "ND",
+                    "NORM"
+                ],
+                "EchoNumber": 1
+            },
+            "sidecar_changes": {
+                "IntendedFor": [
+                    "task_rest_acq_mb",
+                    "task_rest_acq_sb",
+                    "task_fracback",
+                    "task_face"
+                ],
+                "B0FieldIdentifier": "fMRI"
+            }
+        },
+        {
+            "datatype": "fmap",
+            "suffix": "magnitude2",
+            "criteria": {
+                "SeriesDescription": "B0map",
+                "ImageType": [
+                    "ORIGINAL",
+                    "PRIMARY",
+                    "M",
+                    "ND",
+                    "NORM"
+                ],
+                "EchoNumber": 2
+            },
+            "sidecar_changes": {
+                "IntendedFor": [
+                    "task_rest_acq_mb",
+                    "task_rest_acq_sb",
+                    "task_fracback",
+                    "task_face"
+                ],
+                "B0FieldIdentifier": "fMRI"
+            }
+        },
+        {
+            "datatype": "fmap",
+            "suffix": "phasediff",
+            "criteria": {
+                "SeriesDescription": "B0map",
+                "ImageType": [
+                    "ORIGINAL",
+                    "PRIMARY",
+                    "P",
+                    "ND",
+                    "PHASE"
+                ],
+                "EchoNumber": 2
+            },
+            "sidecar_changes": {
+                "IntendedFor": [
+                    "task_rest_acq_mb",
+                    "task_rest_acq_sb",
+                    "task_fracback",
+                    "task_face"
+                ],
+                "B0FieldIdentifier": "fMRI"
+            }
+        },
+        {
+            "datatype": "fmap",
+            "suffix": "epi",
+            "custom_entities": "acq-multiband_dir-PA",
+            "criteria": {
+                "SeriesDescription": "DTI_MultiShell_topup_ref"
+            },
+            "sidecar_changes": {
+                "IntendedFor": "dwi",
+                "B0FieldIdentifier": "DWI"
+            }
+        }
+    ]
+}
