@@ -206,8 +206,7 @@ vignettes/*.pdf
 
 # log files
 log/
-/log/
-**/log/
+logs/
 
 # sif files
 *.sif
