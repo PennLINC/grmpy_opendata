@@ -5,6 +5,7 @@
 ```
 /cbica/projects/grmpy/
     |-  code/           # Local clone of the GitHub repository
+        |- curation     # Scripts for bids curation
         |-  figures/    # Any figures for the manuscript
         |_  data/       # Tabular data that may be shared on GitHub
     |-  data/
