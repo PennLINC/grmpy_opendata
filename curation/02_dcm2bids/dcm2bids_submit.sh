@@ -4,8 +4,8 @@
 #SBATCH --time=24:00:00                 # Maximum runtime
 #SBATCH --cpus-per-task=4               # Number of CPUs per task
 #SBATCH --mem=8G                        # Memory per job
-#SBATCH --output=/cbica/projects/grmpy/code/curation/dcm2bids/logs/dcm2bids_%A_%a.out # Output log
-#SBATCH --error=/cbica/projects/grmpy/code/curation/dcm2bids/logs/dcm2bids_%A_%a.err  # Error log
+#SBATCH --output=/cbica/projects/grmpy/code/curation/02_dcm2bids/logs/dcm2bids_%A_%a.out # Output log
+#SBATCH --error=/cbica/projects/grmpy/code/curation/02_dcm2bids/logs/dcm2bids_%A_%a.err  # Error log
 
 # Define paths
 bids="/cbica/projects/grmpy/data/bids"
@@ -27,7 +27,7 @@ for session_dir in "${session_dirs[@]}"; do
 
     ~/miniforge3/envs/dcmconv/bin/dcm2bids -p ${subID} \
         -s ${session_num} \
-        -c /cbica/projects/grmpy/code/dcm2bids/config.json \
+        -c /cbica/projects/grmpy/code/02_dcm2bids/config.json \
         -o ${bids} \
         -d ${session_dir} \
         --force_dcm2bids
