@@ -6,7 +6,7 @@ nav_order: 2
 
 # 01: Getting data from flywheel
 
-The data download process is handled by our [`download_dcms.sh`](../curation/01_download_dcms/download_dcms.sh) script, which uses the Flywheel CLI to sync DICOM files.
+The data download process is handled by our [`download_dcms.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/01_download_dcms/download_dcms.sh) script, which uses the Flywheel CLI to sync DICOM files.
 
 This command syncs DICOM files from our Flywheel project to our local storage.
 
@@ -19,13 +19,16 @@ fw://bbl/GRMPY_822831 \
 
 # 02: Converting to bids
 
-After downloading DICOM files via Flywheel, the [`dcm2bids_submit.sh`](../curation/02_dcm2bids/dcm2bids_submit.sh) script converts these files into the BIDS format. It selects a subject based on the SLURM array task ID, finds all session directories with DICOM data for that subject, and then processes each session with the `dcm2bids` tool, ensuring that the converted data is properly organized in the BIDS directory.
+After downloading DICOM files via Flywheel, the [`dcm2bids_submit.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/02_dcm2bids/dcm2bids_submit.sh) script converts these files into the BIDS format.
+It selects a subject based on the SLURM array task ID, finds all session directories with DICOM data for that subject, and then processes each session with the `dcm2bids` tool, ensuring that the converted data is properly organized in the BIDS directory.
 
-Two subjects (`95257` and `20120`) had multiple sessions. For `95257`, the first visit's scans were stopped due to technical difficulties with the O2 detector that day. On the second visit, the scan was completed, however, lmscribe stopped working and all fMRI sequences had to be completed straight on rather than adjusted. For `20120`, the first visit was completed with an earring. The participant came back for a second session with a plastic holder in her ear. In both cases, we kept the second session and deleted the first.
+Two subjects (`95257` and `20120`) had multiple sessions. For `95257`, the first visit's scans were stopped due to technical difficulties with the O2 detector that day.
+On the second visit, the scan was completed, however, lmscribe stopped working and all fMRI sequences had to be completed straight on rather than adjusted. For `20120`, the first visit was completed with an earring.
+The participant came back for a second session with a plastic holder in their ear. In both cases, we kept the second session and deleted the first.
 
 # 03: Creating timing files
 
-Timing files were created manually for the nback task following the ['create_fracback_events.py'](../curation/03_create_events/create_fracback_events.py) script.
+Timing files were created manually for the nback task following the [`create_fracback_events.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/03_create_events/create_fracback_events.py) script.
 
 Timing files still need to be created for FACES.
 
