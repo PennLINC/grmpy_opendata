@@ -266,8 +266,14 @@ sex
 NOTE:
 `age`, `sex`, and `group` are in a (for now) empty `participants.json` and `Name` is the dataset name in `dataset_description.json`.
 
-## Checking into datalad
+## Checking into datalad and initial validation
 
 The bids data in `/cbica/projects/grmpy/data/bids` was checked into a datalad dataset at `cbica/projects/grmpy/data/bids_datalad` and nifti info was added into the json sidecars using CuBIDS.
 
-The fmap sidecar `IntendedFor` fields were updated to use relative paths instead of full BIDS uris, using the [`fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_intendedfor.py) script.
+`cubids validate v0` was run.
+
+The fmap sidecar `IntendedFor` fields were known to have an issue and updated to use relative paths instead of full BIDS uris, using the [`fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_intendedfor.py) script.
+
+`cubids validate v1` was then run and this did not decrease the amount of validation errors/warnings.
+
+Next is to add a `.bidsignore`.
