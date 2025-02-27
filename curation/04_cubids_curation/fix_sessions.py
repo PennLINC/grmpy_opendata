@@ -1,10 +1,16 @@
 import os
 import shutil
+import json
 
 def fix_sessions(subject_dir):
     """
-    Removes the 'ses-1' directory and renames the 'ses-2' directory (and its contained
-    file and folder names that reference "ses-2") to 'ses-1' for a given subject directory.
+    Performs two operations for a given subject directory:
+
+    1. Removes the 'ses-1' directory and renames the 'ses-2' directory (and its contained
+       file and directory names that reference "ses-2") to 'ses-1'.
+
+    2. Recursively searches for JSON files within any 'fmap' directory under the subject and
+       updates the 'IntendedFor' field by replacing occurrences of 'ses-2' with 'ses-1'.
 
     Args:
         subject_dir (str): Path to the subject directory (e.g., /path/to/bids/sub-XX)
@@ -29,7 +35,7 @@ def fix_sessions(subject_dir):
     print(f"Renaming {ses2_path} to {new_ses1_path}")
     os.rename(ses2_path, new_ses1_path)
 
-    # Recursively update filenames and directory names that include 'ses-2'
+    # Recursively update filenames names that include 'ses-2'
     for root, dirs, files in os.walk(new_ses1_path, topdown=False):
         # Update filenames
         for filename in files:
@@ -39,6 +45,35 @@ def fix_sessions(subject_dir):
                 new_filepath = os.path.join(root, new_filename)
                 print(f"Renaming file: {old_filepath} -> {new_filepath}")
                 os.rename(old_filepath, new_filepath)
+
+    # Now, update the fmap JSON files to reflect the session renaming in the 'IntendedFor' field.
+    # We search under the subject directory for any JSON in paths that include 'fmap'
+    for root, dirs, files in os.walk(subject_dir):
+        if 'fmap' in root:
+            for file in files:
+                if file.endswith('.json'):
+                    json_path = os.path.join(root, file)
+                    try:
+                        with open(json_path, 'r') as f:
+                            data = json.load(f)
+                    except Exception as e:
+                        print(f"Unable to open {json_path}: {e}")
+                        continue
+
+                    # Update the IntendedFor field if it exists by replacing 'ses-2' with 'ses-1'
+                    if 'IntendedFor' in data:
+                        intended_for = data['IntendedFor']
+                        if isinstance(intended_for, list):
+                            updated_intended_for = [
+                                item.replace('ses-2', 'ses-1') for item in intended_for
+                            ]
+                            data['IntendedFor'] = updated_intended_for
+                        elif isinstance(intended_for, str):
+                            data['IntendedFor'] = intended_for.replace('ses-2', 'ses-1')
+
+                        with open(json_path, 'w') as f:
+                            json.dump(data, f, sort_keys=True, indent=4)
+                        print(f"Updated {json_path}")
 
     print("Session conversion complete.")
 
