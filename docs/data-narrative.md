@@ -284,3 +284,5 @@ A participants.tsv was initialized using [`generate_participants_tsv.py`](https:
 It is also noted that the two before-mentioned subjects with a second session actually had both sessions checked into datalad. Those have now had their first sessions removed and the second sessions renamed to ses-1. The fmap intendefor pather were also updated. This was all done using [`fix_sessions.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_sessions.py).
 
 After these changes `v2` validation reveals that remaining errors are missing sidecar info for perfusion scans and one non-4D BOLD sequence.
+
+`cubids purge bids_datalad/ ~/code/curation/04_cubids_curation/remove_non4d_bold.txt --use-datalad` was run to remove the [`non4d bold sequence`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_non4d_bold.txt).
