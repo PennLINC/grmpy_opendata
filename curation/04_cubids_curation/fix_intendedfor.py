@@ -5,7 +5,7 @@ import re
 def remove_bids_uri_from_intendedfor(bids_dir):
     """
     Remove BIDS URI (matching 'bids::sub-{id}/') from 'IntendedFor' fields in JSON files under the 'fmap' directory.
-    
+
     Args:
     bids_dir (str): Path to the BIDS dataset directory.
     """
@@ -18,7 +18,7 @@ def remove_bids_uri_from_intendedfor(bids_dir):
                     json_path = os.path.join(root, file)
                     with open(json_path, 'r') as f:
                         data = json.load(f)
-                    
+
                     if 'IntendedFor' in data:
                         intended_for = data['IntendedFor']
                         if isinstance(intended_for, list):
@@ -28,9 +28,9 @@ def remove_bids_uri_from_intendedfor(bids_dir):
                             data['IntendedFor'] = updated_intended_for
                         elif isinstance(intended_for, str):
                             data['IntendedFor'] = bids_uri_pattern.sub('', intended_for)
-                        
+
                         with open(json_path, 'w') as f:
-                            json.dump(data, f, indent=4)
+                            json.dump(data, f, sort_keys=True, indent=4)
                         print(f"Updated {json_path}")
 
 if __name__ == "__main__":
