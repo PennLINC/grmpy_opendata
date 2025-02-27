@@ -48,7 +48,7 @@ def fix_sessions(subject_dir):
 
     # Now, update the fmap JSON files to reflect the session renaming in the 'IntendedFor' field.
     # We search under the subject directory for any JSON in paths that include 'fmap'
-    for root, files in os.walk(subject_dir):
+    for root, dirs, files in os.walk(subject_dir):
         if 'fmap' in root:
             for file in files:
                 if file.endswith('.json'):
