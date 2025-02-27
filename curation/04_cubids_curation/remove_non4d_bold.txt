@@ -1,0 +1,1 @@
+sub-86350/ses-1/func/sub-86350_ses-1_task-face_acq-singleband_run-01_bold.nii.gz
