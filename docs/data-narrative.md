@@ -276,4 +276,9 @@ The fmap sidecar `IntendedFor` fields were known to have an issue and updated to
 
 `cubids validate v1` was then run and this did not decrease the amount of validation errors/warnings.
 
-Next is to add a `.bidsignore`.
+A number of the warnings are due to bids not being compatable with minIP images. Will add those to `.bidsignore`.
+Many others are for missing sidecare info in perfusion jsons. Will get those from protocol pdf/Manuel.
+
+A participants.tsv was initialized using [`generate_participants_tsv.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/generate_participants_tsv.py).
+
+It is also noted that the two before-mentioned subjects with a second session actually had both sessions checked into datalad. Those have now had their first sessions removed and the second sessions renamed to ses-1.
