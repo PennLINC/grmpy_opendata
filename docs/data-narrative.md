@@ -286,3 +286,5 @@ It is also noted that the two before-mentioned subjects with a second session ac
 After these changes `v2` validation reveals that remaining errors are missing sidecar info for perfusion scans and one non-4D BOLD sequence.
 
 `cubids purge bids_datalad/ ~/code/curation/04_cubids_curation/remove_non4d_bold.txt --use-datalad` was run to remove the [`non4d bold sequence`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_non4d_bold.txt).
+
+`cubids group v3` was run to begin looking at variants.
