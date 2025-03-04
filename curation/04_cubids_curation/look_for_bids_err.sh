@@ -18,7 +18,7 @@ for subdir in sub-*; do
   anat_dir="$subdir/ses-1/func"
   if [ -d "$anat_dir" ]; then
     has_run01=$(find "$anat_dir" -maxdepth 1 -name '*_ses-1_task-face_acq-singleband_run-01_bold.json' | wc -l)
-    has_run02=$(find "$anat_dir" -maxdepth 1 -name '*_ses-1_task-face_acq-singleband_run-01_bold.json' | wc -l)
+    has_run02=$(find "$anat_dir" -maxdepth 1 -name '*_ses-1_task-face_acq-singleband_run-02_bold.json' | wc -l)
 
     if [[ "$has_run02" -gt 0 && "$has_run01" -eq 0 ]]; then
       echo "Found run-02 but NO run-01 in: $subdir"
