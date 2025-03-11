@@ -27,7 +27,17 @@ def update_intended_for(bids_dir, old_path, new_path):
     old_rel_path = re.sub(f'^/?{subject_id}/', '', old_path.lstrip('/'))
     new_rel_path = re.sub(f'^/?{subject_id}/', '', new_path.lstrip('/'))
 
-    print(f"Looking to replace: {old_rel_path} with {new_rel_path}")
+    # Extract the task and acquisition from the old path to help with matching
+    task_acq_match = re.search(r'task-([^_]+)_acq-([^_]+)', old_rel_path)
+    if task_acq_match:
+        task = task_acq_match.group(1)
+        acq = task_acq_match.group(2)
+        run_pattern = f"task-{task}_acq-{acq}_run-\\d+_bold\\.nii\\.gz$"
+    else:
+        run_pattern = r"_run-\d+_bold\.nii\.gz$"
+
+    print(f"Looking to replace paths matching: {run_pattern}")
+    print(f"New path will be: {new_rel_path}")
 
     # Process each fieldmap JSON file
     for json_file in Path(fmap_dir).glob('*{magnitude1,magnitude2,phasediff}.json'):
@@ -39,10 +49,11 @@ def update_intended_for(bids_dir, old_path, new_path):
             if 'IntendedFor' not in data:
                 continue
 
-            # Check if the old path is in IntendedFor
+            # Check if any path in IntendedFor matches our pattern
             updated = False
             for i, path in enumerate(data['IntendedFor']):
-                if path == old_rel_path:
+                if re.search(run_pattern, path):
+                    print(f"  Found match: {path}")
                     data['IntendedFor'][i] = new_rel_path
                     updated = True
 
