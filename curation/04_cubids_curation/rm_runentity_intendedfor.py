@@ -36,8 +36,12 @@ def update_intended_for(bids_dir, old_path, new_path):
     run_number = run_match.group(1)
     print(f"Found run-{run_number} in path: {old_rel_path}")
 
-    # Process each fieldmap JSON file
-    for json_file in Path(fmap_dir).glob('*{magnitude1,magnitude2,phasediff}.json'):
+    # Process each fieldmap JSON file - fix the glob pattern
+    print(f"Looking for fieldmap JSONs in: {fmap_dir}")
+    json_files = list(Path(fmap_dir).glob('*.json'))
+    print(f"Found {len(json_files)} JSON files")
+
+    for json_file in json_files:
         print(f"Checking fieldmap JSON: {json_file}")
         try:
             with open(json_file, 'r') as f:
