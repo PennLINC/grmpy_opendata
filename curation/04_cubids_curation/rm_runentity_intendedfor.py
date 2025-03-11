@@ -27,35 +27,42 @@ def update_intended_for(bids_dir, old_path, new_path):
     old_rel_path = re.sub(f'^/?{subject_id}/', '', old_path.lstrip('/'))
     new_rel_path = re.sub(f'^/?{subject_id}/', '', new_path.lstrip('/'))
 
-    # Extract the task and acquisition from the old path to help with matching
-    task_acq_match = re.search(r'task-([^_]+)_acq-([^_]+)', old_rel_path)
-    if task_acq_match:
-        task = task_acq_match.group(1)
-        acq = task_acq_match.group(2)
-        run_pattern = f"task-{task}_acq-{acq}_run-\\d+_bold\\.nii\\.gz$"
-    else:
-        run_pattern = r"_run-\d+_bold\.nii\.gz$"
+    # Get the run entity from the old path
+    run_match = re.search(r'_run-(\d+)', old_rel_path)
+    if not run_match:
+        print(f"No run entity found in path: {old_rel_path}")
+        return
 
-    print(f"Looking to replace paths matching: {run_pattern}")
-    print(f"New path will be: {new_rel_path}")
+    run_number = run_match.group(1)
+    print(f"Found run-{run_number} in path: {old_rel_path}")
 
     # Process each fieldmap JSON file
     for json_file in Path(fmap_dir).glob('*{magnitude1,magnitude2,phasediff}.json'):
+        print(f"Checking fieldmap JSON: {json_file}")
         try:
             with open(json_file, 'r') as f:
                 data = json.load(f)
 
             # Skip if no IntendedFor field
             if 'IntendedFor' not in data:
+                print(f"  No IntendedFor field in {json_file}")
                 continue
 
-            # Check if any path in IntendedFor matches our pattern
+            print(f"  IntendedFor contains {len(data['IntendedFor'])} paths")
+
+            # Check each path in IntendedFor
             updated = False
             for i, path in enumerate(data['IntendedFor']):
-                if re.search(run_pattern, path):
-                    print(f"  Found match: {path}")
-                    data['IntendedFor'][i] = new_rel_path
+                print(f"  Checking path: {path}")
+
+                # Look for the run entity in the path
+                if f"_run-{run_number}_" in path:
+                    print(f"  Found matching run entity in: {path}")
+                    # Create the new path by removing the run entity
+                    updated_path = re.sub(r'_run-\d+', '', path)
+                    data['IntendedFor'][i] = updated_path
                     updated = True
+                    print(f"  Updated to: {updated_path}")
 
             if updated:
                 print(f"Updating IntendedFor in {json_file}")
@@ -65,6 +72,8 @@ def update_intended_for(bids_dir, old_path, new_path):
                 # Add the updated JSON to git
                 subprocess.run(['git', 'add', str(json_file)], check=True)
                 print(f"Added updated fieldmap JSON to git: {json_file}")
+            else:
+                print(f"  No matching paths found in {json_file}")
 
         except Exception as e:
             print(f"Error updating {json_file}: {e}")
