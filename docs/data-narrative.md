@@ -290,3 +290,5 @@ After these changes `v2` validation reveals that remaining errors are missing si
 `cubids group v3` was run to begin looking at variants.
 
 Groupings were [`analyzed`](https://www.notion.so/go-through-cubids-groupings-1ac2e9b4cd19806887cad86b63739b47?pvs=4). Two files were dropped in `cubids apply v4` for being too short.
+
+Next run of cubids apply will drop additional shortened rest and task scans (see [`v4_summary_edited.tsv`](UPDATE LINK)). It will also drop 1/2 runs for participants with repeated runs of T1w, T2w, and angio/minIP.
