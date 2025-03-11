@@ -285,10 +285,20 @@ It is also noted that the two before-mentioned subjects with a second session ac
 
 After these changes `v2` validation reveals that remaining errors are missing sidecar info for perfusion scans and one non-4D BOLD sequence.
 
+## CuBIDS group and apply
+
 `cubids purge bids_datalad/ ~/code/curation/04_cubids_curation/remove_non4d_bold.txt --use-datalad` was run to remove the [`non4d bold sequence`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_non4d_bold.txt).
 
 `cubids group v3` was run to begin looking at variants.
 
 Groupings were [`analyzed`](https://www.notion.so/go-through-cubids-groupings-1ac2e9b4cd19806887cad86b63739b47?pvs=4). Two files were dropped in `cubids apply v4` for being too short.
 
-Next run of cubids apply will drop additional shortened rest and task scans (see [`v4_summary_edited.tsv`](UPDATE LINK)). It will also drop 1/2 runs for participants with repeated runs of T1w, T2w, and angio/minIP.
+After analyzing scan notes and [`data quality`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/inspect_multiruns.ipynb), it was decided to drop the first run out of two for subjects with multiples of anat scans and fmaps (see [`find_multiruns.py](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/find_multiruns.py) and[`cleanup_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cleanup_multiruns.py)).  `cubids apply v5` was then run to drop additional shortened rest and task scans (see [`v4_summary_edited.tsv`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v4/v4_summary_edited.tsv)).
+
+The resulting [`v5_summary.tsv](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v5/v5_summary.tsv) showed three remaining `func` key param groups with the run entitiy. These were renamed and their associated intendedfor paths updated (see [`rm_runentity_intendedfor.py](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/rm_runentity_intendedfor.py)).
+
+The pre-existing ASL data was removed.
+
+`cubids group v6` was run to get final grouping. `cubids validate v6` was also run to check for final validation errors. One subject had a deleted short task scan and the intendedfors were not updated - this was done manually.
+
+`cubids apply v7` was run to get the final file names pre-ASL validation. `cubids validate v7` was run to check that no errors exist.
