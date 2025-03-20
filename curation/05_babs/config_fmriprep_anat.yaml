@@ -39,9 +39,7 @@ cluster_resources:
 # Necessary commands to be run first:
 #   [FIX ME] change or add commands for setting up the virtual environment, for loading necessary modules, etc
 script_preamble: |
-    # source /cbica/projects/executive_function/miniforge3/bin/activate babs_2
-    eval "$(micromamba shell hook --shell bash)"
-    micromamba activate babs
+    source /cbica/projects/grmpy/miniforge3/bin/activate babs
 
 # Where to run the jobs:
 job_compute_space: "${TMP}"   # [FIX ME] replace "/path/to/temporary_compute_space" with yours
