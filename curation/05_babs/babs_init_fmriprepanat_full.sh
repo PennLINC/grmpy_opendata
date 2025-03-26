@@ -1,4 +1,6 @@
 project_root=/cbica/projects/grmpy
+TEMPLATEFLOW_HOME=${project_root}/templateflow
+mkdir -p ${TEMPLATEFLOW_HOME}
 cd ${project_root}/data/BABS/derivatives
 babs init \
      ${PWD}/fmriprepANAT \
