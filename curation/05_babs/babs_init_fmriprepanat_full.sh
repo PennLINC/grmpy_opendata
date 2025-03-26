@@ -1,7 +1,7 @@
 project_root=/cbica/projects/grmpy
-TEMPLATEFLOW_HOME=${project_root}/templateflow
-mkdir -p ${TEMPLATEFLOW_HOME}
 cd ${project_root}/data/BABS/derivatives
+export TEMPLATEFLOW_HOME=${PWD}/templateflow_home
+mkdir -p ${TEMPLATEFLOW_HOME}
 babs init \
      ${PWD}/fmriprepANAT \
      --datasets BIDS=${project_root}/data/bids_datalad/ \
