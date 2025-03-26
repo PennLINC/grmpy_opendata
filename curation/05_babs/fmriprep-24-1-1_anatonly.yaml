@@ -58,7 +58,7 @@ script_preamble: |
     source /cbica/projects/grmpy/miniforge3/bin/activate babs
 
 # Where to run the jobs:
-job_compute_space: "${TMP}" # [FIX ME] replace "/path/to/temporary_compute_space" with yours
+job_compute_space: "${TMPDIR}" # [FIX ME] replace "/path/to/temporary_compute_space" with yours
 
 # Below is to filter out subjects (or sessions). Only those with required files will be kept.
 required_files:
