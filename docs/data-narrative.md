@@ -308,4 +308,4 @@ The resulting [`v5_summary.tsv](https://github.com/PennLINC/grmpy_opendata/blob/
 ### Perfusion data cubids
 The perfusion data from the aslprep project (`/cbica/projects/aslprep/2022_adebimpe/IRRdata/curation/BIDS/`) was copied over to grmpy and then copied into the `bids_datalad` dataset with [`copy_perfusion_data.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/copy_perfusion_data.py) (`6db50b5`).
 
-`cubids validate 8` was run to check for validation errors in the new perfusion data.
+`cubids validate 8` was run to check for validation errors in the new perfusion data. There were errors for `TotalAcquiredPairs` and `IntendedFor`.
