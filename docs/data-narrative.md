@@ -304,3 +304,6 @@ The resulting [`v5_summary.tsv](https://github.com/PennLINC/grmpy_opendata/blob/
 `cubids group v6` was run to get final grouping. `cubids validate v6` was also run to check for final validation errors. One subject had a deleted short task scan and the intendedfors were not updated - this was done manually (`3fd9ab6b`).
 
 `cubids apply v7` was run to get the final file names pre-ASL validation (`eee2658e` and `69230db1`). `cubids validate v7` was run to check that no errors exist.
+
+### Perfusion data cubids
+The perfusion data from the aslprep project (`/cbica/projects/aslprep/2022_adebimpe/IRRdata/curation/BIDS/`) was copied over to grmpy and then copied into the `bids_datalad` dataset with [`copy_perfusion_data.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/copy_perfusion_data.py) (`6db50b5`).
