@@ -188,4 +188,5 @@ echo "Job submitted with:"
 echo "  BIDS directory: $bids_root"
 echo "  Log directory: $log_base_path"
 echo "  File list: ${temp_file_list}"
-
+echo "Remember to datalad save your changes after reviewing. e.g."
+echo "datalad save -d BIDS_DIR -m "Reface T1w images with afni_refacer_run and deface T2w images with pydeface""
