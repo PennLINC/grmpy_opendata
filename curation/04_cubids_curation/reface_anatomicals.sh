@@ -10,7 +10,7 @@
 #   job where each task processes one anatomical image.
 #
 # USAGE:
-#   ./reface_anatomicals.sh BIDS_DIR LOG_DIR
+#   bash reface_anatomicals.sh BIDS_DIR LOG_DIR
 #
 # ARGUMENTS:
 #   BIDS_DIR  - Path to the BIDS dataset directory (required)
@@ -28,12 +28,13 @@
 #   - SLURM job scheduler
 #   - AFNI (for T1w defacing)
 #   - pydeface (for T2w defacing) installed in a micromamba environment
-#   - Git-tracked BIDS dataset
+#   - Git/Datalad-tracked BIDS dataset
 #
 # NOTES:
 #   - The script automatically determines the array size based on the number of files
 #   - Only processes files that don't already have "rec-defaced" in their name
-#   - Original files are removed using git rm (changes must be committed afterward)
+#   - Original files are removed using git rm (changes must be committed/datalad saved
+#   afterward)
 #
 # ============================================================================
 
