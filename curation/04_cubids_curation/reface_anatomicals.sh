@@ -65,7 +65,7 @@ echo "Found $file_count files to process. Setting array size to 0-$max_array."
 # Submit the job with the calculated array size
 sbatch --array=0-$max_array \
   --output="${log_base_path}/reface_%A_%a.out" \
-  --error="${log_base_path}/reface_%A_%a.err" <<'SBATCH_SCRIPT'
+  --error="${log_base_path}/reface_%A_%a.err" <<SBATCH_SCRIPT
 #!/usr/bin/env bash
 #SBATCH --job-name=reface
 #SBATCH --cpus-per-task=1
@@ -76,8 +76,8 @@ set -eux
 # Load AFNI (for T1w refacing)
 module add afni/2022_05_03
 
-# Get the BIDS directory from the parent script
-bids_root="${1}"
+# Use the BIDS directory directly
+bids_root="${bids_root}"
 
 # 1) Gather T1w/T2w files (both), then sort - excluding already defaced files
 mapfile -t anat_files < <(find "${bids_root}"/sub-* -type f \
