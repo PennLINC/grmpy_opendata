@@ -50,8 +50,8 @@ mkdir -p "${log_base_path}"
 # Create a temporary file with the list of files to process
 temp_file_list="${log_base_path}/anat_files_to_process.txt"
 
-# Find files and save to the temporary file
-find "${bids_root}"/sub-* -type f \
+# Find files and save to the temporary file - using -L to follow symlinks
+find -L "${bids_root}"/sub-* -type f \
   \( -name "*_T1w.nii.gz" -o -name "*_T2w.nii.gz" \) \
   | grep -v -e "rec-defaced" -e "rec-refaced" | sort > "${temp_file_list}"
 
