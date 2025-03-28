@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
+# First argument is the BIDS root directory
 bids_root="$1"
+
+# Second argument is the base path for logs
+log_base_path="$2"
+
+# Ensure log directory exists
+mkdir -p "${log_base_path}"
 
 # Count T1w/T2w files to determine array size
 file_count=$(find "${bids_root}"/sub-* -type f \
@@ -18,11 +25,11 @@ fi
 echo "Found $file_count files to process. Setting array size to 0-$max_array."
 
 # Submit the job with the calculated array size
-sbatch --array=0-$max_array <<'SBATCH_SCRIPT'
+sbatch --array=0-$max_array \
+  --output="${log_base_path}/reface_%A_%a.out" \
+  --error="${log_base_path}/reface_%A_%a.err" <<'SBATCH_SCRIPT'
 #!/usr/bin/env bash
 #SBATCH --job-name=reface
-#SBATCH --output=/cbica/projects/grmpy/code/curation/04_cubids_curation/logs/reface/reface_%A_%a.out
-#SBATCH --error=/cbica/projects/grmpy/code/curation/04_cubids_curation/logs/reface/reface_%A_%a.err
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=2G
 
@@ -104,5 +111,7 @@ fi
 echo "Done processing $ANAT_BASENAME"
 SBATCH_SCRIPT
 
-echo "Job submitted with BIDS directory: $bids_root"
+echo "Job submitted with:"
+echo "  BIDS directory: $bids_root"
+echo "  Log directory: $log_base_path"
 
