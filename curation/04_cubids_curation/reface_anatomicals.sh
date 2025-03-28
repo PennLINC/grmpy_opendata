@@ -1,4 +1,41 @@
 #!/usr/bin/env bash
+#
+# reface_anatomicals.sh - Deface T1w and T2w anatomical images in a BIDS dataset
+# ============================================================================
+#
+# DESCRIPTION:
+#   This script processes T1w and T2w anatomical images in a BIDS dataset to
+#   remove facial features for privacy protection. It uses AFNI's refacer for
+#   T1w images and pydeface for T2w images. The script creates a SLURM array
+#   job where each task processes one anatomical image.
+#
+# USAGE:
+#   ./reface_anatomicals.sh BIDS_DIR LOG_DIR
+#
+# ARGUMENTS:
+#   BIDS_DIR  - Path to the BIDS dataset directory (required)
+#   LOG_DIR   - Path to store log files (required)
+#
+# EXAMPLES:
+#   ./reface_anatomicals.sh /data/myproject/bids /data/myproject/logs/reface
+#
+# OUTPUTS:
+#   - Creates defaced versions of anatomical images with "rec-defaced" in the filename
+#   - Removes original images using git rm
+#   - Logs are stored in LOG_DIR
+#
+# REQUIREMENTS:
+#   - SLURM job scheduler
+#   - AFNI (for T1w defacing)
+#   - pydeface (for T2w defacing) installed in a micromamba environment
+#   - Git-tracked BIDS dataset
+#
+# NOTES:
+#   - The script automatically determines the array size based on the number of files
+#   - Only processes files that don't already have "rec-defaced" in their name
+#   - Original files are removed using git rm (changes must be committed afterward)
+#
+# ============================================================================
 
 # First argument is the BIDS root directory
 bids_root="$1"
