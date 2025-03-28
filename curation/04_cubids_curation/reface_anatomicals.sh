@@ -47,10 +47,16 @@ log_base_path="$2"
 # Ensure log directory exists
 mkdir -p "${log_base_path}"
 
-# Count T1w/T2w files to determine array size
-file_count=$(find "${bids_root}"/sub-* -type f \
+# Create a temporary file with the list of files to process
+temp_file_list="${log_base_path}/anat_files_to_process.txt"
+
+# Find files and save to the temporary file
+find "${bids_root}"/sub-* -type f \
   \( -name "*_T1w.nii.gz" -o -name "*_T2w.nii.gz" \) \
-  | grep -v "rec-defaced" | wc -l)
+  | grep -v "rec-defaced" | sort > "${temp_file_list}"
+
+# Count the files
+file_count=$(wc -l < "${temp_file_list}")
 
 # Subtract 1 for zero-based array indexing
 max_array=$((file_count - 1))
@@ -61,11 +67,13 @@ if [ $max_array -lt 0 ]; then
 fi
 
 echo "Found $file_count files to process. Setting array size to 0-$max_array."
+echo "File list saved to: ${temp_file_list}"
 
 # Submit the job with the calculated array size
 sbatch --array=0-$max_array \
   --output="${log_base_path}/reface_%A_%a.out" \
-  --error="${log_base_path}/reface_%A_%a.err" <<SBATCH_SCRIPT
+  --error="${log_base_path}/reface_%A_%a.err" \
+  --export=ALL,BIDS_ROOT="${bids_root}",FILE_LIST="${temp_file_list}" <<'SBATCH_SCRIPT'
 #!/usr/bin/env bash
 #SBATCH --job-name=reface
 #SBATCH --cpus-per-task=1
@@ -76,28 +84,40 @@ set -eux
 # Load AFNI (for T1w refacing)
 module add afni/2022_05_03
 
-# Use the BIDS directory directly
-bids_root="${bids_root}"
+# Get the BIDS directory from the environment variable
+bids_root="${BIDS_ROOT}"
+file_list="${FILE_LIST}"
 
-# 1) Gather T1w/T2w files (both), then sort - excluding already defaced files
-mapfile -t anat_files < <(find "${bids_root}"/sub-* -type f \
-  \( -name "*_T1w.nii.gz" -o -name "*_T2w.nii.gz" \) \
-  | grep -v "rec-defaced" \
-  | sort)
+echo "SLURM_ARRAY_TASK_ID: ${SLURM_ARRAY_TASK_ID}"
+echo "BIDS root: ${bids_root}"
+echo "File list: ${file_list}"
 
-num_files="${#anat_files[@]}"
-echo "Found ${num_files} T1w/T2w files to process."
+# Check if file list exists
+if [ ! -f "${file_list}" ]; then
+  echo "ERROR: File list not found: ${file_list}"
+  exit 1
+fi
 
-# 2) Select the file for this array index
-ANAT="${anat_files[$SLURM_ARRAY_TASK_ID]}"
+# Get the file for this array task
+ANAT=$(sed -n "$((SLURM_ARRAY_TASK_ID+1))p" "${file_list}")
+
+# Check if we got a valid file
+if [ -z "${ANAT}" ]; then
+  echo "ERROR: No file found for index ${SLURM_ARRAY_TASK_ID}"
+  echo "File list contents:"
+  cat "${file_list}"
+  exit 1
+fi
+
+echo "Processing file: ${ANAT}"
 
 ANAT_DIR="$(dirname "$ANAT")"
 ANAT_BASENAME="$(basename "$ANAT")"
 
 # Move to the directory containing the file
-cd "$ANAT_DIR"
+cd "$ANAT_DIR" || { echo "ERROR: Could not change to directory: $ANAT_DIR"; exit 1; }
 
-# 3) Build the defaced filename: Insert "_rec-defaced" before T1w or T2w
+# Build the defaced filename: Insert "_rec-defaced" before T1w or T2w
 DEFACED_BASENAME="$(echo "$ANAT_BASENAME" | sed 's/\(_T[12]w\)\.nii\.gz$/_rec-defaced\1.nii.gz/')"
 
 echo "SLURM_ARRAY_TASK_ID:   $SLURM_ARRAY_TASK_ID"
@@ -105,7 +125,7 @@ echo "Anatomical directory:  $ANAT_DIR"
 echo "Anatomical file:       $ANAT_BASENAME"
 echo "Defaced file:          $DEFACED_BASENAME"
 
-# 4) Decide which defacing tool to use
+# Decide which defacing tool to use
 if [[ "$ANAT_BASENAME" == *"_T1w.nii.gz" ]]; then
   echo "Using @afni_refacer_run (AFNI) for T1w"
   @afni_refacer_run \
@@ -123,10 +143,10 @@ elif [[ "$ANAT_BASENAME" == *"_T2w.nii.gz" ]]; then
 
 fi
 
-# 5) Use git rm instead of moving the original NIfTI
+# Use git rm instead of moving the original NIfTI
 git rm "${ANAT_BASENAME}"
 
-# 6) Handle the JSON sidecar (if it exists)
+# Handle the JSON sidecar (if it exists)
 JSON_BASENAME="${ANAT_BASENAME%.nii.gz}.json"
 if [ -f "$JSON_BASENAME" ]; then
   DEFACED_JSON_BASENAME="$(echo "$JSON_BASENAME" | sed 's/\(_T[12]w\)\.json$/_rec-defaced\1.json/')"
@@ -141,7 +161,7 @@ if [ -f "$JSON_BASENAME" ]; then
   git rm "${JSON_BASENAME}"
 fi
 
-# 7) Clean up only if T1w (AFNI refacer leaves extra files)
+# Clean up only if T1w (AFNI refacer leaves extra files)
 if [[ "$ANAT_BASENAME" == *"_T1w.nii.gz" ]]; then
   rm -f *rec-defaced*face_plus*
   rm -rf *rec-defaced*_QC/
@@ -153,4 +173,5 @@ SBATCH_SCRIPT
 echo "Job submitted with:"
 echo "  BIDS directory: $bids_root"
 echo "  Log directory: $log_base_path"
+echo "  File list: ${temp_file_list}"
 
