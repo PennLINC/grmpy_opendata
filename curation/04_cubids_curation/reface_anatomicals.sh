@@ -117,8 +117,17 @@ ANAT_BASENAME="$(basename "$ANAT")"
 # Move to the directory containing the file
 cd "$ANAT_DIR" || { echo "ERROR: Could not change to directory: $ANAT_DIR"; exit 1; }
 
-# Build the defaced filename: Insert "_rec-defaced" before T1w or T2w
-DEFACED_BASENAME="$(echo "$ANAT_BASENAME" | sed 's/\(_T[12]w\)\.nii\.gz$/_rec-defaced\1.nii.gz/')"
+# Build the defaced filename with different recording labels for T1w and T2w
+if [[ "$ANAT_BASENAME" == *"_T1w.nii.gz" ]]; then
+  # For T1w, use "rec-refaced"
+  DEFACED_BASENAME="$(echo "$ANAT_BASENAME" | sed 's/\(_T1w\)\.nii\.gz$/_rec-refaced\1.nii.gz/')"
+elif [[ "$ANAT_BASENAME" == *"_T2w.nii.gz" ]]; then
+  # For T2w, use "rec-defaced"
+  DEFACED_BASENAME="$(echo "$ANAT_BASENAME" | sed 's/\(_T2w\)\.nii\.gz$/_rec-defaced\1.nii.gz/')"
+else
+  echo "ERROR: Unrecognized file type: $ANAT_BASENAME"
+  exit 1
+fi
 
 echo "SLURM_ARRAY_TASK_ID:   $SLURM_ARRAY_TASK_ID"
 echo "Anatomical directory:  $ANAT_DIR"
