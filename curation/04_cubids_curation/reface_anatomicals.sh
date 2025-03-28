@@ -20,21 +20,21 @@
 #   ./reface_anatomicals.sh /data/myproject/bids /data/myproject/logs/reface
 #
 # OUTPUTS:
-#   - Creates defaced versions of anatomical images with "rec-defaced" in the filename
-#   - Removes original images using git rm
+#   - Creates defaced versions of anatomical images with "rec-refaced" (T1w) or "rec-defaced" (T2w) in the filename
+#   - Removes original images after processing
 #   - Logs are stored in LOG_DIR
 #
 # REQUIREMENTS:
 #   - SLURM job scheduler
 #   - AFNI (for T1w defacing)
 #   - pydeface (for T2w defacing) installed in a micromamba environment
-#   - Git/Datalad-tracked BIDS dataset
 #
 # NOTES:
 #   - The script automatically determines the array size based on the number of files
-#   - Only processes files that don't already have "rec-defaced" in their name
-#   - Original files are removed using git rm (changes must be committed/datalad saved
-#   afterward)
+#   - Only processes files that don't already have "rec-defaced" or "rec-refaced" in their name
+#   - If performing on a datalad dataset, you will need to run a datalad save command after checking
+#     outputs. e.g. `datalad save -d BIDS_DIR -m "Reface T1w images with afni_refacer_run and deface
+#     T2w images with pydeface"`
 #
 # ============================================================================
 
@@ -53,7 +53,7 @@ temp_file_list="${log_base_path}/anat_files_to_process.txt"
 # Find files and save to the temporary file
 find "${bids_root}"/sub-* -type f \
   \( -name "*_T1w.nii.gz" -o -name "*_T2w.nii.gz" \) \
-  | grep -v "rec-defaced" | sort > "${temp_file_list}"
+  | grep -v -e "rec-defaced" -e "rec-refaced" | sort > "${temp_file_list}"
 
 # Count the files
 file_count=$(wc -l < "${temp_file_list}")
@@ -152,13 +152,18 @@ elif [[ "$ANAT_BASENAME" == *"_T2w.nii.gz" ]]; then
 
 fi
 
-# Use git rm instead of moving the original NIfTI
-git rm "${ANAT_BASENAME}"
+# Remove the original NIfTI file
+rm "${ANAT_BASENAME}"
 
 # Handle the JSON sidecar (if it exists)
 JSON_BASENAME="${ANAT_BASENAME%.nii.gz}.json"
 if [ -f "$JSON_BASENAME" ]; then
-  DEFACED_JSON_BASENAME="$(echo "$JSON_BASENAME" | sed 's/\(_T[12]w\)\.json$/_rec-defaced\1.json/')"
+  # Use the same naming convention as the NIfTI file
+  if [[ "$ANAT_BASENAME" == *"_T1w.nii.gz" ]]; then
+    DEFACED_JSON_BASENAME="$(echo "$JSON_BASENAME" | sed 's/\(_T1w\)\.json$/_rec-refaced\1.json/')"
+  else
+    DEFACED_JSON_BASENAME="$(echo "$JSON_BASENAME" | sed 's/\(_T2w\)\.json$/_rec-defaced\1.json/')"
+  fi
 
   echo "JSON sidecar found:   $JSON_BASENAME"
   echo "Renaming to:          $DEFACED_JSON_BASENAME"
@@ -166,14 +171,14 @@ if [ -f "$JSON_BASENAME" ]; then
   # Copy the content to the new filename
   cp "${JSON_BASENAME}" "$DEFACED_JSON_BASENAME"
 
-  # Remove the original JSON with git
-  git rm "${JSON_BASENAME}"
+  # Remove the original JSON
+  rm "${JSON_BASENAME}"
 fi
 
 # Clean up only if T1w (AFNI refacer leaves extra files)
 if [[ "$ANAT_BASENAME" == *"_T1w.nii.gz" ]]; then
-  rm -f *rec-defaced*face_plus*
-  rm -rf *rec-defaced*_QC/
+  rm -f *rec-refaced*face_plus*
+  rm -rf *rec-refaced*_QC/
 fi
 
 echo "Done processing $ANAT_BASENAME"
