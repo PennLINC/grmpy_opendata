@@ -79,9 +79,6 @@ module add afni/2022_05_03
 # Get the BIDS directory from the parent script
 bids_root="${1}"
 
-old_anat_archive_dir="${bids_root}/sourcedata/original_anatomicals"
-mkdir -p "${old_anat_archive_dir}"
-
 # 1) Gather T1w/T2w files (both), then sort - excluding already defaced files
 mapfile -t anat_files < <(find "${bids_root}"/sub-* -type f \
   \( -name "*_T1w.nii.gz" -o -name "*_T2w.nii.gz" \) \
