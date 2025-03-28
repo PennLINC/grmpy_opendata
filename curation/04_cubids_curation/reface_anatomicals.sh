@@ -80,7 +80,11 @@ if [[ "$ANAT_BASENAME" == *"_T1w.nii.gz" ]]; then
 
 elif [[ "$ANAT_BASENAME" == *"_T2w.nii.gz" ]]; then
   echo "Using pydeface for T2w"
-  /gpfs/fs001/cbica/projects/grmpy/micromamba/envs/babs/bin/pydeface --outfile "$DEFACED_BASENAME" "$ANAT_BASENAME"
+  # Use micromamba to run pydeface in the appropriate environment
+  eval "$(micromamba shell hook --shell bash)"
+  micromamba activate babs # [FIX ME] change to the appropriate environment where you pip installed pydeface
+  pydeface --outfile "$DEFACED_BASENAME" "$ANAT_BASENAME"
+  micromamba deactivate
 
 fi
 
