@@ -17,7 +17,7 @@
 #   LOG_DIR   - Path to store log files (required)
 #
 # EXAMPLES:
-#   ./reface_anatomicals.sh /data/myproject/bids /data/myproject/logs/reface
+#   bash ./reface_anatomicals.sh /data/myproject/bids /data/myproject/logs/reface
 #
 # OUTPUTS:
 #   - Creates defaced versions of anatomical images with "rec-refaced" (T1w) or "rec-defaced" (T2w) in the filename
