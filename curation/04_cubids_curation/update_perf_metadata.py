@@ -74,30 +74,38 @@ def update_m0_json(json_path):
         # Update IntendedFor
         if "IntendedFor" in data:
             original_intended_for = data["IntendedFor"]
-            # Handle both string and list cases, ensure it's a list at the end
+            intended_for_list = None
+            was_originally_list = False
+
+            # Ensure IntendedFor is processed as a list
             if isinstance(original_intended_for, str):
                 intended_for_list = [original_intended_for]
+                was_originally_list = False
             elif isinstance(original_intended_for, list):
-                # Assume the first element is the one we need to modify
                 intended_for_list = original_intended_for
+                was_originally_list = True
             else:
                 print(
                     f"Warning: 'IntendedFor' in {json_path} is neither string nor list. Skipping update."
                 )
-                intended_for_list = None
 
-            if intended_for_list:
-                current_path = intended_for_list[0]
-                # Replace ses-* with ses-1
-                updated_path = re.sub(r"ses-[^/]+", "ses-1", current_path)
-                updated_intended_for = [updated_path] + intended_for_list[
-                    1:
-                ]  # Keep other entries if they exist
+            # Process the list if it's valid
+            if intended_for_list is not None:
+                updated_intended_for = []
+                path_changed = False
+                for current_path in intended_for_list:
+                    # Replace ses-* with ses-1
+                    # Use a more specific regex to avoid accidental replacements
+                    updated_path = re.sub(
+                        r"(?<=/)ses-[^/]+(?=/)", "ses-1", current_path
+                    )
+                    updated_intended_for.append(updated_path)
+                    if updated_path != current_path:
+                        path_changed = True
 
-                # Only update if the path actually changed or if it wasn't a list initially
-                if updated_intended_for != original_intended_for or not isinstance(
-                    original_intended_for, list
-                ):
+                # Update only if a path changed or if it wasn't a list originally (to enforce list format)
+                if path_changed or not was_originally_list:
+                    # Always store as a list, even if only one entry
                     data["IntendedFor"] = updated_intended_for
                     updated = True
 
@@ -131,6 +139,7 @@ def update_m0_json(json_path):
 
         if updated:
             with open(json_path, "w") as f:
+                # Ensure indent is 4 spaces as commonly used in BIDS
                 json.dump(data, f, sort_keys=True, indent=4)
             print(f"Updated: {json_path}")
         # else:
