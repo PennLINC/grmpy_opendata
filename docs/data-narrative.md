@@ -305,7 +305,10 @@ The resulting [`v5_summary.tsv](https://github.com/PennLINC/grmpy_opendata/blob/
 
 `cubids apply v7` was run to get the final file names pre-ASL validation (`eee2658e` and `69230db1`). `cubids validate v7` was run to check that no errors exist.
 
-### Perfusion data cubids
 The perfusion data from the aslprep project (`/cbica/projects/aslprep/2022_adebimpe/IRRdata/curation/BIDS/`) was copied over to grmpy and then copied into the `bids_datalad` dataset with [`copy_perfusion_data.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/copy_perfusion_data.py) (`6db50b5`).
 
 `cubids validate 8` was run to check for validation errors in the new perfusion data. There were errors for `TotalAcquiredPairs` and `IntendedFor`.
+
+Anatomical images (T1w and T2w) were re/de-faced with [`reface_anatomicals.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/reface_anatomicals.sh) (`c368553`). Data from this commit was input into mriqc and fmriprep-anat BABS workflows.
+
+Perf metadata was updated with [`update_perf_metadata.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/update_perf_metadata.py) (`3b6f7c4`)
