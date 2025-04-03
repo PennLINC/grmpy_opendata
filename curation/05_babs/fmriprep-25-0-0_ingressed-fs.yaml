@@ -30,7 +30,7 @@ bids_app_args:
     --cifti-output: "91k"
     --n_cpus: "4"
     --mem-mb: "30000"
-    --fs-subjects-dir: "/cbica/projects/grmpy/derivatives/fmriprepANAT/fmriprep_anat/sourcedata/freesurfer" # [FIX ME] replace with path to your freesurfer results from fmriprep_anat
+    --fs-subjects-dir: /cbica/projects/grmpy/derivatives/fmriprepANAT/fmriprep_anat/sourcedata/freesurfer # [FIX ME] replace with path to your freesurfer results from fmriprep_anat
 
 # Arguments that are passed directly to singularity/apptainer:
 singularity_args:
