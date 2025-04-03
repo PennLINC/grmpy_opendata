@@ -96,7 +96,9 @@ def update_m0_json(json_path):
                 for current_path in intended_for_list:
                     # Replace ses-* with ses-1
                     # Use a more specific regex to avoid accidental replacements
-                    updated_path = re.sub(r"ses-(?!1/|1$)[^/]+", "ses-1", current_path)
+                    updated_path = re.sub(
+                        r"ses-(?!1\b)[a-zA-Z0-9]+", "ses-1", current_path
+                    )
                     updated_intended_for.append(updated_path)
                     if updated_path != current_path:
                         path_changed = True
