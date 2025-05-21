@@ -22,7 +22,7 @@ def create_aslcontext_tsv(json_path, first_volume_type):
         num_volumes = int(data["NumVolumes"])
 
         # Create the corresponding aslcontext.tsv file path
-        tsv_path = json_path.replace("_asl.json", "_aslcontext.tsv")
+        tsv_path = str(json_path).replace("_asl.json", "_aslcontext.tsv")
 
         # Create the aslcontext.tsv file
         with open(tsv_path, "w") as f:
