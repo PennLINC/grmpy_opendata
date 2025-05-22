@@ -58,4 +58,6 @@ singularity run \
         --level full \
         --scorescrub \
         --basil \
+        --fs-no-reconall \
+        --fs-subjects-dir /cbica/projects/grmpy/aslprep_test/freesurfer/fmriprep_anat/ \
         --participant-label "${subid}"
