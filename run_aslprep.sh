@@ -47,7 +47,7 @@ singularity run \
         -w "/cbica/projects/grmpy/aslprep_test/wkdir" \
         --n_cpus ${SLURM_CPUS_PER_TASK} \
         --omp-nthreads ${SLURM_CPUS_PER_TASK} \
-        --mem 32000
+        --mem 32000 \
         --stop-on-first-crash \
         --fs-license-file /SGLR/FREESURFER_HOME/license.txt \
         --skip-bids-validation \
