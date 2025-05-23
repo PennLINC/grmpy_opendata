@@ -2,8 +2,8 @@
 #SBATCH --job-name=aslprep
 #SBATCH --time=24:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=32G
 #SBATCH -o /cbica/projects/grmpy/aslprep_test/logs/slurm-%j.out
 #SBATCH -e /cbica/projects/grmpy/aslprep_test/logs/slurm-%j.err
 
