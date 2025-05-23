@@ -2,8 +2,8 @@
 #SBATCH --job-name=aslprep
 #SBATCH --time=24:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=8G
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
 #SBATCH -o /cbica/projects/grmpy/aslprep_test/logs/slurm-%j.out
 #SBATCH -e /cbica/projects/grmpy/aslprep_test/logs/slurm-%j.err
 
@@ -31,9 +31,6 @@ fi
 # Set subject ID and ASL type
 subid=$1
 asl_type=$2
-
-# Ensure the work directory exists
-mkdir -p "${PWD}/.git/tmp/wkdir"
 
 # Run the singularity command
 singularity run \
