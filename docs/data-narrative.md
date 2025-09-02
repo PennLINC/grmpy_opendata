@@ -26,6 +26,8 @@ Two subjects (`95257` and `20120`) had multiple sessions. For `95257`, the first
 On the second visit, the scan was completed, however, lmscribe stopped working and all fMRI sequences had to be completed straight on rather than adjusted. For `20120`, the first visit was completed with an earring.
 The participant came back for a second session with a plastic holder in their ear. In both cases, we kept the second session and deleted the first (befored below in the initial CuBIDS stages).
 
+Anatomical images were defaced with [`reface_anatomicals.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/reface_anatomicals.sh). This unfortunately introduced a BIDS naming error for multi-run anatomical scans, this was fixed later during the CuBIDS stage.
+
 # 03: Creating timing files
 
 Timing files were created manually for the nback task following the [`create_fracback_events.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/03_create_events/create_fracback_events.py) script.
@@ -33,6 +35,8 @@ Timing files were created manually for the nback task following the [`create_fra
 Timing files still need to be created for FACES.
 
 # 04: CuBIDS
+
+The git hashes referenced in this section refer to the datalad commit hashes and can be retrieved by running `git log --oneline` in the datalad dataset.
 
 ## Removing metadata fields
 The following metadata fields were present in the bids data:
@@ -282,15 +286,12 @@ The perfusion data from the aslprep project (`/cbica/projects/aslprep/2022_adebi
 The two before-mentioned subjects with a second session had both sessions initially checked into datalad. Those have now had their first sessions removed and the second sessions renamed to ses-1. The fmap intendefor paths were also updated. This was all done using [`fix_sessions.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_sessions.py) (`e266cabb`).
 
 Bids is not compatable with minIP images. Those were added to a `.bidsignore` (`echo "*/ses*/anat/*minIP*" >> .bidsignore`) (`8f468373`).
-Many others are for missing sidecare info in perfusion jsons.
 
-After these changes `v2` validation (`563bca25`) reveals that remaining errors are missing sidecar info for perfusion scans and one non-4D BOLD sequence.
+`cubids validate v0` was run to check for validation errors. Many others are for missing sidecar info in perfusion jsons, a naming issue for anatomical scans, and one non-4D BOLD sequence. The naming issue will be solved once we remove the multi-run anatomical scans.
 
 ## CuBIDS group and apply
 
-`cubids purge bids_datalad/ ~/code/curation/04_cubids_curation/remove_non4d_bold.txt --use-datalad` was run to remove the [`non4d bold sequence`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_non4d_bold.txt) (`3d9283f3` & `982c262d`).
-
-The cubids code and validation files were moved from datalad to the grmpy_opendata repo (`915c3f31`).
+`cubids purge bids_datalad/ ~/code/curation/04_cubids_curation/remove_non4d_bold.txt --use-datalad` was run to remove the [`non4d bold sequence`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_non4d_bold.txt) (`6b481370` & `70d9bb4d`).
 
 `cubids group v3` was run to begin looking at variants.
 
