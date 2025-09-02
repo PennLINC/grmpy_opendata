@@ -24,7 +24,7 @@ It selects a subject based on the SLURM array task ID, finds all session directo
 
 Two subjects (`95257` and `20120`) had multiple sessions. For `95257`, the first visit's scans were stopped due to technical difficulties with the O2 detector that day.
 On the second visit, the scan was completed, however, lmscribe stopped working and all fMRI sequences had to be completed straight on rather than adjusted. For `20120`, the first visit was completed with an earring.
-The participant came back for a second session with a plastic holder in their ear. In both cases, we kept the second session and deleted the first.
+The participant came back for a second session with a plastic holder in their ear. In both cases, we kept the second session and deleted the first (befored below in the initial CuBIDS stages).
 
 # 03: Creating timing files
 
@@ -273,12 +273,16 @@ The bids data in `/cbica/projects/grmpy/data/bids` was checked into a datalad da
 
 The fmap sidecar `IntendedFor` fields were known to have an issue and updated to use relative paths instead of full BIDS uris, using the [`fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_intendedfor.py) script (`8258c45`).
 
-A participants.tsv was initialized using [`initialize_participants_tsv.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/initialize_participants_tsv.py) (`0092367b`).
+A participants.tsv was initialized using [`initialize_participants_tsv.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/initialize_participants_tsv.py) (`732d486`).
 
-A number of the warnings are due to bids not being compatable with minIP images. Will add those to `.bidsignore` (`808b5832`).
+The pre-existing ASL data was removed (e.g. `git rm sub-*/ses-*/perf/*`) (`1a8e575`).
+
+The perfusion data from the aslprep project (`/cbica/projects/aslprep/2022_adebimpe/IRRdata/curation/BIDS/`) was copied over to grmpy and then copied into the `bids_datalad` dataset with [`copy_perfusion_data.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/copy_perfusion_data.py) (`0a6c7ff1`).
+
+The two before-mentioned subjects with a second session had both sessions initially checked into datalad. Those have now had their first sessions removed and the second sessions renamed to ses-1. The fmap intendefor paths were also updated. This was all done using [`fix_sessions.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_sessions.py) (`e266cabb`).
+
+Bids is not compatable with minIP images. Those were added to a `.bidsignore` (`echo "*/ses*/anat/*minIP*" >> .bidsignore`) (`8f468373`).
 Many others are for missing sidecare info in perfusion jsons.
-
-It is also noted that the two before-mentioned subjects with a second session actually had both sessions checked into datalad. Those have now had their first sessions removed and the second sessions renamed to ses-1. The fmap intendefor pather were also updated. This was all done using [`fix_sessions.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_sessions.py) (`ec0c535b`).
 
 After these changes `v2` validation (`563bca25`) reveals that remaining errors are missing sidecar info for perfusion scans and one non-4D BOLD sequence.
 
@@ -292,8 +296,6 @@ The cubids code and validation files were moved from datalad to the grmpy_openda
 
 Groupings were [`analyzed`](https://www.notion.so/go-through-cubids-groupings-1ac2e9b4cd19806887cad86b63739b47?pvs=4). Two files were dropped in `cubids apply v4` for being too short (`2ce08262` and `2e82cf18`).
 
-The pre-existing ASL data was removed (`0969ac3b`).
-
 After analyzing scan notes and [`data quality`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/inspect_multiruns.ipynb), it was decided to drop the first run out of two for subjects with multiples of anat scans and fmaps (see [`find_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/find_multiruns.py) and[`cleanup_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cleanup_multiruns.py)) (`e5c8c649`).  `cubids apply v5` was then run to drop additional shortened rest and task scans (see [`v4_summary_edited.tsv`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v4/v4_summary_edited.tsv)) (`c176fe8a` and `72b25acc`).
 
 The resulting [`v5_summary.tsv`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v5/v5_summary.tsv) showed three remaining `func` key param groups with the run entitiy. These were renamed and their associated intendedfor paths updated (see [`rm_runentity_intendedfor.py](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/rm_runentity_intendedfor.py)) (`ba028e11`).
@@ -301,8 +303,6 @@ The resulting [`v5_summary.tsv`](https://github.com/PennLINC/grmpy_opendata/blob
 `cubids group v6` was run to get final grouping. `cubids validate v6` was also run to check for final validation errors. One subject had a deleted short task scan and the intendedfors were not updated - this was done manually (`3fd9ab6b`).
 
 `cubids apply v7` was run to get the final file names pre-ASL validation (`eee2658e` and `69230db1`). `cubids validate v7` was run to check that no errors exist.
-
-The perfusion data from the aslprep project (`/cbica/projects/aslprep/2022_adebimpe/IRRdata/curation/BIDS/`) was copied over to grmpy and then copied into the `bids_datalad` dataset with [`copy_perfusion_data.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/copy_perfusion_data.py) (`6db50b5`).
 
 `cubids validate 8` was run to check for validation errors in the new perfusion data. There were errors for `TotalAcquiredPairs` and `IntendedFor`.
 
