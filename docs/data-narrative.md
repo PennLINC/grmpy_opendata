@@ -269,13 +269,9 @@ NOTE:
 
 ## Checking into datalad and initial validation
 
-The bids data in `/cbica/projects/grmpy/data/bids` was checked into a datalad dataset at `cbica/projects/grmpy/data/bids_datalad` (`5d48c11e`) and nifti info was added into the json sidecars (`0be0d0af`) using CuBIDS.
+The bids data in `/cbica/projects/grmpy/data/bids` was checked into a datalad dataset at `cbica/projects/grmpy/data/bids_datalad` (`cdc65eb`) and nifti info was added into the json sidecars (`ef1a27c`) using CuBIDS.
 
-`cubids validate v0` was run.
-
-The fmap sidecar `IntendedFor` fields were known to have an issue and updated to use relative paths instead of full BIDS uris, using the [`fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_intendedfor.py) script (`6e0b6b59` and `dd832ce2`).
-
-`cubids validate v1` was then run and this did not decrease the amount of validation errors/warnings.
+The fmap sidecar `IntendedFor` fields were known to have an issue and updated to use relative paths instead of full BIDS uris, using the [`fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_intendedfor.py) script (`8258c45`).
 
 A participants.tsv was initialized using [`generate_participants_tsv.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/generate_participants_tsv.py) (`0092367b`).
 
