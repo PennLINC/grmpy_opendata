@@ -60,15 +60,21 @@ def parse_time_string(value: str) -> Optional[time]:
         return None
 
     # Pattern 1: HH:MM[:SS[.ffffff]]
+    # Accept 1-2 digit minutes and seconds to handle inputs like 13:43:4.907500
     m = re.match(
-        r"^(?P<h>\d{1,2}):(?P<m>\d{2})(?::(?P<s>\d{2})(?:\.(?P<f>\d{1,6}))?)?$", s
+        r"^(?P<h>\d{1,2}):(?P<m>\d{1,2})(?::(?P<s>\d{1,2})(?:\.(?P<f>\d{1,9}))?)?$",
+        s,
     )
     if m:
         hour = int(m.group("h"))
         minute = int(m.group("m"))
         second = int(m.group("s") or 0)
         micro_str = m.group("f")
-        micro = int(micro_str.ljust(6, "0")) if micro_str else 0
+        if micro_str:
+            # Trim/pad to 6 digits
+            micro = int((micro_str[:6]).ljust(6, "0"))
+        else:
+            micro = 0
         if not (0 <= hour <= 23 and 0 <= minute <= 59 and 0 <= second <= 59):
             return None
         return time(hour=hour, minute=minute, second=second, microsecond=micro)
