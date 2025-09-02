@@ -273,7 +273,7 @@ The bids data in `/cbica/projects/grmpy/data/bids` was checked into a datalad da
 
 The fmap sidecar `IntendedFor` fields were known to have an issue and updated to use relative paths instead of full BIDS uris, using the [`fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_intendedfor.py) script (`8258c45`).
 
-A participants.tsv was initialized using [`generate_participants_tsv.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/generate_participants_tsv.py) (`0092367b`).
+A participants.tsv was initialized using [`initialize_participants_tsv.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/initialize_participants_tsv.py) (`0092367b`).
 
 A number of the warnings are due to bids not being compatable with minIP images. Will add those to `.bidsignore` (`808b5832`).
 Many others are for missing sidecare info in perfusion jsons.
