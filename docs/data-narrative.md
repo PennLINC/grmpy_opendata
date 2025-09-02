@@ -161,6 +161,7 @@ sex
 The strange fields at the top were in a hidden `.heudiconv` folder and removed.
 `acq_time` was in a scans.tsv and was deleted.
 `operator` was removed for PHI reasons.
+`AcquisitionTime` was rounded to the nearest hour using the [`round_AcquisitionTime.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/round_AcquisitionTime.py) script.
 
 Here are the new set of metadata fields that will be checked into datalad:
 
