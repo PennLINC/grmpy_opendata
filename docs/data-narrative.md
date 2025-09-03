@@ -26,7 +26,7 @@ Two subjects (`95257` and `20120`) had multiple sessions. For `95257`, the first
 On the second visit, the scan was completed, however, lmscribe stopped working and all fMRI sequences had to be completed straight on rather than adjusted. For `20120`, the first visit was completed with an earring.
 The participant came back for a second session with a plastic holder in their ear. In both cases, we kept the second session and deleted the first (befored below in the initial CuBIDS stages).
 
-Anatomical images were defaced with [`reface_anatomicals.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/reface_anatomicals.sh). This unfortunately introduced a BIDS naming error for multi-run anatomical scans, this was fixed later during the CuBIDS stage.
+Anatomical images were defaced with [`reface_anatomicals.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/reface_anatomicals.sh). This unfortunately introduced a BIDS naming error for multi-run anatomical scans, this was fixed later during the initial CuBIDS bids validation stage.
 
 # 03: Creating timing files
 
@@ -287,11 +287,13 @@ The two before-mentioned subjects with a second session had both sessions initia
 
 Bids is not compatable with minIP images. Those were added to a `.bidsignore` (`echo "*/ses*/anat/*minIP*" >> .bidsignore`) (`8f468373`).
 
-`cubids validate v0` was run to check for validation errors. Many others are for missing sidecar info in perfusion jsons, a naming issue for anatomical scans, and one non-4D BOLD sequence. The naming issue will be solved once we remove the multi-run anatomical scans.
-
-## CuBIDS group and apply
+`cubids validate v0` was run to check for validation errors. Many others are for missing sidecar info in perfusion jsons, a naming issue for anatomical scans, and one non-4D BOLD sequence.
 
 `cubids purge bids_datalad/ ~/code/curation/04_cubids_curation/remove_non4d_bold.txt --use-datalad` was run to remove the [`non4d bold sequence`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_non4d_bold.txt) (`6b481370` & `70d9bb4d`).
+
+
+
+## CuBIDS group and apply
 
 `cubids group v3` was run to begin looking at variants.
 
