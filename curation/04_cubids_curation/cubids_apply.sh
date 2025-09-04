@@ -18,4 +18,4 @@ micromamba activate cubids
 
 # Run CuBIDS apply
 cd /cbica/projects/grmpy/data/bids_datalad/
-/cbica/projects/grmpy/miniforge3/envs/cubids/bin/cubids apply /cbica/projects/grmpy/data/bids_datalad /cbica/projects/grmpy/code/curation/04_cubids_curation/v2/v2_edited_summary.tsv /cbica/projects/grmpy/code/curation/04_cubids_curation/v2/v2_files.tsv /cbica/projects/grmpy/code/curation/04_cubids_curation/v3/v3 --use-datalad
+cubids apply /cbica/projects/grmpy/data/bids_datalad /cbica/projects/grmpy/code/curation/04_cubids_curation/v2/v2_edited_summary.tsv /cbica/projects/grmpy/code/curation/04_cubids_curation/v2/v2_files.tsv /cbica/projects/grmpy/code/curation/04_cubids_curation/v3/v3 --use-datalad
