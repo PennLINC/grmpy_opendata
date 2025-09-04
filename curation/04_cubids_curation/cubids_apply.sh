@@ -13,7 +13,7 @@ source /cbica/projects/grmpy/.bash_profile
 # PATH=$PATH:/cbica/projects/grmpy/miniforge3/condabin/
 PATH=$PATH:/cbica/projects/grmpy/data/bids_datalad/
 PATH=$PATH:/cbica/projects/grmpy/code/curation/04_cubids_curation/v3/
-eval "$(micromamba shell hook --shell bash)"
+
 micromamba activate cubids
 
 # Run CuBIDS apply
