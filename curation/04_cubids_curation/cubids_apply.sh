@@ -15,6 +15,7 @@ PATH=$PATH:/cbica/projects/grmpy/data/bids_datalad/
 PATH=$PATH:/cbica/projects/grmpy/code/curation/04_cubids_curation/v3/
 
 micromamba activate cubids
+echo "hello world 2"
 
 # Run CuBIDS apply
 cd /cbica/projects/grmpy/data/bids_datalad/
