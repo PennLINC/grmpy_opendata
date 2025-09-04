@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 #SBATCH --job-name=cubids_apply
 #SBATCH --output=/cbica/projects/grmpy/code/curation/04_cubids_curation/v3/cubids_apply_%A.out
 #SBATCH --error=/cbica/projects/grmpy/code/curation/04_cubids_curation/v3/cubids_apply_%A.err
