@@ -301,7 +301,34 @@ Perf metadata was updated with [`update_perf_metadata.py`](https://github.com/Pe
 
 `cubids group v3` was run to begin looking at variants.
 
-Groupings were [`analyzed`](https://www.notion.so/go-through-cubids-groupings-1ac2e9b4cd19806887cad86b63739b47?pvs=4). Two files were dropped in `cubids apply v4` for being too short (`2ce08262` and `2e82cf18`).
+Groupings were [`analyzed`](https://www.notion.so/go-through-cubids-groupings-1ac2e9b4cd19806887cad86b63739b47?pvs=4).
+
+Several anatomical images were multi-run. In order to determine which runs to drop, we used the [`find_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/find_multiruns.py) script to find the runs.
+
+Jupyterlab was then used on cubic to inspect the data.
+
+In a terminal on the cubic project user:
+```bash
+micromamba activate cubids
+micromamba install jupyterlab
+jupyter lab --no-browser --port=8888
+```
+
+Then, in a new terminal:
+```bash
+ssh -L localhost:8888:localhost:8888 singlest@cubic-sattertt
+```
+
+Then, in the browser, go to `http://localhost:8888` and open the `inspect_multiruns.ipynb` file.
+You will need to enter the token provided on the first terminal after the `[jupyterlab]` prompt.
+
+It was determined that the first run of each anatomical scan should be dropped. The first run of all fmaps were also dropped.
+
+The above drops and others listed in the groupings analysis above were performed by entering a `0` in the `merge into` column of the `v2_edited_summary.tsv` file and running [`cubids apply v3`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply.sh) (`HASHES`).
+
+TODO: rm run-02 angio/minIP for sub-87538. Use python/nibable to rm the last volume from the two odd no. vol asl scans. removed run entities from remaining scans and update their intendedfors.
+
+ and then the [`cleanup_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cleanup_multiruns.py) script to drop the runs.
 
 After analyzing scan notes and [`data quality`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/inspect_multiruns.ipynb), it was decided to drop the first run out of two for subjects with multiples of anat scans and fmaps (see [`find_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/find_multiruns.py) and[`cleanup_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cleanup_multiruns.py)) (`e5c8c649`).  `cubids apply v5` was then run to drop additional shortened rest and task scans (see [`v4_summary_edited.tsv`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v4/v4_summary_edited.tsv)) (`c176fe8a` and `72b25acc`).
 
