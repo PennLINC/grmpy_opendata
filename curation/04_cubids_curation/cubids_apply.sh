@@ -13,7 +13,7 @@ PATH=$PATH:/cbica/projects/grmpy/miniforge3/envs/cubids/bin/
 PATH=$PATH:/cbica/projects/grmpy/miniforge3/condabin/
 PATH=$PATH:/cbica/projects/grmpy/data/bids_datalad/
 PATH=$PATH:/cbica/projects/grmpy/code/curation/04_cubids_curation/v3/
-mamba activate cubids
+micromamba activate cubids
 
 # Run CuBIDS apply
 cd /cbica/projects/grmpy/data/bids_datalad/
