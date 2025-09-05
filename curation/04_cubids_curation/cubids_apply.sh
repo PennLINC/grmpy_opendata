@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 #SBATCH --job-name=cubids_apply
 #SBATCH --output=/cbica/projects/grmpy/code/curation/04_cubids_curation/v3/cubids_apply_%A.out
 #SBATCH --error=/cbica/projects/grmpy/code/curation/04_cubids_curation/v3/cubids_apply_%A.err
@@ -9,7 +9,7 @@
 
 #XXX: CHECK v# in all paths below and in our/err outpaths!!!
 
-micromamba activate cubids
+# micromamba activate cubids
 
 # Run CuBIDS apply
 cd /cbica/projects/grmpy/data/bids_datalad/
