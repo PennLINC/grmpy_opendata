@@ -1,0 +1,67 @@
+FATAL: Missing required source file.
+  (1) Install package 'bash-completion'
+  (2) $ source /usr/share/bash-completion/bash_completion
+  (3) $ source slurm_completion.sh
+FATAL: Missing required source file.
+  (1) Install package 'bash-completion'
+  (2) $ source /usr/share/bash-completion/bash_completion
+  (3) $ source slurm_completion.sh
+
+Note: the module "python/canopy2/2.7" cannot be unloaded because it was not
+loaded.
+
+Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/bin/cubids", line 8, in <module>
+    sys.exit(_main())
+             ^^^^^^^
+  File "/gpfs/fs001/cbica/projects/grmpy/vendored_packages/CuBIDS/cubids/cli.py", line 1076, in _main
+    options.func(**args)
+  File "/gpfs/fs001/cbica/projects/grmpy/vendored_packages/CuBIDS/cubids/workflows.py", line 346, in apply
+    bod.apply_tsv_changes(
+  File "/gpfs/fs001/cbica/projects/grmpy/vendored_packages/CuBIDS/cubids/cubids.py", line 505, in apply_tsv_changes
+    self._purge_associations(to_remove)
+  File "/gpfs/fs001/cbica/projects/grmpy/vendored_packages/CuBIDS/cubids/cubids.py", line 894, in _purge_associations
+    if not self.is_datalad_clean():
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/fs001/cbica/projects/grmpy/vendored_packages/CuBIDS/cubids/cubids.py", line 282, in is_datalad_clean
+    statuses = set([status["state"] for status in self.datalad_handle.status()])
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/distribution/dataset.py", line 502, in apply_func
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/interface/base.py", line 772, in eval_func
+    return return_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/interface/base.py", line 762, in return_func
+    results = list(results)
+              ^^^^^^^^^^^^^
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/interface/base.py", line 872, in _execute_command_
+    for r in _process_results(
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/interface/utils.py", line 319, in _process_results
+    for res in results:
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/core/local/status.py", line 405, in __call__
+    for r in yield_dataset_status(
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/core/local/status.py", line 159, in yield_dataset_status
+    status = repo.diffstatus(
+             ^^^^^^^^^^^^^^^^
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/support/gitrepo.py", line 3110, in diffstatus
+    modified = set(
+               ^^^^
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/support/gitrepo.py", line 3110, in <genexpr>
+    modified = set(
+                  ^
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/dataset/gitrepo.py", line 524, in call_git_items_
+    for file_no, line in self._generator_call_git(
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/dataset/gitrepo.py", line 362, in _generator_call_git
+    for file_no, content in generator:
+  File "<frozen _collections_abc>", line 330, in __next__
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/runner/nonasyncrunner.py", line 99, in send
+    return self._locked_send(message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/runner/nonasyncrunner.py", line 124, in _locked_send
+    self._check_result()
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/runner/nonasyncrunner.py", line 95, in _check_result
+    self.runner._check_result()
+  File "/gpfs/fs001/cbica/projects/grmpy/micromamba/envs/cubids/lib/python3.11/site-packages/datalad/runner/nonasyncrunner.py", line 297, in _check_result
+    raise CommandError(
+datalad.runner.exception.CommandError: CommandError: 'git -c diff.ignoreSubmodules=none -c core.quotepath=false ls-files -z -m -d' failed with exitcode 128
