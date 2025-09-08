@@ -324,9 +324,9 @@ You will need to enter the token provided on the first terminal after the `[jupy
 
 It was determined that the first run of each anatomical scan should be dropped. The first run of all fmaps were also dropped.
 
-The above drops and others listed in the groupings analysis above were performed by entering a `0` in the `merge into` column of the `v2_edited_summary.tsv` file and running [`cubids apply v3`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply.sh) (`HASHES`).
+The above drops and others listed in the groupings analysis above were performed by entering a `0` in the `merge into` column of the `v2_edited_summary.tsv` file and running [`cubids apply v3`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply.sh) (`bfbccda9`). The command exited before supplying a summary.tsv due to a niche git issue and the datalad dataset was saved manually. A `cubids group v3` was run to get groupings and tsvs.
 
-TODO: rm run-02 angio/minIP for sub-87538. Use python/nibable to rm the last volume from the two odd no. vol asl scans. removed run entities from remaining scans and update their intendedfors.
+TODO: rm run-02 angio/minIP for sub-87538. Use python/nibable to rm the last volume from the two odd no. vol asl scans and edit the asl context files. removed run entities from remaining scans and update their intendedfors.
 
  and then the [`cleanup_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cleanup_multiruns.py) script to drop the runs.
 
