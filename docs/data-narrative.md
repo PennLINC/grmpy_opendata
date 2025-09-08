@@ -326,6 +326,8 @@ It was determined that the first run of each anatomical scan should be dropped. 
 
 The above drops and others listed in the groupings analysis above were performed by entering a `0` in the `merge into` column of the `v2_edited_summary.tsv` file and running [`cubids apply v3`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply.sh) (`bfbccda9`). The command exited before supplying a summary.tsv due to a niche git issue and the datalad dataset was saved manually. A `cubids group v3` was run to get groupings and tsvs.
 
+The `cubids apply` run appears to have not applied the rename entity sets to the fmap files (see [`v3_summary.tsv`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v3/v3_summary.tsv)). Another `cubids apply` run was run to apply the rename entity sets to the fmap files (`HASHES`).
+
 TODO: rm run-02 angio/minIP for sub-87538. Use python/nibable to rm the last volume from the two odd no. vol asl scans and edit the asl context files. removed run entities from remaining scans and update their intendedfors.
 
  and then the [`cleanup_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cleanup_multiruns.py) script to drop the runs.
