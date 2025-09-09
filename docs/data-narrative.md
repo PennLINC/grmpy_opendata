@@ -330,9 +330,11 @@ The `cubids apply` run appears to have not applied the rename entity sets to the
 
 The fmap files were renamed with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`64f4d478`).
 
-The run-02 angio/minIP for sub-87538 was removed manually (`afece81c`).
+The run-02 angio/minIP for sub-87538 was removed manually (`ab6db5c1`). This subject had three runs of angio/minIP. The first run was removed during `cubids apply v3`. The last run was kept. Run entities from all scans were removed with the [`remove_run_and_fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_run_and_fix_intendedfor.py) script (`c1f54568`).
 
-TODO: rm run-02 angio/minIP for sub-87538. Use python/nibable to rm the last volume from the two odd no. vol asl scans and edit the asl context files. removed run entities from remaining scans and update their intendedfors.
+The last volume of the odd no. vol asl scans was removed and all aslcontext files were updated with the [`fix_asl_odd_volumes.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_asl_odd_volumes.py) script (`5d814507`).
+
+TODO: re-run datalad group one more time to check for any other issues. re-run validation.
 
  and then the [`cleanup_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cleanup_multiruns.py) script to drop the runs.
 
