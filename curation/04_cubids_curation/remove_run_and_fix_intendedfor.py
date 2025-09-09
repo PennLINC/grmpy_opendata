@@ -377,11 +377,25 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     if not core_plans:
         print("No files with run- entities found.")
     else:
-        # Expand with sidecars for each planned rename
+        # Expand with sidecars for each planned rename, avoiding duplicates.
         all_plans: List[RenamePlan] = []
+        planned_srcs: Set[Path] = set()
+        planned_dsts: Set[Path] = set()
+
+        # Seed with core plans
         for p in core_plans:
             all_plans.append(p)
-            all_plans.extend(sidecars_for_plan(p))
+            planned_srcs.add(p.src)
+            planned_dsts.add(p.dst)
+
+        # Add sidecars when not already planned and not colliding on destination
+        for p in core_plans:
+            for sc in sidecars_for_plan(p):
+                if sc.src in planned_srcs or sc.dst in planned_dsts:
+                    continue
+                all_plans.append(sc)
+                planned_srcs.add(sc.src)
+                planned_dsts.add(sc.dst)
 
         # Apply renames (or report in dry-run)
         apply_renames(all_plans, dry_run=dry_run)
