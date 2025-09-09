@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import re
+import subprocess
 from pathlib import Path
 from typing import Optional
 
 import nibabel as nib
-import numpy as np
 
 
 def get_num_volumes_from_json(json_path: Path) -> Optional[int]:
@@ -114,8 +115,52 @@ def process_asl(
             update_asl_json(json_path, new_num)
             rewrite_aslcontext(tsv_path, new_num, first=first_volume_type)
             print(f"Trimmed last volume. New count: {new_num}")
+
+            # Rename files to reflect new NumVolumes value using git mv, if filename encodes NumVolumes
+            old_nii_name = asl_nii_path.name
+            new_nii_name = re.sub(
+                r"NumVolumes\d+", f"NumVolumes{new_num}", old_nii_name
+            )
+            if new_nii_name != old_nii_name:
+                dir_path = asl_nii_path.parent
+                old_json_name = old_nii_name.replace("_asl.nii.gz", "_asl.json")
+                old_tsv_name = old_nii_name.replace("_asl.nii.gz", "_aslcontext.tsv")
+
+                new_json_name = new_nii_name.replace("_asl.nii.gz", "_asl.json")
+                new_tsv_name = new_nii_name.replace("_asl.nii.gz", "_aslcontext.tsv")
+
+                rename_pairs = [
+                    (dir_path / old_nii_name, dir_path / new_nii_name),
+                    (dir_path / old_json_name, dir_path / new_json_name),
+                    (dir_path / old_tsv_name, dir_path / new_tsv_name),
+                ]
+
+                for src, dst in rename_pairs:
+                    if src.exists():
+                        try:
+                            subprocess.run(
+                                ["git", "mv", str(src), str(dst)],
+                                check=True,
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.PIPE,
+                            )
+                        except Exception:
+                            try:
+                                src.rename(dst)
+                            except Exception as exc:
+                                print(
+                                    f"Warning: failed to rename {src} -> {dst}: {exc}"
+                                )
+                print(f"Renamed files to reflect NumVolumes{new_num}: {new_nii_name}")
         else:
             print(f"[DRY-RUN] Would trim last volume for {asl_nii_path}")
+            prospective_name = re.sub(
+                r"NumVolumes\d+", f"NumVolumes{num_volumes - 1}", asl_nii_path.name
+            )
+            if prospective_name != asl_nii_path.name:
+                print(
+                    f"[DRY-RUN] Would rename to: {prospective_name} (and matching JSON/TSV)"
+                )
     else:
         print(
             f"Even volume count ({num_volumes}) for {asl_nii_path}. Ensuring aslcontext matches."
