@@ -33,6 +33,7 @@ import json
 import re
 import sys
 from dataclasses import dataclass
+import subprocess
 from pathlib import Path, PurePosixPath
 from typing import Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
@@ -190,14 +191,19 @@ def apply_renames(plans: Sequence[RenamePlan], dry_run: bool) -> None:
         print(f"RENAME: {plan.src} -> {plan.dst}")
         if dry_run:
             continue
-        plan.dst.parent.mkdir(parents=True, exist_ok=True)
         if plan.dst.exists():
             print(
                 f"WARNING: Destination already exists, skipping: {plan.dst}",
                 file=sys.stderr,
             )
             continue
-        plan.src.rename(plan.dst)
+        try:
+            subprocess.run(["git", "mv", str(plan.src), str(plan.dst)], check=True)
+        except subprocess.CalledProcessError as exc:  # noqa: BLE001
+            print(
+                f"ERROR: git mv failed for {plan.src} -> {plan.dst}: {exc}",
+                file=sys.stderr,
+            )
 
 
 def list_fmap_jsons_for_session(
