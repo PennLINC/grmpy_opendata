@@ -273,9 +273,9 @@ NOTE:
 
 ## Checking into datalad and initial validation
 
-The bids data in `/cbica/projects/grmpy/data/bids` was checked into a datalad dataset at `cbica/projects/grmpy/data/bids_datalad` (`cdc65eb`) and nifti info was added into the json sidecars (`ef1a27c`) using CuBIDS.
+The bids data in `/cbica/projects/grmpy/data/bids` was checked into a datalad dataset at `cbica/projects/grmpy/data/bids_datalad` (`2e6a541`) and nifti info was added into the json sidecars (`297f150`) using CuBIDS.
 
-The fmap sidecar `IntendedFor` fields were known to have an issue and updated to use relative paths instead of full BIDS uris, using the [`fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_intendedfor.py) script (`8258c45`).
+The fmap sidecar `IntendedFor` fields were known to have an issue and updated to use relative paths instead of full BIDS uris, using the [`fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_intendedfor.py) script (`ee2ce91`).
 
 A participants.tsv was initialized using [`initialize_participants_tsv.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/initialize_participants_tsv.py) (`732d486`).
 
@@ -293,7 +293,7 @@ NOTE: bids validation will return many WARNINGS and often few ERRORS. This is ex
 
 `cubids purge bids_datalad/ ~/code/curation/04_cubids_curation/remove_non4d_bold.txt --use-datalad` was run to remove the [`non4d bold sequence`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_non4d_bold.txt) (`6b481370` & `70d9bb4d`).
 
-The ordering of the run and rec entities was fixed with [`fix_run_rec_entities.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_run_rec_entities.py) (`f4cc2ef0`).
+The ordering of the run and rec entities was fixed with [`fix_run_rec_entities.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_run_rec_entities.py) (`f4cc2ef0`). NOTE: Later in curation the original anatomicals were restored and re/defaced. When reproducing this step can be skipped.
 
 Perf metadata was updated with [`update_perf_metadata.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/update_perf_metadata.py) (`83fb8699`)
 
