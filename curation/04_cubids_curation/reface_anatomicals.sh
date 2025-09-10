@@ -117,13 +117,19 @@ ANAT_BASENAME="$(basename "$ANAT")"
 # Move to the directory containing the file
 cd "$ANAT_DIR" || { echo "ERROR: Could not change to directory: $ANAT_DIR"; exit 1; }
 
-# Build the defaced filename with different recording labels for T1w and T2w
+# Build the defaced filename with correct BIDS entity order (rec before run)
 if [[ "$ANAT_BASENAME" == *"_T1w.nii.gz" ]]; then
-  # For T1w, use "rec-refaced"
-  DEFACED_BASENAME="$(echo "$ANAT_BASENAME" | sed 's/\(_T1w\)\.nii\.gz$/_rec-refaced\1.nii.gz/')"
+  if [[ "$ANAT_BASENAME" == *"_run-"* ]]; then
+    DEFACED_BASENAME="$(echo "$ANAT_BASENAME" | sed 's/_run-/_rec-refaced_run-/')"
+  else
+    DEFACED_BASENAME="$(echo "$ANAT_BASENAME" | sed 's/\(_T1w\)\.nii\.gz$/_rec-refaced\1.nii.gz/')"
+  fi
 elif [[ "$ANAT_BASENAME" == *"_T2w.nii.gz" ]]; then
-  # For T2w, use "rec-defaced"
-  DEFACED_BASENAME="$(echo "$ANAT_BASENAME" | sed 's/\(_T2w\)\.nii\.gz$/_rec-defaced\1.nii.gz/')"
+  if [[ "$ANAT_BASENAME" == *"_run-"* ]]; then
+    DEFACED_BASENAME="$(echo "$ANAT_BASENAME" | sed 's/_run-/_rec-defaced_run-/')"
+  else
+    DEFACED_BASENAME="$(echo "$ANAT_BASENAME" | sed 's/\(_T2w\)\.nii\.gz$/_rec-defaced\1.nii.gz/')"
+  fi
 else
   echo "ERROR: Unrecognized file type: $ANAT_BASENAME"
   exit 1
@@ -160,9 +166,17 @@ JSON_BASENAME="${ANAT_BASENAME%.nii.gz}.json"
 if [ -f "$JSON_BASENAME" ]; then
   # Use the same naming convention as the NIfTI file
   if [[ "$ANAT_BASENAME" == *"_T1w.nii.gz" ]]; then
-    DEFACED_JSON_BASENAME="$(echo "$JSON_BASENAME" | sed 's/\(_T1w\)\.json$/_rec-refaced\1.json/')"
+    if [[ "$JSON_BASENAME" == *"_run-"* ]]; then
+      DEFACED_JSON_BASENAME="$(echo "$JSON_BASENAME" | sed 's/_run-/_rec-refaced_run-/')"
+    else
+      DEFACED_JSON_BASENAME="$(echo "$JSON_BASENAME" | sed 's/\(_T1w\)\.json$/_rec-refaced\1.json/')"
+    fi
   else
-    DEFACED_JSON_BASENAME="$(echo "$JSON_BASENAME" | sed 's/\(_T2w\)\.json$/_rec-defaced\1.json/')"
+    if [[ "$JSON_BASENAME" == *"_run-"* ]]; then
+      DEFACED_JSON_BASENAME="$(echo "$JSON_BASENAME" | sed 's/_run-/_rec-defaced_run-/')"
+    else
+      DEFACED_JSON_BASENAME="$(echo "$JSON_BASENAME" | sed 's/\(_T2w\)\.json$/_rec-defaced\1.json/')"
+    fi
   fi
 
   echo "JSON sidecar found:   $JSON_BASENAME"
