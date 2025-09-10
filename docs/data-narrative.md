@@ -289,30 +289,30 @@ Bids is not compatable with minIP images. Those were added to a `.bidsignore` (`
 
 T1w images were refaced and T2w images were defaced with [`reface_anatomicals.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/reface_anatomicals.sh) (`a43502af`).
 
-`cubids validate v0` was run to check for validation errors. Many errors were for missing sidecar info in perfusion jsons, a naming issue for anatomical scans, and one non-4D BOLD sequence.
+`cubids validate v0` was run to check for validation errors. Many errors were for missing sidecar info in perfusion jsons, a `PARTICIPANT_ID_MISMATCH` error for the `participants.tsv`, and one non-4D BOLD sequence.
 
 NOTE: bids validation will return many WARNINGS and often fewer ERRORS. This is expected. It can be helpful to filter the validation.tsv file to only show errors and address those first. Warnings can often be ignored but you should check with a modality expert that none of the missing sidecar info is critical.
 
-`cubids purge bids_datalad/ ~/code/curation/04_cubids_curation/remove_non4d_bold.txt --use-datalad` was run to remove the [`non4d bold sequence`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_non4d_bold.txt) (`6b481370` & `70d9bb4d`).
+`cubids purge bids_datalad/ ~/code/curation/04_cubids_curation/remove_non4d_bold.txt --use-datalad` was run to remove the [`non4d bold sequence`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_non4d_bold.txt) (`e816aeb7` & `2486e875`).
 
-The ordering of the run and rec entities was fixed with [`fix_run_rec_entities.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_run_rec_entities.py) (`f4cc2ef0`). NOTE: Later in curation the original anatomicals were restored and re/defaced. When reproducing this step can be skipped.
-
-Perf metadata was updated with [`update_perf_metadata.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/update_perf_metadata.py) (`83fb8699`)
+Perf metadata was updated with [`update_perf_metadata.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/update_perf_metadata.py) (`f3f99b07`).
 
 ## CuBIDS group and apply
 
-`cubids group v3` was run to begin looking at variants.
+`cubids group v0` was run to begin looking at variants. There is a current issue with CuBIDS where M0 scans are mislabeled during `cubids apply`. To avoid this, the M0 scans were renamed manually with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`c649a45e`).
+
+`cubids group v1` was run to get new groupings and tsvs.
 
 Groupings were [`analyzed`](https://www.notion.so/go-through-cubids-groupings-1ac2e9b4cd19806887cad86b63739b47?pvs=4).
 
-Several anatomical images were multi-run. In order to determine which runs to drop, we used the [`find_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/find_multiruns.py) script to find the runs.
+Several anatomical images were multi-run. In order to determine which runs to drop, the [`find_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/find_multiruns.py) script was used to find the runs.
 
 Jupyterlab was then used on cubic to inspect the data.
 
 In a terminal on the cubic project user:
 ```bash
 micromamba activate cubids
-micromamba install jupyterlab
+micromamba install jupyterlab # if not already installed
 jupyter lab --no-browser --port=8888
 ```
 
@@ -326,7 +326,9 @@ You will need to enter the token provided on the first terminal after the `[jupy
 
 It was determined that the first run of each anatomical scan should be dropped. The first run of all fmaps were also dropped.
 
-The above drops and others listed in the groupings analysis above were performed by entering a `0` in the `merge into` column of the `v2_edited_summary.tsv` file and running [`cubids apply v3`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply.sh) (`bfbccda9`). The command exited before supplying a summary.tsv due to a niche git issue and the datalad dataset was saved manually. A `cubids group v3` was run to get groupings and tsvs.
+The above drops and others listed in the groupings analysis above were performed by entering a `0` in the `merge into` column of the `v2_edited_summary.tsv` file and running [`cubids apply v3`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply.sh) (`HASH`).
+
+The command exited before supplying a summary.tsv due to a niche git issue and the datalad dataset was saved manually. A `cubids group v3` was run to get groupings and tsvs.
 
 The `cubids apply` run appears to have not applied the rename entity sets to the fmap files (see [`v3_summary.tsv`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v3/v3_summary.tsv)). Another [`cubids apply`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply_v4.sh) run was run to apply the rename entity sets to the fmap files but this did also not apply the rename entity sets to the fmap files. This was later discovered to be a known issue with [`CuBIDS`](https://github.com/PennLINC/CuBIDS/issues/425) and the files will have to be renamed with a python script.
 

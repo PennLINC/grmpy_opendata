@@ -13,4 +13,4 @@
 
 # Run CuBIDS apply
 cd /cbica/projects/grmpy/data/bids_datalad/
-cubids apply /cbica/projects/grmpy/data/bids_datalad /cbica/projects/grmpy/code/curation/04_cubids_curation/v2/v2_edited_summary.tsv /cbica/projects/grmpy/code/curation/04_cubids_curation/v2/v2_files.tsv /cbica/projects/grmpy/code/curation/04_cubids_curation/v3/v3 --use-datalad
+cubids apply /cbica/projects/grmpy/data/bids_datalad /cbica/projects/grmpy/code/curation/04_cubids_curation/v1/v1_edited_summary.tsv /cbica/projects/grmpy/code/curation/04_cubids_curation/v1/v1_files.tsv /cbica/projects/grmpy/code/curation/04_cubids_curation/v2/v2 --use-datalad
