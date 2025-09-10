@@ -26,7 +26,7 @@ Two subjects (`95257` and `20120`) had multiple sessions. For `95257`, the first
 On the second visit, the scan was completed, however, lmscribe stopped working and all fMRI sequences had to be completed straight on rather than adjusted. For `20120`, the first visit was completed with an earring.
 The participant came back for a second session with a plastic holder in their ear. In both cases, we kept the second session and deleted the first (befored below in the initial CuBIDS stages).
 
-Anatomical images were defaced with [`reface_anatomicals.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/reface_anatomicals.sh). This unfortunately introduced a BIDS naming error for multi-run anatomical scans, this was fixed later during the initial CuBIDS bids validation stage.
+Anatomical images were defaced. This unfortunately introduced a BIDS naming error for multi-run anatomical scans, this was fixed later during the initial CuBIDS bids validation stage. NOTE: Later in curation the original anatomicals were restored and re/defaced.
 
 # 03: Creating timing files
 
@@ -334,7 +334,13 @@ The run-02 angio/minIP for sub-87538 was removed manually (`ab6db5c1`). This sub
 
 The last volume of the odd no. vol asl scans was removed and all aslcontext files were updated with the [`fix_asl_odd_volumes.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_asl_odd_volumes.py) script (`5d814507`).
 
-TODO: re-run datalad group one more time to check for any other issues. re-run validation.
+`cubids group v5` was run to get groupings and tsvs. This revealed a few anat and fmap scans that previously held the run entity and now need variant renamings. This was done with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`e270e41f`) rather than a full `cubids apply` run.
+
+Ran `cubids group v6` and `cubids validation v6` to check groups and validation errors. Several group errors were found (below).
+
+The anatomical T1w and T2w scans that were checked into datalad were all defaced by error. These were deleted (`HASH`). A new script was made to replace the original anatomicals in the
+
+TODO: delete T1/T2's, reorganize the sourcedata anats, re-check-in the orign T1/T2's, re/deface them- make sure runentity is in right place, re-cubids them. add sub- to ptp.tsv. Rename the M0 scans based on the original groupings manually, open cubids issue.
 
  and then the [`cleanup_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cleanup_multiruns.py) script to drop the runs.
 
