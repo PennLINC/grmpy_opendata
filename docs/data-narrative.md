@@ -277,19 +277,21 @@ The bids data in `/cbica/projects/grmpy/data/bids` was checked into a datalad da
 
 The fmap sidecar `IntendedFor` fields were known to have an issue and updated to use relative paths instead of full BIDS uris, using the [`fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_intendedfor.py) script (`ee2ce91`).
 
-A participants.tsv was initialized using [`initialize_participants_tsv.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/initialize_participants_tsv.py) (`732d486`).
+A participants.tsv was initialized using [`initialize_participants_tsv.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/initialize_participants_tsv.py) (`c2dba55`).
 
-The pre-existing ASL data was removed (e.g. `git rm sub-*/ses-*/perf/*`) (`1a8e575`).
+The pre-existing ASL data was removed (e.g. `git rm sub-*/ses-*/perf/*`) (`1404c9b`).
 
-The perfusion data from the aslprep project (`/cbica/projects/aslprep/2022_adebimpe/IRRdata/curation/BIDS/`) was copied over to grmpy and then copied into the `bids_datalad` dataset with [`copy_perfusion_data.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/copy_perfusion_data.py) (`0a6c7ff1`).
+The perfusion data from the aslprep project (`/cbica/projects/aslprep/2022_adebimpe/IRRdata/curation/BIDS/`) was copied over to grmpy and then copied into the `bids_datalad` dataset with [`copy_perfusion_data.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/copy_perfusion_data.py) (`80e737db`).
 
-The two before-mentioned subjects with a second session had both sessions initially checked into datalad. Those have now had their first sessions removed and the second sessions renamed to ses-1. The fmap intendefor paths were also updated. This was all done using [`fix_sessions.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_sessions.py) (`e266cabb`).
+The two before-mentioned subjects with a second session had both sessions initially checked into datalad. Those have now had their first sessions removed and the second sessions renamed to ses-1. The fmap intendefor paths were also updated. This was all done using [`fix_sessions.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_sessions.py) (`023ba76d`).
 
-Bids is not compatable with minIP images. Those were added to a `.bidsignore` (`echo "*/ses*/anat/*minIP*" >> .bidsignore`) (`8f468373`).
+Bids is not compatable with minIP images. Those were added to a `.bidsignore` (`echo "*/ses*/anat/*minIP*" >> .bidsignore`) (`e3374d60`).
+
+T1w images were refaced and T2w images were defaced with [`reface_anatomicals.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/reface_anatomicals.sh) (`a43502af`).
 
 `cubids validate v0` was run to check for validation errors. Many errors were for missing sidecar info in perfusion jsons, a naming issue for anatomical scans, and one non-4D BOLD sequence.
 
-NOTE: bids validation will return many WARNINGS and often few ERRORS. This is expected. It can be helpful to filter the validation.tsv file to only show errors and address those first. Warnings can often be ignored but you should check with a modality expert that none of the missing sidecar info is critical.
+NOTE: bids validation will return many WARNINGS and often fewer ERRORS. This is expected. It can be helpful to filter the validation.tsv file to only show errors and address those first. Warnings can often be ignored but you should check with a modality expert that none of the missing sidecar info is critical.
 
 `cubids purge bids_datalad/ ~/code/curation/04_cubids_curation/remove_non4d_bold.txt --use-datalad` was run to remove the [`non4d bold sequence`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_non4d_bold.txt) (`6b481370` & `70d9bb4d`).
 
