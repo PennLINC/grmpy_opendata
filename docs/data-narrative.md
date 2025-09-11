@@ -355,10 +355,24 @@ VERSION: v0.5.3.dev4+geca256596
 The general process for setting up BABS is described in the [BABS documentation](https://github.com/PennLINC/BABS).
 Here, I will describe the specifc workflow that was used for grmpy:
 
-In the `/cbica/projects/grmpy/data/BABS/` directory, two directories were made: `apptainer` and `apptainer-datasets`.
+In the `/cbica/projects/grmpy/data/BABS/` directory, three directories were made: `apptainer`, `apptainer-datasets`, and `derivatives`.
 The `apptainer` directory was used to store the apptainer containers.
 The `apptainer-datasets` directory was used to store the datalad datasets for the apptainer containers.
+The `derivatives` directory will store the BABS projects.
 
 To set up the apptainer containers, the [`make_container.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/make_container.sh) script was used, passing argmuments for the most recent stable version of each app that was on DockerHub at the time.
 
 ## MRIQC
+
+VERSION: 25.0.0rc0
+
+The MRIQC BABS project was set up with the [`babs_init_mriqc.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_mriqc.sh) script.
+
+`babs check-setup` revealed all systems go.
+`babs submit` was run to submit the jobs.
+
+## fMRIPrep: Anatomical Only
+
+VERSION: 25.1.4
+
+The fMRIPrep container was set up with the [`babs_init_fmriprepanat.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_fmriprepanat.sh) script.
