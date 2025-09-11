@@ -1,6 +1,6 @@
 # This is an example config yaml file for:
 #   BIDS App:         fMRIPrep ("fmriprep")
-#   BIDS App version: 24-1-1
+#   BIDS App version: 25-1-4
 #   Task:             `--anat-only` mode
 #   Which system:     SGE or Slurm
 
@@ -9,6 +9,15 @@
 #   or be an optimized solution for your case,
 #   or be compatible to the BIDS App version you're using.
 #   Therefore, please change and tailor it for your case before use it!!!
+
+# Define the input datasets
+input_datasets:
+    BIDS:
+        required_files:
+            - "anat/*_T1w.nii*"
+        is_zipped: false
+        origin_url: "/cbica/projects/grmpy/data/bids_datalad"
+        path_in_babs: inputs/data/BIDS
 
 # Arguments in `singularity run`:
 bids_app_args:
@@ -29,7 +38,7 @@ bids_app_args:
 #   As fMRIPrep will use BIDS output layout, we need to ask BABS to create a folder 'fmriprep_anat' to wrap all derivatives:
 all_results_in_one_zip: true
 zip_foldernames:
-    fmriprep_anat: "24-1-1" # folder 'fmriprep_anat' will be zipped into 'sub-xx_(ses-yy_)fmriprep_anat-24-1-1.zip'
+    fmriprep_anat: "25-1-4" # folder 'fmriprep_anat' will be zipped into 'sub-xx_(ses-yy_)fmriprep_anat-25-1-4.zip'
 # Note: The generated data can also be used to provide FreeSurfer derivatives as input dataset when running fMRIPrep on fMRI data,
 #   i.e., for use case: fMRIPrep with FreeSurfer results ingressed.
 #   For that case, when using `babs init`, for `--datasets`, please call this FreeSurfer derivatives dataset 'fmriprep_anat'.
@@ -60,11 +69,6 @@ script_preamble: |
 
 # Where to run the jobs:
 job_compute_space: "${TMPDIR}" # [FIX ME] replace "/path/to/temporary_compute_space" with yours
-
-# Below is to filter out subjects (or sessions). Only those with required files will be kept.
-required_files:
-    $INPUT_DATASET_#1:
-        - "anat/*_T1w.nii*"
 
 # Alert messages that might be found in log files of failed jobs:
 #   These messages may be helpful for debugging errors in failed jobs.
