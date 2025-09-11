@@ -5,8 +5,8 @@ mkdir -p ${TEMPLATEFLOW_HOME}
 babs init \
      ${PWD}/mriqc \
      --datasets BIDS=${project_root}/data/bids_datalad/ \
-     --container-ds ${project_root}/data/BABS/apptainer-datasets/mriqc-24-0-2-ds \
-     --container-name mriqc-24-0-2 \
-     --container-config ${project_root}/code/curation/05_babs/mriqc-24-0-2.yaml \
+     --container-ds ${project_root}/data/BABS/apptainer-datasets/mriqc-24-0-0rc0-ds \
+     --container-name mriqc-24-0-0rc0 \
+     --container-config ${project_root}/code/curation/05_babs/mriqc-24-0-0rc0.yaml \
      --processing-level subject \
      --queue slurm
