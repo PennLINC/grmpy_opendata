@@ -9,3 +9,5 @@ flake8-warnings
 pep8-naming
 pyflakes
 nbqa  # To lint Jupyter notebooks
+numpy>=1.22
+nibabel>=5.0

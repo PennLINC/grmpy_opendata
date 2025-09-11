@@ -1,0 +1,17 @@
+orig_name	rename_to
+./sub-85173/ses-1/anat/sub-85173_ses-1_angio.nii.gz	./sub-85173/ses-1/anat/sub-85173_ses-1_acq-VARIANTParallelReductionFactorInPlanenanDim3Size40_angio.nii.gz
+./sub-83999/ses-1/anat/sub-83999_ses-1_angio.nii.gz	./sub-83999/ses-1/anat/sub-83999_ses-1_acq-VARIANTParallelReductionFactorInPlanenanDim3Size40_angio.nii.gz
+./sub-87538/ses-1/anat/sub-87538_ses-1_angio.nii.gz	./sub-87538/ses-1/anat/sub-87538_ses-1_acq-VARIANTParallelReductionFactorInPlanenanDim3Size40_angio.nii.gz
+./sub-117226/ses-1/anat/sub-117226_ses-1_angio.nii.gz	./sub-117226/ses-1/anat/sub-117226_ses-1_acq-VARIANTParallelReductionFactorInPlanenanDim3Size40_angio.nii.gz
+./sub-85173/ses-1/anat/sub-85173_ses-1_acq-axial_minIP.nii.gz	./sub-85173/ses-1/anat/sub-85173_ses-1_acq-axialVARIANTParallelReductionFactorInPlanenanVoxelSizeDim3C1_minIP.nii.gz
+./sub-83999/ses-1/anat/sub-83999_ses-1_acq-axial_minIP.nii.gz	./sub-83999/ses-1/anat/sub-83999_ses-1_acq-axialVARIANTParallelReductionFactorInPlanenanVoxelSizeDim3C1_minIP.nii.gz
+./sub-87538/ses-1/anat/sub-87538_ses-1_acq-axial_minIP.nii.gz	./sub-87538/ses-1/anat/sub-87538_ses-1_acq-axialVARIANTParallelReductionFactorInPlanenanVoxelSizeDim3C1_minIP.nii.gz
+./sub-117226/ses-1/anat/sub-117226_ses-1_acq-axial_minIP.nii.gz	./sub-117226/ses-1/anat/sub-117226_ses-1_acq-axialVARIANTParallelReductionFactorInPlanenanVoxelSizeDim3C1_minIP.nii.gz
+./sub-85173/ses-1/anat/sub-85173_ses-1_acq-coronal_minIP.nii.gz	./sub-85173/ses-1/anat/sub-85173_ses-1_acq-coronalVARIANTParallelReductionFactorInPlanenanDim2Size76VoxelSizeDim3C1_minIP.nii.gz
+./sub-83999/ses-1/anat/sub-83999_ses-1_acq-coronal_minIP.nii.gz	./sub-83999/ses-1/anat/sub-83999_ses-1_acq-coronalVARIANTParallelReductionFactorInPlanenanDim2Size76VoxelSizeDim3C1_minIP.nii.gz
+./sub-87538/ses-1/anat/sub-87538_ses-1_acq-coronal_minIP.nii.gz	./sub-87538/ses-1/anat/sub-87538_ses-1_acq-coronalVARIANTParallelReductionFactorInPlanenanDim2Size76VoxelSizeDim3C1_minIP.nii.gz
+./sub-117226/ses-1/anat/sub-117226_ses-1_acq-coronal_minIP.nii.gz	./sub-117226/ses-1/anat/sub-117226_ses-1_acq-coronalVARIANTParallelReductionFactorInPlanenanDim2Size76VoxelSizeDim3C1_minIP.nii.gz
+./sub-85173/ses-1/anat/sub-85173_ses-1_acq-sagittal_minIP.nii.gz	./sub-85173/ses-1/anat/sub-85173_ses-1_acq-sagittalVARIANTParallelReductionFactorInPlanenanDim2Size76VoxelSizeDim3C1_minIP.nii.gz
+./sub-83999/ses-1/anat/sub-83999_ses-1_acq-sagittal_minIP.nii.gz	./sub-83999/ses-1/anat/sub-83999_ses-1_acq-sagittalVARIANTParallelReductionFactorInPlanenanDim2Size76VoxelSizeDim3C1_minIP.nii.gz
+./sub-87538/ses-1/anat/sub-87538_ses-1_acq-sagittal_minIP.nii.gz	./sub-87538/ses-1/anat/sub-87538_ses-1_acq-sagittalVARIANTParallelReductionFactorInPlanenanDim2Size76VoxelSizeDim3C1_minIP.nii.gz
+./sub-117226/ses-1/anat/sub-117226_ses-1_acq-sagittal_minIP.nii.gz	./sub-117226/ses-1/anat/sub-117226_ses-1_acq-sagittalVARIANTParallelReductionFactorInPlanenanDim2Size76VoxelSizeDim3C1_minIP.nii.gz

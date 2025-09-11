@@ -1,0 +1,5 @@
+orig_name	rename_to
+./sub-121407/ses-1/fmap/sub-121407_ses-1_magnitude2.nii.gz	./sub-121407/ses-1/fmap/sub-121407_ses-1_acq-VARIANTMultibandAccelerationFactornan_magnitude2.nii.gz
+./sub-117226/ses-1/fmap/sub-117226_ses-1_magnitude2.nii.gz	./sub-117226/ses-1/fmap/sub-117226_ses-1_acq-VARIANTMultibandAccelerationFactornan_magnitude2.nii.gz
+./sub-121407/ses-1/fmap/sub-121407_ses-1_phasediff.nii.gz	./sub-121407/ses-1/fmap/sub-121407_ses-1_acq-VARIANTMultibandAccelerationFactornan_phasediff.nii.gz
+./sub-117226/ses-1/fmap/sub-117226_ses-1_phasediff.nii.gz	./sub-117226/ses-1/fmap/sub-117226_ses-1_acq-VARIANTMultibandAccelerationFactornan_phasediff.nii.gz

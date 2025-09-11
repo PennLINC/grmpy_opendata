@@ -56,6 +56,21 @@
     "VoxelSizeDim3": {
         "Description": "Scanning Parameter"
     },
+    "ArterialSpinLabelingType": {
+        "Description": "Scanning Parameter"
+    },
+    "BackgroundSuppression": {
+        "Description": "Scanning Parameter"
+    },
+    "LookLocker": {
+        "Description": "Scanning Parameter"
+    },
+    "M0Type": {
+        "Description": "Scanning Parameter"
+    },
+    "VascularCrushing": {
+        "Description": "Scanning Parameter"
+    },
     "Counts": {
         "Description": "Number of Files in the Parameter Group"
     },

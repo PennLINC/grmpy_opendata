@@ -1,0 +1,6 @@
+orig_name	rename_to
+./sub-20699/ses-1/perf/sub-20699_ses-1_m0scan.nii.gz	./sub-20699/ses-1/perf/sub-20699_ses-1_acq-VARIANTObliqueVoxelSizeDim3C1_m0scan.nii.gz
+./sub-20809/ses-1/perf/sub-20809_ses-1_m0scan.nii.gz	./sub-20809/ses-1/perf/sub-20809_ses-1_acq-VARIANTVoxelSizeDim3C1_m0scan.nii.gz
+./sub-91717/ses-1/perf/sub-91717_ses-1_m0scan.nii.gz	./sub-91717/ses-1/perf/sub-91717_ses-1_acq-VARIANTRepetitionTimeC3_m0scan.nii.gz
+./sub-107055/ses-1/perf/sub-107055_ses-1_m0scan.nii.gz	./sub-107055/ses-1/perf/sub-107055_ses-1_acq-VARIANTRepetitionTimeC1_m0scan.nii.gz
+./sub-130121/ses-1/perf/sub-130121_ses-1_m0scan.nii.gz	./sub-130121/ses-1/perf/sub-130121_ses-1_acq-VARIANTRepetitionTimeC2_m0scan.nii.gz
