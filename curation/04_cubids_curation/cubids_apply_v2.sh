@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=cubids_apply
-#SBATCH --output=/cbica/projects/grmpy/code/curation/04_cubids_curation/v3/cubids_apply_%A.out
-#SBATCH --error=/cbica/projects/grmpy/code/curation/04_cubids_curation/v3/cubids_apply_%A.err
+#SBATCH --output=/cbica/projects/grmpy/code/curation/04_cubids_curation/v2/cubids_apply_%A.out
+#SBATCH --error=/cbica/projects/grmpy/code/curation/04_cubids_curation/v2/cubids_apply_%A.err
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --time=48:00:00        # Adjust time as needed
