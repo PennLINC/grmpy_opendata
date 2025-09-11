@@ -56,6 +56,21 @@
     "VoxelSizeDim3": {
         "Description": "Scanning Parameter"
     },
+    "ArterialSpinLabelingType": {
+        "Description": "Scanning Parameter"
+    },
+    "BackgroundSuppression": {
+        "Description": "Scanning Parameter"
+    },
+    "LookLocker": {
+        "Description": "Scanning Parameter"
+    },
+    "M0Type": {
+        "Description": "Scanning Parameter"
+    },
+    "VascularCrushing": {
+        "Description": "Scanning Parameter"
+    },
     "ManualCheck": {
         "Description": "Column where users mark groups to manually check"
     },

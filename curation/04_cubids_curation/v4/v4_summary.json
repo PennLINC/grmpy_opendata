@@ -59,7 +59,16 @@
     "ArterialSpinLabelingType": {
         "Description": "Scanning Parameter"
     },
+    "BackgroundSuppression": {
+        "Description": "Scanning Parameter"
+    },
+    "LookLocker": {
+        "Description": "Scanning Parameter"
+    },
     "M0Type": {
+        "Description": "Scanning Parameter"
+    },
+    "VascularCrushing": {
         "Description": "Scanning Parameter"
     },
     "ManualCheck": {
