@@ -34,6 +34,9 @@ Timing files still need to be created for FACES.
 
 # 04: CuBIDS
 
+CuBIDS was installed in the micromamba environment `cubids` from source code.
+VERSION: v1.2.1.dev5+g0be1b9a26
+
 The git hashes referenced in this section refer to the datalad commit hashes and can be retrieved by running `git log --oneline` in the datalad dataset.
 
 ## Removing metadata fields
@@ -343,3 +346,19 @@ The last volume of the odd no. vol asl scans was removed and all aslcontext file
 `cubids group v5` was run to check groupings. Groupings look good!
 
 `cubids validate v5` was run to check for validation errors. No errors were found!
+
+# 05: BABS
+
+`BABS` was installed in the micromamba environment `babs` from source code.
+VERSION: v0.5.3.dev4+geca256596
+
+The general process for setting up BABS is described in the [BABS documentation](https://github.com/PennLINC/BABS).
+Here, I will describe the specifc workflow that was used for grmpy:
+
+In the `/cbica/projects/grmpy/data/BABS/` directory, two directories were made: `apptainer` and `apptainer-datasets`.
+The `apptainer` directory was used to store the apptainer containers.
+The `apptainer-datasets` directory was used to store the datalad datasets for the apptainer containers.
+
+To set up the apptainer containers, the [`make_container.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/make_container.sh) script was used, passing argmuments for the most recent stable version of each app that was on DockerHub at the time.
+
+## MRIQC
