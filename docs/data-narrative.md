@@ -24,9 +24,7 @@ It selects a subject based on the SLURM array task ID, finds all session directo
 
 Two subjects (`95257` and `20120`) had multiple sessions. For `95257`, the first visit's scans were stopped due to technical difficulties with the O2 detector that day.
 On the second visit, the scan was completed, however, lmscribe stopped working and all fMRI sequences had to be completed straight on rather than adjusted. For `20120`, the first visit was completed with an earring.
-The participant came back for a second session with a plastic holder in their ear. In both cases, we kept the second session and deleted the first (befored below in the initial CuBIDS stages).
-
-Anatomical images were defaced. This unfortunately introduced a BIDS naming error for multi-run anatomical scans, this was fixed later during the initial CuBIDS bids validation stage. NOTE: Later in curation the original anatomicals were restored and re/defaced.
+The participant came back for a second session with a plastic holder in their ear. In both cases, we kept the second session and deleted the first (performed below in the initial CuBIDS stages).
 
 # 03: Creating timing files
 
@@ -326,27 +324,21 @@ You will need to enter the token provided on the first terminal after the `[jupy
 
 It was determined that the first run of each anatomical scan should be dropped. The first run of all fmaps were also dropped.
 
-The above drops and others listed in the groupings analysis above were performed by entering a `0` in the `merge into` column of the `v2_edited_summary.tsv` file and running [`cubids apply v3`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply_v2.sh) (`HASH`).
+The above drops and others listed in the groupings analysis above were performed by entering a `0` in the `merge into` column of the `v2_edited_summary.tsv` file and running [`cubids apply v2`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply_v2.sh) (`3770a47d`, `d7c3d0c7`, `e7e12920`, & `c6c521be`).
 
-TODO: move cubids v2 logs from v3 to v2 dir
+The `cubids apply` run did not apply the rename entity sets to the fmap files (see [`v2_summary.tsv`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v2/v2_summary.tsv)).  This is a known issue with [`CuBIDS`](https://github.com/PennLINC/CuBIDS/issues/425) and the files will have to be renamed manually.
 
-The command exited before supplying a summary.tsv due to a niche git issue and the datalad dataset was saved manually. A `cubids group v3` was run to get groupings and tsvs.
+The fmap files were renamed with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`89ab9ef1`).
 
-The `cubids apply` run appears to have not applied the rename entity sets to the fmap files (see [`v3_summary.tsv`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v3/v3_summary.tsv)). Another [`cubids apply`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply_v4.sh) run was run to apply the rename entity sets to the fmap files but this did also not apply the rename entity sets to the fmap files. This was later discovered to be a known issue with [`CuBIDS`](https://github.com/PennLINC/CuBIDS/issues/425) and the files will have to be renamed with a python script.
+The run-02 angio/minIP for sub-87538 was removed manually (`6b0d5213`). This subject had three runs of angio/minIP. The first run was removed during `cubids apply v2`. The run-03 was kept. Run entities from all scans were removed with the [`remove_run_and_fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_run_and_fix_intendedfor.py) script (`a49f9e71`).
 
-The fmap files were renamed with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`HASH`).
+The last volume of the odd no. vol asl scans was removed and all aslcontext files were updated with the [`fix_asl_odd_volumes.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_asl_odd_volumes.py) script (`63f0b87e`). NOTE: For nibable to access the niftis, first run `datalad unlock sub-*/ses-1/perf/*` in the datalad dataset before running the script.
 
-The run-02 angio/minIP for sub-87538 was removed manually (`HASH`). This subject had three runs of angio/minIP. The first run was removed during `cubids apply v3`. The last run was kept. Run entities from all scans were removed with the [`remove_run_and_fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_run_and_fix_intendedfor.py) script (`HASH`).
+`cubids group v3` was run to get groupings and tsvs. This revealed a few anat and fmap scans that previously held the run entity and now need variant renamings. This was done with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`fed752dc`) rather than a full `cubids apply` run.
 
-The last volume of the odd no. vol asl scans was removed and all aslcontext files were updated with the [`fix_asl_odd_volumes.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_asl_odd_volumes.py) script (`HASH`).
-
-`cubids group v5` was run to get groupings and tsvs. This revealed a few anat and fmap scans that previously held the run entity and now need variant renamings. This was done with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`HASH`) rather than a full `cubids apply` run.
-
-Ran `cubids group v6` and `cubids validation v6` to check groups and validation errors. Several group errors were found (below).
+`cubids group v4` was run to get groupings and tsvs. Here it was realized that the m0 scans still inherited the ASL variant names during cubids apply v2. The m0 scans were reverted to their original names using [`rename_m0_scans.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/rename_m0_scans.py) (`HASH`) and then they were given the appropriate variant names using the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`HASH`) with the v2 summary and file tsvs.
 
 The anatomical T1w and T2w scans that were checked into datalad were all defaced by error. These were deleted (`HASH`). A new script was made to replace the original anatomicals in the
-
-TODO: delete T1/T2's, reorganize the sourcedata anats, re-check-in the orign T1/T2's, re/deface them- make sure runentity is in right place, re-cubids them. add sub- to ptp.tsv. Rename the M0 scans based on the original groupings manually, open cubids issue.
 
  and then the [`cleanup_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cleanup_multiruns.py) script to drop the runs.
 
