@@ -326,19 +326,21 @@ You will need to enter the token provided on the first terminal after the `[jupy
 
 It was determined that the first run of each anatomical scan should be dropped. The first run of all fmaps were also dropped.
 
-The above drops and others listed in the groupings analysis above were performed by entering a `0` in the `merge into` column of the `v2_edited_summary.tsv` file and running [`cubids apply v3`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply.sh) (`HASH`).
+The above drops and others listed in the groupings analysis above were performed by entering a `0` in the `merge into` column of the `v2_edited_summary.tsv` file and running [`cubids apply v3`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply_v2.sh) (`HASH`).
+
+TODO: move cubids v2 logs from v3 to v2 dir
 
 The command exited before supplying a summary.tsv due to a niche git issue and the datalad dataset was saved manually. A `cubids group v3` was run to get groupings and tsvs.
 
 The `cubids apply` run appears to have not applied the rename entity sets to the fmap files (see [`v3_summary.tsv`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v3/v3_summary.tsv)). Another [`cubids apply`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_apply_v4.sh) run was run to apply the rename entity sets to the fmap files but this did also not apply the rename entity sets to the fmap files. This was later discovered to be a known issue with [`CuBIDS`](https://github.com/PennLINC/CuBIDS/issues/425) and the files will have to be renamed with a python script.
 
-The fmap files were renamed with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`64f4d478`).
+The fmap files were renamed with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`HASH`).
 
-The run-02 angio/minIP for sub-87538 was removed manually (`ab6db5c1`). This subject had three runs of angio/minIP. The first run was removed during `cubids apply v3`. The last run was kept. Run entities from all scans were removed with the [`remove_run_and_fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_run_and_fix_intendedfor.py) script (`c1f54568`).
+The run-02 angio/minIP for sub-87538 was removed manually (`HASH`). This subject had three runs of angio/minIP. The first run was removed during `cubids apply v3`. The last run was kept. Run entities from all scans were removed with the [`remove_run_and_fix_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/remove_run_and_fix_intendedfor.py) script (`HASH`).
 
-The last volume of the odd no. vol asl scans was removed and all aslcontext files were updated with the [`fix_asl_odd_volumes.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_asl_odd_volumes.py) script (`5d814507`).
+The last volume of the odd no. vol asl scans was removed and all aslcontext files were updated with the [`fix_asl_odd_volumes.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/fix_asl_odd_volumes.py) script (`HASH`).
 
-`cubids group v5` was run to get groupings and tsvs. This revealed a few anat and fmap scans that previously held the run entity and now need variant renamings. This was done with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`e270e41f`) rather than a full `cubids apply` run.
+`cubids group v5` was run to get groupings and tsvs. This revealed a few anat and fmap scans that previously held the run entity and now need variant renamings. This was done with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`HASH`) rather than a full `cubids apply` run.
 
 Ran `cubids group v6` and `cubids validation v6` to check groups and validation errors. Several group errors were found (below).
 
