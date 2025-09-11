@@ -7,5 +7,5 @@ babs init \
      --container-name fmriprep-25-1-4 \
      --container-config ${project_root}/code/curation/05_babs/fmriprep-25-1-4_anatonly.yaml \
      --processing-level subject \
-     --queue slurm
+     --queue slurm \
      "${project_root}/data/BABS/derivatives/fmriprep_anat"
