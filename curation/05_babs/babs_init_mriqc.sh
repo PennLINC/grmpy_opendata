@@ -9,4 +9,4 @@ babs init \
      --container-config ${project_root}/code/curation/05_babs/mriqc-24-0-0rc0.yaml \
      --processing-level subject \
      --queue slurm \
-     ${project_root}/data/BABS/derivatives/mriqc
+     "${project_root}/data/BABS/derivatives/mriqc"
