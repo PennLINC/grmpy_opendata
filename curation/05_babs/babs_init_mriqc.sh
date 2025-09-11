@@ -3,7 +3,6 @@ cd ${project_root}/data/BABS/derivatives
 export TEMPLATEFLOW_HOME=${PWD}/templateflow_home
 mkdir -p ${TEMPLATEFLOW_HOME}
 babs init \
-     ${PWD}/mriqc \
      --container-ds ${project_root}/data/BABS/apptainer-datasets/mriqc-24-0-0rc0-ds \
      --container-name mriqc-24-0-0rc0 \
      --container-config ${project_root}/code/curation/05_babs/mriqc-24-0-0rc0.yaml \
