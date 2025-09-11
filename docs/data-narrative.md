@@ -336,20 +336,10 @@ The last volume of the odd no. vol asl scans was removed and all aslcontext file
 
 `cubids group v3` was run to get groupings and tsvs. This revealed a few anat and fmap scans that previously held the run entity and now need variant renamings. This was done with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`fed752dc`) rather than a full `cubids apply` run.
 
-`cubids group v4` was run to get groupings and tsvs. Here it was realized that the m0 scans still inherited the ASL variant names during cubids apply v2. The m0 scans were reverted to their original names using [`rename_m0_scans.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/rename_m0_scans.py) (`HASH`) and then they were given the appropriate variant names using the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`HASH`) with the v2 summary and file tsvs.
+`cubids group v4` was run to get groupings and tsvs. Here it was realized that the m0 scans still inherited the ASL variant names during cubids apply v2. The m0 scans were reverted to their original names using [`rename_m0_scans.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/rename_m0_scans.py) (`42a17c3b`) and then they were given the appropriate variant names using the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script with the v0 summary and file tsvs (`9893b75e`).
 
-The anatomical T1w and T2w scans that were checked into datalad were all defaced by error. These were deleted (`HASH`). A new script was made to replace the original anatomicals in the
+`cubids validate v4` was run to check for validation errors and revealed that the `IntendedFor` fields were not updated for the M0 jsons after fixing the odd volume asl scan variants. This was done manually (no hash - datalad save did not provide one. CUBIC briefly crashed right before this, maybe something to do with that).
 
- and then the [`cleanup_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cleanup_multiruns.py) script to drop the runs.
+`cubids group v5` was run to check groupings. Groupings look good!
 
-After analyzing scan notes and [`data quality`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/inspect_multiruns.ipynb), it was decided to drop the first run out of two for subjects with multiples of anat scans and fmaps (see [`find_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/find_multiruns.py) and[`cleanup_multiruns.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cleanup_multiruns.py)) (`e5c8c649`).  `cubids apply v5` was then run to drop additional shortened rest and task scans (see [`v4_summary_edited.tsv`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v4/v4_summary_edited.tsv)) (`c176fe8a` and `72b25acc`).
-
-The resulting [`v5_summary.tsv`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/v5/v5_summary.tsv) showed three remaining `func` key param groups with the run entitiy. These were renamed and their associated intendedfor paths updated (see [`rm_runentity_intendedfor.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/rm_runentity_intendedfor.py) (`ba028e11`).
-
-`cubids group v6` was run to get final grouping. `cubids validate v6` was also run to check for final validation errors. One subject had a deleted short task scan and the intendedfors were not updated - this was done manually (`3fd9ab6b`).
-
-`cubids apply v7` was run to get the final file names pre-ASL validation (`eee2658e` and `69230db1`). `cubids validate v7` was run to check that no errors exist.
-
-`cubids validate 8` was run to check for validation errors in the new perfusion data. There were errors for `TotalAcquiredPairs` and `IntendedFor`.
-
-Anatomical images (T1w and T2w) were re/de-faced with [`reface_anatomicals.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/reface_anatomicals.sh) (`c368553`). Data from this commit was input into mriqc and fmriprep-anat BABS workflows.
+`cubids validate v5` was run to check for validation errors. No errors were found!
