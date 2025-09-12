@@ -1,0 +1,54 @@
+anatomical: []
+name: pnc_postproc
+nodes:
+-   action: estimate
+    input: qsirecon
+    name: tortoise_fullshell_tensor
+    parameters:
+        big_delta: null
+        estimate_tensor:
+            bval_cutoff: 4000
+            write_cs: true
+        estimate_tensor_separately: true
+        small_delta: null
+    qsirecon_suffix: TORTOISE_model-tensor
+    software: TORTOISE
+-   action: reconstruction
+    input: qsirecon
+    name: dsistudio_gqi
+    parameters:
+        method: gqi
+    qsirecon_suffix: DSIStudio
+    software: DSI Studio
+-   action: autotrack
+    input: dsistudio_gqi
+    name: autotrackgqi
+    parameters:
+        tolerance: 22,26,30
+        track_id: Association,Projection,Commissure,Cerebellum,CranialNerve
+        track_voxel_ratio: 2.0
+        yield_rate: 1.0e-06
+    qsirecon_suffix: DSIStudio
+    software: DSI Studio
+-   action: export
+    input: dsistudio_gqi
+    name: gqi_scalars
+    qsirecon_suffix: DSIStudio
+    software: DSI Studio
+-   action: bundle_map
+    input: autotrackgqi
+    name: bundle_means
+    scalars_from:
+    - gqi_scalars
+    - tortoise_fullshell_tensor
+    software: qsirecon
+-   action: template_map
+    input: qsirecon
+    name: template_map
+    parameters:
+        interpolation: LanczosWindowedSinc
+    scalars_from:
+    - gqi_scalars
+    - tortoise_fullshell_tensor
+    software: qsirecon
+space: T1w
