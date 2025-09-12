@@ -376,3 +376,9 @@ The MRIQC BABS project was set up with the [`babs_init_mriqc.sh`](https://github
 VERSION: 25.1.4
 
 The fMRIPrep container was set up with the [`babs_init_fmriprepanat.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_fmriprepanat.sh) script.
+
+`babs check-setup` revealed all systems go.
+`babs submit` was run to submit the jobs.
+
+
+TODO: update the yamls on the babs-cubic-yaml repo
