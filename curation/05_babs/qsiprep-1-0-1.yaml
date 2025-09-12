@@ -1,0 +1,58 @@
+ # Define the input datasets
+input_datasets:
+    BIDS:
+        required_files:
+            - "dwi/*_dwi.nii*"
+            - "anat/*_T1w.nii*"
+        is_zipped: false
+        origin_url: "/cbica/projects/grmpy/data/bids_datalad"
+        path_in_babs: inputs/data/BIDS
+
+# Arguments that are passed directly to singularity/apptainer:
+singularity_args:
+    - --containall
+    - --writable-tmpfs
+
+# Arguments in `singularity run`:
+bids_app_args:
+    $SUBJECT_SELECTION_FLAG: "--participant-label"
+    -w: "$BABS_TMPDIR"
+    --stop-on-first-crash: ""
+    --fs-license-file: "/cbica/software/external/freesurfer/centos7/5.3.0/license.txt" # [FIX ME] path to FreeSurfer license file
+    -vv: ""
+    --unringing-method: "rpg"
+    --output-resolution: "1.7"
+    --notrack: ""
+    --nthreads: "8"
+    --omp-nthreads: "8"
+    --mem-mb: "40000"
+    --subject-anatomical-reference: "sessionwise"
+    --skip-bids-validation: ""
+
+# Output foldername(s) to be zipped, and the BIDS App version to be included in the zip filename(s):
+#   As fMRIPrep will use BIDS output layout, we need to ask BABS to create a folder 'qsiprep' to wrap all derivatives:
+all_results_in_one_zip: true
+zip_foldernames:
+    qsiprep: "1-0-1" # folder 'qsiprep' will be zipped into 'sub-xx_(ses-yy_)qsiprep-1-0-1.zip'
+
+# How much cluster resources it needs:
+cluster_resources:
+    interpreting_shell: "/bin/bash"
+    hard_runtime_limit: "12:00:00"
+    temporary_disk_space: 250G
+    customized_text: |
+        #SBATCH -p all
+        #SBATCH --nodes=1
+        #SBATCH --ntasks=1
+        #SBATCH --cpus-per-task=8
+        #SBATCH --mem=40G
+        #SBATCH --propagate=NONE
+
+# Necessary commands to be run first:
+#   [FIX ME] change or add commands for setting up the virtual environment, for loading necessary modules, etc
+script_preamble: |
+    eval "$(micromamba shell hook --shell bash)"
+    micromamba activate babs
+
+# Where to run the jobs:
+job_compute_space: "${TMP}" # [FIX ME] replace "/path/to/temporary_compute_space" with yours
