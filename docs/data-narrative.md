@@ -371,6 +371,8 @@ The MRIQC BABS project was set up with the [`babs_init_mriqc.sh`](https://github
 `babs check-setup` revealed all systems go.
 `babs submit` was run to submit the jobs.
 
+grep -L "SUCCESS" /gpfs/fs001/cbica/projects/grmpy/data/BABS/derivatives/mriqc/analysis/logs/*
+
 ## fMRIPrep: Anatomical Only
 
 VERSION: 25.1.4
