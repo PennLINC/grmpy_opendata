@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import argparse
 import json
-import os
 from pathlib import Path
 import re
 
@@ -153,10 +152,49 @@ def update_m0_json(json_path):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Update ASL and M0 JSON metadata in a BIDS directory."
+        description="Update ASL and M0 JSON metadata in a BIDS directory, or a single file."
     )
-    parser.add_argument("bids_dir", type=str, help="Path to the BIDS directory.")
+    parser.add_argument(
+        "bids_dir", nargs="?", type=str, help="Path to the BIDS directory."
+    )
+    parser.add_argument(
+        "--file",
+        dest="file",
+        type=str,
+        help="Path to a single ASL or M0 JSON file to update.",
+    )
     args = parser.parse_args()
+
+    # If a single file is provided, process only that file
+    if args.file:
+        file_path = Path(args.file)
+        if not file_path.is_file():
+            print(f"Error: JSON file not found at {args.file}")
+            return
+
+        name_lower = file_path.name.lower()
+        if name_lower.endswith("_asl.json"):
+            update_asl_json(file_path)
+            return
+        if name_lower.endswith("_m0scan.json"):
+            update_m0_json(file_path)
+            return
+
+        # Fallback: infer type from contents
+        try:
+            with open(file_path, "r") as f:
+                data = json.load(f)
+            if "IntendedFor" in data:
+                update_m0_json(file_path)
+            else:
+                update_asl_json(file_path)
+        except Exception as e:
+            print(f"Error: Could not process {args.file}: {e}")
+        return
+
+    if not args.bids_dir:
+        parser.print_help()
+        return
 
     bids_path = Path(args.bids_dir)
 
