@@ -382,6 +382,11 @@ The fMRIPrep container was set up with the [`babs_init_fmriprepanat.sh`](https:/
 `babs check-setup` revealed all systems go.
 `babs submit` was run to submit the jobs.
 
+Three jobs failed:
+sub-106071 - no T1w image
+sub-88773 - couldn't get asl
+sub-120562 - couldn't get asl
+
 ## QSIPREP
 
 VERSION: 1.0.1
