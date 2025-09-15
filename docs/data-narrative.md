@@ -382,5 +382,15 @@ The fMRIPrep container was set up with the [`babs_init_fmriprepanat.sh`](https:/
 `babs check-setup` revealed all systems go.
 `babs submit` was run to submit the jobs.
 
+## QSIPREP
+
+VERSION: 1.0.1
+
+The QSIPREP container was set up with the [`babs_init_qsiprep.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_qsiprep.sh) script.
+
+`babs check-setup` revealed all systems go.
+`babs submit` was run to submit the jobs.
+
+grep -L "SUCCESS" /gpfs/fs001/cbica/projects/grmpy/data/BABS/derivatives/qsiprep/analysis/logs/*
 
 TODO: update the yamls on the babs-cubic-yaml repo
