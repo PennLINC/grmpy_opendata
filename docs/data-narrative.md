@@ -339,13 +339,17 @@ The last volume of the odd no. vol asl scans was removed and all aslcontext file
 
 `cubids group v3` was run to get groupings and tsvs. This revealed a few anat and fmap scans that previously held the run entity and now need variant renamings. This was done with the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script (`fed752dc`) rather than a full `cubids apply` run.
 
-`cubids group v4` was run to get groupings and tsvs. Here it was realized that the m0 scans still inherited the ASL variant names during cubids apply v2. The m0 scans were reverted to their original names using [`rename_m0_scans.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/rename_m0_scans.py) (`42a17c3b`) and then they were given the appropriate variant names using the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script with the v0 summary and file tsvs (`9893b75e`).
+`cubids group v4` was run to get groupings and tsvs. Here it was realized that the m0 scans still inherited the ASL variant names during cubids apply v2. The m0 scans were reverted to their original names using [`rename_m0_scans.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/rename_m0_scans.py) (`42a17c3b`).
 
-`cubids validate v4` was run to check for validation errors and revealed that the `IntendedFor` fields were not updated for the M0 jsons after fixing the odd volume asl scan variants. This was done manually (no hash - datalad save did not provide one. CUBIC briefly crashed right before this, maybe something to do with that).
+Two M0 scan jsons became corrupted during a later step. `get reset --hard` was run to revert to the above commit and the jsons were copied back in from the aslprep project (`93ae96f5`). The metadata on these two jsons was updated with the [`update_perf_metadata.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/update_perf_metadata.py) script (`93ae96f5`). The intendedfor fields for these two jsons were updated to use the correct variant names (`67a98ddf`).
+
+ Finally, all M0 scans and jsons were given the appropriate variant names using the [`cubids_group_rename.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/cubids_group_rename.py) script with the v0 summary and file tsvs (`551d9014`).
 
 `cubids group v5` was run to check groupings. Groupings look good!
 
 `cubids validate v5` was run to check for validation errors. No errors were found!
+
+After discussion with Manuel Taso and review of the dicoms, it was determined that the ASL scans had two background suppression pulses (1.5s label / 1.5s PLD). The [`set_background_suppression_true.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/set_background_suppression_true.py) script was used to set the `BackgroundSuppression` field to true (`533f4d6a`).
 
 # 05: BABS
 
