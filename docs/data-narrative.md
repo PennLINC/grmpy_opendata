@@ -377,6 +377,12 @@ The MRIQC BABS project was set up with the [`babs_init_mriqc.sh`](https://github
 
 grep -L "SUCCESS" /gpfs/fs001/cbica/projects/grmpy/data/BABS/derivatives/mriqc/analysis/logs/*
 
+11114170_213 - sub-95116 - nan value error
+11114170_6 - sub-105168 - nan value error
+11114170_202 - sub-93517 - time limit
+11114170_203 - sub-93549 - nan value error
+11114170_172 - sub-88209 - Input inhomogeneity-corrected data seem empty.
+
 ## fMRIPrep: Anatomical Only
 
 VERSION: 25.1.4
@@ -401,5 +407,65 @@ The QSIPREP container was set up with the [`babs_init_qsiprep.sh`](https://githu
 `babs submit` was run to submit the jobs.
 
 grep -L "SUCCESS" /gpfs/fs001/cbica/projects/grmpy/data/BABS/derivatives/qsiprep/analysis/logs/*
+
+e11120649_13 - sub-106071 - no T1w image
+
+`grep -L "SUCCESS" *e* | xargs grep -l "No dwi images found" | xargs grep -oE "sub-[]+" | sort -u`
+all others - no dwi images
+qsi.e11120649_11:sub-105979
+qsi.e11120649_136:sub-82051
+qsi.e11120649_137:sub-82063
+qsi.e11120649_138:sub-82492
+qsi.e11120649_139:sub-82790
+qsi.e11120649_140:sub-83010
+qsi.e11120649_144:sub-83999
+qsi.e11120649_145:sub-84103
+qsi.e11120649_149:sub-84973
+qsi.e11120649_151:sub-85173
+qsi.e11120649_154:sub-85853
+qsi.e11120649_155:sub-86287
+qsi.e11120649_156:sub-86350
+qsi.e11120649_157:sub-86444
+qsi.e11120649_160:sub-86924
+qsi.e11120649_162:sub-87135
+qsi.e11120649_165:sub-87457
+qsi.e11120649_166:sub-87538
+qsi.e11120649_170:sub-87804
+qsi.e11120649_171:sub-87990
+qsi.e11120649_172:sub-88209
+qsi.e11120649_178:sub-88773
+qsi.e11120649_197:sub-93169
+qsi.e11120649_205:sub-93734
+qsi.e11120649_207:sub-93856
+qsi.e11120649_222:sub-98394
+qsi.e11120649_226:sub-98831
+qsi.e11120649_231:sub-99964
+qsi.e11120649_23:sub-110168
+qsi.e11120649_27:sub-112061
+qsi.e11120649_28:sub-112126
+qsi.e11120649_2:sub-103679
+qsi.e11120649_32:sub-113111
+qsi.e11120649_34:sub-114713
+qsi.e11120649_37:sub-114990
+qsi.e11120649_39:sub-116019
+qsi.e11120649_40:sub-116051
+qsi.e11120649_41:sub-116210
+qsi.e11120649_43:sub-116360
+qsi.e11120649_44:sub-117226
+qsi.e11120649_46:sub-118393
+qsi.e11120649_49:sub-119302
+qsi.e11120649_50:sub-119791
+qsi.e11120649_55:sub-121085
+qsi.e11120649_57:sub-121476
+qsi.e11120649_62:sub-122916
+qsi.e11120649_65:sub-125554
+qsi.e11120649_69:sub-126903
+qsi.e11120649_75:sub-127542
+qsi.e11120649_79:sub-129354
+qsi.e11120649_84:sub-129926
+qsi.e11120649_86:sub-130211
+qsi.e11120649_89:sub-130896
+qsi.e11120649_96:sub-139272
+
 
 TODO: update the yamls on the babs-cubic-yaml repo
