@@ -379,9 +379,13 @@ grep -L "SUCCESS" /gpfs/fs001/cbica/projects/grmpy/data/BABS/derivatives/mriqc/a
 
 11114170_213 - sub-95116 - nan value error
 11114170_6 - sub-105168 - nan value error
-11114170_202 - sub-93517 - time limit
+11114170_202 - sub-93517 - time limit - this one completed successfully on second run
 11114170_203 - sub-93549 - nan value error
-11114170_172 - sub-88209 - Input inhomogeneity-corrected data seem empty.
+11114170_172 - sub-88209 - Input inhomogeneity-corrected data seem empty. This is probably related to the nan error.
+
+227 out of 231 subjects completed successfully.
+
+`babs merge` was run to merge the output results branches.
 
 ## fMRIPrep: Anatomical Only
 
@@ -392,10 +396,12 @@ The fMRIPrep container was set up with the [`babs_init_fmriprepanat.sh`](https:/
 `babs check-setup` revealed all systems go.
 `babs submit` was run to submit the jobs.
 
-Three jobs failed:
-sub-106071 - no T1w image
-sub-88773 - couldn't get asl
-sub-120562 - couldn't get asl
+One job failed:
+11116678_13 - sub-106071 - no T1w image
+
+230 out of 231 subjects completed successfully.
+
+`babs merge` was run to merge the output results branches.
 
 ## QSIPREP
 
@@ -466,6 +472,10 @@ qsi.e11120649_84:sub-129926
 qsi.e11120649_86:sub-130211
 qsi.e11120649_89:sub-130896
 qsi.e11120649_96:sub-139272
+
+176 out of 231 subjects completed successfully.
+
+`babs merge` was run to merge the output results branches.
 
 
 TODO: update the yamls on the babs-cubic-yaml repo
