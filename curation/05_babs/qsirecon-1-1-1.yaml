@@ -3,7 +3,7 @@ input_datasets:
         required_files:
             - "*_qsiprep*.zip"
         is_zipped: true
-        origin_url: "/cbica/projects/grmpy/data/BABS/derivatives/qsiprep/output_ria#~data"
+        origin_url: "ria+file:///cbica/projects/grmpy/data/BABS/derivatives/qsiprep/output_ria#~data"
         path_in_babs: inputs/data/qsiprep
         unzipped_path_containing_subject_dirs: "qsiprep"
 
