@@ -477,5 +477,41 @@ qsi.e11120649_96:sub-139272
 
 `babs merge` was run to merge the output results branches.
 
+## ASLPrep
+
+VERSION: 25.0.0
+
+The ASLPrep container was set up with the [`babs_init_aslprep.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_aslprep.sh) script.
+
+`babs check-setup` revealed all systems go.
+`babs submit` was run to submit the jobs.
+
+## fMRIPrep: Functional Only
+
+VERSION: 25.1.4
+
+The fMRIPrep container was set up with the [`babs_init_fmriprepfunc.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_fmriprepfunc.sh) script.
+
+`babs check-setup` revealed all systems go.
+`babs submit` was run to submit the jobs.
+
+## Freesurfer Post
+
+VERSION: 0.1.2
+
+The Freesurfer Post container was set up with the [`babs_init_freesurferpost.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_freesurferpost.sh) script.
+
+`babs check-setup` revealed all systems go.
+`babs submit` was run to submit the jobs.
+
+## QSirecon
+
+
+VERSION: 1.1.1
+
+The QSirecon container was set up with the [`babs_init_qsirecon.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_qsirecon.sh) script.
+
+`babs check-setup` revealed all systems go.
+
 
 TODO: update the yamls on the babs-cubic-yaml repo
