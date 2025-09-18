@@ -486,6 +486,8 @@ The ASLPrep container was set up with the [`babs_init_aslprep.sh`](https://githu
 `babs check-setup` revealed all systems go.
 `babs submit` was run to submit the jobs.
 
+There's some weird issue with aslprep where the job exits for an unknown error _after_ aslprep has completed. We modified the `participant_job.sh` script (in the `analysis/code` directory of the BABS project) to not exit during the `datalad run` command by placing `set +e` before the `datalad run` command and `set -e` after the `datalad run` command (to turn it back on). This file was datalad saved in the babs project `analysis` directory (`2cd72cc`) and `babs sync-code` was run from the babs project directory to sync the change across branches.
+
 ## fMRIPrep: Functional Only
 
 VERSION: 25.1.4
@@ -494,6 +496,18 @@ The fMRIPrep container was set up with the [`babs_init_fmriprepfunc.sh`](https:/
 
 `babs check-setup` revealed all systems go.
 `babs submit` was run to submit the jobs.
+
+```
+There are in total of 230 jobs to complete.
+
+230 job(s) have been submitted; 0 job(s) haven't been submitted.
+
+Among submitted jobs,
+230 job(s) successfully finished;
+All jobs are completed!
+```
+
+`babs merge` was run to merge the output results branches.
 
 ## Freesurfer Post
 
@@ -513,5 +527,34 @@ The QSirecon container was set up with the [`babs_init_qsirecon.sh`](https://git
 
 `babs check-setup` revealed all systems go.
 
+## XCP-D
+
 
 TODO: update the yamls on the babs-cubic-yaml repo
+
+# helpful hints
+
+Use `git log --oneline` in your datalad project directory to get the commit history of your dataset.
+
+If you ever need to reset a datalad project (or any git project) to a previous commit, you can do so with the following command (from the datalad project directory):
+```bash
+git reset --hard <commit_hash>
+```
+
+If you need to remove specific files from a datalad dataset, you can do so with the following command (from the dataladproject directory):
+```bash
+git rm <file_path> # can be a glob pattern, i.e. `git rm sub-*/ses-*/anat/*T1w*` to remove all T1w images and their jsons
+```
+
+If you ever need to delete a datalad dataset, you can do so with the following command (from the directory containing the dataset):
+```bash
+datalad drop -r <dataset_name>
+rm -rf <dataset_name>
+```
+or:
+```bash
+chmod -R u+w <dataset_name>
+rm -rf <dataset_name>
+```
+
+TODO: ephemeral clones
