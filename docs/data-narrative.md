@@ -518,6 +518,16 @@ The Freesurfer Post container was set up with the [`babs_init_freesurferpost.sh`
 `babs check-setup` revealed all systems go.
 `babs submit` was run to submit the jobs.
 
+```
+230 job(s) have been submitted; 0 job(s) haven't been submitted.
+
+Among submitted jobs,
+230 job(s) successfully finished;
+All jobs are completed!
+```
+
+`babs merge` was run to merge the output results branches.
+
 ## QSirecon
 
 
@@ -529,6 +539,9 @@ The QSirecon container was set up with the [`babs_init_qsirecon.sh`](https://git
 
 ## XCP-D
 
+VERSION: 0.12.0
+
+The XCP-D container was set up with the [`babs_init_xcpd.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_xcpd.sh) script.
 
 TODO: update the yamls on the babs-cubic-yaml repo
 
