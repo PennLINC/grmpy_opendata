@@ -20,7 +20,7 @@ bids_app_args:
     --input-type: "fmriprep"
     --nthreads: "8"
     --omp-nthreads: "8"
-    --mem-gb: "50"
+    --mem-mb: "50000"
     --dummy-scans: "auto"
     --atlases: "4S1056Parcels \
         4S156Parcels \
