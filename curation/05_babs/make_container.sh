@@ -18,8 +18,16 @@ singularity build \
 
 # Create DataLad dataset
 echo "Creating DataLad dataset for ${app}..."
-datalad create -D "Create ${app}-${version} DataLad dataset" ${apptainer_ds_path}/${app}-${version_dash}-ds
-cd ${apptainer_ds_path}/${app}-${version_dash}-ds
+
+# If app contains an underscore, replace it with a dash (datalad only allows alphanumeric characters and dashes)
+if [[ ${app} == *"_"* ]]; then
+    app_dash=${app//_/-}
+else
+    app_dash=${app}
+fi
+
+datalad create -D "Create ${app}-${version} DataLad dataset" ${apptainer_ds_path}/${app_dash}-${version_dash}-ds
+cd ${apptainer_ds_path}/${app_dash}-${version_dash}-ds
 datalad containers-add \
     --url ${apptainer_path}/${app}-${version}.sif \
-    ${app}-${version_dash}
+    ${app_dash}-${version_dash}
