@@ -5,7 +5,7 @@ input_datasets:
         required_files:
             - "*_fmriprep_func*.zip"
         is_zipped: true
-        origin_url: "/cbica/projects/executive_function/EF_dataset/derivatives/fmriprep_BABS_EF_full_project_outputs"
+        origin_url: "ria+file:///cbica/projects/grmpy/data/BABS/derivatives/fmriprep_func/output_ria#~data"
         unzipped_path_containing_subject_dirs: "fmriprep_func"
         path_in_babs: inputs/data/fmriprep_func
 
@@ -47,7 +47,7 @@ singularity_args:
 #   As fMRIPrep will use BIDS output layout, we need to ask BABS to create a folder 'xcpd' to wrap all derivatives:
 all_results_in_one_zip: true
 zip_foldernames:
-    xcpd: "0-10-7" # folder 'xcpd' will be zipped into 'sub-xx_(ses-yy_)xcpd-0-10-5.zip'
+    xcpd: "0-12-0" # folder 'xcpd' will be zipped into 'sub-xx_(ses-yy_)xcpd-0-12-0.zip'
 
 # How much cluster resources it needs:
 cluster_resources:
