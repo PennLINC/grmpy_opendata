@@ -10,7 +10,6 @@ input_datasets:
 # Arguments in `singularity run`:
 bids_app_args:
     $SUBJECT_SELECTION_FLAG: "--subject-id"
-    $SESSION_SELECTION_FLAG: "--session-id" ### is this needed?
     -w: "$BABS_TMPDIR"
     --fs-license-file: "/cbica/software/external/freesurfer/centos7/5.3.0/license.txt"
     --subjects-dir: ${PWD}/inputs/data/fmriprep_anat/fmriprep_anat/sourcedata/freesurfer #replace with path to your freesurfer results from fmriprep_anat
