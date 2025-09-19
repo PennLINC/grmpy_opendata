@@ -68,7 +68,7 @@ script_preamble: |
     micromamba activate babs
 
 # Where to run the jobs:
-job_compute_space: "${TMP}" # [FIX ME] replace "/path/to/temporary_compute_space" with yours
+job_compute_space: "/cbica/comp_space/grmpy/" # changed from ${TMP} to comp_space to debug
 
 # Alert messages that might be found in log files of failed jobs:
 #   These messages may be helpful for debugging errors in failed jobs.
