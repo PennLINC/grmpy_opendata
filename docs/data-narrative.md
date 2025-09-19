@@ -488,6 +488,20 @@ The ASLPrep container was set up with the [`babs_init_aslprep.sh`](https://githu
 
 There's some weird issue with aslprep where the job exits for an unknown error _after_ aslprep has completed. We modified the `participant_job.sh` script (in the `analysis/code` directory of the BABS project) to not exit during the `datalad run` command by placing `set +e` before the `datalad run` command and `set -e` after the `datalad run` command (to turn it back on). This file was datalad saved in the babs project `analysis` directory (`2cd72cc`) and `babs sync-code` was run from the babs project directory to sync the change across branches.
 
+```
+230 job(s) have been submitted; 0 job(s) haven't been submitted.
+
+Among submitted jobs,
+214 job(s) successfully finished;
+0 job(s) are pending;
+0 job(s) are running;
+0 job(s) failed.
+```
+
+There were only 214 subjects that had asl timeseries, so this is done.
+
+`babs merge` was run to merge the output results branches.
+
 ## fMRIPrep: Functional Only
 
 VERSION: 25.1.4
