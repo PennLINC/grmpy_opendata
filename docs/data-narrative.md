@@ -479,7 +479,7 @@ qsi.e11120649_96:sub-139272
 
 ## ASLPrep
 
-VERSION: 25.0.0
+VERSION: 25.1.0
 
 The ASLPrep container was set up with the [`babs_init_aslprep.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_aslprep.sh) script.
 
@@ -501,6 +501,13 @@ Among submitted jobs,
 There were only 214 subjects that had asl timeseries, so this is done.
 
 `babs merge` was run to merge the output results branches.
+`babs merge` failed! There are no results in any of the output results branches!
+This is likely some ASLPrep bug. Will need to debug.
+
+This babs project was burned and re-initialized after changing the job compute space to `/cbica/comp_space/grmpy/` in the `aslprep-25-0-0.yaml` file.
+There jobs were submitted: `babs submit --select sub-99949 sub-99964 sub-90021`.
+
+Identified a bug that hopefully is now fixed. Will re-run the jobs.
 
 ## fMRIPrep: Functional Only
 
@@ -550,6 +557,17 @@ VERSION: 1.1.1
 The QSirecon container was set up with the [`babs_init_qsirecon.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_qsirecon.sh) script.
 
 `babs check-setup` revealed all systems go.
+`babs submit` was run to submit the jobs.
+
+```
+176 job(s) have been submitted; 0 job(s) haven't been submitted.
+
+Among submitted jobs,
+176 job(s) successfully finished;
+All jobs are completed!
+```
+
+`babs merge` was run to merge the output results branches.
 
 ## XCP-D
 
@@ -557,7 +575,20 @@ VERSION: 0.12.0
 
 The XCP-D container was set up with the [`babs_init_xcpd.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/05_babs/babs_init_xcpd.sh) script.
 
-TODO: update the yamls on the babs-cubic-yaml repo
+`babs check-setup` revealed all systems go.
+`babs submit` was run to submit the jobs.
+
+```
+230 job(s) have been submitted; 0 job(s) haven't been submitted.
+
+Among submitted jobs,
+230 job(s) successfully finished;
+All jobs are completed!
+```
+
+`babs merge` was run to merge the output results branches.
+
+TODO: update the yamls on the babs-cubic-yaml repo; seff_array each project to get a sense of resource usage
 
 # helpful hints
 
