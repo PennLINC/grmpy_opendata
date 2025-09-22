@@ -39,7 +39,7 @@ bids_app_args:
 #   As ASLPrep will use BIDS output layout, we need to ask BABS to create a folder 'aslprep' to wrap all derivatives:
 all_results_in_one_zip: true
 zip_foldernames:
-    aslprep: "25-0-0" # folder 'aslprep' will be zipped into 'sub-xx_(ses-yy_)aslprep-25-0-0.zip'
+    aslprep: "25-1-0" # folder 'aslprep' will be zipped into 'sub-xx_(ses-yy_)aslprep-25-1-0.zip'
 
 # How much cluster resources it needs:
 cluster_resources:
@@ -68,7 +68,7 @@ script_preamble: |
     micromamba activate babs
 
 # Where to run the jobs:
-job_compute_space: "/cbica/comp_space/grmpy/" # changed from ${TMP} to comp_space to debug
+job_compute_space: "${TMP}" # changed from ${TMP} to comp_space to debug. Then back to ${TMP}.
 
 # Alert messages that might be found in log files of failed jobs:
 #   These messages may be helpful for debugging errors in failed jobs.
