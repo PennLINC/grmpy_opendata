@@ -416,7 +416,7 @@ grep -L "SUCCESS" /gpfs/fs001/cbica/projects/grmpy/data/BABS/derivatives/qsiprep
 
 e11120649_13 - sub-106071 - no T1w image
 
-`grep -L "SUCCESS" *e* | xargs grep -l "No dwi images found" | xargs grep -oE "sub-[]+" | sort -u`
+`grep -L "SUCCESS" *e* | xargs grep -l "No dwi images found" | xargs grep -oE "sub-[0-9]+" | sort -u`
 all others - no dwi images
 qsi.e11120649_11:sub-105979
 qsi.e11120649_136:sub-82051
@@ -509,6 +509,62 @@ There jobs were submitted: `babs submit --select sub-99949 sub-99964 sub-90021`.
 
 Identified a bug that hopefully is now fixed. Will re-run the jobs.
 
+The project was re-initialized and submitted after aslprep was updated to 25.1.0.
+
+190 finished successfully.
+
+3 subjects timed out (twice):
+11275422_22 - sub-125535
+11275422_5 - sub-105860
+11275422_6 - sub-105979
+
+18 subjects failed due to lack of M0 scans:
+`grep -l "Background-suppressed control volumes cannot be used for calibration" *e11422* | xargs grep -oE "sub-[0-9]+" | sort -u`
+asl.e11275422_11:sub-109735
+asl.e11275422_12:sub-112028
+asl.e11275422_16:sub-116360
+asl.e11275422_1:sub-104059
+asl.e11275422_20:sub-122528
+asl.e11275422_23:sub-126389
+asl.e11275422_25:sub-130687
+asl.e11275422_28:sub-133220
+asl.e11275422_29:sub-19977
+asl.e11275422_2:sub-104785
+asl.e11275422_31:sub-20197
+asl.e11275422_32:sub-20322
+asl.e11275422_36:sub-20888
+asl.e11275422_39:sub-81725
+asl.e11275422_42:sub-83372
+asl.e11275422_49:sub-90021
+asl.e11275422_4:sub-105176
+asl.e11275422_9:sub-106802
+
+16 subjects had no ASL data:
+`grep -l "No ASL images found for participant" *e11275422* | xargs grep -oE "sub-[0-9]+" | sort -u`
+asl.e11275422_13:sub-113111
+asl.e11275422_15:sub-116210
+asl.e11275422_17:sub-118393
+asl.e11275422_18:sub-118990
+asl.e11275422_19:sub-121476
+asl.e11275422_24:sub-129354
+asl.e11275422_26:sub-130896
+asl.e11275422_30:sub-20120
+asl.e11275422_35:sub-20809
+asl.e11275422_40:sub-82063
+asl.e11275422_44:sub-85369
+asl.e11275422_45:sub-86287
+asl.e11275422_47:sub-87457
+asl.e11275422_51:sub-90683
+asl.e11275422_52:sub-93274
+asl.e11275422_54:sub-95257
+
+1 subject had M0 file not found error:
+asl.e11275422_34: sub-20699
+NOTE: this subject had their M0 scan purged from the dataset due to abnormal VoxelDim3 size. The ASL scan should have its variant updated to reflect this.
+
+
+TODO: Remove perf dirs from subjects with no M0 scans (including sub-20699 and sub-20809 which had M0 scans purged)
+
 ## fMRIPrep: Functional Only
 
 VERSION: 25.1.4
@@ -589,6 +645,35 @@ All jobs are completed!
 `babs merge` was run to merge the output results branches.
 
 TODO: update the yamls on the babs-cubic-yaml repo; seff_array each project to get a sense of resource usage
+
+
+## 06: QC
+
+datalad clone --reckless ephemeral ria+file:///cbica/projects/grmpy/data/BABS/derivatives/fmriprep_anat/output_ria#~data /cbica/projects/grmpy/data/ephemerals/fmriprep_anat
+datalad clone --reckless ephemeral ria+file:///cbica/projects/grmpy/data/BABS/derivatives/fmriprep_func/output_ria#~data /cbica/projects/grmpy/data/ephemerals/fmriprep_func
+datalad clone --reckless ephemeral ria+file:///cbica/projects/grmpy/data/BABS/derivatives/qsiprep/output_ria#~data /cbica/projects/grmpy/data/ephemerals/qsiprep
+datalad clone --reckless ephemeral ria+file:///cbica/projects/grmpy/data/BABS/derivatives/qsirecon/output_ria#~data /cbica/projects/grmpy/data/ephemerals/qsirecon
+datalad clone --reckless ephemeral ria+file:///cbica/projects/grmpy/data/BABS/derivatives/aslprep/output_ria#~data /cbica/projects/grmpy/data/ephemerals/aslprep
+datalad clone --reckless ephemeral ria+file:///cbica/projects/grmpy/data/BABS/derivatives/freesurfer-post/output_ria#~data /cbica/projects/grmpy/data/ephemerals/freesurfer-post
+datalad clone --reckless ephemeral ria+file:///cbica/projects/grmpy/data/BABS/derivatives/xcp-d/output_ria#~data /cbica/projects/grmpy/data/ephemerals/xcp-d
+datalad clone --reckless ephemeral ria+file:///cbica/projects/grmpy/data/BABS/derivatives/mriqc/output_ria#~data /cbica/projects/grmpy/data/ephemerals/mriqc
+
+
+unzip to `/cbica/projects/grmpy/data/derivatives/xcp-d`
+
+```
+screen
+
+cd /cbica/projects/grmpy/data/ephemerals/xcp-d
+
+# Grab all matching files into an array
+files=(sub-*.zip)
+
+# Iterate over them
+for f in "${files[@]}"; do
+    unzip -n "$f" -d /cbica/projects/grmpy/data/derivatives
+done
+```
 
 # helpful hints
 
