@@ -562,6 +562,13 @@ asl.e11275422_54:sub-95257
 asl.e11275422_34: sub-20699
 NOTE: this subject had their M0 scan purged from the dataset due to abnormal VoxelDim3 size. The ASL scan should have its variant updated to reflect this.
 
+1 subject failed due to lack of good voxels:
+asl.e11275422_37: sub-20974
+
+1 subject failed due to file not found error:
+asl.e11275422_38: sub-80688
+
+`babs merge` was run to merge the output results branches.
 
 TODO: Remove perf dirs from subjects with no M0 scans (including sub-20699 and sub-20809 which had M0 scans purged)
 
