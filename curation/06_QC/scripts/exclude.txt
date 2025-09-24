@@ -45,3 +45,5 @@ fmriprep_func/sub-*/ses-*/func/sub-*_ses-*_space-T1w_boldref.json
 fmriprep_func/sub-*/ses-*/func/sub-*_ses-*_space-T1w_boldref.nii.gz
 fmriprep_func/sub-*/ses-*/func/sub-*_ses-*_space-T1w_desc-brain_mask.json
 fmriprep_func/sub-*/ses-*/func/sub-*_ses-*_space-T1w_desc-brain_mask.nii.gz
+fmriprep_func/sub-*/ses-*/func/sub-*_ses-*_*desc-preproc_bold.nii.gz
+fmriprep_func/sub-*/ses-*/func/sub-*_ses-*_*desc-preproc_bold.json
