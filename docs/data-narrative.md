@@ -745,7 +745,73 @@ xcpd_median_fd.py:66: FutureWarning: The behavior of DataFrame concatenation wit
   df_main_qc = pd.concat([df_main_qc, df_subj_qc], ignore_index=True)
 ```
 
-Median FD and parcel coverage were analyzed with the [`01_xcpd_qc.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/01_xcpd_qc.py) script.
+Median FD and parcel coverage were analyzed with the [`01_xcpd_qc.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/01_xcpd_qc.py) script. The script generated several QC metrics and visualizations to assess data quality:
+
+### Motion Assessment
+
+![Median FD Histogram](../curation/06_QC/data/xcpd_qc_histogram_median_fd.png)
+
+The histogram of median framewise displacement (FD) shows the distribution of head motion across all subjects. The majority of subjects exhibited low motion, with most median FD values falling below 0.2mm, indicating generally good motion control during scanning.
+
+### Parcel Coverage Analysis
+
+The Schaefer 1000 parcels + 56 subcortical regions (4S1056) atlas was used to assess brain coverage. Several visualizations were generated to examine the coverage:
+
+![Row Sum Histogram](../curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_histogram.png)
+
+This histogram shows the distribution of the number of timepoints with valid data across all parcels for each subject. A higher number indicates better temporal coverage.
+
+![Row Sum Log Histogram](../curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_histogram_log.png)
+
+The same data as above but with a logarithmic scale, which helps visualize the distribution of subjects with lower temporal coverage.
+
+![Column Sum Histogram](../curation/06_QC/data/xcpd_4S1056Parcels_coverage_col_sum_histogram.png)
+
+This histogram shows the distribution of the number of subjects with valid data for each parcel. Higher numbers indicate better spatial coverage across the cohort.
+
+![Row Sum Barplot](../curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_barplot.png)
+
+A barplot showing the temporal coverage (number of valid timepoints) for each subject, allowing identification of subjects with notably poor coverage.
+
+![Column Sum Barplot](../curation/06_QC/data/xcpd_4S1056Parcels_coverage_col_sum_barplot.png)
+
+A barplot showing the number of subjects with valid data for each parcel, helping identify any systematically problematic brain regions across the cohort.
+
+## QSI QC
+
+Quality control metrics for diffusion MRI data were analyzed using the [`02_qsi_qc.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/02_qsi_qc.py) script. The analysis covered both QSIPrep preprocessing quality metrics and QSIRecon tractography results.
+
+### QSIPrep Quality Metrics
+
+![Mean FD Histogram](../curation/06_QC/data/qsiprep_fd_histogram.png)
+
+The distribution of mean framewise displacement (FD) across subjects shows the extent of head motion during diffusion scans. Lower values indicate better motion control during scanning.
+
+![Neighborhood Correlation Histogram](../curation/06_QC/data/qsiprep_neighborhood_corr_histogram.png)
+
+The neighborhood correlation metric assesses the quality of the diffusion signal by measuring the similarity between adjacent voxels. Higher correlation values suggest better data quality with less noise.
+
+![FD vs Neighborhood Correlation](../curation/06_QC/data/qsiprep_scatter_meanfd_vs_neighborcorr.png)
+
+This scatter plot explores the relationship between head motion (FD) and data quality (neighborhood correlation). A negative correlation would suggest that increased head motion leads to decreased data quality.
+
+### DSI Studio Bundle Analysis
+
+![Bundle Volume Distribution](../curation/06_QC/data/qsirecon_DSIStudio_bundle_volume_histogram.png)
+
+The total bundle volume distribution shows the variation in white matter tract volumes across subjects. This helps identify subjects with unusually large or small total tract volumes.
+
+![Mean Bundle Volume Distribution](../curation/06_QC/data/qsirecon_DSIStudio_bundle_volume_mean_histogram.png)
+
+The mean bundle volume distribution provides insight into the typical size of white matter tracts across the cohort. This can help identify systematic biases in tract reconstruction.
+
+![Missing Bundle Distribution](../curation/06_QC/data/qsirecon_DSIStudio_missing_bundle_column_distribution.png)
+
+This histogram shows how many subjects are missing each white matter bundle. A high number of missing bundles could indicate problems with tract reconstruction or anatomical variability.
+
+![Bundle Outlier Distribution](../curation/06_QC/data/qsirecon_DSIStudio_row_bundle_outlier_distribution.png)
+
+The distribution of outlier bundles per subject helps identify subjects with unusual tract volumes. Outliers are defined as bundle volumes more than 3 standard deviations from the mean or missing values.
 
 # helpful hints
 
