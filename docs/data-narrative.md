@@ -654,7 +654,7 @@ All jobs are completed!
 TODO: update the yamls on the babs-cubic-yaml repo; seff_array each project to get a sense of resource usage
 
 
-## 06: QC
+# 06: QC
 
 datalad clone --reckless ephemeral ria+file:///cbica/projects/grmpy/data/BABS/derivatives/fmriprep_anat/output_ria#~data /cbica/projects/grmpy/data/ephemerals/fmriprep_anat
 datalad clone --reckless ephemeral ria+file:///cbica/projects/grmpy/data/BABS/derivatives/fmriprep_func/output_ria#~data /cbica/projects/grmpy/data/ephemerals/fmriprep_func
@@ -694,6 +694,8 @@ for f in "${files[@]}"; do
     unzip -n "$f" -d /cbica/projects/grmpy/data/derivatives -x fmriprep_anat/sub-*
 done
 
+TODO: check aslprep unzip w/o desc_preproc_asltimeseries
+
 TODO: check that fmriprep in apply mode will work with this reduced set:
 
 ```
@@ -713,11 +715,12 @@ apptainer run \
     --cleanenv \
     -B /cbica/projects/grmpy/data/bids_datalad:/data \
     -B /cbica/projects/grmpy/data/derivatives:/deriv \
-    -B /cbica/comp_space/grmpy/fmriprep_apply_test:/work \
+    -B /cbica/projects/grmpy/data/fmriprep_apply_test:/out \
+    -B /cbica/comp_space/grmpy/apply_test:/work \
     -B /cbica/projects/grmpy/data/fmriprep_apply_test/license.txt:/license.txt \
     /cbica/projects/grmpy/data/BABS/apptainer/fmriprep-25.1.4.sif \
     /data \
-    /work/fmriprep-apply-25.1.4 \
+    /out/fmriprep-apply-25.1.4 \
     participant \
     -w /work \
     --stop-on-first-crash \
@@ -733,6 +736,13 @@ apptainer run \
     --participant-label sub-106802 \
     --derivatives minimal=/deriv/fmriprep_func \
     --fs-no-resume
+```
+
+## XCP-D median FD
+
+```bash
+xcpd_median_fd.py:66: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df_main_qc = pd.concat([df_main_qc, df_subj_qc], ignore_index=True)
 ```
 
 # helpful hints
