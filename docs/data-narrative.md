@@ -721,9 +721,13 @@ for f in "${files[@]}"; do
     unzip -n "$f" -d /cbica/projects/grmpy/data/derivatives -x fmriprep_anat/sub-*
 done
 
-TODO: check aslprep unzip w/o desc_preproc_asltimeseries
+for aslprep - we can ignore the ses-1/perf/*_desc-preproc_asl.* files since the timeseries are useless
 
-TODO: check that fmriprep in apply mode will work with this reduced set:
+for f in "${files[@]}"; do
+    unzip -n "$f" -d /cbica/projects/grmpy/data/derivatives -x aslprep/sub-*/ses-1/perf/*_desc-preproc_asl.*
+done
+
+check that fmriprep in apply mode will work with this reduced set:
 
 ```
 #!/bin/bash
@@ -764,6 +768,8 @@ apptainer run \
     --derivatives minimal=/deriv/fmriprep_func \ #path to your minimal fmriprep results
     --fs-no-resume
 ```
+
+It works! TODO: add this to the README for the fmriprep repo.
 
 ## XCP-D QC
 
