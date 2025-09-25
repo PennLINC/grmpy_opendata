@@ -16,9 +16,7 @@ outpath = project_path + "code/curation/06_QC/data/"  # CUBIC project path - rep
 
 # get all filenames for qc data
 fileNames_qc = sorted(
-    glob.glob(
-        inpath_qc + "sub-*/ses-*/func/" + "sub-*_ses-*_task-*_run-*" + "_motion.tsv"
-    )
+    glob.glob(inpath_qc + "sub-*/ses-*/func/" + "sub-*_ses-*_task-*" + "_motion.tsv")
 )
 
 # get subject IDs based on filenames
