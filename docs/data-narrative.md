@@ -29,6 +29,8 @@ nav_order: 2
    - [QSI QC](#qsi-qc)
      - [QSIPrep Quality Metrics](#qsiprep-quality-metrics)
      - [DSI Studio Bundle Analysis](#dsi-studio-bundle-analysis)
+   - [ASLPrep QC](#aslprep-qc)
+   - [FreeSurfer-Post QC](#freesurfer-post-qc)
 7. [Helpful hints](#helpful-hints)
 
 # 01: Getting data from flywheel
@@ -829,6 +831,26 @@ This histogram shows how many subjects are missing each white matter bundle. A h
 ![Bundle Outlier Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsirecon_DSIStudio_row_bundle_outlier_distribution.png)
 
 The distribution of outlier bundles per subject helps identify subjects with unusual tract volumes. Outliers are defined as bundle volumes more than 3 standard deviations from the mean or missing values.
+
+### ASLPrep QC
+
+Quality control metrics for ASL data were analyzed using the [`03_aslprep_qc.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/03_aslprep_qc.py) script. The script focuses on the Quality Evaluation Index (QEI) for cerebral blood flow (CBF) measurements.
+
+![QEI Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/aslprep_qei_cbf_histogram.png)
+
+The QEI distribution shows the quality of CBF measurements across subjects. Higher QEI values indicate better quality ASL data with more reliable CBF quantification. The QEI takes into account factors such as temporal signal-to-noise ratio, motion artifacts, and ASL signal intensity.
+
+### FreeSurfer-Post QC
+
+Surface reconstruction quality was assessed using the [`04_freesurfer-post_qc.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/04_freesurfer-post_qc.py) script. The analysis focuses on the Euler characteristic, a topological measure that indicates the quality of surface reconstruction.
+
+![Left Hemisphere Euler](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/freesurfer-post_LH_euler_qc_histogram.png)
+
+The left hemisphere Euler characteristic distribution shows the quality of surface reconstruction across subjects. A higher (less negative) Euler number indicates a simpler topology with fewer topological defects.
+
+![Right Hemisphere Euler](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/freesurfer-post_RH_euler_qc_histogram.png)
+
+Similarly, the right hemisphere Euler characteristic distribution provides insight into the quality of surface reconstruction for the right hemisphere. The distributions for both hemispheres should be roughly similar, with any large asymmetries potentially indicating reconstruction issues.
 
 # helpful hints
 
