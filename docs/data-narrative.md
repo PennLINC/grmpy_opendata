@@ -682,6 +682,59 @@ for f in "${files[@]}"; do
 done
 ```
 
+for fmriprep_func - a reduced set of files was unzipped:
+
+for f in "${files[@]}"; do
+    unzip -n "$f" -d /cbica/projects/grmpy/data/derivatives -x $(cat /cbica/projects/grmpy/code/curation/06_QC/scripts/exclude.txt)
+done
+
+for fmriprep_anat - we only need the `sourcedata` folder, which will get merged with the fmriprep_func dataset
+
+for f in "${files[@]}"; do
+    unzip -n "$f" -d /cbica/projects/grmpy/data/derivatives -x fmriprep_anat/sub-*
+done
+
+TODO: check that fmriprep in apply mode will work with this reduced set:
+
+```
+#!/bin/bash
+#SBATCH --job-name=fmriprep_apply
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=20gb
+#SBATCH --time=48:00:00
+# Outputs ----------------------------------
+#SBATCH --output=/cbica/projects/grmpy/data/fmriprep_apply_test/fmriprep_apply.out
+#SBATCH --error=/cbica/projects/grmpy/data/fmriprep_apply_test/fmriprep_apply.err
+# ------------------------------------------
+
+apptainer run \
+    --cleanenv \
+    -B /cbica/projects/grmpy/data/bids_datalad:/data \
+    -B /cbica/projects/grmpy/data/derivatives:/deriv \
+    -B /cbica/comp_space/grmpy/fmriprep_apply_test:/work \
+    -B /cbica/projects/grmpy/data/fmriprep_apply_test/license.txt:/license.txt \
+    /cbica/projects/grmpy/data/BABS/apptainer/fmriprep-25.1.4.sif \
+    /data \
+    /work/fmriprep-apply-25.1.4 \
+    participant \
+    -w /work \
+    --stop-on-first-crash \
+    --fs-license-file /license.txt \
+    --output-spaces func T1w MNI152NLin6Asym:res-2 \
+    --force bbr \
+    --skip-bids-validation \
+    -vv \
+    --cifti-output 91k \
+    --n_cpus 4 \
+    --mem-mb 70000 \
+    --fs-subjects-dir /deriv/fmriprep_anat/sourcedata/freesurfer \
+    --participant-label sub-106802 \
+    --derivatives minimal=/deriv/fmriprep_func \
+    --fs-no-resume
+```
+
 # helpful hints
 
 Use `git log --oneline` in your datalad project directory to get the commit history of your dataset.
@@ -706,5 +759,11 @@ or:
 chmod -R u+w <dataset_name>
 rm -rf <dataset_name>
 ```
+
+Check the amount of disk space left on your project user:
+`df -h /cbica/projects/grmpy`
+
+Check how much space a folder takes up:
+`du -sh <folder_path>`
 
 TODO: ephemeral clones
