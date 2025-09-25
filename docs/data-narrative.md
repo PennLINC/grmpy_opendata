@@ -738,12 +738,14 @@ apptainer run \
     --fs-no-resume
 ```
 
-## XCP-D median FD
+## XCP-D QC
 
 ```bash
 xcpd_median_fd.py:66: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
   df_main_qc = pd.concat([df_main_qc, df_subj_qc], ignore_index=True)
 ```
+
+Median FD and parcel coverage were analyzed with the [`01_xcpd_qc.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/01_xcpd_qc.py) script.
 
 # helpful hints
 
