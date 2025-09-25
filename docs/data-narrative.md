@@ -4,6 +4,33 @@ layout: page
 nav_order: 2
 ---
 
+# Table of Contents
+
+1. [Getting data from flywheel](#01-getting-data-from-flywheel)
+2. [Converting to bids](#02-converting-to-bids)
+3. [Creating timing files](#03-creating-timing-files)
+4. [CuBIDS](#04-cubids)
+   - [Removing metadata fields](#removing-metadata-fields)
+   - [Checking into datalad and initial validation](#checking-into-datalad-and-initial-validation)
+   - [CuBIDS group and apply](#cubids-group-and-apply)
+5. [BABS](#05-babs)
+   - [MRIQC](#mriqc)
+   - [fMRIPrep: Anatomical Only](#fmriprep-anatomical-only)
+   - [QSIPREP](#qsiprep)
+   - [ASLPrep](#aslprep)
+   - [fMRIPrep: Functional Only](#fmriprep-functional-only)
+   - [Freesurfer Post](#freesurfer-post)
+   - [QSirecon](#qsirecon)
+   - [XCP-D](#xcp-d)
+6. [QC](#06-qc)
+   - [XCP-D QC](#xcp-d-qc)
+     - [Motion Assessment](#motion-assessment)
+     - [Parcel Coverage Analysis](#parcel-coverage-analysis)
+   - [QSI QC](#qsi-qc)
+     - [QSIPrep Quality Metrics](#qsiprep-quality-metrics)
+     - [DSI Studio Bundle Analysis](#dsi-studio-bundle-analysis)
+7. [Helpful hints](#helpful-hints)
+
 # 01: Getting data from flywheel
 
 The data download process is handled by our [`download_dcms.sh`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/01_download_dcms/download_dcms.sh) script, which uses the Flywheel CLI to sync DICOM files.
@@ -749,7 +776,7 @@ Median FD and parcel coverage were analyzed with the [`01_xcpd_qc.py`](https://g
 
 ### Motion Assessment
 
-![Median FD Histogram](../curation/06_QC/data/xcpd_qc_histogram_median_fd.png)
+![Median FD Histogram](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/xcpd_qc_histogram_median_fd.png)
 
 The histogram of median framewise displacement (FD) shows the distribution of head motion across all subjects. The majority of subjects exhibited low motion, with most median FD values falling below 0.2mm, indicating generally good motion control during scanning.
 
@@ -757,23 +784,23 @@ The histogram of median framewise displacement (FD) shows the distribution of he
 
 The Schaefer 1000 parcels + 56 subcortical regions (4S1056) atlas was used to assess brain coverage. Several visualizations were generated to examine the coverage:
 
-![Row Sum Histogram](../curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_histogram.png)
+![Row Sum Histogram](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_histogram.png)
 
 This histogram shows the distribution of the number of timepoints with valid data across all parcels for each subject. A higher number indicates better temporal coverage.
 
-![Row Sum Log Histogram](../curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_histogram_log.png)
+![Row Sum Log Histogram](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_histogram_log.png)
 
 The same data as above but with a logarithmic scale, which helps visualize the distribution of subjects with lower temporal coverage.
 
-![Column Sum Histogram](../curation/06_QC/data/xcpd_4S1056Parcels_coverage_col_sum_histogram.png)
+![Column Sum Histogram](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/xcpd_4S1056Parcels_coverage_col_sum_histogram.png)
 
 This histogram shows the distribution of the number of subjects with valid data for each parcel. Higher numbers indicate better spatial coverage across the cohort.
 
-![Row Sum Barplot](../curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_barplot.png)
+![Row Sum Barplot](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_barplot.png)
 
 A barplot showing the temporal coverage (number of valid timepoints) for each subject, allowing identification of subjects with notably poor coverage.
 
-![Column Sum Barplot](../curation/06_QC/data/xcpd_4S1056Parcels_coverage_col_sum_barplot.png)
+![Column Sum Barplot](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/xcpd_4S1056Parcels_coverage_col_sum_barplot.png)
 
 A barplot showing the number of subjects with valid data for each parcel, helping identify any systematically problematic brain regions across the cohort.
 
@@ -783,33 +810,33 @@ Quality control metrics for diffusion MRI data were analyzed using the [`02_qsi_
 
 ### QSIPrep Quality Metrics
 
-![Mean FD Histogram](../curation/06_QC/data/qsiprep_fd_histogram.png)
+![Mean FD Histogram](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsiprep_fd_histogram.png)
 
 The distribution of mean framewise displacement (FD) across subjects shows the extent of head motion during diffusion scans. Lower values indicate better motion control during scanning.
 
-![Neighborhood Correlation Histogram](../curation/06_QC/data/qsiprep_neighborhood_corr_histogram.png)
+![Neighborhood Correlation Histogram](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsiprep_neighborhood_corr_histogram.png)
 
 The neighborhood correlation metric assesses the quality of the diffusion signal by measuring the similarity between adjacent voxels. Higher correlation values suggest better data quality with less noise.
 
-![FD vs Neighborhood Correlation](../curation/06_QC/data/qsiprep_scatter_meanfd_vs_neighborcorr.png)
+![FD vs Neighborhood Correlation](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsiprep_scatter_meanfd_vs_neighborcorr.png)
 
 This scatter plot explores the relationship between head motion (FD) and data quality (neighborhood correlation). A negative correlation would suggest that increased head motion leads to decreased data quality.
 
 ### DSI Studio Bundle Analysis
 
-![Bundle Volume Distribution](../curation/06_QC/data/qsirecon_DSIStudio_bundle_volume_histogram.png)
+![Bundle Volume Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsirecon_DSIStudio_bundle_volume_histogram.png)
 
 The total bundle volume distribution shows the variation in white matter tract volumes across subjects. This helps identify subjects with unusually large or small total tract volumes.
 
-![Mean Bundle Volume Distribution](../curation/06_QC/data/qsirecon_DSIStudio_bundle_volume_mean_histogram.png)
+![Mean Bundle Volume Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsirecon_DSIStudio_bundle_volume_mean_histogram.png)
 
 The mean bundle volume distribution provides insight into the typical size of white matter tracts across the cohort. This can help identify systematic biases in tract reconstruction.
 
-![Missing Bundle Distribution](../curation/06_QC/data/qsirecon_DSIStudio_missing_bundle_column_distribution.png)
+![Missing Bundle Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsirecon_DSIStudio_missing_bundle_column_distribution.png)
 
 This histogram shows how many subjects are missing each white matter bundle. A high number of missing bundles could indicate problems with tract reconstruction or anatomical variability.
 
-![Bundle Outlier Distribution](../curation/06_QC/data/qsirecon_DSIStudio_row_bundle_outlier_distribution.png)
+![Bundle Outlier Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsirecon_DSIStudio_row_bundle_outlier_distribution.png)
 
 The distribution of outlier bundles per subject helps identify subjects with unusual tract volumes. Outliers are defined as bundle volumes more than 3 standard deviations from the mean or missing values.
 
