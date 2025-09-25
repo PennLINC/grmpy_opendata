@@ -10,13 +10,9 @@ project_path = "/cbica/projects/grmpy/"
 # concatenating
 ################
 # path to unzipped xcpd data
-inpath_qc = (
-    project_path + "EF_dataset/derivatives/xcpd_BABS_EF_full_project_outputs/xcpd/"
-)  # CUBIC project path - replace
+inpath_qc = project_path + "data/derivatives/xcpd/"  # CUBIC project path - replace
 # outpath to save concatentaed qc data
-outpath = (
-    project_path + "EF_dataset_figures/concatenated_data/"
-)  # CUBIC project path - replace
+outpath = project_path + "code/curation/06_QC/data/"  # CUBIC project path - replace
 
 # get all filenames for qc data
 fileNames_qc = sorted(
