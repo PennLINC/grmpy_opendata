@@ -21,7 +21,7 @@ os.makedirs(outpath, exist_ok=True)
 # Get all QC file paths
 # ----------------------
 fileNames_qc = sorted(
-    glob.glob(os.path.join(inpath_qc, "sub-*", "sub-*_ses-*_desc-FreeSurfer_qc.tsv"))
+    glob.glob(os.path.join(inpath_qc, "sub-*", "sub-*_desc-FreeSurfer_qc.tsv"))
 )
 
 # ----------------------
