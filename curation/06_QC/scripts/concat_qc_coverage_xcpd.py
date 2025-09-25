@@ -1,6 +1,5 @@
 import glob
 import pandas as pd
-import numpy as np
 import os
 
 project_path = "/cbica/projects/grmpy/"
