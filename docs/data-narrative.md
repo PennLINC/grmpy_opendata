@@ -782,19 +782,7 @@ The histogram of median framewise displacement (FD) shows the distribution of he
 
 ### Parcel Coverage Analysis
 
-The Schaefer 1000 parcels + 56 subcortical regions (4S1056) atlas was used to assess brain coverage. Several visualizations were generated to examine the coverage:
-
-![Row Sum Histogram](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_histogram.png)
-
-This histogram shows the distribution of the number of timepoints with valid data across all parcels for each subject. A higher number indicates better temporal coverage.
-
-![Row Sum Log Histogram](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_histogram_log.png)
-
-The same data as above but with a logarithmic scale, which helps visualize the distribution of subjects with lower temporal coverage.
-
-![Column Sum Histogram](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/xcpd_4S1056Parcels_coverage_col_sum_histogram.png)
-
-This histogram shows the distribution of the number of subjects with valid data for each parcel. Higher numbers indicate better spatial coverage across the cohort.
+The Schaefer 1000 parcels + 56 subcortical regions (4S1056) atlas was used to assess brain coverage. Two main visualizations were generated to examine the coverage:
 
 ![Row Sum Barplot](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/xcpd_4S1056Parcels_coverage_row_sum_barplot.png)
 
@@ -827,10 +815,6 @@ This scatter plot explores the relationship between head motion (FD) and data qu
 ![Bundle Volume Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsirecon_DSIStudio_bundle_volume_histogram.png)
 
 The total bundle volume distribution shows the variation in white matter tract volumes across subjects. This helps identify subjects with unusually large or small total tract volumes.
-
-![Mean Bundle Volume Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsirecon_DSIStudio_bundle_volume_mean_histogram.png)
-
-The mean bundle volume distribution provides insight into the typical size of white matter tracts across the cohort. This can help identify systematic biases in tract reconstruction.
 
 ![Missing Bundle Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsirecon_DSIStudio_missing_bundle_column_distribution.png)
 
