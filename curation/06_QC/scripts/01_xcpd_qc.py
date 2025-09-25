@@ -117,7 +117,7 @@ def create_column_visualizations(col_sums, output_dir):
         edgecolor="black",
     )
     plt.title("Histogram of Column Sum (< 0.5 Coverage Count per Parcel)")
-    plt.xlabel("Number of Rows with Parcel Value < 0.5")
+    plt.xlabel("Number of Scans with Parcel Value < 0.5")
     plt.ylabel("Number of Parcels")
     plt.tight_layout()
     plt.savefig(
@@ -130,7 +130,7 @@ def create_column_visualizations(col_sums, output_dir):
     plt.figure(figsize=(10, 6))
     sns.barplot(x=col_sum_counts.index, y=col_sum_counts.values, color="steelblue")
     plt.title("Bar Plot of Column Sums (< 0.5 Coverage Count per Parcel)")
-    plt.xlabel("Number of Rows with Parcel Value < 0.5")
+    plt.xlabel("Number of Scans with Parcel Value < 0.5")
     plt.ylabel("Number of Parcels")
     plt.tight_layout()
     plt.savefig(
@@ -152,7 +152,7 @@ def create_row_visualizations(row_sums, output_dir):
     sns.histplot(row_sums, bins=bins, kde=False, color="steelblue", edgecolor="black")
     plt.title("Histogram of Row Sum (< 0.5 Parcel Values)")
     plt.xlabel("Number of Parcel Values < 0.5")
-    plt.ylabel("Frequency")
+    plt.ylabel("Number of Scans")
     plt.tight_layout()
     plt.savefig(
         os.path.join(output_dir, "xcpd_4S1056Parcels_coverage_row_sum_histogram.png")
@@ -171,7 +171,7 @@ def create_row_visualizations(row_sums, output_dir):
     )
     plt.title("Histogram of Row Sum (Log-Scaled Y-Axis)")
     plt.xlabel("Number of Parcel Values < 0.5")
-    plt.ylabel("Log-scaled Frequency")
+    plt.ylabel("Number of Scans (log)")
     plt.tight_layout()
     plt.savefig(
         os.path.join(
@@ -190,8 +190,8 @@ def create_row_visualizations(row_sums, output_dir):
         edgecolor="black",
     )
     plt.title("Bar Plot of Row Sum Values (< 0.5 Parcels)")
-    plt.xlabel("Row Sum")
-    plt.ylabel("Frequency")
+    plt.xlabel("Number of Parcel Values < 0.5")
+    plt.ylabel("Number of Scans")
     plt.tight_layout()
     plt.savefig(
         os.path.join(output_dir, "xcpd_4S1056Parcels_coverage_row_sum_barplot.png")
@@ -257,7 +257,7 @@ def analyze_median_fd(paths):
     plt.figure(figsize=(10, 6))
     sns.displot(df_main_qc["framewise_displacement"], kde=True, bins=20)
     plt.title("Median FD distribution")
-    plt.xlabel("Median FD")
+    plt.xlabel("Median Framewise Displacement")
     plt.ylabel("Density")
     plt.tight_layout()
     plt.savefig(
