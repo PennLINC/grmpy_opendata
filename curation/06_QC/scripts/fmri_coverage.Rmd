@@ -1,0 +1,102 @@
+---
+title: "fmri_coverage"
+output: html_document
+date: "2025-07-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load packages, include=FALSE}
+# Load required packages
+library(tidyverse)
+library(dplyr)
+```
+
+```{r read in csv}
+# Read in necessary csv with fmri coverage info
+coverage_df <- read.csv('/Users/bsevchik/projects/EF_processing/concat_qc/concat_xcpd_qc_coverage_row_sums_pass_fail.csv')
+coverage_df
+```
+
+```{r create new summary df of coverage < 50%}
+# Create new summary data frame where coverage is <50%
+
+# Filter rows where FAIL? == "X"
+fail_df <- coverage_df %>% 
+  filter(`FAIL.` == "X") %>%
+  mutate(subject = paste(sub, ses, task, run, sep = "_"))
+
+# Define region columns (exclude metadata)
+exclude_cols <- c("sub", "ses", "task", "run", "space", "seg", "stat", "acq", "row_sum", "FAIL.", "subject")
+value_cols <- setdiff(colnames(fail_df), exclude_cols)
+
+# Extract counts and column names with values < 0.5
+final_df <- fail_df %>%
+  rowwise() %>%
+  mutate(
+    num_below_0.5 = sum(across(all_of(value_cols), ~ .x < 0.5), na.rm = TRUE),
+    below_0.5_columns = {
+      row_vals <- as.list(across(all_of(value_cols)))
+      low_cols <- names(row_vals)[unlist(row_vals) < 0.5]
+      paste(low_cols, collapse = ", ")
+    }
+  ) %>%
+  ungroup() %>%
+  select(subject, num_below_0.5, below_0.5_columns)
+
+print(final_df)
+write.csv(final_df, "/Users/bsevchik/projects/EF_processing/concat_qc/fmri_coverage_outliers.csv", row.names = FALSE) # local path
+
+
+
+```
+
+
+
+
+```{r create new summary df of coverage < 50%}
+
+# Filter rows where FAIL? == "X"
+fail_df <- coverage_df %>% 
+  filter(`FAIL.` == "X") %>%
+  # Create subject identifier
+  mutate(subject = paste(sub, ses, task, run, sep = "_"))
+
+# Define columns to check: exclude metadata columns
+exclude_cols <- c("sub", "ses", "task", "run", "space", "seg", "stat", "acq", "row_sum", "FAIL.", "subject")
+value_cols <- setdiff(colnames(fail_df), exclude_cols)
+
+# Create two new columns: count and names of values < 0.5
+fail_df <- fail_df %>%
+  rowwise() %>%
+  mutate(
+    num_below_0.5 = sum(c_across(all_of(value_cols)) < 0.5, na.rm = TRUE),
+    below_0.5_columns = {
+      vals <- c_across(all_of(value_cols))
+      paste(names(vals)[which(vals < 0.5)], collapse = ", ")
+    }
+  ) %>%
+  ungroup()
+
+# Select the desired output
+final_df <- fail_df %>%
+  select(subject, num_below_0.5, below_0.5_columns)
+
+# View result
+print(final_df)
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
