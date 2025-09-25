@@ -713,16 +713,16 @@ TODO: check that fmriprep in apply mode will work with this reduced set:
 
 apptainer run \
     --cleanenv \
-    -B /cbica/projects/grmpy/data/bids_datalad:/data \
-    -B /cbica/projects/grmpy/data/derivatives:/deriv \
-    -B /cbica/projects/grmpy/data/fmriprep_apply_test:/out \
-    -B /cbica/comp_space/grmpy/apply_test:/work \
-    -B /cbica/projects/grmpy/data/fmriprep_apply_test/license.txt:/license.txt \
-    /cbica/projects/grmpy/data/BABS/apptainer/fmriprep-25.1.4.sif \
-    /data \
-    /out/fmriprep-apply-25.1.4 \
-    participant \
-    -w /work \
+    -B /cbica/projects/grmpy/data/bids_datalad:/data \ #bind path to your input BIDS data
+    -B /cbica/projects/grmpy/data/derivatives:/deriv \ #bind path to your input fmriprepdata
+    -B /cbica/projects/grmpy/data/fmriprep_apply_test:/out \ #bind path to your output directory
+    -B /cbica/comp_space/grmpy/apply_test:/work \ #bind path to your compute space
+    -B /cbica/projects/grmpy/data/fmriprep_apply_test/license.txt:/license.txt \ #bind path to your freesurfer license file
+    /cbica/projects/grmpy/data/BABS/apptainer/fmriprep-25.1.4.sif \ #path to your apptainer image
+    /data \ #path to your input BIDS data
+    /out/fmriprep-apply-25.1.4 \ #path to your output directory
+    participant \ #processing level
+    -w /work \ #working directory
     --stop-on-first-crash \
     --fs-license-file /license.txt \
     --output-spaces func T1w MNI152NLin6Asym:res-2 \
@@ -732,9 +732,9 @@ apptainer run \
     --cifti-output 91k \
     --n_cpus 4 \
     --mem-mb 70000 \
-    --fs-subjects-dir /deriv/fmriprep_anat/sourcedata/freesurfer \
-    --participant-label sub-106802 \
-    --derivatives minimal=/deriv/fmriprep_func \
+    --fs-subjects-dir /deriv/fmriprep_anat/sourcedata/freesurfer \ #path to your freesurfer results
+    --participant-label sub-106802 \ #participant label
+    --derivatives minimal=/deriv/fmriprep_func \ #path to your minimal fmriprep results
     --fs-no-resume
 ```
 
