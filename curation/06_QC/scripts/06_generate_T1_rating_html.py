@@ -11,21 +11,12 @@ Features:
 - Optional portability: copy referenced images next to the HTML (assets/) and rewrite paths
 
 Example:
-  python generate_t1_qc_html.py \
-    --root /cbica/projects/executive_function/EF_dataset/braindr \
-    --out  ./T1_QC_ratings.html
+  python /cbica/projects/grmpy/code/curation/06_QC/scripts/06_generate_T1_rating_html.py \
+    --root /cbica/projects/grmpy/data/T1_QC/slices \
+    --out /cbica/projects/grmpy/code/curation/06_QC/scripts/07_T1_QC_ratings.html \
+    --portable \
+    --allow-missing
 
-Optionally copy images for portability:
-  python generate_t1_qc_html.py --root /path/to/images --out ./T1_QC_ratings.html --portable
-
-Generate PNGs from NIfTI first, then build HTML:
-  python generate_t1_qc_html.py \
-    --nifti-root /path/to/bids \
-    --nifti-pattern 'sub-*/ses-*/anat/*_T1w.nii.gz' \
-    --png-outdir /path/to/output/pngs \
-    --generate-from-nifti \
-    --root /path/to/output/pngs \
-    --out  ./T1_QC_ratings.html
 """
 
 import argparse
@@ -255,7 +246,7 @@ def render_html(
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'EF_T1qc.csv';
+      a.download = 'T1qc.csv';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
