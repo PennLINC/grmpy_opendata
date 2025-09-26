@@ -344,7 +344,9 @@ def render_html(
     function escapeCsv(val) {{
       if (val == null) return '';
       const s = String(val);
-      if (/[",\n]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+      if (s.includes('"') || s.includes(',') || s.includes('\n')) {{
+        return '"' + s.replace(/"/g, '""') + '"';
+      }}
       return s;
     }}
 
