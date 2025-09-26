@@ -10,7 +10,7 @@ TPL="/cbica/projects/grmpy/templateflow/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_
 
 mkdir -p "$OUT"
 
-for h5 in $(ls /cbica/projects/grmpy/data/derivatives/fmriprep_anat/sub-*/ses-*/anat/*from-T1w_to-MNI152NLin6Asym*_xfm.h5 | head -n 2); do
+for h5 in $(ls /cbica/projects/grmpy/data/derivatives/fmriprep_anat/sub-*/ses-*/anat/*from-T1w_to-MNI152NLin6Asym*_xfm.h5); do
   anatdir=$(dirname "$h5")
   sessdir=$(dirname "$anatdir")
   subdir=$(dirname "$sessdir")
