@@ -241,6 +241,19 @@ def render_html(
       return lines.join('\\n');
     }}
 
+    function downloadCSV() {{
+      const csv = toCSV();
+      const blob = new Blob([csv], {{ type: 'text/csv;charset=utf-8;' }});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'T1-ratings.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }}
+
     function parseCSV(text) {{
       const rows = [];
       let i = 0, field = '', inQuotes = false, row = [];
