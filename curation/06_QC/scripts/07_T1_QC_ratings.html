@@ -1,0 +1,139 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>T1 QC Ratings</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 16px; }
+    h1 { font-size: 20px; margin: 0 0 12px 0; }
+    .controls { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 8px; background: #fff; }
+    .header { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+    .views { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .view { display: flex; flex-direction: column; gap: 6px; }
+    .view img { width: 100%; height: auto; display: block; border: 1px solid #eee; border-radius: 4px; }
+    .rating { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .muted { color: #666; font-size: 12px; }
+    .search { padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px; min-width: 260px; }
+    button { padding: 6px 10px; border: 1px solid #aaa; border-radius: 6px; background: #f7f7f7; cursor: pointer; }
+    button.primary { background: #0b5; color: #fff; border-color: #0a4; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    </style>
+  <script>
+    const DATA = [{"sub": "sub-102041", "ses": "ses-1", "images": {"S1": "assets/sub-102041_ses-1_S1.png", "S3": "assets/sub-102041_ses-1_S3.png", "A2": "assets/sub-102041_ses-1_A2.png", "A3": "assets/sub-102041_ses-1_A3.png"}}, {"sub": "sub-103679", "ses": "ses-1", "images": {"S1": "assets/sub-103679_ses-1_S1.png", "S3": "assets/sub-103679_ses-1_S3.png", "A2": "assets/sub-103679_ses-1_A2.png", "A3": "assets/sub-103679_ses-1_A3.png"}}, {"sub": "sub-104059", "ses": "ses-1", "images": {"S1": "assets/sub-104059_ses-1_S1.png", "S3": "assets/sub-104059_ses-1_S3.png", "A2": "assets/sub-104059_ses-1_A2.png", "A3": "assets/sub-104059_ses-1_A3.png"}}, {"sub": "sub-104235", "ses": "ses-1", "images": {"S1": "assets/sub-104235_ses-1_S1.png", "S3": "assets/sub-104235_ses-1_S3.png", "A2": "assets/sub-104235_ses-1_A2.png", "A3": "assets/sub-104235_ses-1_A3.png"}}, {"sub": "sub-104785", "ses": "ses-1", "images": {"S1": "assets/sub-104785_ses-1_S1.png", "S3": "assets/sub-104785_ses-1_S3.png", "A2": "assets/sub-104785_ses-1_A2.png", "A3": "assets/sub-104785_ses-1_A3.png"}}, {"sub": "sub-105168", "ses": "ses-1", "images": {"S1": "assets/sub-105168_ses-1_S1.png", "S3": "assets/sub-105168_ses-1_S3.png", "A2": "assets/sub-105168_ses-1_A2.png", "A3": "assets/sub-105168_ses-1_A3.png"}}, {"sub": "sub-105176", "ses": "ses-1", "images": {"S1": "assets/sub-105176_ses-1_S1.png", "S3": "assets/sub-105176_ses-1_S3.png", "A2": "assets/sub-105176_ses-1_A2.png", "A3": "assets/sub-105176_ses-1_A3.png"}}, {"sub": "sub-105309", "ses": "ses-1", "images": {"S1": "assets/sub-105309_ses-1_S1.png", "S3": "assets/sub-105309_ses-1_S3.png", "A2": "assets/sub-105309_ses-1_A2.png", "A3": "assets/sub-105309_ses-1_A3.png"}}, {"sub": "sub-105767", "ses": "ses-1", "images": {"S1": "assets/sub-105767_ses-1_S1.png", "S3": "assets/sub-105767_ses-1_S3.png", "A2": "assets/sub-105767_ses-1_A2.png", "A3": "assets/sub-105767_ses-1_A3.png"}}, {"sub": "sub-105860", "ses": "ses-1", "images": {"S1": "assets/sub-105860_ses-1_S1.png", "S3": "assets/sub-105860_ses-1_S3.png", "A2": "assets/sub-105860_ses-1_A2.png", "A3": "assets/sub-105860_ses-1_A3.png"}}, {"sub": "sub-105979", "ses": "ses-1", "images": {"S1": "assets/sub-105979_ses-1_S1.png", "S3": "assets/sub-105979_ses-1_S3.png", "A2": "assets/sub-105979_ses-1_A2.png", "A3": "assets/sub-105979_ses-1_A3.png"}}, {"sub": "sub-106039", "ses": "ses-1", "images": {"S1": "assets/sub-106039_ses-1_S1.png", "S3": "assets/sub-106039_ses-1_S3.png", "A2": "assets/sub-106039_ses-1_A2.png", "A3": "assets/sub-106039_ses-1_A3.png"}}, {"sub": "sub-106246", "ses": "ses-1", "images": {"S1": "assets/sub-106246_ses-1_S1.png", "S3": "assets/sub-106246_ses-1_S3.png", "A2": "assets/sub-106246_ses-1_A2.png", "A3": "assets/sub-106246_ses-1_A3.png"}}, {"sub": "sub-106331", "ses": "ses-1", "images": {"S1": "assets/sub-106331_ses-1_S1.png", "S3": "assets/sub-106331_ses-1_S3.png", "A2": "assets/sub-106331_ses-1_A2.png", "A3": "assets/sub-106331_ses-1_A3.png"}}, {"sub": "sub-106802", "ses": "ses-1", "images": {"S1": "assets/sub-106802_ses-1_S1.png", "S3": "assets/sub-106802_ses-1_S3.png", "A2": "assets/sub-106802_ses-1_A2.png", "A3": "assets/sub-106802_ses-1_A3.png"}}, {"sub": "sub-106880", "ses": "ses-1", "images": {"S1": "assets/sub-106880_ses-1_S1.png", "S3": "assets/sub-106880_ses-1_S3.png", "A2": "assets/sub-106880_ses-1_A2.png", "A3": "assets/sub-106880_ses-1_A3.png"}}, {"sub": "sub-107055", "ses": "ses-1", "images": {"S1": "assets/sub-107055_ses-1_S1.png", "S3": "assets/sub-107055_ses-1_S3.png", "A2": "assets/sub-107055_ses-1_A2.png", "A3": "assets/sub-107055_ses-1_A3.png"}}, {"sub": "sub-108202", "ses": "ses-1", "images": {"S1": "assets/sub-108202_ses-1_S1.png", "S3": "assets/sub-108202_ses-1_S3.png", "A2": "assets/sub-108202_ses-1_A2.png", "A3": "assets/sub-108202_ses-1_A3.png"}}, {"sub": "sub-109521", "ses": "ses-1", "images": {"S1": "assets/sub-109521_ses-1_S1.png", "S3": "assets/sub-109521_ses-1_S3.png", "A2": "assets/sub-109521_ses-1_A2.png", "A3": "assets/sub-109521_ses-1_A3.png"}}, {"sub": "sub-109646", "ses": "ses-1", "images": {"S1": "assets/sub-109646_ses-1_S1.png", "S3": "assets/sub-109646_ses-1_S3.png", "A2": "assets/sub-109646_ses-1_A2.png", "A3": "assets/sub-109646_ses-1_A3.png"}}, {"sub": "sub-109735", "ses": "ses-1", "images": {"S1": "assets/sub-109735_ses-1_S1.png", "S3": "assets/sub-109735_ses-1_S3.png", "A2": "assets/sub-109735_ses-1_A2.png", "A3": "assets/sub-109735_ses-1_A3.png"}}, {"sub": "sub-110168", "ses": "ses-1", "images": {"S1": "assets/sub-110168_ses-1_S1.png", "S3": "assets/sub-110168_ses-1_S3.png", "A2": "assets/sub-110168_ses-1_A2.png", "A3": "assets/sub-110168_ses-1_A3.png"}}, {"sub": "sub-110354", "ses": "ses-1", "images": {"S1": "assets/sub-110354_ses-1_S1.png", "S3": "assets/sub-110354_ses-1_S3.png", "A2": "assets/sub-110354_ses-1_A2.png", "A3": "assets/sub-110354_ses-1_A3.png"}}, {"sub": "sub-110828", "ses": "ses-1", "images": {"S1": "assets/sub-110828_ses-1_S1.png", "S3": "assets/sub-110828_ses-1_S3.png", "A2": "assets/sub-110828_ses-1_A2.png", "A3": "assets/sub-110828_ses-1_A3.png"}}, {"sub": "sub-112028", "ses": "ses-1", "images": {"S1": "assets/sub-112028_ses-1_S1.png", "S3": "assets/sub-112028_ses-1_S3.png", "A2": "assets/sub-112028_ses-1_A2.png", "A3": "assets/sub-112028_ses-1_A3.png"}}, {"sub": "sub-112061", "ses": "ses-1", "images": {"S1": "assets/sub-112061_ses-1_S1.png", "S3": "assets/sub-112061_ses-1_S3.png", "A2": "assets/sub-112061_ses-1_A2.png", "A3": "assets/sub-112061_ses-1_A3.png"}}, {"sub": "sub-112126", "ses": "ses-1", "images": {"S1": "assets/sub-112126_ses-1_S1.png", "S3": "assets/sub-112126_ses-1_S3.png", "A2": "assets/sub-112126_ses-1_A2.png", "A3": "assets/sub-112126_ses-1_A3.png"}}, {"sub": "sub-112249", "ses": "ses-1", "images": {"S1": "assets/sub-112249_ses-1_S1.png", "S3": "assets/sub-112249_ses-1_S3.png", "A2": "assets/sub-112249_ses-1_A2.png", "A3": "assets/sub-112249_ses-1_A3.png"}}, {"sub": "sub-112332", "ses": "ses-1", "images": {"S1": "assets/sub-112332_ses-1_S1.png", "S3": "assets/sub-112332_ses-1_S3.png", "A2": "assets/sub-112332_ses-1_A2.png", "A3": "assets/sub-112332_ses-1_A3.png"}}, {"sub": "sub-112694", "ses": "ses-1", "images": {"S1": "assets/sub-112694_ses-1_S1.png", "S3": "assets/sub-112694_ses-1_S3.png", "A2": "assets/sub-112694_ses-1_A2.png", "A3": "assets/sub-112694_ses-1_A3.png"}}, {"sub": "sub-113111", "ses": "ses-1", "images": {"S1": "assets/sub-113111_ses-1_S1.png", "S3": "assets/sub-113111_ses-1_S3.png", "A2": "assets/sub-113111_ses-1_A2.png", "A3": "assets/sub-113111_ses-1_A3.png"}}, {"sub": "sub-114709", "ses": "ses-1", "images": {"S1": "assets/sub-114709_ses-1_S1.png", "S3": "assets/sub-114709_ses-1_S3.png", "A2": "assets/sub-114709_ses-1_A2.png", "A3": "assets/sub-114709_ses-1_A3.png"}}, {"sub": "sub-114713", "ses": "ses-1", "images": {"S1": "assets/sub-114713_ses-1_S1.png", "S3": "assets/sub-114713_ses-1_S3.png", "A2": "assets/sub-114713_ses-1_A2.png", "A3": "assets/sub-114713_ses-1_A3.png"}}, {"sub": "sub-114723", "ses": "ses-1", "images": {"S1": "assets/sub-114723_ses-1_S1.png", "S3": "assets/sub-114723_ses-1_S3.png", "A2": "assets/sub-114723_ses-1_A2.png", "A3": "assets/sub-114723_ses-1_A3.png"}}, {"sub": "sub-114935", "ses": "ses-1", "images": {"S1": "assets/sub-114935_ses-1_S1.png", "S3": "assets/sub-114935_ses-1_S3.png", "A2": "assets/sub-114935_ses-1_A2.png", "A3": "assets/sub-114935_ses-1_A3.png"}}, {"sub": "sub-114990", "ses": "ses-1", "images": {"S1": "assets/sub-114990_ses-1_S1.png", "S3": "assets/sub-114990_ses-1_S3.png", "A2": "assets/sub-114990_ses-1_A2.png", "A3": "assets/sub-114990_ses-1_A3.png"}}, {"sub": "sub-115800", "ses": "ses-1", "images": {"S1": "assets/sub-115800_ses-1_S1.png", "S3": "assets/sub-115800_ses-1_S3.png", "A2": "assets/sub-115800_ses-1_A2.png", "A3": "assets/sub-115800_ses-1_A3.png"}}, {"sub": "sub-116019", "ses": "ses-1", "images": {"S1": "assets/sub-116019_ses-1_S1.png", "S3": "assets/sub-116019_ses-1_S3.png", "A2": "assets/sub-116019_ses-1_A2.png", "A3": "assets/sub-116019_ses-1_A3.png"}}, {"sub": "sub-116051", "ses": "ses-1", "images": {"S1": "assets/sub-116051_ses-1_S1.png", "S3": "assets/sub-116051_ses-1_S3.png", "A2": "assets/sub-116051_ses-1_A2.png", "A3": "assets/sub-116051_ses-1_A3.png"}}, {"sub": "sub-116210", "ses": "ses-1", "images": {"S1": "assets/sub-116210_ses-1_S1.png", "S3": "assets/sub-116210_ses-1_S3.png", "A2": "assets/sub-116210_ses-1_A2.png", "A3": "assets/sub-116210_ses-1_A3.png"}}, {"sub": "sub-116354", "ses": "ses-1", "images": {"S1": "assets/sub-116354_ses-1_S1.png", "S3": "assets/sub-116354_ses-1_S3.png", "A2": "assets/sub-116354_ses-1_A2.png", "A3": "assets/sub-116354_ses-1_A3.png"}}, {"sub": "sub-116360", "ses": "ses-1", "images": {"S1": "assets/sub-116360_ses-1_S1.png", "S3": "assets/sub-116360_ses-1_S3.png", "A2": "assets/sub-116360_ses-1_A2.png", "A3": "assets/sub-116360_ses-1_A3.png"}}, {"sub": "sub-117226", "ses": "ses-1", "images": {"S1": "assets/sub-117226_ses-1_S1.png", "S3": "assets/sub-117226_ses-1_S3.png", "A2": "assets/sub-117226_ses-1_A2.png", "A3": "assets/sub-117226_ses-1_A3.png"}}, {"sub": "sub-117397", "ses": "ses-1", "images": {"S1": "assets/sub-117397_ses-1_S1.png", "S3": "assets/sub-117397_ses-1_S3.png", "A2": "assets/sub-117397_ses-1_A2.png", "A3": "assets/sub-117397_ses-1_A3.png"}}, {"sub": "sub-118393", "ses": "ses-1", "images": {"S1": "assets/sub-118393_ses-1_S1.png", "S3": "assets/sub-118393_ses-1_S3.png", "A2": "assets/sub-118393_ses-1_A2.png", "A3": "assets/sub-118393_ses-1_A3.png"}}, {"sub": "sub-118864", "ses": "ses-1", "images": {"S1": "assets/sub-118864_ses-1_S1.png", "S3": "assets/sub-118864_ses-1_S3.png", "A2": "assets/sub-118864_ses-1_A2.png", "A3": "assets/sub-118864_ses-1_A3.png"}}, {"sub": "sub-118990", "ses": "ses-1", "images": {"S1": "assets/sub-118990_ses-1_S1.png", "S3": "assets/sub-118990_ses-1_S3.png", "A2": "assets/sub-118990_ses-1_A2.png", "A3": "assets/sub-118990_ses-1_A3.png"}}, {"sub": "sub-119302", "ses": "ses-1", "images": {"S1": "assets/sub-119302_ses-1_S1.png", "S3": "assets/sub-119302_ses-1_S3.png", "A2": "assets/sub-119302_ses-1_A2.png", "A3": "assets/sub-119302_ses-1_A3.png"}}, {"sub": "sub-119791", "ses": "ses-1", "images": {"S1": "assets/sub-119791_ses-1_S1.png", "S3": "assets/sub-119791_ses-1_S3.png", "A2": "assets/sub-119791_ses-1_A2.png", "A3": "assets/sub-119791_ses-1_A3.png"}}, {"sub": "sub-120217", "ses": "ses-1", "images": {"S1": "assets/sub-120217_ses-1_S1.png", "S3": "assets/sub-120217_ses-1_S3.png", "A2": "assets/sub-120217_ses-1_A2.png", "A3": "assets/sub-120217_ses-1_A3.png"}}, {"sub": "sub-120562", "ses": "ses-1", "images": {"S1": "assets/sub-120562_ses-1_S1.png", "S3": "assets/sub-120562_ses-1_S3.png", "A2": "assets/sub-120562_ses-1_A2.png", "A3": "assets/sub-120562_ses-1_A3.png"}}, {"sub": "sub-121001", "ses": "ses-1", "images": {"S1": "assets/sub-121001_ses-1_S1.png", "S3": "assets/sub-121001_ses-1_S3.png", "A2": "assets/sub-121001_ses-1_A2.png", "A3": "assets/sub-121001_ses-1_A3.png"}}, {"sub": "sub-121050", "ses": "ses-1", "images": {"S1": "assets/sub-121050_ses-1_S1.png", "S3": "assets/sub-121050_ses-1_S3.png", "A2": "assets/sub-121050_ses-1_A2.png", "A3": "assets/sub-121050_ses-1_A3.png"}}, {"sub": "sub-121085", "ses": "ses-1", "images": {"S1": "assets/sub-121085_ses-1_S1.png", "S3": "assets/sub-121085_ses-1_S3.png", "A2": "assets/sub-121085_ses-1_A2.png", "A3": "assets/sub-121085_ses-1_A3.png"}}, {"sub": "sub-121407", "ses": "ses-1", "images": {"S1": "assets/sub-121407_ses-1_S1.png", "S3": "assets/sub-121407_ses-1_S3.png", "A2": "assets/sub-121407_ses-1_A2.png", "A3": "assets/sub-121407_ses-1_A3.png"}}, {"sub": "sub-121476", "ses": "ses-1", "images": {"S1": "assets/sub-121476_ses-1_S1.png", "S3": "assets/sub-121476_ses-1_S3.png", "A2": "assets/sub-121476_ses-1_A2.png", "A3": "assets/sub-121476_ses-1_A3.png"}}, {"sub": "sub-121670", "ses": "ses-1", "images": {"S1": "assets/sub-121670_ses-1_S1.png", "S3": "assets/sub-121670_ses-1_S3.png", "A2": "assets/sub-121670_ses-1_A2.png", "A3": "assets/sub-121670_ses-1_A3.png"}}, {"sub": "sub-122522", "ses": "ses-1", "images": {"S1": "assets/sub-122522_ses-1_S1.png", "S3": "assets/sub-122522_ses-1_S3.png", "A2": "assets/sub-122522_ses-1_A2.png", "A3": "assets/sub-122522_ses-1_A3.png"}}, {"sub": "sub-122528", "ses": "ses-1", "images": {"S1": "assets/sub-122528_ses-1_S1.png", "S3": "assets/sub-122528_ses-1_S3.png", "A2": "assets/sub-122528_ses-1_A2.png", "A3": "assets/sub-122528_ses-1_A3.png"}}, {"sub": "sub-122801", "ses": "ses-1", "images": {"S1": "assets/sub-122801_ses-1_S1.png", "S3": "assets/sub-122801_ses-1_S3.png", "A2": "assets/sub-122801_ses-1_A2.png", "A3": "assets/sub-122801_ses-1_A3.png"}}, {"sub": "sub-122916", "ses": "ses-1", "images": {"S1": "assets/sub-122916_ses-1_S1.png", "S3": "assets/sub-122916_ses-1_S3.png", "A2": "assets/sub-122916_ses-1_A2.png", "A3": "assets/sub-122916_ses-1_A3.png"}}, {"sub": "sub-125511", "ses": "ses-1", "images": {"S1": "assets/sub-125511_ses-1_S1.png", "S3": "assets/sub-125511_ses-1_S3.png", "A2": "assets/sub-125511_ses-1_A2.png", "A3": "assets/sub-125511_ses-1_A3.png"}}, {"sub": "sub-125535", "ses": "ses-1", "images": {"S1": "assets/sub-125535_ses-1_S1.png", "S3": "assets/sub-125535_ses-1_S3.png", "A2": "assets/sub-125535_ses-1_A2.png", "A3": "assets/sub-125535_ses-1_A3.png"}}, {"sub": "sub-125554", "ses": "ses-1", "images": {"S1": "assets/sub-125554_ses-1_S1.png", "S3": "assets/sub-125554_ses-1_S3.png", "A2": "assets/sub-125554_ses-1_A2.png", "A3": "assets/sub-125554_ses-1_A3.png"}}, {"sub": "sub-126176", "ses": "ses-1", "images": {"S1": "assets/sub-126176_ses-1_S1.png", "S3": "assets/sub-126176_ses-1_S3.png", "A2": "assets/sub-126176_ses-1_A2.png", "A3": "assets/sub-126176_ses-1_A3.png"}}, {"sub": "sub-126389", "ses": "ses-1", "images": {"S1": "assets/sub-126389_ses-1_S1.png", "S3": "assets/sub-126389_ses-1_S3.png", "A2": "assets/sub-126389_ses-1_A2.png", "A3": "assets/sub-126389_ses-1_A3.png"}}, {"sub": "sub-126554", "ses": "ses-1", "images": {"S1": "assets/sub-126554_ses-1_S1.png", "S3": "assets/sub-126554_ses-1_S3.png", "A2": "assets/sub-126554_ses-1_A2.png", "A3": "assets/sub-126554_ses-1_A3.png"}}, {"sub": "sub-126903", "ses": "ses-1", "images": {"S1": "assets/sub-126903_ses-1_S1.png", "S3": "assets/sub-126903_ses-1_S3.png", "A2": "assets/sub-126903_ses-1_A2.png", "A3": "assets/sub-126903_ses-1_A3.png"}}];
+    const VIEWS = ["S1", "S3", "A2", "A3"];
+
+    function escapeCsv(val) {
+      if (val == null) return '';
+      const s = String(val);
+      if (s.includes('"') || s.includes(',') || s.includes('\n')) {
+        return '"' + s.replace(/"/g, '""') + '"';
+      }
+      return s;
+    }
+
+    function toCSV() {
+      const headers = ['subid','sesid', ...VIEWS.map(v => v + '_score')];
+      const lines = [headers.join(',')];
+      const cards = document.querySelectorAll('[data-card]');
+      for (const card of cards) {
+        const sub = card.getAttribute('data-sub');
+        const ses = card.getAttribute('data-ses');
+        const scores = VIEWS.map(v => {
+          const el = card.querySelector(`[data-score="${v}"]`);
+          return el ? el.value : '';
+        });
+        const row = [sub, ses, ...scores].map(escapeCsv).join(',');
+        lines.push(row);
+      }
+      return lines.join('\n');
+    }
+
+    function downloadCSV() {
+      const csv = toCSV();
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'T1qc.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function render(filter='') {
+      const root = document.getElementById('root');
+      root.innerHTML = '';
+      const q = filter.trim().toLowerCase();
+      const rows = DATA.filter(r => (r.sub + ' ' + r.ses).toLowerCase().includes(q));
+      for (const row of rows) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.setAttribute('data-card', '');
+        card.setAttribute('data-sub', row.sub);
+        card.setAttribute('data-ses', row.ses);
+
+        const header = document.createElement('div');
+        header.className = 'header';
+        const title = document.createElement('div');
+        title.innerHTML = `<strong>${row.sub}</strong> &nbsp; <span class="muted">${row.ses}</span>`;
+        const hint = document.createElement('div');
+        hint.className = 'muted';
+        hint.textContent = 'Rate each view: 0=Fail, 1=Pass';
+        header.appendChild(title);
+        header.appendChild(hint);
+        card.appendChild(header);
+
+        const views = document.createElement('div');
+        views.className = 'views';
+        for (const v of VIEWS) {
+          const box = document.createElement('div');
+          box.className = 'view';
+          const img = document.createElement('img');
+          const src = row.images[v] || '';
+          if (src) img.src = src;
+          img.alt = `${row.sub} ${row.ses} ${v}`;
+          const label = document.createElement('label');
+          label.textContent = v;
+          const select = document.createElement('select');
+          select.setAttribute('data-score', v);
+          for (const [val, name] of [['', ''], ['0','Fail'], ['1','Pass']]) {
+            const opt = document.createElement('option');
+            opt.value = val; opt.textContent = name;
+            select.appendChild(opt);
+          }
+          const rating = document.createElement('div');
+          rating.className = 'rating';
+          rating.appendChild(label);
+          rating.appendChild(select);
+          box.appendChild(img);
+          box.appendChild(rating);
+          views.appendChild(box);
+        }
+        card.appendChild(views);
+        root.appendChild(card);
+      }
+      document.getElementById('count').textContent = rows.length + ' rows';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const search = document.getElementById('search');
+      search.addEventListener('input', () => render(search.value));
+      render('');
+    });
+    </script>
+</head>
+<body>
+  <h1>T1 QC Ratings</h1>
+  <div class="controls">
+    <input id="search" class="search" type="search" placeholder="Filter by subject/session (e.g., sub-123 ses-1)" />
+    <button class="primary" onclick="downloadCSV()">Download CSV</button>
+    <span id="count" class="muted"></span>
+  </div>
+  <div id="root" class="grid"></div>
+</body>
+</html>
