@@ -713,21 +713,19 @@ done
 
 for fmriprep_func - a reduced set of files was unzipped:
 
+```
 for f in "${files[@]}"; do
     unzip -n "$f" -d /cbica/projects/grmpy/data/derivatives -x $(cat /cbica/projects/grmpy/code/curation/06_QC/scripts/exclude.txt)
 done
-
-for fmriprep_anat - we only need the `sourcedata` folder, which will get merged with the fmriprep_func dataset
-
-for f in "${files[@]}"; do
-    unzip -n "$f" -d /cbica/projects/grmpy/data/derivatives -x fmriprep_anat/sub-*
-done
+```
 
 for aslprep - we can ignore the ses-1/perf/*_desc-preproc_asl.* files since the timeseries are useless
 
+```
 for f in "${files[@]}"; do
     unzip -n "$f" -d /cbica/projects/grmpy/data/derivatives -x aslprep/sub-*/ses-1/perf/*_desc-preproc_asl.*
 done
+```
 
 check that fmriprep in apply mode will work with this reduced set:
 
@@ -851,6 +849,20 @@ The left hemisphere Euler characteristic distribution shows the quality of surfa
 ![Right Hemisphere Euler](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/freesurfer-post_RH_euler_qc_histogram.png)
 
 Similarly, the right hemisphere Euler characteristic distribution provides insight into the quality of surface reconstruction for the right hemisphere. The distributions for both hemispheres should be roughly similar, with any large asymmetries potentially indicating reconstruction issues.
+
+### T1w QC manual ratings
+
+The T1w QC manual ratings were generated using the [`generate_t1_qc_html.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/generate_t1_qc_html.py) script. The script generates a HTML page with a simple UI to rate each view per (sub, ses).
+
+```bash
+python /cbica/projects/grmpy/code/curation/06_QC/scripts/generate_t1_qc_html.py \
+  --root /cbica/projects/grmpy/data/T1_QC/slices \
+  --out /cbica/projects/grmpy/code/curation/06_QC/data/T1_QC_ratings.html \
+  --portable \
+  --allow-missing
+```
+
+The HTML page allows for easy viewing and rating of the T1w images. The ratings are exported to a CSV file.
 
 # helpful hints
 
