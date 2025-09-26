@@ -857,7 +857,7 @@ The T1w QC manual ratings were generated using the [`generate_t1_qc_html.py`](ht
 ```bash
 python /cbica/projects/grmpy/code/curation/06_QC/scripts/generate_t1_qc_html.py \
   --root /cbica/projects/grmpy/data/T1_QC/slices \
-  --out /cbica/projects/grmpy/code/curation/06_QC/data/T1_QC_ratings.html \
+  --out /cbica/projects/grmpy/code/curation/06_QC/scripts/07_T1_QC_ratings.html \
   --portable \
   --allow-missing
 ```
