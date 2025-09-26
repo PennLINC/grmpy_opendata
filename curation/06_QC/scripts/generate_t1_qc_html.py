@@ -48,8 +48,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--root",
-        required=True,
-        help="Directory containing PNG images (sub-*_ses-*_VIEW.png)",
+        default=None,
+        help=(
+            "Directory containing PNG images (sub-*_ses-*_VIEW.png). "
+            "Required unless --generate-from-nifti is used; in that case, "
+            "defaults to --png-outdir."
+        ),
     )
     parser.add_argument("--out", required=True, help="Output HTML file path")
     parser.add_argument(
@@ -471,7 +475,9 @@ def main() -> None:
             raise SystemExit(
                 "--nifti-root is required when --generate-from-nifti is set"
             )
-        png_dir = args.png_outdir or args.root
+        png_dir = (
+            args.png_outdir or args.root or os.path.join(os.getcwd(), "t1_qc_pngs")
+        )
         os.makedirs(png_dir, exist_ok=True)
         generate_pngs_from_nifti(
             nifti_root=args.nifti_root,
@@ -480,6 +486,9 @@ def main() -> None:
             sag_fracs=args.sag_fracs,
             axi_fracs=args.axi_fracs,
         )
+
+        if not args.root:
+            args.root = png_dir
 
     keys, pairs = collect_rows(args.root, args.pattern, args.views, args.allow_missing)
     if not keys:
