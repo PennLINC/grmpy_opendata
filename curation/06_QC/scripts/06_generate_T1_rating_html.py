@@ -255,8 +255,8 @@ def render_html(
         }} else {{
           if (c === '"') {{ inQuotes = true; }}
           else if (c === ',') {{ row.push(field); field=''; }}
-          else if (c === '\n' || c === '\r') {{
-            if (c === '\r' && text[i] === '\n') i++;
+          else if (c === '\\n' || c === '\\r') {{
+            if (c === '\\r' && text[i] === '\\n') i++;
             row.push(field); rows.push(row); row = []; field='';
           }} else {{ field += c; }}
         }}
