@@ -211,3 +211,6 @@ logs/
 # sif files
 *.sif
 **/*.sif
+
+# t1pngs
+T1_QC_ratings_pngs/

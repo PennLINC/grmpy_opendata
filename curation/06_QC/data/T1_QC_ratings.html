@@ -30,8 +30,10 @@
     function escapeCsv(val) {
       if (val == null) return '';
       const s = String(val);
-      if (/[",
-]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+      if (s.includes('"') || s.includes(',') || s.includes('
+')) {
+        return '"' + s.replace(/"/g, '""') + '"';
+      }
       return s;
     }
 
