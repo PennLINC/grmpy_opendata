@@ -30,8 +30,7 @@
     function escapeCsv(val) {
       if (val == null) return '';
       const s = String(val);
-      if (s.includes('"') || s.includes(',') || s.includes('
-')) {
+      if (s.includes('"') || s.includes(',') || s.includes('\n')) {
         return '"' + s.replace(/"/g, '""') + '"';
       }
       return s;
@@ -51,8 +50,7 @@
         const row = [sub, ses, ...scores].map(escapeCsv).join(',');
         lines.push(row);
       }
-      return lines.join('
-');
+      return lines.join('\n');
     }
 
     function downloadCSV() {
