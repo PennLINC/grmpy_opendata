@@ -213,6 +213,7 @@ def render_html(
     js = f"""
     const DATA = {json_data};
     const VIEWS = {json_views};
+    let PREFILL = {{}}; // key: `${{sub}}|${{ses}}` -> {{ view: score }}
 
     function escapeCsv(val) {{
       if (val == null) return '';
@@ -240,17 +241,84 @@ def render_html(
       return lines.join('\\n');
     }}
 
-    function downloadCSV() {{
-      const csv = toCSV();
-      const blob = new Blob([csv], {{ type: 'text/csv;charset=utf-8;' }});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'T1-ratings.csv';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+    function parseCSV(text) {{
+      const rows = [];
+      let i = 0, field = '', inQuotes = false, row = [];
+      while (i < text.length) {{
+        const c = text[i++];
+        if (inQuotes) {{
+          if (c === '"') {{
+            if (text[i] === '"') {{ field += '"'; i++; }} else {{ inQuotes = false; }}
+          }} else {{
+            field += c;
+          }}
+        }} else {{
+          if (c === '"') {{ inQuotes = true; }}
+          else if (c === ',') {{ row.push(field); field=''; }}
+          else if (c === '\n' || c === '\r') {{
+            if (c === '\r' && text[i] === '\n') i++;
+            row.push(field); rows.push(row); row = []; field='';
+          }} else {{ field += c; }}
+        }}
+      }}
+      if (field.length || row.length) {{ row.push(field); rows.push(row); }}
+      return rows.filter(r => r.length && r.some(x => x !== ''));
+    }}
+
+    function buildPrefillFromCSV(rows) {{
+      if (!rows || rows.length < 2) return {{}};
+      const header = rows[0];
+      const subIdx = header.indexOf('subid');
+      const sesIdx = header.indexOf('sesid');
+      const viewIdx = Object.fromEntries(VIEWS.map(v => [v, header.indexOf(v + '_score')]));
+      const map = {{}};
+      for (let r = 1; r < rows.length; r++) {{
+        const row = rows[r];
+        const sub = row[subIdx];
+        const ses = row[sesIdx];
+        if (!sub || !ses) continue;
+        const key = `${{sub}}|${{ses}}`;
+        map[key] = map[key] || {{}};
+        for (const v of VIEWS) {{
+          const idx = viewIdx[v];
+          if (idx >= 0 && row[idx] !== undefined && row[idx] !== '') {{
+            map[key][v] = String(row[idx]);
+          }}
+        }}
+      }}
+      return map;
+    }}
+
+    function applyPrefill(prefill) {{
+      const cards = document.querySelectorAll('[data-card]');
+      let applied = 0;
+      for (const card of cards) {{
+        const sub = card.getAttribute('data-sub');
+        const ses = card.getAttribute('data-ses');
+        const key = `${{sub}}|${{ses}}`;
+        const views = prefill[key];
+        if (!views) continue;
+        for (const v of VIEWS) {{
+          const val = views[v];
+          if (val === undefined) continue;
+          const sel = card.querySelector(`[data-score="${{v}}"]`);
+          if (sel) {{ sel.value = val; applied++; }}
+        }}
+      }}
+      return applied;
+    }}
+
+    function onCsvSelected(file) {{
+      const reader = new FileReader();
+      reader.onload = (e) => {{
+        const text = e.target.result;
+        const rows = parseCSV(text);
+        PREFILL = buildPrefillFromCSV(rows);
+        const n = applyPrefill(PREFILL);
+        const msg = document.getElementById('resumeMsg');
+        if (msg) msg.textContent = `Applied ${{n}} ratings from CSV`;
+      }};
+      reader.readAsText(file);
     }}
 
     function render(filter='') {{
@@ -311,6 +379,8 @@ def render_html(
     window.addEventListener('DOMContentLoaded', () => {{
       const search = document.getElementById('search');
       search.addEventListener('input', () => render(search.value));
+      const csv = document.getElementById('csvUpload');
+      csv.addEventListener('change', () => {{ if (csv.files && csv.files[0]) onCsvSelected(csv.files[0]); }});
       render('');
     }});
     """
@@ -330,6 +400,8 @@ def render_html(
   <div class="controls">
     <input id="search" class="search" type="search" placeholder="Filter by subject/session (e.g., sub-123 ses-1)" />
     <button class="primary" onclick="downloadCSV()">Download CSV</button>
+    <input id="csvUpload" type="file" accept=".csv,text/csv" />
+    <span id="resumeMsg" class="muted"></span>
     <span id="count" class="muted"></span>
   </div>
   <div id="root" class="grid"></div>
