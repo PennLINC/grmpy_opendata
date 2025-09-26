@@ -852,7 +852,7 @@ Similarly, the right hemisphere Euler characteristic distribution provides insig
 
 ### T1w QC manual ratings
 
-The T1w QC manual ratings were generated using the [`generate_t1_qc_html.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/generate_t1_qc_html.py) script. The script generates a HTML page with a simple UI to rate each view per (sub, ses).
+The T1w QC manual ratings were generated using the [`06_generate_T1_rating_html.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/06_generate_T1_rating_html.py) script. The script generates a HTML page with a simple UI to rate each view per (sub, ses).
 
 ```bash
 python /cbica/projects/grmpy/code/curation/06_QC/scripts/generate_t1_qc_html.py \
