@@ -246,7 +246,7 @@ def render_html(
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'T1qc.csv';
+      a.download = 'T1-ratings.csv';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
