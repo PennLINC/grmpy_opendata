@@ -4,8 +4,6 @@ Generate a self-contained HTML page for T1 QC ratings from slice PNGs, with
 optional generation of those PNGs directly from T1w NIfTI files.
 
 Features:
-- (Optional) Generate PNG slices from NIfTI files (reoriented to RAS) for views
-  S1, S3 (sagittal) and A2, A3 (axial) at configurable slice fractions.
 - Scan an image directory for `sub-<ID>_ses-<ID>_<VIEW>.png` images
 - Group images by (subject, session) for expected views (default: S1, S3, A2, A3)
 - Produce an HTML with a simple UI to rate each view per (sub, ses)
@@ -37,9 +35,7 @@ import os
 import re
 import shutil
 from typing import Dict, List, Tuple
-import numpy as np
-import nibabel as nib
-import matplotlib.pyplot as plt
+import json
 
 
 def parse_args() -> argparse.Namespace:
@@ -86,41 +82,6 @@ def parse_args() -> argparse.Namespace:
             "Larger images will be linked/copied as files."
         ),
     )
-    # NIfTI -> PNG generation options
-    parser.add_argument(
-        "--generate-from-nifti",
-        action="store_true",
-        help="Generate PNGs from NIfTI T1w files before creating HTML",
-    )
-    parser.add_argument(
-        "--nifti-root",
-        default=None,
-        help="Root directory to search for NIfTI files (e.g., BIDS root)",
-    )
-    parser.add_argument(
-        "--nifti-pattern",
-        default="sub-*/ses-*/anat/*_T1w.nii.gz",
-        help="Glob pattern (relative to --nifti-root) to find T1w NIfTIs",
-    )
-    parser.add_argument(
-        "--png-outdir",
-        default=None,
-        help="Where to write generated PNGs; defaults to --root if not specified",
-    )
-    parser.add_argument(
-        "--sag-fracs",
-        nargs=2,
-        type=float,
-        default=[0.2, 0.8],
-        help="Two sagittal slice fractions (0-1) for S1,S3",
-    )
-    parser.add_argument(
-        "--axi-fracs",
-        nargs=2,
-        type=float,
-        default=[0.4, 0.6],
-        help="Two axial slice fractions (0-1) for A2,A3",
-    )
     return parser.parse_args()
 
 
@@ -154,82 +115,6 @@ def collect_rows(
     if not allow_missing:
         keys = [k for k in keys if all(v in pairs[k] for v in views)]
     return keys, pairs
-
-
-def _norm01(arr: np.ndarray) -> np.ndarray:
-    arr = arr.astype(np.float32)
-    vmin = np.nanpercentile(arr, 2)
-    vmax = np.nanpercentile(arr, 98)
-    if not np.isfinite(vmin) or not np.isfinite(vmax) or vmax <= vmin:
-        vmin = np.nanmin(arr)
-        vmax = np.nanmax(arr)
-    if not np.isfinite(vmin):
-        vmin = 0.0
-    if not np.isfinite(vmax) or vmax <= vmin:
-        vmax = vmin + 1.0
-    arr = np.clip((arr - vmin) / (vmax - vmin + 1e-6), 0.0, 1.0)
-    return arr
-
-
-def _save_slice_png(img2d: np.ndarray, out_png: str) -> None:
-    os.makedirs(os.path.dirname(out_png), exist_ok=True)
-    plt.figure(figsize=(3, 3), dpi=150)
-    plt.imshow(img2d, cmap="gray", interpolation="nearest")
-    plt.axis("off")
-    plt.tight_layout(pad=0)
-    plt.savefig(out_png, bbox_inches="tight", pad_inches=0)
-    plt.close()
-
-
-def generate_pngs_from_nifti(
-    nifti_root: str,
-    nifti_pattern: str,
-    png_outdir: str,
-    sag_fracs: List[float],
-    axi_fracs: List[float],
-) -> None:
-    paths = sorted(glob.glob(os.path.join(nifti_root, nifti_pattern)))
-    if not paths:
-        print(
-            "No NIfTI files found for generation; check --nifti-root and --nifti-pattern"
-        )
-        return
-
-    print(f"Found {len(paths)} NIfTI files. Generating PNGs to: {png_outdir}")
-    for nii in paths:
-        base = os.path.basename(nii)
-        msub = re.search(r"(sub-[^_]+)", base)
-        mses = re.search(r"(ses-[^_]+)", base)
-        if not (msub and mses):
-            continue
-        sub = msub.group(1)
-        ses = mses.group(1)
-
-        try:
-            img = nib.load(nii)
-            img = nib.as_closest_canonical(img)  # RAS
-            data = img.get_fdata()
-            data = np.nan_to_num(data, nan=0.0, posinf=0.0, neginf=0.0)
-            norm = _norm01(data)
-
-            nx, ny, nz = norm.shape
-
-            # Sagittal: index along x
-            for frac, tag in zip(sag_fracs, ["S1", "S3"]):
-                ix = max(0, min(nx - 1, int(round(frac * (nx - 1)))))
-                sl = norm[ix, :, :].T  # (y, z) → transpose for display
-                out_png = os.path.join(png_outdir, f"{sub}_{ses}_{tag}.png")
-                _save_slice_png(sl, out_png)
-
-            # Axial: index along z
-            for frac, tag in zip(axi_fracs, ["A2", "A3"]):
-                iz = max(0, min(nz - 1, int(round(frac * (nz - 1)))))
-                sl = norm[:, :, iz].T  # (x, y)
-                out_png = os.path.join(png_outdir, f"{sub}_{ses}_{tag}.png")
-                _save_slice_png(sl, out_png)
-
-        except Exception as e:
-            print(f"Failed to process {nii}: {e}")
 
 
 def ensure_portable_assets(
@@ -331,8 +216,6 @@ def render_html(
         )
 
     # Serialize minimal JSON safely
-    import json
-
     json_data = json.dumps(data_rows)
     json_views = json.dumps(views)
 
@@ -470,30 +353,7 @@ def render_html(
 def main() -> None:
     args = parse_args()
 
-    # Optionally generate PNGs from NIfTI inputs first
-    if args.generate_from_nifti:
-        if not args.nifti_root:
-            raise SystemExit(
-                "--nifti-root is required when --generate-from-nifti is set"
-            )
-        png_dir = (
-            args.png_outdir or args.root or os.path.join(os.getcwd(), "t1_qc_pngs")
-        )
-        os.makedirs(png_dir, exist_ok=True)
-        generate_pngs_from_nifti(
-            nifti_root=args.nifti_root,
-            nifti_pattern=args.nifti_pattern,
-            png_outdir=png_dir,
-            sag_fracs=args.sag_fracs,
-            axi_fracs=args.axi_fracs,
-        )
-
-        if not args.root:
-            args.root = png_dir
-
     keys, pairs = collect_rows(args.root, args.pattern, args.views, args.allow_missing)
-    print(f"DEBUG: Found {len(keys)} subject/session pairs")
-    print(f"DEBUG: First few pairs: {keys[:5]}")
     if keys:
         print(f"DEBUG: Example images for first pair: {pairs[keys[0]]}")
 
