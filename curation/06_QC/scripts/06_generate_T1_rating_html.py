@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate a self-contained HTML page for T1 QC ratings from slice PNGs, with
-optional generation of those PNGs directly from T1w NIfTI files.
+Generate a self-contained HTML page for T1 QC ratings from slice PNGs.
 
 Features:
 - Scan an image directory for `sub-<ID>_ses-<ID>_<VIEW>.png` images
@@ -214,6 +213,9 @@ def render_html(
     const DATA = {json_data};
     const VIEWS = {json_views};
     let PREFILL = {{}}; // key: `${{sub}}|${{ses}}` -> {{ view: score }}
+    let RATINGS = {{}}; // live user selections, same keying as PREFILL
+
+    const makeKey = (sub, ses) => sub + '|' + ses;
 
     function escapeCsv(val) {{
       if (val == null) return '';
@@ -227,16 +229,15 @@ def render_html(
     function toCSV() {{
       const headers = ['subid','sesid', ...VIEWS.map(v => v + '_score')];
       const lines = [headers.join(',')];
-      const cards = document.querySelectorAll('[data-card]');
-      for (const card of cards) {{
-        const sub = card.getAttribute('data-sub');
-        const ses = card.getAttribute('data-ses');
+      for (const row of DATA) {{
+        const key = makeKey(row.sub, row.ses);
         const scores = VIEWS.map(v => {{
-          const el = card.querySelector(`[data-score="${{v}}"]`);
-          return el ? el.value : '';
+          if (RATINGS[key] && RATINGS[key][v] !== undefined) return RATINGS[key][v];
+          if (PREFILL[key] && PREFILL[key][v] !== undefined) return PREFILL[key][v];
+          return '';
         }});
-        const row = [sub, ses, ...scores].map(escapeCsv).join(',');
-        lines.push(row);
+        const line = [row.sub, row.ses, ...scores].map(escapeCsv).join(',');
+        lines.push(line);
       }}
       return lines.join('\\n');
     }}
@@ -375,6 +376,17 @@ def render_html(
             opt.value = val; opt.textContent = name;
             select.appendChild(opt);
           }}
+          // initialize from RATINGS or PREFILL
+          const key = makeKey(row.sub, row.ses);
+          let initVal = '';
+          if (RATINGS[key] && RATINGS[key][v] !== undefined) {{ initVal = RATINGS[key][v]; }}
+          else if (PREFILL[key] && PREFILL[key][v] !== undefined) {{ initVal = PREFILL[key][v]; }}
+          select.value = initVal;
+          // persist on change
+          select.addEventListener('change', () => {{
+            RATINGS[key] = RATINGS[key] || {{}};
+            RATINGS[key][v] = select.value;
+          }});
           const rating = document.createElement('div');
           rating.className = 'rating';
           rating.appendChild(label);
