@@ -493,6 +493,11 @@ def main() -> None:
             args.root = png_dir
 
     keys, pairs = collect_rows(args.root, args.pattern, args.views, args.allow_missing)
+    print(f"DEBUG: Found {len(keys)} subject/session pairs")
+    print(f"DEBUG: First few pairs: {keys[:5]}")
+    if keys:
+        print(f"DEBUG: Example images for first pair: {pairs[keys[0]]}")
+
     if not keys:
         raise SystemExit(
             "No rows found. Check --root and --pattern, and ensure filenames match 'sub-*_ses-*_VIEW.png'."
