@@ -9,11 +9,10 @@
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 16px; }
     h1 { font-size: 20px; margin: 0 0 12px 0; }
     .controls { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    @media (min-width: 1200px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
     .card { border: 1px solid #ddd; border-radius: 8px; padding: 8px; background: #fff; }
     .header { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
-    .views { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .views { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
     .view { display: flex; flex-direction: column; gap: 6px; }
     .view img { width: 100%; height: auto; display: block; border: 1px solid #eee; border-radius: 4px; }
     .rating { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
@@ -84,7 +83,7 @@
         title.innerHTML = `<strong>${row.sub}</strong> &nbsp; <span class="muted">${row.ses}</span>`;
         const hint = document.createElement('div');
         hint.className = 'muted';
-        hint.textContent = 'Rate each view: 0=Fail, 1=Borderline, 2=Pass';
+        hint.textContent = 'Rate each view: 0=Fail, 1=Pass';
         header.appendChild(title);
         header.appendChild(hint);
         card.appendChild(header);
@@ -102,7 +101,7 @@
           label.textContent = v;
           const select = document.createElement('select');
           select.setAttribute('data-score', v);
-          for (const [val, name] of [['', ''], ['0','Fail'], ['1','Borderline'], ['2','Pass']]) {
+          for (const [val, name] of [['', ''], ['0','Fail'], ['1','Pass']]) {
             const opt = document.createElement('option');
             opt.value = val; opt.textContent = name;
             select.appendChild(opt);
