@@ -345,8 +345,6 @@ def main() -> None:
     args = parse_args()
 
     keys, pairs = collect_rows(args.root, args.pattern, args.views, args.allow_missing)
-    if keys:
-        print(f"DEBUG: Example images for first pair: {pairs[keys[0]]}")
 
     if not keys:
         raise SystemExit(
