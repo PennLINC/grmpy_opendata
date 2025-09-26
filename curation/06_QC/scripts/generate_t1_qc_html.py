@@ -344,7 +344,7 @@ def render_html(
     function escapeCsv(val) {{
       if (val == null) return '';
       const s = String(val);
-      if (s.includes('"') || s.includes(',') || s.includes('\n')) {{
+      if (s.includes('"') || s.includes(',') || s.includes('\\n')) {{
         return '"' + s.replace(/"/g, '""') + '"';
       }}
       return s;
@@ -364,7 +364,7 @@ def render_html(
         const row = [sub, ses, ...scores].map(escapeCsv).join(',');
         lines.push(row);
       }}
-      return lines.join('\n');
+      return lines.join('\\n');
     }}
 
     function downloadCSV() {{
