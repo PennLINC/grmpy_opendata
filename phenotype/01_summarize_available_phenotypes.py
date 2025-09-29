@@ -2,10 +2,17 @@
 """
 Summarize `info` fields across subject-level Flywheel JSON files.
 
-This utility recursively searches a GRMPY SUBJECTS directory for files matching
-the pattern "*.flywheel.json", loads each JSON, extracts and flattens the
-top-level `info` object (if present), and produces a TSV summarizing, for every
-flattened field, how many subjects have a non-missing value.
+Search strategy (per request):
+- Only inspect immediate child directories of the SUBJECTS root (each assumed to
+  be a subject directory named <sub-id>).
+- In each subject directory, process exactly one file named
+  <sub-id>.flywheel.json. No recursive descent into deeper subdirectories and no
+  other JSON filenames are considered.
+
+For each discovered subject JSON, the script loads the JSON, extracts and
+flattens the top-level `info` object (if present), and produces a TSV
+summarizing, for every flattened field, how many subjects have a non-missing
+value.
 
 Missingness definition:
 - A value is considered missing if it is None, an empty string "", or an empty
@@ -14,8 +21,8 @@ Missingness definition:
 
 Output TSV columns:
 - field: dot-delimited flattened key under `info` (e.g., demographics.height)
-- n_present: number of JSON files with a non-missing value for this field
-- n_missing: number of JSON files without a non-missing value for this field
+- n_present: number of subject JSONs with a non-missing value for this field
+- n_missing: number of subject JSONs without a non-missing value for this field
 - present_pct: n_present / total_subject_jsons, rounded to 4 decimals
 - types: comma-separated set of Python value types observed for present values
 
@@ -24,18 +31,8 @@ Example
 ```bash
 python curation/04_cubids_curation/01_summarize_available_phenotypes.py \
   --subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
-  --output info_summary.tsv
+  --output /cbica/projects/grmpy/sourcedata/GRMPY_822831/info_summary.tsv
 ```
-
-You can also restrict the search pattern if needed (default: *.flywheel.json):
-```bash
-python curation/04_cubids_curation/01_summarize_available_phenotypes.py \
-  --subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
-  --pattern "*.json" --output info_summary.tsv
-```
-
-The script prints a short run summary to stdout, and writes the TSV to the
-requested path.
 """
 
 from __future__ import annotations
@@ -57,18 +54,16 @@ class FieldStats:
 
 def parse_args(argv: Iterable[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Summarize flattened `info` fields across Flywheel JSON files."
+        description=(
+            "Summarize flattened `info` fields across Flywheel JSON files in "
+            "immediate SUBJECTS subdirectories (<sub-id>/<sub-id>.flywheel.json)."
+        )
     )
     parser.add_argument(
         "--subjects-root",
         required=True,
         type=Path,
         help="Path to SUBJECTS root (e.g., /cbica/projects/.../SUBJECTS)",
-    )
-    parser.add_argument(
-        "--pattern",
-        default="*.flywheel.json",
-        help="Glob pattern for subject-level JSON files (default: *.flywheel.json)",
     )
     parser.add_argument(
         "--output",
@@ -111,7 +106,6 @@ def flatten_info(info: Mapping[str, Any], parent_key: str = "") -> Dict[str, Any
 
 
 def human_type_name(value: Any) -> str:
-    # Normalize some common types for readability
     if isinstance(value, bool):
         return "bool"
     if isinstance(value, int) and not isinstance(value, bool):
@@ -127,9 +121,23 @@ def human_type_name(value: Any) -> str:
     return type(value).__name__
 
 
-def find_json_files(root: Path, pattern: str) -> Iterable[Path]:
-    # rglob handles recursive search; pattern is applied at filename level.
-    return root.rglob(pattern)
+def find_subject_jsons(subjects_root: Path) -> Iterable[Path]:
+    """Yield paths like <root>/<sub-id>/<sub-id>.flywheel.json only.
+
+    - Only immediate directories are considered subjects.
+    - No recursion into nested subdirectories.
+    - Only exact filename match <sub-id>.flywheel.json is used.
+    """
+    if not subjects_root.exists() or not subjects_root.is_dir():
+        return []
+
+    for child in sorted(subjects_root.iterdir()):
+        if not child.is_dir():
+            continue
+        subject_id = child.name
+        candidate = child / f"{subject_id}.flywheel.json"
+        if candidate.exists() and candidate.is_file():
+            yield candidate
 
 
 def summarize_info(json_files: Iterable[Path]) -> Tuple[int, Dict[str, FieldStats]]:
@@ -138,7 +146,6 @@ def summarize_info(json_files: Iterable[Path]) -> Tuple[int, Dict[str, FieldStat
     type_sets: Dict[str, set] = defaultdict(set)
 
     for json_path in json_files:
-        # Only count files that we can parse as subject JSONs
         try:
             with json_path.open("r") as f:
                 data = json.load(f)
@@ -150,7 +157,6 @@ def summarize_info(json_files: Iterable[Path]) -> Tuple[int, Dict[str, FieldStat
 
         info_obj = data.get("info")
         if not isinstance(info_obj, dict):
-            # No usable `info` field; count as missing for all fields implicitly
             continue
 
         flat = flatten_info(info_obj)
@@ -160,7 +166,6 @@ def summarize_info(json_files: Iterable[Path]) -> Tuple[int, Dict[str, FieldStat
             present_counts[field_path] += 1
             type_sets[field_path].add(human_type_name(value))
 
-    # Build FieldStats
     stats: Dict[str, FieldStats] = {}
     for field, count in present_counts.items():
         stats[field] = FieldStats(present_count=count, type_names=type_sets[field])
@@ -184,23 +189,23 @@ def write_tsv(
 def main(argv: Iterable[str]) -> int:
     args = parse_args(argv)
 
-    root: Path = args.subjects_root
-    pattern: str = args.pattern
+    subjects_root: Path = args.subjects_root
     output: Path = args.output
 
-    if not root.exists() or not root.is_dir():
+    if not subjects_root.exists() or not subjects_root.is_dir():
         print(
-            f"[error] subjects root not found or not a directory: {root}",
+            f"[error] subjects root not found or not a directory: {subjects_root}",
             file=sys.stderr,
         )
         return 2
 
-    json_files = list(find_json_files(root, pattern))
+    json_files = list(find_subject_jsons(subjects_root))
     total, stats = summarize_info(json_files)
     write_tsv(output, total, stats)
 
     print(
-        f"Scanned {len(json_files)} files; {total} valid subject JSONs.\n"
+        f"Scanned {len(json_files)} candidate subject files; "
+        f"{total} valid subject JSONs.\n"
         f"Found {len(stats)} `info` fields with at least one present value.\n"
         f"Summary written to: {output}"
     )
