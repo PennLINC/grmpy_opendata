@@ -31,7 +31,10 @@ nav_order: 2
      - [DSI Studio Bundle Analysis](#dsi-studio-bundle-analysis)
    - [ASLPrep QC](#aslprep-qc)
    - [FreeSurfer-Post QC](#freesurfer-post-qc)
-7. [Helpful hints](#helpful-hints)
+   - [T1w QC manual ratings](#t1w-qc-manual-ratings)
+7. [Analysis](#post-processing)
+8. [Phenotypic Data](#phenotypic-data)
+9. [Helpful hints](#helpful-hints)
 
 # 01: Getting data from flywheel
 
@@ -862,7 +865,95 @@ python /cbica/projects/grmpy/code/curation/06_QC/scripts/06_generate_T1_rating_h
   --allow-missing
 ```
 
-The HTML page allows for easy viewing and rating of the T1w images. The ratings are exported to a CSV file.
+The HTML page ([07_T1_QC_ratings.html](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/07_T1_QC_ratings.html)) allows for easy viewing and rating of the T1w images. The ratings are exported to a CSV file.
+
+# Analysis
+
+
+# Phenotypic Data
+
+Phenotypic data was collected and previously uploaded to the GRMPY flywheel project. The phenotypic data for each participant is contained in the `/cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS/<sub-id>/` under a `<sub-id>.flywheel.json` file.
+
+First, the available phenotypes were summarized using the [`01_summarize_available_phenotypes.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/01_summarize_available_phenotypes.py) script.
+
+```bash
+python /cbica/projects/grmpy/code/phenotype/01_summarize_available_phenotypes.py \
+  --subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+  --output /cbica/projects/grmpy/code/phenotype/data/available_phenotypes.tsv
+```
+
+Then, the phenotypes were extracted using the [`02_extract_info_subfield.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/02_extract_info_subfield.py) script. This script allows for the exclusion of specific fields to avoid including sensitive information. Below are the commands used, along with exclusions for each phenotype.
+
+```bash
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield self_report_summary --output phenotype/data/self_report_summary.tsv
+
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield demographics \
+--output phenotype/data/demographics.tsv \
+--exclude intakeby,study_coordinator
+
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield CNB_raw \
+--output phenotype/data/CNB_raw.tsv
+
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield Diagnosis \
+--output phenotype/data/Diagnosis.tsv \
+--exclude CONSENSUSBY,INTERVIEWER,ENTBY,DODIAGNOSIS
+
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield Proband_GOASSESS \
+--output phenotype/data/Proband_GOASSESS.tsv
+
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield tanner_substance_spq \
+--output phenotype/data/tanner_substance_spq.tsv \
+--exclude redcapid,bbl_assessor,bbl_protocol,bbl_location
+
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield prime_screen \
+--output phenotype/data/prime_screen.tsv \
+--exclude redcapid,assessor,protocol
+
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield biss_madrs \
+--output phenotype/data/biss_madrs.tsv
+
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield n_back_scores \
+--output phenotype/data/n_back_scores.tsv
+
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield imaging_prescan_scales \
+--output phenotype/data/imaging_prescan_scales.tsv \
+--exclude redcapid,bbl_assessor,bbl_location
+
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield imaging_postscan_scales \
+--output phenotype/data/imaging_postscan_scales.tsv \
+--exclude redcapid,bbl_assessor,bbl_location
+
+python phenotype/02_extract_info_subfield.py \
+--subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
+--info-subfield self_report_itemwise \
+--output phenotype/data/self_report_itemwise.tsv \
+--exclude redcapid,bbl_assessor,bbl_protocol
+
+```
+
+TODO: split up self-reports into separate files; find out what additional fields to exclude; split up pre/post scan scales into separate files;
 
 # helpful hints
 
