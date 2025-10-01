@@ -24,6 +24,15 @@ Output:
 - Optionally a "misc.tsv" that includes completion/"complete" columns and any
   other columns that could not be reliably assigned to an instrument.
 
+Row clearing (retain row, blank values):
+- Rows that would be filtered out by the following criteria will be retained in
+  all outputs but with empty values for all columns except "participant_id":
+  - bbl_protocol must equal "GRMPY"
+  - statetrait_vcode must be one of {"V", "U", "F"}
+  - admin_proband must equal "p"
+- If any of these columns are absent in the input, that criterion is ignored
+  (i.e., the row is not cleared based on that missing criterion).
+
 Example:
   python phenotype/03_separate_self_reports.py \
     --input phenotype/data/self_report_itemwise.tsv \
@@ -270,6 +279,41 @@ def write_tsv(path: Path, header: List[str], rows: Iterable[Mapping[str, str]]) 
             writer.writerow([row.get(col, "") for col in header])
 
 
+def _get_row_value_case_insensitive(row: Mapping[str, str], key: str) -> str:
+    """Return the value for the first column whose name matches key case-insensitively.
+
+    Returns empty string if not found.
+    """
+    key_l = key.lower()
+    for k, v in row.items():
+        if k.lower() == key_l:
+            return v
+    return ""
+
+
+def row_should_be_cleared(row: Mapping[str, str]) -> bool:
+    """Determine whether a row should be cleared based on filter criteria.
+
+    Criteria (applied only if the corresponding column exists in the input):
+      - bbl_protocol must be exactly "GRMPY"
+      - statetrait_vcode must be one of {"V", "U", "F"}
+      - admin_proband must be exactly "p"
+    """
+    protocol = _get_row_value_case_insensitive(row, "bbl_protocol")
+    if protocol != "" and protocol != "GRMPY":
+        return True
+
+    vcode = _get_row_value_case_insensitive(row, "statetrait_vcode")
+    if vcode != "" and vcode not in {"V", "U", "F"}:
+        return True
+
+    proband = _get_row_value_case_insensitive(row, "admin_proband")
+    if proband != "" and proband != "p":
+        return True
+
+    return False
+
+
 def main(argv: Iterable[str]) -> int:
     args = parse_args(argv)
 
@@ -313,12 +357,23 @@ def main(argv: Iterable[str]) -> int:
     with args.input.open("r", newline="") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
+            should_clear = row_should_be_cleared(row)
             for inst, header in instrument_headers.items():
-                outputs[inst][1].append({col: row.get(col, "") for col in header})
+                if should_clear:
+                    cleared_row = {col: "" for col in header}
+                    cleared_row[PARTICIPANT_ID_COL] = row.get(PARTICIPANT_ID_COL, "")
+                    outputs[inst][1].append(cleared_row)
+                else:
+                    outputs[inst][1].append({col: row.get(col, "") for col in header})
             if misc_header:
-                outputs["misc"][1].append(
-                    {col: row.get(col, "") for col in misc_header}
-                )
+                if should_clear:
+                    cleared_misc = {col: "" for col in misc_header}
+                    cleared_misc[PARTICIPANT_ID_COL] = row.get(PARTICIPANT_ID_COL, "")
+                    outputs["misc"][1].append(cleared_misc)
+                else:
+                    outputs["misc"][1].append(
+                        {col: row.get(col, "") for col in misc_header}
+                    )
 
     # Write files
     for inst, (path, rows) in outputs.items():
