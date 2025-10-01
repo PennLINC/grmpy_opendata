@@ -12,6 +12,8 @@ Notes:
 - Operates per instrument file (e.g., `aces.tsv`, `bdi.tsv`, ...). If a file is
   missing required columns, that instrument is skipped gracefully.
 - Existing columns are preserved; new summary-score columns are appended.
+- For any row that was entirely empty prior to scoring (ignoring `participant_id`),
+  any newly added summary-score columns are cleared to missing values.
 """
 
 from __future__ import annotations
@@ -532,10 +534,38 @@ def score_file(path: Path, out_dir: Path) -> Optional[Path]:
 
     df = pd.read_csv(path, sep="\t", dtype={PARTICIPANT_ID_COL: str})
     original_cols = list(df.columns)
+
+    # Detect rows that are entirely empty prior to scoring (ignoring participant_id)
+    check_cols = [c for c in original_cols if c != PARTICIPANT_ID_COL]
+    if check_cols:
+        per_col_empty = []
+        for col in check_cols:
+            s = df[col]
+            if s.dtype == object:
+                # Treat NaN or empty/whitespace-only strings as empty
+                per_col_empty.append(s.isna() | s.astype(str).str.strip().eq(""))
+            else:
+                per_col_empty.append(s.isna())
+        empty_row_mask = per_col_empty[0]
+        for e in per_col_empty[1:]:
+            empty_row_mask = empty_row_mask & e
+    else:
+        empty_row_mask = pd.Series([False] * len(df), index=df.index)
+
     df = scorer(df)
 
     # Reorder: preserve original columns, then any new ones appended
     new_cols = [c for c in df.columns if c not in original_cols]
+
+    # Clear newly added summary columns for rows that were empty before scoring
+    if new_cols:
+        for c in new_cols:
+            s = df[c]
+            # Prefer pandas NA for nullable integer types; NaN otherwise
+            if "Int" in str(s.dtype):
+                df[c] = s.mask(empty_row_mask, other=pd.NA)
+            else:
+                df[c] = s.mask(empty_row_mask, other=math.nan)
     ordered = original_cols + new_cols
     df = df[ordered]
 
