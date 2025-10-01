@@ -8,35 +8,34 @@ Heuristics for instrument detection:
   starting with a digit after an instrument prefix (e.g., "aces_1", "hcl16_3_1",
   "eswan_dmdd_01a", "grit_15___2"). The instrument is the underscore-joined
   prefix tokens up to (but not including) the first token that starts with a digit.
-- Non-item columns (e.g., completion flags like "psqi_complete" or long names
-  like "pittsburgh_sleep_quality_index_psqi_complete") are mapped to the most
+- Non-item columns (e.g., metadata or timing fields) are mapped to the most
   likely instrument by searching for known instrument names within the column
   name (favoring longer matches). If still ambiguous, a lightweight plural
-  fallback is applied (e.g., map "ace_complete" → "aces"). Unmatched columns are
-  placed into a separate file named "misc.tsv".
+  fallback is applied (e.g., map "ace_flag" → "aces").
+- Columns whose names contain "complete" (case-insensitive), including long
+  names like "pittsburgh_sleep_quality_index_psqi_complete", are NOT included
+  in instrument TSVs and are instead written to "misc.tsv".
 
 Output:
 - One TSV per instrument in the output directory. Each TSV includes
   "participant_id" followed by the instrument's item columns sorted naturally
-  (numeric-aware), then any non-item columns assigned to that instrument
-  (e.g., completion flags), sorted alphabetically with any that contain
-  "complete" placed last.
-- Optionally a "misc.tsv" for columns that cannot be reliably assigned.
+  (numeric-aware), then any other non-item columns assigned to that instrument
+  (excluding completion/"complete" columns), sorted alphabetically.
+- Optionally a "misc.tsv" that includes completion/"complete" columns and any
+  other columns that could not be reliably assigned to an instrument.
 
 Example:
-  python phenotype/split_self_report_by_instrument.py \
-    --input /Users/sps253/Documents/GIT/grmpy_opendata/phenotype/data/self_report_itemwise.tsv \
-    --output-dir /Users/sps253/Documents/GIT/grmpy_opendata/phenotype/data
+  python phenotype/03_separate_self_reports.py \
+    --input phenotype/data/self_report_itemwise.tsv \
+    --output-dir phenotype/data
 """
 
 from __future__ import annotations
 
 import argparse
 import csv
-import os
 import re
 import sys
-from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, List, Mapping, Tuple
@@ -156,7 +155,10 @@ def extract_suffix_after_instrument(column: str, instrument: str) -> str:
 
 
 def assign_non_item_column(column: str, instruments: List[str]) -> str | None:
-    """Assign a non-item column (e.g., a completion flag) to the most likely instrument.
+    """Assign a non-item column to the most likely instrument.
+
+    Note: Columns containing "complete" are handled upstream and are not
+    assigned to any instrument by this function.
 
     Strategy:
     - Prefer instruments that appear as whole tokens in the column, favoring
@@ -204,7 +206,9 @@ def build_instrument_groups(
 
     Returns:
       - instrument_to_columns: dict mapping instrument to its item and other columns
-      - leftover_columns: list of non-item columns that could not be assigned
+      - leftover_columns: list of non-item columns that could not be assigned,
+        plus any columns containing "complete" which are intentionally excluded
+        from instrument TSVs and written to misc instead
     """
     instruments: List[str] = []
     col_to_instrument: Dict[str, str] = {}
@@ -237,18 +241,22 @@ def build_instrument_groups(
             continue
         if col in col_to_instrument:
             continue
+        # Send any completion/"complete" columns to leftover (misc) unconditionally
+        if "complete" in col.lower():
+            leftover.append(col)
+            continue
         assigned = assign_non_item_column(col, instruments)
         if assigned is None:
             leftover.append(col)
         else:
             instrument_to_columns[assigned].other_columns.append(col)
 
-    # Sort columns: items by natural order of suffix; others alpha, with 'complete' last
+    # Sort columns: items by natural order of suffix; others alphabetical
     for inst, cols in instrument_to_columns.items():
         cols.item_columns.sort(
             key=lambda c: natural_key(extract_suffix_after_instrument(c, inst))
         )
-        cols.other_columns.sort(key=lambda c: ("complete" in c.lower(), c.lower()))
+        cols.other_columns.sort(key=lambda c: c.lower())
 
     return instrument_to_columns, leftover
 
