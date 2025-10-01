@@ -961,7 +961,7 @@ als
 map-sr - no summary scores in the self_report_summary.tsv, calculated following the logic in GRMPY_selfReportScoringCode_v4.R
 swan-child
 swan-collateral - missing?
-aces
+aces - has some ptps with a single item missing; these ptps are missing aces scores in the self_report_summary.tsv
 scared
 scared-collateral - missing?
 rpaq
@@ -974,19 +974,24 @@ hcl - only uses hcl6_3 questions for scoring
 bss
 phys_anhed - scored as rpasShort
 soc_anhed - scored as rsasShort
-eswan_dmdd
-psqi
+eswan_dmdd - there are some ptps with a single item missing; these ptps are missing eswan_dmdd scores (for the incomplete category and the total score) in the self_report_summary.tsv
+psqi - TODO still need to check
 best
 
-TODO: split up self-reports into separate files; find out what additional fields to exclude; split up pre/post scan scales into separate files;
 
-TODO: look into / include these filters prior to the splitting
-```
-grumpy<-grumpy[ which(grumpy$bbl_protocol %in% "GRMPY") , ] #removes subjects not listed as GRMPY protcol
-grumpy<-grumpy[ which(grumpy$statetrait_vcode %in% "V" | grumpy$statetrait_vcode %in% "U" | grumpy$statetrait_vcode %in% "F") , ] #removes data not listed as "U" unproctored valid or "V" valid data or "F" for flagged
-grumpy <- grumpy[ which(grumpy$admin_proband %in% "p"),]
-grumpy[grumpy ==-9999] <- NA #replaces -9999 with NAs
-```
+TODO: these subjects are missing all summary scores in the self_report_summary.tsv; WHY?
+sub-20949
+sub-20963
+sub-20974
+sub-20981
+sub-21016
+sub-21056
+sub-21085
+
+
+
+
+TODO: split up pre/post scan scales into separate files;
 
 # helpful hints
 
