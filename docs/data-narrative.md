@@ -949,11 +949,44 @@ python phenotype/02_extract_info_subfield.py \
 --subjects-root /cbica/projects/grmpy/sourcedata/GRMPY_822831/SUBJECTS \
 --info-subfield self_report_itemwise \
 --output phenotype/data/self_report_itemwise.tsv \
---exclude redcapid,bbl_assessor,bbl_protocol
+--exclude redcapid,bbl_assessor
 
 ```
 
+## Self-report scoring
+
+The self-report itemwise data was split into separate files using the [`03_separate_self_reports.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/03_separate_self_reports.py) script.
+
+als
+map-sr - no summary scores in the self_report_summary.tsv, calculated following the logic in GRMPY_selfReportScoringCode_v4.R
+swan-child
+swan-collateral - missing?
+aces
+scared
+scared-collateral - missing?
+rpaq
+ari - ari_7 isn't used in scoring?
+ari-collateral - missing?
+bdi
+bisbas
+grit
+hcl - only uses hcl6_3 questions for scoring
+bss
+phys_anhed - scored as rpasShort
+soc_anhed - scored as rsasShort
+eswan_dmdd
+psqi
+best
+
 TODO: split up self-reports into separate files; find out what additional fields to exclude; split up pre/post scan scales into separate files;
+
+TODO: look into / include these filters prior to the splitting
+```
+grumpy<-grumpy[ which(grumpy$bbl_protocol %in% "GRMPY") , ] #removes subjects not listed as GRMPY protcol
+grumpy<-grumpy[ which(grumpy$statetrait_vcode %in% "V" | grumpy$statetrait_vcode %in% "U" | grumpy$statetrait_vcode %in% "F") , ] #removes data not listed as "U" unproctored valid or "V" valid data or "F" for flagged
+grumpy <- grumpy[ which(grumpy$admin_proband %in% "p"),]
+grumpy[grumpy ==-9999] <- NA #replaces -9999 with NAs
+```
 
 # helpful hints
 
