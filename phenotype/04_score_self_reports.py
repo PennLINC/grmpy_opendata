@@ -5,8 +5,8 @@ following the logic in `GRMPY_selfReportScoringCode_v4.R` (skipping collateral v
 
 Usage:
   python phenotype/04_score_self_reports.py \
-    --input-dir phenotype/data/self_report_itemwise_split \
-    --output-dir phenotype/data/self_report_itemwise_split
+    --input-dir phenotype/data \
+    --output-dir phenotype/data
 
 Notes:
 - Operates per instrument file (e.g., `aces.tsv`, `bdi.tsv`, ...). If a file is
