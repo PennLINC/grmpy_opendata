@@ -240,11 +240,7 @@ def add_grit_scores(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def add_hcl16_scores(df: pd.DataFrame) -> pd.DataFrame:
-    # R selects hcl16_3_[0-9], but instrument prefix inferred is likely hcl16
     item_cols = [c for c in df.columns if c.startswith("hcl16_3_")]
-    if not item_cols:
-        # fallback: any hcl16_*_* numeric last token
-        item_cols = [c for c in df.columns if c.startswith("hcl16_")]
     if item_cols:
         df["hcl_score_total"] = (
             df[item_cols].apply(pd.to_numeric, errors="coerce").sum(axis=1, min_count=1)
