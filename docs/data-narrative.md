@@ -789,6 +789,9 @@ Median FD and parcel coverage were analyzed with the [`01_xcpd_qc.py`](https://g
 
 The histogram of median framewise displacement (FD) shows the distribution of head motion across all subjects. The majority of subjects exhibited low motion, with most median FD values falling below 0.2mm, indicating generally good motion control during scanning.
 
+#### DECISION
+exclude subjects with median FD > 0.2mm (same as RBC)
+
 ### Parcel Coverage Analysis
 
 The Schaefer 1000 parcels + 56 subcortical regions (4S1056) atlas was used to assess brain coverage. Two main visualizations were generated to examine the coverage:
@@ -800,6 +803,9 @@ A barplot showing the temporal coverage (number of valid timepoints) for each su
 ![Column Sum Barplot](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/xcpd_4S1056Parcels_coverage_col_sum_barplot.png)
 
 A barplot showing the number of subjects with valid data for each parcel, helping identify any systematically problematic brain regions across the cohort.
+
+#### DECISION
+exclude parcel that has less than 50% coverage across 691 scans, recalc the number of parcels missing per subject and exclude subjects with more than 2 parcels missing. (same as EF)
 
 ## QSI QC
 
@@ -840,6 +846,9 @@ Quality control metrics for ASL data were analyzed using the [`03_aslprep_qc.py`
 ![QEI Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/aslprep_qei_cbf_histogram.png)
 
 The QEI distribution shows the quality of CBF measurements across subjects. Higher QEI values indicate better quality ASL data with more reliable CBF quantification. The QEI takes into account factors such as temporal signal-to-noise ratio, motion artifacts, and ASL signal intensity.
+
+#### DECISION
+0.6 threshold for QEI (same as EF)
 
 ### FreeSurfer-Post QC
 
@@ -974,8 +983,8 @@ hcl - only uses hcl6_3 questions for scoring
 bss
 phys_anhed - scored as rpasShort
 soc_anhed - scored as rsasShort
-eswan_dmdd - there are some ptps with a single item missing; these ptps are missing eswan_dmdd scores (for the incomplete category and the total score) in the self_report_summary.tsv
-psqi - TODO still need to check
+eswan_dmdd - there are some ptps with a single item missing; these ptps are missing eswan_dmdd scores (for the incomplete category and the total score) in the self_report_summary.tsv; could adjust the min_count in the column sums to prevent total score from being calculated if there is a single item missing; might need to add NA to incomplete items as well?
+psqi - scoring script looks good, but there are no NA values so the scoring won't catch incomplete items; should also adjust min_count to the global sum. some inconsistencies with crosschecking with the self_report_summary.tsv for component 4; sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, for some reason its 2 in the self_report_summary.tsv;
 best
 
 
