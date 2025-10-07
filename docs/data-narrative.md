@@ -383,6 +383,8 @@ Two M0 scan jsons became corrupted during a later step. `get reset --hard` was r
 
 After discussion with Manuel Taso and review of the dicoms, it was determined that the ASL scans had two background suppression pulses (1.5s label / 1.5s PLD). The [`set_background_suppression_true.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/set_background_suppression_true.py) script was used to set the `BackgroundSuppression` field to true (`533f4d6a`).
 
+TODO: just found a fracback variant on vols that should probably be purged. find the subject and purge it, take note to purge from the derivatives as well. `datatype-func_suffix-bold_task-fracback_acquisition-singlebandVARIANTNumVolumes40__1`
+
 # 05: BABS
 
 `BABS` was installed in the micromamba environment `babs` from source code.
