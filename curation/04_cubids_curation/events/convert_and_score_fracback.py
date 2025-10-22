@@ -271,7 +271,9 @@ def build_events_dataframe(allback: List[List[object]]) -> pd.DataFrame:
     df["duration"] = df["duration"].round(1)
     df["response_time_ms"] = pd.to_numeric(df["response_time_ms"], errors="coerce")
     df["response_time"] = df["response_time_ms"] / 1000.0
-    df = df.drop(columns=["index"]).rename(columns={"task": "trial_type"})
+    df = df.drop(columns=["index", "response_time_ms"]).rename(
+        columns={"task": "trial_type"}
+    )
 
     # Scoring
     scores: List[str] = []
@@ -355,52 +357,75 @@ def legacy_dp(hits: int, misses: int, fas: int, crs: int) -> float:
 
 
 def summarize_subject(subject_display: str, df: pd.DataFrame) -> Dict[str, object]:
-    """Compute legacy notebook metrics from events, matching column names and logic."""
+    """Compute participants metrics with original names and include speed columns."""
     metrics: Dict[str, object] = {}
 
-    def metrics_for_condition(condition_label: str, prefix: str) -> None:
-        sub = df[df["trial_type"] == condition_label].copy()
-        # Use ms for speed metrics
+    def per_condition(
+        condition: Optional[str],
+    ) -> Tuple[int, int, int, int, int, int, float, float]:
+        sub = df if condition is None else df[df["trial_type"] == condition]
+        tp = int((sub["score"] == "true_positive").sum())
+        tn = int((sub["score"] == "true_negative").sum())
+        fp = int((sub["score"] == "false_positive").sum())
+        fn = int((sub["score"] == "false_negative").sum())
+        num_targets = int((sub["results"] == "Match").sum())
+        num_foils = int((sub["results"] == "NR").sum())
+
+        # Speed columns in ms
         resp_ms = sub["response_time"] * 1000.0
-        sub["_resp_ms"] = resp_ms
-
-        is_nr = sub["results"] == "NR"
-        is_match = sub["results"] == "Match"
-        is_zero = sub["_resp_ms"].fillna(0.0) == 0.0
-
-        tn = int((is_nr & is_zero).sum())
-        fp = int((is_nr & (~is_zero)).sum())
-        fn = int((is_match & is_zero).sum())
-        tp = int((is_match & (~is_zero)).sum())
-
+        is_zero = resp_ms.fillna(0.0) == 0.0
         speed_fp = (
-            float(sub.loc[is_nr & (~is_zero), "_resp_ms"].mean())
-            if (fp > 0)
+            float(resp_ms[(sub["results"] == "NR") & (~is_zero)].mean())
+            if fp > 0
             else float("nan")
         )
         speed_tp = (
-            float(sub.loc[is_match & (~is_zero), "_resp_ms"].mean())
-            if (tp > 0)
+            float(resp_ms[(sub["results"] == "Match") & (~is_zero)].mean())
+            if tp > 0
             else float("nan")
         )
 
-        dprime_val = legacy_dp(tp, fn, fp, tn)
+        return tp, tn, fp, fn, num_targets, num_foils, speed_fp, speed_tp
 
+    for label_key, cond, speed_prefix in (
+        ("0_back", "0BACK", "zeroback"),
+        ("1_back", "1BACK", "oneback"),
+        ("2_back", "2BACK", "twoback"),
+    ):
+        tp, tn, fp, fn, num_targets, num_foils, speed_fp, speed_tp = per_condition(cond)
         metrics.update(
             {
-                f"{prefix}NumFN": fn,
-                f"{prefix}NumFP": fp,
-                f"{prefix}NumTN": tn,
-                f"{prefix}NumTP": tp,
-                f"{prefix}_speed_fp": speed_fp,
-                f"{prefix}_speed_tp": speed_tp,
-                f"{prefix}_dPrime": dprime_val,
+                f"{label_key}_true_positive": tp,
+                f"{label_key}_true_negative": tn,
+                f"{label_key}_false_positive": fp,
+                f"{label_key}_false_negative": fn,
+                f"{label_key}_all_correct": tp + tn,
+                f"{label_key}_all_incorrect": fp + fn,
+                f"{label_key}_hit_rate": (tp / num_targets) if num_targets > 0 else 0.0,
+                f"{label_key}_false_alarm_rate": (fp / num_foils)
+                if num_foils > 0
+                else 0.0,
+                f"{label_key}_dprime": legacy_dp(tp, fn, fp, tn),
+                f"{speed_prefix}_speed_fp": speed_fp,
+                f"{speed_prefix}_speed_tp": speed_tp,
             }
         )
 
-    metrics_for_condition("2BACK", "twoback")
-    metrics_for_condition("1BACK", "oneback")
-    metrics_for_condition("0BACK", "zeroback")
+    # Aggregated across 0/1/2
+    tp, tn, fp, fn, num_targets, num_foils, _, _ = per_condition(None)
+    metrics.update(
+        {
+            "all_back_true_positive": tp,
+            "all_back_true_negative": tn,
+            "all_back_false_positive": fp,
+            "all_back_false_negative": fn,
+            "all_back_all_correct": tp + tn,
+            "all_back_all_incorrect": fp + fn,
+            "all_back_hit_rate": (tp / num_targets) if num_targets > 0 else 0.0,
+            "all_back_false_alarm_rate": (fp / num_foils) if num_foils > 0 else 0.0,
+            "all_back_dprime": legacy_dp(tp, fn, fp, tn),
+        }
+    )
 
     return metrics
 
