@@ -44,7 +44,7 @@ def parse_args() -> argparse.Namespace:
         "--xml",
         type=Path,
         default=Path(
-            "/cbica/projects/code/curation/04_cubids_curation/events/grmpytemplate.xml"
+            "/cbica/projects/grmpy/code/curation/04_cubids_curation/events/grmpytemplate.xml"
         ),
         help="Path to task XML template used for scoring",
     )
