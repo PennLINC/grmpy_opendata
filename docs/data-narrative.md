@@ -387,6 +387,8 @@ After discussion with Manuel Taso and review of the dicoms, it was determined th
 
 TODO: make note in README of the derivs to not use this scan, or remove them before upload.
 
+The fracback events were converted and scored with the [`convert_and_score_fracback.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/events/convert_and_score_fracback.py) script (`f646e9e7`).
+
 # 05: BABS
 
 `BABS` was installed in the micromamba environment `babs` from source code.
