@@ -1,42 +1,27 @@
 #!/usr/bin/env python3
 """
-Convert EF fractal n-back logs to BIDS-compliant events and update sessions.tsv.
+Convert GRMPY fractional n-back logs to BIDS-compliant events and update participants.tsv.
 
-What it does:
-- Discovers EF logs under Flywheel-style trees:
-  <bblid>/SESSIONS/<scanid>/ACQUISITIONS/*/FILES/*-frac2B_1.00_no1B.log
-- Maps each <scanid> to BIDS session labels ses-1/2/3 by reading the session_map.tsv file
-- For each subject/session, finds an existing functional BIDS sidecar at
-  --output-dir/sub-<bblid>/<ses-X>/func/*task-nback*bold.json. If multiple
-  runs exist, chooses the highest run (e.g., run-02 over run-01). If none,
-  the session is skipped.
-- Writes BIDS events alongside that sidecar, with lower-case columns and order:
+What it does (GRMPY-specific):
+- Scans BIDS output for fracback funcs at --output-dir/sub-*/ses-1/func/*task-fracback*_bold.nii.gz
+- Finds matching frac2B logs under --logs-dir per subject (case-insensitive 'B').
+  If no log: skip and print. If multiple logs: use the first (previously confirmed that multiple logs are not diff).
+- Loads scoring template XML (includes 0BACK, 1BACK, 2BACK) and reproduces the RT extraction logic.
+- Writes BIDS events TSV/JSON alongside each func with columns:
   onset, duration, trial_type, results, response_time, score.
-- Writes per-session performance metrics (including d-prime) into the subject's
-  sessions.tsv at --output-dir/sub-<bblid>/sub-<bblid>_sessions.tsv (lower-case
-  column names). It creates the file or row if missing.
+- Computes per-subject performance metrics (including d-prime) and updates
+  --output-dir/participants.tsv (row 'participant_id' = sub-<id>), adding columns if needed.
 
 CLI inputs:
-- --xml: Path to EF task XML template used for scoring
-- --logs-dir: Root directory containing the Flywheel-style trees
-- --output-dir: BIDS output root (defaults to <logs-dir>/bids_out)
-- --session-map: Path to session_map.tsv file
+- --xml: Path to task XML template (default: /cbica/projects/code/curation/04_cubids_curation/events/grmpytemplate.xml)
+- --logs-dir: Flywheel SUBJECTS root (default: /cbica/projects/grmpy/sourcedata/GRMPY_822831_log/SUBJECTS)
+- --output-dir: BIDS root (default: /cbica/projects/grmpy/data/bids_datalad)
 - --dry-run: Print planned actions as JSON and make no file changes
-
-Note: This script assumes that the session_map.tsv file has been generated using the generate_session_map.py script.
-
-Example executed:
-python /cbica/projects/executive_function/code/curation/cubids_curation/convert_and_score_EF_task_data.py \
-  --xml /cbica/projects/executive_function/task_events_files/msmri522_2vs0_back.xml \
-  --logs-dir /cbica/projects/executive_function/task_events_files/flywheel/EFR01/SUBJECTS \
-  --output-dir /cbica/projects/executive_function/data/bids/EF_bids_data_DataLad \
-  --session-map /cbica/projects/executive_function/task_events_files/session_map.tsv
 """
 
 import argparse
 import json
 import sys
-import re
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
@@ -51,37 +36,34 @@ from scipy.stats import norm
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description=("Convert EF fractal n-back .log files to BIDS events and summary.")
+        description=(
+            "Convert GRMPY fracback .log files to BIDS events and participants metrics."
+        ),
     )
     parser.add_argument(
         "--xml",
-        required=True,
         type=Path,
-        help="Path to EF task XML template used for scoring",
+        default=Path(
+            "/cbica/projects/code/curation/04_cubids_curation/events/grmpytemplate.xml"
+        ),
+        help="Path to task XML template used for scoring",
     )
     parser.add_argument(
         "--logs-dir",
-        required=True,
         type=Path,
-        help="Directory containing subject folders with .log files (searched recursively)",
+        default=Path("/cbica/projects/grmpy/sourcedata/GRMPY_822831_log/SUBJECTS"),
+        help="Flywheel SUBJECTS root containing per-subject directories (searched recursively)",
     )
     parser.add_argument(
         "--output-dir",
-        required=False,
         type=Path,
-        default=None,
-        help="Directory to write outputs (defaults to <logs-dir>/bids_out)",
+        default=Path("/cbica/projects/grmpy/data/bids_datalad"),
+        help="BIDS root directory to read funcs and write events/participants",
     )
     parser.add_argument(
         "--dry-run",
         action="store_true",
         help="Do not write any files; print a JSON report of intended actions",
-    )
-    parser.add_argument(
-        "--session-map",
-        required=True,
-        type=Path,
-        help="Optional TSV with columns bblid, scanid, session_id to override internal mapping",
     )
     return parser.parse_args()
 
@@ -90,27 +72,59 @@ def discover_log_files(logs_dir: Path) -> List[Path]:
     return sorted([p for p in logs_dir.rglob("*.log") if p.is_file()])
 
 
-def discover_logs_flywheel(logs_dir: Path) -> Dict[Tuple[str, str], List[Path]]:
-    """
-    Discover logs using the Flywheel tree pattern:
-      <bblid>/SESSIONS/<scanid>/ACQUISITIONS/*/FILES/*-frac2B_1.00_no1B.log
+def normalize_subject_id(raw_subject: str) -> str:
+    """Return a normalized subject identifier used for matching.
 
-    Returns mapping (bblid, scanid) -> list of log paths.
+    - Removes a leading 'sub-' if present
+    - Returns lowercase for robust matching
     """
-    mapping: Dict[Tuple[str, str], List[Path]] = {}
-    for log_path in logs_dir.rglob("*-frac2B_1.00_no1B.log"):
-        parts = log_path.parts
-        if "SESSIONS" not in parts:
+    subject = raw_subject
+    if subject.startswith("sub-"):
+        subject = subject[len("sub-") :]
+    return subject.lower()
+
+
+def collect_bids_fracback_funcs(bids_root: Path) -> Dict[str, List[Path]]:
+    """Collect fracback BOLD NIfTI files from sub-*/ses-1/func/ directories.
+
+    Returns mapping of normalized subject id -> list of func file Paths.
+    """
+    funcs_by_subject: Dict[str, List[Path]] = {}
+    for func_path in bids_root.glob("sub-*/ses-1/func/*task-fracback*_bold.nii.gz"):
+        if not func_path.is_file():
             continue
-        idx = parts.index("SESSIONS")
-        if idx - 1 < 0 or idx + 1 >= len(parts):
+        try:
+            subj_dir = next(p for p in func_path.parents if p.name.startswith("sub-"))
+        except StopIteration:
             continue
-        bblid = parts[idx - 1]
-        scanid = parts[idx + 1]
-        if not bblid or not scanid:
-            continue
-        mapping.setdefault((bblid, scanid), []).append(log_path)
-    return mapping
+        raw_subject = subj_dir.name
+        norm_subject = normalize_subject_id(raw_subject)
+        funcs_by_subject.setdefault(norm_subject, []).append(func_path)
+
+    for subject_id, files in funcs_by_subject.items():
+        funcs_by_subject[subject_id] = sorted(files)
+    return funcs_by_subject
+
+
+def collect_flywheel_frac2b_logs(subjects_root: Path) -> Dict[str, List[Path]]:
+    """Collect frac2B log files from Flywheel SUBJECTS directory.
+
+    Returns mapping of normalized subject id -> list of log files (sorted).
+    """
+    logs_by_subject: Dict[str, List[Path]] = {}
+    if not subjects_root.exists():
+        return logs_by_subject
+
+    for subj_dir in sorted([p for p in subjects_root.iterdir() if p.is_dir()]):
+        raw_subject = subj_dir.name
+        norm_subject = normalize_subject_id(raw_subject)
+        matches: List[Path] = []
+        for pattern in ("**/*frac2B*.log", "**/*frac2b*.log"):
+            matches.extend(subj_dir.glob(pattern))
+        unique_sorted = sorted({p for p in matches if p.is_file()})
+        if unique_sorted:
+            logs_by_subject[norm_subject] = unique_sorted
+    return logs_by_subject
 
 
 def extract_bblid_scanid(log_path: Path) -> Optional[Tuple[str, str]]:
@@ -165,19 +179,20 @@ def load_score_labels(xml_path: Path) -> List[ET.Element]:
 
 def split_templates_by_category(
     scorelabel: List[ET.Element],
-) -> Tuple[List[Tuple[str, str]], List[Tuple[str, str]]]:
-    """
-    Returns (back0, back2) where each is a list of tuples (expected, index).
-    """
+) -> Tuple[List[Tuple[str, str]], List[Tuple[str, str]], List[Tuple[str, str]]]:
+    """Return (back0, back1, back2) lists of (expected, index) tuples by category."""
     back0: List[Tuple[str, str]] = []
+    back1: List[Tuple[str, str]] = []
     back2: List[Tuple[str, str]] = []
     for elem in scorelabel:
         category = elem.get("category")
         if category == "0BACK":
             back0.append((elem.get("expected"), elem.get("index")))
+        elif category == "1BACK":
+            back1.append((elem.get("expected"), elem.get("index")))
         elif category == "2BACK":
             back2.append((elem.get("expected"), elem.get("index")))
-    return back0, back2
+    return back0, back1, back2
 
 
 # ------------------------------ Data Processing ------------------------------
@@ -306,6 +321,7 @@ def sidecar_json() -> Dict[str, object]:
             "Description": "Task condition for each trial",
             "Levels": {
                 "0BACK": "0-back trial: respond to target picture",
+                "1BACK": "1-back trial: respond if picture matches the one shown one trial before",
                 "2BACK": "2-back trial: respond if picture matches the one shown two trials before",
             },
         },
@@ -354,256 +370,116 @@ def dprime(hits: int, misses: int, fas: int, crs: int) -> float:
     return float(Z(hit_rate) - Z(fa_rate))
 
 
-def summarize_subject(bblid: str, df: pd.DataFrame) -> Dict[str, object]:
-    back0fp = back0fn = back0tp = back0tn = 0
-    back2fp = back2fn = back2tp = back2tn = 0
+def summarize_subject(subject_display: str, df: pd.DataFrame) -> Dict[str, object]:
+    metrics: Dict[str, object] = {}
 
-    for row in df.itertuples(index=False):
-        trial = row.trial_type
-        score = row.score
-        if trial == "0BACK":
-            if score == "false_positive":
-                back0fp += 1
-            elif score == "false_negative":
-                back0fn += 1
-            elif score == "true_positive":
-                back0tp += 1
-            elif score == "true_negative":
-                back0tn += 1
-        elif trial == "2BACK":
-            if score == "false_positive":
-                back2fp += 1
-            elif score == "false_negative":
-                back2fn += 1
-            elif score == "true_positive":
-                back2tp += 1
-            elif score == "true_negative":
-                back2tn += 1
+    def condition_counts(
+        condition: Optional[str] = None,
+    ) -> Tuple[int, int, int, int, int, int]:
+        sub = df if condition is None else df[df["trial_type"] == condition]
+        tp = int((sub["score"] == "true_positive").sum())
+        tn = int((sub["score"] == "true_negative").sum())
+        fp = int((sub["score"] == "false_positive").sum())
+        fn = int((sub["score"] == "false_negative").sum())
+        num_targets = int((sub["results"] == "Match").sum())
+        num_foils = int((sub["results"] == "NR").sum())
+        return tp, tn, fp, fn, num_targets, num_foils
 
-    summary: Dict[str, object] = {
-        "0_back_false_positive": back0fp,
-        "0_back_false_negative": back0fn,
-        "0_back_true_positive": back0tp,
-        "0_back_true_negative": back0tn,
-        "2_back_false_positive": back2fp,
-        "2_back_false_negative": back2fn,
-        "2_back_true_positive": back2tp,
-        "2_back_true_negative": back2tn,
-    }
+    for label_key, cond in (
+        ("0_back", "0BACK"),
+        ("1_back", "1BACK"),
+        ("2_back", "2BACK"),
+    ):
+        tp, tn, fp, fn, num_targets, num_foils = condition_counts(cond)
+        metrics.update(
+            {
+                f"{label_key}_true_positive": tp,
+                f"{label_key}_true_negative": tn,
+                f"{label_key}_false_positive": fp,
+                f"{label_key}_false_negative": fn,
+                f"{label_key}_all_correct": tp + tn,
+                f"{label_key}_all_incorrect": fp + fn,
+                f"{label_key}_hit_rate": (tp / num_targets) if num_targets > 0 else 0.0,
+                f"{label_key}_false_alarm_rate": (fp / num_foils)
+                if num_foils > 0
+                else 0.0,
+                f"{label_key}_dprime": dprime(tp, fn, fp, tn),
+            }
+        )
 
-    summary.update(
+    # All-back aggregated across 0/1/2
+    tp, tn, fp, fn, num_targets, num_foils = condition_counts(None)
+    metrics.update(
         {
-            "all_back_true_positive": back0tp + back2tp,
-            "all_back_true_negative": back0tn + back2tn,
-            "all_back_false_positive": back0fp + back2fp,
-            "all_back_false_negative": back0fn + back2fn,
-            "0_back_all_correct": back0tp + back0tn,
-            "0_back_all_incorrect": back0fp + back0fn,
-            "2_back_all_correct": back2tp + back2tn,
-            "2_back_all_incorrect": back2fp + back2fn,
-            "all_back_all_correct": back2tp + back2tn + back0tp + back0tn,
-            "all_back_all_incorrect": back0fp + back0fn + back2fp + back2fn,
+            "all_back_true_positive": tp,
+            "all_back_true_negative": tn,
+            "all_back_false_positive": fp,
+            "all_back_false_negative": fn,
+            "all_back_all_correct": tp + tn,
+            "all_back_all_incorrect": fp + fn,
+            "all_back_hit_rate": (tp / num_targets) if num_targets > 0 else 0.0,
+            "all_back_false_alarm_rate": (fp / num_foils) if num_foils > 0 else 0.0,
+            "all_back_dprime": dprime(tp, fn, fp, tn),
         }
     )
 
-    # Based on notebook constants: 0BACK has 15 targets and 45 foils, same for 2BACK
-    summary.update(
-        {
-            "0_back_hit_rate": (back0tp / 15) if 15 else 0.0,
-            "0_back_false_alarm_rate": (back0fp / 45) if 45 else 0.0,
-            "2_back_hit_rate": (back2tp / 15) if 15 else 0.0,
-            "2_back_false_alarm_rate": (back2fp / 45) if 45 else 0.0,
-            "all_back_hit_rate": ((back0tp + back2tp) / 30) if 30 else 0.0,
-            "all_back_false_alarm_rate": ((back0fp + back2fp) / 90) if 90 else 0.0,
-        }
-    )
-
-    summary.update(
-        {
-            "0_back_dprime": dprime(back0tp, back0fn, back0fp, back0tn),
-            "2_back_dprime": dprime(back2tp, back2fn, back2fp, back2tn),
-            "all_back_dprime": dprime(
-                back0tp + back2tp,
-                back0fn + back2fn,
-                back0fp + back2fp,
-                back0tn + back2tn,
-            ),
-        }
-    )
-
-    return summary
+    return metrics
 
 
 # ------------------------------ FW sessions -> BIDS ---------------------------
 
 
-_RUN_RE = re.compile(r"run-(\d+)")
-
-
-def choose_highest_run_sidecar(func_dir: Path) -> Optional[Path]:
-    """
-    Pick the bold sidecar JSON with highest run number among *task-nback*bold.json.
-    If no run- is present, treat as run-1. Returns None if none found.
-    """
-    candidates = sorted(func_dir.glob("*task-nback*bold.json"))
-    if not candidates:
-        return None
-
-    def run_number(p: Path) -> int:
-        m = _RUN_RE.search(p.name)
-        return int(m.group(1)) if m else 1
-
-    candidates.sort(key=lambda p: (run_number(p), p.name))
-    return candidates[-1]
-
-
-def events_paths_from_bold_sidecar(bold_json: Path) -> Tuple[Path, Path]:
-    """
-    Given a BIDS bold sidecar JSON, return the events tsv/json paths with the
-    same prefix in the same directory.
-    """
-    prefix = bold_json.with_suffix("")
-    name = prefix.name[:-5] if prefix.name.endswith("_bold") else prefix.name
-    tsv = prefix.parent / f"{name}_events.tsv"
-    js = prefix.parent / f"{name}_events.json"
+def events_paths_from_func_nii(func_nii: Path) -> Tuple[Path, Path]:
+    """Given a BIDS BOLD NIfTI, return the events tsv/json paths with the same prefix."""
+    name = func_nii.name
+    if name.endswith("_bold.nii.gz"):
+        name = name[: -len("_bold.nii.gz")]
+    prefix_dir = func_nii.parent
+    tsv = prefix_dir / f"{name}_events.tsv"
+    js = prefix_dir / f"{name}_events.json"
     return tsv, js
 
 
-# ------------------------------ Sessions.tsv Writing --------------------------
-
-
-def update_sessions_tsv(
-    output_dir: Path, bblid: str, ses_label: str, metrics: Dict[str, object]
+def update_participants_tsv(
+    bids_root: Path, participant_id: str, metrics: Dict[str, object]
 ) -> None:
-    """
-    Write the per-session summary metrics into the subject's sessions.tsv.
-    - sessions.tsv path: <output_dir>/sub-<bblid>/sub-<bblid>_sessions.tsv
-    - Ensures a row for the given ses_label exists; adds missing columns.
-    """
-    subj_dir = output_dir / f"sub-{bblid}"
-    subj_dir.mkdir(parents=True, exist_ok=True)
-    sessions_path = subj_dir / f"sub-{bblid}_sessions.tsv"
+    """Update participants.tsv at the BIDS root with the provided metrics.
 
-    # Load or initialize sessions dataframe
-    if sessions_path.exists():
-        df = pd.read_csv(sessions_path, sep="\t")
+    - Ensures a row for the given participant_id exists (creates file if needed).
+    - Adds missing columns and writes values.
+    """
+    participants_path = bids_root / "participants.tsv"
+    if participants_path.exists():
+        df = pd.read_csv(participants_path, sep="\t")
     else:
-        df = pd.DataFrame({"session_id": [ses_label]})
+        df = pd.DataFrame({"participant_id": [participant_id]})
 
-    # Ensure target session row exists
-    if "session_id" not in df.columns:
-        df.insert(0, "session_id", pd.Series(dtype=str))
-    if not (df["session_id"] == ses_label).any():
-        # Append a new row with session_id set; keep other columns as NaN
+    if "participant_id" not in df.columns:
+        df.insert(0, "participant_id", pd.Series(dtype=str))
+
+    if not (df["participant_id"] == participant_id).any():
         new_row = {
-            col: (ses_label if col == "session_id" else pd.NA) for col in df.columns
+            col: (participant_id if col == "participant_id" else pd.NA)
+            for col in df.columns
         }
         df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
 
-    # Prepare metrics (exclude any id keys if present)
+    # Filter out id-like keys
     metrics = {k: v for k, v in metrics.items() if k not in {"bblid", "subject"}}
 
-    # Add any missing columns
     for key in metrics.keys():
         if key not in df.columns:
             df[key] = pd.NA
 
-    # Update values for the session row
-    row_idx = df.index[df["session_id"] == ses_label]
+    row_idx = df.index[df["participant_id"] == participant_id]
     for key, value in metrics.items():
         df.loc[row_idx, key] = value
 
-    # Keep 'session_id' and 'acq_time' as the first columns if present
-    first_cols = [c for c in ["session_id", "acq_time"] if c in df.columns]
+    first_cols = [c for c in ["participant_id"] if c in df.columns]
     other_cols = [c for c in df.columns if c not in first_cols]
     df = df[first_cols + other_cols]
 
-    # Write back (BIDS missing values as 'n/a')
-    df.to_csv(sessions_path, sep="\t", index=False, na_rep="n/a")
-
-    # Create or update sessions.json sidecar with clear metric descriptions
-    sessions_json = subj_dir / f"sub-{bblid}_sessions.json"
-    if sessions_json.exists():
-        try:
-            with open(sessions_json, "r") as fp:
-                sidecar = json.load(fp)
-        except Exception:
-            sidecar = {}
-    else:
-        sidecar = {}
-
-    # Ensure base fields
-    sidecar.setdefault(
-        "session_id",
-        {
-            "Description": "BIDS session label assigned chronologically via Flywheel created timestamp",
-        },
-    )
-    sidecar.setdefault(
-        "acq_time",
-        {
-            "Description": "Acquisition time for the session rounded to the nearest hour and half-month period for anonymization",
-        },
-    )
-
-    def pretty_block_label(prefix: str) -> str:
-        return {
-            "0_back": "0-back",
-            "2_back": "2-back",
-            "all_back": "0- and 2-back",
-        }.get(prefix, prefix.replace("_", "-"))
-
-    # Add/refresh metric entries with descriptions and units
-    for key in metrics.keys():
-        desc: str
-        units: str
-        if key.endswith("_dprime"):
-            prefix = key[: key.rfind("_dprime")]
-            desc = (
-                f"d' sensitivity index for {pretty_block_label(prefix)} (Z(H) - Z(FA))"
-            )
-            units = "arbitrary"
-        elif key.endswith("_hit_rate"):
-            prefix = key[: key.rfind("_hit_rate")]
-            desc = (
-                f"Hit rate in {pretty_block_label(prefix)} (true positives / targets)"
-            )
-            units = "proportion (0-1)"
-        elif key.endswith("_false_alarm_rate"):
-            prefix = key[: key.rfind("_false_alarm_rate")]
-            desc = f"False alarm rate in {pretty_block_label(prefix)} (false positives / foils)"
-            units = "proportion (0-1)"
-        elif key.endswith("_true_positive"):
-            prefix = key[: key.rfind("_true_positive")]
-            desc = f"True positives in {pretty_block_label(prefix)}"
-            units = "count"
-        elif key.endswith("_true_negative"):
-            prefix = key[: key.rfind("_true_negative")]
-            desc = f"True negatives in {pretty_block_label(prefix)}"
-            units = "count"
-        elif key.endswith("_false_positive"):
-            prefix = key[: key.rfind("_false_positive")]
-            desc = f"False positives in {pretty_block_label(prefix)}"
-            units = "count"
-        elif key.endswith("_false_negative"):
-            prefix = key[: key.rfind("_false_negative")]
-            desc = f"False negatives in {pretty_block_label(prefix)}"
-            units = "count"
-        elif key.endswith("_all_correct"):
-            prefix = key[: key.rfind("_all_correct")]
-            desc = f"All correct responses in {pretty_block_label(prefix)} (true positives + true negatives)"
-            units = "count"
-        elif key.endswith("_all_incorrect"):
-            prefix = key[: key.rfind("_all_incorrect")]
-            desc = f"All incorrect responses in {pretty_block_label(prefix)} (false positives + false negatives)"
-            units = "count"
-        else:
-            desc = f"Metric {key.replace('_', ' ')}"
-            units = ""
-        sidecar[key] = {"Description": desc, **({"Units": units} if units else {})}
-
-    with open(sessions_json, "w") as fp:
-        json.dump(sidecar, fp, indent=2)
+    df.to_csv(participants_path, sep="\t", index=False, na_rep="n/a")
 
 
 # ----------------------------------- Main ------------------------------------
@@ -613,86 +489,76 @@ def main() -> int:
     args = parse_args()
     xml_path: Path = args.xml
     logs_dir: Path = args.logs_dir
-    output_dir: Path = args.output_dir or (logs_dir / "bids_out")
-    if not args.dry_run:
-        output_dir.mkdir(parents=True, exist_ok=True)
+    bids_root: Path = args.output_dir
 
     # Load XML scoring template
     scorelabel = load_score_labels(xml_path)
-    back0, back2 = split_templates_by_category(scorelabel)
+    back0, back1, back2 = split_templates_by_category(scorelabel)
 
-    logs_map = discover_logs_flywheel(logs_dir)
-    if not logs_map:
-        print(f"No .log files found under {logs_dir} with Flywheel pattern")
+    # Collect funcs and logs
+    funcs_by_subject = collect_bids_fracback_funcs(bids_root)
+    logs_by_subject = collect_flywheel_frac2b_logs(logs_dir)
+
+    if not funcs_by_subject:
+        print(f"No fracback funcs found under {bids_root}")
         return 1
 
-    # error if session map file does not exist
-    if not args.session_map.exists():
-        raise ValueError("Session map file does not exist")
-
-    # Build session mapping from provided TSV
-    ses_map: Dict[Tuple[str, str], str]
-    df_map = pd.read_csv(args.session_map, sep="\t")
-    ses_map = {
-        (str(r.bblid), str(r.scanid)): str(r.session_id)
-        for r in df_map.itertuples(index=False)
-    }
-
-    for (bblid, scanid), log_list in sorted(logs_map.items()):
-        ses_label = ses_map.get((bblid, scanid))
-        if not ses_label:
+    # Iterate subjects found in BIDS (single-session dataset: ses-1)
+    for norm_subject, func_list in sorted(funcs_by_subject.items()):
+        subject_display = f"sub-{norm_subject}"
+        picked_func = func_list[0] if func_list else None
+        log_list = logs_by_subject.get(norm_subject, [])
+        if not log_list:
+            print(f"Skip {subject_display}: no frac2B log in {logs_dir}")
             continue
-
-        # Check BIDS func presence under output-dir and choose bold sidecar
-        func_dir = output_dir / f"sub-{bblid}" / ses_label / "func"
-        bold_sidecar = choose_highest_run_sidecar(func_dir)
-        if bold_sidecar is None:
+        if len(log_list) > 1:
             print(
-                f"Skip sub-{bblid} {ses_label}: no *task-nback*bold.json in {func_dir}"
+                f"Info {subject_display}: multiple logs found; using first: {log_list[0].name}"
             )
-            continue
-
-        # Choose a single log file for this session: prefer latest mtime
-        log_path = max(log_list, key=lambda p: p.stat().st_mtime)
+        log_path = log_list[0]
 
         try:
             bb = read_log_as_dataframe(log_path)
 
             allback: List[List[object]] = []
-            allback.extend(compute_response_times(bb, back0, "0BACK"))
-            allback.extend(compute_response_times(bb, back2, "2BACK"))
+            if back0:
+                allback.extend(compute_response_times(bb, back0, "0BACK"))
+            if back1:
+                allback.extend(compute_response_times(bb, back1, "1BACK"))
+            if back2:
+                allback.extend(compute_response_times(bb, back2, "2BACK"))
 
             events_df = build_events_dataframe(allback)
 
-            tsv_path, json_path = events_paths_from_bold_sidecar(bold_sidecar)
+            if picked_func is None:
+                print(f"Skip {subject_display}: no fracback func file found")
+                continue
+            tsv_path, json_path = events_paths_from_func_nii(picked_func)
 
-            # Per-session summary metrics
-            session_metrics = summarize_subject(bblid, events_df)
+            # Per-subject summary metrics
+            subject_metrics = summarize_subject(subject_display, events_df)
 
             if args.dry_run:
                 report_item = {
-                    "subject": f"sub-{bblid}",
-                    "session": ses_label,
+                    "subject": subject_display,
+                    "func": str(picked_func),
                     "log": str(log_path),
-                    "bold_sidecar": str(bold_sidecar),
                     "events_tsv": str(tsv_path),
                     "events_json": str(json_path),
                     "num_events": int(len(events_df)),
-                    "metrics": session_metrics,
+                    "metrics": subject_metrics,
                 }
                 print(json.dumps(report_item))
             else:
                 events_df.to_csv(tsv_path, sep="\t", index=False, na_rep="n/a")
                 with open(json_path, "w") as fp:
                     json.dump(sidecar_json(), fp, indent=2)
-                update_sessions_tsv(output_dir, bblid, ses_label, session_metrics)
-                print(f"Processed sub-{bblid} {ses_label} from {log_path.name}")
+                update_participants_tsv(bids_root, subject_display, subject_metrics)
+                print(f"Processed {subject_display} from {log_path.name}")
 
         except Exception as exc:
-            print(f"Error processing {log_path}: {exc}")
+            print(f"Error processing {subject_display} {log_path}: {exc}")
             continue
-
-    # No global summary CSV; metrics were written to sessions.tsv per subject or printed in dry-run
 
     return 0
 
