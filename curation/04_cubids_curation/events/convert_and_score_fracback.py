@@ -201,29 +201,27 @@ def split_templates_by_category(
 def read_log_as_dataframe(log_path: Path) -> pd.DataFrame:
     df = pd.read_csv(
         log_path,
-        skiprows=4,
+        skiprows=6,
         sep="\t",
-        header=None,
-        dtype=str,  # read as strings first; we'll cast selectively
+        names=[
+            "Subject",
+            "Trial",
+            "EventType",
+            "Code",
+            "Time",
+            "TTime",
+            "Uncertainty0",
+            "Duration",
+            "Uncertainty1",
+            "ReqTime",
+            "ReqDur",
+            "StimType",
+            "PairIndex",
+        ],
+        dtype=str,
         engine="python",
-        encoding_errors="ignore",
+        na_values=[""],
     )
-    df.columns = [
-        "Subject",
-        "Trial",
-        "EventType",
-        "Code",
-        "Time",
-        "TTime",
-        "Uncertainty0",
-        "Duration",
-        "Uncertainty1",
-        "ReqTime",
-        "ReqDur",
-        "StimType",
-        "PairIndex",
-    ]
-    df = df[2:]
     numeric_cols = [
         "Trial",
         "Time",
