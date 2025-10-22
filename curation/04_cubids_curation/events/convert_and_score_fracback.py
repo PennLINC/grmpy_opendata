@@ -24,8 +24,6 @@ import json
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
-
-import numpy as np
 import pandas as pd
 import xml.etree.ElementTree as ET
 from scipy.stats import norm
@@ -241,37 +239,26 @@ def compute_response_times(
     df: pd.DataFrame, template: List[Tuple[str, str]], label: str
 ) -> List[List[object]]:
     """
-    Reproduce the response time extraction logic from the notebook for a given
-    template (either 0BACK or 2BACK).
-    Returns rows: [label, index, expected, response]
+    Legacy GRMPY notebook response time extraction logic.
+
+    For each template index, select rows where Trial == index, take the
+    second entry of TTime (aa[1]) divided by 10 when available, else 0.
+
+    Returns rows: [label, index, expected, response_ms]
     """
     rows: List[List[object]] = []
     for expected, index_str in template:
         if index_str is None:
             continue
         index_val = int(index_str)
-        a1 = df[df["Trial"] >= (index_val - 2)]
-        a2 = df[df["Trial"] <= index_val]
-        merged = pd.merge(a1, a2, how="inner")
-        aa = np.array(merged["TTime"].to_list())
-
-        if len(aa) > 6:
-            if aa[0] > 0:
-                response = aa[0] / 10
-            else:
-                # first non-zero among even indices
-                # enumerate(aa[::2]) returns (i, value) pairs
-                res = next((i for i, j in enumerate(aa[::2]) if j), None)
-                if res is None:
-                    response = None
-                else:
-                    ste = res - 1
-                    centr = 2 * res - 1
-                    response = aa[centr] / 10 + ste * 800
+        a1 = df[df["Trial"] == index_val]
+        aa = a1["TTime"].to_list()
+        if len(aa) > 2:
+            response_ms = aa[1] / 10.0
         else:
-            response = None
+            response_ms = 0.0
 
-        rows.append([label, index_val, expected, response])
+        rows.append([label, index_val, expected, response_ms])
     return rows
 
 
@@ -284,9 +271,7 @@ def build_events_dataframe(allback: List[List[object]]) -> pd.DataFrame:
     df["duration"] = df["duration"].round(1)
     df["response_time_ms"] = pd.to_numeric(df["response_time_ms"], errors="coerce")
     df["response_time"] = df["response_time_ms"] / 1000.0
-    df = df.drop(columns=["index", "response_time_ms"]).rename(
-        columns={"task": "trial_type"}
-    )
+    df = df.drop(columns=["index"]).rename(columns={"task": "trial_type"})
 
     # Scoring
     scores: List[str] = []
@@ -349,18 +334,18 @@ def sidecar_json() -> Dict[str, object]:
 Z = norm.ppf
 
 
-def dprime(hits: int, misses: int, fas: int, crs: int) -> float:
-    """Compute d' replicating notebook behavior (with half-hit/FA corrections)."""
-    half_hit = 0.5 / max(hits + misses, 1)
-    half_fa = 0.5 / max(fas + crs, 1)
+def legacy_dp(hits: int, misses: int, fas: int, crs: int) -> float:
+    """Legacy notebook d' implementation with half-hit/FA corrections."""
+    half_hit = 0.5 / (hits + misses)
+    half_fa = 0.5 / (fas + crs)
 
-    hit_rate = hits / max(hits + misses, 1)
+    hit_rate = hits / (hits + misses)
     if hit_rate == 1:
         hit_rate = 1 - half_hit
     if hit_rate == 0:
         hit_rate = half_hit
 
-    fa_rate = fas / max(fas + crs, 1)
+    fa_rate = fas / (fas + crs)
     if fa_rate == 1:
         fa_rate = 1 - half_fa
     if fa_rate == 0:
@@ -370,57 +355,52 @@ def dprime(hits: int, misses: int, fas: int, crs: int) -> float:
 
 
 def summarize_subject(subject_display: str, df: pd.DataFrame) -> Dict[str, object]:
+    """Compute legacy notebook metrics from events, matching column names and logic."""
     metrics: Dict[str, object] = {}
 
-    def condition_counts(
-        condition: Optional[str] = None,
-    ) -> Tuple[int, int, int, int, int, int]:
-        sub = df if condition is None else df[df["trial_type"] == condition]
-        tp = int((sub["score"] == "true_positive").sum())
-        tn = int((sub["score"] == "true_negative").sum())
-        fp = int((sub["score"] == "false_positive").sum())
-        fn = int((sub["score"] == "false_negative").sum())
-        num_targets = int((sub["results"] == "Match").sum())
-        num_foils = int((sub["results"] == "NR").sum())
-        return tp, tn, fp, fn, num_targets, num_foils
+    def metrics_for_condition(condition_label: str, prefix: str) -> None:
+        sub = df[df["trial_type"] == condition_label].copy()
+        # Use ms for speed metrics
+        resp_ms = sub["response_time"] * 1000.0
+        sub["_resp_ms"] = resp_ms
 
-    for label_key, cond in (
-        ("0_back", "0BACK"),
-        ("1_back", "1BACK"),
-        ("2_back", "2BACK"),
-    ):
-        tp, tn, fp, fn, num_targets, num_foils = condition_counts(cond)
+        is_nr = sub["results"] == "NR"
+        is_match = sub["results"] == "Match"
+        is_zero = sub["_resp_ms"].fillna(0.0) == 0.0
+
+        tn = int((is_nr & is_zero).sum())
+        fp = int((is_nr & (~is_zero)).sum())
+        fn = int((is_match & is_zero).sum())
+        tp = int((is_match & (~is_zero)).sum())
+
+        speed_fp = (
+            float(sub.loc[is_nr & (~is_zero), "_resp_ms"].mean())
+            if (fp > 0)
+            else float("nan")
+        )
+        speed_tp = (
+            float(sub.loc[is_match & (~is_zero), "_resp_ms"].mean())
+            if (tp > 0)
+            else float("nan")
+        )
+
+        dprime_val = legacy_dp(tp, fn, fp, tn)
+
         metrics.update(
             {
-                f"{label_key}_true_positive": tp,
-                f"{label_key}_true_negative": tn,
-                f"{label_key}_false_positive": fp,
-                f"{label_key}_false_negative": fn,
-                f"{label_key}_all_correct": tp + tn,
-                f"{label_key}_all_incorrect": fp + fn,
-                f"{label_key}_hit_rate": (tp / num_targets) if num_targets > 0 else 0.0,
-                f"{label_key}_false_alarm_rate": (fp / num_foils)
-                if num_foils > 0
-                else 0.0,
-                f"{label_key}_dprime": dprime(tp, fn, fp, tn),
+                f"{prefix}NumFN": fn,
+                f"{prefix}NumFP": fp,
+                f"{prefix}NumTN": tn,
+                f"{prefix}NumTP": tp,
+                f"{prefix}_speed_fp": speed_fp,
+                f"{prefix}_speed_tp": speed_tp,
+                f"{prefix}_dPrime": dprime_val,
             }
         )
 
-    # All-back aggregated across 0/1/2
-    tp, tn, fp, fn, num_targets, num_foils = condition_counts(None)
-    metrics.update(
-        {
-            "all_back_true_positive": tp,
-            "all_back_true_negative": tn,
-            "all_back_false_positive": fp,
-            "all_back_false_negative": fn,
-            "all_back_all_correct": tp + tn,
-            "all_back_all_incorrect": fp + fn,
-            "all_back_hit_rate": (tp / num_targets) if num_targets > 0 else 0.0,
-            "all_back_false_alarm_rate": (fp / num_foils) if num_foils > 0 else 0.0,
-            "all_back_dprime": dprime(tp, fn, fp, tn),
-        }
-    )
+    metrics_for_condition("2BACK", "twoback")
+    metrics_for_condition("1BACK", "oneback")
+    metrics_for_condition("0BACK", "zeroback")
 
     return metrics
 
