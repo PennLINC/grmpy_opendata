@@ -394,9 +394,9 @@ def summarize_subject(subject_display: str, df: pd.DataFrame) -> Dict[str, objec
         return tp, tn, fp, fn, num_targets, num_foils, speed_fp, speed_tp
 
     for label_key, cond, speed_prefix in (
-        ("0_back", "0BACK", "zeroback"),
-        ("1_back", "1BACK", "oneback"),
-        ("2_back", "2BACK", "twoback"),
+        ("0_back", "0BACK", "0_back"),
+        ("1_back", "1BACK", "1_back"),
+        ("2_back", "2BACK", "2_back"),
     ):
         tp, tn, fp, fn, num_targets, num_foils, speed_fp, speed_tp = per_condition(cond)
         metrics.update(
@@ -410,15 +410,12 @@ def summarize_subject(subject_display: str, df: pd.DataFrame) -> Dict[str, objec
                 f"{label_key}_hit_rate": _sig4(
                     (tp / num_targets) if num_targets > 0 else 0.0
                 ),
-                f"{label_key}_false_alarm_rate": (fp / num_foils)
-                if num_foils > 0
-                else 0.0,
                 f"{label_key}_false_alarm_rate": _sig4(
                     (fp / num_foils) if num_foils > 0 else 0.0
                 ),
                 f"{label_key}_dprime": _sig4(legacy_dp(tp, fn, fp, tn)),
-                f"{speed_prefix}_speed_fp": speed_fp,
-                f"{speed_prefix}_speed_tp": speed_tp,
+                f"{speed_prefix}_speed_fp": _sig4(speed_fp),
+                f"{speed_prefix}_speed_tp": _sig4(speed_tp),
             }
         )
 
@@ -499,6 +496,109 @@ def update_participants_tsv(
     df.to_csv(participants_path, sep="\t", index=False, na_rep="n/a")
 
 
+def build_participants_json_schema(metrics: Dict[str, object]) -> Dict[str, object]:
+    """Create descriptions and units for participants.tsv columns present in metrics."""
+    schema: Dict[str, object] = {}
+
+    def add(name: str, desc: str, units: Optional[str] = None) -> None:
+        entry: Dict[str, object] = {"Description": desc}
+        if units is not None:
+            entry["Units"] = units
+        schema[name] = entry
+
+    # Ensure participant_id always documented
+    add("participant_id", "BIDS participant identifier (e.g., sub-<label>)")
+
+    # Map helpers
+    pretty_prefix = {
+        "0_back": "0-back",
+        "1_back": "1-back",
+        "2_back": "2-back",
+        "all_back": "All conditions",
+    }
+    suffix_desc = {
+        "true_positive": "Trials with response expected and detected (TP)",
+        "true_negative": "Trials with no response expected and no response detected (TN)",
+        "false_positive": "Trials with no response expected but response detected (FP)",
+        "false_negative": "Trials with response expected but no response detected (FN)",
+        "all_correct": "Total correct trials (TP + TN)",
+        "all_incorrect": "Total incorrect trials (FP + FN)",
+        "hit_rate": "Proportion of targets responded to (TP / targets)",
+        "false_alarm_rate": "Proportion of foils responded to (FP / foils)",
+        "dprime": "Signal detection sensitivity d' with half-hit/FA correction",
+    }
+
+    # Speed columns now use the same 0_back/1_back/2_back prefixes
+    speed_prefix_pretty = {
+        "0_back": "0-back",
+        "1_back": "1-back",
+        "2_back": "2-back",
+    }
+
+    for key in metrics.keys():
+        if key in ("participant_id",):
+            continue
+        if key.endswith("_speed_fp") or key.endswith("_speed_tp"):
+            # e.g., zeroback_speed_fp
+            parts = key.split("_")
+            if len(parts) >= 3:
+                prefix = parts[0]
+                pretty = speed_prefix_pretty.get(prefix, prefix)
+                if parts[-1] == "fp":
+                    add(key, f"{pretty} mean response time for false positives", "ms")
+                elif parts[-1] == "tp":
+                    add(key, f"{pretty} mean response time for true positives", "ms")
+            continue
+
+        # Regular per-condition and aggregated fields
+        for pref in ("0_back", "1_back", "2_back", "all_back"):
+            if key.startswith(pref + "_"):
+                suffix = key[len(pref) + 1 :]
+                pretty = pretty_prefix.get(pref, pref)
+                desc = suffix_desc.get(suffix)
+                if desc is not None:
+                    units = None
+                    if suffix in (
+                        "true_positive",
+                        "true_negative",
+                        "false_positive",
+                        "false_negative",
+                        "all_correct",
+                        "all_incorrect",
+                    ):
+                        units = "count"
+                    elif suffix in ("hit_rate", "false_alarm_rate"):
+                        units = "proportion"
+                    elif suffix in ("dprime",):
+                        units = "a.u."
+                    add(key, f"{pretty} {desc}", units)
+                break
+
+    return schema
+
+
+def update_participants_json(bids_root: Path, metrics: Dict[str, object]) -> None:
+    """Create or update participants.json with column descriptions/units for metrics."""
+    sidecar_path = bids_root / "participants.json"
+    existing: Dict[str, object] = {}
+    if sidecar_path.exists():
+        try:
+            with open(sidecar_path, "r") as fp:
+                existing = json.load(fp)
+        except Exception:
+            existing = {}
+
+    additions = build_participants_json_schema(metrics)
+    merged = dict(existing)
+    # Only add missing keys to avoid overwriting hand-edited descriptions
+    for k, v in additions.items():
+        if k not in merged:
+            merged[k] = v
+
+    with open(sidecar_path, "w") as fp:
+        json.dump(merged, fp, indent=2)
+
+
 # ----------------------------------- Main ------------------------------------
 
 
@@ -571,6 +671,8 @@ def main() -> int:
                 with open(json_path, "w") as fp:
                     json.dump(sidecar_json(), fp, indent=2)
                 update_participants_tsv(bids_root, subject_display, subject_metrics)
+                # Update participants.json sidecar with schema
+                update_participants_json(bids_root, subject_metrics)
                 print(f"Processed {subject_display} from {log_path.name}")
 
         except Exception as exc:
