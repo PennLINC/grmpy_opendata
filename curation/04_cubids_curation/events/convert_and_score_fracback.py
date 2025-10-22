@@ -360,6 +360,12 @@ def summarize_subject(subject_display: str, df: pd.DataFrame) -> Dict[str, objec
     """Compute participants metrics with original names and include speed columns."""
     metrics: Dict[str, object] = {}
 
+    def _sig4(x: float) -> float:
+        try:
+            return float(f"{float(x):.4g}")
+        except Exception:
+            return x
+
     def per_condition(
         condition: Optional[str],
     ) -> Tuple[int, int, int, int, int, int, float, float]:
@@ -395,17 +401,22 @@ def summarize_subject(subject_display: str, df: pd.DataFrame) -> Dict[str, objec
         tp, tn, fp, fn, num_targets, num_foils, speed_fp, speed_tp = per_condition(cond)
         metrics.update(
             {
-                f"{label_key}_true_positive": tp,
-                f"{label_key}_true_negative": tn,
-                f"{label_key}_false_positive": fp,
-                f"{label_key}_false_negative": fn,
-                f"{label_key}_all_correct": tp + tn,
-                f"{label_key}_all_incorrect": fp + fn,
-                f"{label_key}_hit_rate": (tp / num_targets) if num_targets > 0 else 0.0,
+                f"{label_key}_true_positive": int(tp),
+                f"{label_key}_true_negative": int(tn),
+                f"{label_key}_false_positive": int(fp),
+                f"{label_key}_false_negative": int(fn),
+                f"{label_key}_all_correct": int(tp + tn),
+                f"{label_key}_all_incorrect": int(fp + fn),
+                f"{label_key}_hit_rate": _sig4(
+                    (tp / num_targets) if num_targets > 0 else 0.0
+                ),
                 f"{label_key}_false_alarm_rate": (fp / num_foils)
                 if num_foils > 0
                 else 0.0,
-                f"{label_key}_dprime": legacy_dp(tp, fn, fp, tn),
+                f"{label_key}_false_alarm_rate": _sig4(
+                    (fp / num_foils) if num_foils > 0 else 0.0
+                ),
+                f"{label_key}_dprime": _sig4(legacy_dp(tp, fn, fp, tn)),
                 f"{speed_prefix}_speed_fp": speed_fp,
                 f"{speed_prefix}_speed_tp": speed_tp,
             }
@@ -415,15 +426,17 @@ def summarize_subject(subject_display: str, df: pd.DataFrame) -> Dict[str, objec
     tp, tn, fp, fn, num_targets, num_foils, _, _ = per_condition(None)
     metrics.update(
         {
-            "all_back_true_positive": tp,
-            "all_back_true_negative": tn,
-            "all_back_false_positive": fp,
-            "all_back_false_negative": fn,
-            "all_back_all_correct": tp + tn,
-            "all_back_all_incorrect": fp + fn,
-            "all_back_hit_rate": (tp / num_targets) if num_targets > 0 else 0.0,
-            "all_back_false_alarm_rate": (fp / num_foils) if num_foils > 0 else 0.0,
-            "all_back_dprime": legacy_dp(tp, fn, fp, tn),
+            "all_back_true_positive": int(tp),
+            "all_back_true_negative": int(tn),
+            "all_back_false_positive": int(fp),
+            "all_back_false_negative": int(fn),
+            "all_back_all_correct": int(tp + tn),
+            "all_back_all_incorrect": int(fp + fn),
+            "all_back_hit_rate": _sig4((tp / num_targets) if num_targets > 0 else 0.0),
+            "all_back_false_alarm_rate": _sig4(
+                (fp / num_foils) if num_foils > 0 else 0.0
+            ),
+            "all_back_dprime": _sig4(legacy_dp(tp, fn, fp, tn)),
         }
     )
 
