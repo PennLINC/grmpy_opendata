@@ -294,13 +294,14 @@ def build_events_dataframe(allback: List[List[object]]) -> pd.DataFrame:
         # row: trial_type, results, onset, duration, response_time
         result = row.results
         rt_sec = row.response_time
-        if "NR" in result and not pd.isna(rt_sec):
+        has_response = (not pd.isna(rt_sec)) and (rt_sec != 0)
+        if "NR" in result and has_response:
             scores.append("false_positive")
-        elif "NR" in result and pd.isna(rt_sec):
+        elif "NR" in result and not has_response:
             scores.append("true_negative")
-        elif "Match" in result and (not pd.isna(rt_sec) and rt_sec <= 2.4):
+        elif "Match" in result and has_response:
             scores.append("true_positive")
-        elif "Match" in result and (pd.isna(rt_sec) or rt_sec > 2.4):
+        elif "Match" in result and not has_response:
             scores.append("false_negative")
         else:
             scores.append("unknown")
