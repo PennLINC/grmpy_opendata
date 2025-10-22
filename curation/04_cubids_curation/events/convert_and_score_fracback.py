@@ -201,7 +201,7 @@ def split_templates_by_category(
 def read_log_as_dataframe(log_path: Path) -> pd.DataFrame:
     df = pd.read_csv(
         log_path,
-        skiprows=3,
+        skiprows=4,
         sep="\t",
         header=None,
         dtype=str,  # read as strings first; we'll cast selectively
