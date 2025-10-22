@@ -481,9 +481,36 @@ def update_participants_tsv(
     # Filter out id-like keys
     metrics = {k: v for k, v in metrics.items() if k not in {"bblid", "subject"}}
 
+    # Helpers to enforce proper dtypes
+    COUNT_SUFFIXES = {
+        "true_positive",
+        "true_negative",
+        "false_positive",
+        "false_negative",
+        "all_correct",
+        "all_incorrect",
+    }
+
+    def is_count_column(column_name: str) -> bool:
+        for pref in ("0_back_", "1_back_", "2_back_", "all_back_"):
+            if column_name.startswith(pref):
+                suffix = column_name[len(pref) :]
+                return suffix in COUNT_SUFFIXES
+        return False
+
     for key in metrics.keys():
         if key not in df.columns:
-            df[key] = pd.NA
+            if is_count_column(key):
+                df[key] = pd.Series([pd.NA] * len(df), dtype="Int64")
+            else:
+                df[key] = pd.NA
+        else:
+            # Attempt dtype normalization for existing columns
+            if is_count_column(key):
+                df[key] = pd.to_numeric(df[key], errors="coerce").astype("Int64")
+            else:
+                # leave non-count columns as-is (floats/objects allowed)
+                pass
 
     row_idx = df.index[df["participant_id"] == participant_id]
     for key, value in metrics.items():
@@ -525,7 +552,7 @@ def build_participants_json_schema(metrics: Dict[str, object]) -> Dict[str, obje
         "all_incorrect": "Total incorrect trials (FP + FN)",
         "hit_rate": "Proportion of targets responded to (TP / targets)",
         "false_alarm_rate": "Proportion of foils responded to (FP / foils)",
-        "dprime": "Signal detection sensitivity d' with half-hit/FA correction",
+        "dprime": "Signal detection sensitivity d' with half-hit/FA correction (Z(H) - Z(FA))",
     }
 
     # Speed columns now use the same 0_back/1_back/2_back prefixes
@@ -570,7 +597,7 @@ def build_participants_json_schema(metrics: Dict[str, object]) -> Dict[str, obje
                     elif suffix in ("hit_rate", "false_alarm_rate"):
                         units = "proportion"
                     elif suffix in ("dprime",):
-                        units = "a.u."
+                        units = "arbitrary"
                     add(key, f"{pretty} {desc}", units)
                 break
 
