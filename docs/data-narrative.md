@@ -973,24 +973,43 @@ python phenotype/02_extract_info_subfield.py \
 The self-report itemwise data was split into separate files using the [`03_separate_self_reports.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/03_separate_self_reports.py) script.
 
 als
+
 map-sr - no summary scores in the self_report_summary.tsv, calculated following the logic in GRMPY_selfReportScoringCode_v4.R
+
 swan-child
+
 swan-collateral - missing?
+
 aces - has some ptps with a single item missing; these ptps are missing aces scores in the self_report_summary.tsv
+
 scared
+
 scared-collateral - missing?
+
 rpaq
+
 ari - ari_7 isn't used in scoring?
+
 ari-collateral - missing?
+
 bdi
+
 bisbas
+
 grit
+
 hcl - only uses hcl6_3 questions for scoring
+
 bss
+
 phys_anhed - scored as rpasShort
+
 soc_anhed - scored as rsasShort
+
 eswan_dmdd - there are some ptps with a single item missing; these ptps are missing eswan_dmdd scores (for the incomplete category and the total score) in the self_report_summary.tsv; could adjust the min_count in the column sums to prevent total score from being calculated if there is a single item missing; might need to add NA to incomplete items as well?
+
 psqi - scoring script looks good, but there are no NA values so the scoring won't catch incomplete items; should also adjust min_count to the global sum. some inconsistencies with crosschecking with the self_report_summary.tsv for component 4; sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, for some reason its 2 in the self_report_summary.tsv;
+
 best
 
 
