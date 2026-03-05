@@ -73,6 +73,17 @@ def parse_args(argv: Iterable[str]) -> argparse.Namespace:
     return parser.parse_args(list(argv))
 
 
+def _fill_empty_with_na(df: pd.DataFrame) -> pd.DataFrame:
+    """Replace empty entries with 'n/a' (BIDS convention)."""
+    for col in df.columns:
+        s = df[col]
+        if s.dtype == object:
+            # Empty string, whitespace-only, or already NaN → treat as missing
+            mask = s.isna() | s.astype(str).str.strip().eq("")
+            df[col] = s.where(~mask, other="n/a")
+    return df.fillna("n/a")
+
+
 def to_numeric(series: pd.Series) -> pd.Series:
     return pd.to_numeric(series, errors="coerce")
 
@@ -560,6 +571,7 @@ def score_file(path: Path, out_dir: Path) -> Optional[Path]:
         return None
 
     df = pd.read_csv(path, sep="\t", dtype={PARTICIPANT_ID_COL: str})
+    df = _fill_empty_with_na(df)
     original_cols = list(df.columns)
 
     # Detect rows that are entirely empty prior to scoring (ignoring participant_id)
@@ -569,8 +581,12 @@ def score_file(path: Path, out_dir: Path) -> Optional[Path]:
         for col in check_cols:
             s = df[col]
             if s.dtype == object:
-                # Treat NaN or empty/whitespace-only strings as empty
-                per_col_empty.append(s.isna() | s.astype(str).str.strip().eq(""))
+                # Treat NaN, empty/whitespace-only, or BIDS "n/a" as empty
+                per_col_empty.append(
+                    s.isna()
+                    | s.astype(str).str.strip().eq("")
+                    | s.astype(str).str.strip().str.lower().eq("n/a")
+                )
             else:
                 per_col_empty.append(s.isna())
         empty_row_mask = per_col_empty[0]
@@ -595,6 +611,11 @@ def score_file(path: Path, out_dir: Path) -> Optional[Path]:
                 df[c] = s.mask(empty_row_mask, other=math.nan)
     ordered = original_cols + new_cols
     df = df[ordered]
+
+    # BIDS: empty summary scores and any remaining missing → "n/a"
+    # Convert column-by-column so Int64 (and other non-object) columns can hold "n/a"
+    for c in df.columns:
+        df[c] = df[c].astype(object).fillna("n/a")
 
     out_path = out_dir / path.name
     out_path.parent.mkdir(parents=True, exist_ok=True)
