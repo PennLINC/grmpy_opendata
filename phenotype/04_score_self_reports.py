@@ -328,13 +328,24 @@ def add_eswan_dmdd_scores(df: pd.DataFrame) -> pd.DataFrame:
     def seq(tag: str) -> List[str]:
         return [f"eswan_dmdd_{i:02d}{tag}" for i in range(1, 11)]
 
-    home = sum_columns(df, seq("a"))
-    friend = sum_columns(df, seq("b"))
-    school = sum_columns(df, seq("c"))
+    def sum_when_all_items_present(columns: List[str]) -> pd.Series:
+        existing = [c for c in columns if c in df.columns]
+        if not existing or len(existing) != len(columns):
+            return pd.Series([math.nan] * len(df), index=df.index)
+        num = df[existing].apply(pd.to_numeric, errors="coerce")
+        all_present = num.notna().all(axis=1)
+        return num.sum(axis=1).where(all_present)
+
+    home = sum_when_all_items_present(seq("a"))
+    friend = sum_when_all_items_present(seq("b"))
+    school = sum_when_all_items_present(seq("c"))
     df["eswanDMDD_score_homeOutburst"] = home
     df["eswanDMDD_score_friendOutburst"] = friend
     df["eswanDMDD_score_schoolOutburst"] = school
-    df["eswanDMDD_score_total"] = home + friend + school
+    total = home + friend + school
+    df["eswanDMDD_score_total"] = total.where(
+        home.notna() & friend.notna() & school.notna()
+    )
     return df
 
 
