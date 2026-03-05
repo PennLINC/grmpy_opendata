@@ -188,7 +188,11 @@ def add_ari_scores(df: pd.DataFrame) -> pd.DataFrame:
 
 def add_bdi_scores(df: pd.DataFrame) -> pd.DataFrame:
     # Sum all BDI items except bdi_19a
-    cols = [c for c in df.columns if c.startswith("bdi_") and c != "bdi_19a"]
+    cols = [
+        c
+        for c in df.columns
+        if c.startswith("bdi_") and c != "bdi_19a" and c != "bdi_score_total"
+    ]
     if cols:
         df["bdi_score_total"] = (
             df[cols].apply(pd.to_numeric, errors="coerce").sum(axis=1, min_count=1)
