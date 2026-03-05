@@ -141,15 +141,21 @@ def add_swan_scores(df: pd.DataFrame) -> pd.DataFrame:
             .astype("Int64")
         )
 
+    # Only classify when both subscale totals are present; otherwise leave NA
+    valid = t1.notna() & t2.notna()
     cond_combined = (t1 >= 6) & (t2 >= 6)
     cond_inatt = (t1 >= 6) & (t2 < 6)
     cond_hyper = (t1 < 6) & (t2 >= 6)
     cond_none = (t1 < 6) & (t2 < 6)
 
-    df["eswanADHD_score_combined"] = flag(cond_combined)
-    df["eswanADHD_score_inattentive"] = flag(cond_inatt)
-    df["eswanADHD_score_hyperactive"] = flag(cond_hyper)
-    df["eswanADHD_score_noADHD"] = flag(cond_none)
+    def flag_valid(series_cond: pd.Series) -> pd.Series:
+        out = flag(series_cond)
+        return out.where(valid, other=pd.NA)
+
+    df["eswanADHD_score_combined"] = flag_valid(cond_combined)
+    df["eswanADHD_score_inattentive"] = flag_valid(cond_inatt)
+    df["eswanADHD_score_hyperactive"] = flag_valid(cond_hyper)
+    df["eswanADHD_score_noADHD"] = flag_valid(cond_none)
     return df
 
 
