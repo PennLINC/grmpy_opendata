@@ -8,6 +8,9 @@ Usage:
     --input-dir phenotype/data \
     --output-dir phenotype/data
 
+  # Process only one instrument:
+  python phenotype/04_score_self_reports.py --file bdi.tsv
+
 Notes:
 - Operates per instrument file (e.g., `aces.tsv`, `bdi.tsv`, ...). If a file is
   missing required columns, that instrument is skipped gracefully.
@@ -45,11 +48,8 @@ def parse_args(argv: Iterable[str]) -> argparse.Namespace:
     parser.add_argument(
         "--input-dir",
         type=Path,
-        default=Path("phenotype/data/self_report_itemwise_split"),
-        help=(
-            "Directory containing instrument TSVs (default: phenotype/data/"
-            "self_report_itemwise_split)"
-        ),
+        default=Path("phenotype/data"),
+        help=("Directory containing instrument TSVs (default: phenotype/data)"),
     )
     parser.add_argument(
         "--output-dir",
@@ -58,6 +58,16 @@ def parse_args(argv: Iterable[str]) -> argparse.Namespace:
         help=(
             "Directory to write scored TSVs (default: same as --input-dir). "
             "Files are overwritten if output equals input."
+        ),
+    )
+    parser.add_argument(
+        "--file",
+        type=str,
+        default=None,
+        metavar="FILENAME",
+        help=(
+            "Process only this TSV file (e.g. bdi.tsv). Looked up in --input-dir. "
+            "If omitted, all *.tsv files in the input directory are processed."
         ),
     )
     return parser.parse_args(list(argv))
@@ -591,7 +601,20 @@ def main(argv: Iterable[str]) -> int:
         print(f"Input directory not found: {input_dir}")
         return 2
 
-    tsv_files = sorted(input_dir.glob("*.tsv"))
+    if args.file is not None:
+        path = Path(args.file)
+        if not path.is_absolute():
+            path = input_dir / path.name
+        if path.suffix.lower() != ".tsv":
+            print(f"Not a TSV file: {args.file}")
+            return 2
+        if not path.exists():
+            print(f"File not found: {path}")
+            return 2
+        tsv_files = [path]
+    else:
+        tsv_files = sorted(input_dir.glob("*.tsv"))
+
     if not tsv_files:
         print(f"No TSV files found in {input_dir}")
         return 0
