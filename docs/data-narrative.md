@@ -972,46 +972,63 @@ python phenotype/02_extract_info_subfield.py \
 
 The self-report itemwise data was split into separate files using the [`03_separate_self_reports.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/03_separate_self_reports.py) script.
 
-als
+Note - in general, if missing an item used in scoring, the summary score should be NA. -- verify.
 
-map-sr - no summary scores in the self_report_summary.tsv, calculated following the logic in GRMPY_selfReportScoringCode_v4.R
+aces - has some ptps with a single item missing; these ptps are missing aces scores in the self_report_summary.tsv - check what to do.
 
-swan-child
+als - completed - i have just and average score, EF also has a sum.
 
-swan-collateral - missing?
+ari - completed
 
-aces - has some ptps with a single item missing; these ptps are missing aces scores in the self_report_summary.tsv
+bdi - EF was a child version which took out item 21 and 9. grmpy seems to have those. should just be a sum. confirm 9/21.
 
-scared
+best-ms - not in EF. look for it somehwere else.
 
-scared-collateral - missing?
+bisbas - this is in EF, EF has 20 items, grmpy has 24. follow-up on this. Dan's code might have the full 24.
 
-rpaq
+biss_madrs - not in EF. look for it somehwere else.
 
-ari - ari_7 isn't used in scoring?
+bss - not in EF. look for it somehwere else.
 
-ari-collateral - missing?
+CNB (cognitive battery) - might not release. check flyhweel for dictionary. might need dates to make sure they aren't from another study.
 
-bdi
+Diagnosis - looks like something from a psychiatric screening. not sure if we should include this.
 
-bisbas
+eswan_dmdd - completed - check that questions are consistent with Juliette's.
 
-grit
+grit - Dan's code has grit. check.
 
-hcl - only uses hcl6_3 questions for scoring
+hcl16 - R code only uses hcl6_3 questions for scoring. Not in EF.
 
-bss
+imaging_pre/postscan_scales - these are STAI and STAXI - EF has STAI.
 
-phys_anhed - scored as rpasShort
+mapssr - EF has this. calculated following the logic in GRMPY_selfReportScoringCode_v4.R - check w/ EF to confirm right questions are summed.
 
-soc_anhed - scored as rsasShort
+phys_anhed - scored as rpasShort - EF has this, did sum and average, while here is only sum. completed.
 
-eswan_dmdd - there are some ptps with a single item missing; these ptps are missing eswan_dmdd scores (for the incomplete category and the total score) in the self_report_summary.tsv; could adjust the min_count in the column sums to prevent total score from being calculated if there is a single item missing; might need to add NA to incomplete items as well?
+soc_anhed - scored as rsasShort - EF has this, did sum and average, while here is only sum. completed.
 
-psqi - scoring script looks good, but there are no NA values so the scoring won't catch incomplete items; should also adjust min_count to the global sum. some inconsistencies with crosschecking with the self_report_summary.tsv for component 4; sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, for some reason its 2 in the self_report_summary.tsv;
+prime_screen - EF has this (12 times), PAFIN has this (5 items). the items look weird on this. needs follow-up. No R code for this from grmpy. Brooke forwarded an email chain about prime. Dan's lab also has PRIME (12 items) with complex scoring.
 
-best
+Proband_GOASSESS - EF doesn't have this. needs follow-up. PAFIN might.
 
+psqi - scoring script looks good, but there are no NA values so the scoring won't catch incomplete items; should also adjust min_count to the global sum. some inconsistencies with crosschecking with the self_report_summary.tsv for component 4; sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, for some reason its 2 in the self_report_summary.tsv; NOTE - check now that NA values are being caught. EF does not have this.
+
+rpaq - not in EF. look for it somehwere else.
+
+scared - not in EF. look for it somehwere else.
+
+swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary. need to follow-up on this. Original publications says responses should range from -3 to 3.
+
+tanner_substance_spq - needs follow-up - will probably not score.
+
+swan-child - what is this? don't have tsv for it , probably swan child refers to swan above while collateral is the parents.
+
+swan-collateral - missing? - can forget about it
+
+scared-collateral - missing? - can forget about it
+
+ari-collateral - missing? - can forget about it
 
 TODO: these subjects are missing all summary scores in the self_report_summary.tsv; WHY?
 sub-20949
