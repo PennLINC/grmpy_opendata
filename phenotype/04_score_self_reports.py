@@ -373,8 +373,8 @@ def add_eswan_dmdd_scores(df: pd.DataFrame) -> pd.DataFrame:
     df["eswanDMDD_score_homeOutburst"] = home
     df["eswanDMDD_score_friendOutburst"] = friend
     df["eswanDMDD_score_schoolOutburst"] = school
-    total = home + friend + school
-    df["eswanDMDD_score_total"] = total.where(
+    avg = ((home + friend + school) / 3.0).round(1)
+    df["eswanDMDD_score_total"] = avg.where(
         home.notna() & friend.notna() & school.notna()
     )
     return df
