@@ -95,6 +95,16 @@ def sum_columns(df: pd.DataFrame, columns: List[str]) -> pd.Series:
     return df[existing].apply(pd.to_numeric, errors="coerce").sum(axis=1, min_count=1)
 
 
+def sum_columns_complete(df: pd.DataFrame, columns: List[str]) -> pd.Series:
+    """Sum columns only where all columns have valid values (n/a/missing → NaN in total)."""
+    existing = [c for c in columns if c in df.columns]
+    if not existing or len(existing) != len(columns):
+        return pd.Series([math.nan] * len(df), index=df.index)
+    num = df[existing].apply(pd.to_numeric, errors="coerce")
+    all_present = num.notna().all(axis=1)
+    return num.sum(axis=1).where(all_present)
+
+
 def mean_columns(df: pd.DataFrame, columns: List[str]) -> pd.Series:
     existing = [c for c in columns if c in df.columns]
     if not existing:
@@ -171,7 +181,8 @@ def add_swan_scores(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def add_aces_scores(df: pd.DataFrame) -> pd.DataFrame:
-    df["aces_score_total"] = sum_columns(df, [f"aces_{i}" for i in range(1, 11)])
+    aces_items = [f"aces_{i}" for i in range(1, 11)]
+    df["aces_score_total"] = sum_columns_complete(df, aces_items)
     return df
 
 
