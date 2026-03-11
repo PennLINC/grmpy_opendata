@@ -211,3 +211,6 @@ logs/
 # sif files
 *.sif
 **/*.sif
+
+# ignore
+fromBrookeJuliette/
