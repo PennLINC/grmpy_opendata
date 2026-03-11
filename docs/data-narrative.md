@@ -972,31 +972,31 @@ python phenotype/02_extract_info_subfield.py \
 
 The self-report itemwise data was split into separate files using the [`03_separate_self_reports.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/03_separate_self_reports.py) script.
 
-Note - in general, if missing an item used in scoring, the summary score should be NA. -- verify.
+Note - in general, if missing an item used in scoring, the summary score should be NA.
 
-aces - has some ptps with a single item missing; these ptps are missing aces scores in the self_report_summary.tsv - check what to do.
+aces - completed + verified.
 
 als - completed - i have just and average score, EF also has a sum.
 
-ari - completed
+ari - completed + verified.
 
-bdi - EF was a child version which took out item 21 and 9. grmpy seems to have those. should just be a sum. confirm 9/21.
+bdi - completed + verified. note: grmpy has item 9 and 21 that were not present in EF.
 
-best-ms - not in EF. look for it somehwere else.
+best-ms - completed + verified against self_report_summary.tsv. Note this is a best modified satterthwaite version of best.
 
-bisbas - this is in EF, EF has 20 items, grmpy has 24. follow-up on this. Dan's code might have the full 24.
+bisbas - completed + verified against self_report_summary.tsv. This is in EF, EF has 20 items, grmpy has 24. follow-up on this. Dan's code might have the full 24.
 
-biss_madrs - not in EF. look for it somehwere else.
+biss_madrs - not in EF. look for it somehwere else. Scoring for this one doesn't exist in the R code.
 
-bss - not in EF. look for it somehwere else.
+bss - completed + verified against self_report_summary.tsv.
 
 CNB (cognitive battery) - might not release. check flyhweel for dictionary. might need dates to make sure they aren't from another study.
 
 Diagnosis - looks like something from a psychiatric screening. not sure if we should include this.
 
-eswan_dmdd - completed - check that questions are consistent with Juliette's.
+eswan_dmdd - completed + verified. questions are consistent with Juliette's version, however her data dictionary has answers ranging -3 to 3 while here it is 1-7.
 
-grit - Dan's code has grit. check.
+grit - compelted + verified against self_report_summary.tsv. Dan's code has grit. check it to confirm proper scoring.
 
 hcl16 - R code only uses hcl6_3 questions for scoring. Not in EF.
 
@@ -1012,7 +1012,7 @@ prime_screen - EF has this (12 times), PAFIN has this (5 items). the items look 
 
 Proband_GOASSESS - EF doesn't have this. needs follow-up. PAFIN might.
 
-psqi - scoring script looks good, but there are no NA values so the scoring won't catch incomplete items; should also adjust min_count to the global sum. some inconsistencies with crosschecking with the self_report_summary.tsv for component 4; sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, for some reason its 2 in the self_report_summary.tsv; NOTE - check now that NA values are being caught. EF does not have this.
+psqi - sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, but its 2 in the self_report_summary.tsv which means the scorer must have assumed the ptp meant they went to bed at 6pm. sub-129552, sub-20197, sub-20387, sub-88760, and sub-98422 have component 4 score of 0, but in self_report_summary.tsv it is 3. For sub-20888 component 4 is 1, but in self_report_summary.tsv it is 3. sub-20940 has component 4 score of 2, but in self_report_summary.tsv it is 3.
 
 rpaq - not in EF. look for it somehwere else.
 
@@ -1030,7 +1030,7 @@ scared-collateral - missing? - can forget about it
 
 ari-collateral - missing? - can forget about it
 
-TODO: these subjects are missing all summary scores in the self_report_summary.tsv; WHY?
+NOTE: these subjects are missing all summary scores in the self_report_summary.tsv
 sub-20949
 sub-20963
 sub-20974
