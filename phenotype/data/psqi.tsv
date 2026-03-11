@@ -24,7 +24,7 @@ sub-109735	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n
 sub-110168	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 sub-110354	600.0	n/a	10.0	n/a	500.0	n/a	8.0	n/a	n/a	1.0	2.0	1.0	2.0	0.0	3.0	2.0	2.0	2.0	2.0	2.0	2.0	1.0	1.0	2.0	1.0	1.0	1.0	2.0	n/a	2.0	2.0	1.0	0.0	3.0	2.0	2.0	1.0	11.0
 sub-110828	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
-sub-112028	0.0	n/a	35.0	n/a	930.0	n/a	8.0	n/a	n/a	1.0	2.0	3.0	0.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0	0.0	1.0	1.0	0.0	n/a	n/a	n/a	n/a	n/a	n/a	0.0	2.0	0.0	n/a	1.0	0.0	1.0	4.0
+sub-112028	0.0	n/a	35.0	n/a	930.0	n/a	8.0	n/a	n/a	1.0	2.0	3.0	0.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0	0.0	1.0	1.0	0.0	n/a	n/a	n/a	n/a	n/a	n/a	0.0	2.0	0.0	n/a	1.0	0.0	1.0	n/a
 sub-112061	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 sub-112126	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 sub-112249	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
@@ -141,7 +141,7 @@ sub-82790	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/
 sub-83010	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 sub-83372	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 sub-83454	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
-sub-83835	2300.0	11:00PM	15.0	15.0	830.0	8:45	8.0	8.0	n/a	0.0	3.0	3.0	0.0	3.0	0.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	n/a	n/a	n/a	n/a	n/a	n/a	0.0	0.0	0.0	n/a	2.0	0.0	0.0	2.0
+sub-83835	2300.0	11:00PM	15.0	15.0	830.0	8:45	8.0	8.0	n/a	0.0	3.0	3.0	0.0	3.0	0.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	n/a	n/a	n/a	n/a	n/a	n/a	0.0	0.0	0.0	n/a	2.0	0.0	0.0	n/a
 sub-83999	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 sub-84103	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 sub-84354	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
@@ -225,7 +225,7 @@ sub-98422	30.0	n/a	30.0	n/a	500.0	n/a	4.0	n/a	im not sure if i have insomnia i j
 sub-98535	130.0	n/a	30.0	n/a	730.0	n/a	6.0	n/a	n/a	0.0	3.0	2.0	0.0	0.0	0.0	0.0	2.0	0.0	1.0	2.0	0.0	0.0	0.0	1.0	0.0	0.0	3.0	0.0	n/a	n/a	2.0	1.0	1.0	0.0	1.0	0.0	0.0	5.0
 sub-98567	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 sub-98831	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
-sub-98871	30.0	12:30	30.0	30.0	630.0	6:40 AM	5.75	5.75	I could feel pain if I do not get enough rest, or if I sleep in an awkward position.	3.0	1.0	1.0	0.0	0.0	0.0	1.0	1.0	1.0	0.0	1.0	0.0	1.0	2.0	3.0	1.0	0.0	2.0	0.0	n/a	1.0	1.0	2.0	n/a	0.0	1.0	0.0	2.0	6.0
+sub-98871	30.0	12:30	30.0	30.0	630.0	6:40 AM	5.75	5.75	I could feel pain if I do not get enough rest, or if I sleep in an awkward position.	3.0	1.0	1.0	0.0	0.0	0.0	1.0	1.0	1.0	0.0	1.0	0.0	1.0	2.0	3.0	1.0	0.0	2.0	0.0	n/a	1.0	1.0	2.0	n/a	0.0	1.0	0.0	2.0	n/a
 sub-99352	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 sub-99604	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 sub-99949	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
