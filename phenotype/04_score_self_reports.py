@@ -105,11 +105,36 @@ def sum_columns_complete(df: pd.DataFrame, columns: List[str]) -> pd.Series:
     return num.sum(axis=1).where(all_present)
 
 
+def sum_columns_complete_transform(
+    df: pd.DataFrame,
+    columns: List[str],
+    transform: Callable[[pd.Series], pd.Series],
+) -> pd.Series:
+    """Sum of transform(col) only where all columns have valid values."""
+    existing = [c for c in columns if c in df.columns]
+    if not existing or len(existing) != len(columns):
+        return pd.Series([math.nan] * len(df), index=df.index)
+    num = df[existing].apply(pd.to_numeric, errors="coerce")
+    all_present = num.notna().all(axis=1)
+    transformed = pd.DataFrame({c: transform(df[c]) for c in existing})
+    return transformed.sum(axis=1).where(all_present)
+
+
 def mean_columns(df: pd.DataFrame, columns: List[str]) -> pd.Series:
     existing = [c for c in columns if c in df.columns]
     if not existing:
         return pd.Series([math.nan] * len(df), index=df.index)
     return df[existing].apply(pd.to_numeric, errors="coerce").mean(axis=1)
+
+
+def mean_columns_complete(df: pd.DataFrame, columns: List[str]) -> pd.Series:
+    """Mean only where all columns have valid values (n/a/missing → NaN)."""
+    existing = [c for c in columns if c in df.columns]
+    if not existing or len(existing) != len(columns):
+        return pd.Series([math.nan] * len(df), index=df.index)
+    num = df[existing].apply(pd.to_numeric, errors="coerce")
+    all_present = num.notna().all(axis=1)
+    return num.mean(axis=1).where(all_present)
 
 
 def reverse_1_to_4(series: pd.Series) -> pd.Series:
@@ -124,21 +149,20 @@ def reverse_0_to_1(series: pd.Series) -> pd.Series:
 
 def add_als_scores(df: pd.DataFrame) -> pd.DataFrame:
     item_cols = [f"als_{i}" for i in range(1, 19)]
-    df["als_score_avg"] = mean_columns(df, item_cols)
+    df["als_score_avg"] = mean_columns_complete(df, item_cols)
     return df
 
 
 def add_mapsr_scores(df: pd.DataFrame) -> pd.DataFrame:
     # Columns are prefixed with mapssr_
-    item_cols = [c for c in df.columns if c.startswith("mapssr_")]
-    if item_cols:
-        df["mapsr_rawtot_sum"] = (
-            df[item_cols].apply(pd.to_numeric, errors="coerce").sum(axis=1, min_count=1)
-        )
-    df["mapsr_social_sum"] = sum_columns(df, ["mapssr_1", "mapssr_2", "mapssr_3"])
-    df["mapsr_recvoc_sum"] = sum_columns(df, ["mapssr_4", "mapssr_5", "mapssr_6"])
-    df["mapsr_motrelation_sum"] = sum_columns(df, ["mapssr_7", "mapssr_8", "mapssr_9"])
-    df["mapsr_engage_sum"] = sum_columns(
+    item_cols = [f"mapssr_{i}" for i in range(1, 16)]
+    df["mapsr_rawtot_sum"] = sum_columns_complete(df, item_cols)
+    df["mapsr_social_sum"] = sum_columns_complete(df, ["mapssr_1", "mapssr_2", "mapssr_3"])
+    df["mapsr_recvoc_sum"] = sum_columns_complete(df, ["mapssr_4", "mapssr_5", "mapssr_6"])
+    df["mapsr_motrelation_sum"] = sum_columns_complete(
+        df, ["mapssr_7", "mapssr_8", "mapssr_9"]
+    )
+    df["mapsr_engage_sum"] = sum_columns_complete(
         df,
         ["mapssr_10", "mapssr_11", "mapssr_12", "mapssr_13", "mapssr_14", "mapssr_15"],
     )
@@ -148,8 +172,8 @@ def add_mapsr_scores(df: pd.DataFrame) -> pd.DataFrame:
 def add_swan_scores(df: pd.DataFrame) -> pd.DataFrame:
     part1 = [f"swan_{i}" for i in range(1, 10)]
     part2 = [f"swan_{i}" for i in range(10, 19)]
-    df["swan_total1"] = sum_columns(df, part1)
-    df["swan_total2"] = sum_columns(df, part2)
+    df["swan_total1"] = sum_columns_complete(df, part1)
+    df["swan_total2"] = sum_columns_complete(df, part2)
 
     # ADHD classification flags
     t1 = to_numeric(df["swan_total1"]) if "swan_total1" in df else pd.Series()
@@ -188,7 +212,7 @@ def add_aces_scores(df: pd.DataFrame) -> pd.DataFrame:
 
 def add_scared_scores(df: pd.DataFrame) -> pd.DataFrame:
     item_cols = [f"scared_{i}" for i in range(1, 42)]
-    total = sum_columns(df, item_cols)
+    total = sum_columns_complete(df, item_cols)
     df["scared_score_total"] = total
     df["scared_score_anxietyDisorder"] = (
         (to_numeric(total) >= 25)
@@ -202,31 +226,26 @@ def add_scared_scores(df: pd.DataFrame) -> pd.DataFrame:
 def add_rpaq_scores(df: pd.DataFrame) -> pd.DataFrame:
     proactive = [2, 4, 6, 9, 10, 12, 15, 17, 18, 20, 21, 23]
     reactive = [1, 3, 5, 7, 8, 11, 13, 14, 16, 19, 22]
-    df["rpaq_score_proactiveTotal"] = sum_columns(df, [f"rpaq_{i}" for i in proactive])
-    df["rpaq_score_reactiveTotal"] = sum_columns(df, [f"rpaq_{i}" for i in reactive])
+    df["rpaq_score_proactiveTotal"] = sum_columns_complete(
+        df, [f"rpaq_{i}" for i in proactive]
+    )
+    df["rpaq_score_reactiveTotal"] = sum_columns_complete(
+        df, [f"rpaq_{i}" for i in reactive]
+    )
     return df
 
 
 def add_ari_scores(df: pd.DataFrame) -> pd.DataFrame:
     items = [f"ari_{i}" for i in range(1, 7)]
-    df["ari_score_avg"] = mean_columns(df, items)
-    df["ari_score_total"] = sum_columns(df, items)
+    df["ari_score_avg"] = mean_columns_complete(df, items)
+    df["ari_score_total"] = sum_columns_complete(df, items)
     return df
 
 
 def add_bdi_scores(df: pd.DataFrame) -> pd.DataFrame:
-    # Sum all BDI items except bdi_19a
-    cols = [
-        c
-        for c in df.columns
-        if c.startswith("bdi_") and c != "bdi_19a" and c != "bdi_score_total"
-    ]
-    if cols:
-        df["bdi_score_total"] = (
-            df[cols].apply(pd.to_numeric, errors="coerce").sum(axis=1, min_count=1)
-        )
-    else:
-        df["bdi_score_total"] = math.nan
+    # Sum all BDI items 1–21 except bdi_19a (include bdi_19)
+    expected = [f"bdi_{i}" for i in range(1, 22)]
+    df["bdi_score_total"] = sum_columns_complete(df, expected)
     return df
 
 
@@ -234,71 +253,56 @@ def add_bisbas_scores(df: pd.DataFrame) -> pd.DataFrame:
     # BIS total: reverse code select items from 1..4 scale
     bis1_items = [8, 13, 16, 19, 24]  # reversed
     bis2_items = [2, 22]  # not reversed
+    bis1_cols = [f"bisbas_{i}" for i in bis1_items]
+    bis2_cols = [f"bisbas_{i}" for i in bis2_items]
 
-    bis1_cols = [f"bisbas_{i}" for i in bis1_items if f"bisbas_{i}" in df.columns]
-    bis2_cols = [f"bisbas_{i}" for i in bis2_items if f"bisbas_{i}" in df.columns]
-
-    parts: List[pd.Series] = []
-    if bis1_cols:
-        parts.append(
-            pd.DataFrame({c: reverse_1_to_4(df[c]) for c in bis1_cols}).sum(
-                axis=1, min_count=1
-            )
-        )
-    if bis2_cols:
-        parts.append(
-            df[bis2_cols].apply(pd.to_numeric, errors="coerce").sum(axis=1, min_count=1)
-        )
-    if parts:
-        df["bis_score_total"] = sum(parts)  # type: ignore[operator]
-    else:
-        df["bis_score_total"] = math.nan
+    s1 = sum_columns_complete_transform(df, bis1_cols, reverse_1_to_4)
+    s2 = sum_columns_complete(df, bis2_cols)
+    df["bis_score_total"] = (s1 + s2).where(s1.notna() & s2.notna())
 
     # BAS subscales (reverse-coded)
     bas_drive = [3, 9, 12, 21]
     bas_fun = [5, 10, 15, 20]
     bas_reward = [4, 7, 14, 18, 23]
 
-    def rev_sum(indices: List[int]) -> pd.Series:
-        cols = [f"bisbas_{i}" for i in indices if f"bisbas_{i}" in df.columns]
-        if not cols:
-            return pd.Series([math.nan] * len(df), index=df.index)
-        return pd.DataFrame({c: reverse_1_to_4(df[c]) for c in cols}).sum(
-            axis=1, min_count=1
-        )
-
-    df["bas_score_driveTotal"] = rev_sum(bas_drive)
-    df["bas_score_funTotal"] = rev_sum(bas_fun)
-    df["bas_score_rewardTotal"] = rev_sum(bas_reward)
+    df["bas_score_driveTotal"] = sum_columns_complete_transform(
+        df, [f"bisbas_{i}" for i in bas_drive], reverse_1_to_4
+    )
+    df["bas_score_funTotal"] = sum_columns_complete_transform(
+        df, [f"bisbas_{i}" for i in bas_fun], reverse_1_to_4
+    )
+    df["bas_score_rewardTotal"] = sum_columns_complete_transform(
+        df, [f"bisbas_{i}" for i in bas_reward], reverse_1_to_4
+    )
     return df
 
 
 def add_grit_scores(df: pd.DataFrame) -> pd.DataFrame:
     grittiness = [2, 4, 5, 7, 8, 10]
     openness = [1, 3, 6, 9, 11, 12]
-    df["grit_score_grittiness"] = mean_columns(df, [f"grit_{i}" for i in grittiness])
-    df["grit_score_openness"] = mean_columns(df, [f"grit_{i}" for i in openness])
+    df["grit_score_grittiness"] = mean_columns_complete(
+        df, [f"grit_{i}" for i in grittiness]
+    )
+    df["grit_score_openness"] = mean_columns_complete(
+        df, [f"grit_{i}" for i in openness]
+    )
     return df
 
 
 def add_hcl16_scores(df: pd.DataFrame) -> pd.DataFrame:
-    item_cols = [c for c in df.columns if c.startswith("hcl16_3_")]
-    if item_cols:
-        df["hcl_score_total"] = (
-            df[item_cols].apply(pd.to_numeric, errors="coerce").sum(axis=1, min_count=1)
-        )
-    else:
-        df["hcl_score_total"] = math.nan
+    # HCL-16 item columns: hcl16_3_1 through hcl16_3_16
+    item_cols = [f"hcl16_3_{i}" for i in range(1, 17)]
+    df["hcl_score_total"] = sum_columns_complete(df, item_cols)
     return df
 
 
 def add_bss_scores(df: pd.DataFrame) -> pd.DataFrame:
     items = [f"bss_{i}" for i in range(1, 9)]
-    df["bss_score_mean"] = mean_columns(df, items)
-    df["bss_score_experience"] = mean_columns(df, ["bss_1", "bss_5"])
-    df["bss_score_boredom"] = mean_columns(df, ["bss_2", "bss_6"])
-    df["bss_score_thrill"] = mean_columns(df, ["bss_3", "bss_7"])
-    df["bss_score_disinhibition"] = mean_columns(df, ["bss_4", "bss_8"])
+    df["bss_score_mean"] = mean_columns_complete(df, items)
+    df["bss_score_experience"] = mean_columns_complete(df, ["bss_1", "bss_5"])
+    df["bss_score_boredom"] = mean_columns_complete(df, ["bss_2", "bss_6"])
+    df["bss_score_thrill"] = mean_columns_complete(df, ["bss_3", "bss_7"])
+    df["bss_score_disinhibition"] = mean_columns_complete(df, ["bss_4", "bss_8"])
     return df
 
 
@@ -318,17 +322,9 @@ def add_phys_anhed_scores(df: pd.DataFrame) -> pd.DataFrame:
         "phys_anhed_14",
         "phys_anhed_15",
     ]
-    s1 = sum_columns(df, part1)
-    # Reverse 0..1
-    existing2 = [c for c in part2 if c in df.columns]
-    s2 = (
-        pd.DataFrame({c: reverse_0_to_1(df[c]) for c in existing2}).sum(
-            axis=1, min_count=1
-        )
-        if existing2
-        else pd.Series([math.nan] * len(df), index=df.index)
-    )
-    df["rpasShort_score_total"] = s1 + s2
+    s1 = sum_columns_complete(df, part1)
+    s2 = sum_columns_complete_transform(df, part2, reverse_0_to_1)
+    df["rpasShort_score_total"] = (s1 + s2).where(s1.notna() & s2.notna())
     return df
 
 
@@ -353,16 +349,9 @@ def add_soc_anhed_scores(df: pd.DataFrame) -> pd.DataFrame:
         "soc_anhed_13",
         "soc_anhed_14",
     ]
-    s1 = sum_columns(df, part1)
-    existing2 = [c for c in part2 if c in df.columns]
-    s2 = (
-        pd.DataFrame({c: reverse_0_to_1(df[c]) for c in existing2}).sum(
-            axis=1, min_count=1
-        )
-        if existing2
-        else pd.Series([math.nan] * len(df), index=df.index)
-    )
-    df["rsasShort_score_total"] = s1 + s2
+    s1 = sum_columns_complete(df, part1)
+    s2 = sum_columns_complete_transform(df, part2, reverse_0_to_1)
+    df["rsasShort_score_total"] = (s1 + s2).where(s1.notna() & s2.notna())
     return df
 
 
@@ -495,7 +484,7 @@ def add_psqi_scores(df: pd.DataFrame) -> pd.DataFrame:
         "psqi_5i",
         "psqi_5othera",
     ]
-    disturb_sum = sum_columns(df, disturb_cols)
+    disturb_sum = sum_columns_complete(df, disturb_cols)
     comp5 = pd.Series([math.nan] * len(df), index=df.index)
     comp5 = comp5.mask(~disturb_sum.isna() & (disturb_sum == 0), 0)
     comp5 = comp5.mask(~disturb_sum.isna() & (disturb_sum >= 1) & (disturb_sum <= 9), 1)
@@ -513,7 +502,7 @@ def add_psqi_scores(df: pd.DataFrame) -> pd.DataFrame:
     )
 
     # Component 7: daytime dysfunction (psqi_8 + psqi_9)
-    comp7_sum = sum_columns(df, ["psqi_8", "psqi_9"])
+    comp7_sum = sum_columns_complete(df, ["psqi_8", "psqi_9"])
     comp7 = pd.Series([math.nan] * len(df), index=df.index)
     comp7 = comp7.mask(~comp7_sum.isna() & (comp7_sum == 0), 0)
     comp7 = comp7.mask(~comp7_sum.isna() & (comp7_sum >= 1) & (comp7_sum <= 2), 1)
@@ -531,20 +520,20 @@ def add_psqi_scores(df: pd.DataFrame) -> pd.DataFrame:
         "psqi_score_component6",
         "psqi_score_component7",
     ]
-    df["psqi_score_global"] = (
-        df[comp_cols].apply(pd.to_numeric, errors="coerce").sum(axis=1, min_count=1)
-    )
+    df["psqi_score_global"] = sum_columns_complete(df, comp_cols)
     return df
 
 
 def add_best_ms_scores(df: pd.DataFrame) -> pd.DataFrame:
     sub_a = [f"best_ms_{i}" for i in range(1, 9)]
     sub_b = [f"best_ms_{i}" for i in range(9, 13)]
-    a_sum = sum_columns(df, sub_a)
-    b_sum = sum_columns(df, sub_b)
+    a_sum = sum_columns_complete(df, sub_a)
+    b_sum = sum_columns_complete(df, sub_b)
     df["best_score_subscaleA"] = a_sum
     df["best_score_subscaleB"] = b_sum
-    df["best_score_finalNoComponentC"] = a_sum + b_sum
+    df["best_score_finalNoComponentC"] = (a_sum + b_sum).where(
+        a_sum.notna() & b_sum.notna()
+    )
     return df
 
 
