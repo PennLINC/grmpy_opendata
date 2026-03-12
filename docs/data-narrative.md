@@ -980,7 +980,7 @@ als - completed - i have just and average score, EF also has a sum.
 
 ari - completed + verified.
 
-bdi - completed + verified. note: grmpy has item 9 and 21 that were not present in EF.
+bdi - completed + verified. note: grmpy has item 9 and 21 (related to suicidality and sex) that were not present in EF.
 
 best-ms - completed + verified against self_report_summary.tsv. Note this is a best modified satterthwaite version of best.
 
@@ -990,15 +990,11 @@ biss_madrs - not in EF. look for it somehwere else. Scoring for this one doesn't
 
 bss - completed + verified against self_report_summary.tsv.
 
-CNB (cognitive battery) - might not release. check flyhweel for dictionary. might need dates to make sure they aren't from another study.
-
-Diagnosis - looks like something from a psychiatric screening. not sure if we should include this.
-
-eswan_dmdd - completed + verified. questions are consistent with Juliette's version, however her data dictionary has answers ranging -3 to 3 while here it is 1-7.
+eswan_dmdd - completed + verified. Note: input was changed to range from -3 to 3 to match EF/PAFIN.
 
 grit - compelted + verified against self_report_summary.tsv. Dan's code has grit. check it to confirm proper scoring.
 
-hcl16 - R code only uses hcl6_3 questions for scoring. Not in EF.
+hcl16 - completed + verified against self_report_summary.tsv. R code only uses hcl6_3 questions for scoring - that seems correct as these are actual questions from the larger hcl 32. However, these 16 questions differ from the ones used in Forty et al 2010, which was the only 16 question version identified in this systematic review of short form versions of the hcl32: https://pubmed.ncbi.nlm.nih.gov/31066059/. Not in EF.
 
 imaging_pre/postscan_scales - these are STAI and STAXI - EF has STAI.
 
@@ -1039,7 +1035,9 @@ sub-21016
 sub-21056
 sub-21085
 
+CNB (cognitive battery) - might not release. check flyhweel for dictionary. might need dates to make sure they aren't from another study.
 
+Diagnosis - looks like something from a psychiatric screening. not sure if we should include this.
 
 
 TODO: split up pre/post scan scales into separate files;
