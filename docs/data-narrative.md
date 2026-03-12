@@ -986,7 +986,7 @@ best-ms - completed + verified against self_report_summary.tsv. Note this is a b
 
 bisbas - completed + verified against self_report_summary.tsv. This is in EF, EF has 20 items, grmpy has 24. follow-up on this. Dan's code might have the full 24.
 
-biss_madrs - not in EF. look for it somehwere else. Scoring for this one doesn't exist in the R code.
+biss_madrs - confirmed w/ ted: biss_depression is sum of biss_1:biss_22; biss_mania is sum of biss_23:biss_44; madrs is sum of madrs_1:madrs_10. need to write code.
 
 bss - completed + verified against self_report_summary.tsv.
 
