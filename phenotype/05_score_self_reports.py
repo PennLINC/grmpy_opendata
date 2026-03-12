@@ -4,12 +4,12 @@ Add summary scores to per-instrument TSVs produced by `03_separate_self_reports.
 following the logic in `GRMPY_selfReportScoringCode_v4.R` (skipping collateral versions).
 
 Usage:
-  python phenotype/04_score_self_reports.py \
+  python phenotype/05_score_self_reports.py \
     --input-dir phenotype/data \
     --output-dir phenotype/data
 
   # Process only one instrument:
-  python phenotype/04_score_self_reports.py --file bdi.tsv
+  python phenotype/05_score_self_reports.py --file bdi.tsv
 
 Notes:
 - Operates per instrument file (e.g., `aces.tsv`, `bdi.tsv`, ...). If a file is
