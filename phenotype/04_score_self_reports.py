@@ -363,11 +363,15 @@ def add_eswan_dmdd_scores(df: pd.DataFrame) -> pd.DataFrame:
     def seq(tag: str) -> List[str]:
         return [f"eswan_dmdd_{i:02d}{tag}" for i in range(1, 11)]
 
-    # Subtract 4 from each item; write back so final TSV has these values
+    # Subtract 4 from each item once (so final TSV has adjusted values); skip if already adjusted
     item_cols = seq("a") + seq("b") + seq("c")
-    for c in item_cols:
-        if c in df.columns:
-            df[c] = to_numeric(df[c]) - 4
+    existing_items = [c for c in item_cols if c in df.columns]
+    if existing_items:
+        num = df[existing_items].apply(pd.to_numeric, errors="coerce")
+        # If any value is negative, data have already been adjusted (prior run)
+        if not (num < 0).any().any():
+            for c in existing_items:
+                df[c] = to_numeric(df[c]) - 4
 
     def sum_when_all_items_present(columns: List[str]) -> pd.Series:
         existing = [c for c in columns if c in df.columns]
