@@ -157,8 +157,12 @@ def add_mapsr_scores(df: pd.DataFrame) -> pd.DataFrame:
     # Columns are prefixed with mapssr_
     item_cols = [f"mapssr_{i}" for i in range(1, 16)]
     df["mapsr_rawtot_sum"] = sum_columns_complete(df, item_cols)
-    df["mapsr_social_sum"] = sum_columns_complete(df, ["mapssr_1", "mapssr_2", "mapssr_3"])
-    df["mapsr_recvoc_sum"] = sum_columns_complete(df, ["mapssr_4", "mapssr_5", "mapssr_6"])
+    df["mapsr_social_sum"] = sum_columns_complete(
+        df, ["mapssr_1", "mapssr_2", "mapssr_3"]
+    )
+    df["mapsr_recvoc_sum"] = sum_columns_complete(
+        df, ["mapssr_4", "mapssr_5", "mapssr_6"]
+    )
     df["mapsr_motrelation_sum"] = sum_columns_complete(
         df, ["mapssr_7", "mapssr_8", "mapssr_9"]
     )
@@ -543,6 +547,25 @@ def add_best_ms_scores(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def add_biss_madrs_scores(df: pd.DataFrame) -> pd.DataFrame:
+    # Reorder columns: participant_id, then biss_1..biss_43, then madrs_1..madrs_10
+    # (BISS in this dataset has 43 items, not 44)
+    biss_cols = [f"biss_{i}" for i in range(1, 44)]
+    madrs_cols = [f"madrs_{i}" for i in range(1, 11)]
+    ordered = []
+    if PARTICIPANT_ID_COL in df.columns:
+        ordered.append(PARTICIPANT_ID_COL)
+    ordered += [c for c in biss_cols if c in df.columns]
+    ordered += [c for c in madrs_cols if c in df.columns]
+    other = [c for c in df.columns if c not in ordered]
+    df = df[ordered + other]
+
+    df["biss_depression"] = sum_columns_complete(df, biss_cols[:22])  # biss_1..biss_22
+    df["biss_mania"] = sum_columns_complete(df, biss_cols[22:])  # biss_23..biss_43
+    df["madrs_total"] = sum_columns_complete(df, madrs_cols)
+    return df
+
+
 InstrumentScorer = Callable[[pd.DataFrame], pd.DataFrame]
 
 
@@ -565,6 +588,7 @@ SCORERS: Dict[str, InstrumentScorer] = {
     "eswan_dmdd": add_eswan_dmdd_scores,
     "psqi": add_psqi_scores,
     "best_ms": add_best_ms_scores,
+    "biss_madrs": add_biss_madrs_scores,
 }
 
 
@@ -603,8 +627,10 @@ def score_file(path: Path, out_dir: Path) -> Optional[Path]:
 
     df = scorer(df)
 
-    # Reorder: preserve original columns, then any new ones appended
+    # Reorder: preserve current column order for original cols (scorer may have reordered), then new ones
     new_cols = [c for c in df.columns if c not in original_cols]
+    ordered = [c for c in df.columns if c in original_cols] + new_cols
+    df = df[ordered]
 
     # Clear newly added summary columns for rows that were empty before scoring
     if new_cols:
@@ -615,7 +641,6 @@ def score_file(path: Path, out_dir: Path) -> Optional[Path]:
                 df[c] = s.mask(empty_row_mask, other=pd.NA)
             else:
                 df[c] = s.mask(empty_row_mask, other=math.nan)
-    ordered = original_cols + new_cols
     df = df[ordered]
 
     # BIDS: empty summary scores and any remaining missing → "n/a"
