@@ -974,6 +974,8 @@ The self-report itemwise data was split into separate files using the [`03_separ
 
 Note - in general, if missing an item used in scoring, the summary score should be NA.
 
+Q: Do reverse coded items need to be reversed in the tsv or just in the score? e.g. bisbas
+
 aces - completed + verified.
 
 als - completed - i have just and average score, EF also has a sum.
@@ -986,7 +988,7 @@ best-ms - completed + verified against self_report_summary.tsv. Note this is a b
 
 bisbas - completed + verified against self_report_summary.tsv. This is in EF, EF has 20 items, grmpy has 24. follow-up on this. Dan's code might have the full 24.
 
-biss_madrs - confirmed w/ ted: biss_depression is sum of biss_1:biss_22; biss_mania is sum of biss_23:biss_44; madrs is sum of madrs_1:madrs_10. need to write code.
+biss_madrs - completed + verified w/ Ted.
 
 bss - completed + verified against self_report_summary.tsv.
 
