@@ -618,6 +618,41 @@ def add_stai_pre_imaging_scores(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def add_stai_post_imaging_scores(df: pd.DataFrame) -> pd.DataFrame:
+    """STAI post-scan: state items only (stai_q_01..stai_q_20), same reverse-coding as pre."""
+    rev_items_state = [
+        "stai_q_01",
+        "stai_q_02",
+        "stai_q_05",
+        "stai_q_08",
+        "stai_q_10",
+        "stai_q_11",
+        "stai_q_15",
+        "stai_q_16",
+        "stai_q_19",
+        "stai_q_20",
+    ]
+    rev_set = set(rev_items_state)
+    state_items = [f"stai_q_{i:02d}" for i in range(1, 21)]  # stai_q_01..stai_q_20
+
+    existing = [c for c in state_items if c in df.columns]
+    if not existing or len(existing) != len(state_items):
+        df["post_scan_STAI_state_total_score"] = pd.Series(
+            [math.nan] * len(df), index=df.index
+        )
+        return df
+    num = df[existing].apply(pd.to_numeric, errors="coerce")
+    all_present = num.notna().all(axis=1)
+    vals = pd.DataFrame(
+        {
+            c: (reverse_1_to_4(df[c]) if c in rev_set else to_numeric(df[c]))
+            for c in existing
+        }
+    )
+    df["stai_state"] = vals.sum(axis=1).where(all_present)
+    return df
+
+
 InstrumentScorer = Callable[[pd.DataFrame], pd.DataFrame]
 
 
@@ -642,6 +677,7 @@ SCORERS: Dict[str, InstrumentScorer] = {
     "best_ms": add_best_ms_scores,
     "biss_madrs": add_biss_madrs_scores,
     "stai_pre_imaging": add_stai_pre_imaging_scores,
+    "stai_post_imaging": add_stai_post_imaging_scores,
 }
 
 
