@@ -50,7 +50,7 @@ PARTICIPANT_ID_COL = "participant_id"
 ScaleDef = Tuple[str, str, str]
 
 PRESCAN_SCALES: List[ScaleDef] = [
-    ("staxi2_ca", "staxi2_ca_", "staxi2_ca_25"),
+    ("staxi2_ca", "staxi2_ca_", "staxi2_ca_35"),
     ("stai", "stai_", "stai_q_40"),
 ]
 
@@ -158,9 +158,7 @@ def classify_columns(
     return scale_columns, misc
 
 
-def write_tsv(
-    path: Path, header: List[str], rows: Iterable[Mapping[str, str]]
-) -> None:
+def write_tsv(path: Path, header: List[str], rows: Iterable[Mapping[str, str]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
@@ -256,9 +254,7 @@ def process_file(
                     cleared[PARTICIPANT_ID_COL] = pid
                     outputs[name][1].append(cleared)
                 else:
-                    outputs[name][1].append(
-                        {col: row.get(col, "") for col in header}
-                    )
+                    outputs[name][1].append({col: row.get(col, "") for col in header})
 
             if misc_header:
                 if should_clear:
