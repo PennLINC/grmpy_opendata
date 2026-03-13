@@ -975,6 +975,7 @@ The self-report itemwise data was split into separate files using the [`03_separ
 Note - in general, if missing an item used in scoring, the summary score should be NA.
 
 Q: Do reverse coded items need to be reversed in the tsv or just in the score? e.g. bisbas
+Q: Should integer fields be converted to integer type in the tsv?
 
 aces - completed + verified.
 
@@ -998,7 +999,7 @@ grit - compelted + verified against self_report_summary.tsv. Dan's code has grit
 
 hcl16 - completed + verified against self_report_summary.tsv. R code only uses hcl6_3 questions for scoring - that seems correct as these are actual questions from the larger hcl 32. However, these 16 questions differ from the ones used in Forty et al 2010, which was the only 16 question version identified in this systematic review of short form versions of the hcl32: https://pubmed.ncbi.nlm.nih.gov/31066059/. Not in EF.
 
-mapssr - EF has this. calculated following the logic in GRMPY_selfReportScoringCode_v4.R - check w/ EF to confirm right questions are summed.
+mapssr - completed + verified.
 
 phys_anhed - scored as rpasShort - EF has this, did sum and average, while here is only sum. completed.
 
@@ -1006,27 +1007,31 @@ soc_anhed - scored as rsasShort - EF has this, did sum and average, while here i
 
 prime_screen - EF has this (12 times), PAFIN has this (5 items). the items look weird on this. needs follow-up. No R code for this from grmpy. Brooke forwarded an email chain about prime. Dan's lab also has PRIME (12 items) with complex scoring.
 
-Proband_GOASSESS - EF doesn't have this. needs follow-up. PAFIN might.
+Proband_GOASSESS - only has summary/flagged columns - ask ted whether to keep or discard.
 
 psqi - sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, but its 2 in the self_report_summary.tsv which means the scorer must have assumed the ptp meant they went to bed at 6pm. sub-129552, sub-20197, sub-20387, sub-88760, and sub-98422 have component 4 score of 0, but in self_report_summary.tsv it is 3. For sub-20888 component 4 is 1, but in self_report_summary.tsv it is 3. sub-20940 has component 4 score of 2, but in self_report_summary.tsv it is 3.
 
-rpaq - not in EF. look for it somehwere else.
+rpaq - complete + verified against self_report_summary.tsv. not in EF.
 
-scared - not in EF. look for it somehwere else.
+scared - completed + verified against self_report_summary.tsv. not in EF.
 
 stai_pre_imaging - completed + verified.
 
 stai_post_imaging - completed + verified.
 
-staxi2-ca - scored by summing based on https://www.annarbor.co.uk/index.php?main_page=index&cPath=419_322. Confirm with Ted.
+staxi2-ca - scored by summing based on https://www.annarbor.co.uk/index.php?main_page=index&cPath=419_322. Confirm last three subscales with Ted.
 
-swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary. need to follow-up on this. Original publications says responses should range from -3 to 3.
+swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary (0 = quite a bit or very much. 1 = not at all or just a little). Original publications says responses should range from -3 to 3. Would need to confirm 1) if reverse coding is needed, 2) if the R code is correct based on the inputs (are the thresholds imposed based on binary inputs?). Unclear if swan_total1 and swan_total2 are needed at all -- was in the R code but not in the self_report_itemwise.tsv.
 
-tanner_substance_spq - needs follow-up - will probably not score.
+suq -
+
+spq -
+
+tanner_boy -
+
+tanner_girl -
 
 wolf_post_imaging - no scoring needed.
-
-swan-child - what is this? don't have tsv for it , probably swan child refers to swan above while collateral is the parents.
 
 swan-collateral - missing? - can forget about it
 
@@ -1047,8 +1052,6 @@ CNB (cognitive battery) - might not release. check flyhweel for dictionary. migh
 
 Diagnosis - looks like something from a psychiatric screening. not sure if we should include this.
 
-
-TODO: split up pre/post scan scales into separate files;
 
 # helpful hints
 
