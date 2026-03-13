@@ -1048,7 +1048,7 @@ sub-21016
 sub-21056
 sub-21085
 
-CNB (cognitive battery) - might not release. check flyhweel for dictionary. might need dates to make sure they aren't from another study.
+CNB (cognitive battery) - might not release. no dictionary on flywheel. might need dates to make sure they aren't from another study.
 
 Diagnosis - looks like something from a psychiatric screening. not sure if we should include this.
 
