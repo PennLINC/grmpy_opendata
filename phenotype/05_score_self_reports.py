@@ -653,6 +653,46 @@ def add_stai_post_imaging_scores(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def add_staxi2_ca_scores(df: pd.DataFrame) -> pd.DataFrame:
+    """STAXI-2 CA: 35 items, no reverse-coding. Subscales summed only when all items present."""
+    prefix = "staxi2_ca"
+
+    state_anger = [f"{prefix}_{i}" for i in range(1, 11)]
+    state_anger_feelings = [f"{prefix}_{i}" for i in [1, 2, 3, 8, 10]]
+    state_anger_expression = [f"{prefix}_{i}" for i in [4, 5, 6, 7, 9]]
+
+    trait_anger = [f"{prefix}_{i}" for i in range(11, 21)]
+    trait_anger_temperament = [f"{prefix}_{i}" for i in [11, 12, 13, 16, 19]]
+    trait_anger_reaction = [f"{prefix}_{i}" for i in [14, 15, 17, 18, 20]]
+
+    anger_expression_out = [f"{prefix}_{i}" for i in [21, 24, 27, 31, 34]]
+    anger_expression_in = [f"{prefix}_{i}" for i in [22, 25, 28, 33, 35]]
+    anger_control = [f"{prefix}_{i}" for i in [23, 26, 29, 30, 32]]
+
+    df["staxi2_ca_score_state_anger"] = sum_columns_complete(df, state_anger)
+    df["staxi2_ca_score_state_anger_feelings"] = sum_columns_complete(
+        df, state_anger_feelings
+    )
+    df["staxi2_ca_score_state_anger_expression"] = sum_columns_complete(
+        df, state_anger_expression
+    )
+    df["staxi2_ca_score_trait_anger"] = sum_columns_complete(df, trait_anger)
+    df["staxi2_ca_score_trait_anger_temperament"] = sum_columns_complete(
+        df, trait_anger_temperament
+    )
+    df["staxi2_ca_score_trait_anger_reaction"] = sum_columns_complete(
+        df, trait_anger_reaction
+    )
+    df["staxi2_ca_score_anger_expression_out"] = sum_columns_complete(
+        df, anger_expression_out
+    )
+    df["staxi2_ca_score_anger_expression_in"] = sum_columns_complete(
+        df, anger_expression_in
+    )
+    df["staxi2_ca_score_anger_control"] = sum_columns_complete(df, anger_control)
+    return df
+
+
 InstrumentScorer = Callable[[pd.DataFrame], pd.DataFrame]
 
 
@@ -678,6 +718,7 @@ SCORERS: Dict[str, InstrumentScorer] = {
     "biss_madrs": add_biss_madrs_scores,
     "stai_pre_imaging": add_stai_pre_imaging_scores,
     "stai_post_imaging": add_stai_post_imaging_scores,
+    "staxi2_ca_pre_imaging": add_staxi2_ca_scores,
 }
 
 

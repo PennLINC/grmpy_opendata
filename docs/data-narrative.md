@@ -998,8 +998,6 @@ grit - compelted + verified against self_report_summary.tsv. Dan's code has grit
 
 hcl16 - completed + verified against self_report_summary.tsv. R code only uses hcl6_3 questions for scoring - that seems correct as these are actual questions from the larger hcl 32. However, these 16 questions differ from the ones used in Forty et al 2010, which was the only 16 question version identified in this systematic review of short form versions of the hcl32: https://pubmed.ncbi.nlm.nih.gov/31066059/. Not in EF.
 
-imaging_pre/postscan_scales - these are STAI and STAXI - EF has STAI.
-
 mapssr - EF has this. calculated following the logic in GRMPY_selfReportScoringCode_v4.R - check w/ EF to confirm right questions are summed.
 
 phys_anhed - scored as rpasShort - EF has this, did sum and average, while here is only sum. completed.
@@ -1016,9 +1014,17 @@ rpaq - not in EF. look for it somehwere else.
 
 scared - not in EF. look for it somehwere else.
 
+stai_pre_imaging - completed + verified.
+
+stai_post_imaging - completed + verified.
+
+staxi2-ca - scored by summing based on https://www.annarbor.co.uk/index.php?main_page=index&cPath=419_322. Confirm with Ted.
+
 swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary. need to follow-up on this. Original publications says responses should range from -3 to 3.
 
 tanner_substance_spq - needs follow-up - will probably not score.
+
+wolf_post_imaging - no scoring needed.
 
 swan-child - what is this? don't have tsv for it , probably swan child refers to swan above while collateral is the parents.
 
