@@ -1023,9 +1023,9 @@ staxi2-ca - scored by summing based on https://www.annarbor.co.uk/index.php?main
 
 swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary (0 = quite a bit or very much. 1 = not at all or just a little). Original publications says responses should range from -3 to 3. Would need to confirm 1) if reverse coding is needed, 2) if the R code is correct based on the inputs (are the thresholds imposed based on binary inputs?). Unclear if swan_total1 and swan_total2 are needed at all -- was in the R code but not in the self_report_itemwise.tsv.
 
-suq -
+suq - added validity column on substance_othr_040/050 - should be 0 b/c drugs are fake.
 
-spq -
+spq - scored onsite, scoring logic in dev data dictionary pdf.
 
 tanner_boy -
 

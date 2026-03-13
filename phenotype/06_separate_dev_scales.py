@@ -38,6 +38,8 @@ from typing import Dict, Iterable, List, Mapping, Tuple
 
 
 PARTICIPANT_ID_COL = "participant_id"
+INVALID_FAKE_DRUGS_COL = "invalid_fake_drugs"
+_FAKE_DRUG_COLS = ("substance_othr_040", "substance_othr_050")
 
 # (output_name, column_prefixes, exclude_suffixes) – scales are tested in order;
 # first match wins.  Columns matching a prefix but ending with an excluded
@@ -202,6 +204,9 @@ def main(argv: Iterable[str]) -> int:
         if cols:
             headers[name] = [PARTICIPANT_ID_COL] + cols
 
+    if "suq" in headers:
+        headers["suq"].append(INVALID_FAKE_DRUGS_COL)
+
     misc_key = "dev_misc"
     misc_header: List[str] = []
     write_misc = not args.no_misc
@@ -228,7 +233,14 @@ def main(argv: Iterable[str]) -> int:
                     cleared[PARTICIPANT_ID_COL] = pid
                     outputs[name][1].append(cleared)
                 else:
-                    outputs[name][1].append({col: row.get(col, "") for col in header})
+                    out_row = {col: row.get(col, "") for col in header}
+                    if name == "suq":
+                        fake = any(
+                            row.get(c, "") not in ("0", "0.0", "")
+                            for c in _FAKE_DRUG_COLS
+                        )
+                        out_row[INVALID_FAKE_DRUGS_COL] = "1" if fake else ""
+                    outputs[name][1].append(out_row)
 
             if misc_header:
                 if should_clear:
