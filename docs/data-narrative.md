@@ -979,7 +979,7 @@ Q: Should integer fields be converted to integer type in the tsv?
 
 aces - completed + verified.
 
-als - completed - i have just and average score, EF also has a sum.
+als - completed - i have just an average score, EF also has a sum.
 
 ari - completed + verified.
 
