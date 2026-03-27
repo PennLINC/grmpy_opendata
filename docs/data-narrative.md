@@ -976,6 +976,7 @@ Note - in general, if missing an item used in scoring, the summary score should 
 
 Q: Do reverse coded items need to be reversed in the tsv or just in the score? e.g. bisbas
 Q: Should integer fields be converted to integer type in the tsv?
+TODO: make json sidecars for each tsv.
 
 aces - completed + verified.
 
@@ -997,7 +998,7 @@ eswan_dmdd - completed + verified. Note: input was changed to range from -3 to 3
 
 grit - compelted + verified against self_report_summary.tsv. Dan's code has grit. check it to confirm proper scoring.
 
-hcl16 - completed + verified against self_report_summary.tsv. R code only uses hcl6_3 questions for scoring - that seems correct as these are actual questions from the larger hcl 32. However, these 16 questions differ from the ones used in Forty et al 2010, which was the only 16 question version identified in this systematic review of short form versions of the hcl32: https://pubmed.ncbi.nlm.nih.gov/31066059/. Not in EF.
+***hcl16 - completed + verified against self_report_summary.tsv. R code only uses hcl6_3 questions for scoring - that seems correct as these are actual questions from the larger hcl 32. However, these 16 questions differ from the ones used in Forty et al 2010, which was the only 16 question version identified in this systematic review of short form versions of the hcl32: https://pubmed.ncbi.nlm.nih.gov/31066059/. Not in EF.
 
 mapssr - completed + verified.
 
@@ -1005,11 +1006,11 @@ phys_anhed - scored as rpasShort - EF has this, did sum and average, while here 
 
 soc_anhed - scored as rsasShort - EF has this, did sum and average, while here is only sum. completed.
 
-prime_screen - EF has this (12 times), PAFIN has this (5 items). the items look weird on this. needs follow-up. No R code for this from grmpy. Brooke forwarded an email chain about prime. Dan's lab also has PRIME (12 items) with complex scoring.
+***prime_screen - TODO - send data + data dict to Ted.
 
-Proband_GOASSESS - only has summary/flagged columns - ask ted whether to keep or discard.
+***Proband_GOASSESS - only has summary/flagged columns. TODO - ignore for now, look in flyhweel for study group related to irritability.
 
-psqi - sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, but its 2 in the self_report_summary.tsv which means the scorer must have assumed the ptp meant they went to bed at 6pm. sub-129552, sub-20197, sub-20387, sub-88760, and sub-98422 have component 4 score of 0, but in self_report_summary.tsv it is 3. For sub-20888 component 4 is 1, but in self_report_summary.tsv it is 3. sub-20940 has component 4 score of 2, but in self_report_summary.tsv it is 3.
+***psqi - TODO maybe put NA for this sub: sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, but its 2 in the self_report_summary.tsv which means the scorer must have assumed the ptp meant they went to bed at 6pm.
 
 rpaq - complete + verified against self_report_summary.tsv. not in EF.
 
@@ -1019,9 +1020,9 @@ stai_pre_imaging - completed + verified.
 
 stai_post_imaging - completed + verified.
 
-staxi2-ca - scored by summing based on https://www.annarbor.co.uk/index.php?main_page=index&cPath=419_322. Confirm last three subscales with Ted.
+***staxi2-ca - scored by summing based on https://www.annarbor.co.uk/index.php?main_page=index&cPath=419_322. Confirm last three subscales with Ted. TODO - just release State and Trait Anger subscales.
 
-swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary (0 = quite a bit or very much. 1 = not at all or just a little). Original publications says responses should range from -3 to 3. Would need to confirm 1) if reverse coding is needed, 2) if the R code is correct based on the inputs (are the thresholds imposed based on binary inputs?). Unclear if swan_total1 and swan_total2 are needed at all -- was in the R code but not in the self_report_itemwise.tsv.
+***swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary (0 = quite a bit or very much. 1 = not at all or just a little). Original publications says responses should range from -3 to 3. Would need to confirm 1) if reverse coding is needed, 2) if the R code is correct based on the inputs (are the thresholds imposed based on binary inputs?). Unclear if swan_total1 and swan_total2 are needed at all -- was in the R code but not in the self_report_itemwise.tsv. TODO: use sums rather than thresholds for scoring. Just delete it!
 
 suq - no scoring needed. added validity column on substance_othr_040/050 - should be 0 b/c drugs are fake.
 
@@ -1048,9 +1049,9 @@ sub-21016
 sub-21056
 sub-21085
 
-CNB (cognitive battery) - might not release. no dictionary on flywheel. might need dates to make sure they aren't from another study.
+CNB (cognitive battery) - might not release. no dictionary on flywheel. might need dates to make sure they aren't from another study. TODO: follow-up.
 
-Diagnosis - looks like something from a psychiatric screening. not sure if we should include this.
+Diagnosis - TODO: send to Ted. looks like something from a psychiatric screening. not sure if we should include this.
 
 
 # helpful hints
