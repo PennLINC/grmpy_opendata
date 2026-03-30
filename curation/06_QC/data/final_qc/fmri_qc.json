@@ -1,0 +1,39 @@
+{
+  "participant_id": {
+    "LongName": "Participant identifier",
+    "Description": "The BIDS participant label for the scan."
+  },
+  "session_id": {
+    "LongName": "Session identifier",
+    "Description": "The BIDS session label for the scan."
+  },
+  "task": {
+    "LongName": "Task",
+    "Description": "The functional task label for the scan.",
+    "Levels": {
+      "face": "Face-processing task scan.",
+      "fracback": "Fractal n-back task scan.",
+      "rest": "Resting-state scan."
+    }
+  },
+  "acq": {
+    "LongName": "Acquisition label",
+    "Description": "The BIDS acquisition label used to distinguish scans within the same task."
+  },
+  "median_FD": {
+    "LongName": "Median framewise displacement",
+    "Description": "Median framewise displacement across timepoints for the scan."
+  },
+  "low_coverage_sum": {
+    "LongName": "Count of retained parcels with less than 50% coverage",
+    "Description": "Number of parcels below 50% coverage after first removing parcels that were low coverage in more than half of all 691 scans."
+  },
+  "qc_determination": {
+    "LongName": "Final fMRI QC determination",
+    "Description": "Final scan-level QC call for fMRI. A scan fails if median FD is greater than 0.2 mm and/or if more than 2 retained parcels have less than 50% coverage.",
+    "Levels": {
+      "fail": "The scan fails QC and should be excluded from fMRI analyses.",
+      "pass": "The scan passes QC and can be used in fMRI analyses."
+    }
+  }
+}

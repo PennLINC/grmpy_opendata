@@ -811,7 +811,7 @@ A barplot showing the temporal coverage (number of valid timepoints) for each su
 A barplot showing the number of subjects with valid data for each parcel, helping identify any systematically problematic brain regions across the cohort.
 
 #### DECISION
-exclude parcel that has less than 50% coverage across 691 scans, recalc the number of parcels missing per subject and exclude subjects with more than 2 parcels missing. (same as EF)
+exclude parcels that have less than 50% coverage across all 691 scans (RH_Cont_Cing_1 and RH_Vis_33), recalc the number of parcels missing per subject and exclude subjects with more than 2 parcels missing. (same as EF)
 
 ## QSI QC
 
@@ -831,6 +831,9 @@ The neighborhood correlation metric assesses the quality of the diffusion signal
 
 This scatter plot explores the relationship between head motion (FD) and data quality (neighborhood correlation). A negative correlation would suggest that increased head motion leads to decreased data quality.
 
+#### DECISION
+Exclude subjects with <0.8 neighborhood correlation (same as EF), or >2.0 FD (EF).
+
 ### DSI Studio Bundle Analysis
 
 ![Bundle Volume Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsirecon_DSIStudio_bundle_volume_histogram.png)
@@ -844,6 +847,9 @@ This histogram shows how many subjects are missing each white matter bundle. A h
 ![Bundle Outlier Distribution](https://raw.githubusercontent.com/PennLINC/grmpy_opendata/main/curation/06_QC/data/qsirecon_DSIStudio_row_bundle_outlier_distribution.png)
 
 The distribution of outlier bundles per subject helps identify subjects with unusual tract volumes. Outliers are defined as bundle volumes more than 3 standard deviations from the mean or missing values.
+
+#### DECISION
+Exclude subjects with >6 outlier bundles (same as EF).
 
 ### ASLPrep QC
 
@@ -880,7 +886,7 @@ python /cbica/projects/grmpy/code/curation/06_QC/scripts/06_generate_T1_rating_h
   --allow-missing
 ```
 
-The HTML page ([07_T1_QC_ratings.html](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/07_T1_QC_ratings.html)) allows for easy viewing and rating of the T1w images. The ratings are exported to a CSV file.
+The output HTML page ([07_T1_QC_ratings.html](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/07_T1_QC_ratings.html)) was further edited for additional features (consensus mode) andallows for easy viewing, rating, and consensus discussion of the T1w images. The ratings are exported to a CSV file. Two CSV files can be uploaded to the HTML page to compare ratings between two raters.
 
 # Analysis
 

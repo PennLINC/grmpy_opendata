@@ -1,0 +1,42 @@
+{
+  "participant_id": {
+    "LongName": "Participant identifier",
+    "Description": "The BIDS participant label for the scan."
+  },
+  "session_id": {
+    "LongName": "Session identifier",
+    "Description": "The BIDS session label for the scan."
+  },
+  "mean_FD": {
+    "LongName": "Mean framewise displacement",
+    "Description": "Mean framewise displacement across diffusion volumes."
+  },
+  "raw_neighbor_corr": {
+    "LongName": "Raw neighboring DWI correlation",
+    "Description": "QSIPrep raw neighboring DWI correlation used to assess diffusion image quality."
+  },
+  "num_outlier_bundles": {
+    "LongName": "Number of outlier bundles",
+    "Description": "Number of tract bundles flagged as outliers because the bundle volume was missing or more than 3 standard deviations from the cohort mean."
+  },
+  "num_missing_bundles": {
+    "LongName": "Number of missing bundles",
+    "Description": "Number of bundles missing completely for that scan."
+  },
+  "qc_determination_scalar_maps": {
+    "LongName": "Final diffusion QC determination for scalar maps",
+    "Description": "QC call based on QSIPrep summary metrics. A scan fails if mean FD is greater than 2.0 or raw neighboring DWI correlation is less than 0.8.",
+    "Levels": {
+      "fail": "The scan fails scalar-map QC and should be excluded.",
+      "pass": "The scan passes scalar-map QC."
+    }
+  },
+  "qc_determination_bundles": {
+    "LongName": "Final diffusion QC determination for tract bundles",
+    "Description": "QC call based on QSIRecon bundle outliers. A scan fails if it has more than 6 outlier bundles.",
+    "Levels": {
+      "fail": "The scan fails bundle QC and should be excluded.",
+      "pass": "The scan passes bundle QC."
+    }
+  }
+}

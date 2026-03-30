@@ -1,0 +1,22 @@
+{
+  "participant_id": {
+    "LongName": "Participant identifier",
+    "Description": "The BIDS participant label for the scan."
+  },
+  "session_id": {
+    "LongName": "Session identifier",
+    "Description": "The BIDS session label for the scan."
+  },
+  "QEI": {
+    "LongName": "Quality evaluation index for cerebral blood flow",
+    "Description": "ASLPrep quality evaluation index (QEI) for the CBF map."
+  },
+  "qc_determination": {
+    "LongName": "Final ASL QC determination",
+    "Description": "Final ASL QC call. A scan fails if QEI is less than 0.6.",
+    "Levels": {
+      "fail": "The scan fails QC and should be excluded from ASL analyses.",
+      "pass": "The scan passes QC and can be used in ASL analyses."
+    }
+  }
+}
