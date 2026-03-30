@@ -860,7 +860,9 @@ Quality control metrics for ASL data were analyzed using the [`03_aslprep_qc.py`
 The QEI distribution shows the quality of CBF measurements across subjects. Higher QEI values indicate better quality ASL data with more reliable CBF quantification. The QEI takes into account factors such as temporal signal-to-noise ratio, motion artifacts, and ASL signal intensity.
 
 #### DECISION
-0.6 threshold for QEI (same as EF)
+0.6 threshold for QEI (same as EF).
+
+NOTE: QEI is 0 for sub-20589, sub-20940, sub-20981. These subjects have mostly negative CBF in the html reports. TODO: confirm w/ Ted if we can just exclude these subjects.
 
 ### FreeSurfer-Post QC
 
@@ -889,6 +891,8 @@ python /cbica/projects/grmpy/code/curation/06_QC/scripts/06_generate_T1_rating_h
 The output HTML page ([07_T1_QC_ratings.html](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/06_QC/scripts/07_T1_QC_ratings.html)) was further edited for additional features (consensus mode) andallows for easy viewing, rating, and consensus discussion of the T1w images. The ratings are exported to a CSV file. Two CSV files can be uploaded to the HTML page to compare ratings between two raters.
 
 # Analysis
+
+## ASL
 
 
 # Phenotypic Data
