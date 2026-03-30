@@ -107,7 +107,7 @@ if __name__ == "__main__":
         )
         # fig.suptitle(title)
         fig.savefig(
-            os.path.join(out_dir, f"aslprep_{title.replace(' ', '_')}.pdf"),
+            os.path.join(out_dir, f"{title.replace(' ', '_')}.pdf"),
             bbox_inches="tight",
         )
         plt.close()
@@ -134,7 +134,7 @@ if __name__ == "__main__":
 
         fig.tight_layout()
         fig.savefig(
-            os.path.join(out_dir, f"aslprep_{title.replace(' ', '_')}_colorbar.pdf"),
+            os.path.join(out_dir, f"{title.replace(' ', '_')}_colorbar.pdf"),
             bbox_inches="tight",
         )
         plt.close()
