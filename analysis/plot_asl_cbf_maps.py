@@ -30,11 +30,11 @@ if __name__ == "__main__":
     )
 
     patterns = {
-        "ASLPrep CBF": "sub-*/ses-*/perf/*_space-MNI152NLin6Asym_cbf.nii.gz",
-        "BASIL ATT": "sub-*/ses-*/perf/*_space-MNI152NLin6Asym_desc-basil_att.nii.gz",
-        "BASIL CBF": "sub-*/ses-*/perf/*_space-MNI152NLin6Asym_desc-basil_cbf.nii.gz",
-        "BASIL GM CBF": "sub-*/ses-*/perf/*_space-MNI152NLin6Asym_desc-basilGM_cbf.nii.gz",
-        "BASIL WM CBF": "sub-*/ses-*/perf/*_space-MNI152NLin6Asym_desc-basilWM_cbf.nii.gz",
+        "ASLPrep CBF": "sub-*/ses-*/perf/*_space-MNI152NLin6Asym_res-2_cbf.nii.gz",
+        "BASIL ATT": "sub-*/ses-*/perf/*_space-MNI152NLin6Asym_res-2_desc-basil_att.nii.gz",
+        "BASIL CBF": "sub-*/ses-*/perf/*_space-MNI152NLin6Asym_res-2_desc-basil_cbf.nii.gz",
+        "BASIL GM CBF": "sub-*/ses-*/perf/*_space-MNI152NLin6Asym_res-2_desc-basilGM_cbf.nii.gz",
+        "BASIL WM CBF": "sub-*/ses-*/perf/*_space-MNI152NLin6Asym_res-2_desc-basilWM_cbf.nii.gz",
     }
     excluded_scans = pd.read_csv(
         "/cbica/projects/grmpy/code/curation/06_QC/data/final_qc/asl_qc.csv"
