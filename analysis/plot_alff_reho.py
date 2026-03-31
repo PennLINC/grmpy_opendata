@@ -47,7 +47,7 @@ if __name__ == "__main__":
     if not os.path.exists(in_dir):
         in_dir = "/cbica/projects/grmpy/data/derivatives/xcpd"
 
-    scalar_out_dir = "/cbica/projects/grmpy/code/analysis/group_scalars"
+    scalar_out_dir = "/cbica/projects/grmpy/group_avg_data"
     plot_out_dir = "/cbica/projects/grmpy/code/analysis/plots"
     os.makedirs(scalar_out_dir, exist_ok=True)
     os.makedirs(plot_out_dir, exist_ok=True)
