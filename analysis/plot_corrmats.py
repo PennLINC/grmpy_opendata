@@ -91,8 +91,8 @@ if __name__ == "__main__":
     ]
 
     for task in [
-        "rest_acquisition-multiband",
-        "rest_acquisition-singleband",
+        "rest_acq-multiband",
+        "rest_acq-singleband",
         "fracback",
         "face",
     ]:
@@ -157,7 +157,9 @@ if __name__ == "__main__":
         ax.set_yticklabels(unique_labels)
         ax.set_xticklabels(unique_labels, rotation=90)
         fig.tight_layout()
-        fig.savefig(f"/cbica/projects/grmpy/code/analysis/plots/task-{task}_mean.pdf")
+        fig.savefig(
+            f"/cbica/projects/grmpy/code/analysis/plots/task-{task.replace('_acq-', '-')}_mean.pdf"
+        )
         plt.close()
 
         # --- Plot colorbars ---
@@ -171,7 +173,7 @@ if __name__ == "__main__":
         ).set_ticks([-1, 0, 1])
         fig.tight_layout()
         fig.savefig(
-            f"/cbica/projects/grmpy/code/analysis/plots/task-{task}_colorbar.pdf",
+            f"/cbica/projects/grmpy/code/analysis/plots/task-{task.replace('_acq-', '-')}_colorbar.pdf",
             bbox_inches="tight",
         )
         plt.close()
