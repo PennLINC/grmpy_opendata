@@ -66,9 +66,9 @@ if __name__ == "__main__":
                 key, value = part.split("-", 1)
                 entities[key] = value.removesuffix(".tsv")
         corrmat_scan_keys[cm] = (
-            cm.split("/")[-4],
+            cm.split("/")[-5],
             entities.get("task"),
-            entities.get("acq", entities.get("acquisition", "")),
+            entities.get("acq"),
         )
 
     excluded_scans = pd.read_csv(
