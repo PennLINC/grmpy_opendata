@@ -66,7 +66,8 @@ if __name__ == "__main__":
                 key, value = part.split("-", 1)
                 entities[key] = value.removesuffix(".tsv")
         corrmat_scan_keys[cm] = (
-            cm.split("/")[-5],
+            cm.split("/")[-4],
+            cm.split("/")[-3],
             entities.get("task"),
             entities.get("acq"),
         )
