@@ -34,7 +34,10 @@ if __name__ == "__main__":
     )  # load csv
     excluded_scans = set(
         excluded_scans.loc[
-            excluded_scans["qc_determination"].astype(str).str.strip().eq("fail"),
+            excluded_scans["qc_determination_scalar_maps"]
+            .astype(str)
+            .str.strip()
+            .eq("fail"),
             ["participant_id", "session_id"],
         ].itertuples(index=False, name=None)
     )
