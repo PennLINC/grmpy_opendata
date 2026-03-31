@@ -69,12 +69,10 @@ if __name__ == "__main__":
         "reho": "sub-*/ses-*/func/*task-rest*acq-{acq}*space-fsLR_den-91k_stat-reho_boldmap.dscalar.nii",
     }
 
-    for metric, search_patterns in patterns.items():
+    for metric, pattern in patterns.items():
         for acq in ["singleband", "multiband"]:
             # Get all scalar maps
-            scalar_maps = []
-            for pattern in search_patterns:
-                scalar_maps.extend(glob(os.path.join(in_dir, pattern.format(acq=acq))))
+            scalar_maps = glob(os.path.join(in_dir, pattern.format(acq=acq)))
             scalar_maps = sorted(set(scalar_maps))
             print(f"Total {metric} {acq} maps found: {len(scalar_maps)}")
 
