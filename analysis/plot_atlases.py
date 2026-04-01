@@ -45,6 +45,7 @@ if __name__ == "__main__":
             or atlas_file.endswith(".nii")
             or atlas_file.endswith(".nii.gz")
         )
+        and "atlas-Gordon" not in atlas_file
     ]
     print(f"Total atlas files found: {len(atlas_files)}")
 
