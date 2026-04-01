@@ -50,7 +50,7 @@ if __name__ == "__main__":
         and "atlas-MIDB" not in atlas_file
         and "atlas-Tian" not in atlas_file
     ]
-    atlas_files = atlas_files + glob(os.path.join(out_dir, "atlas-Gordon", "*.nii*"))
+    atlas_files = atlas_files + glob(os.path.join(out_dir, "atlas-Gordon*.nii*"))
     print(f"Total atlas files found: {len(atlas_files)}")
 
     mpl.rcParams["pdf.fonttype"] = 42
