@@ -47,6 +47,8 @@ if __name__ == "__main__":
         )
         and "atlas-Gordon" not in atlas_file
         and "atlas-HCP" not in atlas_file
+        and "atlas-MIDB" not in atlas_file
+        and "atlas-Tian" not in atlas_file
     ]
     print(f"Total atlas files found: {len(atlas_files)}")
 
