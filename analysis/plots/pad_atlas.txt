@@ -1,0 +1,1 @@
+wb_command -cifti-create-dense-from-template /Users/sps253/Desktop/atlases/atlas-4S1056Parcels/atlas-4S1056Parcels_space-fsLR_den-91k_dseg.dlabel.nii /Users/sps253/Desktop/atlases/atlas-Gordon/atlas-Gordon_space-fsLR_den-91k_padded_dseg.dlabel.nii -cifti /Users/sps253/Desktop/atlases/atlas-Gordon/atlas-Gordon_space-fsLR_den-91k_dseg.dlabel.nii
