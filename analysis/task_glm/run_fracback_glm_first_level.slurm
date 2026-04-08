@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 #SBATCH --job-name=nback_firstlevel
 #SBATCH --output=/cbica/projects/grmpy/analysis/task_glm/first-level/logs/fracback_%A_%a.out
 #SBATCH --error=/cbica/projects/grmpy/analysis/task_glm/first-level/logs/fracback_%A_%a.err
