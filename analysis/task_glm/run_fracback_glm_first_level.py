@@ -82,14 +82,13 @@ for model_type in MODEL_TYPES:
         smoothing_fwhm=5.0,
         n_jobs=4,
         verbose=1,
-        # Use fMRIPrep's cosine regressors for drift (high_pass),
-        # so we turn OFF the GLM's own drift model.
-        drift_model=None,
+        drift_model="cosine",  # turn these back on w/o fmriprep cosines
+        high_pass=0.005,  # turn these back on w/o fmriprep cosines
         # Confound strategy: motion + high_pass (cosines) + aCompCor (first 5)
-        confounds_strategy=("motion", "high_pass", "compcor"),
+        confounds_strategy=("motion"),  # no high_pass or compcor
         confounds_motion="basic",
-        confounds_compcor="anat_combined",
-        confounds_n_compcor=5,
+        # confounds_compcor="anat_combined",
+        # confounds_n_compcor=5,
         # Use fMRIPrep mask if found; otherwise None (Nilearn auto-mask)
         mask_img=mask_img,
     )
@@ -109,6 +108,7 @@ for model_type in MODEL_TYPES:
             events["trial_type"] = events["trial_type"].replace(
                 {
                     "0BACK": "zero_back",
+                    "1BACK": "one_back",
                     "2BACK": "two_back",
                 }
             )
@@ -117,6 +117,7 @@ for model_type in MODEL_TYPES:
             # Implement Jeanette Mumford's ConsDurRTDur model
             # and rename trial types to valid Python identifiers:
             #   0BACK -> zero_back
+            #   1BACK -> one_back
             #   2BACK -> two_back
             # Create dataframe only containing trials with responses
             response_events = events.loc[~np.isnan(events["response_time"])].copy()
@@ -154,10 +155,20 @@ for model_type in MODEL_TYPES:
 
     save_glm_to_bids(
         model,
-        contrasts=["two_back - zero_back", "two_back", "zero_back"],
+        contrasts=[
+            "two_back - zero_back",
+            "two_back - one_back",
+            "one_back - zero_back",
+            "two_back",
+            "one_back",
+            "zero_back",
+        ],
         contrast_types={
             "two_back - zero_back": "t",
+            "two_back - one_back": "t",
+            "one_back - zero_back": "t",
             "two_back": "t",
+            "one_back": "t",
             "zero_back": "t",
         },
         out_dir=out_dir,
