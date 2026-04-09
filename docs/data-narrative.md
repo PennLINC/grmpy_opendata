@@ -728,6 +728,15 @@ for f in "${files[@]}"; do
 done
 ```
 
+later, a separate set of files was unzipped for task glm analysis (excluding rest and face scans):
+
+```
+for f in "${files[@]}"; do
+    unzip -n "$f" -d /cbica/projects/grmpy/data/derivatives/fmriprep_func_full/ -x $(cat /cbica/projects/grmpy/code/curation/06_QC/scripts/exclude-glm.txt)
+done
+```
+XXX: To make room for this, temporarily removed the fmriprep_func unzips. Will have to do again later...
+
 for aslprep - we can ignore the ses-1/perf/*_desc-preproc_asl.* files since the timeseries are useless
 
 ```
