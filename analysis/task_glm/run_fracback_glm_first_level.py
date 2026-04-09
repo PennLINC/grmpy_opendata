@@ -23,7 +23,9 @@ print(f"Running first-level GLM for subject: {sub_id}")
 bids_root = Path("/cbica/projects/grmpy/data/bids_datalad")
 
 # fMRIPrep derivatives containing preprocessed func + confounds
-derivatives_folder = "/cbica/projects/grmpy/data/derivatives/fmriprep_func/"
+derivatives_folder = (
+    "/cbica/projects/grmpy/data/derivatives/fmriprep_func_full/fmriprep_func"
+)
 deriv_root = Path(derivatives_folder)
 
 # Task and space
