@@ -87,7 +87,7 @@ for model_type in MODEL_TYPES:
         drift_model="cosine",  # turn these back on w/o fmriprep cosines
         high_pass=0.005,  # turn these back on w/o fmriprep cosines
         # Confound strategy: motion + high_pass (cosines) + aCompCor (first 5)
-        confounds_strategy=("motion"),  # no high_pass or compcor
+        confounds_strategy=("motion", "non_steady_state"),  # no high_pass or compcor
         confounds_motion="basic",
         # confounds_compcor="anat_combined",
         # confounds_n_compcor=5,
