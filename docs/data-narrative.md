@@ -735,7 +735,11 @@ for f in "${files[@]}"; do
     unzip -n "$f" -d /cbica/projects/grmpy/data/derivatives/fmriprep_func_full/ -x $(cat /cbica/projects/grmpy/code/curation/06_QC/scripts/exclude-glm.txt)
 done
 ```
-XXX: To make room for this, temporarily removed the fmriprep_func unzips. Will have to do again later...
+XXX: To make room for this, need to request more space from the cluster. Ongoing re-unzip of the og fmriprep set at: [detached from 22718.pts-16.cubic-sattertt1]
+
+comm -12 \
+  <(sort ~/analysis/task_glm/subjects.txt) \
+  <(ls ~/data/derivatives/fmriprep_func_full/fmriprep_func/sub-*.html | grep -oP '(?<=sub-)\d+(?=\.html)' | sort)
 
 for aslprep - we can ignore the ses-1/perf/*_desc-preproc_asl.* files since the timeseries are useless
 
