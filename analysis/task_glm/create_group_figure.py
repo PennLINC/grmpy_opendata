@@ -1,13 +1,17 @@
+import os
 from pathlib import Path
 from nilearn import plotting
 from nilearn.image import load_img
+import templateflow.api as tflow
 
 # Path to output directory
 out_dir = Path("/cbica/projects/grmpy/code/analysis/task_glm/figures")
 
+os.environ["TEMPLATEFLOW_HOME"] = "/cbica/projects/grmpy/templateflow"
+
+
 bg_img = load_img(
-    "/cbica/projects/grmpy/templateflow/"
-    "tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz"
+    tflow.get("MNI152NLin6Asym", resolution=2, desc="brain", suffix="T1w")
 )
 
 MODEL_TYPES = ["fracback-nortdur", "fracback-rtdur"]
