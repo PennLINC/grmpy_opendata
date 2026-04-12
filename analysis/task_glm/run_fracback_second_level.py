@@ -1,14 +1,17 @@
 #!/usr/bin/env python
 """Run second-level GLM for n-back task across all subjects."""
 
+import os
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import templateflow.api as tflow
 from nilearn.glm.second_level import SecondLevelModel
 from nilearn.image import load_img
 from nilearn.interfaces.bids import save_glm_to_bids
 
+os.environ["TEMPLATEFLOW_HOME"] = "/cbica/projects/grmpy/templateflow"
 
 CONTRAST_LABELS = [
     "twoBack",
@@ -20,12 +23,10 @@ CONTRAST_LABELS = [
 ]
 MODEL_TYPES = ["rtdur", "nortdur"]
 group_mask_img = load_img(
-    "/cbica/projects/grmpy/templateflow/"
-    "tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_mask.nii.gz"
+    tflow.get("MNI152NLin6Asym", resolution=2, desc="brain", suffix="mask")
 )
 bg_img = load_img(
-    "/cbica/projects/grmpy/templateflow/"
-    "tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_desc-brain_T1w.nii.gz"
+    tflow.get("MNI152NLin6Asym", resolution=2, desc="brain", suffix="T1w")
 )
 
 for model_type in MODEL_TYPES:
