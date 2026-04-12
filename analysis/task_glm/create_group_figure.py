@@ -58,9 +58,7 @@ CONTRASTS = [
 for model_type in MODEL_TYPES:
     for contrast in CONTRASTS:
         group_zmap = (
-            Path(
-                "/cbica/projects/grmpy/analysis/task_glm/second-level/fracback-{model_type}/group-{contrast['contrast_dir']}"
-            )
+            Path("/cbica/projects/grmpy/analysis/task_glm/second-level")
             / model_type
             / contrast["contrast_dir"]
             / "group"
