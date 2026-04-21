@@ -298,6 +298,7 @@ def build_events_dataframe(allback: List[List[object]]) -> pd.DataFrame:
     first_cols = ["onset", "duration"]
     other_cols = [c for c in df.columns if c not in first_cols]
     df = df[first_cols + other_cols]
+    df = df.sort_values("onset", kind="stable").reset_index(drop=True)
     return df
 
 
