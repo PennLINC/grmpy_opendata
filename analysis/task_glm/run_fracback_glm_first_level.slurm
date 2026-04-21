@@ -2,7 +2,7 @@
 #SBATCH --job-name=nback_firstlevel
 #SBATCH --output=/cbica/projects/grmpy/analysis/task_glm/first-level/logs/fracback_%A_%a.out
 #SBATCH --error=/cbica/projects/grmpy/analysis/task_glm/first-level/logs/fracback_%A_%a.err
-#SBATCH --array=0-9          # 10 subjects
+#SBATCH --array=0-194         # 195 subjects
 #SBATCH --time=03:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
@@ -19,18 +19,7 @@ micromamba activate nilearn
 # SUBJECT LIST (NO COMMAS)
 # --------------------------
 
-SUBJECT_LIST=(
-102041
-103679
-104235
-104785
-105168
-105176
-105767
-105860
-105979
-106039
-)
+mapfile -t SUBJECT_LIST < ~/analysis/task_glm/subjects.txt
 
 SUB_ID=${SUBJECT_LIST[$SLURM_ARRAY_TASK_ID]}
 
