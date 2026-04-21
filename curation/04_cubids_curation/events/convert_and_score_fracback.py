@@ -265,8 +265,8 @@ def compute_response_times(
 def build_events_dataframe(allback: List[List[object]]) -> pd.DataFrame:
     df = pd.DataFrame(allback, columns=["task", "index", "results", "response_time_ms"])
     df["index"] = df["index"].astype(int)
-    df["onset"] = 0.8 * df["index"]
-    df["duration"] = 3 * 0.8
+    df["onset"] = 3.0 * df["index"]
+    df["duration"] = 3.0
     df["onset"] = df["onset"].round(1)
     df["duration"] = df["duration"].round(1)
     df["response_time_ms"] = pd.to_numeric(df["response_time_ms"], errors="coerce")
