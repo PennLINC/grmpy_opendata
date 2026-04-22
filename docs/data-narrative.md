@@ -906,7 +906,29 @@ The output HTML page ([07_T1_QC_ratings.html](https://github.com/PennLINC/grmpy_
 # Analysis
 
 ## ASL
+CBF maps were generated using [`plot_asl_cbf_maps.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/analysis/plot_asl_cbf_maps.py).
 
+## fMRI
+
+ALFF and ReHo were generated using [`plot_alff_reho.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/analysis/plot_alff_reho.py).
+
+Atlasses were generated using [`plot_atlases.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/analysis/plot_atlases.py).
+
+Correlation matrices were generated using [`plot_corrmats.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/analysis/plot_corrmats.py).
+
+### GLM
+
+The fracback GLM was run using the [`run_fracback_glm_first_level.slurm`](https://github.com/PennLINC/grmpy_opendata/blob/main/analysis/task_glm/run_fracback_glm_first_level.slurm) script which runs the [`run_fracback_glm_first_level.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/analysis/task_glm/run_fracback_glm_first_level.py) script for each subject and model type.
+
+Second-level GLM was run using the [`run_fracback_second_level.slurm`](https://github.com/PennLINC/grmpy_opendata/blob/main/analysis/task_glm/run_fracback_second_level.slurm) script which runs the [`run_fracback_second_level.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/analysis/task_glm/run_fracback_second_level.py) script for each model type and contrast.
+
+Group figures were generated using [`create_group_figure.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/analysis/task_glm/create_group_figure.py).
+
+## QSI
+
+QSI Recon scalar maps were generated using [`plot_qsi_scalar_maps.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/analysis/plot_qsi_scalar_maps.py).
+
+Bundles were plotted using [`plot_afq_bundles.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/analysis/plot_afq_bundles.py).
 
 # Phenotypic Data
 
