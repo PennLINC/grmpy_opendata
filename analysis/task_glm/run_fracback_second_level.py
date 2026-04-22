@@ -10,6 +10,7 @@ import templateflow.api as tflow
 from nilearn.glm.second_level import SecondLevelModel
 from nilearn.image import load_img
 from nilearn.interfaces.bids import save_glm_to_bids
+from scipy.stats import norm
 
 os.environ["TEMPLATEFLOW_HOME"] = "/cbica/projects/grmpy/templateflow"
 
@@ -103,8 +104,8 @@ for model_type in MODEL_TYPES:
             model=model,
             contrasts=contrasts,
             out_dir=group_out_dir,
-            threshold=0.001,  # <-- p-value threshold
-            height_control="fpr",  # <-- interpret threshold as p
+            threshold=norm.isf(0.001),  # <-- p-value threshold
+            height_control=None,
             cluster_threshold=10,
             bg_img=bg_img,
             two_sided=True,
