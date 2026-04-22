@@ -177,11 +177,17 @@ def load_score_labels(xml_path: Path) -> List[ET.Element]:
 
 def split_templates_by_category(
     scorelabel: List[ET.Element],
-) -> Tuple[List[Tuple[str, str]], List[Tuple[str, str]], List[Tuple[str, str]]]:
-    """Return (back0, back1, back2) lists of (expected, index) tuples by category."""
+) -> Tuple[
+    List[Tuple[str, str]],
+    List[Tuple[str, str]],
+    List[Tuple[str, str]],
+    List[Tuple[str, str]],
+]:
+    """Return (back0, back1, back2, inst) lists of (expected, index) tuples by category."""
     back0: List[Tuple[str, str]] = []
     back1: List[Tuple[str, str]] = []
     back2: List[Tuple[str, str]] = []
+    inst: List[Tuple[str, str]] = []
     for elem in scorelabel:
         category = elem.get("category")
         if category == "0BACK":
@@ -190,7 +196,9 @@ def split_templates_by_category(
             back1.append((elem.get("expected"), elem.get("index")))
         elif category == "2BACK":
             back2.append((elem.get("expected"), elem.get("index")))
-    return back0, back1, back2
+        elif category == "INST":
+            inst.append((elem.get("expected"), elem.get("index")))
+    return back0, back1, back2, inst
 
 
 # ------------------------------ Data Processing ------------------------------
@@ -282,7 +290,9 @@ def build_events_dataframe(allback: List[List[object]]) -> pd.DataFrame:
         result = row.results
         rt_sec = row.response_time
         has_response = (not pd.isna(rt_sec)) and (rt_sec != 0)
-        if "NR" in result and has_response:
+        if row.trial_type == "INST":
+            scores.append("instruction")
+        elif "NR" in result and has_response:
             scores.append("false_positive")
         elif "NR" in result and not has_response:
             scores.append("true_negative")
@@ -310,6 +320,7 @@ def sidecar_json() -> Dict[str, object]:
                 "0BACK": "0-back trial: respond to target picture",
                 "1BACK": "1-back trial: respond if picture matches the one shown one trial before",
                 "2BACK": "2-back trial: respond if picture matches the one shown two trials before",
+                "INST": "Instruction screen shown between task blocks (no response expected)",
             },
         },
         "results": {
@@ -326,6 +337,7 @@ def sidecar_json() -> Dict[str, object]:
                 "true_negative": "No response expected, no response detected",
                 "true_positive": "Response expected, response detected",
                 "false_negative": "Response expected, no response detected",
+                "instruction": "Instruction screen trial (not scored)",
             },
         },
     }
@@ -420,7 +432,8 @@ def summarize_subject(subject_display: str, df: pd.DataFrame) -> Dict[str, objec
             }
         )
 
-    # Aggregated across 0/1/2
+    # Aggregated across 0/1/2 (exclude INST rows)
+    df = df[df["trial_type"] != "INST"]
     tp, tn, fp, fn, num_targets, num_foils, _, _ = per_condition(None)
     metrics.update(
         {
@@ -638,7 +651,7 @@ def main() -> int:
 
     # Load XML scoring template
     scorelabel = load_score_labels(xml_path)
-    back0, back1, back2 = split_templates_by_category(scorelabel)
+    back0, back1, back2, inst = split_templates_by_category(scorelabel)
 
     # Collect funcs and logs
     funcs_by_subject = collect_bids_fracback_funcs(bids_root)
@@ -672,6 +685,8 @@ def main() -> int:
                 allback.extend(compute_response_times(bb, back1, "1BACK"))
             if back2:
                 allback.extend(compute_response_times(bb, back2, "2BACK"))
+            if inst:
+                allback.extend(compute_response_times(bb, inst, "INST"))
 
             events_df = build_events_dataframe(allback)
 
