@@ -32,7 +32,7 @@ bg_img = load_img(
 
 for model_type in MODEL_TYPES:
     firstlevel_dir = Path(
-        f"/cbica/projects/grmpy/analysis/task_glm/first-level/results/fracback-{model_type}"
+        f"/cbica/projects/grmpy/data/derivatives/fracback-{model_type}"
     )
     for contrast_label in CONTRAST_LABELS:
         print("\n====================================================")
@@ -40,7 +40,7 @@ for model_type in MODEL_TYPES:
         print("====================================================\n")
 
         group_out_dir = Path(
-            f"/cbica/projects/grmpy/analysis/task_glm/second-level/fracback-{model_type}/group-{contrast_label}"
+            f"/cbica/projects/grmpy/data/derivatives/fracback-{model_type}/group-{contrast_label}"
         )
         group_out_dir.mkdir(exist_ok=True, parents=True)
 
