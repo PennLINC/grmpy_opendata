@@ -16,7 +16,7 @@ We need to:
 2. Classify log stims and responses into class, def
 3. Create scores for the overall answer combinations.
 4. Classify response as tp,tn,fp,fn (in this task we have no fp,fn)
-5. for idemo we need (stick files) happy, sad, happy_incorrect, happy_correct, sad_correct,sad_incorrect etc  (ted) 
+5. for idemo we need (stick files) happy, sad, happy_incorrect, happy_correct, sad_correct,sad_incorrect etc  (ted)
 -->
 	<bbl:module>frac3A-3.00</bbl:module>
 	<bbl:version>3.00</bbl:version>
@@ -26,7 +26,7 @@ We need to:
 <!--
 	#frac 3back has an extra solid presented before the trial and all indexes are then shuffled up by one..
  	This is the pic_ary from the frac3a_3.10.sce file..
-	
+
 	bitmap xhair;
 	bitmap xhair;
 	bitmap xhair;
@@ -35,10 +35,12 @@ We need to:
 	bitmap xhair;
 	bitmap xhair;
 	bitmap xhair;
-	bitmap instr_0;
-	bitmap instr_0;
-	bitmap instr_0;
 -->
+
+	<bbl:stim name="instr_0" code="solid" index="9" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_0" code="solid" index="10" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_0" code="solid" index="11" category="INST" expected="NR" classification="instruction"/>
+
 	<bbl:stim name="picJ" code="pic1" index="12"   category="0BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picM" code="pic1" index="13"   category="0BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picQ" code="pic1" index="14"   category="0BACK" expected="NR" classification="foil"/>
@@ -60,12 +62,10 @@ We need to:
 	<bbl:stim name="picX" code="pic1" index="30"   category="0BACK" expected="Match" classification="target"/>
 	<bbl:stim name="picV" code="pic1" index="31"   category="0BACK" expected="NR" classification="foil"/>
 
-	<!--
-	bitmap instr_1;
-	bitmap instr_1;
-	bitmap instr_1;
-	-->
-	
+	<bbl:stim name="instr_1" code="solid" index="32" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_1" code="solid" index="33" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_1" code="solid" index="34" category="INST" expected="NR" classification="instruction"/>
+
 	<bbl:stim name="picR" code="pic1" index="35"   category="1BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picT" code="pic1" index="36"   category="1BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picS" code="pic1" index="37"   category="1BACK" expected="NR" classification="foil"/>
@@ -86,13 +86,10 @@ We need to:
 	<bbl:stim name="picB" code="pic1" index="52"   category="1BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picW" code="pic1" index="53"   category="1BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picK" code="pic1" index="54"    category="1BACK" expected="NR" classification="foil"/>
-	
-	<!--
-	bitmap instr_2;
-	bitmap instr_2;
-	bitmap instr_2;
-	-->
 
+	<bbl:stim name="instr_2" code="solid" index="55" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_2" code="solid" index="56" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_2" code="solid" index="57" category="INST" expected="NR" classification="instruction"/>
 
 	<bbl:stim name="picH" code="pic1" index="58"   category="2BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picW" code="pic1" index="59"   category="2BACK" expected="NR" classification="foil"/>
@@ -115,11 +112,10 @@ We need to:
 	<bbl:stim name="picG" code="pic1" index="76"   category="2BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picZ" code="pic1" index="77"   category="2BACK" expected="Match" classification="target"/>
 
-	<!--#
-	bitmap instr_2;
-	#bitmap instr_2;
-	#bitmap instr_2;
-	-->
+	<bbl:stim name="instr_2" code="solid" index="78" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_2" code="solid" index="79" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_2" code="solid" index="80" category="INST" expected="NR" classification="instruction"/>
+
 	<bbl:stim name="picM" code="pic1" index="81"   category="2BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picG" code="pic1" index="82"   category="2BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picS" code="pic1" index="83"   category="2BACK" expected="NR" classification="foil"/>
@@ -140,13 +136,11 @@ We need to:
 	<bbl:stim name="picL" code="pic1" index="98"   category="2BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picR" code="pic1" index="99"   category="2BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picL" code="pic1" index="100"   category="2BACK" expected="Match" classification="target"/>
-	
-	<!--
-	bitmap instr_0;
-	bitmap instr_0;
-	bitmap instr_0;
-	-->
-	
+
+	<bbl:stim name="instr_0" code="solid" index="101" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_0" code="solid" index="102" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_0" code="solid" index="103" category="INST" expected="NR" classification="instruction"/>
+
 	<bbl:stim name="picN" code="pic1" index="104"   category="0BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picR" code="pic1" index="105"   category="0BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picD" code="pic1" index="106"   category="0BACK" expected="NR" classification="foil"/>
@@ -177,11 +171,11 @@ We need to:
 	bitmap xhair;
 	bitmap xhair;
 	bitmap xhair;
-	bitmap instr_1;
-	bitmap instr_1;
-	bitmap instr_1;
 -->
-	
+	<bbl:stim name="instr_1" code="solid" index="132" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_1" code="solid" index="133" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_1" code="solid" index="134" category="INST" expected="NR" classification="instruction"/>
+
 	<bbl:stim name="picH" code="pic1" index="135"   category="1BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picW" code="pic1" index="136"   category="1BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picD" code="pic1" index="137"   category="1BACK" expected="NR" classification="foil"/>
@@ -202,12 +196,11 @@ We need to:
 	<bbl:stim name="picG" code="pic1" index="152"   category="1BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picB" code="pic1" index="153"   category="1BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picM" code="pic1" index="154"   category="1BACK" expected="NR" classification="foil"/>
-	
-	<!--
-	#bitmap instr_2;
-	#bitmap instr_2;
-	#bitmap instr_2;
-	-->	
+
+	<bbl:stim name="instr_2" code="solid" index="155" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_2" code="solid" index="156" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_2" code="solid" index="157" category="INST" expected="NR" classification="instruction"/>
+
     <bbl:stim name="picJ" code="pic1" index="158"   category="2BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picF" code="pic1" index="159"   category="2BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picS" code="pic1" index="160"   category="2BACK" expected="NR" classification="foil"/>
@@ -230,12 +223,10 @@ We need to:
 	<bbl:stim name="picB" code="pic1" index="177"   category="2BACK" expected="Match" classification="target"/>
 
 
-	<!--
-	bitmap instr_1;
-	bitmap instr_1;
-	bitmap instr_1;
-	-->
-	
+	<bbl:stim name="instr_1" code="solid" index="178" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_1" code="solid" index="179" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_1" code="solid" index="180" category="INST" expected="NR" classification="instruction"/>
+
 	<bbl:stim name="picR" code="pic1" index="181"   category="1BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picH" code="pic1" index="182"   category="1BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picS" code="pic1" index="183"   category="1BACK" expected="NR" classification="foil"/>
@@ -256,11 +247,11 @@ We need to:
 	<bbl:stim name="picL" code="pic1" index="198"   category="1BACK" expected="Match" classification="target"/>
 	<bbl:stim name="picF" code="pic1" index="199"   category="1BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picM" code="pic1" index="200"   category="1BACK" expected="NR" classification="foil"/>
-	<!--
-	#bitmap instr_0;
-	#bitmap instr_0;
-	#bitmap instr_0;
-    -->
+
+	<bbl:stim name="instr_0" code="solid" index="201" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_0" code="solid" index="202" category="INST" expected="NR" classification="instruction"/>
+	<bbl:stim name="instr_0" code="solid" index="203" category="INST" expected="NR" classification="instruction"/>
+
     <bbl:stim name="picZ" code="pic1" index="204"   category="0BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picB" code="pic1" index="205"   category="0BACK" expected="NR" classification="foil"/>
 	<bbl:stim name="picV" code="pic1" index="206"   category="0BACK" expected="NR" classification="foil"/>
@@ -293,8 +284,8 @@ We need to:
 	bitmap xhair;
 	-->
 
-	
-	
+
+
 </bbl:stimuli>
 
 
