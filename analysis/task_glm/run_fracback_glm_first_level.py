@@ -112,6 +112,7 @@ for model_type in MODEL_TYPES:
                     "0BACK": "zero_back",
                     "1BACK": "one_back",
                     "2BACK": "two_back",
+                    "INST": "instruction",
                 }
             )
 
@@ -174,6 +175,7 @@ for model_type in MODEL_TYPES:
             "zero_back": "t",
         },
         out_dir=out_dir,
+        height_control=None,
         threshold=norm.isf(0.001),
         cluster_threshold=10,
         bg_img=(
