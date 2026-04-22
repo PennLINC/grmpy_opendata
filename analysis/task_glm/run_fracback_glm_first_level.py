@@ -178,6 +178,7 @@ for model_type in MODEL_TYPES:
         height_control=None,
         threshold=norm.isf(0.001),
         cluster_threshold=10,
+        two_sided=True,
         bg_img=(
             "/cbica/projects/grmpy/templateflow/"
             "tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_T1w.nii.gz"
