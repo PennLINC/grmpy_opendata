@@ -64,9 +64,7 @@ else:
 MODEL_TYPES = ["rtdur", "nortdur"]
 for model_type in MODEL_TYPES:
     # Output directory for maps + reports
-    out_dir = Path(
-        f"/cbica/projects/grmpy/analysis/task_glm/first-level/results/fracback-{model_type}"
-    )
+    out_dir = Path(f"/cbica/projects/grmpy/data/derivatives/fracback-{model_type}")
     out_dir.mkdir(parents=True, exist_ok=True)
 
     (
