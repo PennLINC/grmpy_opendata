@@ -67,7 +67,7 @@ for model_type in MODEL_TYPES:
 
         stat_img = load_img(group_zmap)
 
-        model_label = "RTDur" if "rtdur" in model_type else "noRTDur"
+        model_label = "noRTDur" if "nortdur" in model_type else "RTDur"
 
         plotting.plot_stat_map(
             stat_img,
