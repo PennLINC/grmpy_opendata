@@ -59,7 +59,7 @@ def normalize_trial_type(x: str) -> str:
         "0BACK": "zero_back",
         "1BACK": "one_back",
         "2BACK": "two_back",
-        "INST: "instruction",
+        "INST": "instruction",
         "zero_back": "zero_back",
         "one_back": "one_back",
         "two_back": "two_back",
