@@ -1,2 +1,2 @@
-subject	session	run_prefix	tr_sec	n_scans	total_run_sec	zero_back_sec	two_back_sec	instruction_sec	implicit_baseline_sec	zero_back_trs	two_back_trs	instruction_trs	implicit_baseline_trs
-sub-102041	ses-1	sub-102041_ses-1_task-fracback_acq-singleband	3.0	231	693.0	180.0	180.0	81.0	252.0	60.0	60.0	27.0	84.0
+subject	session	run_prefix	tr_sec	n_scans	total_run_sec	zero_back_sec	one_back_sec	two_back_sec	instruction_sec	implicit_baseline_sec	zero_back_trs	one_back_trs	two_back_trs	instruction_trs	implicit_baseline_trs
+sub-102041	ses-1	sub-102041_ses-1_task-fracback_acq-singleband	3.0	231	693.0	180.0	180.0	180.0	81.0	72.0	60.0	60.0	60.0	27.0	24.0
