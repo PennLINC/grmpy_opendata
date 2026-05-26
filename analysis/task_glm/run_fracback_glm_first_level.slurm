@@ -2,7 +2,7 @@
 #SBATCH --job-name=nback_firstlevel
 #SBATCH --output=/cbica/projects/grmpy/data/derivatives/logs/fracback_%A_%a.out
 #SBATCH --error=/cbica/projects/grmpy/data/derivatives/logs/fracback_%A_%a.err
-#SBATCH --array=0-194         # 195 subjects
+#SBATCH --array=0-189         # 190 subjects after removing 5 who failed xcpd QC.
 #SBATCH --time=03:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
