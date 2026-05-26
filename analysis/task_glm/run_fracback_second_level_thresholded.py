@@ -53,7 +53,7 @@ for model_type in MODEL_TYPES:
         print(f"Writing thresholded second-level outputs to: {group_out_dir}")
 
         pattern = (
-            "sub-*/sub-*_task-nback_space-MNI152NLin6Asym_"
+            "sub-*/sub-*_task-fracback_space-MNI152NLin6Asym_"
             f"contrast-{contrast_label}_stat-effect_statmap.nii.gz"
         )
 
