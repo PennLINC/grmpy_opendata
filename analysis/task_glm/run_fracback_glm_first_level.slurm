@@ -19,7 +19,7 @@ micromamba activate nilearn
 # SUBJECT LIST (NO COMMAS)
 # --------------------------
 
-mapfile -t SUBJECT_LIST < /cbica/projects/grmpy/code/analysis/task_glm/subjects.txt
+mapfile -t SUBJECT_LIST < /cbica/projects/grmpy/code/analysis/task_glm/subjects.txt # all subjects with event.tsv files sans 5 who failed QC.
 
 SUB_ID=${SUBJECT_LIST[$SLURM_ARRAY_TASK_ID]}
 
