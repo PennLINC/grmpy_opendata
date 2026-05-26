@@ -922,7 +922,7 @@ The fracback GLM was run using the [`run_fracback_glm_first_level.slurm`](https:
 
 These runs didn't complete:
 
-fracback_15153658_10.out -> '106071' not found in fmriprep (has no T1w -- expected)
+fracback_15153658_10.err -> '106071' not found in fmriprep (has no T1w -- expected)
 
 The remaining failed runs had this error:
 ```

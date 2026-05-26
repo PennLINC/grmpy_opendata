@@ -22,7 +22,6 @@ micromamba activate nilearn
 SUBJECT_LIST=(
     20941
     84103
-    84688
     84761
     85083
     86924
