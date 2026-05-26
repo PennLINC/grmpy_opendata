@@ -2,7 +2,7 @@
 #SBATCH --job-name=nback_secondlevel_thresholded
 #SBATCH --output=/cbica/projects/grmpy/data/derivatives/logs/fracback_secondlevel_%j.out
 #SBATCH --error=/cbica/projects/grmpy/data/derivatives/logs/fracback_secondlevel_%j.err
-#SBATCH --time=01:00:00
+#SBATCH --time=24:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=8G
 
