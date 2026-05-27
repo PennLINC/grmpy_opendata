@@ -1,7 +1,7 @@
 ---
 title: "T1_Euler_fig"
 author: "Brooke Sevchik"
-date: "2025-09-25"
+date: "2026-05-27"
 output: html_document
 ---
 
@@ -20,7 +20,7 @@ library(stringr)
 
 
 ```{r load in necessary csv }
-t1_qc <- read.csv('/Users/bsevchik/Documents/GitHub/transdiagnostic_executive_function/QC/qc_csvs/final_QC_csvs/EF_desc-T1_qc.csv')
+t1_qc <- read.csv('/Users/bsevchik/Documents/GitHub/grmpy_opendata/curation/06_QC/data/final_qc/T1-ratings_consensus.csv')
 
 ```
 
@@ -47,7 +47,7 @@ qc_long <- t1_qc %>%
   mutate(
     hemisphere = recode(hemisphere, euler_LH = "LH", euler_RH = "RH"),
     # order AFTER cleaning; this won’t create NAs
-    qc_determination = fct_relevel(qc_determination, "fail", "artifact", "pass")
+    qc_determination = fct_relevel(qc_determination, "Fail", "Artifact", "Pass")
   ) %>%
   filter(!is.na(euler), !is.na(qc_determination))
 
