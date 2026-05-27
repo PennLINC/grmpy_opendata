@@ -61,7 +61,6 @@ for model_type in MODEL_TYPES:
             Path("/cbica/projects/grmpy/data/derivatives")
             / model_type
             / contrast["contrast_dir"]
-            / "group"
             / contrast["stat_file"]
         )
 
