@@ -1,0 +1,44 @@
+{
+  "participant_id": {
+    "LongName": "Participant identifier",
+    "Description": "The BIDS participant label for the scan."
+  },
+  "session_id": {
+    "LongName": "Session identifier",
+    "Description": "The BIDS session label for the scan."
+  },
+  "average_rating": {
+    "LongName": "Average manual T1w rating",
+    "Description": "Mean rating (0 - 1) of four independent slices from visual inspection of T1-weighted images by two independent raters."
+  },
+  "classification": {
+    "LongName": "Manual consensus classification",
+    "Description": "Consensus label derived from the average rating. Pass means all slices were approved, Fail means all slices were rejected, and Artifact means between 1 and 3 slices contained artifacts.",
+    "Levels": {
+      "Pass": "All slices were approved (average rating 1.0).",
+      "Artifact": "Between 1 and 3 slices contained artifacts (average rating 0.25-0.75).",
+      "Fail": "All slices contained artifacts (average rating 0.0)."
+    }
+  },
+  "lh_euler": {
+    "LongName": "Left hemisphere Euler number",
+    "Description": "Euler characteristic of the left hemisphere surface from FreeSurfer reconstruction. Less negative values indicate fewer topological defects."
+  },
+  "rh_euler": {
+    "LongName": "Right hemisphere Euler number",
+    "Description": "Euler characteristic of the right hemisphere surface from FreeSurfer reconstruction. Less negative values indicate fewer topological defects."
+  },
+  "mean_euler": {
+    "LongName": "Mean Euler number",
+    "Description": "Mean of the left and right hemisphere Euler characteristics from FreeSurfer surface reconstruction."
+  },
+  "qc_determination": {
+    "LongName": "Final T1w QC determination",
+    "Description": "Final T1w QC call derived from the manual consensus classification.",
+    "Levels": {
+      "artifact": "Some artifacts present; use with caution.",
+      "fail": "The scan fails QC and should be excluded from T1w-derived analyses.",
+      "pass": "The scan passes QC and can be used in T1w-derived analyses."
+    }
+  }
+}

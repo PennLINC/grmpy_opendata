@@ -20,7 +20,7 @@ DIFFUSION_QSIPREP_CSV = DATA_DIR / "qsiprep_qc.csv"
 DIFFUSION_QSIRECON_CSV = DATA_DIR / "qsirecon_DSIStudio_row_sum_bundle_volume.csv"
 ASL_CSV = DATA_DIR / "aslprep_qc.csv"
 FREESURFER_CSV = DATA_DIR / "freesurfer-post_euler_qc.csv"
-T1_RATINGS_CSV = DATA_DIR / "T1-ratings_sps.csv"
+T1_RATINGS_CSV = DATA_DIR / "T1-ratings_consensus.csv"
 
 
 def write_json(path: Path, payload: dict[str, object]) -> None:
@@ -157,7 +157,7 @@ def build_fmri_qc() -> tuple[pd.DataFrame, dict[str, object]]:
             "LongName": "Acquisition label",
             "Description": (
                 "The BIDS acquisition label used to distinguish scans within the "
-                "same task because GRMPY does not use the run entity."
+                "same task."
             ),
         },
         "median_FD": {
@@ -350,16 +350,113 @@ def build_asl_qc() -> tuple[pd.DataFrame, dict[str, object]]:
     return asl_df, sidecar
 
 
-def build_t1_qc() -> None:
-    # TODO: Once final manual T1 consensus ratings are available, combine
-    # T1-ratings_sps.csv with freesurfer-post_euler_qc.csv (and session-aware
-    # Euler outputs if needed) to write T1_qc.csv and T1_qc.json here.
-    if not T1_RATINGS_CSV.exists():
-        raise FileNotFoundError(f"Missing expected T1 ratings file: {T1_RATINGS_CSV}")
-    if not FREESURFER_CSV.exists():
-        raise FileNotFoundError(
-            f"Missing expected FreeSurfer QC file for future T1 QC: {FREESURFER_CSV}"
-        )
+def build_t1_qc() -> tuple[pd.DataFrame, dict[str, object]]:
+    ratings_df = pd.read_csv(T1_RATINGS_CSV)
+    fs_df = pd.read_csv(FREESURFER_CSV)
+
+    assert_unique(ratings_df, ["subid", "sesid"], "T1 ratings")
+    assert_unique(fs_df, ["participant_id"], "FreeSurfer")
+
+    ratings_df = ratings_df.copy()
+    ratings_df["participant_id"] = normalize_participant(ratings_df["subid"])
+    ratings_df["session_id"] = normalize_session(ratings_df["sesid"])
+
+    fs_df = fs_df.copy()
+    fs_df["participant_id"] = normalize_participant(fs_df["participant_id"])
+    fs_df["mean_euler"] = (fs_df["lh_euler"] + fs_df["rh_euler"]) / 2
+
+    t1_df = ratings_df.merge(
+        fs_df[["participant_id", "lh_euler", "rh_euler", "mean_euler"]],
+        on="participant_id",
+        how="inner",
+        validate="one_to_one",
+    )
+
+    if len(t1_df) != len(ratings_df):
+        raise ValueError("T1 ratings and FreeSurfer tables did not merge cleanly.")
+
+    t1_df["qc_determination"] = t1_df["classification"].str.lower()
+
+    t1_df = t1_df[
+        [
+            "participant_id",
+            "session_id",
+            "average_rating",
+            "classification",
+            "lh_euler",
+            "rh_euler",
+            "mean_euler",
+            "qc_determination",
+        ]
+    ]
+    t1_df = sort_output(t1_df)
+
+    sidecar = {
+        "participant_id": {
+            "LongName": "Participant identifier",
+            "Description": "The BIDS participant label for the scan.",
+        },
+        "session_id": {
+            "LongName": "Session identifier",
+            "Description": "The BIDS session label for the scan.",
+        },
+        "average_rating": {
+            "LongName": "Average manual T1w rating",
+            "Description": (
+                "Mean rating (0 - 1) of four independent slices from visual "
+                "inspection of T1-weighted images by two independent raters."
+            ),
+        },
+        "classification": {
+            "LongName": "Manual consensus classification",
+            "Description": (
+                "Consensus label derived from the average rating. Pass means all "
+                "slices were approved, Fail means all slices were rejected, and Artifact "
+                "means between 1 and 3 slices contained artifacts."
+            ),
+            "Levels": {
+                "Pass": "All slices were approved (average rating 1.0).",
+                "Artifact": "Between 1 and 3 slices contained artifacts (average rating 0.25-0.75).",
+                "Fail": "All slices contained artifacts (average rating 0.0).",
+            },
+        },
+        "lh_euler": {
+            "LongName": "Left hemisphere Euler number",
+            "Description": (
+                "Euler characteristic of the left hemisphere surface from "
+                "FreeSurfer reconstruction. Less negative values indicate "
+                "fewer topological defects."
+            ),
+        },
+        "rh_euler": {
+            "LongName": "Right hemisphere Euler number",
+            "Description": (
+                "Euler characteristic of the right hemisphere surface from "
+                "FreeSurfer reconstruction. Less negative values indicate "
+                "fewer topological defects."
+            ),
+        },
+        "mean_euler": {
+            "LongName": "Mean Euler number",
+            "Description": (
+                "Mean of the left and right hemisphere Euler characteristics from "
+                "FreeSurfer surface reconstruction."
+            ),
+        },
+        "qc_determination": {
+            "LongName": "Final T1w QC determination",
+            "Description": (
+                "Final T1w QC call derived from the manual consensus classification."
+            ),
+            "Levels": {
+                "artifact": "Some artifacts present; use with caution.",
+                "fail": "The scan fails QC and should be excluded from T1w-derived analyses.",
+                "pass": "The scan passes QC and can be used in T1w-derived analyses.",
+            },
+        },
+    }
+
+    return t1_df, sidecar
 
 
 def main() -> None:
@@ -374,7 +471,8 @@ def main() -> None:
     asl_df, asl_sidecar = build_asl_qc()
     save_outputs("asl", asl_df, asl_sidecar)
 
-    build_t1_qc()
+    t1_df, t1_sidecar = build_t1_qc()
+    save_outputs("T1", t1_df, t1_sidecar)
 
     print(f"Wrote final QC outputs to {OUTPUT_DIR}")
 
