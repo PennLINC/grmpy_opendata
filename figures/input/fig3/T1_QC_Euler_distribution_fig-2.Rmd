@@ -20,7 +20,7 @@ library(stringr)
 
 
 ```{r load in necessary csv }
-t1_qc <- read.csv('/Users/bsevchik/Documents/GitHub/grmpy_opendata/curation/06_QC/data/final_qc/T1-ratings_consensus.csv')
+t1_qc <- read.csv('/Users/bsevchik/Documents/GitHub/grmpy_opendata/curation/06_QC/data/final_qc/T1_qc.csv')
 
 ```
 
@@ -38,16 +38,16 @@ t1_qc <- t1_qc %>%
 
 # ------------- Long format -------------
 qc_long <- t1_qc %>%
-  select(euler_LH, euler_RH, qc_determination) %>%
+  select(lh_euler, rh_euler, qc_determination) %>%
   pivot_longer(
-    cols = c(euler_LH, euler_RH),
+    cols = c(lh_euler, rh_euler),
     names_to = "hemisphere",
     values_to = "euler"
   ) %>%
   mutate(
-    hemisphere = recode(hemisphere, euler_LH = "LH", euler_RH = "RH"),
+    hemisphere = recode(hemisphere, lh_euler = "LH", rh_euler = "RH"),
     # order AFTER cleaning; this won’t create NAs
-    qc_determination = fct_relevel(qc_determination, "Fail", "Artifact", "Pass")
+    qc_determination = fct_relevel(qc_determination, "fail", "artifact", "pass")
   ) %>%
   filter(!is.na(euler), !is.na(qc_determination))
 
@@ -75,9 +75,9 @@ p <- ggplot(qc_long, aes(x = qc_determination, y = euler,
         legend.position = "right")
 
 p
-ggsave("/Users/bsevchik/Documents/GitHub/transdiagnostic_executive_function/QC/qc_distribution_figs/euler_violin_by_qc_hemisphere.png", p, width = 7.5, height = 4.5, dpi = 300)
+ggsave("/Users/bsevchik/Documents/GitHub/grmpy_opendata/figures/input/fig3/euler_violin_by_qc_hemisphere.png", p, width = 7.5, height = 4.5, dpi = 300)
 
-ggsave("/Users/bsevchik/projects/EF_final_figures/01_input/fig3_QC/euler_violin_by_qc_hemisphere.pdf", p, device = "pdf", width = 7.5, height = 4.5, dpi = 300)
+ggsave("/Users/bsevchik/Documents/GitHub/grmpy_opendata/figures/input/fig3/euler_violin_by_qc_hemisphere.pdf", p, device = "pdf", width = 7.5, height = 4.5, dpi = 300)
 
 
 ```
@@ -107,9 +107,9 @@ p_box <- ggplot(qc_long, aes(x = qc_determination, y = euler,
 
 p_box
 
-ggsave("/Users/bsevchik/Documents/GitHub/transdiagnostic_executive_function/QC/qc_distribution_figs/euler_box_by_qc_hemisphere.png", p_box, width = 7.5, height = 4.5, dpi = 300)
+ggsave("/Users/bsevchik/Documents/GitHub/grmpy_opendata/figures/input/fig3/euler_box_by_qc_hemisphere.png", p_box, width = 7.5, height = 4.5, dpi = 300)
 
-ggsave("/Users/bsevchik/projects/EF_final_figures/01_input/fig3_QC/euler_box_by_qc_hemisphere.pdf", p_box, device = "pdf", width = 7.5, height = 4.5, dpi = 300)
+ggsave("/Users/bsevchik/Documents/GitHub/grmpy_opendata/figures/input/fig3/euler_box_by_qc_hemisphere.pdf", p_box, device = "pdf", width = 7.5, height = 4.5, dpi = 300)
 
 
 ```
