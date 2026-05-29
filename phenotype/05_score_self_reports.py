@@ -26,6 +26,7 @@ import math
 from pathlib import Path
 from typing import Callable, Dict, Iterable, List, Optional
 
+import numpy as np
 
 try:
     import pandas as pd
@@ -472,8 +473,8 @@ def add_psqi_scores(df: pd.DataFrame) -> pd.DataFrame:
             else:
                 in_bed.append((24.0 - b) + w)
         in_bed_series = pd.Series(in_bed, index=df.index)
-        with pd.option_context("mode.use_inf_as_na", True):
-            eff_series = (slept_hours / in_bed_series) * 100.0
+        eff_series = (slept_hours / in_bed_series) * 100.0
+        eff_series = eff_series.replace([np.inf, -np.inf], np.nan)
 
     comp4 = pd.Series([math.nan] * len(df), index=df.index)
     comp4 = comp4.mask(~eff_series.isna() & (eff_series > 85.0), 0)
@@ -485,6 +486,8 @@ def add_psqi_scores(df: pd.DataFrame) -> pd.DataFrame:
     )
     comp4 = comp4.mask(~eff_series.isna() & (eff_series < 65.0), 3)
     df["psqi_score_component4"] = comp4
+    # Manually set to n/a for sub-110354 due to suspicious data.
+    df.loc[df["participant_id"] == "sub-110354", "psqi_score_component4"] = math.nan
 
     # Component 5 (sleep disturbances: 5b..5i and 5othera)
     disturb_cols = [
@@ -665,9 +668,10 @@ def add_staxi2_ca_scores(df: pd.DataFrame) -> pd.DataFrame:
     trait_anger_temperament = [f"{prefix}_{i}" for i in [11, 12, 13, 16, 19]]
     trait_anger_reaction = [f"{prefix}_{i}" for i in [14, 15, 17, 18, 20]]
 
-    anger_expression_out = [f"{prefix}_{i}" for i in [21, 24, 27, 31, 34]]
-    anger_expression_in = [f"{prefix}_{i}" for i in [22, 25, 28, 33, 35]]
-    anger_control = [f"{prefix}_{i}" for i in [23, 26, 29, 30, 32]]
+    # We aren't 100% sure about these subscales, so we're not scoring them.
+    # anger_expression_out = [f"{prefix}_{i}" for i in [21, 24, 27, 31, 34]]
+    # anger_expression_in = [f"{prefix}_{i}" for i in [22, 25, 28, 33, 35]]
+    # anger_control = [f"{prefix}_{i}" for i in [23, 26, 29, 30, 32]]
 
     df["staxi2_ca_score_state_anger"] = sum_columns_complete(df, state_anger)
     df["staxi2_ca_score_state_anger_feelings"] = sum_columns_complete(
@@ -683,13 +687,21 @@ def add_staxi2_ca_scores(df: pd.DataFrame) -> pd.DataFrame:
     df["staxi2_ca_score_trait_anger_reaction"] = sum_columns_complete(
         df, trait_anger_reaction
     )
-    df["staxi2_ca_score_anger_expression_out"] = sum_columns_complete(
-        df, anger_expression_out
-    )
-    df["staxi2_ca_score_anger_expression_in"] = sum_columns_complete(
-        df, anger_expression_in
-    )
-    df["staxi2_ca_score_anger_control"] = sum_columns_complete(df, anger_control)
+    # df["staxi2_ca_score_anger_expression_out"] = sum_columns_complete(
+    #     df, anger_expression_out
+    # )
+    # df["staxi2_ca_score_anger_expression_in"] = sum_columns_complete(
+    #     df, anger_expression_in
+    # )
+    # df["staxi2_ca_score_anger_control"] = sum_columns_complete(df, anger_control)
+    # Remove these subscale columns (if present) since no longer scoring them.
+    for col in [
+        "staxi2_ca_score_anger_expression_out",
+        "staxi2_ca_score_anger_expression_in",
+        "staxi2_ca_score_anger_control",
+    ]:
+        if col in df.columns:
+            df.drop(columns=[col], inplace=True)
     return df
 
 
