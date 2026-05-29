@@ -1,0 +1,232 @@
+participant_id	AXIS1_DESC1	AXIS1_DESC2	AXIS1_DESC3	AXIS1_DESC4	AXIS1_DESC5	AXIS1_DESC6	AXIS1_DESC7	AXIS1_DESC8	AXIS1_DESC9	AXIS1_DESC10	AXIS2_DESC1	dx_BrderPD	dx_adhd	dx_anx	dx_bp1	dx_bpoth	dx_mdd	dx_moodnos	dx_none	dx_other	dx_prodromal	dx_prodromal_remit	dx_pscat	dx_psychosis	dx_ptsd	dx_scz	dx_sub_abuse	dx_sub_abuse_alc	dx_sub_abuse_can	dx_sub_abuse_oth	dx_sub_dep	dx_sub_dep_alc	dx_sub_dep_can	dx_sub_dep_oth	dxsum
+sub-102041	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-103679	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-104059	Prodromal - Remission. not on medications	Bipolar I Disorder. Most Recent Episode Depressed. Severe Without Psychotic Features	Social Phobia	Anxiety Disorder NOS	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	0	0	0	0	0	1	other	0	0	0	0	0	0	0	0	0	0	0	2
+sub-104235	Prodromal - Remission, not on medications	Cannabis  Abuse	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	0	1	other	0	0	0	1	0	1	0	0	0	0	0	2
+sub-104785	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-105168	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-105176	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	Anxiety Disorder NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	2
+sub-105309	w/ ANDS: Does not meet criteria for w/ APS BUT at least TWO disorganized or negative symptoms rated 3-6 (a) began within the past year OR currently rate one or more scale points higher compared to 12 months ago AND (b) occur at an average frequency of at least once per week in the past month	Bipolar Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	1	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	2
+sub-105767	w/o APS: Does not meet criteria for w/ APS	Cannabis  Dependence	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	1	0	1	0	2
+sub-105860	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-105979	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-106039	w/ APS:	Obsessive-Compulsive Disorder	Anxiety Disorder NOS	Depressive Disorder NOS	Cannabis Dependence	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	0	1	0	0	1	0	pro	0	0	0	0	0	0	0	1	0	1	0	4
+sub-106071	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-106246	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-106331	w/ APS:	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-106802	w/ APS: Meets criteria for Clinical/Risk Prodromal-Undifferentiated AND at least one P1 - P5 symptom rated 3-5 (a) began within the past year OR currently rates one or more scale points higher compared to 12 months ago AND (b) occurs at an average frequen	Major Depressive Disorder, Recurrent, Unspecified	Alcohol Dependence	Cocaine Dependence	Hallucinogen Dependence	Sedative, Hypnotic, or Anxiolytic Abuse	Cannabis Abuse	Opioid Abuse	n/a	n/a	n/a	0	0	0	0	0	1	0	0	0	1	0	pro	0	0	0	1	0	1	1	1	1	0	1	4
+sub-106880	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-107055	w/ APS: Meets criteria for Clinical/Risk Prodromal-Undifferentiated AND at least one P1 - P5 symptom rated 3-5 (a) began within the past year OR currently rates one or more scale points higher compared to 12 months ago AND (b) occurs at an average frequen	Bipolar I Disorder, Most Recent Episode Depressed, In Full Remission	Obsessive-Compulsive Disorder	Generalized Anxiety Disorder	Cannabis Dependence	Cocaine Dependence	Posttraumatic Stress Disorder	Alcohol Abuse	n/a	n/a	Diagnosis Deferred on Axis II	0	0	1	0	0	0	0	0	0	1	0	pro	0	1	0	1	1	0	0	1	0	1	1	5
+sub-108202	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-109521	w/ APS:	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	2
+sub-109646	Generalized Anxiety Disorder	Panic Disorder Without Agoraphobia	 Major Depressive Disorder,  Recurrent, Unspecified	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	1	0	0	1	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	2
+sub-109735	w/ APS: Meets criteria for Clinical/Risk prodromal-Undifferentiated AND at least one P1-P5 symptom rated 3-5 (a) began within the past year OR currently rates one or more scale points higher compared to 12 months ago AND (b)occurs at an average frequency of at least once per week in the past month	 Major Depressive Disorder,  Recurrent, Unspecified	Anxiety Disorder  NOS	Polysubstance  Dependence	Alcohol  Dependence	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	1	0	0	0	1	0	pro	0	0	0	0	0	0	0	1	1	0	1	4
+sub-110168	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-110354	Schizophrenia. Undifferentiated Type	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	0	0	psy	1	0	1	0	0	0	0	0	0	0	0	2
+sub-110828	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-112028	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-112061	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-112126	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-112249	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-112332	Panic Disorder without Agoraphobia	Obsessive-Compulsive Disorder	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-112694	w/ APS	Mood Disorder NOS	Cannabis Dependence	Alcohol Dependence	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	1	0	0	1	0	pro	0	0	0	0	0	0	0	1	1	1	0	3
+sub-113111	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-114709	 Major Depressive Disorder, Single  Episode, In Full Remission	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	1	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-114713	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-114723	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-114935	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-114990	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	 Major Depressive Disorder, Single  Episode, In Full Remission	Alcohol  Dependence	Cannabis  Dependence	 Attention-Deficit/Hyperactivity Disorder, Predominantly Inattentive Type	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	1	0	0	0	1	0	0	0	1	0	pro	0	0	0	0	0	0	0	1	1	1	0	4
+sub-115800	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-116019	Prodromal - Remission. not on medications	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	0	1	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-116051	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	Anxiety Disorder NOS	Major Depressive Disorder. Single Episode. In Full Remission	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	1	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	3
+sub-116210	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-116354	 Major Depressive Disorder, Single  Episode, Unspecified	w/ APS: At least one P1-P5 symptom scored 3-5 (a) began with the past year OR currently rates one or more scale points higher compared to 12 months ago AND (b) occurs at an average frequency of at least once per week in the past month	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	1	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	2
+sub-116360	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-117226	Major Depressive Disorder. Recurrent. In Partial Remission	Cannabis Dependence	Alcohol Abuse	Anxiety Disorder NOS	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	1	0	0	0	0	0	other	0	0	0	1	1	0	0	1	0	1	0	4
+sub-117397	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	Social Phobia	Cannabis Dependence	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	1	0	1	0	3
+sub-118393	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-118864	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-118990	Prodromal - Remission. not on medications	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	0	1	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-119302	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-119791	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	 Attention-Deficit/Hyperactivity Disorder, Predominantly Inattentive Type	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	1	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	2
+sub-120217	Schizophrenia, Residual Type	Attention-Deficit/Hyperactivity Disorder, Combined Type	Anxiety Disorder NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	1	1	0	0	0	0	0	0	0	0	psy	1	0	1	0	0	0	0	0	0	0	0	4
+sub-120562	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-121001	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-121050	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-121085	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-121407	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-121476	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-121670	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-122522	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-122528	 Major Depressive Disorder, Single  Episode, In Full Remission	Cannabis  Dependence	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	1	0	0	0	0	0	other	0	0	0	0	0	0	0	1	0	1	0	2
+sub-122801	Schizophrenia. Undifferentiated Type	Bipolar Disorder NOS	Alcohol Dependence	Cannabis Dependence	Other (or Unknown) Substance Dependence	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	1	0	0	0	0	0	0	psy	1	0	1	0	0	0	0	1	1	1	0	4
+sub-122916	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-125511	Anxiety Disorder  NOS	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-125535	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-125554	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-126176	Psychotic Disorder NOS	Major Depressive Disorder. Recurrent. In Full Remission	Obsessive-Compulsive Disorder	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	1	0	0	0	0	0	psy	1	0	0	0	0	0	0	0	0	0	0	3
+sub-126389	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-126554	Cannabis  Dependence	Alcohol  Dependence	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	1	1	1	0	1
+sub-126903	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-126921	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-127008	Alcohol  Abuse	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	0	0	other	0	0	0	1	1	0	0	0	0	0	0	1
+sub-127236	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	Obsessive-Compulsive Disorder	Attention-Deficit/Hyperactivity Disorder NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	1	1	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	3
+sub-127305	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-127417	Prodromal - Remission. not on medications	Anxiety Disorder NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	0	0	0	0	0	1	other	0	0	0	0	0	0	0	0	0	0	0	2
+sub-127542	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-127611	w/ ANS:	Major Depressive Disorder. Recurrent. In Partial Remission	Attention-Deficit/Hyperactivity Disorder. Predominantly Inattentive Type	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	1	0	0	0	1	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	3
+sub-128061	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-128154	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	No Diagnosis on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-129354	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-129405	Prodromal - Positive	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-129552	w/ ANDS:	Panic Disorder Without Agoraphobia	Cannabis Dependence	Mood Disorder NOS	Attention-Deficit/Hyperactivity Disorder. Predominantly Inattentive Type	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	1	1	0	0	0	1	0	0	1	0	pro	0	0	0	0	0	0	0	1	0	1	0	5
+sub-129720	 Major Depressive Disorder,  Recurrent, Unspecified	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	1	0	0	1	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	2
+sub-129886	w/ APS: At least one P1-P5 symptom scored 3-5 (a) began with the past year OR currently rates one or more scale points higher compared to 12 months ago AND (b) occurs at an average frequency of at least once per week in the past month	 Bipolar I Disorder, Most Recent Episode  Depressed, Moderate	Posttraumatic Stress Disorder	Generalized Anxiety Disorder	Social Phobia	Panic Disorder Without Agoraphobia	Obsessive-Compulsive Disorder	n/a	n/a	n/a	n/a	0	0	1	1	0	0	0	0	0	1	0	pro	0	1	0	0	0	0	0	0	0	0	0	4
+sub-129926	Panic Disorder Without Agoraphobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-130121	 Schizophrenia, Undifferentiated Type	Alcohol  Dependence	Cannabis  Dependence	 Attention-Deficit/Hyperactivity Disorder, Predominantly Inattentive Type	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	1	0	0	0	0	0	0	0	0	0	psy	1	0	1	0	0	0	0	1	1	1	0	4
+sub-130211	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-130687	Bipolar II Disorder	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	1	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-130759	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-130896	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-131224	w/o APS: Does not meet criteria for w/ APS	Cannabis Abuse	Alcohol Dependence	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	1	0	1	0	1	1	0	0	3
+sub-131867	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-132179	Prodromal - Undifferentiated	Bereavement	Posttraumatic Stress Disorder	Generalized Anxiety Disorder	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	1	0	0	0	0	0	0	1	0	pro	0	1	0	0	0	0	0	0	0	0	0	3
+sub-132224	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-132657	Prodromal - Remission. not on medications	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	0	0	0	0	0	1	other	0	0	0	0	0	0	0	0	0	0	0	2
+sub-133220	Mood Disorder  NOS	 Attention-Deficit/Hyperactivity Disorder, Predominantly Inattentive Type	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	1	0	0	0	0	1	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	2
+sub-139272	Psychotic Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	0	0	psy	1	0	0	0	0	0	0	0	0	0	0	1
+sub-19977	w/ APS:	Generalized Anxiety Disorder	Obsessive-Compulsive Disorder	Posttraumatic Stress Disorder	Depressive Disorder NOS	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	1	0	0	1	0	pro	0	1	0	0	0	0	0	0	0	0	0	4
+sub-19981	Psychotic Disorder NOS	Anxiety Disorder NOS	Depressive Disorder NOS	Obsessive-Compulsive Disorder	n/a	n/a	n/a	n/a	n/a	n/a	No Diagnosis on Axis II	0	0	1	0	0	0	1	0	0	0	0	psy	1	0	0	0	0	0	0	0	0	0	0	3
+sub-20011	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	 Major Depressive Disorder,  Recurrent, Unspecified	Generalized Anxiety Disorder	Posttraumatic Stress Disorder	Cannabis  Dependence	Alcohol  Dependence	n/a	n/a	n/a	n/a	Borderline Personality Disorder	1	0	1	0	0	1	0	0	0	1	0	pro	0	1	0	0	0	0	0	1	1	1	0	6
+sub-20017	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20120	w/ APS:	Major Depressive Disorder. Recurrent. Unspecified	Generalized Anxiety Disorder	Posttraumatic Stress Disorder	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	1	0	0	0	1	0	pro	0	1	0	0	0	0	0	0	0	0	0	4
+sub-20151	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20153	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20189	Schizoaffective Disorder. Depressed Type	Posttraumatic Stress Disorder	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	No Diagnosis on Axis II	0	0	0	0	0	0	0	0	0	0	0	psy	1	1	1	0	0	0	0	0	0	0	0	3
+sub-20197	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	0	0	0	0	n/a	0	0	0	0	0	0	0	0	0	0	0	0
+sub-20247	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	Separation Anxiety Disorder	Posttraumatic Stress Disorder	Major Depressive Disorder, Single Episode, Unspecified	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	1	0	0	0	1	0	pro	0	1	0	0	0	0	0	0	0	0	0	4
+sub-20313	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20320	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20322	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	Depressive Disorder NOS	Obsessive-Compulsive Disorder	Social Phobia	Cannabis Abuse	n/a	n/a	n/a	n/a	n/a	Borderline Personality Disorder	1	0	1	0	0	0	1	0	0	1	0	pro	0	0	0	1	0	1	0	0	0	0	0	5
+sub-20325	w/ ANDS: Does not meet criteria for w/ APS BUT at least TWO disorganized or negative symptoms rated 3 - 6 (a) began wthin the past year OR currently rates one or more scale points higher compared to 12 months ago AND (b) occurs at an average frequency of 	Major Depressive Disorder, Recurrent, Unspecified	Obsessive-Compulsive Disorder	Posttraumatic Stress Disorder	Generalized Anxiety Disorder	n/a	n/a	n/a	n/a	n/a	Borderline Personality Disorder	1	0	1	0	0	1	0	0	0	1	0	pro	0	1	0	0	0	0	0	0	0	0	0	5
+sub-20326	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20327	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20362	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20386	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20387	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20461	w/ APS:	Major Depressive Disorder. Recurrent. Unspecified	Social Phobia	Obsessive-Compulsive Disorder	Generalized Anxiety Disorder	n/a	n/a	n/a	n/a	n/a	Borderline Personality Disorder	1	0	1	0	0	1	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	4
+sub-20589	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20649	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20699	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	Major Depressive Disorder. Recurrent. Unspecified	Posttraumatic Stress Disorder	Obsessive-Compulsive Disorder	Social Phobia	Cannabis Dependence	Attention-Deficit/Hyperactivity Disorder. Predominantly Inattentive Type	n/a	n/a	n/a	Borderline Personality Disorder	1	1	1	0	0	1	0	0	0	1	0	pro	0	1	0	0	0	0	0	1	0	1	0	7
+sub-20809	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20888	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20940	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20941	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	Major Depressive Disorder, Recurrent, Unspecified	Obsessive-Compulsive Disorder	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Borderline Personality Disorder	1	0	1	0	0	1	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	4
+sub-20949	Psychotic Disorder NOS	Depressive Disorder NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	1	0	0	0	0	psy	1	0	0	0	0	0	0	0	0	0	0	2
+sub-20963	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20974	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-20981	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-21016	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-21056	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-21059	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-21085	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-80557	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	0	0	0	0	n/a	0	0	0	0	0	0	0	0	0	0	0	0
+sub-80688	w/o APS: Does not meet criteria for w/ APS	Depressive Disorder NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	1	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	2
+sub-81725	w/ APS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-81760	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-82051	 Major Depressive Disorder,  Recurrent, In Full Remission	Alcohol  Dependence	w/ APS: Meets criteria for Clinical/Risk prodromal-Undifferentiated AND at least one P1-P5 symptom rated 3-5 (a) began within the past year OR currently rates one or more scale points higher compared to 12 months ago AND (b)occurs at an average frequency of at least once per week in the past month	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	1	0	0	0	1	0	pro	0	0	0	0	0	0	0	1	1	0	0	3
+sub-82063	Prodromal - Undifferentiated	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-82492	 Major Depressive Disorder, Single  Episode, Unspecified	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	1	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-82790	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-83010	Prodromal - Remission. not on medications	Attention-Deficit/Hyperactivity Disorder. Predominantly Inattentive Type	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	1	0	0	0	0	0	0	0	0	1	other	0	0	0	0	0	0	0	0	0	0	0	2
+sub-83372	Alcohol  Abuse	Cannabis  Dependence	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	0	0	other	0	0	0	1	1	0	0	1	0	1	0	2
+sub-83454	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-83835	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-83999	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	No Diagnosis on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-84103	Social Phobia	Panic Disorder Without Agoraphobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-84354	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-84688	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-84761	Social Phobia	Panic Disorder Without Agoraphobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-84973	Generalized Anxiety Disorder	Posttraumatic Stress Disorder	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	1	0	0	0	0	0	0	0	0	0	2
+sub-85083	w/ APS	Cannabis Abuse	Anxiety Disorder NOS	Alcohol Abuse	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	0	0	0	0	1	0	pro	0	0	0	1	1	1	0	0	0	0	0	3
+sub-85173	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-85369	Prodromal - Remission. not on medications	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	0	1	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-85743	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-85853	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-86287	w/ ANDS: Does not meet criteria for w/ APS BUT at least TWO disorganized or negative symptoms rated 3-6 (a) began within the past year OR currently rate one or more scale points higher compared to 12 months ago AND (b) occur at an average frequency of at least once per week in the past month	Bipolar Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	1	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	2
+sub-86350	w/ ANS: At least two negative symptoms rated 3,4, 5 or 6 (a) began within the past year OR currently rate one or more scale points higher compared to 12 months ago AND (b) occur at an average frequency of at least once per week in the past month	Alcohol  Abuse	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	No Diagnosis on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	1	1	0	0	0	0	0	0	2
+sub-86444	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-86486	Cannabis  Dependence	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	1	0	1	0	1
+sub-86722	w/ APS: Meets criteria for Clinical/Risk Prodromal-Undifferentiated AND at least one P1 - P5 symptom rated 3-5 (a) began within the past year OR currently rates one or more scale points higher compared to 12 months ago AND (b) occurs at an average frequen	Attention-Deficit/Hyperactivity Disorder, Predominantly Inattentive Type	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	1	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	2
+sub-86924	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-86972	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-87135	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	No Diagnosis on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-87346	w/ APS:	Major Depressive Disorder. Single Episode. Unspecified	Social Phobia	Alcohol Abuse	Cannabis Abuse	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	1	0	0	0	1	0	pro	0	0	0	1	1	1	0	0	0	0	0	4
+sub-87445	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-87457	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-87538	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-87563	Alcohol  Abuse	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	0	0	other	0	0	0	1	1	0	0	0	0	0	0	1
+sub-87601	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-87646	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-87804	Major Depressive Disorder. Single Episode. In Full Remission	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	1	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-87990	w/o ADS: Does not meet criteria for w/ ADS	Alcohol  Abuse	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	1	1	0	0	0	0	0	0	2
+sub-88209	Agoraphobia Without History of Panic Disorder	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-88402	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-88589	Prodromal - Remission, not on medication	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	0	1	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-88608	w/ ANDS:	Bipolar Disorder NOS	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	1	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	3
+sub-88760	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-88770	Obsessive-Compulsive Disorder	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-88773	w/ APS: Meets criteria for Clinical/Risk prodromal-Undifferentiated AND at least one P1-P5 symptom rated 3-5 (a) began within the past year OR currently rates one or more scale points higher compared to 12 months ago AND (b)occurs at an average frequency of at least once per week in the past month	Cannabis  Dependence	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	1	0	1	0	2
+sub-89279	w/o APS: Does not meet criteria for w/ APS	Major Depressive Disorder, Single Episode, In Full Remission	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	1	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	2
+sub-89377	w/ APS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-90021	Prodromal - Undifferentiated	 Attention-Deficit/Hyperactivity Disorder, Predominantly Inattentive Type	 Major Depressive Disorder, Single  Episode, Unspecified	Social Phobia	Posttraumatic Stress Disorder	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	1	1	0	0	1	0	0	0	1	0	pro	0	1	0	0	0	0	0	0	0	0	0	5
+sub-90060	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-90077	 Major Depressive Disorder, Single  Episode, In Full Remission	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	1	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-90262	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-90281	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-90683	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-91717	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-91919	w/ ANS: At least two negative symptoms rated 3,4, 5 or 6 (a) began within the past year OR currently rate one or more scale points higher compared to 12 months ago AND (b) occur at an average frequency of at least once per week in the past month	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	No Diagnosis on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-91962	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-92089	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	Social Phobia	Alcohol Abuse	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Borderline Personality Disorder	1	0	1	0	0	0	0	0	0	1	0	pro	0	0	0	1	1	0	0	0	0	0	0	4
+sub-92182	w/ ANDS: Does not meet criteria for w/ APS BUT at least TWO disorganized or negative symptoms rated 3-6 (a) began within the past year OR currently rate one or more scale points higher compared to 12 months ago AND (b) occur at an average frequency of at least once per week in the past month	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-92193	 Attention-Deficit/Hyperactivity Disorder, Predominantly Inattentive Type	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	No Diagnosis on Axis II	0	1	0	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-92211	Prodromal - Remission. not on medications	Major Depressive Disorder. Recurrent. In Full Remission	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	1	0	0	0	0	1	other	0	0	0	0	0	0	0	0	0	0	0	2
+sub-92554	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-92927	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-93051	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-93169	Alcohol  Abuse	Cannabis  Dependence	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	0	0	other	0	0	0	1	1	0	0	1	0	1	0	2
+sub-93274	 Schizophrenia, Undifferentiated Type	Mood Disorder  NOS	 Attention-Deficit/Hyperactivity Disorder, Combined Type	Cannabis  Dependence	Alcohol  Dependence	n/a	n/a	n/a	n/a	n/a	n/a	0	1	0	0	0	0	1	0	0	0	0	psy	1	0	1	0	0	0	0	1	1	1	0	5
+sub-93278	Social Phobia	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-93292	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-93406	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-93517	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	2
+sub-93549	Posttraumatic Stress Disorder	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	0	0	0	0	other	0	1	0	0	0	0	0	0	0	0	0	1
+sub-93723	Anxiety Disorder NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-93734	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-93787	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-93856	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-94276	Psychotic Disorder  NOS	Mood Disorder  NOS	Alcohol  Abuse	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	1	0	0	0	0	psy	1	0	0	1	1	0	0	0	0	0	0	3
+sub-94492	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	Attention-Deficit/Hyperactivity Disorder, Combined Type	Posttraumatic Stress Disorder	Panic Disorder without Agoraphobia	Major Depressive Disorder, Recurrent, Severe without Psychotic Features	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	1	1	0	0	0	0	0	0	1	0	pro	0	1	0	0	0	0	0	0	0	0	0	4
+sub-94848	w/o ANS: Does not meet criteria for w/ ANS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-95015	Attention-Deficit/Hyperactivity Disorder. Predominantly Hyperactive-Impulsive Type	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	1	0	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-95057	w/ APS: Meets criteria for Clinical/Risk prodromal-Undifferentiated AND at least one P1-P5 symptom rated 3-5 (a) began within the past year OR currently rates one or more scale points higher compared to 12 months ago AND (b)occurs at an average frequency of at least once per week in the past month	Depressive Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	No Diagnosis on Axis II	0	0	0	0	0	0	1	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	2
+sub-95116	Social Phobia	Prodromal - Remission, not on medications	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	1	other	0	0	0	0	0	0	0	0	0	0	0	2
+sub-95257	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-95460	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-96659	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-97092	Cannabis  Dependence	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	1	0	1	0	1
+sub-97271	Anxiety Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-97485	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-97994	No Diagnosis on Axis II	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-98314	w/o ANS: Does not meet criteria for w/ ANS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Deferred Diagnosis (insufficient data) on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	0	0	0	0	1
+sub-98394	w/o APNDS: Does not meet criteria for w/ APS or w/ ANDS	n/a	Cannabis  Abuse	Alcohol  Abuse	Mood Disorder  NOS	n/a	n/a	n/a	n/a	n/a	n/a	1.0	0	0	0	0	0	0	1	0	0	1	0	pro	0	0	0	1	1	1	0	0	0	0	0
+sub-98422	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+sub-98535	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-98567	 Attention-Deficit/Hyperactivity Disorder, Predominantly Hyperactive-Impulsive Type	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	1	0	0	0	0	0	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-98831	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
+sub-98871	Depressive Disorder NOS	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	1	0	0	0	0	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-99352	w/o APS: Does not meet criteria for w/ APS	Cannabis  Dependence	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	0	0	1	0	pro	0	0	0	0	0	0	0	1	0	1	0	2
+sub-99604	Posttraumatic Stress Disorder	Social Phobia	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	1	0	0	0	0	0	0	0	0	other	0	1	0	0	0	0	0	0	0	0	0	2
+sub-99949	Prodromal - Remission. not on medications	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	0	0	0	0	0	0	0	0	0	0	1	other	0	0	0	0	0	0	0	0	0	0	0	1
+sub-99964	No Diagnosis or Condition on Axis I	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	Diagnosis Deferred on Axis II	0	0	0	0	0	0	0	1	0	0	0	none	0	0	0	0	0	0	0	0	0	0	0	1
