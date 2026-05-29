@@ -80,5 +80,8 @@ plt.tight_layout()
 
 plot_output_path = os.path.join(outpath, "aslprep_qei_cbf_histogram.png")
 plt.savefig(plot_output_path, bbox_inches="tight", dpi=300, transparent=True)
+plot_output_path_pdf = os.path.join(outpath, "aslprep_qei_cbf_histogram.pdf")
+plt.savefig(plot_output_path_pdf, bbox_inches="tight", dpi=300, transparent=True)
 plt.close()
 print(f"Saved QEI histogram to: {plot_output_path}")
+print(f"Saved QEI histogram to: {plot_output_path_pdf}")

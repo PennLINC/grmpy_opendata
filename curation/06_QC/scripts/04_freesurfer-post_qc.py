@@ -76,8 +76,11 @@ plt.tight_layout()
 
 plot_output_path = os.path.join(outpath, "freesurfer-post_LH_euler_qc_histogram.png")
 plt.savefig(plot_output_path, bbox_inches="tight", dpi=300, transparent=True)
+plot_output_path_pdf = os.path.join(outpath, "freesurfer-post_LH_euler_qc_histogram.pdf")
+plt.savefig(plot_output_path_pdf, bbox_inches="tight", dpi=300, transparent=True)
 plt.close()
 print(f"Saved LH Euler histogram to: {plot_output_path}")
+print(f"Saved LH Euler histogram to: {plot_output_path_pdf}")
 
 # ----------------------
 # Plot RH_Euler distribution
@@ -91,5 +94,8 @@ plt.tight_layout()
 
 plot_output_path = os.path.join(outpath, "freesurfer-post_RH_euler_qc_histogram.png")
 plt.savefig(plot_output_path, bbox_inches="tight", dpi=300, transparent=True)
+plot_output_path_pdf = os.path.join(outpath, "freesurfer-post_RH_euler_qc_histogram.pdf")
+plt.savefig(plot_output_path_pdf, bbox_inches="tight", dpi=300, transparent=True)
 plt.close()
 print(f"Saved RH Euler histogram to: {plot_output_path}")
+print(f"Saved RH Euler histogram to: {plot_output_path_pdf}")
