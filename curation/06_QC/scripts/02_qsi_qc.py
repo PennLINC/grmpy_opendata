@@ -135,6 +135,12 @@ def create_volume_visualizations(df_concat):
         dpi=300,
         transparent=True,
     )
+    plt.savefig(
+        os.path.join(output_path, "qsirecon_DSIStudio_bundle_volume_histogram.pdf"),
+        bbox_inches="tight",
+        dpi=300,
+        transparent=True,
+    )
     plt.close()
 
     # Plot 2: Mean Volume Histogram
@@ -147,6 +153,14 @@ def create_volume_visualizations(df_concat):
     plt.savefig(
         os.path.join(
             output_path, "qsirecon_DSIStudio_bundle_volume_mean_histogram.png"
+        ),
+        bbox_inches="tight",
+        dpi=300,
+        transparent=True,
+    )
+    plt.savefig(
+        os.path.join(
+            output_path, "qsirecon_DSIStudio_bundle_volume_mean_histogram.pdf"
         ),
         bbox_inches="tight",
         dpi=300,
@@ -195,6 +209,14 @@ def analyze_missing_data(df):
     plt.savefig(
         os.path.join(
             output_path, "qsirecon_DSIStudio_missing_bundle_column_distribution.png"
+        ),
+        bbox_inches="tight",
+        dpi=300,
+        transparent=True,
+    )
+    plt.savefig(
+        os.path.join(
+            output_path, "qsirecon_DSIStudio_missing_bundle_column_distribution.pdf"
         ),
         bbox_inches="tight",
         dpi=300,
@@ -255,6 +277,14 @@ def analyze_bundle_outliers(df):
     plt.savefig(
         os.path.join(
             output_path, "qsirecon_DSIStudio_row_bundle_outlier_distribution.png"
+        ),
+        bbox_inches="tight",
+        dpi=300,
+        transparent=True,
+    )
+    plt.savefig(
+        os.path.join(
+            output_path, "qsirecon_DSIStudio_row_bundle_outlier_distribution.pdf"
         ),
         bbox_inches="tight",
         dpi=300,
@@ -322,6 +352,12 @@ def create_qsiprep_visualizations(df_main_qc):
         dpi=300,
         transparent=True,
     )
+    plt.savefig(
+        os.path.join(output_path, "qsiprep_neighborhood_corr_histogram.pdf"),
+        bbox_inches="tight",
+        dpi=300,
+        transparent=True,
+    )
     plt.close()
 
     # Plot 2: Mean FD
@@ -334,6 +370,12 @@ def create_qsiprep_visualizations(df_main_qc):
     plt.tight_layout()
     plt.savefig(
         os.path.join(output_path, "qsiprep_fd_histogram.png"),
+        bbox_inches="tight",
+        dpi=300,
+        transparent=True,
+    )
+    plt.savefig(
+        os.path.join(output_path, "qsiprep_fd_histogram.pdf"),
         bbox_inches="tight",
         dpi=300,
         transparent=True,
@@ -358,6 +400,12 @@ def create_qsiprep_visualizations(df_main_qc):
     plt.tight_layout()
     plt.savefig(
         os.path.join(output_path, "qsiprep_scatter_meanfd_vs_neighborcorr.png"),
+        bbox_inches="tight",
+        dpi=300,
+        transparent=True,
+    )
+    plt.savefig(
+        os.path.join(output_path, "qsiprep_scatter_meanfd_vs_neighborcorr.pdf"),
         bbox_inches="tight",
         dpi=300,
         transparent=True,

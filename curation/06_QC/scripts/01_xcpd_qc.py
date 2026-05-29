@@ -123,6 +123,9 @@ def create_column_visualizations(col_sums, output_dir):
     plt.savefig(
         os.path.join(output_dir, "xcpd_4S1056Parcels_coverage_col_sum_histogram.png")
     )
+    plt.savefig(
+        os.path.join(output_dir, "xcpd_4S1056Parcels_coverage_col_sum_histogram.pdf")
+    )
     plt.close()
 
     # Bar plot
@@ -135,6 +138,9 @@ def create_column_visualizations(col_sums, output_dir):
     plt.tight_layout()
     plt.savefig(
         os.path.join(output_dir, "xcpd_4S1056Parcels_coverage_col_sum_barplot.png")
+    )
+    plt.savefig(
+        os.path.join(output_dir, "xcpd_4S1056Parcels_coverage_col_sum_barplot.pdf")
     )
     plt.close()
 
@@ -157,6 +163,9 @@ def create_row_visualizations(row_sums, output_dir):
     plt.savefig(
         os.path.join(output_dir, "xcpd_4S1056Parcels_coverage_row_sum_histogram.png")
     )
+    plt.savefig(
+        os.path.join(output_dir, "xcpd_4S1056Parcels_coverage_row_sum_histogram.pdf")
+    )
     plt.close()
 
     # Log-scaled histogram
@@ -178,6 +187,11 @@ def create_row_visualizations(row_sums, output_dir):
             output_dir, "xcpd_4S1056Parcels_coverage_row_sum_histogram_log.png"
         )
     )
+    plt.savefig(
+        os.path.join(
+            output_dir, "xcpd_4S1056Parcels_coverage_row_sum_histogram_log.pdf"
+        )
+    )
     plt.close()
 
     # Bar plot
@@ -195,6 +209,9 @@ def create_row_visualizations(row_sums, output_dir):
     plt.tight_layout()
     plt.savefig(
         os.path.join(output_dir, "xcpd_4S1056Parcels_coverage_row_sum_barplot.png")
+    )
+    plt.savefig(
+        os.path.join(output_dir, "xcpd_4S1056Parcels_coverage_row_sum_barplot.pdf")
     )
     plt.close()
 
@@ -262,6 +279,12 @@ def analyze_median_fd(paths):
     plt.tight_layout()
     plt.savefig(
         os.path.join(paths["outpath"], "xcpd_qc_histogram_median_fd.png"),
+        bbox_inches="tight",
+        dpi=300,
+        transparent=True,
+    )
+    plt.savefig(
+        os.path.join(paths["outpath"], "xcpd_qc_histogram_median_fd.pdf"),
         bbox_inches="tight",
         dpi=300,
         transparent=True,
