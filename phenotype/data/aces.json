@@ -1,0 +1,84 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Adverse Childhood Experiences (ACE) questionnaire",
+    "Instructions": "Did a parent or other adult in the household often ... (each item answered Yes/No).",
+    "LongName": "10-item retrospective self-report of adverse experiences before age 18; each item Yes/No.",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "aces_1": {
+    "Description": "Did a parent or other adult in the household often or very often... Swear at you, insult you, put you down, or humiliate you? or Act in a way that made you afraid that you might be physically hurt?",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "aces_2": {
+    "Description": "Did a parent or other adult in the household often or very often... Push, grab, slap, or throw something at you? or Ever hit you so hard that you had marks or were injured?",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "aces_3": {
+    "Description": "Did an adult or person at least 5 years older than you ever... Touch or fondle you or have you touch their body in a sexual way? or Attempt or actually have oral, anal, or vaginal intercourse with you?",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "aces_4": {
+    "Description": "Did you often or very often feel that... No one in your family loved you or thought you were important or special? or Your family didn't look out for each other, feel close to each other, or support each other?",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "aces_5": {
+    "Description": "Did you often or very often feel that... You didn't have enough to eat, had to wear dirty clothes, and had no one to protect you? or Your parents were too drunk or high to take care of you or take you to the doctor if you needed it?",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "aces_6": {
+    "Description": "Were your parents ever separated or divorced?",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "aces_7": {
+    "Description": "Was your mother or stepmother: Often or very often pushed, grabbed, slapped, or had something thrown at her? or Sometimes, often, or very often kicked, bitten, hit with a fist, or hit with something hard? or Ever repeatedly hit at least a few minutes or threatened with a gun or knife?",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "aces_8": {
+    "Description": "Did you live with anyone who was a problem drinker or alcoholic or who used street drugs?",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "aces_9": {
+    "Description": "Was a household member depressed or mentally ill, or did a household member attempt suicide?",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "aces_10": {
+    "Description": "Did a household member go to prison?",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "aces_score_total": {
+    "Description": "ACE total score: number of ACE categories endorsed = sum of the 10 items aces_1-aces_10 (Yes=1, No=0). Range 0-10. n/a if any of the 10 items is missing."
+  }
+}

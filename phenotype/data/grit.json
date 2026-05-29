@@ -1,0 +1,170 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Grit Scale (12-item) + relaxation/time-use items",
+    "LongName": "12-item grit scale (items 1-12) rated 1 (Not much like me at all) to 5 (Very much like me). Items 13-14 capture daily time use (free text) and item 15 is a checkbox of relaxation activities; these are not part of the grit score.",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "grit_1": {
+    "Description": "I am curious about many different things.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_2": {
+    "Description": "Setbacks don't discourage me.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_3": {
+    "Description": "I have very few artistic interests.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_4": {
+    "Description": "I have been obsessed with a certain idea for a short time but later lost interest.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_5": {
+    "Description": "I am dilligent. People say I am an extremely hard worker.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_6": {
+    "Description": "I am ingenious. I like to think deeply about ideas.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_7": {
+    "Description": "I often set a goal but later choose to pursue a different one.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_8": {
+    "Description": "I have difficulty maintaining focus on projects that take more than a few months to complete.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_9": {
+    "Description": "I am creative. I enjoy inventing things and have an active imagination.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_10": {
+    "Description": "I finish whatever I begin.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_11": {
+    "Description": "I am original. I very often come up with new ideas.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_12": {
+    "Description": "I value beauty, whether in music, literature, art, or nature.",
+    "Levels": {
+      "5": "Very much like me",
+      "4": "Mostly like me",
+      "3": "Somewhat like me",
+      "2": "Not much like me",
+      "1": "Not much like me at all"
+    }
+  },
+  "grit_13": {
+    "Description": "Over the last year, about how many hours per day, during a typical day, did you spend relaxing?"
+  },
+  "grit_14": {
+    "Description": "Over the last year, about how many hours per day, during a typical day, did you spend working/studying/doing chores?"
+  },
+  "grit_15___0": {
+    "Description": "Watch TV, use Facebook, surf the internet, play video games (checkbox option; 1 = selected, 0 = not selected)",
+    "Levels": {
+      "1": "Checked",
+      "0": "Unchecked"
+    }
+  },
+  "grit_15___1": {
+    "Description": "Text or talk to friends, socialize (checkbox option; 1 = selected, 0 = not selected)",
+    "Levels": {
+      "1": "Checked",
+      "0": "Unchecked"
+    }
+  },
+  "grit_15___2": {
+    "Description": "Watch or play sports, exercise (checkbox option; 1 = selected, 0 = not selected)",
+    "Levels": {
+      "1": "Checked",
+      "0": "Unchecked"
+    }
+  },
+  "grit_15___3": {
+    "Description": "Read for pleasure, listen to music (checkbox option; 1 = selected, 0 = not selected)",
+    "Levels": {
+      "1": "Checked",
+      "0": "Unchecked"
+    }
+  },
+  "grit_score_grittiness": {
+    "Description": "Perseverance ('grit') subscale: mean of items grit_2,4,5,7,8,10. n/a if any item missing."
+  },
+  "grit_score_openness": {
+    "Description": "Consistency of interest / openness subscale: mean of items grit_1,3,6,9,11,12. n/a if any item missing."
+  }
+}

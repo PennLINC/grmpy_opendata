@@ -1,0 +1,569 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Bipolar Inventory of Signs and Symptoms Scale (BISS) & Montgomery-Asberg Depression Rating Scale (MADRS)",
+    "LongName": "Clinician-rated symptom scales covering the most recent 7 days, integrating self-report and family/clinician observation. BISS items are rated 0-4; MADRS items are rated 0-6. NOTE: the BISS manual lists 44 items (22 depression + 22 mania) but this dataset contains 43 BISS items; depression items biss_1-biss_22 align with the manual, while the mania items biss_23-biss_43 are mapped to the manual's mania items 23-43 provisionally (one manual mania item, e.g. 'Impaired insight', is not represented). Verify the mania item alignment before analysis.",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "biss_1": {
+    "Description": "BISS item 1: Sadness - reported (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_2": {
+    "Description": "BISS item 2: Sadness - observed (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_3": {
+    "Description": "BISS item 3: Pessimism (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_4": {
+    "Description": "BISS item 4: Suicidality (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_5": {
+    "Description": "BISS item 5: Worry (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_6": {
+    "Description": "BISS item 6: Guilt (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_7": {
+    "Description": "BISS item 7: Feelings of inadequacy (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_8": {
+    "Description": "BISS item 8: Low energy (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_9": {
+    "Description": "BISS item 9: Psychomotor slowing (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_10": {
+    "Description": "BISS item 10: Loss of interest (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_11": {
+    "Description": "BISS item 11: Social withdrawal (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_12": {
+    "Description": "BISS item 12: Reduced sex drive (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_13": {
+    "Description": "BISS item 13: Anxiety - reported (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_14": {
+    "Description": "BISS item 14: Anxiety - observed (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_15": {
+    "Description": "BISS item 15: Somatic anxiety - reported (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_16": {
+    "Description": "BISS item 16: Fearfulness (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_17": {
+    "Description": "BISS item 17: Insomnia (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_18": {
+    "Description": "BISS item 18: Excessive sleep (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_19": {
+    "Description": "BISS item 19: Reduced appetite (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_20": {
+    "Description": "BISS item 20: Increased appetite (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_21": {
+    "Description": "BISS item 21: Impaired concentration (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_22": {
+    "Description": "BISS item 22: Agitation (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_23": {
+    "Description": "BISS item 23: Irritability - reported (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_24": {
+    "Description": "BISS item 24: Irritability - observed (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_25": {
+    "Description": "BISS item 25: Aggressive behavior (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_26": {
+    "Description": "BISS item 26: Hyperactive (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_27": {
+    "Description": "BISS item 27: Energetic (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_28": {
+    "Description": "BISS item 28: Increased social interest (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_29": {
+    "Description": "BISS item 29: Racing thoughts - reported (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_30": {
+    "Description": "BISS item 30: Pressured speech (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_31": {
+    "Description": "BISS item 31: Increased sexuality (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_32": {
+    "Description": "BISS item 32: Less need for sleep (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_33": {
+    "Description": "BISS item 33: Grandiose (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_34": {
+    "Description": "BISS item 34: Elated (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_35": {
+    "Description": "BISS item 35: Sharpened thinking (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_36": {
+    "Description": "BISS item 36: Elevated evening energy/interests (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_37": {
+    "Description": "BISS item 37: Impulsive (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_38": {
+    "Description": "BISS item 38: Distractible (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_39": {
+    "Description": "BISS item 39: Risky behavior (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_40": {
+    "Description": "BISS item 40: Affective lability (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_41": {
+    "Description": "BISS item 41: Persecutory ideas (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_42": {
+    "Description": "BISS item 42: Delusions (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "biss_43": {
+    "Description": "BISS item 43: Hallucinations (clinician-rated 0-4 over the past 7 days).",
+    "Levels": {
+      "0": "Not at all / absent",
+      "1": "Slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe"
+    }
+  },
+  "madrs_1": {
+    "Description": "MADRS item 1: Apparent sadness (clinician-rated 0-6 over the past 7 days; even values 0/2/4/6 are anchored, odd values are intermediate).",
+    "Levels": {
+      "0": "0 - absent/normal",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6 - most severe"
+    }
+  },
+  "madrs_2": {
+    "Description": "MADRS item 2: Reported sadness (clinician-rated 0-6 over the past 7 days; even values 0/2/4/6 are anchored, odd values are intermediate).",
+    "Levels": {
+      "0": "0 - absent/normal",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6 - most severe"
+    }
+  },
+  "madrs_3": {
+    "Description": "MADRS item 3: Inner tension (clinician-rated 0-6 over the past 7 days; even values 0/2/4/6 are anchored, odd values are intermediate).",
+    "Levels": {
+      "0": "0 - absent/normal",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6 - most severe"
+    }
+  },
+  "madrs_4": {
+    "Description": "MADRS item 4: Reduced sleep (clinician-rated 0-6 over the past 7 days; even values 0/2/4/6 are anchored, odd values are intermediate).",
+    "Levels": {
+      "0": "0 - absent/normal",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6 - most severe"
+    }
+  },
+  "madrs_5": {
+    "Description": "MADRS item 5: Reduced appetite (clinician-rated 0-6 over the past 7 days; even values 0/2/4/6 are anchored, odd values are intermediate).",
+    "Levels": {
+      "0": "0 - absent/normal",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6 - most severe"
+    }
+  },
+  "madrs_6": {
+    "Description": "MADRS item 6: Concentration difficulties (clinician-rated 0-6 over the past 7 days; even values 0/2/4/6 are anchored, odd values are intermediate).",
+    "Levels": {
+      "0": "0 - absent/normal",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6 - most severe"
+    }
+  },
+  "madrs_7": {
+    "Description": "MADRS item 7: Lassitude (clinician-rated 0-6 over the past 7 days; even values 0/2/4/6 are anchored, odd values are intermediate).",
+    "Levels": {
+      "0": "0 - absent/normal",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6 - most severe"
+    }
+  },
+  "madrs_8": {
+    "Description": "MADRS item 8: Inability to feel (clinician-rated 0-6 over the past 7 days; even values 0/2/4/6 are anchored, odd values are intermediate).",
+    "Levels": {
+      "0": "0 - absent/normal",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6 - most severe"
+    }
+  },
+  "madrs_9": {
+    "Description": "MADRS item 9: Pessimistic thoughts (clinician-rated 0-6 over the past 7 days; even values 0/2/4/6 are anchored, odd values are intermediate).",
+    "Levels": {
+      "0": "0 - absent/normal",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6 - most severe"
+    }
+  },
+  "madrs_10": {
+    "Description": "MADRS item 10: Suicidal thoughts (clinician-rated 0-6 over the past 7 days; even values 0/2/4/6 are anchored, odd values are intermediate).",
+    "Levels": {
+      "0": "0 - absent/normal",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6 - most severe"
+    }
+  },
+  "biss_depression": {
+    "Description": "BISS Depression subscale: sum of items biss_1-biss_22. n/a if any item missing."
+  },
+  "biss_mania": {
+    "Description": "BISS Mania subscale: sum of items biss_23-biss_43. n/a if any item missing."
+  },
+  "madrs_total": {
+    "Description": "MADRS total: sum of items madrs_1-madrs_10 (range 0-60). n/a if any item missing."
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Pittsburgh Sleep Quality Index (PSQI)",
+    "Instructions": "The following questions relate to your usual sleep habits during the past month only.",
+    "LongName": "Self-report sleep quality over the past month. Seven component scores (each 0-3) sum to a global score (0-21). Free-text *_text columns are legacy non-coded versions of the time/duration items; psqi_10* are bed-partner-reported items and are not part of the score.",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "psqi_1": {
+    "Description": "During the past month, what time have you usually gone to bed at night? Stored as a 4-digit HHMM clock-time code (24-hour)."
+  },
+  "psqi_1_text": {
+    "Description": "During the past month, what time have you usually gone to bed at night?BED TIME"
+  },
+  "psqi_2": {
+    "Description": "During the past month, how long (in minutes) has it usually taken you to fall asleep each night?NUMBER OF MINUTES"
+  },
+  "psqi_2_text": {
+    "Description": "During the past month, how long (in minutes) has it usually taken you to fall asleep each night?NUMBER OF MINUTES"
+  },
+  "psqi_3": {
+    "Description": "During the past month, what time have you usually gotten up in the morning? Stored as a 4-digit HHMM clock-time code (24-hour)."
+  },
+  "psqi_3_text": {
+    "Description": "During the past month, what time have"
+  },
+  "psqi_4": {
+    "Description": "During the past month, how many hours of actual sleep did you get at night? (This may be different than the number of hours you spent in bed.)HOURS OF SLEEP PER NIGHT"
+  },
+  "psqi_4_text": {
+    "Description": "During the past month, how many hours of actual sleep did you get at night? (This may be different than the number of hours you spent in bed.)HOURS OF SLEEP PER NIGHT"
+  },
+  "psqi_5_other": {
+    "Description": "Other reason(s), please describe"
+  },
+  "psqi_5a": {
+    "Description": "Cannot get to sleep within 30 minutes",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_5b": {
+    "Description": "Wake up in the middle of the night or early morning",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_5c": {
+    "Description": "Have to get up to use the bathroom",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_5d": {
+    "Description": "Cannot breathe comfortably",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_5e": {
+    "Description": "Cough or snore loudly",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_5f": {
+    "Description": "Feel too cold",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_5g": {
+    "Description": "Feel too hot",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_5h": {
+    "Description": "Had bad dreams",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_5i": {
+    "Description": "Have pain",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_5othera": {
+    "Description": "How often during the past month have you had trouble sleeping because of this?Select \"Not during the past month\" if no other trouble sleeping",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_6": {
+    "Description": "During the past month, how would you rate your sleep quality overall?",
+    "Levels": {
+      "0": "Very good",
+      "1": "Fairly good",
+      "2": "Fairly bad",
+      "3": "Very bad"
+    }
+  },
+  "psqi_7": {
+    "Description": "During the past month, how often have you taken medicine to help you sleep (prescribed or \"over the counter\")?",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_8": {
+    "Description": "During the past month, how often have you had trouble staying awake while driving, eating meals, or engaging in social activity?",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_9": {
+    "Description": "During the past month, how much of a problem has it been for you to keep up enough enthusiasm to get things done?",
+    "Levels": {
+      "0": "No problem at all",
+      "1": "Only a very slight problem",
+      "2": "Somewhat of a problem",
+      "3": "A very big problem"
+    }
+  },
+  "psqi_10": {
+    "Description": "Do you have a bed partner or room mate?",
+    "Levels": {
+      "0": "No bed partner or room mate",
+      "1": "Partner/room mate in other room",
+      "2": "Partner in same room, but not same bed",
+      "3": "Partner in same bed"
+    }
+  },
+  "psqi_10a": {
+    "Description": "Loud snoring",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_10b": {
+    "Description": "Long pauses between breaths while asleep",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_10c": {
+    "Description": "Legs twitching or jerking while you sleep",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_10d": {
+    "Description": "Episodes of disorientation or confusion during sleep",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_10e": {
+    "Description": "Other restlessness while you sleep; please describe"
+  },
+  "psqi_10e1": {
+    "Description": "Frequency of the 'other restlessness while you sleep' described in psqi_10e (bed partner / roommate report).",
+    "Levels": {
+      "0": "Not during the past month",
+      "1": "Less than once a week",
+      "2": "Once or twice a week",
+      "3": "Three or more times a week"
+    }
+  },
+  "psqi_score_component1": {
+    "Description": "Component 1 - Subjective sleep quality: equals psqi_6 (0 Very good to 3 Very bad)."
+  },
+  "psqi_score_component2": {
+    "Description": "Component 2 - Sleep latency: psqi_2 (minutes to fall asleep) binned 0-3, plus psqi_5a (0-3); the sum is re-binned (0 / 1-2 / 3-4 / 5-6) to 0-3."
+  },
+  "psqi_score_component3": {
+    "Description": "Component 3 - Sleep duration: from psqi_4 (hours slept): >7h=0, 6-7h=1, 4-5h=2, <5h=3."
+  },
+  "psqi_score_component4": {
+    "Description": "Component 4 - Habitual sleep efficiency: (hours slept psqi_4 / hours in bed [bedtime psqi_1 to rise time psqi_3]) x 100, binned >85%=0, 75-84%=1, 65-74%=2, <65%=3. Manually set to n/a for sub-110354 (implausible reported times)."
+  },
+  "psqi_score_component5": {
+    "Description": "Component 5 - Sleep disturbances: sum of psqi_5b-psqi_5i and psqi_5othera, binned 0=0, 1-9=1, 10-18=2, 19-27=3."
+  },
+  "psqi_score_component6": {
+    "Description": "Component 6 - Use of sleeping medication: equals psqi_7 (0-3)."
+  },
+  "psqi_score_component7": {
+    "Description": "Component 7 - Daytime dysfunction: psqi_8 + psqi_9, binned 0=0, 1-2=1, 3-4=2, 5-6=3."
+  },
+  "psqi_score_global": {
+    "Description": "Global PSQI score: sum of the 7 component scores (range 0-21). n/a if any component is missing; also n/a for sub-110354 (see component 4)."
+  }
+}

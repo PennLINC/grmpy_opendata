@@ -1,0 +1,175 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Motivation and Pleasure Scale - Self-Report (MAP-SR)",
+    "LongName": "15-item scale of motivation and pleasure (negative-symptom domain). Each item rated 0-4; endpoint anchors vary by item (e.g., 0 = No pleasure, 4 = Extreme pleasure).",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "mapssr_1": {
+    "Description": "In the past week, what is the most pleasure you experienced from being with other people?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_2": {
+    "Description": "In the past week, how often have you experienced pleasure from being with other people?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_3": {
+    "Description": "Looking ahead to being with other people in the next few weeks, how much pleasure do you expect you will experience from being with others?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_4": {
+    "Description": "In the past week, what is the most pleasure you experienced from hobbies, recreation, or from work?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_5": {
+    "Description": "In the past week, how often have you experienced pleasure from hobbies, recreation, or from work?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_6": {
+    "Description": "Looking ahead to the next few weeks, how much pleasure do you expect you will experience from your hobbies, recreation, or work?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_7": {
+    "Description": "When it comes to close relationships with your family members, how important have these relationships been to you over the past week?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_8": {
+    "Description": "When it comes to having a close relationship with a romantic partner, how important has this type of relationship been to you over the past week?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_9": {
+    "Description": "When it comes to close relationships with your friends, how important have these relationships been to you over the past week?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_10": {
+    "Description": "In the past week how motivated have you been to be around other people and do things with them?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_11": {
+    "Description": "In the past week how much effort have you made to actually do things with other people?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_12": {
+    "Description": "In the past week how motivated have you been to go to work or school or look for a job or class to take?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_13": {
+    "Description": "In the past week how much effort have you made to do things at work or school? (If you are not working or going to school, how much effort have you made to look for a job or go to school.)",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_14": {
+    "Description": "In the past week how motivated have you been to do hobbies or other recreational activities?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapssr_15": {
+    "Description": "In the past week how much effort have you made to actually do any hobbies or recreational activities?",
+    "Levels": {
+      "0": "0 (lowest - e.g. no pleasure/effort)",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4 (highest - e.g. extreme pleasure/effort)"
+    }
+  },
+  "mapsr_rawtot_sum": {
+    "Description": "MAP-SR total raw score: sum of all 15 items mapssr_1-mapssr_15. n/a if any item missing."
+  },
+  "mapsr_social_sum": {
+    "Description": "Social pleasure subscale: sum of mapssr_1,2,3."
+  },
+  "mapsr_recvoc_sum": {
+    "Description": "Recreational/vocational pleasure subscale: sum of mapssr_4,5,6."
+  },
+  "mapsr_motrelation_sum": {
+    "Description": "Motivation - relationships subscale: sum of mapssr_7,8,9."
+  },
+  "mapsr_engage_sum": {
+    "Description": "Motivation & effort/engagement subscale: sum of mapssr_10,11,12,13,14,15."
+  }
+}

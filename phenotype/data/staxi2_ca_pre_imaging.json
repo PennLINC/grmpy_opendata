@@ -1,0 +1,308 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "State-Trait Anger Expression Inventory-2 Child/Adolescent (STAXI-2 C/A), pre-scan",
+    "LongName": "35-item child/adolescent anger inventory. Part 1 (items 1-10, State Anger) rated 1 Not at all - 3 Very much; Parts 2-3 (items 11-35, Trait Anger and Anger Expression/Control) rated 1 Hardly ever - 3 Often. No reverse coding is applied.",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "staxi2_ca_1": {
+    "Description": "I feel annoyed",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Very much"
+    }
+  },
+  "staxi2_ca_2": {
+    "Description": "I feel angry",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Very much"
+    }
+  },
+  "staxi2_ca_3": {
+    "Description": "I feel irritated",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Very much"
+    }
+  },
+  "staxi2_ca_4": {
+    "Description": "I feel like shouting out loud",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Very much"
+    }
+  },
+  "staxi2_ca_5": {
+    "Description": "I feel like hitting someone",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Very much"
+    }
+  },
+  "staxi2_ca_6": {
+    "Description": "I feel like yelling",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Very much"
+    }
+  },
+  "staxi2_ca_7": {
+    "Description": "I feel like kicking somebody",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Very much"
+    }
+  },
+  "staxi2_ca_8": {
+    "Description": "I feel grumpy",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Very much"
+    }
+  },
+  "staxi2_ca_9": {
+    "Description": "I feel like throwing something",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Very much"
+    }
+  },
+  "staxi2_ca_10": {
+    "Description": "I am mad",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Very much"
+    }
+  },
+  "staxi2_ca_11": {
+    "Description": "I feel angry",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_12": {
+    "Description": "I get mad",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_13": {
+    "Description": "I get angry quickly",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_14": {
+    "Description": "I feel annoyed when I do a good job and no one notices me",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_15": {
+    "Description": "I get mad when I am punished unfairly",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_16": {
+    "Description": "I feel grouchy",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_17": {
+    "Description": "I get angry when I do well and am told I did something wrong",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_18": {
+    "Description": "I feel angry when I am blamed for something I did not do",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_19": {
+    "Description": "I am hotheaded",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_20": {
+    "Description": "I feel like yelling when I do something good and someone says I did bad",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_21": {
+    "Description": "I show my anger",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_22": {
+    "Description": "If I do not like someone, I keep it a secret",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_23": {
+    "Description": "I keep my cool",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_24": {
+    "Description": "I say mean things",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_25": {
+    "Description": "I hide my anger",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_26": {
+    "Description": "I try to relax",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_27": {
+    "Description": "I lose my temper",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_28": {
+    "Description": "I keep my anger in",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_29": {
+    "Description": "I try to calm down",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_30": {
+    "Description": "I try to calm my angry feelings",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_31": {
+    "Description": "I get into arguments",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_32": {
+    "Description": "I do something to relax and calm down",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_33": {
+    "Description": "I am afraid to show my anger",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_34": {
+    "Description": "I do things like slam doors",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_35": {
+    "Description": "I get mad inside, but do not show it",
+    "Levels": {
+      "1": "Hardly ever",
+      "2": "Sometimes",
+      "3": "Often"
+    }
+  },
+  "staxi2_ca_score_state_anger": {
+    "Description": "State Anger: sum of items 1-10. n/a if any item missing."
+  },
+  "staxi2_ca_score_state_anger_feelings": {
+    "Description": "State Anger - Feeling Angry: sum of items 1,2,3,8,10."
+  },
+  "staxi2_ca_score_state_anger_expression": {
+    "Description": "State Anger - Feel like Expressing Anger: sum of items 4,5,6,7,9."
+  },
+  "staxi2_ca_score_trait_anger": {
+    "Description": "Trait Anger: sum of items 11-20. n/a if any item missing."
+  },
+  "staxi2_ca_score_trait_anger_temperament": {
+    "Description": "Trait Anger - Temperament: sum of items 11,12,13,16,19."
+  },
+  "staxi2_ca_score_trait_anger_reaction": {
+    "Description": "Trait Anger - Reaction: sum of items 14,15,17,18,20. (The Anger Expression/Control subscales from items 21-35 were not scored due to uncertainty in the scoring key.)"
+  }
+}

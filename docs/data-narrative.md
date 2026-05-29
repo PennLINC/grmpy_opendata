@@ -1099,9 +1099,20 @@ ari-collateral - missing? - can forget about it
 
 CNB (cognitive battery) - might not release. no dictionary on flywheel. might need dates to make sure they aren't from another study. TODO: follow-up.
 
-Diagnosis - release a subset of columns highlighted by ted.
+Diagnosis - release a subset of columns highlighted by ted. axis.tsv is the output to release.
 
 Demographics.tsv - TODO: what to release?
+
+### sidecars
+"MeasurementToolMetadata" field probably needs updating.
+
+axis.json was inferred, needs updating.
+
+bdi_score_total - needs to be updated to description uneccessarily verbose.
+
+best_ms_score_finalNoComponentC - needs to be updated.
+
+verify spq scoring against the data dict.
 
 
 # helpful hints
