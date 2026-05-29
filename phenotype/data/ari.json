@@ -1,0 +1,72 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Affective Reactivity Index (ARI)",
+    "LongName": "Irritability scale. Items 1-6 are the symptom items (0-2); item 7 is an impairment item and is NOT included in the scored totals.",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "ari_1": {
+    "Description": "Easily annoyed by others",
+    "Levels": {
+      "0": "Not True",
+      "1": "Somewhat True",
+      "2": "Certainly True"
+    }
+  },
+  "ari_2": {
+    "Description": "Often lose temper",
+    "Levels": {
+      "0": "Not True",
+      "1": "Somewhat True",
+      "2": "Certainly True"
+    }
+  },
+  "ari_3": {
+    "Description": "Stay angry for a long time",
+    "Levels": {
+      "0": "Not True",
+      "1": "Somewhat True",
+      "2": "Certainly True"
+    }
+  },
+  "ari_4": {
+    "Description": "Angry most of the time",
+    "Levels": {
+      "0": "Not True",
+      "1": "Somewhat True",
+      "2": "Certainly True"
+    }
+  },
+  "ari_5": {
+    "Description": "Get angry frequently",
+    "Levels": {
+      "0": "Not True",
+      "1": "Somewhat True",
+      "2": "Certainly True"
+    }
+  },
+  "ari_6": {
+    "Description": "Lose temper easily",
+    "Levels": {
+      "0": "Not True",
+      "1": "Somewhat True",
+      "2": "Certainly True"
+    }
+  },
+  "ari_7": {
+    "Description": "Overall, irritability causes me problems",
+    "Levels": {
+      "0": "Not True",
+      "1": "Somewhat True",
+      "2": "Certainly True"
+    }
+  },
+  "ari_score_avg": {
+    "Description": "ARI mean score: mean of items ari_1-ari_6 (each 0-2). Item ari_7 (impairment) is excluded. n/a if any of items 1-6 is missing."
+  },
+  "ari_score_total": {
+    "Description": "ARI total score: sum of items ari_1-ari_6 (each 0-2; range 0-12). Item ari_7 is excluded. n/a if any of items 1-6 is missing."
+  }
+}

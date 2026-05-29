@@ -1,0 +1,193 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "State-Trait Anxiety Inventory (STAI) State, post-scan administration",
+    "LongName": "STAI State items (stai_q_01-20) completed after scanning; each rated 1 Not at all - 4 Very Much So.",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "stai_q_01": {
+    "Description": "I feel calm",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_02": {
+    "Description": "I feel secure",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_03": {
+    "Description": "I am tense",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_04": {
+    "Description": "I feel strained",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_05": {
+    "Description": "I feel at ease",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_06": {
+    "Description": "I feel upset",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_07": {
+    "Description": "I am presently worrying over possible misfortunes",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_08": {
+    "Description": "I feel satisfied",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_09": {
+    "Description": "I feel frightened",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_10": {
+    "Description": "I feel comfortable",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_11": {
+    "Description": "I feel self-confident",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_12": {
+    "Description": "I feel nervous",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_13": {
+    "Description": "I am jittery",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_14": {
+    "Description": "I feel indecisive",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_15": {
+    "Description": "I am relaxed",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_16": {
+    "Description": "I feel content",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_17": {
+    "Description": "I am worried",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_18": {
+    "Description": "I feel confused",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_19": {
+    "Description": "I feel steady",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_q_20": {
+    "Description": "I feel pleasant",
+    "Levels": {
+      "1": "Not at all",
+      "2": "Somewhat",
+      "3": "Moderately So",
+      "4": "Very Much So"
+    }
+  },
+  "stai_state": {
+    "Description": "STAI State score (post-scan): sum of items stai_q_01-20 with reverse-coded items q01,q02,q05,q08,q10,q11,q15,q16,q19,q20 (5-x). Range 20-80. n/a if any item missing."
+  }
+}

@@ -1,0 +1,953 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Schizotypal Personality Questionnaire (SPQ)",
+    "Instructions": "Decide whether each statement is true or false as applied to you. Do not include times when under the influence of drugs/alcohol or when dreaming/falling asleep.",
+    "LongName": "126 True/False items measuring schizotypal personality features, scored on-site into 9 subscales, 3 factors, and validity scales (computed via the REDCap calculations in the developmental-scales codebook). Subscale/factor/validity columns are described individually.",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "spq_cons_affect": {
+    "Description": "Constricted Affect subscale: sum of True responses to items q12,26,40,54,67,79,112,122."
+  },
+  "spq_def_tscale": {
+    "Description": "Defensiveness T-score, normed by sex (admin_sex); -999 indicates not computable."
+  },
+  "spq_defensive": {
+    "Description": "Defensiveness (K) raw scale: reverse-scored q2,5,9,20,27,30,36,39,45,50,53,56,60,65,69,72,74,77,85,87,91,93,98,102,107,111,116,123,126 plus q16."
+  },
+  "spq_factor_1": {
+    "Description": "Cognitive-Perceptual factor: sum of Ideas of Reference, Magical Thinking, Unusual Perceptual Experiences, and Suspiciousness items (q1,4,6,14,15,19,21,28,29,32,34,41,43,46,47,55,57,61,62,68,70,73,75,81,84,88,90,96,97,100,103,105,106)."
+  },
+  "spq_factor_2": {
+    "Description": "Interpersonal factor: sum of No Close Friends, Constricted Affect, Social Anxiety, and Suspiciousness items (q3,10,12,14,17,24,26,28,31,37,40,41,44,51,54,55,59,64,67,68,71,76,79,81,86,92,96,101,106,108,112,118,122)."
+  },
+  "spq_factor_3": {
+    "Description": "Disorganized factor: sum of Odd Behavior and Odd Speech items (q8,11,22,25,35,38,49,52,66,78,94,109,114,115,120,125)."
+  },
+  "spq_factor_cnb_match": {
+    "Description": "Interpersonal factor computed without the Suspiciousness items (for matching to the CNB sample): items q3,10,12,17,24,26,31,37,40,44,51,54,59,64,67,71,76,79,86,92,101,108,112,118,122."
+  },
+  "spq_ideas_ref": {
+    "Description": "Ideas of Reference subscale: sum of True responses to items q1,15,29,43,57,70,84,97,103."
+  },
+  "spq_infrequency": {
+    "Description": "Infrequency (Jackson) validity scale: reverse-scored q7,83,117,121 plus q33,63,99,110. High scores suggest careless/invalid responding."
+  },
+  "spq_lie": {
+    "Description": "Lie scale (raw): count of socially-desirable responses across q2,13,18,23,42,48,58,80,82,89,95,104,113,119,124 (each reverse-scored: False=1)."
+  },
+  "spq_lie_tscale": {
+    "Description": "Lie scale T-score, normed by sex (admin_sex); -999 indicates not computable."
+  },
+  "spq_magical": {
+    "Description": "Odd Beliefs / Magical Thinking subscale: sum of True responses to items q4,19,32,46,61,73,88."
+  },
+  "spq_no_friends": {
+    "Description": "No Close Friends subscale: sum of True responses to items q10,24,37,51,64,76,92,101,108."
+  },
+  "spq_odd_behav": {
+    "Description": "Odd or Eccentric Behavior subscale: sum of True responses to items q8,22,35,49,109,115,125."
+  },
+  "spq_odd_speech": {
+    "Description": "Odd Speech subscale: sum of True responses to items q11,25,38,52,66,78,94,114,120."
+  },
+  "spq_percep": {
+    "Description": "Unusual Perceptual Experiences subscale: sum of True responses to items q6,21,34,47,62,75,90,100,105."
+  },
+  "spq_q_1": {
+    "Description": "Do you sometimes feel that things you see on the TV or read in the newspaper have a special meaning for you?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_2": {
+    "Description": "At times I feel like swearing.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_3": {
+    "Description": "I sometimes avoid going to places where there will be many people because I will get anxious.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_4": {
+    "Description": "Have you had experiences with the supernatural?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_5": {
+    "Description": "I think a great many people exaggerate their misfortunes in order to gain the sympathy and help of others.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_6": {
+    "Description": "Have you often mistaken objects or shadows for people, or noises for voices?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_7": {
+    "Description": "There have been a number of occasions when people I know have said hello to me.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_8": {
+    "Description": "Other people see me as slightly eccentric (odd).",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_9": {
+    "Description": "It takes a lot of argument to convince most people of the truth.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_10": {
+    "Description": "I have little interest in getting to know other people.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_11": {
+    "Description": "People sometimes find it hard to understand what I am saying.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_12": {
+    "Description": "People sometimes find me aloof and distant.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_13": {
+    "Description": "Once in a while I think of things too bad to talk about.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_14": {
+    "Description": "I am sure I am being talked about behind my back.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_15": {
+    "Description": "I am aware that people notice me when I go out for a meal or to see a film.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_16": {
+    "Description": "I have very few quarrels with members of my family.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_17": {
+    "Description": "I get very nervous when I have to make polite conversation.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_18": {
+    "Description": "I do not always tell the truth.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_19": {
+    "Description": "Do you believe in telepathy (mind-reading)?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_20": {
+    "Description": "At times I feel like smashing things.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_21": {
+    "Description": "Have you ever had the sense that some person or force is around you, even though you cannot see anyone?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_22": {
+    "Description": "People sometimes comment on my unusual mannerisms and habits.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_23": {
+    "Description": "I do not read every editorial in the newspaper every day.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_24": {
+    "Description": "I prefer to keep to myself.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_25": {
+    "Description": "I sometimes jump quickly from one topic to another when speaking.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_26": {
+    "Description": "I am poor at expressing my true feelings by the way I talk and look.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_27": {
+    "Description": "Most people will use somewhat unfair means to gain profit or an advantage rather than lose it.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_28": {
+    "Description": "Do you often feel that other people have got it in for you?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_29": {
+    "Description": "Do some people drop hints about you or say things with a double meaning?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_30": {
+    "Description": "Often I can't understand why I have been irritable and grouchy.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_31": {
+    "Description": "Do you ever get nervous when someone is walking behind you?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_32": {
+    "Description": "Are you sometimes sure that other people can tell what you are thinking?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_33": {
+    "Description": "I cannot remember a single occasion where I have ridden on a bus.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_34": {
+    "Description": "When you look at a person, or yourself in a mirror, have you ever seen the face change right before your eyes?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_35": {
+    "Description": "Sometimes other people think that I am a little strange.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_36": {
+    "Description": "Please read carefully and respond to all questions.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_37": {
+    "Description": "I am mostly quiet when with other people.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_38": {
+    "Description": "I sometimes forget what I am trying to say.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_39": {
+    "Description": "Criticism or scolding hurts me terribly.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_40": {
+    "Description": "I rarely laugh and smile.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_41": {
+    "Description": "Do you sometimes get concerned that friends or co-workers are not really loyal or trustworthy?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_42": {
+    "Description": "Once in a while I put off until tomorrow what I ought to do today.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_43": {
+    "Description": "Have you ever noticed a common event or object that seemed to be a special sign for you?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_44": {
+    "Description": "I get anxious when meeting people for the first time.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_45": {
+    "Description": "I certainly feel useless at times.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_46": {
+    "Description": "Do you believe in clairvoyancy (psychic forces, fortune telling)?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_47": {
+    "Description": "I often hear a voice speaking my thoughts aloud.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_48": {
+    "Description": "Sometimes when I am not feeling well I am irritable.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_49": {
+    "Description": "Some people think that I am a very bizarre person.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_50": {
+    "Description": "It makes me impatient to have people ask my advice or otherwise interrupt me when I am working on something important.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_51": {
+    "Description": "I find it hard to be emotionally close to other people.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_52": {
+    "Description": "I often ramble on too much when speaking.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_53": {
+    "Description": "I have never felt better in my life than I do now.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_54": {
+    "Description": "My 'non-verbal' communication (smiling and nodding during a conversation) is poor.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_55": {
+    "Description": "I feel I have to be on my guard even with friends.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_56": {
+    "Description": "I often think, 'I wish I were a child again.'",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_57": {
+    "Description": "Do you sometimes see special meanings in advertisments, shop windows, or in the way things are arranged around you?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_58": {
+    "Description": "I get angry sometimes.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_59": {
+    "Description": "Do you often feel nervous when you are in a group of unfamiliar people?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_60": {
+    "Description": "What others think of me does not bother me.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_61": {
+    "Description": "Can other people feel your feelings when they are not there?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_62": {
+    "Description": "Have you ever seen things invisible to other people?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_63": {
+    "Description": "I find that I often walk with a limp which is the result of a skydiving accident.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_64": {
+    "Description": "Do you feel that there is nobody you are really close to outside of your immediate family, or people you can confide in or talk to about personal problems?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_65": {
+    "Description": "It makes me uncomfortable to put on a stunt at a party even when others are doing the same sort of thing.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_66": {
+    "Description": "Some people find me a bit vague and elusive during a conversation.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_67": {
+    "Description": "I am poor at returning social courtesies and gestures.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_68": {
+    "Description": "Do you often pick up hidden threats or putdowns from what people say or do?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_69": {
+    "Description": "I find it hard to make talk when I meet new people.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_70": {
+    "Description": "When shopping do you get the feeling that other people are taking notice of you?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_71": {
+    "Description": "I feel very uncomfortable in social situations involving unfamiliar people.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_72": {
+    "Description": "I am against giving money to beggars.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_73": {
+    "Description": "Have you had experiences with astrology, seeing the future, UFOs, ESP or a sixth sense?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_74": {
+    "Description": "I find it hard to set aside a task that I have undertaken, even for a short time.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_75": {
+    "Description": "Do everyday things seem unusually large or small?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_76": {
+    "Description": "Writing letters to friends is more trouble that it is worth.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_77": {
+    "Description": "I frequently find myself worrying about something.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_78": {
+    "Description": "I sometimes use words in unusual ways.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_79": {
+    "Description": "I tend to avoid eye contact when conversing with others.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_80": {
+    "Description": "My table manners are not quite as good at home as when I am out in company.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_81": {
+    "Description": "Have you found that it is best not to let other people know too much about you?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_82": {
+    "Description": "If I could get into a movie without paying and be sure I was not seen I would probably do it.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_83": {
+    "Description": "There have been times when I have dialed a telephone number only to find that the number was busy.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_84": {
+    "Description": "When you see people talking to each other, do you often wonder if they are talking about you?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_85": {
+    "Description": "I like to let people know where I stand on things.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_86": {
+    "Description": "I would feel very anxious if I had to give a speech in front of a large group of people.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_87": {
+    "Description": "I get mad easily then get over it soon.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_88": {
+    "Description": "Have you ever felt that you are communicating with another person telepathically (by mind-reading)?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_89": {
+    "Description": "I would rather win than lose in a game.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_90": {
+    "Description": "Does your sense of smell sometimes become unusually strong?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_91": {
+    "Description": "When in a group of people I have trouble thinking of the right things to talk about.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_92": {
+    "Description": "I tend to keep in the background on social occasions.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_93": {
+    "Description": "I have periods in which I feel unusually cheerful without any special reason.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_94": {
+    "Description": "Do you tend to wander off the topic when having a conversation?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_95": {
+    "Description": "Once in a while I laugh at a dirty joke.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_96": {
+    "Description": "I often feel that others have it in for me.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_97": {
+    "Description": "Do you sometimes feel that other people are watching you?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_98": {
+    "Description": "I think nearly anyone would tell a lie to keep out of trouble.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_99": {
+    "Description": "I visited Easter Island last year.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_100": {
+    "Description": "Do you ever suddenly feel distracted by distant sounds that you are normally not aware of?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_101": {
+    "Description": "I attach little importance to having close friends.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_102": {
+    "Description": "I worry over money and business.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_103": {
+    "Description": "Do you sometimes feel that people are talking about you?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_104": {
+    "Description": "I like to know some important people because it makes me feel important.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_105": {
+    "Description": "Are your thoughts sometimes so strong that you can almost hear them?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_106": {
+    "Description": "Do you often have to keep an eye out to stop people from taking advantage of you?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_107": {
+    "Description": "At times I am full of energy.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_108": {
+    "Description": "Do you feel that you are unable to get 'close' to people?",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_109": {
+    "Description": "I am an odd, unusual person.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_110": {
+    "Description": "I go at least once every two years to visit either northern Scotland or some parts of Scandinavia.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_111": {
+    "Description": "People often disappoint me.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_112": {
+    "Description": "I do not have an expressive and lively way of speaking.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_113": {
+    "Description": "I do not like everyone I know.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_114": {
+    "Description": "I find it hard to communicate clearly what I want to say to people.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_115": {
+    "Description": "I have some eccentric (odd) habits.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_116": {
+    "Description": "I have sometimes felt that difficulties were piling up so high that I could not overcome them.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_117": {
+    "Description": "Sometimes I feel sleepy or tired.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_118": {
+    "Description": "I feel very uneasy talking to people I do not know well.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_119": {
+    "Description": "I gossip a little at times.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_120": {
+    "Description": "People occasionally comment that my conversation is confusing.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_121": {
+    "Description": "On some occasions I have noticed that some other people are better dressed than myself.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_122": {
+    "Description": "I tend to keep my feelings to myself.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_123": {
+    "Description": "At periods my mind seems to work more slowly than usual.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_124": {
+    "Description": "Sometimes in elections I vote for people whom I know very little.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_125": {
+    "Description": "People sometimes stare at me because of my odd appearance.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_q_126": {
+    "Description": "I have often met people who were supposed to be experts who were no better than I.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "spq_social_anx": {
+    "Description": "Excessive Social Anxiety subscale: sum of True responses to items q3,17,31,44,59,71,86,118."
+  },
+  "spq_spq": {
+    "Description": "SPQ total score (without validity items): sum of the True (=1) responses across the 9 subscale item sets (see subscale columns). Higher = more schizotypal features."
+  },
+  "spq_suspicious": {
+    "Description": "Suspiciousness subscale: sum of True responses to items q14,28,41,55,68,81,96,106."
+  },
+  "spq_validity": {
+    "Description": "Overall validity score combining infrequency, lie and defensiveness indicators (see SPQ scoring codebook). Higher = more likely invalid."
+  }
+}

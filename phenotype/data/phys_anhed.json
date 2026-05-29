@@ -1,0 +1,119 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Revised Physical Anhedonia Scale - short form (RPAS, 15 items)",
+    "Instructions": "For each of the following items, select either True or False.",
+    "LongName": "15 True/False items measuring physical anhedonia.",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "phys_anhed_1": {
+    "Description": "I have often found walks to be relaxing and enjoyable.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_2": {
+    "Description": "A brisk walk has sometimes made me feel good all over.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_3": {
+    "Description": "The sound of the rain falling on the roof has made me feel snug and secure.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_4": {
+    "Description": "After a busy day, a slow walk has often felt relaxing.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_5": {
+    "Description": "The beauty of sunsets is greatly overrated.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_6": {
+    "Description": "The sound of rustling leaves has never much pleased me.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_7": {
+    "Description": "It has often felt good to massage my muscles when they are tired or sore.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_8": {
+    "Description": "Flowers aren't as beautiful as many people claim.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_9": {
+    "Description": "I like playing with and petting soft little kittens or puppies.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_10": {
+    "Description": "I don't understand why people enjoy looking at the stars at night.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_11": {
+    "Description": "When I'm feeling a little sad, singing has often made me feel happier.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_12": {
+    "Description": "Beautiful scenery has been a great delight to me.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_13": {
+    "Description": "The first winter snowfall has often looked pretty to me.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_14": {
+    "Description": "A good soap lather when I'm bathing has sometimes soothed and refreshed me.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "phys_anhed_15": {
+    "Description": "Standing on a high place and looking out over the view is very exciting.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "rpasShort_score_total": {
+    "Description": "Physical anhedonia total (RPAS short): items 5,6,8,10 scored as-is (True=1) plus items 1,2,3,4,7,9,11,12,13,14,15 reverse-coded (1-x), then summed. Range 0-15. n/a if any item missing."
+  }
+}

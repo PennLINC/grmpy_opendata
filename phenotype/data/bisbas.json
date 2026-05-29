@@ -1,0 +1,238 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Behavioral Inhibition / Behavioral Activation Scales (BIS/BAS)",
+    "LongName": "24-item self-report; items rated 1 (Very true for me) to 4 (Very false for me). Items 1, 6, 11, 17 are fillers and are not scored.",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "bisbas_1": {
+    "Description": "A person's family is the most important thing in life.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_2": {
+    "Description": "Even if something bad is about to happen to me, I rarely experience fear or nervousness.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_3": {
+    "Description": "I go out of my way to get things I want.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_4": {
+    "Description": "When I'm doing well at something I love to keep at it.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_5": {
+    "Description": "I'm always willing to try something new if I think it will be fun.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_6": {
+    "Description": "How I dress is important to me.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_7": {
+    "Description": "When I get something I want, I feel excited and energized.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_8": {
+    "Description": "Criticism or scolding hurts me quite a bit.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_9": {
+    "Description": "When I want something I usually go all-out to get it.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_10": {
+    "Description": "I will often do things for no other reason than that they might be fun.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_11": {
+    "Description": "It's hard for me to find the time to do things such as get a haircut.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_12": {
+    "Description": "If I see a chance to get something I want I move on it right away.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_13": {
+    "Description": "I feel pretty worried or upset when I think or know somebody is angry at me.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_14": {
+    "Description": "When I see an opportunity for something I like I get excited right away.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_15": {
+    "Description": "I often act on the spur of the moment.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_16": {
+    "Description": "If I think something unpleasant is going to happen I usually get pretty \"worked up.\"",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_17": {
+    "Description": "I often wonder why people act the way they do.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_18": {
+    "Description": "When good things happen to me, it affects me strongly.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_19": {
+    "Description": "I feel worried when I think I have done poorly at something important.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_20": {
+    "Description": "I crave excitement and new sensations.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_21": {
+    "Description": "When I go after something I use a \"no holds barred\" approach.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_22": {
+    "Description": "I have very few fears compared to my friends.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_23": {
+    "Description": "It would excite me to win a contest.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bisbas_24": {
+    "Description": "I worry about making mistakes.",
+    "Levels": {
+      "1": "Very true for me",
+      "2": "Somewhat true for me",
+      "3": "Somewhat false for me",
+      "4": "Very false for me"
+    }
+  },
+  "bis_score_total": {
+    "Description": "BIS total: items 8,13,16,19,24 reverse-coded (5-x) then summed with items 2,22 (not reversed). Higher = greater behavioral inhibition. n/a if any contributing item is missing."
+  },
+  "bas_score_driveTotal": {
+    "Description": "BAS Drive: sum of reverse-coded (5-x) items 3,9,12,21. n/a if any item missing."
+  },
+  "bas_score_funTotal": {
+    "Description": "BAS Fun Seeking: sum of reverse-coded (5-x) items 5,10,15,20. n/a if any item missing."
+  },
+  "bas_score_rewardTotal": {
+    "Description": "BAS Reward Responsiveness: sum of reverse-coded (5-x) items 4,7,14,18,23. n/a if any item missing."
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Borderline Evaluation of Severity over Time - Modified Satterthwaite (BEST-MS)",
+    "LongName": "Modified BEST. Subscale A (items 1-8, negative thoughts/feelings) and Subscale B (items 9-12, negative behaviors) are scored; Subscale C (positive behaviors) was not administered. Items rated 1 (None/slight) to 5 (Extreme).",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "best_ms_1": {
+    "Description": "Worrying that someone important in your life is tired of you or is planning to leave you.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_ms_2": {
+    "Description": "Major shifts in your opinions about others such as switching from believing someone is a loyal friend or partner to believing the person is untrustworthy and hurtful.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_ms_3": {
+    "Description": "Extreme changes in how you see yourself. Shifting from feeling confident about who you are to feeling like you are evil or that you don't even exist.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_ms_4": {
+    "Description": "Severe mood swings several times a day. Minor events cause major shifts in moods.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_ms_5": {
+    "Description": "Feeling paranoid or like you are losing touch with reality.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_ms_6": {
+    "Description": "Feeling angry.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_ms_7": {
+    "Description": "Feelings of emptiness.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_ms_8": {
+    "Description": "Feeling suicidal.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_ms_9": {
+    "Description": "Going to extremes to try to keep someone from leaving you.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_ms_10": {
+    "Description": "Purposefully doing something to injure yourself or making a suicide attempt.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_ms_11": {
+    "Description": "Problems with impulsive behavior (not counting suicide attempts or injuring yourself on purpose). Examples include: over-spending, risky sexual behavior, substance abuse, reckless driving, binge eating.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_ms_11_behaviors___1": {
+    "Description": "Over-spending (checkbox option; 1 = selected, 0 = not selected)",
+    "Levels": {
+      "1": "Checked",
+      "0": "Unchecked"
+    }
+  },
+  "best_ms_11_behaviors___2": {
+    "Description": "Risky sexual behavior (checkbox option; 1 = selected, 0 = not selected)",
+    "Levels": {
+      "1": "Checked",
+      "0": "Unchecked"
+    }
+  },
+  "best_ms_11_behaviors___3": {
+    "Description": "Substance abuse (checkbox option; 1 = selected, 0 = not selected)",
+    "Levels": {
+      "1": "Checked",
+      "0": "Unchecked"
+    }
+  },
+  "best_ms_11_behaviors___4": {
+    "Description": "Reckless driving (checkbox option; 1 = selected, 0 = not selected)",
+    "Levels": {
+      "1": "Checked",
+      "0": "Unchecked"
+    }
+  },
+  "best_ms_11_behaviors___5": {
+    "Description": "Binge Eating (checkbox option; 1 = selected, 0 = not selected)",
+    "Levels": {
+      "1": "Checked",
+      "0": "Unchecked"
+    }
+  },
+  "best_ms_11_behaviors___6": {
+    "Description": "Other (checkbox option; 1 = selected, 0 = not selected)",
+    "Levels": {
+      "1": "Checked",
+      "0": "Unchecked"
+    }
+  },
+  "best_ms_11_other": {
+    "Description": "If you chose other in above question, please explain:"
+  },
+  "best_ms_12": {
+    "Description": "Temper outbursts or problems with anger leading to relationship problems, physical fights, or destruction of property.",
+    "Levels": {
+      "1": "None/slight",
+      "2": "Mild",
+      "3": "Moderate",
+      "4": "Severe",
+      "5": "Extreme"
+    }
+  },
+  "best_score_subscaleA": {
+    "Description": "BEST-MS Subscale A (thoughts & feelings): sum of items best_ms_1-best_ms_8 (each 1-5). n/a if any item missing."
+  },
+  "best_score_subscaleB": {
+    "Description": "BEST-MS Subscale B (negative behaviors): sum of items best_ms_9-best_ms_12 (each 1-5). n/a if any item missing."
+  },
+  "best_score_finalNoComponentC": {
+    "Description": "BEST-MS total = Subscale A + Subscale B. Subscale C (Positive Behaviors) was not administered, so the standard +15 correction factor is NOT applied. n/a if either subscale is missing."
+  }
+}

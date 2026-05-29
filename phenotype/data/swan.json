@@ -1,0 +1,136 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "E-SWAN ADHD scale (items only; not scored)",
+    "LongName": "18 ADHD items. In this dataset responses are binary (0 = 'Quite a bit or Very much', 1 = 'Not at all or Just a little'). No summary score is released: the administered response format differs from the standard SWAN (-3 to 3) and the scoring could not be validated, so only the item responses are provided. See data-narrative.md.",
+    "MissingValues": "n/a"
+  },
+  "participant_id": {
+    "Description": "Participant identifier (sub-<BBLID>)."
+  },
+  "swan_1": {
+    "Description": "Give close attention to detail and avoid careless mistakes",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_2": {
+    "Description": "Sustain (keep) attention on tasks or play activities",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_3": {
+    "Description": "Listen when spoken to directly",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_4": {
+    "Description": "Follow through on instructions and finish school work and chores",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_5": {
+    "Description": "Organize tasks and activities",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_6": {
+    "Description": "Engage in tasks that require sustained mental effort",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_7": {
+    "Description": "Keep track of things necessary for activities (don't lose them)",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_8": {
+    "Description": "Ignore extraneous stimuli (unimportant things around you)",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_9": {
+    "Description": "Remember daily activities",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_10": {
+    "Description": "Sit still (control movement of hands or feet or control squirming)",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_11": {
+    "Description": "Stay seated (when required by class rules or social conventions)",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_12": {
+    "Description": "Modulate motor activity (inhibit or don't do inappropriate running or climbing)",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_13": {
+    "Description": "Play quietly (keep noise level reasonable)",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_14": {
+    "Description": "Settle down and rest (control constant activity)",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_15": {
+    "Description": "Modulate verbal activity (control excessive talking)",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_16": {
+    "Description": "Reflect on questions (control blurting out answers)",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_17": {
+    "Description": "Await turn (stand in line and take turns)",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  },
+  "swan_18": {
+    "Description": "Enter into conversation and games without interrupting or intruding",
+    "Levels": {
+      "0": "Quite a bit or Very much",
+      "1": "Not at all or Just a little"
+    }
+  }
+}
