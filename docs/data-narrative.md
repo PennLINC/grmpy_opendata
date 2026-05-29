@@ -1032,7 +1032,6 @@ The self-report itemwise data was split into separate files using the [`03_separ
 
 Note - in general, if missing an item used in scoring, the summary score should be NA.
 
-Q: Do reverse coded items need to be reversed in the tsv or just in the score? e.g. bisbas
 Q: Should integer fields be converted to integer type in the tsv?
 TODO: make json sidecars for each tsv.
 
@@ -1064,7 +1063,7 @@ phys_anhed - scored as rpasShort - EF has this, did sum and average, while here 
 
 soc_anhed - scored as rsasShort - EF has this, did sum and average, while here is only sum. completed.
 
-***prime_screen - TODO - send data + data dict to Ted.
+prime_screen - do not release. TODO: remove.
 
 ***Proband_GOASSESS - only has summary/flagged columns. TODO - ignore for now, look in flyhweel for study group related to irritability.
 
@@ -1098,18 +1097,11 @@ scared-collateral - missing? - can forget about it
 
 ari-collateral - missing? - can forget about it
 
-NOTE: these subjects are missing all summary scores in the self_report_summary.tsv
-sub-20949
-sub-20963
-sub-20974
-sub-20981
-sub-21016
-sub-21056
-sub-21085
-
 CNB (cognitive battery) - might not release. no dictionary on flywheel. might need dates to make sure they aren't from another study. TODO: follow-up.
 
-Diagnosis - TODO: send to Ted. looks like something from a psychiatric screening. not sure if we should include this.
+Diagnosis - release a subset of columns highlighted by ted.
+
+Demographics.tsv - TODO: what to release?
 
 
 # helpful hints
