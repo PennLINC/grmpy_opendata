@@ -175,37 +175,50 @@ def add_mapsr_scores(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def add_swan_scores(df: pd.DataFrame) -> pd.DataFrame:
-    part1 = [f"swan_{i}" for i in range(1, 10)]
-    part2 = [f"swan_{i}" for i in range(10, 19)]
-    df["swan_total1"] = sum_columns_complete(df, part1)
-    df["swan_total2"] = sum_columns_complete(df, part2)
+    # The eswanADHD scale administered is non-conventional, so we're not scoring it.
 
-    # ADHD classification flags
-    t1 = to_numeric(df["swan_total1"]) if "swan_total1" in df else pd.Series()
-    t2 = to_numeric(df["swan_total2"]) if "swan_total2" in df else pd.Series()
+    # part1 = [f"swan_{i}" for i in range(1, 10)]
+    # part2 = [f"swan_{i}" for i in range(10, 19)]
+    # df["swan_total1"] = sum_columns_complete(df, part1)
+    # df["swan_total2"] = sum_columns_complete(df, part2)
 
-    def flag(series_cond: pd.Series) -> pd.Series:
-        return (
-            series_cond.astype("float")
-            .where(~series_cond.isna(), other=math.nan)
-            .astype("Int64")
-        )
+    # # ADHD classification flags
+    # t1 = to_numeric(df["swan_total1"]) if "swan_total1" in df else pd.Series()
+    # t2 = to_numeric(df["swan_total2"]) if "swan_total2" in df else pd.Series()
 
-    # Only classify when both subscale totals are present; otherwise leave NA
-    valid = t1.notna() & t2.notna()
-    cond_combined = (t1 >= 6) & (t2 >= 6)
-    cond_inatt = (t1 >= 6) & (t2 < 6)
-    cond_hyper = (t1 < 6) & (t2 >= 6)
-    cond_none = (t1 < 6) & (t2 < 6)
+    # def flag(series_cond: pd.Series) -> pd.Series:
+    #     return (
+    #         series_cond.astype("float")
+    #         .where(~series_cond.isna(), other=math.nan)
+    #         .astype("Int64")
+    #     )
 
-    def flag_valid(series_cond: pd.Series) -> pd.Series:
-        out = flag(series_cond)
-        return out.where(valid, other=pd.NA)
+    # # Only classify when both subscale totals are present; otherwise leave NA
+    # valid = t1.notna() & t2.notna()
+    # cond_combined = (t1 >= 6) & (t2 >= 6)
+    # cond_inatt = (t1 >= 6) & (t2 < 6)
+    # cond_hyper = (t1 < 6) & (t2 >= 6)
+    # cond_none = (t1 < 6) & (t2 < 6)
 
-    df["eswanADHD_score_combined"] = flag_valid(cond_combined)
-    df["eswanADHD_score_inattentive"] = flag_valid(cond_inatt)
-    df["eswanADHD_score_hyperactive"] = flag_valid(cond_hyper)
-    df["eswanADHD_score_noADHD"] = flag_valid(cond_none)
+    # def flag_valid(series_cond: pd.Series) -> pd.Series:
+    #     out = flag(series_cond)
+    #     return out.where(valid, other=pd.NA)
+
+    # df["eswanADHD_score_combined"] = flag_valid(cond_combined)
+    # df["eswanADHD_score_inattentive"] = flag_valid(cond_inatt)
+    # df["eswanADHD_score_hyperactive"] = flag_valid(cond_hyper)
+    # df["eswanADHD_score_noADHD"] = flag_valid(cond_none)
+    # Remove these columns (if present) since no longer scoring them.
+    for col in [
+        "swan_total1",
+        "swan_total2",
+        "eswanADHD_score_combined",
+        "eswanADHD_score_inattentive",
+        "eswanADHD_score_hyperactive",
+        "eswanADHD_score_noADHD",
+    ]:
+        if col in df.columns:
+            df.drop(columns=[col], inplace=True)
     return df
 
 
