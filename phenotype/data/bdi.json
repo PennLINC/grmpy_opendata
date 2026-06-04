@@ -1,15 +1,14 @@
 {
   "MeasurementToolMetadata": {
     "Description": "Beck Depression Inventory (BDI-IA)",
-    "Instructions": "On this questionnaire are groups of statements. Read each group and select the one statement that best describes the way you have been feeling in the past week, including today.",
-    "LongName": "21-item self-report of depressive symptoms over the past week. Each item presents four statements scored 0-3. Item bdi_19a is an auxiliary Yes/No item (intentional weight loss) and is not part of the total.",
-    "MissingValues": "n/a"
+    "Instructions": "On this questionnaire are groups of statements. Please read each group of statements carefully. Then select the one statement in each group that best describes the way you have been feeling in the PAST WEEK, INCLUDING TODAY!",
+    "Notes": "21-item self-report of depressive symptoms over the past week. Each item presents four statements scored 0-3. Item bdi_19a is an auxiliary Yes/No item (intentional weight loss) and is not part of the total.",
+    "TermURL": "https://pubmed.ncbi.nlm.nih.gov/13688369/"
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "bdi_1": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 1: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I do not feel sad.",
       "1": "I feel sad.",
@@ -18,7 +17,6 @@
     }
   },
   "bdi_2": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 2: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I am not particularly discouraged about the future.",
       "1": "I feel discouraged about the future.",
@@ -27,7 +25,6 @@
     }
   },
   "bdi_3": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 3: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I do not feel like a failure.",
       "1": "I feel I have failed more than the average person.",
@@ -36,7 +33,6 @@
     }
   },
   "bdi_4": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 4: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I get as much satisfaction out of things as I used to.",
       "1": "I don't enjoy things the way I used to.",
@@ -45,7 +41,6 @@
     }
   },
   "bdi_5": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 5: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I don't feel particularly guilty.",
       "1": "I feel guilty a good part of the time.",
@@ -54,7 +49,6 @@
     }
   },
   "bdi_6": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 6: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I don't feel I am being punished.",
       "1": "I feel I may be punished.",
@@ -63,7 +57,6 @@
     }
   },
   "bdi_7": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 7: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I don't feel disappointed in myself.",
       "1": "I am disappointed in myself.",
@@ -72,7 +65,6 @@
     }
   },
   "bdi_8": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 8: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I don't feel I am any worse than anybody else.",
       "1": "I am critical of myself for my weaknesses and mistakes.",
@@ -81,7 +73,6 @@
     }
   },
   "bdi_9": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 9: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I don't have any thoughts of killing myself.",
       "1": "I have thoughts of killing myself, but I would not carry them out.",
@@ -90,7 +81,6 @@
     }
   },
   "bdi_10": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 10: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I don't cry any more than usual.",
       "1": "I cry more now than I used to.",
@@ -99,7 +89,6 @@
     }
   },
   "bdi_11": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 11: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I am no more irritated now than I ever am.",
       "1": "I get annoyed or irritated more easily than I used to.",
@@ -108,7 +97,6 @@
     }
   },
   "bdi_12": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 12: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I have not lost interest in other people.",
       "1": "I am less interested in other people than I used to be.",
@@ -117,7 +105,6 @@
     }
   },
   "bdi_13": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 13: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I make decisions as well as I ever could.",
       "1": "I put off making decisions more than I used to.",
@@ -126,7 +113,6 @@
     }
   },
   "bdi_14": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 14: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I don't feel I look any worse than I used to.",
       "1": "I am worried that I am looking old or unattractive.",
@@ -135,7 +121,6 @@
     }
   },
   "bdi_15": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 15: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I can work about as well as before.",
       "1": "It takes an extra effort to get started at doing something.",
@@ -144,7 +129,6 @@
     }
   },
   "bdi_16": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 16: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I can sleep as well as usual.",
       "1": "I don't sleep as well as I used to.",
@@ -153,7 +137,6 @@
     }
   },
   "bdi_17": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 17: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I don't get more tired than usual.",
       "1": "I get tired more easily than I used to.",
@@ -162,7 +145,6 @@
     }
   },
   "bdi_18": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 18: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "My appetite is no worse than usual.",
       "1": "My appetite is not as good as it used to be.",
@@ -171,7 +153,6 @@
     }
   },
   "bdi_19": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 19: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I haven't lost much weight, if any, lately.",
       "1": "I have lost more than 5 pounds.",
@@ -187,7 +168,6 @@
     }
   },
   "bdi_20": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 20: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I am no more worried about my health than usual.",
       "1": "I am worried about physical problems such as aches or pains, upset stomachs, or constipation.",
@@ -196,7 +176,6 @@
     }
   },
   "bdi_21": {
-    "Description": "Beck Depression Inventory (BDI-IA) item 21: respondent selects the statement that best describes how they have felt in the past week, including today (see Levels).",
     "Levels": {
       "0": "I have not noticed any recent changes in my interest in sex.",
       "1": "I am less interested in sex than I used to be.",
@@ -205,6 +184,7 @@
     }
   },
   "bdi_score_total": {
-    "Description": "BDI-IA total score: sum of items bdi_1-bdi_21 (each 0-3; bdi_19a is excluded). Range 0-63. n/a if any of items 1-21 is missing. Note: GRMPY administered items 9 (suicidality) and 21 (sex) which are retained here."
+    "Description": "BDI-IA total score: sum of items bdi_1-bdi_21 (each 0-3; bdi_19a is excluded). Range 0-63. n/a if any of items 1-21 is missing.",
+    "Derivative": true
   }
 }

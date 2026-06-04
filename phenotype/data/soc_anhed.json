@@ -2,11 +2,10 @@
   "MeasurementToolMetadata": {
     "Description": "Revised Social Anhedonia Scale - short form (RSAS, 15 items)",
     "Instructions": "For each of the following items, select either True or False.",
-    "LongName": "15 True/False items measuring social anhedonia.",
-    "MissingValues": "n/a"
+    "TermURL": "https://doi.org/10.1037/0021-843X.85.4.374"
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "soc_anhed_1": {
     "Description": "Having close friends is not as important as many people say.",
