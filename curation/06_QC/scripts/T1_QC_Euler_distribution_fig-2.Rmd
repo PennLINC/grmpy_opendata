@@ -1,0 +1,118 @@
+---
+title: "T1_Euler_fig"
+author: "Brooke Sevchik"
+date: "2026-05-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load libraries}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(forcats)
+library(stringr)
+
+```
+
+
+```{r load in necessary csv }
+t1_qc <- read.csv('/Users/bsevchik/Documents/GitHub/grmpy_opendata/curation/06_QC/data/final_qc/T1_qc.csv')
+
+```
+
+
+```{r violin plot}
+
+# ------------Clean labels -------------
+#get rid of trailing or leading spaces
+t1_qc <- t1_qc %>%
+  mutate(
+    qc_determination = qc_determination |>
+      str_trim() |>        # removes leading/trailing spaces
+      str_squish()         # collapses any double spaces inside
+  )
+
+# ------------- Long format -------------
+qc_long <- t1_qc %>%
+  select(lh_euler, rh_euler, qc_determination) %>%
+  pivot_longer(
+    cols = c(lh_euler, rh_euler),
+    names_to = "hemisphere",
+    values_to = "euler"
+  ) %>%
+  mutate(
+    hemisphere = recode(hemisphere, lh_euler = "LH", rh_euler = "RH"),
+    # order AFTER cleaning; this won’t create NAs
+    qc_determination = fct_relevel(qc_determination, "fail", "artifact", "pass")
+  ) %>%
+  filter(!is.na(euler), !is.na(qc_determination))
+
+# ------------- Plot -------------
+pd <- position_dodge(width = 0.85)
+
+p <- ggplot(qc_long, aes(x = qc_determination, y = euler,
+                         fill = hemisphere, color = hemisphere)) +
+  geom_violin(position = pd, width = 0.8, alpha = 0.35, trim = FALSE) +
+  geom_boxplot(width = 0.15, position = pd, outlier.shape = NA, alpha = 0.9, color = NA) +
+  stat_summary(fun = median, geom = "point", position = pd,
+               shape = 23, size = 2.6, fill = "white") +
+  labs(
+    x = "QC determination",
+    y = "Euler number",
+    fill = "Hemisphere",
+    color = "Hemisphere",
+    title = "Euler Number by QC Determinations"
+  ) +
+  scale_fill_manual(values = c("LH" = "#1f77b4", "RH" = "lightgreen"),
+                    labels = c("LH" = "Left Hemisphere", "RH" = "Right Hemisphere")) +
+  scale_color_manual(values = c("Left Hemisphere" = "#1f77b4", "Right Hemisphere" = "lightgreen")) +
+  theme_minimal(base_size = 13) +
+  theme(panel.grid.minor = element_blank(),
+        legend.position = "right")
+
+p
+ggsave("/Users/bsevchik/Documents/GitHub/grmpy_opendata/figures/input/fig3/euler_violin_by_qc_hemisphere.png", p, width = 7.5, height = 4.5, dpi = 300)
+
+ggsave("/Users/bsevchik/Documents/GitHub/grmpy_opendata/figures/input/fig3/euler_violin_by_qc_hemisphere.pdf", p, device = "pdf", width = 7.5, height = 4.5, dpi = 300)
+
+
+```
+
+```{r box plot}
+# ------------- Box Plot -------------
+pd <- position_dodge(width = 0.7)
+
+p_box <- ggplot(qc_long, aes(x = qc_determination, y = euler,
+                             fill = hemisphere)) +
+  geom_boxplot(position = pd, width = 0.6, outlier.shape = NA, alpha = 0.85) +
+  labs(
+    x = "QC determination",
+    y = "Euler number",
+    fill = "Hemisphere",
+    title = "Euler Number by QC Determinations"
+  ) +
+  scale_fill_manual(values = c("LH" = "#1f77b4", "RH" = "lightgreen"),
+                    labels = c("LH" = "Left Hemisphere", "RH" = "Right Hemisphere")) +
+  theme_minimal(base_size = 13) +
+  theme(
+    panel.grid.minor = element_blank(),
+    legend.position = "right",
+    axis.line = element_line(color = "black"),   # add x/y axis lines
+    panel.border = element_blank()
+  )
+
+p_box
+
+ggsave("/Users/bsevchik/Documents/GitHub/grmpy_opendata/figures/input/fig3/euler_box_by_qc_hemisphere.png", p_box, width = 7.5, height = 4.5, dpi = 300)
+
+ggsave("/Users/bsevchik/Documents/GitHub/grmpy_opendata/figures/input/fig3/euler_box_by_qc_hemisphere.pdf", p_box, device = "pdf", width = 7.5, height = 4.5, dpi = 300)
+
+
+```
+
+
+
