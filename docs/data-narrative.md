@@ -1039,13 +1039,13 @@ aces - completed + verified.
 
 als - completed - i have just an average score, EF also has a sum.
 
-ari - completed + verified.
+ari - completed + verified. JSON complete.
 
-bdi - completed + verified. note: grmpy has item 9 and 21 (related to suicidality and sex) that were not present in EF.
+bdi - completed + verified. JSON complete.
 
 best-ms - completed + verified against self_report_summary.tsv. Note this is a best modified satterthwaite version of best.
 
-bisbas - completed + verified against self_report_summary.tsv. This is in EF, EF has 20 items, grmpy has 24. follow-up on this. Dan's code might have the full 24.
+bisbas - completed + verified against self_report_summary.tsv. EF is a child version. TODO: JSON needs "TermURL".
 
 biss_madrs - completed + verified w/ Ted.
 
@@ -1059,9 +1059,9 @@ hcl16 - completed + verified against self_report_summary.tsv. R code only uses h
 
 mapssr - completed + verified.
 
-phys_anhed - scored as rpasShort - EF has this, did sum and average, while here is only sum. completed.
+phys_anhed - scored as rpasShort - EF has this, did sum and average, while here is only sum. completed. JSON complete. TODO: rename to rpas??
 
-soc_anhed - scored as rsasShort - EF has this, did sum and average, while here is only sum. completed.
+soc_anhed - scored as rsasShort - EF has this, did sum and average, while here is only sum. completed. JSON complete. TODO: rename to rsas??
 
 prime_screen - do not release. TODO: remove.
 
@@ -1071,7 +1071,7 @@ psqi - completed + verified. sub-110354 says they spend 6am to 5am in bed but on
 
 rpaq - complete + verified against self_report_summary.tsv. not in EF.
 
-scared - completed + verified against self_report_summary.tsv. not in EF.
+scared - completed + verified against self_report_summary.tsv. not in EF. TODO: JSON needs "TermURL".
 
 stai_pre_imaging - completed + verified.
 
@@ -1079,7 +1079,7 @@ stai_post_imaging - completed + verified.
 
 staxi2-ca - scored by summing based on https://www.annarbor.co.uk/index.php?main_page=index&cPath=419_322. Anger expression subscales were not scored due to lack of clarity on the scoring logic.
 
-swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary (0 = quite a bit or very much. 1 = not at all or just a little). Original publications says responses should range from -3 to 3. Would need to confirm 1) if reverse coding is needed, 2) if the R code is correct based on the inputs (are the thresholds imposed based on binary inputs?). Unclear if swan_total1 and swan_total2 are needed at all -- was in the R code but not in the self_report_itemwise.tsv. DECISION: removed scoring but left the answers. Followup to see if Ted would rather delete.
+swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary (0 = quite a bit or very much. 1 = not at all or just a little). Original publications says responses should range from -3 to 3. Would need to confirm 1) if reverse coding is needed, 2) if the R code is correct based on the inputs (are the thresholds imposed based on binary inputs?). Unclear if swan_total1 and swan_total2 are needed at all -- was in the R code but not in the self_report_itemwise.tsv. DECISION: removed scoring but left the answers. TODO: Followup to see if Ted would rather delete. JSON not validated.
 
 suq - no scoring needed. added validity column on substance_othr_040/050 - should be 0 b/c drugs are fake.
 
