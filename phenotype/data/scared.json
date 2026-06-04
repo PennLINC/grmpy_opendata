@@ -1,11 +1,11 @@
 {
   "MeasurementToolMetadata": {
     "Description": "Screen for Child Anxiety Related Disorders (SCARED), 41-item",
-    "LongName": "41-item anxiety screen; each item rated 0 (Not True/Hardly Ever True), 1 (Somewhat True/Sometimes True), 2 (Very True/Often True) over the last three months.",
-    "MissingValues": "n/a"
+    "Instructions": "Below is a list of sentences that describe how people feel. Read each phrase and decide if is "Not True or Hardly Ever True", "Somewhat True or Sometimes True", or "Very True or Often True" for you. Then for each sentence, click the response that seems to describe you for the last three months.",
+    "TermURL": ""
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "scared_1": {
     "Description": "When I feel frightened, it is hard to breathe.",
@@ -336,9 +336,11 @@
     }
   },
   "scared_score_total": {
-    "Description": "SCARED total: sum of all 41 items scared_1-scared_41. Range 0-82. n/a if any item missing."
+    "Description": "SCARED total: sum of all 41 items scared_1-scared_41. Range 0-82. n/a if any item missing.",
+    "Derivative": true
   },
   "scared_score_anxietyDisorder": {
-    "Description": "Screen-positive flag: 1 if scared_score_total >= 25 (suggestive of an anxiety disorder), else 0. n/a if total is n/a."
+    "Description": "Screen-positive flag: 1 if scared_score_total >= 25 (suggestive of an anxiety disorder), else 0. n/a if total is n/a.",
+    "Derivative": true
   }
 }

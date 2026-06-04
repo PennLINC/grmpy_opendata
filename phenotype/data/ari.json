@@ -1,11 +1,12 @@
 {
   "MeasurementToolMetadata": {
     "Description": "Affective Reactivity Index (ARI)",
-    "LongName": "Irritability scale. Items 1-6 are the symptom items (0-2); item 7 is an impairment item and is NOT included in the scored totals.",
-    "MissingValues": "n/a"
+    "Instructions": "In the last six months and compared to others of the same age, how well does each of the following statements describe your behavior/feelings? Please try to answer all questions.",
+    "TermURL": "https://doi.org/10.1111/j.1469-7610.2012.02561.x",
+    "Notes": "Irritability scale. Items 1-6 are the symptom items (0-2); item 7 is an impairment item and is NOT included in the scored totals."
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "ari_1": {
     "Description": "Easily annoyed by others",
@@ -64,9 +65,11 @@
     }
   },
   "ari_score_avg": {
-    "Description": "ARI mean score: mean of items ari_1-ari_6 (each 0-2). Item ari_7 (impairment) is excluded. n/a if any of items 1-6 is missing."
+    "Description": "ARI mean score: mean of items ari_1-ari_6 (each 0-2). Item ari_7 (impairment) is excluded. n/a if any of items 1-6 is missing.",
+    "Derivative": true
   },
   "ari_score_total": {
-    "Description": "ARI total score: sum of items ari_1-ari_6 (each 0-2; range 0-12). Item ari_7 is excluded. n/a if any of items 1-6 is missing."
+    "Description": "ARI total score: sum of items ari_1-ari_6 (each 0-2; range 0-12). Item ari_7 is excluded. n/a if any of items 1-6 is missing.",
+    "Derivative": true
   }
 }

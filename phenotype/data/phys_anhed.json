@@ -2,11 +2,10 @@
   "MeasurementToolMetadata": {
     "Description": "Revised Physical Anhedonia Scale - short form (RPAS, 15 items)",
     "Instructions": "For each of the following items, select either True or False.",
-    "LongName": "15 True/False items measuring physical anhedonia.",
-    "MissingValues": "n/a"
+    "TermURL": "https://doi.org/10.1037/0021-843X.85.4.374"
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "phys_anhed_1": {
     "Description": "I have often found walks to be relaxing and enjoyable.",
