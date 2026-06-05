@@ -1,11 +1,11 @@
 {
   "MeasurementToolMetadata": {
     "Description": "Brief Sensation Seeking Scale (BSSS-8)",
-    "LongName": "8-item sensation-seeking scale; items rated 1 (Strongly Disagree) to 5 (Strongly Agree).",
-    "MissingValues": "n/a"
+    "Instructions": "Rate the degree to which you agree or disagree with each ofthe following statements.",
+    "TermURL": ""
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "bss_1": {
     "Description": "I would like to explore strange places.",
@@ -58,7 +58,7 @@
     }
   },
   "bss_6": {
-    "Description": "I would like to have new and exciting experiences, even if they",
+    "Description": "I would like to have new and exciting experiences, even if they are illegal.",
     "Levels": {
       "1": "Strongly Disagree",
       "2": "Disagree",

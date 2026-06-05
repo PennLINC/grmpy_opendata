@@ -1,12 +1,11 @@
 {
   "MeasurementToolMetadata": {
     "Description": "Adverse Childhood Experiences (ACE) questionnaire",
-    "Instructions": "Did a parent or other adult in the household often ... (each item answered Yes/No).",
-    "LongName": "10-item retrospective self-report of adverse experiences before age 18; each item Yes/No.",
-    "MissingValues": "n/a"
+    "Instructions": "All of the questions on this last page are optional. You only need to answer the questions you wish to answer, and it's okay if you don't want to answer some of the questions. If you want to erase or clear your response, you can click on the 'reset' button on the right. While you were growing up, during your first 18 years of life:",
+    "TermURL": ""
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "aces_1": {
     "Description": "Did a parent or other adult in the household often or very often... Swear at you, insult you, put you down, or humiliate you? or Act in a way that made you afraid that you might be physically hurt?",
@@ -79,6 +78,7 @@
     }
   },
   "aces_score_total": {
-    "Description": "ACE total score: number of ACE categories endorsed = sum of the 10 items aces_1-aces_10 (Yes=1, No=0). Range 0-10. n/a if any of the 10 items is missing."
+    "Description": "ACE total score: number of ACE categories endorsed = sum of the 10 items aces_1-aces_10 (Yes=1, No=0). Range 0-10. n/a if any of the 10 items is missing.",
+    "Derivative": true
   }
 }

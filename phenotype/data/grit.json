@@ -1,11 +1,11 @@
 {
   "MeasurementToolMetadata": {
     "Description": "Grit Scale (12-item) + relaxation/time-use items",
-    "LongName": "12-item grit scale (items 1-12) rated 1 (Not much like me at all) to 5 (Very much like me). Items 13-14 capture daily time use (free text) and item 15 is a checkbox of relaxation activities; these are not part of the grit score.",
-    "MissingValues": "n/a"
+    "Instructions": "People often have very different work styles. Please respond to the following items. Be honest - there are no right or wrong answers.",
+    "TermURL": ""
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "grit_1": {
     "Description": "I am curious about many different things.",
@@ -162,9 +162,11 @@
     }
   },
   "grit_score_grittiness": {
-    "Description": "Perseverance ('grit') subscale: mean of items grit_2,4,5,7,8,10. n/a if any item missing."
+    "Description": "Perseverance ('grit') subscale: mean of items grit_2,4,5,7,8,10. n/a if any item missing.",
+    "Derivative": true
   },
   "grit_score_openness": {
-    "Description": "Consistency of interest / openness subscale: mean of items grit_1,3,6,9,11,12. n/a if any item missing."
+    "Description": "Consistency of interest / openness subscale: mean of items grit_1,3,6,9,11,12. n/a if any item missing.",
+    "Derivative": true
   }
 }

@@ -1,11 +1,11 @@
 {
   "MeasurementToolMetadata": {
-    "Description": "Affective Lability Scale - Short Form (ALS-18)",
-    "LongName": "18-item self-report of affective lability; items rated 0-3.",
-    "MissingValues": "n/a"
+    "Description": "Affective Lability Scale (ALS)",
+    "Instructions": "For each of the following items, please rate how generally true each statement is for you.",
+    "TermURL": "https://doi.org/10.3389/fpsyg.2018.00427"
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "als_1": {
     "Description": "At times I feel just as relaxed as everyone else and then within minutes I become so nervous that I feel light-headed and dizzy.",
@@ -170,6 +170,7 @@
     }
   },
   "als_score_avg": {
-    "Description": "ALS-18 mean score: mean of the 18 items als_1-als_18 (each 0-3). n/a if any item is missing."
+    "Description": "ALS-18 mean score: mean of the 18 items als_1-als_18 (each 0-3). n/a if any item is missing.",
+    "Derivative": true
   }
 }
