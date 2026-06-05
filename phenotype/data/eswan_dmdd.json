@@ -1,12 +1,12 @@
 {
   "MeasurementToolMetadata": {
-    "Description": "E-SWAN Disruptive Mood Dysregulation Disorder (DMDD) scale",
-    "Instructions": "Compared to other people your age, in recent weeks, how well do you most of the time ... (rated -3 Far below average to +3 Far above average).",
-    "LongName": "Each of 10 emotion-regulation items is rated in three contexts: at home (a), with friends (b), and at school (c). Responses were collected on a 1-7 scale (Far below average to Far above average) and shifted by -4 so released values range -3 to +3.",
-    "MissingValues": "n/a"
+    "Description": "Extended Strenghts and Weaknesses Assessment of DMDD Symptoms and Normal Behavior",
+    "Instructions": "People differ in their abilities to handle emotions and behave appropriately in several situations. For each item listed below, rate how well you handle emotions and behave compared to other people of the same age. Compared to other people your age, in recent weeks, how well do you most of the time:",
+    "Notes": "This scale was administered on a 1-7 scale, but the responses were shifted to -3 to +3 for scoring and release.",
+    "TermURL": "https://doi.org/10.1111/jcpp.13104"
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "eswan_dmdd_01a": {
     "Description": "Avoid or control 'arguing or yelling' at home",
@@ -369,15 +369,19 @@
     }
   },
   "eswanDMDD_score_homeOutburst": {
-    "Description": "Home outburst score: sum of the 10 'a' (home) items (eswan_dmdd_01a-10a). n/a if any 'a' item missing."
+    "Description": "Home outburst score: sum of the 10 'a' (home) items (eswan_dmdd_01a-10a). n/a if any 'a' item missing.",
+    "Derivative": true
   },
   "eswanDMDD_score_friendOutburst": {
-    "Description": "Friend outburst score: sum of the 10 'b' (friends) items (eswan_dmdd_01b-10b). n/a if any 'b' item missing."
+    "Description": "Friend outburst score: sum of the 10 'b' (friends) items (eswan_dmdd_01b-10b). n/a if any 'b' item missing.",
+    "Derivative": true
   },
   "eswanDMDD_score_schoolOutburst": {
-    "Description": "School outburst score: sum of the 10 'c' (school) items (eswan_dmdd_01c-10c). n/a if any 'c' item missing."
+    "Description": "School outburst score: sum of the 10 'c' (school) items (eswan_dmdd_01c-10c). n/a if any 'c' item missing.",
+    "Derivative": true
   },
   "eswanDMDD_score_total": {
-    "Description": "Overall DMDD score: mean of the home, friend, and school subscale sums, rounded to 1 decimal. n/a if any subscale is missing."
+    "Description": "Overall DMDD score: mean of the home, friend, and school subscale sums, rounded to 1 decimal. n/a if any subscale is missing.",
+    "Derivative": true
   }
 }

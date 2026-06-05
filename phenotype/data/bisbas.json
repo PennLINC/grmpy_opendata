@@ -225,15 +225,19 @@
     }
   },
   "bis_score_total": {
-    "Description": "BIS total: items 8,13,16,19,24 reverse-coded (5-x) then summed with items 2,22 (not reversed). Higher = greater behavioral inhibition. n/a if any contributing item is missing."
+    "Description": "BIS total: items 8,13,16,19,24 reverse-coded (5-x) then summed with items 2,22 (not reversed). Higher = greater behavioral inhibition. n/a if any contributing item is missing.",
+    "Derivative": true
   },
   "bas_score_driveTotal": {
-    "Description": "BAS Drive: sum of reverse-coded (5-x) items 3,9,12,21. n/a if any item missing."
+    "Description": "BAS Drive: sum of reverse-coded (5-x) items 3,9,12,21. n/a if any item missing.",
+    "Derivative": true
   },
   "bas_score_funTotal": {
-    "Description": "BAS Fun Seeking: sum of reverse-coded (5-x) items 5,10,15,20. n/a if any item missing."
+    "Description": "BAS Fun Seeking: sum of reverse-coded (5-x) items 5,10,15,20. n/a if any item missing.",
+    "Derivative": true
   },
   "bas_score_rewardTotal": {
-    "Description": "BAS Reward Responsiveness: sum of reverse-coded (5-x) items 4,7,14,18,23. n/a if any item missing."
+    "Description": "BAS Reward Responsiveness: sum of reverse-coded (5-x) items 4,7,14,18,23. n/a if any item missing.",
+    "Derivative": true
   }
 }

@@ -113,6 +113,7 @@
     }
   },
   "rsasShort_score_total": {
-    "Description": "Social anhedonia total (RSAS short): items 1,2,3,5,6,7,8,10,15 scored as-is (True=1) plus items 4,9,11,12,13,14 reverse-coded (1-x), then summed. Range 0-15. n/a if any item missing."
+    "Description": "Social anhedonia total (RSAS short): items 1,2,3,5,6,7,8,10,15 scored as-is (True=1) plus items 4,9,11,12,13,14 reverse-coded (1-x), then summed. Range 0-15. n/a if any item missing.",
+    "Derivative": true
   }
 }

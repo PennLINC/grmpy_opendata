@@ -1035,9 +1035,9 @@ Note - in general, if missing an item used in scoring, the summary score should 
 Q: Should integer fields be converted to integer type in the tsv?
 TODO: make json sidecars for each tsv.
 
-aces - completed + verified.
+aces - completed + verified. TODO: JSON complete, needs "TermURL".
 
-als - completed - i have just an average score, EF also has a sum.
+als - completed - i have just an average score, EF also has a sum. JSON complete.
 
 ari - completed + verified. JSON complete.
 
@@ -1049,15 +1049,15 @@ bisbas - completed + verified against self_report_summary.tsv. EF is a child ver
 
 biss_madrs - completed + verified w/ Ted.
 
-bss - completed + verified against self_report_summary.tsv.
+bss - completed + verified against self_report_summary.tsv. TODO: JSON complete, needs "TermURL".
 
-eswan_dmdd - completed + verified. Note: input was changed to range from -3 to 3 to match EF/PAFIN.
+eswan_dmdd - completed + verified. Note: input was changed to range from -3 to 3 to match EF/PAFIN. JSON complete.
 
-grit - compelted + verified against self_report_summary.tsv. Dan's code has grit. check it to confirm proper scoring.
+grit - compelted + verified against self_report_summary.tsv. TODO: JSON complete, needs "TermURL"; confirm "Description".
 
-hcl16 - completed + verified against self_report_summary.tsv. R code only uses hcl6_3 questions for scoring - that seems correct as these are actual questions from the larger hcl 32. However, these 16 questions differ from the ones used in Forty et al 2010, which was the only 16 question version identified in this systematic review of short form versions of the hcl32: https://pubmed.ncbi.nlm.nih.gov/31066059/. Not in EF.
+hcl16 - completed + verified against self_report_summary.tsv. R code only uses hcl6_3 questions for scoring - that seems correct as these are actual questions from the larger hcl 32. However, these 16 questions differ from the ones used in Forty et al 2010, which was the only 16 question version identified in this systematic review of short form versions of the hcl32: https://pubmed.ncbi.nlm.nih.gov/31066059/. Not in EF. TODO: JSON complete, needs "TermURL".
 
-mapssr - completed + verified.
+mapssr - completed + verified. JSON complete.
 
 phys_anhed - scored as rpasShort - EF has this, did sum and average, while here is only sum. completed. JSON complete. TODO: rename to rpas??
 
@@ -1067,9 +1067,9 @@ prime_screen - do not release. TODO: remove.
 
 ***Proband_GOASSESS - only has summary/flagged columns. TODO - ignore for now, look in flyhweel for study group related to irritability.
 
-psqi - completed + verified. sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, but its 2 in the self_report_summary.tsv which means the scorer must have assumed the ptp meant they went to bed at 6pm. Component 4 score and the global score were set to n/a for this subject.
+psqi - completed + verified. sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, but its 2 in the self_report_summary.tsv which means the scorer must have assumed the ptp meant they went to bed at 6pm. Component 4 score and the global score were set to n/a for this subject. TODO: JSON still working.
 
-rpaq - complete + verified against self_report_summary.tsv. not in EF.
+rpaq - complete + verified against self_report_summary.tsv. not in EF. TODO: JSON complete, needs "TermURL"; confirm title of scale in "Description".
 
 scared - completed + verified against self_report_summary.tsv. not in EF. TODO: JSON needs "TermURL".
 
@@ -1102,6 +1102,8 @@ CNB (cognitive battery) - might not release. no dictionary on flywheel. might ne
 Diagnosis - release a subset of columns highlighted by ted. axis.tsv is the output to release.
 
 Demographics.tsv - TODO: what to release?
+
+TODO: scales in the self-report data dictionary that are not on flywheel: RTSQ, PSS, BFI, LOT-R, Conte Social Interest, QPR.
 
 ### sidecars
 "MeasurementToolMetadata" field probably needs updating.
