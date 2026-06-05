@@ -154,20 +154,20 @@ def add_als_scores(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def add_mapsr_scores(df: pd.DataFrame) -> pd.DataFrame:
+def add_mapssr_scores(df: pd.DataFrame) -> pd.DataFrame:
     # Columns are prefixed with mapssr_
     item_cols = [f"mapssr_{i}" for i in range(1, 16)]
-    df["mapsr_rawtot_sum"] = sum_columns_complete(df, item_cols)
-    df["mapsr_social_sum"] = sum_columns_complete(
+    df["mapssr_rawtot_sum"] = sum_columns_complete(df, item_cols)
+    df["mapssr_social_sum"] = sum_columns_complete(
         df, ["mapssr_1", "mapssr_2", "mapssr_3"]
     )
-    df["mapsr_recvoc_sum"] = sum_columns_complete(
+    df["mapssr_recvoc_sum"] = sum_columns_complete(
         df, ["mapssr_4", "mapssr_5", "mapssr_6"]
     )
-    df["mapsr_motrelation_sum"] = sum_columns_complete(
+    df["mapssr_motrelation_sum"] = sum_columns_complete(
         df, ["mapssr_7", "mapssr_8", "mapssr_9"]
     )
-    df["mapsr_engage_sum"] = sum_columns_complete(
+    df["mapssr_engage_sum"] = sum_columns_complete(
         df,
         ["mapssr_10", "mapssr_11", "mapssr_12", "mapssr_13", "mapssr_14", "mapssr_15"],
     )
@@ -724,7 +724,7 @@ InstrumentScorer = Callable[[pd.DataFrame], pd.DataFrame]
 SCORERS: Dict[str, InstrumentScorer] = {
     # instrument_stem -> function
     "als": add_als_scores,
-    "mapssr": add_mapsr_scores,
+    "mapssr": add_mapssr_scores,
     "swan": add_swan_scores,
     "aces": add_aces_scores,
     "scared": add_scared_scores,
