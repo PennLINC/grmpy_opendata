@@ -1,60 +1,12 @@
 {
   "MeasurementToolMetadata": {
     "Description": "Schizotypal Personality Questionnaire (SPQ)",
-    "Instructions": "Decide whether each statement is true or false as applied to you. Do not include times when under the influence of drugs/alcohol or when dreaming/falling asleep.",
-    "LongName": "126 True/False items measuring schizotypal personality features, scored on-site into 9 subscales, 3 factors, and validity scales (computed via the REDCap calculations in the developmental-scales codebook). Subscale/factor/validity columns are described individually.",
-    "MissingValues": "n/a"
+    "Instructions": "Please read each of the following items and decide whether it is true as applied to you or flase as applied to you. Please select your answer by selecting the appropriate circle. If the statement is true or mostly true, click on the circle marked TRUE. If the statement is false or mostly false, click on the circle marked FALSE. Answer all items, even if you are unsure of your answer. NOTE: When considering your answer, do not include times when you were under the influence of drugs or alochol. Also do not include times when you were dreaming, just waking, or falling asleep.",
+    "Notes": "126 True/False items measuring schizotypal personality features, scored on-site into 9 subscales, 3 factors, and validity scales (computed via the REDCap calculations in the developmental-scales codebook). Subscale/factor/validity columns are described individually.",
+    "TermURL": ""
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
-  },
-  "spq_cons_affect": {
-    "Description": "Constricted Affect subscale: sum of True responses to items q12,26,40,54,67,79,112,122."
-  },
-  "spq_def_tscale": {
-    "Description": "Defensiveness T-score, normed by sex (admin_sex); -999 indicates not computable."
-  },
-  "spq_defensive": {
-    "Description": "Defensiveness (K) raw scale: reverse-scored q2,5,9,20,27,30,36,39,45,50,53,56,60,65,69,72,74,77,85,87,91,93,98,102,107,111,116,123,126 plus q16."
-  },
-  "spq_factor_1": {
-    "Description": "Cognitive-Perceptual factor: sum of Ideas of Reference, Magical Thinking, Unusual Perceptual Experiences, and Suspiciousness items (q1,4,6,14,15,19,21,28,29,32,34,41,43,46,47,55,57,61,62,68,70,73,75,81,84,88,90,96,97,100,103,105,106)."
-  },
-  "spq_factor_2": {
-    "Description": "Interpersonal factor: sum of No Close Friends, Constricted Affect, Social Anxiety, and Suspiciousness items (q3,10,12,14,17,24,26,28,31,37,40,41,44,51,54,55,59,64,67,68,71,76,79,81,86,92,96,101,106,108,112,118,122)."
-  },
-  "spq_factor_3": {
-    "Description": "Disorganized factor: sum of Odd Behavior and Odd Speech items (q8,11,22,25,35,38,49,52,66,78,94,109,114,115,120,125)."
-  },
-  "spq_factor_cnb_match": {
-    "Description": "Interpersonal factor computed without the Suspiciousness items (for matching to the CNB sample): items q3,10,12,17,24,26,31,37,40,44,51,54,59,64,67,71,76,79,86,92,101,108,112,118,122."
-  },
-  "spq_ideas_ref": {
-    "Description": "Ideas of Reference subscale: sum of True responses to items q1,15,29,43,57,70,84,97,103."
-  },
-  "spq_infrequency": {
-    "Description": "Infrequency (Jackson) validity scale: reverse-scored q7,83,117,121 plus q33,63,99,110. High scores suggest careless/invalid responding."
-  },
-  "spq_lie": {
-    "Description": "Lie scale (raw): count of socially-desirable responses across q2,13,18,23,42,48,58,80,82,89,95,104,113,119,124 (each reverse-scored: False=1)."
-  },
-  "spq_lie_tscale": {
-    "Description": "Lie scale T-score, normed by sex (admin_sex); -999 indicates not computable."
-  },
-  "spq_magical": {
-    "Description": "Odd Beliefs / Magical Thinking subscale: sum of True responses to items q4,19,32,46,61,73,88."
-  },
-  "spq_no_friends": {
-    "Description": "No Close Friends subscale: sum of True responses to items q10,24,37,51,64,76,92,101,108."
-  },
-  "spq_odd_behav": {
-    "Description": "Odd or Eccentric Behavior subscale: sum of True responses to items q8,22,35,49,109,115,125."
-  },
-  "spq_odd_speech": {
-    "Description": "Odd Speech subscale: sum of True responses to items q11,25,38,52,66,78,94,114,120."
-  },
-  "spq_percep": {
-    "Description": "Unusual Perceptual Experiences subscale: sum of True responses to items q6,21,34,47,62,75,90,100,105."
+    "Description": "Participant ID Number"
   },
   "spq_q_1": {
     "Description": "Do you sometimes feel that things you see on the TV or read in the newspaper have a special meaning for you?",
@@ -302,7 +254,7 @@
     }
   },
   "spq_q_36": {
-    "Description": "Please read carefully and respond to all questions.",
+    "Description": "At times my thoughts have raced ahead faster than I could speak them.",
     "Levels": {
       "1": "True",
       "0": "False"
@@ -938,16 +890,66 @@
       "0": "False"
     }
   },
+  "spq_spq": {
+    "Description": "SPQ All Items Summed Without Validity",
+    "Items": "spq_q_1, spq_q_3, spq_q_4, spq_q_6, spq_q_8, spq_q_10, spq_q_11, spq_q_12, spq_q_14, spq_q_15, spq_q_17, spq_q_19, spq_q_21, spq_q_22, spq_q_24, spq_q_25, spq_q_26, spq_q_28, spq_q_29, spq_q_31, spq_q_32, spq_q_34, spq_q_35, spq_q_37, spq_q_38, spq_q_40, spq_q_41, spq_q_43, spq_q_44, spq_q_46, spq_q_47, spq_q_49, spq_q_51, spq_q_52, spq_q_54, spq_q_55, spq_q_57, spq_q_59, spq_q_61, spq_q_62, spq_q_64, spq_q_66, spq_q_67, spq_q_68, spq_q_70, spq_q_71, spq_q_73, spq_q_75, spq_q_76, spq_q_78, spq_q_79, spq_q_81, spq_q_84, spq_q_86, spq_q_88, spq_q_90, spq_q_92, spq_q_94, spq_q_96, spq_q_97, spq_q_100, spq_q_101, spq_q_103, spq_q_105, spq_q_106, spq_q_108, spq_q_109, spq_q_112, spq_q_114, spq_q_115, spq_q_118, spq_q_120, spq_q_122, spq_q_125",
+    "Derivative": true
+  },
+  "spq_validity": {
+    "Description": "Validity score. Higher = more likely invalid."
+  },
   "spq_social_anx": {
     "Description": "Excessive Social Anxiety subscale: sum of True responses to items q3,17,31,44,59,71,86,118."
-  },
-  "spq_spq": {
-    "Description": "SPQ total score (without validity items): sum of the True (=1) responses across the 9 subscale item sets (see subscale columns). Higher = more schizotypal features."
   },
   "spq_suspicious": {
     "Description": "Suspiciousness subscale: sum of True responses to items q14,28,41,55,68,81,96,106."
   },
-  "spq_validity": {
-    "Description": "Overall validity score combining infrequency, lie and defensiveness indicators (see SPQ scoring codebook). Higher = more likely invalid."
+  "spq_cons_affect": {
+    "Description": "Constricted Affect subscale: sum of True responses to items q12,26,40,54,67,79,112,122."
+  },
+  "spq_def_tscale": {
+    "Description": "Defensiveness T-score, normed by sex (admin_sex); -999 indicates not computable."
+  },
+  "spq_defensive": {
+    "Description": "Defensiveness (K) raw scale: reverse-scored q2,5,9,20,27,30,36,39,45,50,53,56,60,65,69,72,74,77,85,87,91,93,98,102,107,111,116,123,126 plus q16."
+  },
+  "spq_factor_1": {
+    "Description": "Cognitive-Perceptual factor: sum of Ideas of Reference, Magical Thinking, Unusual Perceptual Experiences, and Suspiciousness items (q1,4,6,14,15,19,21,28,29,32,34,41,43,46,47,55,57,61,62,68,70,73,75,81,84,88,90,96,97,100,103,105,106)."
+  },
+  "spq_factor_2": {
+    "Description": "Interpersonal factor: sum of No Close Friends, Constricted Affect, Social Anxiety, and Suspiciousness items (q3,10,12,14,17,24,26,28,31,37,40,41,44,51,54,55,59,64,67,68,71,76,79,81,86,92,96,101,106,108,112,118,122)."
+  },
+  "spq_factor_3": {
+    "Description": "Disorganized factor: sum of Odd Behavior and Odd Speech items (q8,11,22,25,35,38,49,52,66,78,94,109,114,115,120,125)."
+  },
+  "spq_factor_cnb_match": {
+    "Description": "Interpersonal factor computed without the Suspiciousness items (for matching to the CNB sample): items q3,10,12,17,24,26,31,37,40,44,51,54,59,64,67,71,76,79,86,92,101,108,112,118,122."
+  },
+  "spq_ideas_ref": {
+    "Description": "Ideas of Reference subscale: sum of True responses to items q1,15,29,43,57,70,84,97,103."
+  },
+  "spq_infrequency": {
+    "Description": "Infrequency (Jackson) validity scale: reverse-scored q7,83,117,121 plus q33,63,99,110. High scores suggest careless/invalid responding."
+  },
+  "spq_lie": {
+    "Description": "Lie scale (raw): count of socially-desirable responses across q2,13,18,23,42,48,58,80,82,89,95,104,113,119,124 (each reverse-scored: False=1)."
+  },
+  "spq_lie_tscale": {
+    "Description": "Lie scale T-score, normed by sex (admin_sex); -999 indicates not computable."
+  },
+  "spq_magical": {
+    "Description": "Odd Beliefs / Magical Thinking subscale: sum of True responses to items q4,19,32,46,61,73,88."
+  },
+  "spq_no_friends": {
+    "Description": "No Close Friends subscale: sum of True responses to items q10,24,37,51,64,76,92,101,108."
+  },
+  "spq_odd_behav": {
+    "Description": "Odd or Eccentric Behavior subscale: sum of True responses to items q8,22,35,49,109,115,125."
+  },
+  "spq_odd_speech": {
+    "Description": "Odd Speech subscale: sum of True responses to items q11,25,38,52,66,78,94,114,120."
+  },
+  "spq_percep": {
+    "Description": "Unusual Perceptual Experiences subscale: sum of True responses to items q6,21,34,47,62,75,90,100,105."
   }
 }
