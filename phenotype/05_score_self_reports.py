@@ -427,6 +427,20 @@ def _parse_hhmm_to_hours(value: Optional[float]) -> Optional[float]:
 
 
 def add_psqi_scores(df: pd.DataFrame) -> pd.DataFrame:
+    # Drop psqi_*_text free-text columns (not needed in scored output)
+    text_cols = [c for c in df.columns if c.startswith("psqi_") and c.endswith("_text")]
+    if text_cols:
+        df = df.drop(columns=text_cols)
+
+    # Reorder so psqi_5_other and psqi_5othera follow psqi_5a..psqi_5i
+    move_after = "psqi_5i"
+    to_move = [c for c in ("psqi_5_other", "psqi_5othera") if c in df.columns]
+    if to_move and move_after in df.columns:
+        cols = [c for c in df.columns if c not in to_move]
+        anchor = cols.index(move_after)
+        cols = cols[: anchor + 1] + to_move + cols[anchor + 1 :]
+        df = df[cols]
+
     # Component 1
     if "psqi_6" in df:
         df["psqi_score_component1"] = to_numeric(
