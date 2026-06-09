@@ -31,15 +31,22 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
 import re
 import sys
 from pathlib import Path
-from typing import Dict, Iterable, List, Mapping, Tuple
+from typing import Dict, Iterable, List, Mapping, Optional, Tuple
 
 
 PARTICIPANT_ID_COL = "participant_id"
 INVALID_FAKE_DRUGS_COL = "invalid_fake_drugs"
 _FAKE_DRUG_COLS = ("substance_othr_040", "substance_othr_050")
+
+# Optional per-scale JSON sidecars whose top-level key order (excluding
+# "MeasurementToolMetadata") defines the canonical column order for that scale.
+SIDECAR_ORDER_FILES: Dict[str, str] = {
+    "suq": "suq.json",
+}
 
 # (output_name, column_prefixes, exclude_suffixes) – scales are tested in order;
 # first match wins.  Columns matching a prefix but ending with an excluded
@@ -60,7 +67,6 @@ SCALES: List[ScaleDef] = [
     ("spq", ["spq_"], ["_complete", "_vcode"]),
     ("suq", ["substance_", "drugs_"], ["_vcode", "_complete"]),
 ]
-
 
 def parse_args(argv: Iterable[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -141,6 +147,40 @@ def classify_columns(
     return scale_columns, misc
 
 
+def load_sidecar_order(path: Path) -> Optional[List[str]]:
+    """Return the ordered list of column keys from a BIDS-style JSON sidecar.
+
+    Excludes the top-level "MeasurementToolMetadata" entry. Returns None if
+    the file is missing or cannot be parsed.
+    """
+    if not path.exists():
+        return None
+    try:
+        with path.open("r") as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return None
+    if not isinstance(data, dict):
+        return None
+    return [k for k in data.keys() if k != "MeasurementToolMetadata"]
+
+
+def reorder_header_by_sidecar(
+    header: List[str], sidecar_order: List[str]
+) -> List[str]:
+    """Reorder *header* to match *sidecar_order*.
+
+    Columns present in both appear in sidecar order; columns only in *header*
+    are appended at the end in their original relative order. Sidecar keys
+    not present in *header* are ignored.
+    """
+    header_set = set(header)
+    ordered = [c for c in sidecar_order if c in header_set]
+    seen = set(ordered)
+    tail = [c for c in header if c not in seen]
+    return ordered + tail
+
+
 def write_tsv(path: Path, header: List[str], rows: Iterable[Mapping[str, str]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="") as f:
@@ -206,6 +246,17 @@ def main(argv: Iterable[str]) -> int:
 
     if "suq" in headers:
         headers["suq"].append(INVALID_FAKE_DRUGS_COL)
+
+    # Reorder scale headers to match their JSON sidecars (when available).
+    for scale_name, sidecar_filename in SIDECAR_ORDER_FILES.items():
+        if scale_name not in headers:
+            continue
+        sidecar_order = load_sidecar_order(args.output_dir / sidecar_filename)
+        if sidecar_order is None:
+            continue
+        headers[scale_name] = reorder_header_by_sidecar(
+            headers[scale_name], sidecar_order
+        )
 
     misc_key = "dev_misc"
     misc_header: List[str] = []
