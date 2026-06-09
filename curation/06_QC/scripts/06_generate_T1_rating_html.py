@@ -190,6 +190,15 @@ def render_html(
     button { padding: 6px 10px; border: 1px solid #aaa; border-radius: 6px; background: #f7f7f7; cursor: pointer; }
     button.primary { background: #0b5; color: #fff; border-color: #0a4; }
     button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .initials { padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px; width: 80px; }
+    .consensus-panel { display: none; border: 1px solid #bbb; border-radius: 8px; padding: 12px; margin-bottom: 12px; background: #fafafa; }
+    .consensus-panel.active { display: block; }
+    .consensus-panel .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+    .consensus-panel .row:last-child { margin-bottom: 0; }
+    .consensus-panel label { font-size: 13px; font-weight: 600; min-width: 80px; }
+    .view.discrepancy { background: #fff3e0; border: 2px solid #e8a735; border-radius: 6px; padding: 4px; }
+    .view.agreed-lock select { opacity: 0.7; }
+    .rater-context { font-size: 11px; color: #b45309; margin-top: 2px; }
     """
 
     # Data for client-side JS
@@ -214,6 +223,11 @@ def render_html(
     const VIEWS = {json_views};
     let PREFILL = {{}}; // key: `${{sub}}|${{ses}}` -> {{ view: score }}
     let RATINGS = {{}}; // live user selections, same keying as PREFILL
+    let RATER1 = {{}}, RATER2 = {{}};
+    let AGREED = {{}};        // key -> {{ view: score }} for views where raters match
+    let DISCREPANCIES = {{}}; // key -> {{ view: {{ r1: score, r2: score }} }}
+    let CONSENSUS_RATINGS = {{}};
+    let consensusMode = false;
 
     const makeKey = (sub, ses) => sub + '|' + ses;
 
@@ -242,17 +256,30 @@ def render_html(
       return lines.join('\\n');
     }}
 
-    function downloadCSV() {{
-      const csv = toCSV();
+    function getInitials() {{
+      const el = document.getElementById('initials');
+      return el ? el.value.trim() : '';
+    }}
+
+    function makeFilename(base, ext) {{
+      const ini = getInitials();
+      return ini ? `${{base}}_${{ini}}.${{ext}}` : `${{base}}.${{ext}}`;
+    }}
+
+    function triggerDownload(csv, filename) {{
       const blob = new Blob([csv], {{ type: 'text/csv;charset=utf-8;' }});
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'T1-ratings.csv';
+      a.download = filename;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+    }}
+
+    function downloadCSV() {{
+      triggerDownload(toCSV(), makeFilename('T1-ratings', 'csv'));
     }}
 
     function parseCSV(text) {{
@@ -335,12 +362,106 @@ def render_html(
       reader.readAsText(file);
     }}
 
+    function readFileAsText(file) {{
+      return new Promise((resolve, reject) => {{
+        const reader = new FileReader();
+        reader.onload = (e) => resolve(e.target.result);
+        reader.onerror = reject;
+        reader.readAsText(file);
+      }});
+    }}
+
+    function toggleConsensusMode() {{
+      const cb = document.getElementById('consensusToggle');
+      consensusMode = cb.checked;
+      document.getElementById('consensusPanel').classList.toggle('active', consensusMode);
+      document.getElementById('individualControls').style.display = consensusMode ? 'none' : '';
+      if (!consensusMode) {{
+        RATER1 = {{}}; RATER2 = {{}}; AGREED = {{}}; DISCREPANCIES = {{}}; CONSENSUS_RATINGS = {{}};
+        document.getElementById('consensusMsg').textContent = '';
+        render(document.getElementById('search').value);
+      }}
+    }}
+
+    async function compareRaters() {{
+      const f1 = document.getElementById('rater1Upload').files[0];
+      const f2 = document.getElementById('rater2Upload').files[0];
+      if (!f1 || !f2) {{
+        document.getElementById('consensusMsg').textContent = 'Please select both Rater 1 and Rater 2 CSV files.';
+        return;
+      }}
+      const [text1, text2] = await Promise.all([readFileAsText(f1), readFileAsText(f2)]);
+      RATER1 = buildPrefillFromCSV(parseCSV(text1));
+      RATER2 = buildPrefillFromCSV(parseCSV(text2));
+      AGREED = {{}};
+      DISCREPANCIES = {{}};
+      CONSENSUS_RATINGS = {{}};
+      let agreeCount = 0, discrepCount = 0, totalSubs = 0;
+      for (const row of DATA) {{
+        const key = makeKey(row.sub, row.ses);
+        const r1 = RATER1[key] || {{}};
+        const r2 = RATER2[key] || {{}};
+        let hasDiscrep = false;
+        for (const v of VIEWS) {{
+          const v1 = r1[v] !== undefined ? String(r1[v]) : '';
+          const v2 = r2[v] !== undefined ? String(r2[v]) : '';
+          if (v1 === v2 && v1 !== '') {{
+            AGREED[key] = AGREED[key] || {{}};
+            AGREED[key][v] = v1;
+          }} else {{
+            DISCREPANCIES[key] = DISCREPANCIES[key] || {{}};
+            DISCREPANCIES[key][v] = {{ r1: v1, r2: v2 }};
+            hasDiscrep = true;
+          }}
+        }}
+        totalSubs++;
+        if (hasDiscrep) discrepCount++; else agreeCount++;
+      }}
+      document.getElementById('consensusMsg').textContent =
+        `${{agreeCount}} of ${{totalSubs}} subjects fully agree; ${{discrepCount}} subjects have discrepancies`;
+      render(document.getElementById('search').value);
+    }}
+
+    function toConsensusCSV() {{
+      const headers = ['subid','sesid', ...VIEWS.map(v => v + '_score'), 'average_rating', 'classification'];
+      const lines = [headers.join(',')];
+      for (const row of DATA) {{
+        const key = makeKey(row.sub, row.ses);
+        const scores = VIEWS.map(v => {{
+          if (AGREED[key] && AGREED[key][v] !== undefined) return AGREED[key][v];
+          if (CONSENSUS_RATINGS[key] && CONSENSUS_RATINGS[key][v] !== undefined) return CONSENSUS_RATINGS[key][v];
+          return '';
+        }});
+        const numericScores = scores.filter(s => s !== '').map(Number);
+        let avg = '', classification = '';
+        if (numericScores.length === VIEWS.length) {{
+          avg = numericScores.reduce((a, b) => a + b, 0) / numericScores.length;
+          if (avg === 0) classification = 'Fail';
+          else if (avg === 1) classification = 'Pass';
+          else classification = 'Artifact';
+          avg = String(avg);
+        }}
+        const line = [row.sub, row.ses, ...scores, avg, classification].map(escapeCsv).join(',');
+        lines.push(line);
+      }}
+      return lines.join('\\n');
+    }}
+
+    function downloadConsensusCSV() {{
+      triggerDownload(toConsensusCSV(), makeFilename('T1-consensus', 'csv'));
+    }}
+
     function render(filter='') {{
       const root = document.getElementById('root');
       root.innerHTML = '';
       const q = filter.trim().toLowerCase();
-      const rows = DATA.filter(r => (r.sub + ' ' + r.ses).toLowerCase().includes(q));
+      let rows = DATA.filter(r => (r.sub + ' ' + r.ses).toLowerCase().includes(q));
+      const inConsensus = consensusMode && Object.keys(DISCREPANCIES).length > 0;
+      if (inConsensus) {{
+        rows = rows.filter(r => DISCREPANCIES[makeKey(r.sub, r.ses)]);
+      }}
       for (const row of rows) {{
+        const key = makeKey(row.sub, row.ses);
         const card = document.createElement('div');
         card.className = 'card';
         card.setAttribute('data-card', '');
@@ -353,7 +474,7 @@ def render_html(
         title.innerHTML = `<strong>${{row.sub}}</strong> &nbsp; <span class="muted">${{row.ses}}</span>`;
         const hint = document.createElement('div');
         hint.className = 'muted';
-        hint.textContent = 'Rate each view: 0=Fail, 1=Pass';
+        hint.textContent = inConsensus ? 'Rate discrepancies (highlighted)' : 'Rate each view: 0=Fail, 1=Pass';
         header.appendChild(title);
         header.appendChild(hint);
         card.appendChild(header);
@@ -361,8 +482,10 @@ def render_html(
         const views = document.createElement('div');
         views.className = 'views';
         for (const v of VIEWS) {{
+          const isDiscrep = inConsensus && DISCREPANCIES[key] && DISCREPANCIES[key][v];
+          const isAgreed = inConsensus && AGREED[key] && AGREED[key][v] !== undefined;
           const box = document.createElement('div');
-          box.className = 'view';
+          box.className = 'view' + (isDiscrep ? ' discrepancy' : '') + (isAgreed ? ' agreed-lock' : '');
           const img = document.createElement('img');
           const src = row.images[v] || '';
           if (src) img.src = src;
@@ -376,23 +499,46 @@ def render_html(
             opt.value = val; opt.textContent = name;
             select.appendChild(opt);
           }}
-          // initialize from RATINGS or PREFILL
-          const key = makeKey(row.sub, row.ses);
-          let initVal = '';
-          if (RATINGS[key] && RATINGS[key][v] !== undefined) {{ initVal = RATINGS[key][v]; }}
-          else if (PREFILL[key] && PREFILL[key][v] !== undefined) {{ initVal = PREFILL[key][v]; }}
-          select.value = initVal;
-          // persist on change
-          select.addEventListener('change', () => {{
-            RATINGS[key] = RATINGS[key] || {{}};
-            RATINGS[key][v] = select.value;
-          }});
+          if (inConsensus) {{
+            if (isAgreed) {{
+              select.value = AGREED[key][v];
+              select.disabled = true;
+            }} else if (isDiscrep) {{
+              let initVal = '';
+              if (CONSENSUS_RATINGS[key] && CONSENSUS_RATINGS[key][v] !== undefined) {{
+                initVal = CONSENSUS_RATINGS[key][v];
+              }}
+              select.value = initVal;
+              select.addEventListener('change', () => {{
+                CONSENSUS_RATINGS[key] = CONSENSUS_RATINGS[key] || {{}};
+                CONSENSUS_RATINGS[key][v] = select.value;
+              }});
+            }}
+          }} else {{
+            let initVal = '';
+            if (RATINGS[key] && RATINGS[key][v] !== undefined) {{ initVal = RATINGS[key][v]; }}
+            else if (PREFILL[key] && PREFILL[key][v] !== undefined) {{ initVal = PREFILL[key][v]; }}
+            select.value = initVal;
+            select.addEventListener('change', () => {{
+              RATINGS[key] = RATINGS[key] || {{}};
+              RATINGS[key][v] = select.value;
+            }});
+          }}
           const rating = document.createElement('div');
           rating.className = 'rating';
           rating.appendChild(label);
           rating.appendChild(select);
           box.appendChild(img);
           box.appendChild(rating);
+          if (isDiscrep) {{
+            const ctx = document.createElement('div');
+            ctx.className = 'rater-context';
+            const d = DISCREPANCIES[key][v];
+            const r1Label = d.r1 === '' ? '(blank)' : (d.r1 === '0' ? 'Fail' : 'Pass');
+            const r2Label = d.r2 === '' ? '(blank)' : (d.r2 === '0' ? 'Fail' : 'Pass');
+            ctx.textContent = `R1: ${{r1Label}}  |  R2: ${{r2Label}}`;
+            box.appendChild(ctx);
+          }}
           views.appendChild(box);
         }}
         card.appendChild(views);
@@ -424,10 +570,29 @@ def render_html(
   <h1>T1 QC Ratings</h1>
   <div class="controls">
     <input id="search" class="search" type="search" placeholder="Filter by subject/session (e.g., sub-123 ses-1)" />
-    <button class="primary" onclick="downloadCSV()">Download CSV</button>
-    <input id="csvUpload" type="file" accept=".csv,text/csv" />
-    <span id="resumeMsg" class="muted"></span>
+    <input id="initials" class="initials" type="text" placeholder="Initials" maxlength="10" />
+    <span id="individualControls">
+      <button class="primary" onclick="downloadCSV()">Download CSV</button>
+      <input id="csvUpload" type="file" accept=".csv,text/csv" />
+      <span id="resumeMsg" class="muted"></span>
+    </span>
+    <label style="margin-left:12px;font-size:13px;cursor:pointer;">
+      <input id="consensusToggle" type="checkbox" onchange="toggleConsensusMode()" /> Consensus Mode
+    </label>
     <span id="count" class="muted"></span>
+  </div>
+  <div id="consensusPanel" class="consensus-panel">
+    <div class="row">
+      <label>Rater 1 CSV:</label>
+      <input id="rater1Upload" type="file" accept=".csv,text/csv" />
+      <label>Rater 2 CSV:</label>
+      <input id="rater2Upload" type="file" accept=".csv,text/csv" />
+      <button onclick="compareRaters()">Compare</button>
+    </div>
+    <div class="row">
+      <span id="consensusMsg" class="muted"></span>
+      <button class="primary" onclick="downloadConsensusCSV()">Download Consensus CSV</button>
+    </div>
   </div>
   <div id="root" class="grid"></div>
 </body>
