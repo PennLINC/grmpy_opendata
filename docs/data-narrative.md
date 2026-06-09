@@ -1083,7 +1083,7 @@ swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on t
 
 suq - no scoring needed. added validity column on substance_othr_040/050 - should be 0 b/c drugs are fake. JSON complete.
 
-spq - scored onsite, scoring logic in dev data dictionary pdf.
+spq - scored onsite, scoring logic in dev data dictionary pdf. TODO: still working on JSON. scoring logic in data dict is difficult. validity subscale double counts q2. n/a's need to be added to tsv, probably the same for other dev scales.
 
 tanner_boy - no scoring needed. JSON complete.
 
