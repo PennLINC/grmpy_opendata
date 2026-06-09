@@ -1,12 +1,12 @@
 {
   "MeasurementToolMetadata": {
-    "Description": "Tanner stage self-report (girls) - not scored",
-    "Instructions": "Because our research is about how children develop into teenagers and young adults, indicate where you are in terms of your physical development.",
-    "LongName": "Self-reported pubertal development (girls). Individual items only; no summary score. Item tanner_girl_4 is shown only if the participant reports having begun menstruating (tanner_girl_3 = Yes).",
-    "MissingValues": "n/a"
+    "Description": "Tanner Developmental Stages Scale - Girls.",
+    "Notes": "We only include item-level data, we do not include summary scores due to the complexities in how puberty is staged.",
+    "Instructions": "Because our research is about how children develop into teenagers and young adults, it is important for us to know where you are in terms of your physical development. You can complete this short questionnaire on your own. I will hand this off to you so I can't see your responses but if you have any questions, please feel free to ask. When you reach the final screen after the questionnaire, please ask me for instructions.",
+    "TermURL": "https://doi.org/10.1136/adc.44.235.291"
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "tanner_girl_1": {
     "Description": "Would you say that your growth in height:",
@@ -38,6 +38,15 @@
   "tanner_girl_4": {
     "Description": "If yes, how old were you when you started to menstruate?",
     "Levels": {
+      "1": "8",
+      "2": "9",
+      "3": "10",
+      "4": "11",
+      "5": "12",
+      "6": "13",
+      "7": "14",
+      "8": "15",
+      "9": "16",
       "10": "Older than 16"
     }
   },

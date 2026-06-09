@@ -1,266 +1,298 @@
 {
   "MeasurementToolMetadata": {
-    "Description": "Substance Use Questionnaire (SUQ) - not scored",
-    "Instructions": "This is a survey about your use of drugs and alcohol. Select the response that applies to you.",
-    "LongName": "Self-report of tobacco, alcohol, marijuana and other substance use. Item-level data only (no summary score). Many items are branched (shown only after a relevant gate item) so values are frequently n/a by design. Two items (substance_othr_040 'Bleomycins', substance_othr_050 'Cadrines') are fictitious-drug validity checks; see invalid_fake_drugs.",
-    "MissingValues": "n/a"
+    "Description": "Substance Use Questionnaire.",
+    "Notes": "We did not include summary scores due to the complexity of substance use and the lack of participants who have used each drug.",
+    "Instructions": "This is a survey about your use of drugs and alcohol. The survey should take 5 to 10 minutes. Drug use is, of course, a sensitive and personal matter, something you would not want to tell just anyone about. This survey, however, allows us to ask you about your drug use and guarantees the secrecy of your responses. Let us know at the end what you think. The survey is easy to take. To answer a question, all you need to do is select the appropriate response on the screen.",
+    "TermURL": "https://pubmed.ncbi.nlm.nih.gov/10707437/"
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
-  "drugs_club___0": {
-    "Description": "None of the above (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_practice_age": {
+    "Description": "There are two types of questions on this test. The first question \"How old are you\" is an example of the first type of question. In this type of question, you answer by selecting one of the responses. Go ahead now and answer the question by selecting your age.",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "11": "11 years old",
+      "12": "12 years old",
+      "13": "13 years old",
+      "14": "14 years old",
+      "15": "15 years old",
+      "16": "16 years old",
+      "17": "17 years old",
+      "18": "18 years old",
+      "19": "19 years old",
+      "20": "20 years old",
+      "21": "21 years old",
+      "22": "22 years old",
+      "23": "23 years old",
+      "24": "24 years old",
+      "25": "25 years old",
+      "26": "26 years old",
+      "27": "27 years old",
+      "28": "28 years old",
+      "29": "29 years old",
+      "30": "30 years old"
     }
   },
-  "drugs_club___1": {
-    "Description": "MDMA (Molly) (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_practice_fam___1": {
+    "Description": "For this next question, \"Which of the following are in your family?\", we want you to select all the responses that are true. Which of the following are you in a family? [Father]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "drugs_club___2": {
-    "Description": "Ecstasy (Sunshine) (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_practice_fam___2": {
+    "Description": "Which of the following are in your family? [Mother]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "drugs_club___3": {
-    "Description": "GHB (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_practice_fam___3": {
+    "Description": "Which of the following are in your family? [Sister]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "drugs_club___4": {
-    "Description": "Ketamine (Special K) (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_practice_fam___4": {
+    "Description": "Which of the following are in your family? [Brother]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "drugs_club___5": {
-    "Description": "Rohypnol (Roofies) (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_practice_fam___5": {
+    "Description": "Which of the following are in your family? [Dog]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "drugs_depressants___0": {
-    "Description": "None of the above (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_practice_fam___6": {
+    "Description": "Which of the following are in your family? [Cat]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "drugs_depressants___1": {
-    "Description": "Alcohol (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_010": {
+    "Description": "Have you ever used tobacco (for example cigarettes, cigars, chewing tobacco)?",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "1": "I have never tried tobacco",
+      "2": "I have never tried tobacco, but might sometime",
+      "3": "I have tried tobacco, but have not used it in the past 12 months",
+      "4": "I have tried tobacco, but have used it only once in a while in the past 12 months",
+      "5": "I have tried tobacco, and have used it a lot in the past 12 months"
     }
   },
-  "drugs_depressants___2": {
-    "Description": "Valium (benzos) (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_020___1": {
+    "Description": "How have you used tobacco? Select all that apply. [Smoked cigarettes]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "drugs_depressants___3": {
-    "Description": "Xanax (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_020___2": {
+    "Description": "How have you used tobacco? Select all that apply. [Smoked a pipe or cigar]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "drugs_depressants___4": {
-    "Description": "Nitrous Oxide (whip-its) (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_020___3": {
+    "Description": "How have you used tobacco? Select all that apply. [Chewed tobacco or snuff]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "drugs_depressants___5": {
-    "Description": "Barbiturates (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_030": {
+    "Description": "How have you used tobacco most?",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "1": "Smoked cigarettes",
+      "2": "Smoked pipe or cigar",
+      "3": "Chewed tobacco or snuff"
     }
   },
-  "drugs_hallucinogens___0": {
-    "Description": "None of the above (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_040": {
+    "Description": "How old were you when you first tried more than a small amount of tobacco (at least a full cigarette, cigar, packet or pinch of snuff, chewing tobacco)?",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Never tried it",
+      "1": "11 years old",
+      "2": "12 years old",
+      "3": "13 years old",
+      "4": "14 years old",
+      "5": "15 years old",
+      "6": "16 years old",
+      "7": "17 years old",
+      "8": "18 years old",
+      "9": "19 years old",
+      "10": "20 years old",
+      "11": "21 years old",
+      "12": "22 years old",
+      "13": "23 years old",
+      "14": "24 years old",
+      "15": "25 years old",
+      "16": "26 years old",
+      "17": "27 years old",
+      "18": "28 years old",
+      "19": "29 years old",
+      "20": "30 years old",
+      "21": "31 years old or older"
     }
   },
-  "drugs_hallucinogens___1": {
-    "Description": "LSD (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_060": {
+    "Description": "During the past 12 months, how often did you smoke cigarettes?",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "1": "Everyday or nearly everyday",
+      "2": "3-4 times a week",
+      "3": "1-2 times a week",
+      "4": "2-3 times a month",
+      "5": "About once a month",
+      "6": "Less than once a month"
     }
   },
-  "drugs_hallucinogens___2": {
-    "Description": "PCP (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_070": {
+    "Description": "How old were you when you first smoked cigarettes everyday or almost everyday?",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "I have never smoked cigarettes",
+      "1": "11 years old or younger",
+      "2": "12 years old",
+      "3": "13 years old",
+      "4": "14 years old",
+      "5": "15 years old",
+      "6": "16 years old",
+      "7": "17 years old",
+      "8": "18 years old",
+      "9": "19 years old",
+      "10": "20 years old",
+      "11": "21 years old",
+      "12": "22 years old",
+      "13": "23 years old",
+      "14": "24 years old",
+      "15": "25 years old",
+      "16": "26 years old",
+      "17": "27 years old",
+      "18": "28 years old",
+      "19": "29 years old",
+      "20": "30 years old",
+      "21": "31 years old or older"
     }
   },
-  "drugs_hallucinogens___3": {
-    "Description": "Ecstasy (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_120": {
+    "Description": "During the past 12 months, how many cigarettes did you usually smoke in a day when you did smoke?",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "1": "2 or more PACKS per day",
+      "2": "1-2 PACKS per day",
+      "3": "10-19 cigarettes per day",
+      "4": "3-9 cigarettes per day",
+      "5": "1-2 cigarettes per day",
+      "6": "Less than one cigarette per day"
     }
   },
-  "drugs_hallucinogens___4": {
-    "Description": "MDMA (Molly) (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_080": {
+    "Description": "During the past 12 months, how often did you smoke a pipe or cigar",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "1": "Everyday or nearly everyday",
+      "2": "3-4 times a week",
+      "3": "1-2 times a week",
+      "4": "2-3 times a month",
+      "5": "About once a month",
+      "6": "Less than once a month"
     }
   },
-  "drugs_hallucinogens___5": {
-    "Description": "Marijuana (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_090": {
+    "Description": "How old were you when you first smoked a pipe or cigar everyday or almost everyday?",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "1": "11 years old or younger",
+      "2": "12 years old",
+      "3": "13 years old",
+      "4": "14 years old",
+      "5": "15 years old",
+      "6": "16 years old",
+      "7": "17 years old",
+      "8": "18 years old",
+      "9": "19 years old",
+      "10": "20 years old",
+      "11": "21 years old",
+      "12": "22 years old",
+      "13": "23 years old",
+      "14": "24 years old",
+      "15": "25 years old",
+      "16": "26 years old",
+      "17": "27 years old",
+      "18": "28 years old",
+      "19": "29 years old",
+      "20": "30 years old",
+      "21": "31 years old or older"
     }
   },
-  "drugs_hallucinogens___6": {
-    "Description": "Mescaline (Peyote) (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_130": {
+    "Description": "During the past 12 months, about how many cigars or pipes did you usually smoke on a day when you did smoke?",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "1": "20 or more cigars or pipes a day",
+      "2": "10-19 cigars or pipes a day",
+      "3": "3-9 cigars or pipes a day",
+      "4": "1-2 cigars or pipes a day",
+      "5": "Less than one cigar or pipe a day"
     }
   },
-  "drugs_hallucinogens___7": {
-    "Description": "Psilocybin (Magic Mushrooms) (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_100": {
+    "Description": "During the past 12 months about how often did you chew tobacco or snuff?",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "1": "Everyday or nearly everyday",
+      "2": "3-4 times a week",
+      "3": "1-2 times a week",
+      "4": "2-3 times a month",
+      "5": "About once a month",
+      "6": "Less than once a month"
     }
   },
-  "drugs_hallucinogens___8": {
-    "Description": "Salvia (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_110": {
+    "Description": "How old were you when you first chewed tobacco or snuff everyday or almost everyday?",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "1": "11 years old or younger",
+      "2": "12 years old",
+      "3": "13 years old",
+      "4": "14 years old",
+      "5": "15 years old",
+      "6": "16 years old",
+      "7": "17 years old",
+      "8": "18 years old",
+      "9": "19 years old",
+      "10": "20 years old",
+      "11": "21 years old",
+      "12": "22 years old",
+      "13": "23 years old",
+      "14": "24 years old",
+      "15": "25 years old",
+      "16": "26 years old",
+      "17": "27 years old",
+      "18": "28 years old",
+      "19": "29 years old",
+      "20": "30 years old",
+      "21": "31 years old or older"
     }
   },
-  "drugs_hallucinogens___9": {
-    "Description": "Synthetic Marijuana (K2, Spice) (checkbox option; 1 = selected, 0 = not selected)",
+  "substance_tob_140": {
+    "Description": "During the past 12 months, how many tins of chewing tobacco or snuff did you use each day when you did chew tobacco?",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_hallucinogens___10": {
-    "Description": "Synthetic Cathinones (Bath Salts, Mephedrone, Meow-Meow, Bubbles) (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_opiates___0": {
-    "Description": "None of the above (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_opiates___1": {
-    "Description": "Heroin (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_opiates___2": {
-    "Description": "Morphine (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_opiates___3": {
-    "Description": "Codeine (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_opiates___4": {
-    "Description": "Oxycontin (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_opiates___5": {
-    "Description": "Vicodin (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_stimulants___0": {
-    "Description": "None of the above (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_stimulants___1": {
-    "Description": "Cocaine (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_stimulants___2": {
-    "Description": "Methamphetamine (Meth) (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_stimulants___3": {
-    "Description": "Amphetamine (Adderall) (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_stimulants___4": {
-    "Description": "Caffeine (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
-    }
-  },
-  "drugs_stimulants___5": {
-    "Description": "Nicotine (checkbox option; 1 = selected, 0 = not selected)",
-    "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "1": "2 or more tins per day",
+      "2": "1-2 tins per day",
+      "3": "About a half a tin per day",
+      "4": "Less than a half a tin per day",
+      "5": "Just one pinch per day",
+      "6": "Less than one pinch per day"
     }
   },
   "substance_alc_010": {
     "Description": "Have you ever used alcohol?",
     "Levels": {
-      "0": "I have never tried alcohol",
-      "1": "I have never tried alcohol, but might sometime",
-      "2": "I have tried alcohol, but have not used it in the past 12 months",
-      "3": "I have tried alcohol, but have only used it once in a while in the past 12 months",
-      "4": "I have tried alcohol, and have used it a lot in the past 12 months"
+      "1": "I have never tried alcohol",
+      "2": "I have never tried alcohol, but might sometime",
+      "3": "I have tried alcohol, but have not used in the past 12 months",
+      "4": "I have tried alcohol, but have only used it once in a while in the past 12 months",
+      "5": "I have used alcohol, and have used it a lot in the past 12 months"
     }
   },
   "substance_alc_020": {
@@ -274,26 +306,26 @@
     "Description": "How old were you when you first tried more alcohol than the small amount allowed by your parents?",
     "Levels": {
       "0": "Never tried it",
-      "111": "years old or younger",
-      "212": "years old",
-      "313": "years old",
-      "414": "years old",
-      "515": "years old",
-      "616": "years old",
-      "717": "years old",
-      "818": "years old",
-      "919": "years old",
-      "1020": "years old",
-      "1121": "years old or older"
+      "1": "11 years old or younger",
+      "2": "12 years old",
+      "3": "13 years old",
+      "4": "14 years old",
+      "5": "15 years old",
+      "6": "16 years old",
+      "7": "17 years old",
+      "8": "18 years old",
+      "9": "19 years old",
+      "10": "20 years old",
+      "11": "21 years old or older"
     }
   },
   "substance_alc_050": {
     "Description": "During the past 12 months, about how many times did you drink alcohol?",
     "Levels": {
       "1": "Every day or nearly every day",
-      "23": "-4 times a week",
-      "31": "-2 times a week",
-      "42": "-3 times a month",
+      "2": "3-4 times a week",
+      "3": "1-2 times a week",
+      "4": "2-3 times a month",
       "5": "About once a month",
       "6": "Less than once a month"
     }
@@ -322,38 +354,38 @@
       "18": "28 years old",
       "19": "29 years old",
       "20": "30 years old",
-      "21": "31 years old or older"
+      "21": "31 years or older"
     }
   },
   "substance_alc_100": {
-    "Description": "In the past 12 months, when you drank alcohol, how many drinks did you usually have?A drink is a glass of wine, a bottle or can of beer, a shot glass of liquor, or a mixed drink.",
+    "Description": "In the past 12 months, when you drank alcohol, how many drinks did you usually have? A drink is a glass of wine, a bottle or can of beer, a shot glass of liquor, or a mixed drink.",
     "Levels": {
-      "110": "or more drinks",
-      "29": "drinks",
-      "38": "drinks",
-      "47": "drinks",
-      "56": "drinks",
-      "65": "drinks",
-      "74": "drinks",
-      "83": "drinks",
-      "92": "drinks",
-      "101": "drink",
+      "1": "10 or more drinks",
+      "2": "9 drinks",
+      "3": "8 drinks",
+      "4": "7 drinks",
+      "5": "6 drinks",
+      "6": "5 drinks",
+      "7": "4 drinks",
+      "8": "3 drinks",
+      "9": "2 drinks",
+      "10": "1 drink",
       "11": "Less than one drink"
     }
   },
   "substance_alc_110": {
-    "Description": "In the past 12 months, what is the largest number of drinks you had at one time?A drink is a glass of wine, a bottle or can of beer, a shot glass of liquor, or a mixed drink.",
+    "Description": "In the past 12 months, what is the largest number of drinks you had at one time? A drink is a glass of wine, a bottle or can of beer, a shot glass of liquor, or a mixed drink.",
     "Levels": {
-      "110": "or more drinks",
-      "29": "drinks",
-      "38": "drinks",
-      "47": "drinks",
-      "56": "drinks",
-      "65": "drinks",
-      "74": "drinks",
-      "83": "drinks",
-      "92": "drinks",
-      "101": "drink",
+      "1": "10 or more drinks",
+      "2": "9 drinks",
+      "3": "8 drinks",
+      "4": "7 drinks",
+      "5": "6 drinks",
+      "6": "5 drinks",
+      "7": "4 drinks",
+      "8": "3 drinks",
+      "9": "2 drinks",
+      "10": "1 drink",
       "11": "Less than one drink"
     }
   },
@@ -367,27 +399,27 @@
   "substance_alc_130": {
     "Description": "How old were you when you first got drunk or high from alcohol?",
     "Levels": {
-      "111": "years old or younger",
-      "212": "years old",
-      "313": "years old",
-      "414": "years old",
-      "515": "years old",
-      "616": "years old",
-      "717": "years old",
-      "818": "years old",
-      "919": "years old",
-      "1020": "years old",
-      "1121": "years old",
-      "1222": "years old",
-      "1323": "years old",
-      "1424": "years old",
-      "1525": "years old",
-      "1626": "years old",
-      "1727": "years old",
-      "1828": "years old",
-      "1929": "years old",
-      "2030": "years old",
-      "2131": "years old or older"
+      "1": "11 years old or younger",
+      "2": "12 years old",
+      "3": "13 years old",
+      "4": "14 years old",
+      "5": "15 years old",
+      "6": "16 years old",
+      "7": "17 years old",
+      "8": "18 years old",
+      "9": "19 years old",
+      "10": "20 years old",
+      "11": "21 years old",
+      "12": "22 years old",
+      "13": "23 years old",
+      "14": "24 years old",
+      "15": "25 years old",
+      "16": "26 years old",
+      "17": "27 years old",
+      "18": "28 years old",
+      "19": "29 years old",
+      "20": "30 years old",
+      "21": "31 years old or older"
     }
   },
   "substance_alc_140": {
@@ -403,147 +435,63 @@
       "1": "Nearly every time or every time",
       "2": "About half the time",
       "3": "Less than half of the time",
-      "0": "Never or almost never"
+      "4": "Never or almost never"
     }
   },
   "substance_alc_160": {
     "Description": "How many times in the past 12 months have you been drunk?",
     "Levels": {
       "1": "Every day or nearly every day",
-      "23": "-4 times a week",
-      "31": "-2 times a week",
-      "42": "-3 times a month",
+      "2": "3-4 times a week",
+      "3": "1-2 times a week",
+      "4": "2-3 times a month",
       "5": "About once a month",
       "6": "Less than once a month"
-    }
-  },
-  "substance_alcexp_yn01": {
-    "Description": "Earlier, you said you have used ALCOHOL. We would like toknow what has happened to you when you have used alcohol. You will beshown some things that might happen when people use alcohol. For each one,decide whether it has ever happened to you. Was this something that hashappened to me when I used alcohol? I felt very mellow, calm, and happy.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
-    }
-  },
-  "substance_alcexp_yn02": {
-    "Description": "I had a lot of fun with friends at a party.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
-    }
-  },
-  "substance_alcexp_yn03": {
-    "Description": "I enjoyed music more.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
-    }
-  },
-  "substance_alcexp_yn04": {
-    "Description": "I felt sexy, excited.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
-    }
-  },
-  "substance_alcexp_yn05": {
-    "Description": "I passed out and couldn't remember what I did.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
-    }
-  },
-  "substance_alcexp_yn06": {
-    "Description": "I became sick and vomited.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
-    }
-  },
-  "substance_alcexp_yn07": {
-    "Description": "I felt more confident.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
-    }
-  },
-  "substance_alcexp_yn08": {
-    "Description": "I felt depressed or sad.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
-    }
-  },
-  "substance_alcexp_yn09": {
-    "Description": "I forgot my troubles.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
-    }
-  },
-  "substance_alcexp_yn10": {
-    "Description": "I felt mad or angry.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
-    }
-  },
-  "substance_alcexp_yn11": {
-    "Description": "I felt confused or scared.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
-    }
-  },
-  "substance_alcexp_yn12": {
-    "Description": "I got into trouble with my parents.",
-    "Levels": {
-      "1": "Yes",
-      "0": "No"
     }
   },
   "substance_mar_010": {
     "Description": "Have you ever used marijuana (grass) or hashish?",
     "Levels": {
-      "0": "I have never tried marijuana or hashish.",
-      "1": "I have never tried marijuana or hashish, but might sometime.",
-      "2": "I have tried marijuana or hashish, but have not used it in the past 12 months.",
-      "3": "I have tried marijuana or hashish, but have used it only once in a while in the past 12 months.",
-      "4": "I have tried marijuana or hashish, and have used it a lot in the past 12 months."
+      "1": "I have never tried marijuana or hashish",
+      "2": "I have never tried marijuana or hashish, but might sometime",
+      "3": "I have tried marijuana or hashish, but have not used it in the past 12 months",
+      "4": "I have tried marijuana or hashish, but have used it only once in a while in the past 12 months",
+      "5": "I have tried marijuana or hashish, and have used it a lot in the past 12 months"
     }
   },
   "substance_mar_020": {
     "Description": "How old were you when you first tried marijuana (grass) or hashish?",
     "Levels": {
-      "111": "years old or younger",
-      "212": "years old",
-      "313": "years old",
-      "414": "years old",
-      "515": "years old",
-      "616": "years old",
-      "717": "years old",
-      "818": "years old",
-      "919": "years old",
-      "1020": "years old",
-      "1121": "years old",
-      "1222": "years old",
-      "1323": "years old",
-      "1424": "years old",
-      "1525": "years old",
-      "1626": "years old",
-      "1727": "years old",
-      "1828": "years old",
-      "1929": "years old",
-      "2030": "years old",
-      "2131": "years old or older"
+      "1": "11 years old or younger",
+      "2": "12 years old",
+      "3": "13 years old",
+      "4": "14 years old",
+      "5": "15 years old",
+      "6": "16 years old",
+      "7": "17 years old",
+      "8": "18 years old",
+      "9": "19 years old",
+      "10": "20 years old",
+      "11": "21 years old",
+      "12": "22 years old",
+      "13": "23 years old",
+      "14": "24 years old",
+      "15": "25 years old",
+      "16": "26 years old",
+      "17": "27 years old",
+      "18": "28 years old",
+      "19": "29 years old",
+      "20": "30 years old",
+      "21": "31 years or older"
     }
   },
   "substance_mar_040": {
     "Description": "During the past 12 months, about how often did you use marijuana or hashish?",
     "Levels": {
       "1": "Every day or nearly every day",
-      "23": "-4 times a week",
-      "31": "-2 times a week",
-      "42": "-3 times a month",
+      "2": "3-4 times a week",
+      "3": "1-2 times a week",
+      "4": "2-3 times a month",
       "5": "About once a month",
       "6": "Less than once a month"
     }
@@ -552,343 +500,427 @@
     "Description": "How old were you when you first smoked marijuana or hashish every day or nearly every day?",
     "Levels": {
       "0": "Never smoked marijuana",
-      "111": "years old or younger",
-      "212": "years old",
-      "313": "years old",
-      "414": "years old",
-      "515": "years old",
-      "616": "years old",
-      "717": "years old",
-      "818": "years old",
-      "919": "years old",
-      "1020": "years old",
-      "1121": "years old",
-      "1222": "years old",
-      "1323": "years old",
-      "1424": "years old",
-      "1525": "years old",
-      "1626": "years old",
-      "1727": "years old",
-      "1828": "years old",
-      "1929": "years old",
-      "2030": "years old",
-      "2131": "years old or older"
+      "1": "11 years old or younger",
+      "2": "12 years old",
+      "3": "13 years old",
+      "4": "14 years old",
+      "5": "15 years old",
+      "6": "16 years old",
+      "7": "17 years old",
+      "8": "18 years old",
+      "9": "19 years old",
+      "10": "20 years old",
+      "11": "21 years old",
+      "12": "22 years old",
+      "13": "23 years old",
+      "14": "24 years old",
+      "15": "25 years old",
+      "16": "26 years old",
+      "17": "27 years old",
+      "18": "28 years old",
+      "19": "29 years old",
+      "20": "30 years old",
+      "21": "31 years old or older"
     }
   },
   "substance_mar_100___1": {
-    "Description": "I could get some at home. (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "How can you get marijuana or hashish? Select all that apply. [I could get some at home]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
   "substance_mar_100___2": {
-    "Description": "I could get some from one of my brothers. (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "How can you get marijuana or hashish? Select all that apply. [I could get some from one of my brothers]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
   "substance_mar_100___3": {
-    "Description": "I could get some from one of my sisters. (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "How can you get marijuana or hashish? Select all that apply. [I could get some from one of my sisters]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
   "substance_mar_100___4": {
-    "Description": "I could get some from friends. (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "How can you get marijuana or hashish? Select all that apply. [I could get some from friends]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
   "substance_mar_100___5": {
-    "Description": "I know where I could buy some. (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "How can you get marijuana or hashish? Select all that apply. [I know where I could buy some]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
   "substance_mar_100___6": {
-    "Description": "I know an adult who will give me some. (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "How can you get marijuana or hashish? Select all that apply. [I know an adult who will give me some]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "substance_alcexp_yn01": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I felt very mellow, calm, and happy]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
+    }
+  },
+  "substance_alcexp_yn02": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I had a lot of fun with friends at a party]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
+    }
+  },
+  "substance_alcexp_yn03": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I enjoyed music more]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
+    }
+  },
+  "substance_alcexp_yn04": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I felt sexy, excited]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
+    }
+  },
+  "substance_alcexp_yn05": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I passed out and couldn't remember what I did]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
+    }
+  },
+  "substance_alcexp_yn06": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I became sick and vomited]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
+    }
+  },
+  "substance_alcexp_yn07": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I felt more confident]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
+    }
+  },
+  "substance_alcexp_yn08": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I felt depressed or sad]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
+    }
+  },
+  "substance_alcexp_yn09": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I forgot my troubles]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
+    }
+  },
+  "substance_alcexp_yn10": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I felt mad or angry]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
+    }
+  },
+  "substance_alcexp_yn11": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I felt confused or scared]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
+    }
+  },
+  "substance_alcexp_yn12": {
+    "Description": "Earlier, you said you have used ALCOHOL. We would like to know what has happened to you when you have used alcohol. You will be shown some things that might happen when people use alcohol. For each one, decide whether it has ever happened to you. Was this something that has happened to me when I use alcohol? [I got into trouble with my parents]",
+    "Levels": {
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn01": {
-    "Description": "Earlier, you said that you have used MARIJUANA. We wouldlike to know what has happened to you when you have used marijuana. Youwill be shown some things that might happen when people use marijuana. Foreach one, decide whether it has ever happened to you. Was this something thathas happened to me when I used marijuana? I felt very mellow, calm, and happy.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I felt very mellow, calm, and happy]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn02": {
-    "Description": "I had a lot of fun with friends at a party.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I had a lot of fun with friends at a party]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn03": {
-    "Description": "I enjoyed music more.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I enjoyed music more]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn04": {
-    "Description": "I felt sexy, excited.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I felt sexy, excited]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn05": {
-    "Description": "I passed out and couldn't remember what I did.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I passed out and couldn't remember what I did]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn06": {
-    "Description": "I became sick and vomited.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I became sick and vomited]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn07": {
-    "Description": "I felt more confident.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I felt more confident]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn08": {
-    "Description": "I felt depressed or sad.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I felt depressed or sad]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn09": {
-    "Description": "I forgot my troubles.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I forgot my troubles]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn10": {
-    "Description": "I felt mad or angry.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I felt mad or angry]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn11": {
-    "Description": "I felt confused or scared.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I felt confused or scared]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_marexp_yn12": {
-    "Description": "I got into trouble with my parents.",
+    "Description": "Earlier, you said that you have used MARIJUANA. We would like to know what has happened to you when you have used marijuana. You will be shown some things that might happen when people use marijuana. For each one, decide whether it has ever happened to you. Was this something that happened to me when I used marijuana? [I got into trouble with my parents]",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_othr_010": {
-    "Description": "Have you used:Stimulants (uppers, speed, diet pills)?",
+    "Description": "Have you used: Stimulants (uppers, speed, diet pills)?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_011": {
     "Description": "Were the stimulants prescribed to you by a doctor?",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_othr_012": {
     "Description": "Did you take more than the doctor prescribed?",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_othr_020": {
-    "Description": "Have you used:Tranquilizers (Valium, Librium, etc.)?",
+    "Description": "Have you used: Tranquilizers (Valium, Librium, etc.)?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_021": {
     "Description": "Were the tranquilizers prescribed to you by a doctor?",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_othr_022": {
     "Description": "Did you take more than the doctor recommended?",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_othr_030": {
-    "Description": "Have you used:Quaaludes or Downers?",
+    "Description": "Have you used: Quaaludes or Downers?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_040": {
-    "Description": "Have you used:Bleomycins (screamers, blacks, etc.)?",
+    "Description": "Have you used: Bleomycins (screamers, blacks, etc.)?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_050": {
-    "Description": "Have you used:Cadrines (wagon wheels, rails)?",
+    "Description": "Have you used: Cadrines (wagon wheels, rails)?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_060": {
-    "Description": "Have you used:Inhalants (gasoline, glue, aerosol sprays) Amyl Nitrate or Butyl Nitrate (poppers, rush, locker rooms)?",
+    "Description": "Have you used: Inhalants (gasoline, glue, aerosol sparys) Amyl Nitrate or Butyl Nitrate (poppers, rush, locker rooms)?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_070": {
-    "Description": "Have you used:Pills or medicine available without a prescription such as NoDoz, Sominex, cold capsules, etc.?",
+    "Description": "Have you used: Pills or medicine available without a prescription such as NoDoz, Sominex, cold capsules, etc.?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_071": {
     "Description": "Did you take more than the recommended dosage?",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_othr_072": {
     "Description": "Did you take them even though you weren't sick?",
     "Levels": {
-      "1": "Yes [substance_othr_070] = '1' or [substance_othr_070] = '2'"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_othr_080": {
-    "Description": "Have you used:Cocaine (coke, crack)?",
+    "Description": "Have you used: Cocaine (coke, crack)?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_090": {
-    "Description": "Have you used:PCP (angel dust, peace pill), LSD (acid), or other psychedelics?",
+    "Description": "Have you used: PCP (angel dust, peace pill), LSD (acid), or other psychedelics?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_100": {
-    "Description": "Have you used:Heroin (horse, smack) or other opiates (methadone, opium, morphine, codine, etc.)?",
+    "Description": "Have you used: Heroin (horse, smack) or other opiates (methadone, opium, morphine, codine, etc.)",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_101": {
     "Description": "If you used other opiates, were they prescribed to you by a doctor?",
     "Levels": {
-      "1": "Yes",
       "0": "No",
-      "2": "This does not apply to me"
+      "1": "Yes"
     }
   },
   "substance_othr_102": {
     "Description": "Did you take more than the doctor prescribed?",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_othr_110": {
-    "Description": "Have you used:Steroids (juice, heat, roids)?",
+    "Description": "Have you used: Steroids (juice, heat, rods)?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_111": {
     "Description": "Were the steroids prescribed to you by a doctor?",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_othr_112": {
     "Description": "Did you take more than the doctor recommended?",
     "Levels": {
-      "1": "Yes",
-      "0": "No"
+      "0": "No",
+      "1": "Yes"
     }
   },
   "substance_othr_120": {
-    "Description": "Have you used:Synthetic Cathinones (Bath Salts, Mephedrone, Meow-Meow, Bubbles)?",
+    "Description": "Have you used: Synthetic Cathinones (Bath Salts, Mephedrone, Meow-Meow, Bubbles)?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_130": {
-    "Description": "Have you used:Synthetic Marijuana (K2, Spice)?",
+    "Description": "Have you used: Synthetic Marijuana (K2, Spice)?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_140": {
-    "Description": "Have you used:Salvia?",
+    "Description": "Have you used: Salvia?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_150": {
-    "Description": "Have you used:Club drugs (MDMA, Ecstasy, Molly, Sunshine, GHB, Ketamine, Special K, Rohypnol, Roofies)?",
+    "Description": "Have you used: Club drugs (MDMA, Ecstasy, Molly, Sunshine, GHB, Ketamine, Special K, Rohypnol, Roofies)?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_160": {
@@ -896,295 +928,269 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
   "substance_othr_170": {
-    "Description": "Have you used:Electronic cigarettes (E-Cigs, Blue, N-Joy, Vape Pens, Vaporizers) to inhale Nicotine?",
+    "Description": "Have you used: Electronic cigarettes (E-Cigs, Blue, N-Joy, Vape Pens, Vaporizers) to inhale Nicotine?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "0": "No"
+      "3": "No"
     }
   },
-  "substance_practice_age": {
-    "Description": "There are two types of questions on this test. The first question, \"How old are you?\" is an example of the first type of question. In this type of question, you answer by selecting one of the responses. Go ahead now and answer the question by selecting your age. When you've selected your response, click on the \"Next Page >>\" button. How old are you?",
+  "drugs_club___1": {
+    "Description": "Which club drugs have you used? [MDMA (Molly)]",
     "Levels": {
-      "1111": "years old",
-      "1212": "years old",
-      "1313": "years old",
-      "1414": "years old",
-      "1515": "years old",
-      "1616": "years old",
-      "1717": "years old",
-      "1818": "years old",
-      "1919": "years old",
-      "2020": "years old",
-      "2121": "years old",
-      "2222": "years old",
-      "2323": "years old",
-      "2424": "years old",
-      "2525": "years old",
-      "2626": "years old",
-      "2727": "years old",
-      "2828": "years old",
-      "2929": "years old",
-      "3030": "years old"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_practice_fam___1": {
-    "Description": "Father (checkbox option; 1 = selected, 0 = not selected)",
+  "drugs_club___2": {
+    "Description": "Which club drugs have you used? [Ecstasy (Sunshine)]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_practice_fam___2": {
-    "Description": "Mother (checkbox option; 1 = selected, 0 = not selected)",
+  "drugs_club___3": {
+    "Description": "Which club drugs have you used? [GHB]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_practice_fam___3": {
-    "Description": "Sister (checkbox option; 1 = selected, 0 = not selected)",
+  "drugs_club___4": {
+    "Description": "Which club drugs have you used? [Ketamine (Special K)]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_practice_fam___4": {
-    "Description": "Brother (checkbox option; 1 = selected, 0 = not selected)",
+  "drugs_club___5": {
+    "Description": "Which club drugs have you used? [Rohypnol (Roofies)]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_practice_fam___5": {
-    "Description": "Dog (checkbox option; 1 = selected, 0 = not selected)",
+  "drugs_club___0": {
+    "Description": "Which club drugs have you used? [None of the above]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_practice_fam___6": {
-    "Description": "Cat (checkbox option; 1 = selected, 0 = not selected)",
+  "drugs_stimulants___1": {
+    "Description": "Which stimulants have you used? [Cocaine]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_010": {
-    "Description": "Have you ever used tobacco (for example cigarettes, cigars, chewing tobacco)?",
+  "drugs_stimulants___2": {
+    "Description": "Which stimulants have you used? [Methamphetamine (Meth)]",
     "Levels": {
-      "0": "I have never tried tobacco.",
-      "1": "I have never tried tobacco, but might sometime.",
-      "2": "I have tried tobacco, but have not used it in the past 12 months.",
-      "3": "I have tried tobacco, but have used it only once in a while in the past 12 months.",
-      "4": "I have tried tobacco, and have used it a lot in the past 12 months."
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_020___1": {
-    "Description": "Smoked cigarettes (checkbox option; 1 = selected, 0 = not selected)",
+  "drugs_stimulants___3": {
+    "Description": "Which stimulants have you used? [Amphetamine (Adderall)]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_020___2": {
-    "Description": "Smoked a pipe or cigar (checkbox option; 1 = selected, 0 = not selected)",
+  "drugs_stimulants___4": {
+    "Description": "Which stimulants have you used? [Caffeine]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_020___3": {
-    "Description": "Chewed tobacco or snuff (checkbox option; 1 = selected, 0 = not selected)",
+  "drugs_stimulants___5": {
+    "Description": "Which stimulants have you used? [Nicotine]",
     "Levels": {
-      "1": "Checked",
-      "0": "Unchecked"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_030": {
-    "Description": "How have you used tobacco most?",
+  "drugs_stimulants___0": {
+    "Description": "Which stimulants have you used? [None of the above]",
     "Levels": {
-      "1": "Smoked cigarettes",
-      "2": "Smoked pipe or cigar",
-      "3": "Chewed tobacco or snuff"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_040": {
-    "Description": "How old were you when you first tried more than a small amount of tobacco (at least a full cigarette, cigar, packet or pinch of snuff, chewing tobacco)?",
+  "drugs_depressants___1": {
+    "Description": "Which depressants have you used? [Alcohol]",
     "Levels": {
-      "0": "Never tried it",
-      "111": "years old or younger",
-      "212": "years old",
-      "313": "years old",
-      "414": "years old",
-      "515": "years old",
-      "616": "years old",
-      "717": "years old",
-      "818": "years old",
-      "919": "years old",
-      "1020": "years old",
-      "1121": "years old",
-      "1222": "years old",
-      "1323": "years old",
-      "1424": "years old",
-      "1525": "years old",
-      "1626": "years old",
-      "1727": "years old",
-      "1828": "years old",
-      "1929": "years old",
-      "2030": "years old",
-      "2131": "years old or older"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_060": {
-    "Description": "During the past 12 months, how often did you smoke cigarettes?",
+  "drugs_depressants___2": {
+    "Description": "Which depressants have you used? [Valium (benzos)]",
     "Levels": {
-      "1": "Every day or nearly every day",
-      "23": "-4 times a week",
-      "31": "-2 times a week",
-      "42": "-3 times a month",
-      "5": "About once a month",
-      "6": "Less than once a month"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_070": {
-    "Description": "How old were you when you first smoked cigarettes every day or almost every day?",
+  "drugs_depressants___3": {
+    "Description": "Which depressants have you used? [Xanax]",
     "Levels": {
-      "0": "I have never smoked cigarettes",
-      "111": "years old or younger",
-      "212": "years old",
-      "313": "years old",
-      "414": "years old",
-      "515": "years old",
-      "616": "years old",
-      "717": "years old",
-      "818": "years old",
-      "919": "years old",
-      "1020": "years old",
-      "1121": "years old",
-      "1222": "years old",
-      "1323": "years old",
-      "1424": "years old",
-      "1525": "years old",
-      "1626": "years old",
-      "1727": "years old",
-      "1828": "years old",
-      "1929": "years old",
-      "2030": "years old",
-      "2131": "years old or older"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_080": {
-    "Description": "During the past 12 months, about how often did you smoke a pipe or cigar?",
+  "drugs_depressants___4": {
+    "Description": "Which depressants have you used? [Nitrous Oxide (whip-its)]",
     "Levels": {
-      "1": "Every day or nearly every day",
-      "23": "-4 times a week",
-      "31": "-2 times a week",
-      "42": "-3 times a month",
-      "5": "About once a month",
-      "6": "Less than once a month"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_090": {
-    "Description": "How old were you when you first smoked a pipe or cigar every day or almost every day?",
+  "drugs_depressants___5": {
+    "Description": "Which depressants have you used? [Barbituates]",
     "Levels": {
-      "111": "years old or younger",
-      "212": "years old",
-      "313": "years old",
-      "414": "years old",
-      "515": "years old",
-      "616": "years old",
-      "717": "years old",
-      "818": "years old",
-      "919": "years old",
-      "1020": "years old",
-      "1121": "years old",
-      "1222": "years old",
-      "1323": "years old",
-      "1424": "years old",
-      "1525": "years old",
-      "1626": "years old",
-      "1727": "years old",
-      "1828": "years old",
-      "1929": "years old",
-      "2030": "years old",
-      "2131": "years old or older"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_100": {
-    "Description": "During the past 12 months about how often did you chew tobacco or snuff?",
+  "drugs_depressants___0": {
+    "Description": "Which depressants have you used? [None of the above]",
     "Levels": {
-      "1": "Every day or nearly every day",
-      "23": "-4 times a week",
-      "31": "-2 times a week",
-      "42": "-3 times a month",
-      "5": "About once a month",
-      "6": "Less than once a month"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_110": {
-    "Description": "How old were you when you first chewed tobacco or snuff every day or almost every day?",
+  "drugs_hallucinogens___1": {
+    "Description": "Which hallucinogens have you used? [LSD]",
     "Levels": {
-      "111": "years old or younger",
-      "212": "years old",
-      "313": "years old",
-      "414": "years old",
-      "515": "years old",
-      "616": "years old",
-      "717": "years old",
-      "818": "years old",
-      "919": "years old",
-      "1020": "years old",
-      "1121": "years old",
-      "1222": "years old",
-      "1323": "years old",
-      "1424": "years old",
-      "1525": "years old",
-      "1626": "years old",
-      "1727": "years old",
-      "1828": "years old",
-      "1929": "years old",
-      "2030": "years old",
-      "2131": "years old or older"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_120": {
-    "Description": "During the past 12 months, how many cigarettes did you usually smoke in a day when you did smoke?",
+  "drugs_hallucinogens___2": {
+    "Description": "Which hallucinogens have you used? [PCP]",
     "Levels": {
-      "12": "or more PACKS per day",
-      "21": "-2 PACKS per day",
-      "310": "-19 cigarettes per day",
-      "43": "-9 cigarettes per day",
-      "51": "-2 cigarettes per day",
-      "6": "Less than one cigarette per day"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_130": {
-    "Description": "During the past 12 months, about how many cigars or pipes did you usually smoke in a day when you did smoke?",
+  "drugs_hallucinogens___3": {
+    "Description": "Which hallucinogens have you used? [Ecstasy]",
     "Levels": {
-      "120": "or more cigars/pipes a day",
-      "210": "-19 cigars or pipes a day",
-      "33": "-9 cigars or pipes a day",
-      "41": "-2 cigars or pipes a day",
-      "5": "Less than one cigar or pipe a day"
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
-  "substance_tob_140": {
-    "Description": "During the past 12 months, about how many tins of chewing tobacco or snuff did you use each day when you did chew tobacco?",
+  "drugs_hallucinogens___4": {
+    "Description": "Which hallucinogens have you used? [MDMA (Molly)]",
     "Levels": {
-      "12": "or more tins per day",
-      "21": "-2 tins per day",
-      "3": "About half a tin per day",
-      "4": "Less than half a tin per day",
-      "5": "Just one pinch per day",
-      "6": "Less than one pinch per day"
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_hallucinogens___5": {
+    "Description": "Which hallucinogens have you used? [Marijuana]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_hallucinogens___6": {
+    "Description": "Which hallucinogens have you used? [Mescaline (Peyote)]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_hallucinogens___7": {
+    "Description": "Which hallucinogens have you used? [Psilocybin (Magic Mushrooms)]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_hallucinogens___8": {
+    "Description": "Which hallucinogens have you used? [Salvia]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_hallucinogens___9": {
+    "Description": "Which hallucinogens have you used? [Synthetic Marijuana (K2, Spice)]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_hallucinogens___10": {
+    "Description": "Which hallucinogens have you used? [Synthetic Cathinones (Bath Salts, Mephedrone, Meow-Meow, Bubbles)]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_hallucinogens___0": {
+    "Description": "Which hallucinogens have you used? [None of the above]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_opiates___1": {
+    "Description": "Which opiates have you used? [Heroin]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_opiates___2": {
+    "Description": "Which opiates have you used? [Morphine]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_opiates___3": {
+    "Description": "Which opiates have you used? [Codeine]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_opiates___4": {
+    "Description": "Which opiates have you used? [Oxycontin]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_opiates___5": {
+    "Description": "Which opiates have you used? [Vicodin]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
+    }
+  },
+  "drugs_opiates___0": {
+    "Description": "Which opiates have you used? [None of the above]",
+    "Levels": {
+      "0": "Unchecked",
+      "1": "Checked"
     }
   },
   "invalid_fake_drugs": {
-    "Description": "Validity flag: 1 if the participant endorsed (non-zero response) either of two fictitious drugs - substance_othr_040 ('Bleomycins') or substance_othr_050 ('Cadrines'). Because these drugs do not exist, endorsement indicates careless/invalid responding. Blank/n/a otherwise."
+    "LongName": "Validity column of affirmative responses to fake drugs",
+    "Description": "Validity column that flags whether participants gave an affirmative response to fake drugs in items substance_othr_040 and substance_othr_050",
+    "Levels": {
+      "0": "Valid",
+      "1": "Invalid"
+    },
+    "Derivative": true
   }
 }

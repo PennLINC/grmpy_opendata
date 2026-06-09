@@ -1,11 +1,11 @@
 {
   "MeasurementToolMetadata": {
     "Description": "Borderline Evaluation of Severity over Time - Modified Satterthwaite (BEST-MS)",
-    "LongName": "Modified BEST. Subscale A (items 1-8, negative thoughts/feelings) and Subscale B (items 9-12, negative behaviors) are scored; Subscale C (positive behaviors) was not administered. Items rated 1 (None/slight) to 5 (Extreme).",
-    "MissingValues": "n/a"
+    "Instructions": "The highest rating (5) means that the item caused extreme distress, severe difficulties with relationships, and/or kept you from getting things done. The loweest rating (1) means it caused you little or no problems. Choose the number that indicates how much the item has caused distress, relationship problems, or difficulty with getting things done OVER THE PAST MONTH.",
+    "TermURL": ""
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "best_ms_1": {
     "Description": "Worrying that someone important in your life is tired of you or is planning to leave you.",
@@ -118,42 +118,42 @@
     }
   },
   "best_ms_11_behaviors___1": {
-    "Description": "Over-spending (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "For the above question, please check those behaviors that apply: Over-spending",
     "Levels": {
       "1": "Checked",
       "0": "Unchecked"
     }
   },
   "best_ms_11_behaviors___2": {
-    "Description": "Risky sexual behavior (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "For the above question, please check those behaviors that apply: Risky sexual behavior",
     "Levels": {
       "1": "Checked",
       "0": "Unchecked"
     }
   },
   "best_ms_11_behaviors___3": {
-    "Description": "Substance abuse (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "For the above question, please check those behaviors that apply: Substance abuse",
     "Levels": {
       "1": "Checked",
       "0": "Unchecked"
     }
   },
   "best_ms_11_behaviors___4": {
-    "Description": "Reckless driving (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "For the above question, please check those behaviors that apply: Reckless driving",
     "Levels": {
       "1": "Checked",
       "0": "Unchecked"
     }
   },
   "best_ms_11_behaviors___5": {
-    "Description": "Binge Eating (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "For the above question, please check those behaviors that apply: Binge Eating",
     "Levels": {
       "1": "Checked",
       "0": "Unchecked"
     }
   },
   "best_ms_11_behaviors___6": {
-    "Description": "Other (checkbox option; 1 = selected, 0 = not selected)",
+    "Description": "For the above question, please check those behaviors that apply: Other",
     "Levels": {
       "1": "Checked",
       "0": "Unchecked"
@@ -173,12 +173,15 @@
     }
   },
   "best_score_subscaleA": {
-    "Description": "BEST-MS Subscale A (thoughts & feelings): sum of items best_ms_1-best_ms_8 (each 1-5). n/a if any item missing."
+    "Description": "BEST-MS Subscale A (thoughts & feelings): sum of items best_ms_1-best_ms_8 (each 1-5). n/a if any item missing.",
+    "Derivative": true
   },
   "best_score_subscaleB": {
-    "Description": "BEST-MS Subscale B (negative behaviors): sum of items best_ms_9-best_ms_12 (each 1-5). n/a if any item missing."
+    "Description": "BEST-MS Subscale B (negative behaviors): sum of items best_ms_9-best_ms_12 (each 1-5). n/a if any item missing.",
+    "Derivative": true
   },
   "best_score_finalNoComponentC": {
-    "Description": "BEST-MS total = Subscale A + Subscale B. Subscale C (Positive Behaviors) was not administered, so the standard +15 correction factor is NOT applied. n/a if either subscale is missing."
+    "Description": "BEST-MS total = Subscale A + Subscale B. Subscale C (Positive Behaviors) was not administered, so the standard +15 correction factor is NOT applied. n/a if either subscale is missing.",
+    "Derivative": true
   }
 }

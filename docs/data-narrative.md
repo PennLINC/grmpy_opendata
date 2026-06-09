@@ -1043,11 +1043,11 @@ ari - completed + verified. JSON complete.
 
 bdi - completed + verified. JSON complete.
 
-best-ms - completed + verified against self_report_summary.tsv. Note this is a best modified satterthwaite version of best.
+best-ms - completed + verified against self_report_summary.tsv. Note this is a best modified satterthwaite version of best. TODO: JSON complete, needs "TermURL".
 
 bisbas - completed + verified against self_report_summary.tsv. EF is a child version. TODO: JSON needs "TermURL".
 
-biss_madrs - completed + verified w/ Ted.
+biss_madrs - completed + verified w/ Ted. biss item 43 in data dictionary is not present in the data - asks about "why you are coming for psychiatric treatment" when the individuals in the study are not doing so. TODO: JSON complete, needs "TermURL".
 
 bss - completed + verified against self_report_summary.tsv. TODO: JSON complete, needs "TermURL".
 
@@ -1067,7 +1067,7 @@ prime_screen - do not release. TODO: remove.
 
 ***Proband_GOASSESS - only has summary/flagged columns. TODO - ignore for now, look in flyhweel for study group related to irritability.
 
-psqi - completed + verified. sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, but its 2 in the self_report_summary.tsv which means the scorer must have assumed the ptp meant they went to bed at 6pm. Component 4 score and the global score were set to n/a for this subject. TODO: JSON still working.
+psqi - completed + verified. sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, but its 2 in the self_report_summary.tsv which means the scorer must have assumed the ptp meant they went to bed at 6pm. Component 4 score and the global score were set to n/a for this subject. TODO: JSON complete, needs "TermURL".
 
 rpaq - complete + verified against self_report_summary.tsv. not in EF. TODO: JSON complete, needs "TermURL"; confirm title of scale in "Description".
 
@@ -1081,13 +1081,13 @@ staxi2-ca - scored by summing based on https://www.annarbor.co.uk/index.php?main
 
 swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary (0 = quite a bit or very much. 1 = not at all or just a little). Original publications says responses should range from -3 to 3. Would need to confirm 1) if reverse coding is needed, 2) if the R code is correct based on the inputs (are the thresholds imposed based on binary inputs?). Unclear if swan_total1 and swan_total2 are needed at all -- was in the R code but not in the self_report_itemwise.tsv. DECISION: removed scoring but left the answers. TODO: Followup to see if Ted would rather delete. JSON not validated.
 
-suq - no scoring needed. added validity column on substance_othr_040/050 - should be 0 b/c drugs are fake.
+suq - no scoring needed. added validity column on substance_othr_040/050 - should be 0 b/c drugs are fake. JSON complete.
 
 spq - scored onsite, scoring logic in dev data dictionary pdf.
 
-tanner_boy - no scoring needed.
+tanner_boy - no scoring needed. JSON complete.
 
-tanner_girl - no scoring needed.
+tanner_girl - no scoring needed. JSON complete.
 
 wolf_post_imaging - no scoring needed.
 
