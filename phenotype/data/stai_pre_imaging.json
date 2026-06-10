@@ -1,11 +1,12 @@
 {
   "MeasurementToolMetadata": {
     "Description": "State-Trait Anxiety Inventory (STAI), pre-scan administration",
-    "LongName": "Full 40-item STAI completed before scanning. State items (stai_q_01-20) rated 1 Not at all - 4 Very Much So; Trait items (stai_q_21-40) rated 1 Almost Never - 4 Almost Always.",
-    "MissingValues": "n/a"
+    "InstructionsQ1-20": "INSTRUCTIONS FOR Q1-20 (STAI-State): A number of statements which people have used to describe themselves are given below. Read each statement and then click on the appropriate button to the right of the statement to indicate how you feel right now, that is, at this moment. There are no right or wrong answers. Do not spend too much time on any one statement but give the answer which seems to describe your present feelings best.",
+    "InstructionsQ21-40": "INSTRUCTIONS FOR Q21-40 (STAI-Trait): A number of statements which people have used to describe themselves are given below. Read each statement and then click on the appropriate button to the right of the statement to indicate how you generally feel.",
+    "TermURL": "https://www.researchgate.net/publication/235361542_Manual_for_the_State-Trait_Anxiety_Inventory_Form_Y1_-_Y2"
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "stai_q_01": {
     "Description": "I feel calm",
@@ -368,12 +369,15 @@
     }
   },
   "stai_total": {
-    "Description": "STAI total: sum of all 40 items with the following reverse-coded (5-x): q01,q02,q05,q08,q10,q11,q15,q16,q19,q20,q21,q23,q26,q27,q30,q33,q34,q36,q39. n/a if any of the 40 items is missing."
+    "Description": "STAI total: sum of all 40 items with the following reverse-coded (5-x): q01,q02,q05,q08,q10,q11,q15,q16,q19,q20,q21,q23,q26,q27,q30,q33,q34,q36,q39. n/a if any of the 40 items is missing.",
+    "Derivative": true
   },
   "stai_state": {
-    "Description": "STAI State score: sum of state items stai_q_01-20 (reverse-coded items: q01,q02,q05,q08,q10,q11,q15,q16,q19,q20). Range 20-80. n/a if any state item missing."
+    "Description": "STAI State score: sum of state items stai_q_01-20 (reverse-coded items: q01,q02,q05,q08,q10,q11,q15,q16,q19,q20). Range 20-80. n/a if any state item missing.",
+    "Derivative": true
   },
   "stai_trait": {
-    "Description": "STAI Trait score: sum of trait items stai_q_21-40 (reverse-coded items: q21,q23,q26,q27,q30,q33,q34,q36,q39). Range 20-80. n/a if any trait item missing."
+    "Description": "STAI Trait score: sum of trait items stai_q_21-40 (reverse-coded items: q21,q23,q26,q27,q30,q33,q34,q36,q39). Range 20-80. n/a if any trait item missing.",
+    "Derivative": true
   }
 }

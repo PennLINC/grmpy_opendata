@@ -1,11 +1,11 @@
 {
   "MeasurementToolMetadata": {
     "Description": "State-Trait Anxiety Inventory (STAI) State, post-scan administration",
-    "LongName": "STAI State items (stai_q_01-20) completed after scanning; each rated 1 Not at all - 4 Very Much So.",
-    "MissingValues": "n/a"
+    "Instructions": "A number of statements which people have used to describe themselves are given below. Read each statement and then click on the appropriate button to the right of the statement to indicate how you feel right now, that is, at this moment. There are no right or wrong answers. Do not spend too much time on any one statement but give the answer which seems to describe your present feelings best.",
+    "TermURL": "https://www.researchgate.net/publication/235361542_Manual_for_the_State-Trait_Anxiety_Inventory_Form_Y1_-_Y2"
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "stai_q_01": {
     "Description": "I feel calm",
@@ -188,6 +188,7 @@
     }
   },
   "stai_state": {
-    "Description": "STAI State score (post-scan): sum of items stai_q_01-20 with reverse-coded items q01,q02,q05,q08,q10,q11,q15,q16,q19,q20 (5-x). Range 20-80. n/a if any item missing."
+    "Description": "STAI State score (post-scan): sum of items stai_q_01-20 with reverse-coded items q01,q02,q05,q08,q10,q11,q15,q16,q19,q20 (5-x). Range 20-80. n/a if any item missing.",
+    "Derivative": true
   }
 }

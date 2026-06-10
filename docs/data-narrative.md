@@ -1073,23 +1073,23 @@ rpaq - complete + verified against self_report_summary.tsv. not in EF. TODO: JSO
 
 scared - completed + verified against self_report_summary.tsv. not in EF. TODO: JSON needs "TermURL".
 
-stai_pre_imaging - completed + verified.
+stai_pre_imaging - completed + verified. JSON complete.
 
-stai_post_imaging - completed + verified.
+stai_post_imaging - completed + verified. JSON complete.
 
-staxi2-ca - scored by summing based on https://www.annarbor.co.uk/index.php?main_page=index&cPath=419_322. Anger expression subscales were not scored due to lack of clarity on the scoring logic.
+staxi2-ca - scored by summing based on https://www.annarbor.co.uk/index.php?main_page=index&cPath=419_322. Anger expression subscales were not scored due to lack of clarity on the scoring logic. JSON complete.
 
 swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary (0 = quite a bit or very much. 1 = not at all or just a little). Original publications says responses should range from -3 to 3. Would need to confirm 1) if reverse coding is needed, 2) if the R code is correct based on the inputs (are the thresholds imposed based on binary inputs?). Unclear if swan_total1 and swan_total2 are needed at all -- was in the R code but not in the self_report_itemwise.tsv. DECISION: removed scoring but left the answers. TODO: Followup to see if Ted would rather delete. JSON not validated.
 
 suq - no scoring needed. added validity column on substance_othr_040/050 - should be 0 b/c drugs are fake. JSON complete.
 
-spq - scored onsite, scoring logic in dev data dictionary pdf. TODO: still working on JSON. scoring logic in data dict is difficult. validity subscale double counts q2. n/a's need to be added to tsv, probably the same for other dev scales.
+spq - scored onsite, scoring logic in dev data dictionary pdf. JSON complete.
 
 tanner_boy - no scoring needed. JSON complete.
 
 tanner_girl - no scoring needed. JSON complete.
 
-wolf_post_imaging - no scoring needed.
+wolf_post_imaging - no scoring needed. JSON complete.
 
 swan-collateral - missing? - can forget about it
 
@@ -1103,18 +1103,11 @@ Diagnosis - release a subset of columns highlighted by ted. axis.tsv is the outp
 
 Demographics.tsv - TODO: what to release?
 
-TODO: scales in the self-report data dictionary that are not on flywheel: RTSQ, PSS, BFI, LOT-R, Conte Social Interest, QPR.
+TODO: scales in the self-report data dictionary that are not on flywheel: RTSQ, PSS, BFI, LOT-R, Conte Social Interest, QPR. scales in imaging data dictionary that are not on flywheel: wolf questionnaire face, grmpy post-scan questionnaire, PANAS-MW.
 
 ### sidecars
-"MeasurementToolMetadata" field probably needs updating.
 
 axis.json was inferred, needs updating.
-
-bdi_score_total - needs to be updated to description uneccessarily verbose.
-
-best_ms_score_finalNoComponentC - needs to be updated.
-
-verify spq scoring against the data dict.
 
 
 # helpful hints

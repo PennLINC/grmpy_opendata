@@ -181,7 +181,7 @@
     "Derivative": true
   },
   "best_score_finalNoComponentC": {
-    "Description": "BEST-MS total = Subscale A + Subscale B. Subscale C (Positive Behaviors) was not administered, so the standard +15 correction factor is NOT applied. n/a if either subscale is missing.",
+    "Description": "BEST-MS total = Subscale A + Subscale B. Subscale C (Positive Behaviors) was not administered. n/a if either subscale is missing.",
     "Derivative": true
   }
 }
