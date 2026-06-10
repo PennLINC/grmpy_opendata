@@ -46,6 +46,7 @@ _FAKE_DRUG_COLS = ("substance_othr_040", "substance_othr_050")
 # "MeasurementToolMetadata") defines the canonical column order for that scale.
 SIDECAR_ORDER_FILES: Dict[str, str] = {
     "suq": "suq.json",
+    "spq": "spq.json",
 }
 
 # (output_name, column_prefixes, exclude_suffixes) – scales are tested in order;
@@ -67,6 +68,7 @@ SCALES: List[ScaleDef] = [
     ("spq", ["spq_"], ["_complete", "_vcode"]),
     ("suq", ["substance_", "drugs_"], ["_vcode", "_complete"]),
 ]
+
 
 def parse_args(argv: Iterable[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -165,9 +167,7 @@ def load_sidecar_order(path: Path) -> Optional[List[str]]:
     return [k for k in data.keys() if k != "MeasurementToolMetadata"]
 
 
-def reorder_header_by_sidecar(
-    header: List[str], sidecar_order: List[str]
-) -> List[str]:
+def reorder_header_by_sidecar(header: List[str], sidecar_order: List[str]) -> List[str]:
     """Reorder *header* to match *sidecar_order*.
 
     Columns present in both appear in sidecar order; columns only in *header*
