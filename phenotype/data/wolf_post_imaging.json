@@ -1,46 +1,46 @@
 {
   "MeasurementToolMetadata": {
     "Description": "Wolf Post-scan Questionnaire - Memory task (not scored)",
-    "LongName": "Three post-scan self-report items about the memory task, each rated 1-7. No summary score.",
-    "MissingValues": "n/a"
+    "Notes": "Three post-scan self-report items about the fracback task, each rated 1-7. No summary score.",
+    "Instructions": "In the memory task..."
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "wolf_post_1": {
     "Description": "How interested were you? Please click the number that best describes your experience.",
     "Levels": {
-      "1": "Very bored",
+      "1": "1 (very bored)",
       "2": "2",
       "3": "3",
       "4": "4",
       "5": "5",
       "6": "6",
-      "7": "Very interested"
+      "7": "7 (very interested)"
     }
   },
   "wolf_post_2": {
     "Description": "How hard did you try to give the right answers? Please click the number that best describes your experience.",
     "Levels": {
-      "1": "Didn't try at all",
+      "1": "1 (didn't try at all)",
       "2": "2",
       "3": "3",
       "4": "4",
       "5": "5",
       "6": "6",
-      "7": "Tried my hardest"
+      "7": "7 (tried my hardest)"
     }
   },
   "wolf_post_3": {
     "Description": "How happy did you feel when you thought you gave the right answer? Please click the number that best describes your experience.",
     "Levels": {
-      "1": "Not happy at all",
+      "1": "1 (not happy at all)",
       "2": "2",
       "3": "3",
       "4": "4",
       "5": "5",
       "6": "6",
-      "7": "Very happy"
+      "7": "7 (very happy)"
     }
   }
 }

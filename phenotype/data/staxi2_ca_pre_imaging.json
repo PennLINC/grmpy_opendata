@@ -1,11 +1,14 @@
 {
   "MeasurementToolMetadata": {
     "Description": "State-Trait Anger Expression Inventory-2 Child/Adolescent (STAXI-2 C/A), pre-scan",
-    "LongName": "35-item child/adolescent anger inventory. Part 1 (items 1-10, State Anger) rated 1 Not at all - 3 Very much; Parts 2-3 (items 11-35, Trait Anger and Anger Expression/Control) rated 1 Hardly ever - 3 Often. No reverse coding is applied.",
-    "MissingValues": "n/a"
+    "InstructionsQ1-10": "The sentences below talk about feelings people sometimes have. Read each sentence below and then click the response that indicates how you feel right now. There are no right or wrong answers. Be honest. Do not spend too much time on any sentence.",
+    "InstructionsQ11-20": "The sentences below talk about feelings people sometimes have. Read each sentence below and then click the response that indicates how often you usually feel that way. There are no right or wrong answers. Be honest. Do not spend too much time on any sentence.",
+    "InstructionsQ21-35": "Everyone feels angry from time to time, but people differ in what they do when they are angry. The sentences below talk about how you may feel or act when you are angry. Read each sentence and then click the response that best describes how often you feel or act that way when you are angry. There are no right or wrong answers. Be honest. Do not spend too much time on any sentence.",
+    "Notes": "The Anger Expression/Control subscales from items 21-35 were not scored due to uncertainty in the scoring key.",
+    "TermURL": "https://www.annarbor.co.uk/index.php?main_page=index&cPath=419_322"
   },
   "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+    "Description": "Participant ID Number"
   },
   "staxi2_ca_1": {
     "Description": "I feel annoyed",
@@ -288,21 +291,27 @@
     }
   },
   "staxi2_ca_score_state_anger": {
-    "Description": "State Anger: sum of items 1-10. n/a if any item missing."
+    "Description": "State Anger: sum of items 1-10. n/a if any item missing.",
+    "Derivative": true
   },
   "staxi2_ca_score_state_anger_feelings": {
-    "Description": "State Anger - Feeling Angry: sum of items 1,2,3,8,10."
+    "Description": "State Anger - Feeling Angry: sum of items 1,2,3,8,10.",
+    "Derivative": true
   },
   "staxi2_ca_score_state_anger_expression": {
-    "Description": "State Anger - Feel like Expressing Anger: sum of items 4,5,6,7,9."
+    "Description": "State Anger - Feel like Expressing Anger: sum of items 4,5,6,7,9.",
+    "Derivative": true
   },
   "staxi2_ca_score_trait_anger": {
-    "Description": "Trait Anger: sum of items 11-20. n/a if any item missing."
+    "Description": "Trait Anger: sum of items 11-20. n/a if any item missing.",
+    "Derivative": true
   },
   "staxi2_ca_score_trait_anger_temperament": {
-    "Description": "Trait Anger - Temperament: sum of items 11,12,13,16,19."
+    "Description": "Trait Anger - Temperament: sum of items 11,12,13,16,19.",
+    "Derivative": true
   },
   "staxi2_ca_score_trait_anger_reaction": {
-    "Description": "Trait Anger - Reaction: sum of items 14,15,17,18,20. (The Anger Expression/Control subscales from items 21-35 were not scored due to uncertainty in the scoring key.)"
+    "Description": "Trait Anger - Reaction: sum of items 14,15,17,18,20.",
+    "Derivative": true
   }
 }
