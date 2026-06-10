@@ -181,13 +181,26 @@ def reorder_header_by_sidecar(header: List[str], sidecar_order: List[str]) -> Li
     return ordered + tail
 
 
+NA_VALUE = "n/a"
+
+
+def _na_if_empty(value: object) -> str:
+    """Return the BIDS missing token for empty/whitespace-only values."""
+    if value is None:
+        return NA_VALUE
+    text = str(value)
+    if text.strip() == "":
+        return NA_VALUE
+    return text
+
+
 def write_tsv(path: Path, header: List[str], rows: Iterable[Mapping[str, str]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
         writer.writerow(header)
         for row in rows:
-            writer.writerow([row.get(col, "") for col in header])
+            writer.writerow([_na_if_empty(row.get(col, "")) for col in header])
 
 
 def _get_row_value_ci(row: Mapping[str, str], key: str) -> str:
