@@ -1,8 +1,8 @@
 {
   "MeasurementToolMetadata": {
     "Description": "Screen for Child Anxiety Related Disorders (SCARED), 41-item",
-    "Instructions": "Below is a list of sentences that describe how people feel. Read each phrase and decide if is "Not True or Hardly Ever True", "Somewhat True or Sometimes True", or "Very True or Often True" for you. Then for each sentence, click the response that seems to describe you for the last three months.",
-    "TermURL": ""
+    "Instructions": "Below is a list of sentences that describe how people feel. Read each phrase and decide if is \"Not True or Hardly Ever True\", \"Somewhat True or Sometimes True\", or \"Very True or Often True\" for you. Then for each sentence, click the response that seems to describe you for the last three months.",
+    "TermURL": "https://doi.org/10.1007/s10578-018-0854-0"
   },
   "participant_id": {
     "Description": "Participant ID Number"

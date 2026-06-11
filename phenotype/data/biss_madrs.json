@@ -2,7 +2,10 @@
   "MeasurementToolMetadata": {
     "Description": "Bipolar Inventory of Signs and Symptoms Scale (BISS) & Montgomery-Asberg Depression Rating Scale (MADRS)",
     "Notes": "Clinician-rated symptom scales covering the most recent 7 days.",
-    "TermURL": ""
+    "TermURL": {
+      "biss": "https://doi.org/10.1037/t03476-000",
+      "madrs": "https://doi.org/10.1192/bjp.134.4.382"
+    }
   },
   "participant_id": {
     "Description": "Participant ID Number"

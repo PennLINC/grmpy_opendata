@@ -2,7 +2,7 @@
   "MeasurementToolMetadata": {
     "Description": "Borderline Evaluation of Severity over Time - Modified Satterthwaite (BEST-MS)",
     "Instructions": "The highest rating (5) means that the item caused extreme distress, severe difficulties with relationships, and/or kept you from getting things done. The loweest rating (1) means it caused you little or no problems. Choose the number that indicates how much the item has caused distress, relationship problems, or difficulty with getting things done OVER THE PAST MONTH.",
-    "TermURL": ""
+    "TermURL": "https://doi.org/10.1521/pedi.2009.23.3.281"
   },
   "participant_id": {
     "Description": "Participant ID Number"

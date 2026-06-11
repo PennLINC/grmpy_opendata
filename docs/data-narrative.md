@@ -1030,12 +1030,9 @@ python phenotype/02_extract_info_subfield.py \
 
 The self-report itemwise data was split into separate files using the [`03_separate_self_reports.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/03_separate_self_reports.py) script.
 
-Note - in general, if missing an item used in scoring, the summary score should be NA.
-
 Q: Should integer fields be converted to integer type in the tsv?
-TODO: make json sidecars for each tsv.
 
-aces - completed + verified. TODO: JSON complete, needs "TermURL".
+aces - completed + verified. JSON complete.
 
 als - completed - i have just an average score, EF also has a sum. JSON complete.
 
@@ -1043,19 +1040,19 @@ ari - completed + verified. JSON complete.
 
 bdi - completed + verified. JSON complete.
 
-best-ms - completed + verified against self_report_summary.tsv. Note this is a best modified satterthwaite version of best. TODO: JSON complete, needs "TermURL".
+best-ms - completed + verified against self_report_summary.tsv. Note this is a best modified satterthwaite version of best. JSON complete.
 
-bisbas - completed + verified against self_report_summary.tsv. EF is a child version. TODO: JSON needs "TermURL".
+bisbas - completed + verified against self_report_summary.tsv. EF is a child version. JSON complete.
 
-biss_madrs - completed + verified w/ Ted. biss item 43 in data dictionary is not present in the data - asks about "why you are coming for psychiatric treatment" when the individuals in the study are not doing so. TODO: JSON complete, needs "TermURL".
+biss_madrs - completed + verified w/ Ted. biss item 43 in data dictionary is not present in the data - asks about "why you are coming for psychiatric treatment" when the individuals in the study are not doing so. JSON complete.
 
-bss - completed + verified against self_report_summary.tsv. TODO: JSON complete, needs "TermURL".
+bss - completed + verified against self_report_summary.tsv. JSON complete.
 
 eswan_dmdd - completed + verified. Note: input was changed to range from -3 to 3 to match EF/PAFIN. JSON complete.
 
-grit - compelted + verified against self_report_summary.tsv. TODO: JSON complete, needs "TermURL"; confirm "Description".
+grit - compelted + verified against self_report_summary.tsv. JSON complete.
 
-hcl16 - completed + verified against self_report_summary.tsv. R code only uses hcl6_3 questions for scoring - that seems correct as these are actual questions from the larger hcl 32. However, these 16 questions differ from the ones used in Forty et al 2010, which was the only 16 question version identified in this systematic review of short form versions of the hcl32: https://pubmed.ncbi.nlm.nih.gov/31066059/. Not in EF. TODO: JSON complete, needs "TermURL".
+hcl16 - completed + verified against self_report_summary.tsv. R code only uses hcl6_3 questions for scoring - that seems correct as these are actual questions from the larger hcl 32. However, these 16 questions differ from the ones used in Forty et al 2010, which was the only 16 question version identified in this systematic review of short form versions of the hcl32: https://pubmed.ncbi.nlm.nih.gov/31066059/. Not in EF. JSON complete.
 
 mapssr - completed + verified. JSON complete.
 
@@ -1067,11 +1064,11 @@ prime_screen - do not release. TODO: remove.
 
 ***Proband_GOASSESS - only has summary/flagged columns. TODO - ignore for now, look in flyhweel for study group related to irritability.
 
-psqi - completed + verified. sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, but its 2 in the self_report_summary.tsv which means the scorer must have assumed the ptp meant they went to bed at 6pm. Component 4 score and the global score were set to n/a for this subject. TODO: JSON complete, needs "TermURL".
+psqi - completed + verified. sub-110354 says they spend 6am to 5am in bed but only sleep for 8 hours resulting in a component 4 score of 3 by my logic, but its 2 in the self_report_summary.tsv which means the scorer must have assumed the ptp meant they went to bed at 6pm. Component 4 score and the global score were set to n/a for this subject. JSON complete.
 
-rpaq - complete + verified against self_report_summary.tsv. not in EF. TODO: JSON complete, needs "TermURL"; confirm title of scale in "Description".
+rpaq - complete + verified against self_report_summary.tsv. not in EF. JSON complete.
 
-scared - completed + verified against self_report_summary.tsv. not in EF. TODO: JSON needs "TermURL".
+scared - completed + verified against self_report_summary.tsv. not in EF. JSON complete.
 
 stai_pre_imaging - completed + verified. JSON complete.
 
@@ -1090,12 +1087,6 @@ tanner_boy - no scoring needed. JSON complete.
 tanner_girl - no scoring needed. JSON complete.
 
 wolf_post_imaging - no scoring needed. JSON complete.
-
-swan-collateral - missing? - can forget about it
-
-scared-collateral - missing? - can forget about it
-
-ari-collateral - missing? - can forget about it
 
 CNB (cognitive battery) - might not release. no dictionary on flywheel. might need dates to make sure they aren't from another study. TODO: follow-up.
 
