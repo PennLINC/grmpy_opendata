@@ -2,7 +2,7 @@
   "MeasurementToolMetadata": {
     "Description": "Grit Scale (12-item) + relaxation/time-use items",
     "Instructions": "People often have very different work styles. Please respond to the following items. Be honest - there are no right or wrong answers.",
-    "TermURL": ""
+    "TermURL": "https://doi.org/10.1037/t07051-000"
   },
   "participant_id": {
     "Description": "Participant ID Number"

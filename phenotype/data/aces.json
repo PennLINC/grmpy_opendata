@@ -2,7 +2,7 @@
   "MeasurementToolMetadata": {
     "Description": "Adverse Childhood Experiences (ACE) questionnaire",
     "Instructions": "All of the questions on this last page are optional. You only need to answer the questions you wish to answer, and it's okay if you don't want to answer some of the questions. If you want to erase or clear your response, you can click on the 'reset' button on the right. While you were growing up, during your first 18 years of life:",
-    "TermURL": ""
+    "TermURL": "https://doi.org/10.1037/t26957-000"
   },
   "participant_id": {
     "Description": "Participant ID Number"

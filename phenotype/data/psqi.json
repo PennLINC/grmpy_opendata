@@ -2,7 +2,7 @@
   "MeasurementToolMetadata": {
     "Description": "Pittsburgh Sleep Quality Index (PSQI)",
     "Instructions": "The following questions relate to your usual sleep habits during the past month. Your answers should indicate the most accurate reply for the majority of days and nights in the past month. Please answer all questions.",
-    "TermURL": ""
+    "TermURL": "https://doi.org/10.1007/978-1-4419-9893-4_67"
   },
   "participant_id": {
     "Description": "Participant ID Number"

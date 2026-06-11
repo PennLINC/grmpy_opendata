@@ -2,7 +2,7 @@
   "MeasurementToolMetadata": {
     "Description": "Reactive-Proactive Aggression Questionnaire (RPAQ)",
     "Instructions": "There are times when most of us feel angry, or have done things we should not have done. Rate each of the items below by selecting never, sometimes, or often. Do not spend a lot of time thinking about the items-just give your first response. Make sure you answer all the items. How often have you...",
-    "TermURL": ""
+    "TermURL": "https://doi.org/10.1037/t66296-000"
   },
   "participant_id": {
     "Description": "Participant ID Number"

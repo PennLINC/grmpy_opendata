@@ -2,8 +2,8 @@
   "MeasurementToolMetadata": {
     "Description": "Hypomania Checklist (HCL-16)",
     "Instructions": "At different times in their life everyone experiences changes or swings in energy, activity, and mood ('highs and lows' or 'ups and downs'). The aim of this questionnaire is to assess the characteristics of the 'high' periods.",
-    "Notes": "Hypomania checklist. The 16 'high'-state symptom items hcl16_3_1-hcl16_3_16 (Yes/No) constitute the scored checklist; the remaining items (current/usual state, impact and course questions) are auxiliary and not part of the total.",
-    "TermURL": ""
+    "Notes": "Hypomania checklist. The 16 'high'-state symptom items hcl16_3_1-hcl16_3_16 (Yes/No) constitute the scored checklist; the remaining items (current/usual state, impact and course questions) are auxiliary and not part of the total. These 16 items are not the exact same as those included in the Forty et al 2010 16-itemversion of the HCL-32.",
+    "TermURL": "https://doi.org/10.1016/j.jad.2010.01.004"
   },
   "participant_id": {
     "Description": "Participant ID Number"
