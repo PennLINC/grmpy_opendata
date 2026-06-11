@@ -802,7 +802,7 @@
     }
   },
   "substance_othr_060": {
-    "Description": "Have you used: Inhalants (gasoline, glue, aerosol sparys) Amyl Nitrate or Butyl Nitrate (poppers, rush, locker rooms)?",
+    "Description": "Have you used: Inhalants (gasoline, glue, aerosol sprays) Amyl Nitrate or Butyl Nitrate (poppers, rush, locker rooms)?",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
@@ -848,7 +848,7 @@
     }
   },
   "substance_othr_100": {
-    "Description": "Have you used: Heroin (horse, smack) or other opiates (methadone, opium, morphine, codine, etc.)",
+    "Description": "Have you used: Heroin (horse, smack) or other opiates (methadone, opium, morphine, codeine, etc.)",
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
@@ -1052,7 +1052,7 @@
     }
   },
   "drugs_depressants___5": {
-    "Description": "Which depressants have you used? [Barbituates]",
+    "Description": "Which depressants have you used? [Barbiturates]",
     "Levels": {
       "0": "Unchecked",
       "1": "Checked"
