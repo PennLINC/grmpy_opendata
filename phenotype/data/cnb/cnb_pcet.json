@@ -1,0 +1,42 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Penn Conditional Exclusion Test (PCET)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_pcet_cr": {
+    "Description": "PCET Total Correct Responses"
+  },
+  "cnb_pcet_rtcr": {
+    "Description": "PCET Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_pcet_er": {
+    "Description": "PCET Total Incorrect Responses"
+  },
+  "cnb_pcet_rter": {
+    "Description": "PCET Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_pcet_num": {
+    "Description": "PCET Total Number of Responses"
+  },
+  "cnb_pcet_rt": {
+    "Description": "PCET Median Response Time for All Responses (ms)"
+  },
+  "cnb_pcet_cat": {
+    "Description": "PCET Total Number of Categories Achieved"
+  },
+  "cnb_pcet_cat1_tr": {
+    "Description": "PCET Total Number of Responses for Category 1"
+  },
+  "cnb_pcet_cat2_tr": {
+    "Description": "PCET Total Number of Responses for Category 2"
+  },
+  "cnb_pcet_cat3_tr": {
+    "Description": "PCET Total Number of Responses for Category 3"
+  },
+  "cnb_pcet_acc2": {
+    "Description": "PCET Calculated Accuracy Measure"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Computerized Finger Tapping Test (CTAP)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_ctap_hand": {
+    "Description": "CTAP Dominant Hand selected"
+  },
+  "cnb_ctap_dom": {
+    "Description": "CTAP Mean of Dominant Hand Trials"
+  },
+  "cnb_ctap_non": {
+    "Description": "CTAP Mean of Non-Dominant Hand Trials"
+  },
+  "cnb_ctap_domsd": {
+    "Description": "CTAP Standard Deviation (STDEV) of Dominant Hand Trials"
+  },
+  "cnb_ctap_nonsd": {
+    "Description": "CTAP Standard Deviation (STDEV) of Non-Dominant Hand Trials"
+  },
+  "cnb_ctap_tot": {
+    "Description": "CTAP Sum of DOM and NON-Dominant Trials"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Penn Line Orientation Test (PLOT)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_plot_cr": {
+    "Description": "PLOT Total Correct Responses"
+  },
+  "cnb_plot_pc": {
+    "Description": "PLOT Percent Correct Responses"
+  },
+  "cnb_plot_rtcr": {
+    "Description": "PLOT Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_plot_er": {
+    "Description": "PLOT Total Incorrect Responses"
+  },
+  "cnb_plot_rter": {
+    "Description": "PLOT Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_plot_rt": {
+    "Description": "PLOT Median Response Time for All Responses (ms)"
+  }
+}
