@@ -1,0 +1,81 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Measured Emotion Differentiation Test (MEDF)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_medf_cr": {
+    "Description": "MEDF Total Correct Responses"
+  },
+  "cnb_medf_rtcr": {
+    "Description": "MEDF Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_medf_er": {
+    "Description": "MEDF Total Incorrect Responses"
+  },
+  "cnb_medf_rter": {
+    "Description": "MEDF Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_medf_ang_cr": {
+    "Description": "MEDF Correct Anger Trial Responses"
+  },
+  "cnb_medf_ang_rtcr": {
+    "Description": "MEDF Median Response Time for Correct Anger Trial Responses (ms)"
+  },
+  "cnb_medf_ang_er": {
+    "Description": "MEDF Incorrect Anger Trial Responses"
+  },
+  "cnb_medf_ang_rter": {
+    "Description": "MEDF Median Response Time for Incorrect Anger Trial Responses (ms)"
+  },
+  "cnb_medf_fear_cr": {
+    "Description": "MEDF Correct Fear Trial Responses"
+  },
+  "cnb_medf_fear_rtcr": {
+    "Description": "MEDF Median Response Time for Correct Fear Trial Responses (ms)"
+  },
+  "cnb_medf_fear_er": {
+    "Description": "MEDF Incorrect Fear Trial Responses"
+  },
+  "cnb_medf_fear_rter": {
+    "Description": "MEDF Median Response Time for Incorrect Fear Trial Responses (ms)"
+  },
+  "cnb_medf_female_cr": {
+    "Description": "MEDF Correct Female Trial Responses"
+  },
+  "cnb_medf_female_rtcr": {
+    "Description": "MEDF Median Response Time for Correct Female Trial Responses (ms)"
+  },
+  "cnb_medf_hap_cr": {
+    "Description": "MEDF Correct Happy Trial Responses"
+  },
+  "cnb_medf_hap_rtcr": {
+    "Description": "MEDF Median Response Time for Correct Happy Trial Responses (ms)"
+  },
+  "cnb_medf_hap_er": {
+    "Description": "MEDF Incorrect Happy Trial Responses"
+  },
+  "cnb_medf_hap_rter": {
+    "Description": "MEDF Median Response Time for Incorrect Happy Trial Responses (ms)"
+  },
+  "cnb_medf_male_cr": {
+    "Description": "MEDF Correct Male Trial Responses"
+  },
+  "cnb_medf_male_rtcr": {
+    "Description": "MEDF Median Response Time for Correct Male Trial Responses (ms)"
+  },
+  "cnb_medf_sad_cr": {
+    "Description": "MEDF Correct Sad Trial Responses"
+  },
+  "cnb_medf_sad_rtcr": {
+    "Description": "MEDF Median Response Time for Correct Sad Trial Responses (ms)"
+  },
+  "cnb_medf_sad_er": {
+    "Description": "MEDF Incorrect Sad Trial Responses"
+  },
+  "cnb_medf_sad_rter": {
+    "Description": "MEDF Median Response Time for Incorrect Sad Trial Responses (ms)"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Letter N-Back Test (LNB)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_lnb_tp": {
+    "Description": "LNB True Positive Responses for 0-BACK, 1-BACK and 2-BACK trials"
+  },
+  "cnb_lnb_fp": {
+    "Description": "LNB False Positive Responses for 0-BACK, 1-BACK and 2-BACK trials"
+  },
+  "cnb_lnb_rtc": {
+    "Description": "LNB Median Response Time for True Positive responses for 0-BACK,  1-BACK and 2-BACK response (ms)"
+  },
+  "cnb_lnb_mcr": {
+    "Description": "LNB True Positive Responses for 1-BACK and 2-BACK Trials"
+  },
+  "cnb_lnb_mrtc": {
+    "Description": "LNB Median Response Time for True Positive responses for 1-BACK and 2-BACK response (ms)"
+  },
+  "cnb_lnb_tp0": {
+    "Description": "LNB True Positive Responses for 0-Back Trials"
+  },
+  "cnb_lnb_fp0": {
+    "Description": "LNB False Positive Responses for 0-Back Trials"
+  },
+  "cnb_lnb_rtc0": {
+    "Description": "LNB Median Response Time for Correct 0-Back Trials (ms)"
+  },
+  "cnb_lnb_fprt0": {
+    "Description": "LNB Median Response Time for False Positive Responses for 0-Back Trials (ms)"
+  },
+  "cnb_lnb_rt0": {
+    "Description": "LNB Median Response Time for All Responses for 0-Back Trials (ms)"
+  },
+  "cnb_lnb_tp1": {
+    "Description": "LNB True Positive Responses for 1-Back Trials"
+  },
+  "cnb_lnb_fp1": {
+    "Description": "LNB False Positive Responses for 1-Back Trials"
+  },
+  "cnb_lnb_rtc1": {
+    "Description": "LNB Median Response Time for Correct 1-Back Trials (ms)"
+  },
+  "cnb_lnb_fprt1": {
+    "Description": "LNB Median Response Time for False Positive Responses for 1-Back Trials (ms)"
+  },
+  "cnb_lnb_rt1": {
+    "Description": "LNB Median Response Time for All Responses for 1-Back Trials (ms)"
+  },
+  "cnb_lnb_tp2": {
+    "Description": "LNB True Positive Responses for 2-Back Trials"
+  },
+  "cnb_lnb_fp2": {
+    "Description": "LNB False Positive Responses for 2-Back Trials"
+  },
+  "cnb_lnb_rtc2": {
+    "Description": "LNB Median Response Time for Correct 2-Back Trials (ms)"
+  },
+  "cnb_lnb_fprt2": {
+    "Description": "LNB Median Response Time for False Positive Responses for 2-Back Trials (ms)"
+  },
+  "cnb_lnb_rt2": {
+    "Description": "LNB Median Response Time for All Responses for 2-Back Trials (ms)"
+  }
+}

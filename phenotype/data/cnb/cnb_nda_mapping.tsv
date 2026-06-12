@@ -1,0 +1,397 @@
+raw_column	status	task	nda_element	nda_description	grmpy_description
+adt36_a_adt36a_cr	released	adt	cnb_adt_cr	ADT Total Correct Responses	ADT36A Total Correct Responses
+adt36_a_adt36a_er	released	adt	cnb_adt_er	ADT Total Incorrect Responses	ADT36A Total Incorrect Responses
+adt36_a_adt36a_female_cr	released	adt	cnb_adt_female_cr	ADT Correct Female Trial Responses	ADT36A Correct Responses for  Female Trials
+adt36_a_adt36a_female_rtcr	released	adt	cnb_adt_female_rtcr	ADT Median Response Time for Correct Female Trial Responses (ms)	ADT36A Response Time for Correct  Female Trials (ms)
+adt36_a_adt36a_male_cr	released	adt	cnb_adt_male_cr	ADT Correct Male Trial Responses	ADT36A Correct Responses for  Male Trials
+adt36_a_adt36a_male_rtcr	released	adt	cnb_adt_male_rtcr	ADT Median Response Time for Correct Male Trial Responses (ms)	ADT36A Response Time for Correct  Male Trials (ms)
+adt36_a_adt36a_rtcr	released	adt	cnb_adt_rtcr	ADT Median Response Time for Correct Responses (ms)	ADT36A Response Time for Correct Responses (ms)
+adt36_a_adt36a_rter	released	adt	cnb_adt_rter	ADT Median Response Time for Incorrect Responses (ms)	ADT36A Response Time for Incorrect Responses (ms)
+adt36_b_adt36b_cr	released	adt	cnb_adt_cr	ADT Total Correct Responses	
+adt36_b_adt36b_er	released	adt	cnb_adt_er	ADT Total Incorrect Responses	
+adt36_b_adt36b_female_cr	released	adt	cnb_adt_female_cr	ADT Correct Female Trial Responses	
+adt36_b_adt36b_female_rtcr	released	adt	cnb_adt_female_rtcr	ADT Median Response Time for Correct Female Trial Responses (ms)	
+adt36_b_adt36b_male_cr	released	adt	cnb_adt_male_cr	ADT Correct Male Trial Responses	
+adt36_b_adt36b_male_rtcr	released	adt	cnb_adt_male_rtcr	ADT Median Response Time for Correct Male Trial Responses (ms)	
+adt36_b_adt36b_rtcr	released	adt	cnb_adt_rtcr	ADT Median Response Time for Correct Responses (ms)	
+adt36_b_adt36b_rter	released	adt	cnb_adt_rter	ADT Median Response Time for Incorrect Responses (ms)	
+cpf_a_cpf_cr	released	cpf	cnb_cpf_cr	CPF Total Correct Responses	
+cpf_a_cpf_er	released	cpf	cnb_cpf_er	CPF Total Incorrect Responses	
+cpf_a_cpf_fn	released	cpf	cnb_cpf_fn	CPF False Negative Responses	
+cpf_a_cpf_fnrt	released	cpf	cnb_cpf_fnrt	CPF Median Response Time for False Negative Responses (ms)	
+cpf_a_cpf_fp	released	cpf	cnb_cpf_fp	CPF False Positive Responses	
+cpf_a_cpf_fprt	released	cpf	cnb_cpf_fprt	CPF Median Response Time for False Positive Responses (ms)	
+cpf_a_cpf_rt	released	cpf	cnb_cpf_rt	CPF Median Response Time for All Responses (ms)	
+cpf_a_cpf_rtcr	released	cpf	cnb_cpf_rtcr	CPF Median Response Time for Correct Responses (ms)	
+cpf_a_cpf_rter	released	cpf	cnb_cpf_rter	CPF Median Response Time for Incorrect Responses (ms)	
+cpf_a_cpf_tn	released	cpf	cnb_cpf_tn	CPF True Negative Responses	
+cpf_a_cpf_tnrt	released	cpf	cnb_cpf_tnrt	CPF Median Response Time for True Negative Responses (ms)	
+cpf_a_cpf_tp	released	cpf	cnb_cpf_tp	CPF True Positive Responses	
+cpf_a_cpf_tprt	released	cpf	cnb_cpf_tprt	CPF Median Response Time for True Positive Responses (ms)	
+cpf_a_cpf_w_rtcr	released	cpf	cnb_cpf_w_rtcr	CPF Weighted Median Response Time for Correct Responses (ms)	
+cpf_a_cpf_w_rter	released	cpf	cnb_cpf_w_rter	CPF Weighted Median Response Time for Incorrect Responses (ms)	
+cpf_b_cpf_cr	released	cpf	cnb_cpf_cr	CPF Total Correct Responses	CPF_B Total Correct Responses
+cpf_b_cpf_er	released	cpf	cnb_cpf_er	CPF Total Incorrect Responses	CPF_B Total Incorrect Responses
+cpf_b_cpf_fn	released	cpf	cnb_cpf_fn	CPF False Negative Responses	CPF_B False Negatives
+cpf_b_cpf_fnrt	released	cpf	cnb_cpf_fnrt	CPF Median Response Time for False Negative Responses (ms)	CPF_B False Negatives Median Response Time (ms)
+cpf_b_cpf_fp	released	cpf	cnb_cpf_fp	CPF False Positive Responses	CPF_B False Positives
+cpf_b_cpf_fprt	released	cpf	cnb_cpf_fprt	CPF Median Response Time for False Positive Responses (ms)	CPF_B False Positives Median Response Time (ms)
+cpf_b_cpf_rt	released	cpf	cnb_cpf_rt	CPF Median Response Time for All Responses (ms)	CPF_B Median Response Time for all responses(ms)
+cpf_b_cpf_rtcr	released	cpf	cnb_cpf_rtcr	CPF Median Response Time for Correct Responses (ms)	CPF_B Median Total Correct Response Time (ms)
+cpf_b_cpf_rter	released	cpf	cnb_cpf_rter	CPF Median Response Time for Incorrect Responses (ms)	CPF_B Median Total incorrect Response Time (ms)
+cpf_b_cpf_tn	released	cpf	cnb_cpf_tn	CPF True Negative Responses	CPF_B True Negatives
+cpf_b_cpf_tnrt	released	cpf	cnb_cpf_tnrt	CPF Median Response Time for True Negative Responses (ms)	CPF_B True Negatives Median Response Time (ms)
+cpf_b_cpf_tp	released	cpf	cnb_cpf_tp	CPF True Positive Responses	CPF_B True Positives
+cpf_b_cpf_tprt	released	cpf	cnb_cpf_tprt	CPF Median Response Time for True Positive Responses (ms)	CPF_B True Positives Median Response Time (ms)
+cpf_b_cpf_w_rtcr	released	cpf	cnb_cpf_w_rtcr	CPF Weighted Median Response Time for Correct Responses (ms)	CPF_B Weighted Median Total Correct Response Time (ms)
+cpf_b_cpf_w_rter	released	cpf	cnb_cpf_w_rter	CPF Weighted Median Response Time for Incorrect Responses (ms)	CPF_B Weighted Median Total incorrect Response Time (ms)
+er40_c_er40c_ang	released	er40	cnb_er40_ang	ER40 Correct Anger Trial Responses	
+er40_c_er40c_angrt	released	er40	cnb_er40_angrt	ER40 Median Response Time for Correct Anger Trial Responses (ms)	
+er40_c_er40c_cr	released	er40	cnb_er40_cr	ER40 Total Correct Responses	
+er40_c_er40c_fc	released	er40	cnb_er40_fc	ER40 Correct Female Trial Responses	
+er40_c_er40c_fcrt	released	er40	cnb_er40_fcrt	ER40 Median Response Time for Correct Female Trial Responses (ms)	
+er40_c_er40c_fear	released	er40	cnb_er40_fear	ER40 Correct Fear Trial Responses	
+er40_c_er40c_fearrt	released	er40	cnb_er40_fearrt	ER40 Median Response Time for Correct Fear Trial Responses (ms)	
+er40_c_er40c_hap	released	er40	cnb_er40_hap	ER40 Correct Happy Trial Responses	
+er40_c_er40c_haprt	released	er40	cnb_er40_haprt	ER40 Median Response Time for Correct Happy Trial Responses (ms)	
+er40_c_er40c_mc	released	er40	cnb_er40_mc	ER40 Correct Male Trial Responses	
+er40_c_er40c_mcrt	released	er40	cnb_er40_mcrt	ER40 Median Response Time for Correct Male Trial Responses (ms)	
+er40_c_er40c_noe	released	er40	cnb_er40_noe	ER40 Correct No Emotion Trial Responses	
+er40_c_er40c_noert	released	er40	cnb_er40_noert	ER40 Median Response Time for Correct No Emotion Trial Responses (ms)	
+er40_c_er40c_rt	released	er40	cnb_er40_rt	ER40 Median Response Time for All Responses (ms)	
+er40_c_er40c_rtcr	released	er40	cnb_er40_rtcr	ER40 Median Response Time for Correct Responses (ms)	
+er40_c_er40c_sad	released	er40	cnb_er40_sad	ER40 Correct Sad Trial Responses	
+er40_c_er40c_sadrt	released	er40	cnb_er40_sadrt	ER40 Median Response Time for Correct Sad Trial Responses (ms)	
+er40_d_er40d_ang	released	er40	cnb_er40_ang	ER40 Correct Anger Trial Responses	ER40D Correct Anger Identifications
+er40_d_er40d_angrt	released	er40	cnb_er40_angrt	ER40 Median Response Time for Correct Anger Trial Responses (ms)	Median Response Time for ER40D Correct Anger Identifications (ms)
+er40_d_er40d_cr	released	er40	cnb_er40_cr	ER40 Total Correct Responses	ER40D Correct Responses
+er40_d_er40d_fc	released	er40	cnb_er40_fc	ER40 Correct Female Trial Responses	ER40D Correct Female Identifications
+er40_d_er40d_fcrt	released	er40	cnb_er40_fcrt	ER40 Median Response Time for Correct Female Trial Responses (ms)	ER40D Correct Female Identifications Median Response Time (ms)
+er40_d_er40d_fear	released	er40	cnb_er40_fear	ER40 Correct Fear Trial Responses	ER40D Correct Fear Identifications
+er40_d_er40d_fearrt	released	er40	cnb_er40_fearrt	ER40 Median Response Time for Correct Fear Trial Responses (ms)	Median Response Time for ER40D Correct Fear Identifications (ms)
+er40_d_er40d_hap	released	er40	cnb_er40_hap	ER40 Correct Happy Trial Responses	ER40D Correct Happy Identifications
+er40_d_er40d_haprt	released	er40	cnb_er40_haprt	ER40 Median Response Time for Correct Happy Trial Responses (ms)	Median Response Time for ER40D Correct Happy Identifications (ms)
+er40_d_er40d_mc	released	er40	cnb_er40_mc	ER40 Correct Male Trial Responses	ER40D Correct Male Identifications
+er40_d_er40d_mcrt	released	er40	cnb_er40_mcrt	ER40 Median Response Time for Correct Male Trial Responses (ms)	ER40D Correct Male Identifications Median Response Time (ms)
+er40_d_er40d_noe	released	er40	cnb_er40_noe	ER40 Correct No Emotion Trial Responses	ER40D Correct Neutral Identifications
+er40_d_er40d_noert	released	er40	cnb_er40_noert	ER40 Median Response Time for Correct No Emotion Trial Responses (ms)	Median Response Time for ER40D Correct Neutral Identifications (ms)
+er40_d_er40d_rt	released	er40	cnb_er40_rt	ER40 Median Response Time for All Responses (ms)	ER40D Overall Median Response Time (ms)
+er40_d_er40d_rtcr	released	er40	cnb_er40_rtcr	ER40 Median Response Time for Correct Responses (ms)	ER40D Correct Responses Median Response Time (ms)
+er40_d_er40d_sad	released	er40	cnb_er40_sad	ER40 Correct Sad Trial Responses	ER40D Correct Sad Identifications
+er40_d_er40d_sadrt	released	er40	cnb_er40_sadrt	ER40 Median Response Time for Correct Sad Trial Responses (ms)	Median Response Time for ER40D Correct Sad Identifications (ms)
+gng150_gng150_cr	released	gng	cnb_gng_cr	GNG Total Correct Responses	GoNoGo Correct Responses
+gng150_gng150_fn	released	gng	cnb_gng_fn	GNG False Negative Responses	GoNoGo False Negative Responses
+gng150_gng150_fp	released	gng	cnb_gng_fp	GNG False Positive Responses	GoNoGo False Positive Responses
+gng150_gng150_rt	released	gng	cnb_gng_rt	GNG Median Response Time for All Responses (ms)	GoNoGo Median Response Time for All Responses (ms)
+gng150_gng150_rtcr	released	gng	cnb_gng_rtcr	GNG Median Response Time for Correct Responses (ms)	GoNoGo Median Response Time for All Correct Responses (ms)
+gng150_gng150_rter	released	gng	cnb_gng_rter	GNG Median Response Time for Incorrect Responses (ms)	GoNoGo Median Response Time for All Incorrect Responses (ms)
+gng150_gng150_tn	released	gng	cnb_gng_tn	GNG True Negative Responses	GoNoGo True Negative Responses
+gng150_gng150_tp	released	gng	cnb_gng_tp	GNG True Positive Responses	GoNoGo True Positive Responses
+kcpw_a_cpw_cr	released	cpw	cnb_cpw_cr	CPW Total Correct Responses	K_CPW_A Total Correct Responses
+kcpw_a_cpw_er	released	cpw	cnb_cpw_er	CPW Total Incorrect Responses	K_CPW_A Total Incorrect Responses
+kcpw_a_cpw_fn	released	cpw	cnb_cpw_fn	CPW False Negative Responses	K_CPW_A False Negatives
+kcpw_a_cpw_fnrt	released	cpw	cnb_cpw_fnrt	CPW Median Response Time for False Negative Responses (ms)	K_CPW_A False Negatives Median Response Time (ms)
+kcpw_a_cpw_fp	released	cpw	cnb_cpw_fp	CPW False Positive Responses	K_CPW_A False Positives
+kcpw_a_cpw_fprt	released	cpw	cnb_cpw_fprt	CPW Median Response Time for False Positive Responses (ms)	K_CPW_A False Positives Median Response Time (ms)
+kcpw_a_cpw_rt	released	cpw	cnb_cpw_rt	CPW Median Response Time for All Responses (ms)	K_CPW_A Median Response Time for all responses(ms)
+kcpw_a_cpw_rtcr	released	cpw	cnb_cpw_rtcr	CPW Median Response Time for Correct Responses (ms)	K_CPW_A Median Total Correct Response Time (ms)
+kcpw_a_cpw_rter	released	cpw	cnb_cpw_rter	CPW Median Response Time for Incorrect Responses (ms)	K_CPW_A Median Total incorrect Response Time (ms)
+kcpw_a_cpw_tn	released	cpw	cnb_cpw_tn	CPW True Negative Responses	K_CPW_A True Negatives
+kcpw_a_cpw_tnrt	released	cpw	cnb_cpw_tnrt	CPW Median Response Time for True Negative Responses (ms)	K_CPW_A True Negatives Median Response Time (ms)
+kcpw_a_cpw_tp	released	cpw	cnb_cpw_tp	CPW True Positive Responses	K_CPW_A True Positives
+kcpw_a_cpw_tprt	released	cpw	cnb_cpw_tprt	CPW Median Response Time for True Positive Responses (ms)	K_CPW_A True Positives Median Response Time (ms)
+kcpw_a_cpw_w_rtcr	released	cpw	cnb_cpw_w_rtcr	CPW Weighted Median Response Time for Correct Responses (ms)	K_CPW_A Weighted Median Total Correct Response Time (ms)
+kcpw_a_cpw_w_rter	released	cpw	cnb_cpw_w_rter	CPW Weighted Median Response Time for Incorrect Responses (ms)	K_CPW_A Weighted Median Total incorrect Response Time (ms)
+kspvrt_a_kspvrta_cr	released	pvrt	cnb_pvrt_cr	PVRT Total Correct Responses	
+kspvrt_a_kspvrta_pc	released	pvrt	cnb_pvrt_pc	PVRT Percent Correct Responses	
+kspvrt_a_kspvrta_rtcr	released	pvrt	cnb_pvrt_rtcr	PVRT Median Response Time for Correct Responses (ms)	
+kspvrt_a_kspvrta_rter	released	pvrt	cnb_pvrt_rter	PVRT Median Response Time for Incorrect Responses (ms)	
+kspvrt_a_kspvrta_rtto	released	pvrt	cnb_pvrt_rtto	PVRT Median Response Time for All Responses (ms)	
+kspvrt_b_kspvrtb_cr	released	pvrt	cnb_pvrt_cr	PVRT Total Correct Responses	
+kspvrt_b_kspvrtb_pc	released	pvrt	cnb_pvrt_pc	PVRT Percent Correct Responses	
+kspvrt_b_kspvrtb_rtcr	released	pvrt	cnb_pvrt_rtcr	PVRT Median Response Time for Correct Responses (ms)	
+kspvrt_b_kspvrtb_rter	released	pvrt	cnb_pvrt_rter	PVRT Median Response Time for Incorrect Responses (ms)	
+kspvrt_b_kspvrtb_rtto	released	pvrt	cnb_pvrt_rtto	PVRT Median Response Time for All Responses (ms)	
+kspvrt_d_kspvrtd_cr	released	pvrt	cnb_pvrt_cr	PVRT Total Correct Responses	KSPVRTD Total Correct Responses
+kspvrt_d_kspvrtd_form	released	pvrt	cnb_pvrt_form	Form of Penn Verbal Reasoning Test (PVRT)	KSPVRTD Form of this administration
+kspvrt_d_kspvrtd_pc	released	pvrt	cnb_pvrt_pc	PVRT Percent Correct Responses	KSPVRTD Percent Correct Responses
+kspvrt_d_kspvrtd_rtcr	released	pvrt	cnb_pvrt_rtcr	PVRT Median Response Time for Correct Responses (ms)	KSPVRTD Median Response Time for Correct Responses (ms)
+kspvrt_d_kspvrtd_rter	released	pvrt	cnb_pvrt_rter	PVRT Median Response Time for Incorrect Responses (ms)	KSPVRTD Median Response Time for Incorrect Responses (ms)
+kspvrt_d_kspvrtd_rtto	released	pvrt	cnb_pvrt_rtto	PVRT Median Response Time for All Responses (ms)	KSPVRTD All Responses Median Response Time (ms)
+medf36_a_medf36a_ang_cr	released	medf	cnb_medf_ang_cr	MEDF Correct Anger Trial Responses	MEDF36A Correct Responses for  Anger Trials
+medf36_a_medf36a_ang_er	released	medf	cnb_medf_ang_er	MEDF Incorrect Anger Trial Responses	MEDF36A Incorrect Responses for  Anger Trials
+medf36_a_medf36a_ang_rtcr	released	medf	cnb_medf_ang_rtcr	MEDF Median Response Time for Correct Anger Trial Responses (ms)	MEDF36A Response Time for Correct  Anger Trials (ms)
+medf36_a_medf36a_ang_rter	released	medf	cnb_medf_ang_rter	MEDF Median Response Time for Incorrect Anger Trial Responses (ms)	MEDF36A Response Time for Incorrect  Anger Trials (ms)
+medf36_a_medf36a_cr	released	medf	cnb_medf_cr	MEDF Total Correct Responses	MEDF36A Total Correct Responses
+medf36_a_medf36a_er	released	medf	cnb_medf_er	MEDF Total Incorrect Responses	MEDF36A Total Incorrect Responses
+medf36_a_medf36a_fear_cr	released	medf	cnb_medf_fear_cr	MEDF Correct Fear Trial Responses	MEDF36A Correct Responses for  Fear Trials
+medf36_a_medf36a_fear_er	released	medf	cnb_medf_fear_er	MEDF Incorrect Fear Trial Responses	MEDF36A Incorrect Responses for  Fear Trials
+medf36_a_medf36a_fear_rtcr	released	medf	cnb_medf_fear_rtcr	MEDF Median Response Time for Correct Fear Trial Responses (ms)	MEDF36A Response Time for Correct  Fear Trials (ms)
+medf36_a_medf36a_fear_rter	released	medf	cnb_medf_fear_rter	MEDF Median Response Time for Incorrect Fear Trial Responses (ms)	MEDF36A Response Time for Incorrect  Fear Trials (ms)
+medf36_a_medf36a_female_cr	released	medf	cnb_medf_female_cr	MEDF Correct Female Trial Responses	MEDF36A Correct Responses for  Female Trials
+medf36_a_medf36a_female_rtcr	released	medf	cnb_medf_female_rtcr	MEDF Median Response Time for Correct Female Trial Responses (ms)	MEDF36A Response Time for Correct  Female Trials (ms)
+medf36_a_medf36a_hap_cr	released	medf	cnb_medf_hap_cr	MEDF Correct Happy Trial Responses	MEDF36A Correct Responses for  Happy Trials
+medf36_a_medf36a_hap_er	released	medf	cnb_medf_hap_er	MEDF Incorrect Happy Trial Responses	MEDF36A Incorrect Responses for  Happy Trials
+medf36_a_medf36a_hap_rtcr	released	medf	cnb_medf_hap_rtcr	MEDF Median Response Time for Correct Happy Trial Responses (ms)	MEDF36A Response Time for Correct  Happy Trials (ms)
+medf36_a_medf36a_hap_rter	released	medf	cnb_medf_hap_rter	MEDF Median Response Time for Incorrect Happy Trial Responses (ms)	MEDF36A Response Time for Incorrect  Happy Trials (ms)
+medf36_a_medf36a_male_cr	released	medf	cnb_medf_male_cr	MEDF Correct Male Trial Responses	MEDF36A Correct Responses for  Male Trials
+medf36_a_medf36a_male_rtcr	released	medf	cnb_medf_male_rtcr	MEDF Median Response Time for Correct Male Trial Responses (ms)	MEDF36A Response Time for Correct  Male Trials (ms)
+medf36_a_medf36a_rtcr	released	medf	cnb_medf_rtcr	MEDF Median Response Time for Correct Responses (ms)	MEDF36A Response Time for Correct Responses (ms)
+medf36_a_medf36a_rter	released	medf	cnb_medf_rter	MEDF Median Response Time for Incorrect Responses (ms)	MEDF36A Response Time for Incorrect Responses (ms)
+medf36_a_medf36a_sad_cr	released	medf	cnb_medf_sad_cr	MEDF Correct Sad Trial Responses	MEDF36A Correct Responses for  Sad Trials
+medf36_a_medf36a_sad_er	released	medf	cnb_medf_sad_er	MEDF Incorrect Sad Trial Responses	MEDF36A Incorrect Responses for  Sad Trials
+medf36_a_medf36a_sad_rtcr	released	medf	cnb_medf_sad_rtcr	MEDF Median Response Time for Correct Sad Trial Responses (ms)	MEDF36A Response Time for Correct  Sad Trials (ms)
+medf36_a_medf36a_sad_rter	released	medf	cnb_medf_sad_rter	MEDF Median Response Time for Incorrect Sad Trial Responses (ms)	MEDF36A Response Time for Incorrect  Sad Trials (ms)
+medf36_b_medf36b_ang_cr	released	medf	cnb_medf_ang_cr	MEDF Correct Anger Trial Responses	
+medf36_b_medf36b_ang_er	released	medf	cnb_medf_ang_er	MEDF Incorrect Anger Trial Responses	
+medf36_b_medf36b_ang_rtcr	released	medf	cnb_medf_ang_rtcr	MEDF Median Response Time for Correct Anger Trial Responses (ms)	
+medf36_b_medf36b_ang_rter	released	medf	cnb_medf_ang_rter	MEDF Median Response Time for Incorrect Anger Trial Responses (ms)	
+medf36_b_medf36b_cr	released	medf	cnb_medf_cr	MEDF Total Correct Responses	
+medf36_b_medf36b_er	released	medf	cnb_medf_er	MEDF Total Incorrect Responses	
+medf36_b_medf36b_fear_cr	released	medf	cnb_medf_fear_cr	MEDF Correct Fear Trial Responses	
+medf36_b_medf36b_fear_er	released	medf	cnb_medf_fear_er	MEDF Incorrect Fear Trial Responses	
+medf36_b_medf36b_fear_rtcr	released	medf	cnb_medf_fear_rtcr	MEDF Median Response Time for Correct Fear Trial Responses (ms)	
+medf36_b_medf36b_fear_rter	released	medf	cnb_medf_fear_rter	MEDF Median Response Time for Incorrect Fear Trial Responses (ms)	
+medf36_b_medf36b_female_cr	released	medf	cnb_medf_female_cr	MEDF Correct Female Trial Responses	
+medf36_b_medf36b_female_rtcr	released	medf	cnb_medf_female_rtcr	MEDF Median Response Time for Correct Female Trial Responses (ms)	
+medf36_b_medf36b_hap_cr	released	medf	cnb_medf_hap_cr	MEDF Correct Happy Trial Responses	
+medf36_b_medf36b_hap_er	released	medf	cnb_medf_hap_er	MEDF Incorrect Happy Trial Responses	
+medf36_b_medf36b_hap_rtcr	released	medf	cnb_medf_hap_rtcr	MEDF Median Response Time for Correct Happy Trial Responses (ms)	
+medf36_b_medf36b_hap_rter	released	medf	cnb_medf_hap_rter	MEDF Median Response Time for Incorrect Happy Trial Responses (ms)	
+medf36_b_medf36b_male_cr	released	medf	cnb_medf_male_cr	MEDF Correct Male Trial Responses	
+medf36_b_medf36b_male_rtcr	released	medf	cnb_medf_male_rtcr	MEDF Median Response Time for Correct Male Trial Responses (ms)	
+medf36_b_medf36b_rtcr	released	medf	cnb_medf_rtcr	MEDF Median Response Time for Correct Responses (ms)	
+medf36_b_medf36b_rter	released	medf	cnb_medf_rter	MEDF Median Response Time for Incorrect Responses (ms)	
+medf36_b_medf36b_sad_cr	released	medf	cnb_medf_sad_cr	MEDF Correct Sad Trial Responses	
+medf36_b_medf36b_sad_er	released	medf	cnb_medf_sad_er	MEDF Incorrect Sad Trial Responses	
+medf36_b_medf36b_sad_rtcr	released	medf	cnb_medf_sad_rtcr	MEDF Median Response Time for Correct Sad Trial Responses (ms)	
+medf36_b_medf36b_sad_rter	released	medf	cnb_medf_sad_rter	MEDF Median Response Time for Incorrect Sad Trial Responses (ms)	
+mpract_mp2	released	mpract	cnb_mpract_mp2	MPRACT Total Correct Responses	Mouse Praxis Correct Responses Trial 2
+mpract_mp2rtcr	released	mpract	cnb_mpract_mp2rtcr	MPRACT Median Response Time for Correct Responses (ms)	Median Response Time for Mouse Praxis Trial 2 Correct Responses (ms)
+pcet_a_pcet_acc2	released	pcet	cnb_pcet_acc2	PCET Calculated Accuracy Measure	PCET Accuracy2 = (PCET_CAT + 1) * PCET_CR/(PCET_CR +PCET_ER)
+pcet_a_pcet_cat	released	pcet	cnb_pcet_cat	PCET Total Number of Categories Achieved	Number of PCET Categories Achieved
+pcet_a_pcet_cat1_tr	released	pcet	cnb_pcet_cat1_tr	PCET Total Number of Responses for Category 1	PCET Number of Trials Required to Achieve Category 1
+pcet_a_pcet_cat2_tr	released	pcet	cnb_pcet_cat2_tr	PCET Total Number of Responses for Category 2	PCET Number of Trials Required to Achieve Category 2
+pcet_a_pcet_cat3_tr	released	pcet	cnb_pcet_cat3_tr	PCET Total Number of Responses for Category 3	PCET Number of Trials Required to Achieve Category 3
+pcet_a_pcet_cr	released	pcet	cnb_pcet_cr	PCET Total Correct Responses	PCET Number of Correct Responses
+pcet_a_pcet_er	released	pcet	cnb_pcet_er	PCET Total Incorrect Responses	PCET Number of Incorrect Responses
+pcet_a_pcet_num	released	pcet	cnb_pcet_num	PCET Total Number of Responses	PCET Total Number of Trials
+pcet_a_pcet_rt	released	pcet	cnb_pcet_rt	PCET Median Response Time for All Responses (ms)	PCET Median Response Time for All Trials (ms)
+pcet_a_pcet_rtcr	released	pcet	cnb_pcet_rtcr	PCET Median Response Time for Correct Responses (ms)	PCET Median Response Time for Correct Responses (ms)
+pcet_a_pcet_rter	released	pcet	cnb_pcet_rter	PCET Median Response Time for Incorrect Responses (ms)	PCET Median Response Time for Incorrect Responses (ms)
+pcet_b_pcet_acc2	released	pcet	cnb_pcet_acc2	PCET Calculated Accuracy Measure	
+pcet_b_pcet_cat	released	pcet	cnb_pcet_cat	PCET Total Number of Categories Achieved	
+pcet_b_pcet_cat1_tr	released	pcet	cnb_pcet_cat1_tr	PCET Total Number of Responses for Category 1	
+pcet_b_pcet_cat2_tr	released	pcet	cnb_pcet_cat2_tr	PCET Total Number of Responses for Category 2	
+pcet_b_pcet_cat3_tr	released	pcet	cnb_pcet_cat3_tr	PCET Total Number of Responses for Category 3	
+pcet_b_pcet_cr	released	pcet	cnb_pcet_cr	PCET Total Correct Responses	
+pcet_b_pcet_er	released	pcet	cnb_pcet_er	PCET Total Incorrect Responses	
+pcet_b_pcet_num	released	pcet	cnb_pcet_num	PCET Total Number of Responses	
+pcet_b_pcet_rt	released	pcet	cnb_pcet_rt	PCET Median Response Time for All Responses (ms)	
+pcet_b_pcet_rtcr	released	pcet	cnb_pcet_rtcr	PCET Median Response Time for Correct Responses (ms)	
+pcet_b_pcet_rter	released	pcet	cnb_pcet_rter	PCET Median Response Time for Incorrect Responses (ms)	
+pmat24_a_pmat24_a_cr	released	pmat	cnb_pmat_cr	PMAT Total Correct Responses	PMAT24_A Total Correct Responses
+pmat24_a_pmat24_a_rtcr	released	pmat	cnb_pmat_rtcr	PMAT Median Response Time for Correct Responses (ms)	PMAT24_A Median Response Time for Correct Responses (ms)
+pmat24_a_pmat24_a_rter	released	pmat	cnb_pmat_rter	PMAT Median Response Time for Incorrect Responses (ms)	PMAT24_A Median Response Time for Incorrect Responses (ms)
+pmat24_a_pmat24_a_rtto	released	pmat	cnb_pmat_rtto	PMAT Median Response Time for All Responses (ms)	PMAT24_A Median Response Time for All Responses (ms)
+pmat24_a_pmat24_a_si	released	pmat	cnb_pmat_si	PMAT Total Number of Skipped Trials	PMAT24_A Total Skipped Items (Items not presented because maximum errors allowed reached)
+pmat24_b_pmat24_b_cr	released	pmat	cnb_pmat_cr	PMAT Total Correct Responses	
+pmat24_b_pmat24_b_rtcr	released	pmat	cnb_pmat_rtcr	PMAT Median Response Time for Correct Responses (ms)	
+pmat24_b_pmat24_b_rter	released	pmat	cnb_pmat_rter	PMAT Median Response Time for Incorrect Responses (ms)	
+pmat24_b_pmat24_b_rtto	released	pmat	cnb_pmat_rtto	PMAT Median Response Time for All Responses (ms)	
+pmat24_b_pmat24_b_si	released	pmat	cnb_pmat_si	PMAT Total Number of Skipped Trials	
+sctap_sctap_dom	released	ctap	cnb_ctap_dom	CTAP Mean of Dominant Hand Trials	Mean Taps for SCTAP Dominant Hand
+sctap_sctap_domsd	released	ctap	cnb_ctap_domsd	CTAP Standard Deviation (STDEV) of Dominant Hand Trials	Standard Deviation of SCTAP_DOM Responses
+sctap_sctap_hand	released	ctap	cnb_ctap_hand	CTAP Dominant Hand selected	SCTAP Dominant Hand
+sctap_sctap_non	released	ctap	cnb_ctap_non	CTAP Mean of Non-Dominant Hand Trials	Mean Taps for SCTAP Non-Dominant Hand
+sctap_sctap_nonsd	released	ctap	cnb_ctap_nonsd	CTAP Standard Deviation (STDEV) of Non-Dominant Hand Trials	Standard Deviation of SCTAP_NON Responses
+sctap_sctap_tot	released	ctap	cnb_ctap_tot	CTAP Sum of DOM and NON-Dominant Trials	Sum of SCTAP_DOM and SCTAP_NON
+slnb2_90_slnb2_fp	released	lnb	cnb_lnb_fp	LNB False Positive Responses for 0-BACK, 1-BACK and 2-BACK trials	SLNB2 False Positive Responses
+slnb2_90_slnb2_fp0	released	lnb	cnb_lnb_fp0	LNB False Positive Responses for 0-Back Trials	SLNB2 False Positive Responses for 0-Back Trials
+slnb2_90_slnb2_fp1	released	lnb	cnb_lnb_fp1	LNB False Positive Responses for 1-Back Trials	SLNB2 False Positive Responses for 1-Back Trials
+slnb2_90_slnb2_fp2	released	lnb	cnb_lnb_fp2	LNB False Positive Responses for 2-Back Trials	SLNB2 False Positive Responses for 2-Back Trials
+slnb2_90_slnb2_fprt0	released	lnb	cnb_lnb_fprt0	LNB Median Response Time for False Positive Responses for 0-Back Trials (ms)	SLNB2 Median Response Time for False Positive Responses for 0-Back Trials (ms)
+slnb2_90_slnb2_fprt1	released	lnb	cnb_lnb_fprt1	LNB Median Response Time for False Positive Responses for 1-Back Trials (ms)	SLNB2 Median Response Time for False Positive Responses for 1-Back Trials (ms)
+slnb2_90_slnb2_fprt2	released	lnb	cnb_lnb_fprt2	LNB Median Response Time for False Positive Responses for 2-Back Trials (ms)	SLNB2 Median Response Time for False Positive Responses for 2-Back Trials (ms)
+slnb2_90_slnb2_mcr	released	lnb	cnb_lnb_mcr	LNB True Positive Responses for 1-BACK and 2-BACK Trials	SLNB2 True Positive Responses for 1-Back Trials and 2-Back Trials
+slnb2_90_slnb2_mrtc	released	lnb	cnb_lnb_mrtc	LNB Median Response Time for True Positive responses for 1-BACK and 2-BACK response (ms)	SLNB2 Median RT for True Positive Responses for 1-Back Trials and 2-Back Trials (ms)
+slnb2_90_slnb2_rt0	released	lnb	cnb_lnb_rt0	LNB Median Response Time for All Responses for 0-Back Trials (ms)	SLNB2 Median Response Time for All Responses for 0-Back Trials (ms)
+slnb2_90_slnb2_rt1	released	lnb	cnb_lnb_rt1	LNB Median Response Time for All Responses for 1-Back Trials (ms)	SLNB2 Median Response Time for All Responses for 1-Back Trials (ms)
+slnb2_90_slnb2_rt2	released	lnb	cnb_lnb_rt2	LNB Median Response Time for All Responses for 2-Back Trials (ms)	SLNB2 Median Response Time for All Responses for 2-Back Trials (ms)
+slnb2_90_slnb2_rtc	released	lnb	cnb_lnb_rtc	LNB Median Response Time for True Positive responses for 0-BACK,  1-BACK and 2-BACK response (ms)	SLNB2 Median Response Time for All Correct Responses (ms)
+slnb2_90_slnb2_rtc0	released	lnb	cnb_lnb_rtc0	LNB Median Response Time for Correct 0-Back Trials (ms)	SLNB2 Median Response Time for Correct 0-Back Trials (ms)
+slnb2_90_slnb2_rtc1	released	lnb	cnb_lnb_rtc1	LNB Median Response Time for Correct 1-Back Trials (ms)	SLNB2 Median Response Time for Correct 1-Back Trials (ms)
+slnb2_90_slnb2_rtc2	released	lnb	cnb_lnb_rtc2	LNB Median Response Time for Correct 2-Back Trials (ms)	SLNB2 Median Response Time for Correct 2-Back Trials (ms)
+slnb2_90_slnb2_tp	released	lnb	cnb_lnb_tp	LNB True Positive Responses for 0-BACK, 1-BACK and 2-BACK trials	SLNB2 True Positive Responses
+slnb2_90_slnb2_tp0	released	lnb	cnb_lnb_tp0	LNB True Positive Responses for 0-Back Trials	SLNB2 True Positive Responses for 0-Back Trials
+slnb2_90_slnb2_tp1	released	lnb	cnb_lnb_tp1	LNB True Positive Responses for 1-Back Trials	SLNB2 True Positive Responses for 1-Back Trials
+slnb2_90_slnb2_tp2	released	lnb	cnb_lnb_tp2	LNB True Positive Responses for 2-Back Trials	SLNB2 True Positive Responses for 2-Back Trials
+spcet_a_spcet_acc2	released	pcet	cnb_pcet_acc2	PCET Calculated Accuracy Measure	
+spcet_a_spcet_cat	released	pcet	cnb_pcet_cat	PCET Total Number of Categories Achieved	
+spcet_a_spcet_cat1_tr	released	pcet	cnb_pcet_cat1_tr	PCET Total Number of Responses for Category 1	
+spcet_a_spcet_cat2_tr	released	pcet	cnb_pcet_cat2_tr	PCET Total Number of Responses for Category 2	
+spcet_a_spcet_cat3_tr	released	pcet	cnb_pcet_cat3_tr	PCET Total Number of Responses for Category 3	
+spcet_a_spcet_cr	released	pcet	cnb_pcet_cr	PCET Total Correct Responses	
+spcet_a_spcet_er	released	pcet	cnb_pcet_er	PCET Total Incorrect Responses	
+spcet_a_spcet_num	released	pcet	cnb_pcet_num	PCET Total Number of Responses	
+spcet_a_spcet_rt	released	pcet	cnb_pcet_rt	PCET Median Response Time for All Responses (ms)	
+spcet_a_spcet_rtcr	released	pcet	cnb_pcet_rtcr	PCET Median Response Time for Correct Responses (ms)	
+spcet_a_spcet_rter	released	pcet	cnb_pcet_rter	PCET Median Response Time for Incorrect Responses (ms)	
+spcptnl_scpl_fn	released	cptnl	cnb_cptnl_letter_fn	CPTNL False Negative Responses for Letter Trials	NumLet False Negative Responses for Letter Trials
+spcptnl_scpl_fp	released	cptnl	cnb_cptnl_letter_fp	CPTNL False Positive Responses for Letter Trials	NumLet False Positive Responses for Letter Trials
+spcptnl_scpl_fprt	released	cptnl	cnb_cptnl_letter_fprt	CPTNL Median Response Time for False Positive Responses for Letter Trials (ms)	Median Response Time for NumLet False Positive Responses of Letter Trials (ms)
+spcptnl_scpl_rt	released	cptnl	cnb_cptnl_letter_rt	CPTNL Median Response Time for All Letter Responses (ms)	Median Response Time for All Letter Positive Responses (ms)
+spcptnl_scpl_tn	released	cptnl	cnb_cptnl_letter_tn	CPTNL True Negative Responses for Letter Trials	NumLet True Negative Responses for Letter Trials
+spcptnl_scpl_tp	released	cptnl	cnb_cptnl_letter_tp	CPTNL True Positive Responses for Letter Trials	NumLet True Positive Responses for Letter Trials
+spcptnl_scpl_tprt	released	cptnl	cnb_cptnl_letter_tprt	CPTNL Median Response Time for True Positive Responses for Letter Trials (ms)	Median Response Time for NumLet True Positive Responses for Letter Trials (ms)
+spcptnl_scpn_fn	released	cptnl	cnb_cptnl_number_fn	CPTNL False Negative Responses for Number Trials	NumLet False Negative Responses for Number Trials
+spcptnl_scpn_fp	released	cptnl	cnb_cptnl_number_fp	CPTNL False Positive Responses for Number Trials	NumLet False Positive Responses for Number Trials
+spcptnl_scpn_fprt	released	cptnl	cnb_cptnl_number_fprt	CPTNL Median Response Time for False Positive Responses for Number Trials (ms)	Median Response Time for NumLet False Positive Responses for Number Trials (ms)
+spcptnl_scpn_rt	released	cptnl	cnb_cptnl_number_rt	CPTNL Median Response Time for All Number Responses (ms)	Median Response Time for All Number Positive Responses (ms)
+spcptnl_scpn_tn	released	cptnl	cnb_cptnl_number_tn	CPTNL True Negative Responses for Number Trials	NumLet True Negative Responses for Number Trials
+spcptnl_scpn_tp	released	cptnl	cnb_cptnl_number_tp	CPTNL True Positive Responses for Number Trials	NumLet True Positive Responses for Number Trials
+spcptnl_scpn_tprt	released	cptnl	cnb_cptnl_number_tprt	CPTNL Median Response Time for True Positive Responses for Number Trials (ms)	Median Response Time for NumLet True Positive Responses for Number Trials (ms)
+spcptnl_scpt_fn	released	cptnl	cnb_cptnl_total_fn	CPTNL Total False Negatives	NumLet CPT False Negatives = Sum of CPN_FN and CPL_FN
+spcptnl_scpt_fp	released	cptnl	cnb_cptnl_total_fp	CPTNL Total False Positives	NumLet CPT False Positives = Sum of CPN_FP and CPL_FP
+spcptnl_scpt_fprt	released	cptnl	cnb_cptnl_total_fprt	CPTNL Median Response Time for False Positive Number Responses (ms) and False Positive Letter Responses (ms)	Median Response Time for NumLet False Positive Responses
+spcptnl_scpt_rt	released	cptnl	cnb_cptnl_total_rt	CPTNL Median Response Time for All Responses (ms)	Median Response Time for All NumLet Positive Responses (ms)
+spcptnl_scpt_sen	released	cptnl	cnb_cptnl_total_sen	CPTNL Sensitivity	Sensitivity = CPT_TP/(CPT_TP + CPT_FN)
+spcptnl_scpt_spec	released	cptnl	cnb_cptnl_total_spec	CPTNL Specificity	Specificity = CPT_TN/(CPT_TN + CPT_FP)
+spcptnl_scpt_tn	released	cptnl	cnb_cptnl_total_tn	CPTNL Total True Negatives	NumLet CPT True Negatives = Sum of CPN_TN and CPL_TPN
+spcptnl_scpt_tp	released	cptnl	cnb_cptnl_total_tp	CPTNL Total True Positives	NumLet CPT True Positives = Sum of CPN_TP and CPL_TP
+spcptnl_scpt_tprt	released	cptnl	cnb_cptnl_total_tprt	CPTNL Median Response Time for True Positive Number Responses (ms) and True Positive Letter Responses (ms)	Median Response Time for NumLet True Positive Responses
+svolt_a_svolt_cr	released	volt	cnb_volt_cr	VOLT Total Correct Responses	SVOLT_A Total Correct Responses
+svolt_a_svolt_er	released	volt	cnb_volt_er	VOLT Total Incorrect Responses	SVOLT_A Total Incorrect Responses
+svolt_a_svolt_fn	released	volt	cnb_volt_fn	VOLT False Negative Responses	SVOLT_A False Negatives
+svolt_a_svolt_fnrt	released	volt	cnb_volt_fnrt	VOLT Median Response Time for False Negative Responses (ms)	SVOLT_A False Negatives Median Response Time (ms)
+svolt_a_svolt_fp	released	volt	cnb_volt_fp	VOLT False Positive Responses	SVOLT_A False Positives
+svolt_a_svolt_fprt	released	volt	cnb_volt_fprt	VOLT Median Response Time for False Positive Responses (ms)	SVOLT_A False Positives Median Response Time (ms)
+svolt_a_svolt_rt	released	volt	cnb_volt_rt	VOLT Median Response Time for All Responses (ms)	SVOLT_A Median Response Time for all responses(ms)
+svolt_a_svolt_rtcr	released	volt	cnb_volt_rtcr	VOLT Median Response Time for Correct Responses (ms)	SVOLT_A Median Total Correct Response Time (ms)
+svolt_a_svolt_rter	released	volt	cnb_volt_rter	VOLT Median Response Time for Incorrect Responses (ms)	SVOLT_A Median Total incorrect Response Time (ms)
+svolt_a_svolt_tn	released	volt	cnb_volt_tn	VOLT True Negative Responses	SVOLT_A True Negatives
+svolt_a_svolt_tnrt	released	volt	cnb_volt_tnrt	VOLT Median Response Time for True Negative Responses (ms)	SVOLT_A True Negatives Median Response Time (ms)
+svolt_a_svolt_tp	released	volt	cnb_volt_tp	VOLT True Positive Responses	SVOLT_A True Positives
+svolt_a_svolt_tprt	released	volt	cnb_volt_tprt	VOLT Median Response Time for True Positive Responses (ms)	SVOLT_A True Positives Median Response Time (ms)
+svolt_a_svolt_w_rtcr	released	volt	cnb_volt_w_rtcr	VOLT Weighted Median Response Time for Correct Responses (ms)	SVOLT_A Weighted Median Total Correct Response Time (ms)
+svolt_a_svolt_w_rter	released	volt	cnb_volt_w_rter	VOLT Weighted Median Response Time for Incorrect Responses (ms)	SVOLT_A Weighted Median Total incorrect Response Time (ms)
+vsplot15_vsplot15_cr	released	plot	cnb_plot_cr	PLOT Total Correct Responses	VSPLOT15 Total Correct
+vsplot15_vsplot15_er	released	plot	cnb_plot_er	PLOT Total Incorrect Responses	VSPLOT15 Total Incorrect
+vsplot15_vsplot15_pc	released	plot	cnb_plot_pc	PLOT Percent Correct Responses	VSPLOT15 Percent Correct
+vsplot15_vsplot15_rt	released	plot	cnb_plot_rt	PLOT Median Response Time for All Responses (ms)	VSPLOT15 Median Response Time for All Trials (ms)
+vsplot15_vsplot15_rtcr	released	plot	cnb_plot_rtcr	PLOT Median Response Time for Correct Responses (ms)	VSPLOT15 Median Response Time for Correct Trials (ms)
+vsplot15_vsplot15_rter	released	plot	cnb_plot_rter	PLOT Median Response Time for Incorrect Responses (ms)	VSPLOT15 Median Response Time for Incorrect Trials (ms)
+vsplot24_vsplot24_cr	released	plot	cnb_plot_cr	PLOT Total Correct Responses	
+vsplot24_vsplot24_er	released	plot	cnb_plot_er	PLOT Total Incorrect Responses	
+vsplot24_vsplot24_pc	released	plot	cnb_plot_pc	PLOT Percent Correct Responses	
+vsplot24_vsplot24_rt	released	plot	cnb_plot_rt	PLOT Median Response Time for All Responses (ms)	
+vsplot24_vsplot24_rtcr	released	plot	cnb_plot_rtcr	PLOT Median Response Time for Correct Responses (ms)	
+vsplot24_vsplot24_rter	released	plot	cnb_plot_rter	PLOT Median Response Time for Incorrect Responses (ms)	
+adt36_a_adt36a_ca_cr	misc				ADT36A Correct Responses for  Caucasian Trials
+adt36_a_adt36a_ca_er	misc				ADT36A Incorrect Responses for  Caucasian Trials
+adt36_a_adt36a_ca_rtcr	misc				ADT36A Response Time for Correct  Caucasian Trials (ms)
+adt36_a_adt36a_ca_rter	misc				ADT36A Response Time for Incorrect  Caucasian Trials (ms)
+adt36_a_adt36a_nonca_cr	misc				ADT36A Correct Responses for  Non-Caucasian Trials
+adt36_a_adt36a_nonca_er	misc				ADT36A Incorrect Responses for  Non-Caucasian Trials
+adt36_a_adt36a_nonca_rtcr	misc				ADT36A Response Time for Correct  Non-Caucasian Trials (ms)
+adt36_a_adt36a_nonca_rter	misc				ADT36A Response Time for Incorrect  Non-Caucasian Trials (ms)
+adt36_a_adt36a_ns_cr	misc				ADT36A Correct Responses for  Non-Same Trials
+adt36_a_adt36a_ns_rtcr	misc				ADT36A Response Time for Correct  Non-Same Trials (ms)
+adt36_a_adt36a_same_cr	misc				ADT36A Correct Responses for  Same Trials
+adt36_a_adt36a_same_rtcr	misc				ADT36A Response Time for Correct  Same Trials (ms)
+adt36_a_valid_code	misc				
+adt36_b_adt36b_ca_cr	misc				
+adt36_b_adt36b_ca_er	misc				
+adt36_b_adt36b_ca_rtcr	misc				
+adt36_b_adt36b_ca_rter	misc				
+adt36_b_adt36b_nonca_cr	misc				
+adt36_b_adt36b_nonca_er	misc				
+adt36_b_adt36b_nonca_rtcr	misc				
+adt36_b_adt36b_nonca_rter	misc				
+adt36_b_adt36b_ns_cr	misc				
+adt36_b_adt36b_ns_rtcr	misc				
+adt36_b_adt36b_same_cr	misc				
+adt36_b_adt36b_same_rtcr	misc				
+adt36_b_valid_code	misc				
+cnb_battery	misc				
+cnb_datasetid	misc				
+cnb_handedness	misc				
+cnb_siteid	misc				
+cnb_valid_code	misc				
+cpf_a_valid_code	misc				
+cpf_b_valid_code	misc				
+er40_a_er40_ang	misc				
+er40_a_er40_angrt	misc				
+er40_a_er40_cr	misc				
+er40_a_er40_fc	misc				
+er40_a_er40_fcrt	misc				
+er40_a_er40_fear	misc				
+er40_a_er40_fearrt	misc				
+er40_a_er40_hap	misc				
+er40_a_er40_haprt	misc				
+er40_a_er40_mc	misc				
+er40_a_er40_mcrt	misc				
+er40_a_er40_noe	misc				
+er40_a_er40_noert	misc				
+er40_a_er40_rt	misc				
+er40_a_er40_rtcr	misc				
+er40_a_er40_sad	misc				
+er40_a_er40_sadrt	misc				
+er40_a_valid_code	misc				
+er40_c_valid_code	misc				
+er40_d_valid_code	misc				
+gng150_valid_code	misc				
+kcpw_a_valid_code	misc				
+kspvrt_a_valid_code	misc				
+kspvrt_b_valid_code	misc				
+kspvrt_d_valid_code	misc				
+medf36_a_medf36a_ca_cr	misc				MEDF36A Correct Responses for  Caucasian Trials
+medf36_a_medf36a_ca_rtcr	misc				MEDF36A Response Time for Correct  Caucasian Trials (ms)
+medf36_a_medf36a_nonca_cr	misc				MEDF36A Correct Responses for  Non-Caucasian Trials
+medf36_a_medf36a_nonca_rtcr	misc				MEDF36A Response Time for Correct  Non-Caucasian Trials (ms)
+medf36_a_medf36a_ns_cr	misc				MEDF36A Correct Responses for  Non-Same Trials
+medf36_a_medf36a_ns_rtcr	misc				MEDF36A Response Time for Correct  Non-Same Trials (ms)
+medf36_a_medf36a_same_cr	misc				MEDF36A Correct Responses for  Same Trials
+medf36_a_medf36a_same_rtcr	misc				MEDF36A Response Time for Correct  Same Trials (ms)
+medf36_a_valid_code	misc				
+medf36_b_medf36b_ca_cr	misc				
+medf36_b_medf36b_ca_rtcr	misc				
+medf36_b_medf36b_nonca_cr	misc				
+medf36_b_medf36b_nonca_rtcr	misc				
+medf36_b_medf36b_ns_cr	misc				
+medf36_b_medf36b_ns_rtcr	misc				
+medf36_b_medf36b_same_cr	misc				
+medf36_b_medf36b_same_rtcr	misc				
+medf36_b_valid_code	misc				
+mpract_valid_code	misc				
+pcet_a_pcet_wis_clevel_res	misc				PCET Count of Concept Level Responses
+pcet_a_pcet_wis_fms	misc				PCET Count of Failures to Maintain Set
+pcet_a_pcet_wis_per_er	misc				PCET Number of Perseverative Errors
+pcet_a_pcet_wis_per_res	misc				PCET Perseverative Errors Plus Correct Perseverative Responses
+pcet_a_valid_code	misc				
+pcet_b_pcet_wis_clevel_res	misc				
+pcet_b_pcet_wis_fms	misc				
+pcet_b_pcet_wis_per_er	misc				
+pcet_b_pcet_wis_per_res	misc				
+pcet_b_valid_code	misc				
+pmat24_a_valid_code	misc				
+pmat24_b_valid_code	misc				
+scanid	misc				
+sctap_valid_code	misc				
+slnb2_90_valid_code	misc				
+spcet_a_spcet_wis_clevel_res	misc				
+spcet_a_spcet_wis_fms	misc				
+spcet_a_spcet_wis_per_er	misc				
+spcet_a_spcet_wis_per_res	misc				
+spcet_a_valid_code	misc				
+spcptnl_valid_code	misc				
+svolt_a_valid_code	misc				
+vsplot15_valid_code	misc				
+vsplot24_valid_code	misc				
+wrat4_age_mon	misc				Month part of the subject's age
+wrat4_age_yr	misc				Year part of the subject's age
+wrat4_valid_code	misc				
+wrat4_wrat4cr_raw	misc				WRAT4 Total Raw Score
+wrat4_wrat4cr_std	misc				WRAT4 Total Standard Score
+wrat4_wrat4letcr	misc				WRAT4 Letters Score
+wrat4_wrat4wordcr	misc				WRAT4 Word Score

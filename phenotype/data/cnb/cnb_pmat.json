@@ -1,0 +1,24 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Penn Matrix Reasoning Test (PMAT)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_pmat_cr": {
+    "Description": "PMAT Total Correct Responses"
+  },
+  "cnb_pmat_si": {
+    "Description": "PMAT Total Number of Skipped Trials"
+  },
+  "cnb_pmat_rtcr": {
+    "Description": "PMAT Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_pmat_rter": {
+    "Description": "PMAT Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_pmat_rtto": {
+    "Description": "PMAT Median Response Time for All Responses (ms)"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Penn Age Differentiation Test (ADT)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_adt_cr": {
+    "Description": "ADT Total Correct Responses"
+  },
+  "cnb_adt_rtcr": {
+    "Description": "ADT Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_adt_er": {
+    "Description": "ADT Total Incorrect Responses"
+  },
+  "cnb_adt_rter": {
+    "Description": "ADT Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_adt_female_cr": {
+    "Description": "ADT Correct Female Trial Responses"
+  },
+  "cnb_adt_female_rtcr": {
+    "Description": "ADT Median Response Time for Correct Female Trial Responses (ms)"
+  },
+  "cnb_adt_male_cr": {
+    "Description": "ADT Correct Male Trial Responses"
+  },
+  "cnb_adt_male_rtcr": {
+    "Description": "ADT Median Response Time for Correct Male Trial Responses (ms)"
+  }
+}
