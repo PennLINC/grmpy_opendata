@@ -6,9 +6,6 @@
   "participant_id": {
     "Description": "Participant ID Number"
   },
-  "cnb_pvrt_form": {
-    "Description": "Form of Penn Verbal Reasoning Test (PVRT)"
-  },
   "cnb_pvrt_cr": {
     "Description": "PVRT Total Correct Responses"
   },
