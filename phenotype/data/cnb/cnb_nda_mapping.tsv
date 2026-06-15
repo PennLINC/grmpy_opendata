@@ -130,7 +130,6 @@ kspvrt_b_kspvrtb_rtcr	released	pvrt	cnb_pvrt_rtcr	PVRT Median Response Time for 
 kspvrt_b_kspvrtb_rter	released	pvrt	cnb_pvrt_rter	PVRT Median Response Time for Incorrect Responses (ms)	
 kspvrt_b_kspvrtb_rtto	released	pvrt	cnb_pvrt_rtto	PVRT Median Response Time for All Responses (ms)	
 kspvrt_d_kspvrtd_cr	released	pvrt	cnb_pvrt_cr	PVRT Total Correct Responses	KSPVRTD Total Correct Responses
-kspvrt_d_kspvrtd_form	released	pvrt	cnb_pvrt_form	Form of Penn Verbal Reasoning Test (PVRT)	KSPVRTD Form of this administration
 kspvrt_d_kspvrtd_pc	released	pvrt	cnb_pvrt_pc	PVRT Percent Correct Responses	KSPVRTD Percent Correct Responses
 kspvrt_d_kspvrtd_rtcr	released	pvrt	cnb_pvrt_rtcr	PVRT Median Response Time for Correct Responses (ms)	KSPVRTD Median Response Time for Correct Responses (ms)
 kspvrt_d_kspvrtd_rter	released	pvrt	cnb_pvrt_rter	PVRT Median Response Time for Incorrect Responses (ms)	KSPVRTD Median Response Time for Incorrect Responses (ms)
@@ -344,6 +343,7 @@ gng150_valid_code	misc
 kcpw_a_valid_code	misc				
 kspvrt_a_valid_code	misc				
 kspvrt_b_valid_code	misc				
+kspvrt_d_kspvrtd_form	misc				KSPVRTD Form of this administration
 kspvrt_d_valid_code	misc				
 medf36_a_medf36a_ca_cr	misc				MEDF36A Correct Responses for  Caucasian Trials
 medf36_a_medf36a_ca_rtcr	misc				MEDF36A Response Time for Correct  Caucasian Trials (ms)

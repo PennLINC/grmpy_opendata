@@ -74,6 +74,12 @@ TASK_DESCRIPTIONS: Dict[str, str] = {
 # out as letter/number/total.
 _CPTNL_CONDITIONS = {"scpl": "letter", "scpn": "number", "scpt": "total"}
 
+# NDA elements that resolve via the crosswalk but should NOT be released; any raw
+# column mapping to one of these is routed to misc_cnb_raw.tsv instead.
+EXCLUDE_NDA_ELEMENTS = {
+    "cnb_pvrt_form",
+}
+
 
 def parse_args(argv: Iterable[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -211,7 +217,11 @@ def build_task_mapping(
             continue
         task, metric = extract_task_metric(col)
         nda_element = f"cnb_{task}_{metric}" if task else None
-        if nda_element and nda_element in nda_defs:
+        if (
+            nda_element
+            and nda_element in nda_defs
+            and nda_element not in EXCLUDE_NDA_ELEMENTS
+        ):
             raw_map[task][nda_element].append(col)
             mapping_rows.append((col, task, nda_element))
         else:
