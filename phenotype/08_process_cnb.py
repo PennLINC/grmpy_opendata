@@ -121,7 +121,9 @@ def extract_task_metric(column: str) -> Tuple[Optional[str], Optional[str]]:
     patterns: List[Tuple[str, str]] = [
         ("adt", r"^adt36_[ab]_adt36[ab]_(.+)$"),
         ("cpf", r"^cpf_[ab]_cpf_(.+)$"),
-        ("er40", r"^er40_[acd]_er40[acd]_(.+)$"),
+        # Form A is named er40_a_er40_* (no inner form letter); C/D are
+        # er40_c_er40c_* / er40_d_er40d_* -- so the inner letter is optional.
+        ("er40", r"^er40_[acd]_er40[acd]?_(.+)$"),
         ("gng", r"^gng150_gng150_(.+)$"),
         ("cpw", r"^kcpw_a_cpw_(.+)$"),
         ("pvrt", r"^kspvrt_[abd]_kspvrt[abd]_(.+)$"),

@@ -45,6 +45,23 @@ cpf_b_cpf_tp	released	cpf	cnb_cpf_tp	CPF True Positive Responses	CPF_B True Posi
 cpf_b_cpf_tprt	released	cpf	cnb_cpf_tprt	CPF Median Response Time for True Positive Responses (ms)	CPF_B True Positives Median Response Time (ms)
 cpf_b_cpf_w_rtcr	released	cpf	cnb_cpf_w_rtcr	CPF Weighted Median Response Time for Correct Responses (ms)	CPF_B Weighted Median Total Correct Response Time (ms)
 cpf_b_cpf_w_rter	released	cpf	cnb_cpf_w_rter	CPF Weighted Median Response Time for Incorrect Responses (ms)	CPF_B Weighted Median Total incorrect Response Time (ms)
+er40_a_er40_ang	released	er40	cnb_er40_ang	ER40 Correct Anger Trial Responses	
+er40_a_er40_angrt	released	er40	cnb_er40_angrt	ER40 Median Response Time for Correct Anger Trial Responses (ms)	
+er40_a_er40_cr	released	er40	cnb_er40_cr	ER40 Total Correct Responses	
+er40_a_er40_fc	released	er40	cnb_er40_fc	ER40 Correct Female Trial Responses	
+er40_a_er40_fcrt	released	er40	cnb_er40_fcrt	ER40 Median Response Time for Correct Female Trial Responses (ms)	
+er40_a_er40_fear	released	er40	cnb_er40_fear	ER40 Correct Fear Trial Responses	
+er40_a_er40_fearrt	released	er40	cnb_er40_fearrt	ER40 Median Response Time for Correct Fear Trial Responses (ms)	
+er40_a_er40_hap	released	er40	cnb_er40_hap	ER40 Correct Happy Trial Responses	
+er40_a_er40_haprt	released	er40	cnb_er40_haprt	ER40 Median Response Time for Correct Happy Trial Responses (ms)	
+er40_a_er40_mc	released	er40	cnb_er40_mc	ER40 Correct Male Trial Responses	
+er40_a_er40_mcrt	released	er40	cnb_er40_mcrt	ER40 Median Response Time for Correct Male Trial Responses (ms)	
+er40_a_er40_noe	released	er40	cnb_er40_noe	ER40 Correct No Emotion Trial Responses	
+er40_a_er40_noert	released	er40	cnb_er40_noert	ER40 Median Response Time for Correct No Emotion Trial Responses (ms)	
+er40_a_er40_rt	released	er40	cnb_er40_rt	ER40 Median Response Time for All Responses (ms)	
+er40_a_er40_rtcr	released	er40	cnb_er40_rtcr	ER40 Median Response Time for Correct Responses (ms)	
+er40_a_er40_sad	released	er40	cnb_er40_sad	ER40 Correct Sad Trial Responses	
+er40_a_er40_sadrt	released	er40	cnb_er40_sadrt	ER40 Median Response Time for Correct Sad Trial Responses (ms)	
 er40_c_er40c_ang	released	er40	cnb_er40_ang	ER40 Correct Anger Trial Responses	
 er40_c_er40c_angrt	released	er40	cnb_er40_angrt	ER40 Median Response Time for Correct Anger Trial Responses (ms)	
 er40_c_er40c_cr	released	er40	cnb_er40_cr	ER40 Total Correct Responses	
@@ -320,23 +337,6 @@ cnb_siteid	misc
 cnb_valid_code	misc				
 cpf_a_valid_code	misc				
 cpf_b_valid_code	misc				
-er40_a_er40_ang	misc				
-er40_a_er40_angrt	misc				
-er40_a_er40_cr	misc				
-er40_a_er40_fc	misc				
-er40_a_er40_fcrt	misc				
-er40_a_er40_fear	misc				
-er40_a_er40_fearrt	misc				
-er40_a_er40_hap	misc				
-er40_a_er40_haprt	misc				
-er40_a_er40_mc	misc				
-er40_a_er40_mcrt	misc				
-er40_a_er40_noe	misc				
-er40_a_er40_noert	misc				
-er40_a_er40_rt	misc				
-er40_a_er40_rtcr	misc				
-er40_a_er40_sad	misc				
-er40_a_er40_sadrt	misc				
 er40_a_valid_code	misc				
 er40_c_valid_code	misc				
 er40_d_valid_code	misc				
