@@ -43,27 +43,27 @@ MODALITIES: list[SingleModality | MultiAcquisitionModality] = [
     SingleModality(
         label="sMRI",
         color="#e88972",
-        counts={"raw": 231, "processed": 230, "qc": 175},
+        counts={"raw": 230, "processed": 230, "qc": 221},
     ),
     MultiAcquisitionModality(
         label="fMRI",
         color="#f4ef8a",
         acquisitions=[
-            Acquisition("rest-\nmultiband", {"raw": 230, "processed": 230, "qc": 229}),
-            Acquisition("rest-\nsingleband", {"raw": 230, "processed": 230, "qc": 229}),
-            Acquisition("fracback", {"raw": 230, "processed": 230, "qc": 229}),
-            Acquisition("face", {"raw": 230, "processed": 230, "qc": 229}),
+            Acquisition("rest-\nmultiband", {"raw": 231, "processed": 230, "qc": 222}),
+            Acquisition("rest-\nsingleband", {"raw": 215, "processed": 214, "qc": 205}),
+            Acquisition("fracback", {"raw": 199, "processed": 199, "qc": 194}),
+            Acquisition("face", {"raw": 48, "processed": 48, "qc": 44}),
         ],
     ),
     SingleModality(
         label="DWI",
         color="#a7d29b",
-        counts={"raw": 231, "processed": 176, "qc": 176},
+        counts={"raw": 177, "processed": 176, "qc": 176},
     ),
     SingleModality(
         label="ASL",
         color="#ee93bf",
-        counts={"raw": 214, "processed": 190, "qc": 177},
+        counts={"raw": 196, "processed": 190, "qc": 177},
     ),
 ]
 
@@ -191,12 +191,12 @@ def draw_participant_flow(output_dir: Path) -> list[Path]:
     label_x = 0.18
     label_w = 0.42
     for key, label in STAGES:
-        label_bottom = stage_y[key] - 1.22 / 2
+        label_bottom = stage_y[key] - 1.5 / 2
         ax.add_patch(
             patches.Rectangle(
                 (label_x, label_bottom),
                 label_w,
-                1.22,
+                1.5,
                 facecolor="#dfeef3",
                 edgecolor="#2f3538",
                 linewidth=0.95,
