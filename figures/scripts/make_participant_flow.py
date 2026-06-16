@@ -146,14 +146,14 @@ def draw_participant_flow(output_dir: Path) -> list[Path]:
         }
     )
 
-    fig, ax = plt.subplots(figsize=(12.4, 5.1))
-    ax.set_xlim(0, 12.4)
+    fig, ax = plt.subplots(figsize=(11.1, 5.1))
+    ax.set_xlim(0, 11.1)
     ax.set_ylim(0, 9.6)
     ax.axis("off")
 
     stage_y = {"raw": 6.95, "processed": 4.85, "qc": 2.75}
     box_h = 0.78
-    single_w = 1.82
+    single_w = 1.35
     single_gap = 0.55
     fmri_cell_w = 0.78
     fmri_cell_gap = 0.13
@@ -232,7 +232,7 @@ def draw_participant_flow(output_dir: Path) -> list[Path]:
                     width,
                     box_h,
                     blend_with_white(modality.color, row_blends[key]),
-                    rf"$n_{{participants}}$ = {modality.counts[key]}",
+                    rf"$n$ = {modality.counts[key]}",
                     fontsize=8.1,
                 )
 
