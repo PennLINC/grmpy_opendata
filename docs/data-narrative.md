@@ -1088,8 +1088,6 @@ tanner_girl - no scoring needed. JSON complete.
 
 wolf_post_imaging - no scoring needed. JSON complete.
 
-CNB (cognitive battery) - might not release. no dictionary on flywheel. might need dates to make sure they aren't from another study. TODO: follow-up.
-
 Diagnosis - release a subset of columns highlighted by ted. axis.tsv is the output to release.
 
 Demographics.tsv - TODO: what to release?
@@ -1100,6 +1098,35 @@ TODO: scales in the self-report data dictionary that are not on flywheel: RTSQ, 
 
 axis.json was inferred, needs updating.
 
+# CNB data
+
+CNB data was processed using the [`08_process_cnb.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/08_process_cnb.py) script.
+
+```bash
+python phenotype/08_process_cnb.py \
+  --input phenotype/data/CNB_raw.tsv \
+  --nda-defs ignore/NDA_penncnb01_definitions.csv \
+  --data-dict ignore/grmpy_data_dict.csv \
+  --output-dir phenotype/data/cnb
+```
+
+## validating columns
+
+adt - done.
+cpf - done.
+er40 - done.
+gng - done.
+cpw - done.
+pvrt - done.
+medf - done.
+mpract - done.
+pcet - spect was also mapped to pcet. Brooke will confirm with BIT team.
+pmat - done.
+ctap - done.
+lnb - done.
+cptnl - done.
+volt - done.
+plot - done.
 
 # helpful hints
 
