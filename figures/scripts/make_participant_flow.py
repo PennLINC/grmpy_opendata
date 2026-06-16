@@ -298,7 +298,7 @@ def draw_participant_flow(output_dir: Path) -> list[Path]:
                 draw_box(
                     ax,
                     acq_left,
-                    1.55,
+                    1.68,
                     fmri_cell_w,
                     0.46,
                     "#eef5f7",
@@ -329,7 +329,7 @@ def draw_participant_flow(output_dir: Path) -> list[Path]:
             draw_box(
                 ax,
                 left,
-                0.98,
+                1.18,
                 width,
                 0.38,
                 "#dfeef3",
