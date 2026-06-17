@@ -1094,6 +1094,9 @@ Demographics.tsv - TODO: what to release?
 
 TODO: scales in the self-report data dictionary that are not on flywheel: RTSQ, PSS, BFI, LOT-R, Conte Social Interest, QPR. scales in imaging data dictionary that are not on flywheel: wolf questionnaire face, grmpy post-scan questionnaire, PANAS-MW.
 
+TODO: participants.tsv columns to maybe include: age (which source?), sex, sex preference, group, axis dichotomous, RBC id? fracbacks.
+Sources: demographics.tsv, demo file from redcap via sage/juliette, axis.tsv.
+
 ### sidecars
 
 axis.json was inferred, needs updating.
