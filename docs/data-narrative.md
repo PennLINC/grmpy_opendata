@@ -385,7 +385,7 @@ After discussion with Manuel Taso and review of the dicoms, it was determined th
 
 `cubids purge bids_datalad/ ~/code/curation/04_cubids_curation/remove_fracback40vol.txt --use-datalad` was run to remove the fracback variant on vols that should have been removed earlier (`19fe628a` & `8b5adb10`).
 
-TODO: make note in README of the derivs to not use this scan, or remove them before upload.
+NOTE: The derivatives for this scan were later removed from the fmriprep_func and xcpd unzipped derivatives. This scan was also removed from the final fmri_qc.tsv.
 
 The fracback events were converted using log files downloaded from Flywheel (/cbica/projects/grmpy/sourcedata/GRMPY_822831_log/SUBJECTS) and scored with the [`convert_and_score_fracback.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/events/convert_and_score_fracback.py) script (`55eadf48`). The [`match_fracback_func_and_logs.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/events/match_fracback_func_and_logs.py) script was used to analyze and match the fracback funcs and logs prior to running the conversion script.
 
