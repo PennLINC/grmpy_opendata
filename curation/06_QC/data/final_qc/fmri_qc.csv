@@ -653,7 +653,6 @@ sub-129926,ses-1,face,singleband,0.1455287065197462,2,pass
 sub-129926,ses-1,fracback,singleband,0.0824808653683498,2,pass
 sub-129926,ses-1,rest,multiband,0.0806258831347073,2,pass
 sub-129926,ses-1,rest,singleband,0.1015491455937939,2,pass
-sub-130121,ses-1,fracback,singlebandVARIANTNumVolumes40,0.1153266710571625,2,pass
 sub-130121,ses-1,rest,multiband,0.111664351083408,2,pass
 sub-130121,ses-1,rest,singleband,0.111524973445864,2,pass
 sub-130211,ses-1,face,singleband,0.0567874703688305,2,pass
