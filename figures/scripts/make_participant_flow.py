@@ -51,7 +51,7 @@ MODALITIES: list[SingleModality | MultiAcquisitionModality] = [
         acquisitions=[
             Acquisition("rest-\nmultiband", {"raw": 231, "processed": 230, "qc": 222}),
             Acquisition("rest-\nsingleband", {"raw": 215, "processed": 214, "qc": 205}),
-            Acquisition("fracback", {"raw": 199, "processed": 199, "qc": 194}),
+            Acquisition("fracback", {"raw": 199, "processed": 198, "qc": 193}),
             Acquisition("face", {"raw": 48, "processed": 48, "qc": 44}),
         ],
     ),
