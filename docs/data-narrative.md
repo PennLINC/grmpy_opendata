@@ -389,7 +389,7 @@ NOTE: The derivatives for this scan were later removed from the fmriprep_func an
 
 The fracback events were converted using log files downloaded from Flywheel (/cbica/projects/grmpy/sourcedata/GRMPY_822831_log/SUBJECTS) and scored with the [`convert_and_score_fracback.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/events/convert_and_score_fracback.py) script (`55eadf48`). The [`match_fracback_func_and_logs.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/events/match_fracback_func_and_logs.py) script was used to analyze and match the fracback funcs and logs prior to running the conversion script.
 
-Following phenotype curation (see below), the participants.tsv was updated with the demographics from the [`build_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/build_participants_tmp.py) script using the [`collide_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/collide_participants_tmp.py) script (`XXXX`).
+Following phenotype curation (see below), the participants.tsv was updated with the demographics from the [`build_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/build_participants_tmp.py) script using the [`collide_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/collide_participants_tmp.py) script (`86c16852`).
 
 # 05: BABS
 
