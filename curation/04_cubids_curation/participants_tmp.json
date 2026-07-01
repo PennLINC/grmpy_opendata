@@ -1,0 +1,196 @@
+{
+  "group": {
+    "Description": ""
+  },
+  "age": {
+    "Description": ""
+  },
+  "race": {
+    "Description": ""
+  },
+  "ethnicity": {
+    "Description": ""
+  },
+  "sex": {
+    "Description": ""
+  },
+  "handedness": {
+    "Description": ""
+  },
+  "education": {
+    "Description": ""
+  },
+  "mother_edu": {
+    "Description": ""
+  },
+  "father_edu": {
+    "Description": ""
+  },
+  "bmi": {
+    "Description": ""
+  },
+  "rbc_id": {
+    "Description": ""
+  },
+  "dx_BrderPD": {
+    "Description": "Borderline Personality Disorder - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_adhd": {
+    "Description": "Attention-Deficit/Hyperactivity Disorder - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_anx": {
+    "Description": "Anxiety disorder - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_bp1": {
+    "Description": "Bipolar I Disorder - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_bpoth": {
+    "Description": "Other bipolar-spectrum disorder - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_mdd": {
+    "Description": "Major Depressive Disorder - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_moodnos": {
+    "Description": "Mood disorder not otherwise specified - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_none": {
+    "Description": "No psychiatric diagnosis - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_other": {
+    "Description": "Other psychiatric diagnosis - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_prodromal": {
+    "Description": "Prodromal / clinical high-risk for psychosis - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_prodromal_remit": {
+    "Description": "Prodromal, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_pscat": {
+    "Description": "Psychosis-spectrum category (meaning not documented; verify) - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_psychosis": {
+    "Description": "Psychosis - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_ptsd": {
+    "Description": "Post-Traumatic Stress Disorder - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_scz": {
+    "Description": "Schizophrenia - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_abuse": {
+    "Description": "Substance abuse (any) - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_abuse_alc": {
+    "Description": "Alcohol abuse - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_abuse_can": {
+    "Description": "Cannabis abuse - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_abuse_oth": {
+    "Description": "Other substance abuse - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_dep": {
+    "Description": "Substance dependence (any) - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_dep_alc": {
+    "Description": "Alcohol dependence - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_dep_can": {
+    "Description": "Cannabis dependence - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_dep_oth": {
+    "Description": "Other substance dependence - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  }
+}
