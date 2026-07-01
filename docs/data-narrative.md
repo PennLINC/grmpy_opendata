@@ -389,6 +389,8 @@ NOTE: The derivatives for this scan were later removed from the fmriprep_func an
 
 The fracback events were converted using log files downloaded from Flywheel (/cbica/projects/grmpy/sourcedata/GRMPY_822831_log/SUBJECTS) and scored with the [`convert_and_score_fracback.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/events/convert_and_score_fracback.py) script (`55eadf48`). The [`match_fracback_func_and_logs.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/events/match_fracback_func_and_logs.py) script was used to analyze and match the fracback funcs and logs prior to running the conversion script.
 
+Following phenotype curation (see below), the participants.tsv was updated with the demographics from the [`build_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/build_participants_tmp.py) script using the [`collide_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/collide_participants_tmp.py) script (`86c16852`).
+
 # 05: BABS
 
 `BABS` was installed in the micromamba environment `babs` from source code.
@@ -1060,7 +1062,7 @@ phys_anhed - scored as rpasShort - EF has this, did sum and average, while here 
 
 soc_anhed - scored as rsasShort - EF has this, did sum and average, while here is only sum. completed. JSON complete. TODO: rename to rsas??
 
-prime_screen - do not release. TODO: remove.
+prime_screen - do not release. TODO: Found the data dict from juliette. can release now?
 
 ***Proband_GOASSESS - only has summary/flagged columns. TODO - ignore for now, look in flyhweel for study group related to irritability.
 
@@ -1094,8 +1096,6 @@ Demographics.tsv - TODO: what to release?
 
 TODO: scales in the self-report data dictionary that are not on flywheel: RTSQ, PSS, BFI, LOT-R, Conte Social Interest, QPR. scales in imaging data dictionary that are not on flywheel: wolf questionnaire face, grmpy post-scan questionnaire, PANAS-MW.
 
-TODO: participants.tsv columns to maybe include: age (which source?), sex, sex preference, group, axis dichotomous, RBC id? fracbacks.
-Sources: demographics.tsv, demo file from redcap via sage/juliette, axis.tsv.
 
 ### sidecars
 
