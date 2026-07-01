@@ -202,7 +202,7 @@
     }
   },
   "dx_pscat": {
-    "Description": "Psychosis-spectrum category (meaning not documented; verify) - diagnostic flag.",
+    "Description": "Psychosis-spectrum category - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
