@@ -114,7 +114,7 @@ DEMO_FIELD_JSON = {
         "Levels": {
             "TD": "typically developing",
             "I": "irritability",
-            "BPD": "borderline personality disorder"
+            "BPD": "borderline personality disorder",
         },
     },
     "age": {"Description": "Age at scan (years)"},
@@ -127,7 +127,7 @@ DEMO_FIELD_JSON = {
             "3": "American Indian or Alaska Native",
             "4": "Hawaiian/Pacific Islander",
             "5": "Mixed/Other",
-            "6": "Unknown/not reported"
+            "6": "Unknown/not reported",
         },
     },
     "ethnicity": {
@@ -135,7 +135,7 @@ DEMO_FIELD_JSON = {
         "Levels": {
             "0": "Non Hispanic/Latino",
             "1": "Hispanic/Latino",
-            "2": "Unknown/not reported"
+            "2": "Unknown/not reported",
         },
     },
     "sex": {
@@ -144,16 +144,12 @@ DEMO_FIELD_JSON = {
             "0": "Male",
             "1": "Female",
             "2": "Other",
-            "3": "Not willing to answer"
+            "3": "Not willing to answer",
         },
     },
     "handedness": {
         "Description": "Handedness",
-        "Levels": {
-            "0": "Right",
-            "1": "Left",
-            "2": "Ambidextrous"
-        },
+        "Levels": {"0": "Right", "1": "Left", "2": "Ambidextrous"},
     },
     "education": {
         "Description": "Education",
@@ -175,7 +171,7 @@ DEMO_FIELD_JSON = {
             "17": "17",
             "18": "18 (master's degree)",
             "19": "19",
-            "20": "20 (ph.d or equivalent)"
+            "20": "20 (ph.d or equivalent)",
         },
     },
     "mother_edu": {
@@ -199,7 +195,7 @@ DEMO_FIELD_JSON = {
             "18": "18 (master's degree)",
             "19": "19",
             "20": "20 (ph.d or equivalent)",
-            "unknown": "unknown"
+            "unknown": "unknown",
         },
     },
     "father_edu": {
@@ -224,6 +220,8 @@ DEMO_FIELD_JSON = {
             "19": "19",
             "20": "20 (ph.d or equivalent)",
             "unknown": "unknown",
+        },
+    },
     "bmi": {"Description": "Body mass index (kg/m^2)"},
     "rbc_id": {"Description": "RBC ID used to match the participant to RBC data"},
 }
