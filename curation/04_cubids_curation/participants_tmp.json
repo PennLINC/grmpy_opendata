@@ -1,44 +1,128 @@
 {
-  "MeasurementToolMetadata": {
-    "Description": "Clinical consensus diagnoses (DSM-IV Axis I / Axis II) and diagnostic flags",
-    "LongName": "Subset of the consensus diagnostic record (derived from the GOASSESS interview and clinical consensus) selected for release. AXIS*_DESC fields are free-text diagnosis descriptions; dx_* are binary diagnostic-category flags. No formal data dictionary was available for these fields, so descriptions below are inferred from the column names and data; treat dx_pscat and dxsum as provisional.",
-    "MissingValues": "n/a"
+  "group": {
+    "Description": "Study group",
+    "Levels": {
+      "TD": "typically developing",
+      "I": "irritability",
+      "BPD": "borderline personality disorder"
+    }
   },
-  "participant_id": {
-    "Description": "Participant identifier (sub-<BBLID>)."
+  "age": {
+    "Description": "Age at scan (years)"
   },
-  "AXIS1_DESC1": {
-    "Description": "DSM-IV Axis I clinical diagnosis #1 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
+  "race": {
+    "Description": "Race",
+    "Levels": {
+      "0": "Caucasian",
+      "1": "African American",
+      "2": "Asian",
+      "3": "American Indian or Alaska Native",
+      "4": "Hawaiian/Pacific Islander",
+      "5": "Mixed/Other",
+      "6": "Unknown/not reported"
+    }
   },
-  "AXIS1_DESC2": {
-    "Description": "DSM-IV Axis I clinical diagnosis #2 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
+  "ethnicity": {
+    "Description": "Ethnicity",
+    "Levels": {
+      "0": "Non Hispanic/Latino",
+      "1": "Hispanic/Latino",
+      "2": "Unknown/not reported"
+    }
   },
-  "AXIS1_DESC3": {
-    "Description": "DSM-IV Axis I clinical diagnosis #3 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
+  "sex": {
+    "Description": "Sex",
+    "Levels": {
+      "0": "Male",
+      "1": "Female",
+      "2": "Other",
+      "3": "Not willing to answer"
+    }
   },
-  "AXIS1_DESC4": {
-    "Description": "DSM-IV Axis I clinical diagnosis #4 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
+  "handedness": {
+    "Description": "Handedness",
+    "Levels": {
+      "0": "Right",
+      "1": "Left",
+      "2": "Ambidextrous"
+    }
   },
-  "AXIS1_DESC5": {
-    "Description": "DSM-IV Axis I clinical diagnosis #5 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
+  "education": {
+    "Description": "Education",
+    "Levels": {
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "11": "11",
+      "12": "12 (high school diploma or GED)",
+      "13": "13",
+      "14": "14",
+      "15": "15",
+      "16": "16 (bachelor's degree)",
+      "17": "17",
+      "18": "18 (master's degree)",
+      "19": "19",
+      "20": "20 (ph.d or equivalent)"
+    }
   },
-  "AXIS1_DESC6": {
-    "Description": "DSM-IV Axis I clinical diagnosis #6 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
+  "mother_edu": {
+    "Description": "Mother's education",
+    "Levels": {
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "11": "11",
+      "12": "12 (high school diploma or GED)",
+      "13": "13",
+      "14": "14",
+      "15": "15",
+      "16": "16 (bachelor's degree)",
+      "17": "17",
+      "18": "18 (master's degree)",
+      "19": "19",
+      "20": "20 (ph.d or equivalent)",
+      "unknown": "unknown"
+    }
   },
-  "AXIS1_DESC7": {
-    "Description": "DSM-IV Axis I clinical diagnosis #7 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
+  "father_edu": {
+    "Description": "Father's education",
+    "Levels": {
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "11": "11",
+      "12": "12 (high school diploma or GED)",
+      "13": "13",
+      "14": "14",
+      "15": "15",
+      "16": "16 (bachelor's degree)",
+      "17": "17",
+      "18": "18 (master's degree)",
+      "19": "19",
+      "20": "20 (ph.d or equivalent)",
+      "unknown": "unknown"
+    }
   },
-  "AXIS1_DESC8": {
-    "Description": "DSM-IV Axis I clinical diagnosis #8 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
+  "bmi": {
+    "Description": "Body mass index (kg/m^2)"
   },
-  "AXIS1_DESC9": {
-    "Description": "DSM-IV Axis I clinical diagnosis #9 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS1_DESC10": {
-    "Description": "DSM-IV Axis I clinical diagnosis #10 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS2_DESC1": {
-    "Description": "DSM-IV Axis II diagnosis (personality disorders / intellectual disability), free text. 'Deferred Diagnosis' / 'No Diagnosis on Axis II' as recorded; n/a = not available."
+  "rbc_id": {
+    "Description": "RBC ID used to match the participant to RBC data"
   },
   "dx_BrderPD": {
     "Description": "Borderline Personality Disorder - diagnostic flag.",
@@ -200,8 +284,5 @@
       "1": "Present",
       "0": "Absent"
     }
-  },
-  "dxsum": {
-    "Description": "Number of diagnoses recorded for the participant (integer count; observed range 0-7 in these data). 0 = no diagnosis. Exact derivation is not formally documented - provisional."
   }
 }
