@@ -1,36 +1,128 @@
 {
   "group": {
-    "Description": ""
+    "Description": "Study group",
+    "Levels": {
+      "TD": "typically developing",
+      "I": "irritability",
+      "BPD": "borderline personality disorder"
+    }
   },
   "age": {
-    "Description": ""
+    "Description": "Age at scan (years)"
   },
   "race": {
-    "Description": ""
+    "Description": "Race",
+    "Levels": {
+      "0": "Caucasian",
+      "1": "African American",
+      "2": "Asian",
+      "3": "American Indian or Alaska Native",
+      "4": "Hawaiian/Pacific Islander",
+      "5": "Mixed/Other",
+      "6": "Unknown/not reported"
+    }
   },
   "ethnicity": {
-    "Description": ""
+    "Description": "Ethnicity",
+    "Levels": {
+      "0": "Non Hispanic/Latino",
+      "1": "Hispanic/Latino",
+      "2": "Unknown/not reported"
+    }
   },
   "sex": {
-    "Description": ""
+    "Description": "Sex",
+    "Levels": {
+      "0": "Male",
+      "1": "Female",
+      "2": "Other",
+      "3": "Not willing to answer"
+    }
   },
   "handedness": {
-    "Description": ""
+    "Description": "Handedness",
+    "Levels": {
+      "0": "Right",
+      "1": "Left",
+      "2": "Ambidextrous"
+    }
   },
   "education": {
-    "Description": ""
+    "Description": "Education",
+    "Levels": {
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "11": "11",
+      "12": "12 (high school diploma or GED)",
+      "13": "13",
+      "14": "14",
+      "15": "15",
+      "16": "16 (bachelor's degree)",
+      "17": "17",
+      "18": "18 (master's degree)",
+      "19": "19",
+      "20": "20 (ph.d or equivalent)"
+    }
   },
   "mother_edu": {
-    "Description": ""
+    "Description": "Mother's education",
+    "Levels": {
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "11": "11",
+      "12": "12 (high school diploma or GED)",
+      "13": "13",
+      "14": "14",
+      "15": "15",
+      "16": "16 (bachelor's degree)",
+      "17": "17",
+      "18": "18 (master's degree)",
+      "19": "19",
+      "20": "20 (ph.d or equivalent)",
+      "unknown": "unknown"
+    }
   },
   "father_edu": {
-    "Description": ""
+    "Description": "Father's education",
+    "Levels": {
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "11": "11",
+      "12": "12 (high school diploma or GED)",
+      "13": "13",
+      "14": "14",
+      "15": "15",
+      "16": "16 (bachelor's degree)",
+      "17": "17",
+      "18": "18 (master's degree)",
+      "19": "19",
+      "20": "20 (ph.d or equivalent)",
+      "unknown": "unknown"
+    }
   },
   "bmi": {
-    "Description": ""
+    "Description": "Body mass index (kg/m^2)"
   },
   "rbc_id": {
-    "Description": ""
+    "Description": "RBC ID used to match the participant to RBC data"
   },
   "dx_BrderPD": {
     "Description": "Borderline Personality Disorder - diagnostic flag.",
