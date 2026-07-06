@@ -1032,7 +1032,6 @@ python phenotype/02_extract_info_subfield.py \
 
 The self-report itemwise data was split into separate files using the [`03_separate_self_reports.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/03_separate_self_reports.py) script.
 
-Q: Should integer fields be converted to integer type in the tsv?
 
 aces - completed + verified. JSON complete.
 
@@ -1078,7 +1077,7 @@ stai_post_imaging - completed + verified. JSON complete.
 
 staxi2-ca - scored by summing based on https://www.annarbor.co.uk/index.php?main_page=index&cPath=419_322. Anger expression subscales were not scored due to lack of clarity on the scoring logic. JSON complete.
 
-swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary (0 = quite a bit or very much. 1 = not at all or just a little). Original publications says responses should range from -3 to 3. Would need to confirm 1) if reverse coding is needed, 2) if the R code is correct based on the inputs (are the thresholds imposed based on binary inputs?). Unclear if swan_total1 and swan_total2 are needed at all -- was in the R code but not in the self_report_itemwise.tsv. DECISION: removed scoring but left the answers. TODO: Followup to see if Ted would rather delete. JSON not validated.
+swan (ADHD) - EF has this. But only totals, while grmpy R code scored based on thresholds. ALSO EF items ranged from 0-7 and was changed to -3 to 3 for scoring (code from dan's lab). while here the answers are all binary (0 = quite a bit or very much. 1 = not at all or just a little). Original publications says responses should range from -3 to 3. Would need to confirm 1) if reverse coding is needed, 2) if the R code is correct based on the inputs (are the thresholds imposed based on binary inputs?). Unclear if swan_total1 and swan_total2 are needed at all -- was in the R code but not in the self_report_itemwise.tsv. DECISION: DO NOT RELEASE.
 
 suq - no scoring needed. added validity column on substance_othr_040/050 - should be 0 b/c drugs are fake. JSON complete.
 
@@ -1096,10 +1095,6 @@ Demographics.tsv - TODO: what to release?
 
 TODO: scales in the self-report data dictionary that are not on flywheel: RTSQ, PSS, BFI, LOT-R, Conte Social Interest, QPR. scales in imaging data dictionary that are not on flywheel: wolf questionnaire face, grmpy post-scan questionnaire, PANAS-MW.
 
-
-### sidecars
-
-axis.json was inferred, needs updating.
 
 # CNB data
 
