@@ -1,0 +1,116 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "PRIME Screen-Revised",
+    "TermURL": "https://www.nature.com/articles/mp2010177"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "sip003": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip004": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip005": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip006": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip007": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip008": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip009": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip010": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip011": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip012": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip013": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip014": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip015": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip016": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip017": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip018": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip019": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip020": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip021": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip022": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip023": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip024": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip025": {
+    "Description": "",
+    "Levels": {}
+  },
+  "sip026": {
+    "Description": "",
+    "Levels": {}
+  },
+  "prime_total_score": {
+    "Description": "Sum of the first 12 PRIME Screen-Revised items (sip003 through sip014). 'n/a' if any of those 12 items is missing."
+  },
+  "prime_clinical_significance": {
+    "Description": "Clinical significance based on the first 12 items (sip003-sip014). '1' if the participant meets any of: (a) >= 1 item rated 6, (b) >= 3 items rated 5, or (c) prime_total_score above the age-specific cutoff (participants older than 21 use the age-21 cutoff). '0' if the participant meets none of the criteria. 'n/a' if the 12 scored items are incomplete.",
+    "Levels": {
+      "1": "Meets at least one clinical significance criterion.",
+      "0": "Meets no criterion.",
+      "n/a": "Not evaluable (the 12 scored items are incomplete)."
+    }
+  }
+}
