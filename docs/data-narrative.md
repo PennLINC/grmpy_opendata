@@ -62,7 +62,9 @@ The participant came back for a second session with a plastic holder in their ea
 
 Timing files were created manually for the nback task following the [`create_fracback_events.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/03_create_events/create_fracback_events.py) script.
 
-Timing files still need to be created for FACES.
+Timing files are not present for FACES.
+
+NOTE: These files are deprecated and were removed from the datalad dataset. Individual events.tsv were later curated for each individual using the [`convert_and_score_fracback.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/events/convert_and_score_fracback.py) script (see below in CuBIDS curation section).
 
 # 04: CuBIDS
 
@@ -387,9 +389,8 @@ After discussion with Manuel Taso and review of the dicoms, it was determined th
 
 NOTE: The derivatives for this scan were later removed from the fmriprep_func and xcpd unzipped derivatives. This scan was also removed from the final fmri_qc.tsv.
 
+### Fracback events
 The fracback events were converted using log files downloaded from Flywheel (/cbica/projects/grmpy/sourcedata/GRMPY_822831_log/SUBJECTS) and scored with the [`convert_and_score_fracback.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/events/convert_and_score_fracback.py) script (`55eadf48`). The [`match_fracback_func_and_logs.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/events/match_fracback_func_and_logs.py) script was used to analyze and match the fracback funcs and logs prior to running the conversion script.
-
-Following phenotype curation (see below), the participants.tsv was updated with the demographics from the [`build_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/build_participants_tmp.py) script using the [`collide_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/collide_participants_tmp.py) script (`86c16852`).
 
 # 05: BABS
 
@@ -1095,6 +1096,20 @@ Demographics.tsv - TODO: what to release?
 
 TODO: scales in the self-report data dictionary that are not on flywheel: RTSQ, PSS, BFI, LOT-R, Conte Social Interest, QPR. scales in imaging data dictionary that are not on flywheel: wolf questionnaire face, grmpy post-scan questionnaire, PANAS-MW.
 
+# Prepare data for OpenNeuro and NeuroVault
+
+## Raw BIDS data
+First, the bids_datalad dataset must be updated following phenotype curation (see above).
+Following phenotype curation, the participants.tsv was updated with the demographics from the [`build_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/build_participants_tmp.py) script using the [`collide_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/collide_participants_tmp.py) script (`86c16852`).
+
+The task timing file `task-fracback_acq-singleband_events.tsv` was removed from the bids_datalad dataset as this has been deprecated and replaced with the individual events.tsv files (4fb4dafd).
+
+TODO:
+copy the bids_datalad dataset to comp_space/grmpy.
+create derivatives folder and add freesurfer-post and glm folders.
+create README.md and .bidsignore files. .gitattributes??
+create phenotype folder and add in tsvs and jsons that are to be released.
+Where to add: CUBIDS summary/files, protocol PDF?
 
 
 # helpful hints
