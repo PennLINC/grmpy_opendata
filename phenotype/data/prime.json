@@ -1,106 +1,279 @@
 {
   "MeasurementToolMetadata": {
     "Description": "PRIME Screen-Revised",
-    "TermURL": "https://www.nature.com/articles/mp2010177"
+    "Instructions_003-014": "The following questions ask about your personal experiences. We ask about your sensory, psychological, emotional, and social experiences. Some of these questions may seem to relate directly to your experiences and others may not. Based on your experiences within the past year, please tell me how much you agree or disagree with the following statements. Please listen carefully and tell me the answer that best describes your experiences.",
+    "Instructions_015-026": "You said [insert statement]. How long has it been since you first had this thought or experience? Less than 1 month, between 1 month and 1 year, more than a year but not your whole life, your entire lifetime or as long as you can remember?",
+    "TermURL": {
+      "prime revised": "https://doi.org/10.1016/j.schres.2008.08.018",
+      "Calkins 2025": "https://doi.org/10.1093/schbul/sbae224"
+    }
   },
   "participant_id": {
     "Description": "Participant ID Number"
   },
   "sip003": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I think that I have felt that there are odd or unusual things going on that I can't explain.",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip004": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I think that I might be able to predict the future.",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip005": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I may have felt that there could possibly by something interrupting or controlling my thoughts, feelings, or actions.",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip006": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I have had the experience of doing somethign differently because of my superstitions.",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip007": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I think that I may get confused at times whether something I experience or percieve may be real or may be just part of my imagination or dreams.",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip008": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I have thought that it might be possible that other people can read my mind, or that I can read others' minds.",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip009": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I wonder if people may be planning to hurt me or even may be about to hurt me.",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip010": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I believe that I have special natural or supernatural gifts beyond my talents and natural strengths.",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip011": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I think I might feel like my mind is \"playing tricks\" on me.",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip012": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I have had the experience of hearing faint or clear sounds of people or a person mumbling or talking when there is no one near me.",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip013": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I think that I may hear my own thoughts being said out loud.",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip014": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I have been concerned that I might be \"going crazy\".",
+    "Levels": {
+      "6": "Definitely agree",
+      "5": "Somewhat agree",
+      "4": "Slightly agree",
+      "3": "Not sure",
+      "2": "Slightly disagree",
+      "1": "Somewhat disagree",
+      "0": "Definitely disagree"
+    }
   },
   "sip015": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I think that I have felt that there are odd or unusual things going on that I can't explain.",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "sip016": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I think that I might be able to predict the future.",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "sip017": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I may have felt that there could possibly by something interrupting or controlling my thoughts, feelings, or actions.",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "sip018": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I have had the experience of doing somethign differently because of my superstitions.",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "sip019": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I think that I may get confused at times whether something I experience or percieve may be real or may be just part of my imagination or dreams.",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "sip020": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I have thought that it might be possible that other people can read my mind, or that I can read others' minds.",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "sip021": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I wonder if people may be planning to hurt me or even may be about to hurt me.",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "sip022": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I believe that I have special natural or supernatural gifts beyond my talents and natural strengths.",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "sip023": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I think I might feel like my mind is \"playing tricks\" on me.",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "sip024": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I have had the experience of hearing faint or clear sounds of people or a person mumbling or talking when there is no one near me.",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "sip025": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I think that I may hear my own thoughts being said out loud.",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "sip026": {
-    "Description": "",
-    "Levels": {}
+    "Description": "I have been concerned that I might be \"going crazy\".",
+    "Levels": {
+      "1": "Less than 1 month",
+      "2": "Between 1 month and 1 year",
+      "3": "More than a year but not your whole life",
+      "4": "Your entire lifetime or as long as you can remember",
+      "9": "Unknown"
+    }
   },
   "prime_total_score": {
     "Description": "Sum of the first 12 PRIME Screen-Revised items (sip003 through sip014). 'n/a' if any of those 12 items is missing."
