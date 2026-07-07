@@ -1028,9 +1028,9 @@ python phenotype/02_extract_info_subfield.py \
 
 ```
 
-## Self-report scoring
+## Scoring
 
-The self-report itemwise data was split into separate files using the [`03_separate_self_reports.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/03_separate_self_reports.py) script.
+The self-report itemwise data was split into separate files using the [`03_separate_self_reports.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/03_separate_self_reports.py) script. Imaging scales were split into separate files using the [`04_separate_imaging_scales.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/04_separate_imaging_scales.py) script. Self-report and imaging scales were then scored using the [`05_score_self_reports.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/05_score_self_reports.py) script. Developmental scales were separated and scored using the [`06_separate_dev_scales.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/06_separate_dev_scales.py) script. Axis data was extracted and scored using the [`07_process_axis.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/07_process_axis.py) script. These data were later merged into the participants.tsv file (see CUBIDS curation for more details). The CNB data was processed using the [`08_process_cnb.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/08_process_cnb.py) script. Prime data was scored using the [`09_process_prime.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/09_process_prime.py) script.
 
 
 aces - completed + verified. JSON complete.
@@ -1061,7 +1061,7 @@ phys_anhed - scored as rpasShort - EF has this, did sum and average, while here 
 
 soc_anhed - scored as rsasShort - EF has this, did sum and average, while here is only sum. completed. JSON complete. TODO: rename to rsas??
 
-prime_screen - do not release. TODO: Found the data dict from juliette. can release now?
+prime_screen - scored using the [`09_process_prime.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/09_process_prime.py) script. JSON complete.
 
 ***Proband_GOASSESS - only has summary/flagged columns. TODO - ignore for now, look in flyhweel for study group related to irritability.
 
@@ -1096,35 +1096,6 @@ Demographics.tsv - TODO: what to release?
 TODO: scales in the self-report data dictionary that are not on flywheel: RTSQ, PSS, BFI, LOT-R, Conte Social Interest, QPR. scales in imaging data dictionary that are not on flywheel: wolf questionnaire face, grmpy post-scan questionnaire, PANAS-MW.
 
 
-# CNB data
-
-CNB data was processed using the [`08_process_cnb.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/08_process_cnb.py) script.
-
-```bash
-python phenotype/08_process_cnb.py \
-  --input phenotype/data/CNB_raw.tsv \
-  --nda-defs ignore/NDA_penncnb01_definitions.csv \
-  --data-dict ignore/grmpy_data_dict.csv \
-  --output-dir phenotype/data/cnb
-```
-
-## validating columns
-
-adt - done.
-cpf - done.
-er40 - done.
-gng - done.
-cpw - done.
-pvrt - done.
-medf - done.
-mpract - done.
-pcet - spect was also mapped to pcet. Brooke will confirm with BIT team.
-pmat - done.
-ctap - done.
-lnb - done.
-cptnl - done.
-volt - done.
-plot - done.
 
 # helpful hints
 
