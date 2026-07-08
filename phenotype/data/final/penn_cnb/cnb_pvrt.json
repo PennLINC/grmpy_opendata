@@ -1,0 +1,24 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Penn Verbal Reasoning Test (PVRT)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_pvrt_cr": {
+    "Description": "PVRT Total Correct Responses"
+  },
+  "cnb_pvrt_pc": {
+    "Description": "PVRT Percent Correct Responses"
+  },
+  "cnb_pvrt_rtto": {
+    "Description": "PVRT Median Response Time for All Responses (ms)"
+  },
+  "cnb_pvrt_rtcr": {
+    "Description": "PVRT Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_pvrt_rter": {
+    "Description": "PVRT Median Response Time for Incorrect Responses (ms)"
+  }
+}

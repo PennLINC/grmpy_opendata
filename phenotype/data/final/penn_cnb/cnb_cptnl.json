@@ -1,0 +1,78 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Penn Continuous Performance Test, Number-Letter (CPT-NL)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_cptnl_number_tp": {
+    "Description": "CPTNL True Positive Responses for Number Trials"
+  },
+  "cnb_cptnl_number_fp": {
+    "Description": "CPTNL False Positive Responses for Number Trials"
+  },
+  "cnb_cptnl_number_tn": {
+    "Description": "CPTNL True Negative Responses for Number Trials"
+  },
+  "cnb_cptnl_number_fn": {
+    "Description": "CPTNL False Negative Responses for Number Trials"
+  },
+  "cnb_cptnl_number_tprt": {
+    "Description": "CPTNL Median Response Time for True Positive Responses for Number Trials (ms)"
+  },
+  "cnb_cptnl_number_fprt": {
+    "Description": "CPTNL Median Response Time for False Positive Responses for Number Trials (ms)"
+  },
+  "cnb_cptnl_letter_tp": {
+    "Description": "CPTNL True Positive Responses for Letter Trials"
+  },
+  "cnb_cptnl_letter_fp": {
+    "Description": "CPTNL False Positive Responses for Letter Trials"
+  },
+  "cnb_cptnl_letter_tn": {
+    "Description": "CPTNL True Negative Responses for Letter Trials"
+  },
+  "cnb_cptnl_letter_fn": {
+    "Description": "CPTNL False Negative Responses for Letter Trials"
+  },
+  "cnb_cptnl_letter_tprt": {
+    "Description": "CPTNL Median Response Time for True Positive Responses for Letter Trials (ms)"
+  },
+  "cnb_cptnl_letter_fprt": {
+    "Description": "CPTNL Median Response Time for False Positive Responses for Letter Trials (ms)"
+  },
+  "cnb_cptnl_total_fn": {
+    "Description": "CPTNL Total False Negatives"
+  },
+  "cnb_cptnl_total_fp": {
+    "Description": "CPTNL Total False Positives"
+  },
+  "cnb_cptnl_total_tp": {
+    "Description": "CPTNL Total True Positives"
+  },
+  "cnb_cptnl_total_tn": {
+    "Description": "CPTNL Total True Negatives"
+  },
+  "cnb_cptnl_total_tprt": {
+    "Description": "CPTNL Median Response Time for True Positive Number Responses (ms) and True Positive Letter Responses (ms)"
+  },
+  "cnb_cptnl_total_fprt": {
+    "Description": "CPTNL Median Response Time for False Positive Number Responses (ms) and False Positive Letter Responses (ms)"
+  },
+  "cnb_cptnl_number_rt": {
+    "Description": "CPTNL Median Response Time for All Number Responses (ms)"
+  },
+  "cnb_cptnl_letter_rt": {
+    "Description": "CPTNL Median Response Time for All Letter Responses (ms)"
+  },
+  "cnb_cptnl_total_rt": {
+    "Description": "CPTNL Median Response Time for All Responses (ms)"
+  },
+  "cnb_cptnl_total_sen": {
+    "Description": "CPTNL Sensitivity"
+  },
+  "cnb_cptnl_total_spec": {
+    "Description": "CPTNL Specificity"
+  }
+}

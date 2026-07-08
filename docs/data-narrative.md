@@ -1033,6 +1033,8 @@ python phenotype/02_extract_info_subfield.py \
 
 The self-report itemwise data was split into separate files using the [`03_separate_self_reports.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/03_separate_self_reports.py) script. Imaging scales were split into separate files using the [`04_separate_imaging_scales.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/04_separate_imaging_scales.py) script. Self-report and imaging scales were then scored using the [`05_score_self_reports.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/05_score_self_reports.py) script. Developmental scales were separated and scored using the [`06_separate_dev_scales.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/06_separate_dev_scales.py) script. Axis data was extracted and scored using the [`07_process_axis.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/07_process_axis.py) script. These data were later merged into the participants.tsv file (see CUBIDS curation for more details). The CNB data was processed using the [`08_process_cnb.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/08_process_cnb.py) script. Prime data was scored using the [`09_process_prime.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/09_process_prime.py) script.
 
+On July 8, 2026 files to be released were coppied to the phenotype/data/final/ folder. These files were copied into the phenotype folder in the raw openneuro dataset.
+
 
 aces - completed + verified. JSON complete.
 
@@ -1058,9 +1060,9 @@ hcl16 - completed + verified against self_report_summary.tsv. R code only uses h
 
 mapssr - completed + verified. JSON complete.
 
-phys_anhed - scored as rpasShort - EF has this, did sum and average, while here is only sum. completed. JSON complete. TODO: rename to rpas??
+phys_anhed - scored as rpasShort - EF has this, did sum and average, while here is only sum. completed. JSON complete.
 
-soc_anhed - scored as rsasShort - EF has this, did sum and average, while here is only sum. completed. JSON complete. TODO: rename to rsas??
+soc_anhed - scored as rsasShort - EF has this, did sum and average, while here is only sum. completed. JSON complete.
 
 prime_screen - scored using the [`09_process_prime.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/09_process_prime.py) script. JSON complete.
 
@@ -1092,9 +1094,6 @@ wolf_post_imaging - no scoring needed. JSON complete.
 
 Diagnosis - release a subset of columns highlighted by ted. axis.tsv is the output to release.
 
-Demographics.tsv - TODO: what to release?
-
-TODO: scales in the self-report data dictionary that are not on flywheel: RTSQ, PSS, BFI, LOT-R, Conte Social Interest, QPR. scales in imaging data dictionary that are not on flywheel: wolf questionnaire face, grmpy post-scan questionnaire, PANAS-MW.
 
 # Prepare data for OpenNeuro and NeuroVault
 
@@ -1104,13 +1103,27 @@ Following phenotype curation, the participants.tsv was updated with the demograp
 
 The task timing file `task-fracback_acq-singleband_events.tsv` was removed from the bids_datalad dataset as this has been deprecated and replaced with the individual events.tsv files (4fb4dafd).
 
-TODO:
-copy the bids_datalad dataset to comp_space/grmpy.
-create derivatives folder and add freesurfer-post and glm folders.
-create README.md and .bidsignore files. .gitattributes??
-create phenotype folder and add in tsvs and jsons that are to be released.
-Where to add: CUBIDS summary/files, protocol PDF?
+`cp -RL data/bids_datalad/ /cbica/comp_space/grmpy/.`
 
+From the new copied bids_datalad dataset:
+```bash
+mkdir derivatives
+cp -r /cbica/projects/grmpy/data/derivatives/freesurfer-post/ derivatives/.
+rsync -av --exclude='*errorts*' /cbica/projects/grmpy/data/derivatives/fracback-nortdur derivatives/.
+rsync -av --exclude='*errorts*' /cbica/projects/grmpy/data/derivatives/fracback-rtdur derivatives/.
+mdkir -p code/cubids
+cp /cbica/projects/grmpy/code/curation/04_cubids_curation/v5/* code/cubids/.
+mkdir phenotype
+cp -r /cbica/projects/grmpy/data/phenotype/data/final/ phenotype/.
+```
+
+
+
+TODO:
+create README.md and .bidsignore files.
+create phenotype folder and add in tsvs and jsons that are to be released.
+screen session. deno run
+after upload - add protocol PDF to code/.
 
 # helpful hints
 
@@ -1128,7 +1141,7 @@ git rm <file_path> # can be a glob pattern, i.e. `git rm sub-*/ses-*/anat/*T1w*`
 
 If you ever need to delete a datalad dataset, you can do so with the following command (from the directory containing the dataset):
 ```bash
-datalad drop -r <dataset_name>
+datalad drop -d <dataset_name>
 rm -rf <dataset_name>
 ```
 or:

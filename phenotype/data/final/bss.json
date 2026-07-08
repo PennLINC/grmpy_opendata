@@ -1,0 +1,105 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Brief Sensation Seeking Scale (BSSS)",
+    "Instructions": "Rate the degree to which you agree or disagree with each ofthe following statements.",
+    "TermURL": "https://doi.org/10.1037/t04251-000"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "bss_1": {
+    "Description": "I would like to explore strange places.",
+    "Levels": {
+      "1": "Strongly Disagree",
+      "2": "Disagree",
+      "3": "Neither Disagree or Agree",
+      "4": "Agree",
+      "5": "Strongly Agree"
+    }
+  },
+  "bss_2": {
+    "Description": "I get restless when I spend too much time at home.",
+    "Levels": {
+      "1": "Strongly Disagree",
+      "2": "Disagree",
+      "3": "Neither Disagree or Agree",
+      "4": "Agree",
+      "5": "Strongly Agree"
+    }
+  },
+  "bss_3": {
+    "Description": "I like wild parties.",
+    "Levels": {
+      "1": "Strongly Disagree",
+      "2": "Disagree",
+      "3": "Neither Disagree or Agree",
+      "4": "Agree",
+      "5": "Strongly Agree"
+    }
+  },
+  "bss_4": {
+    "Description": "I like to do frightening things.",
+    "Levels": {
+      "1": "Strongly Disagree",
+      "2": "Disagree",
+      "3": "Neither Disagree or Agree",
+      "4": "Agree",
+      "5": "Strongly Agree"
+    }
+  },
+  "bss_5": {
+    "Description": "I would like to take off on a trip with no preplanned routes or timetables.",
+    "Levels": {
+      "1": "Strongly Disagree",
+      "2": "Disagree",
+      "3": "Neither Disagree or Agree",
+      "4": "Agree",
+      "5": "Strongly Agree"
+    }
+  },
+  "bss_6": {
+    "Description": "I would like to have new and exciting experiences, even if they are illegal.",
+    "Levels": {
+      "1": "Strongly Disagree",
+      "2": "Disagree",
+      "3": "Neither Disagree or Agree",
+      "4": "Agree",
+      "5": "Strongly Agree"
+    }
+  },
+  "bss_7": {
+    "Description": "I prefer friends who are excitingly unpredictable.",
+    "Levels": {
+      "1": "Strongly Disagree",
+      "2": "Disagree",
+      "3": "Neither Disagree or Agree",
+      "4": "Agree",
+      "5": "Strongly Agree"
+    }
+  },
+  "bss_8": {
+    "Description": "I would like to try bungee jumping.",
+    "Levels": {
+      "1": "Strongly Disagree",
+      "2": "Disagree",
+      "3": "Neither Disagree or Agree",
+      "4": "Agree",
+      "5": "Strongly Agree"
+    }
+  },
+  "bss_score_mean": {
+    "Description": "BSS overall mean of items bss_1-bss_8."
+  },
+  "bss_score_experience": {
+    "Description": "Experience Seeking subscale: mean of bss_1, bss_5."
+  },
+  "bss_score_boredom": {
+    "Description": "Boredom Susceptibility subscale: mean of bss_2, bss_6."
+  },
+  "bss_score_thrill": {
+    "Description": "Thrill & Adventure Seeking subscale: mean of bss_3, bss_7."
+  },
+  "bss_score_disinhibition": {
+    "Description": "Disinhibition subscale: mean of bss_4, bss_8."
+  }
+}

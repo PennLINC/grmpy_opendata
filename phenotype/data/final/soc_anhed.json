@@ -1,0 +1,119 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Revised Social Anhedonia Scale - short form (RSAS, 15 items)",
+    "Instructions": "For each of the following items, select either True or False.",
+    "TermURL": "https://doi.org/10.1037/0021-843X.85.4.374"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "soc_anhed_1": {
+    "Description": "Having close friends is not as important as many people say.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_2": {
+    "Description": "I never had really close friends in high school.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_3": {
+    "Description": "I prefer watching television to going out with other people.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_4": {
+    "Description": "Just being with friends can make me feel really good.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_5": {
+    "Description": "I'm much too independent to really get involved with other people.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_6": {
+    "Description": "I prefer hobbies and leisure activities that do not involve other people.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_7": {
+    "Description": "I don't really feel very close to my friends.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_8": {
+    "Description": "People who try to get to know me better usually give up after awhile.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_9": {
+    "Description": "Knowing that I have friends who care about me gives me a sense of security.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_10": {
+    "Description": "People are usually better off if they stay aloof from emotional involvements with most others.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_11": {
+    "Description": "If given the choice, I would much rather be with others than be alone.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_12": {
+    "Description": "Although there are things that I enjoy doing by myself, I usually seem to have more fun when I do things with other people.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_13": {
+    "Description": "I feel pleased and gratified as I learn more and more about the emotional life of my friends.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_14": {
+    "Description": "When things are going really good for my close friends, it makes me feel good too.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "soc_anhed_15": {
+    "Description": "Making new friends isn't worth the energy it takes.",
+    "Levels": {
+      "1": "True",
+      "0": "False"
+    }
+  },
+  "rsasShort_score_total": {
+    "Description": "Social anhedonia total (RSAS short): items 1,2,3,5,6,7,8,10,15 scored as-is (True=1) plus items 4,9,11,12,13,14 reverse-coded (1-x), then summed. Range 0-15. n/a if any item missing.",
+    "Derivative": true
+  }
+}

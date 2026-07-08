@@ -1,0 +1,60 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Penn Emotion Recognition Test (ER40)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_er40_cr": {
+    "Description": "ER40 Total Correct Responses"
+  },
+  "cnb_er40_rtcr": {
+    "Description": "ER40 Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_er40_rt": {
+    "Description": "ER40 Median Response Time for All Responses (ms)"
+  },
+  "cnb_er40_fc": {
+    "Description": "ER40 Correct Female Trial Responses"
+  },
+  "cnb_er40_mc": {
+    "Description": "ER40 Correct Male Trial Responses"
+  },
+  "cnb_er40_fcrt": {
+    "Description": "ER40 Median Response Time for Correct Female Trial Responses (ms)"
+  },
+  "cnb_er40_mcrt": {
+    "Description": "ER40 Median Response Time for Correct Male Trial Responses (ms)"
+  },
+  "cnb_er40_ang": {
+    "Description": "ER40 Correct Anger Trial Responses"
+  },
+  "cnb_er40_fear": {
+    "Description": "ER40 Correct Fear Trial Responses"
+  },
+  "cnb_er40_hap": {
+    "Description": "ER40 Correct Happy Trial Responses"
+  },
+  "cnb_er40_noe": {
+    "Description": "ER40 Correct No Emotion Trial Responses"
+  },
+  "cnb_er40_sad": {
+    "Description": "ER40 Correct Sad Trial Responses"
+  },
+  "cnb_er40_angrt": {
+    "Description": "ER40 Median Response Time for Correct Anger Trial Responses (ms)"
+  },
+  "cnb_er40_fearrt": {
+    "Description": "ER40 Median Response Time for Correct Fear Trial Responses (ms)"
+  },
+  "cnb_er40_haprt": {
+    "Description": "ER40 Median Response Time for Correct Happy Trial Responses (ms)"
+  },
+  "cnb_er40_noert": {
+    "Description": "ER40 Median Response Time for Correct No Emotion Trial Responses (ms)"
+  },
+  "cnb_er40_sadrt": {
+    "Description": "ER40 Median Response Time for Correct Sad Trial Responses (ms)"
+  }
+}
