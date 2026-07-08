@@ -78,11 +78,11 @@
   "substance_tob_010": {
     "Description": "Have you ever used tobacco (for example cigarettes, cigars, chewing tobacco)?",
     "Levels": {
-      "1": "I have never tried tobacco",
-      "2": "I have never tried tobacco, but might sometime",
-      "3": "I have tried tobacco, but have not used it in the past 12 months",
-      "4": "I have tried tobacco, but have used it only once in a while in the past 12 months",
-      "5": "I have tried tobacco, and have used it a lot in the past 12 months"
+      "0": "I have never tried tobacco",
+      "1": "I have never tried tobacco, but might sometime",
+      "2": "I have tried tobacco, but have not used it in the past 12 months",
+      "3": "I have tried tobacco, but have used it only once in a while in the past 12 months",
+      "4": "I have tried tobacco, and have used it a lot in the past 12 months"
     }
   },
   "substance_tob_020___1": {
@@ -288,11 +288,11 @@
   "substance_alc_010": {
     "Description": "Have you ever used alcohol?",
     "Levels": {
-      "1": "I have never tried alcohol",
-      "2": "I have never tried alcohol, but might sometime",
-      "3": "I have tried alcohol, but have not used in the past 12 months",
-      "4": "I have tried alcohol, but have only used it once in a while in the past 12 months",
-      "5": "I have used alcohol, and have used it a lot in the past 12 months"
+      "0": "I have never tried alcohol",
+      "1": "I have never tried alcohol, but might sometime",
+      "2": "I have tried alcohol, but have not used in the past 12 months",
+      "3": "I have tried alcohol, but have only used it once in a while in the past 12 months",
+      "4": "I have used alcohol, and have used it a lot in the past 12 months"
     }
   },
   "substance_alc_020": {
@@ -435,7 +435,7 @@
       "1": "Nearly every time or every time",
       "2": "About half the time",
       "3": "Less than half of the time",
-      "4": "Never or almost never"
+      "0": "Never or almost never"
     }
   },
   "substance_alc_160": {
@@ -452,11 +452,11 @@
   "substance_mar_010": {
     "Description": "Have you ever used marijuana (grass) or hashish?",
     "Levels": {
-      "1": "I have never tried marijuana or hashish",
-      "2": "I have never tried marijuana or hashish, but might sometime",
-      "3": "I have tried marijuana or hashish, but have not used it in the past 12 months",
-      "4": "I have tried marijuana or hashish, but have used it only once in a while in the past 12 months",
-      "5": "I have tried marijuana or hashish, and have used it a lot in the past 12 months"
+      "0": "I have never tried marijuana or hashish",
+      "1": "I have never tried marijuana or hashish, but might sometime",
+      "2": "I have tried marijuana or hashish, but have not used it in the past 12 months",
+      "3": "I have tried marijuana or hashish, but have used it only once in a while in the past 12 months",
+      "4": "I have tried marijuana or hashish, and have used it a lot in the past 12 months"
     }
   },
   "substance_mar_020": {
@@ -738,7 +738,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_011": {
@@ -760,7 +760,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_021": {
@@ -782,7 +782,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_040": {
@@ -790,7 +790,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_050": {
@@ -798,7 +798,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_060": {
@@ -806,7 +806,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_070": {
@@ -814,7 +814,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_071": {
@@ -836,7 +836,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_090": {
@@ -844,7 +844,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_100": {
@@ -852,7 +852,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_101": {
@@ -874,7 +874,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_111": {
@@ -896,7 +896,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_130": {
@@ -904,7 +904,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_140": {
@@ -912,7 +912,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_150": {
@@ -920,7 +920,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_160": {
@@ -928,7 +928,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "substance_othr_170": {
@@ -936,7 +936,7 @@
     "Levels": {
       "1": "Yes, in the last 12 months",
       "2": "Yes, but not in the last 12 months",
-      "3": "No"
+      "0": "No"
     }
   },
   "drugs_club___1": {
