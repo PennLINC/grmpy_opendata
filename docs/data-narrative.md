@@ -1114,14 +1114,28 @@ rsync -av --exclude='*errorts*' /cbica/projects/grmpy/data/derivatives/fracback-
 mdkir -p code/cubids
 cp /cbica/projects/grmpy/code/curation/04_cubids_curation/v5/* code/cubids/.
 mkdir phenotype
-cp -r /cbica/projects/grmpy/data/phenotype/data/final/ phenotype/.
+cp -r /cbica/projects/grmpy/code/phenotype/data/final/* phenotype/.
+echo "GRMPY Raw data" > README.md
 ```
 
+Now prepare the openeuro environment:
+```bash
+micromamba create -n openneuro
+micromamba install -n openneuro -c conda-forge deno
+micromamba activate openneuro
+deno install -A --global jsr:@openneuro/cli -n openneuro
+```
 
+Now start a screen session and upload the dataset:
+```bash
+screen -S openneuro
+micromamba activate openneuro
+deno run -A jsr:@openneuro/cli login
+# paste in API key when prompted. Select 'y' for error reporting.
+openneuro upload --affirmDefaced /cbica/comp_space/grmpy/bids_datalad
+```
 
 TODO:
-create README.md and .bidsignore files.
-create phenotype folder and add in tsvs and jsons that are to be released.
 screen session. deno run
 after upload - add protocol PDF to code/.
 
