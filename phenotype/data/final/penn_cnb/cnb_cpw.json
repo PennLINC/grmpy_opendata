@@ -1,0 +1,54 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Penn Word Memory Test (CPW)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_cpw_cr": {
+    "Description": "CPW Total Correct Responses"
+  },
+  "cnb_cpw_rtcr": {
+    "Description": "CPW Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_cpw_w_rtcr": {
+    "Description": "CPW Weighted Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_cpw_er": {
+    "Description": "CPW Total Incorrect Responses"
+  },
+  "cnb_cpw_rter": {
+    "Description": "CPW Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_cpw_w_rter": {
+    "Description": "CPW Weighted Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_cpw_rt": {
+    "Description": "CPW Median Response Time for All Responses (ms)"
+  },
+  "cnb_cpw_tp": {
+    "Description": "CPW True Positive Responses"
+  },
+  "cnb_cpw_tn": {
+    "Description": "CPW True Negative Responses"
+  },
+  "cnb_cpw_tprt": {
+    "Description": "CPW Median Response Time for True Positive Responses (ms)"
+  },
+  "cnb_cpw_tnrt": {
+    "Description": "CPW Median Response Time for True Negative Responses (ms)"
+  },
+  "cnb_cpw_fp": {
+    "Description": "CPW False Positive Responses"
+  },
+  "cnb_cpw_fn": {
+    "Description": "CPW False Negative Responses"
+  },
+  "cnb_cpw_fprt": {
+    "Description": "CPW Median Response Time for False Positive Responses (ms)"
+  },
+  "cnb_cpw_fnrt": {
+    "Description": "CPW Median Response Time for False Negative Responses (ms)"
+  }
+}

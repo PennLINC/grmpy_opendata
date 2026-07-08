@@ -1,0 +1,54 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Penn Face Memory Test (CPF)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_cpf_cr": {
+    "Description": "CPF Total Correct Responses"
+  },
+  "cnb_cpf_rtcr": {
+    "Description": "CPF Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_cpf_w_rtcr": {
+    "Description": "CPF Weighted Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_cpf_er": {
+    "Description": "CPF Total Incorrect Responses"
+  },
+  "cnb_cpf_rter": {
+    "Description": "CPF Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_cpf_w_rter": {
+    "Description": "CPF Weighted Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_cpf_rt": {
+    "Description": "CPF Median Response Time for All Responses (ms)"
+  },
+  "cnb_cpf_tp": {
+    "Description": "CPF True Positive Responses"
+  },
+  "cnb_cpf_tn": {
+    "Description": "CPF True Negative Responses"
+  },
+  "cnb_cpf_tprt": {
+    "Description": "CPF Median Response Time for True Positive Responses (ms)"
+  },
+  "cnb_cpf_tnrt": {
+    "Description": "CPF Median Response Time for True Negative Responses (ms)"
+  },
+  "cnb_cpf_fp": {
+    "Description": "CPF False Positive Responses"
+  },
+  "cnb_cpf_fn": {
+    "Description": "CPF False Negative Responses"
+  },
+  "cnb_cpf_fprt": {
+    "Description": "CPF Median Response Time for False Positive Responses (ms)"
+  },
+  "cnb_cpf_fnrt": {
+    "Description": "CPF Median Response Time for False Negative Responses (ms)"
+  }
+}

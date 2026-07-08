@@ -1,0 +1,33 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Go/No-Go Test (GNG)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_gng_cr": {
+    "Description": "GNG Total Correct Responses"
+  },
+  "cnb_gng_tp": {
+    "Description": "GNG True Positive Responses"
+  },
+  "cnb_gng_fp": {
+    "Description": "GNG False Positive Responses"
+  },
+  "cnb_gng_tn": {
+    "Description": "GNG True Negative Responses"
+  },
+  "cnb_gng_fn": {
+    "Description": "GNG False Negative Responses"
+  },
+  "cnb_gng_rtcr": {
+    "Description": "GNG Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_gng_rter": {
+    "Description": "GNG Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_gng_rt": {
+    "Description": "GNG Median Response Time for All Responses (ms)"
+  }
+}

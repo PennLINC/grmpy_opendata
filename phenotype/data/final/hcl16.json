@@ -1,0 +1,223 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Hypomania Checklist (HCL-16)",
+    "Instructions": "At different times in their life everyone experiences changes or swings in energy, activity, and mood ('highs and lows' or 'ups and downs'). The aim of this questionnaire is to assess the characteristics of the 'high' periods.",
+    "Notes": "Hypomania checklist. The 16 'high'-state symptom items hcl16_3_1-hcl16_3_16 (Yes/No) constitute the scored checklist; the remaining items (current/usual state, impact and course questions) are auxiliary and not part of the total. These 16 items are not the exact same as those included in the Forty et al 2010 16-itemversion of the HCL-32.",
+    "TermURL": "https://doi.org/10.1016/j.jad.2010.01.004"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "hcl16_1": {
+    "Description": "First of all, how are you feeling TODAY compared to your usual state:(Please mark only ONE of the following)",
+    "Levels": {
+      "-3": "Much worse than usual",
+      "-2": "Worse than usual",
+      "-1": "A little worse than usual",
+      "0": "Neither better nor worse than usual",
+      "1": "A little better than usual",
+      "2": "Better than usual",
+      "3": "Much better than usual"
+    }
+  },
+  "hcl16_2": {
+    "Description": "How are you USUALLY compared to other people? Independently of how you feel today, please tell us how you are normally compared to other people, by marking which of the following statements describes you best. Compared to other people my level of activity, energy and mood...(Please mark only ONE of the following)",
+    "Levels": {
+      "0": "...is always rather stable and even.",
+      "1": "...is generally higher.",
+      "2": "...is generally lower.",
+      "3": "...repeatedly shows periods of ups and downs."
+    }
+  },
+  "hcl16_3_1": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I need less sleep.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_2": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I enjoy my work more.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_3": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I want to travel and/or do travel more.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_4": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I spend more money/too much money.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_5": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I take more risks in my daily life (in my work and/or other activities).",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_6": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I am physically more active (sport etc.).",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_7": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I am less shy or inhibited.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_8": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I wear more colourful and more extravagant clothes/make-up.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_9": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I am more flirtatious and/or am more sexually active.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_10": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I think faster.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_11": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I make more jokes or puns when I am talking.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_12": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I get into more quarrels.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_13": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: My mood is higher, more optimistic.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_14": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I smoke more cigarettes.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_15": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I drink more alcohol.",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_3_16": {
+    "Description": "Please try to remember a period when you were in a 'high' state. How did you feel then? Please answer all of these statements independently of your present condition. In such a state: I take more drugs (sedatives, anti-anxiety pills, stimulants...).",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_4": {
+    "Description": "Did the questions above, which characterize a \"high\", describe how you are...(Please mark only ONE of the following)",
+    "Levels": {
+      "1": "...sometimes?",
+      "2": "...most of the time?",
+      "0": "I never experienced such a \"high.\""
+    }
+  },
+  "hcl16_5_1": {
+    "Description": "Impact of your 'highs' on various aspects of your life: Family life",
+    "Levels": {
+      "3": "Positive and negative",
+      "2": "Positive",
+      "1": "Negative",
+      "0": "No impact"
+    }
+  },
+  "hcl16_5_2": {
+    "Description": "Impact of your 'highs' on various aspects of your life: Social life",
+    "Levels": {
+      "3": "Positive and negative",
+      "2": "Positive",
+      "1": "Negative",
+      "0": "No impact"
+    }
+  },
+  "hcl16_5_3": {
+    "Description": "Impact of your 'highs' on various aspects of your life: Work",
+    "Levels": {
+      "3": "Positive and negative",
+      "2": "Positive",
+      "1": "Negative",
+      "0": "No impact"
+    }
+  },
+  "hcl16_5_4": {
+    "Description": "Impact of your 'highs' on various aspects of your life: Leisure",
+    "Levels": {
+      "3": "Positive and negative",
+      "2": "Positive",
+      "1": "Negative",
+      "0": "No impact"
+    }
+  },
+  "hcl16_6": {
+    "Description": "Other people's reactions and comments to your \"highs\". How did people close to you react to or comment on your 'highs'",
+    "Levels": {
+      "4": "Positively (encouraging or supportive)",
+      "3": "Neutral",
+      "2": "Negatively (concerned, annoyed, irritated, critical)",
+      "1": "Positively and negatively",
+      "0": "No reactions"
+    }
+  },
+  "hcl16_7": {
+    "Description": "Length of your \"highs\" as a rule (on the average):(Please mark only ONE of the following)",
+    "Levels": {
+      "0": "1 day",
+      "1": "2-3 days",
+      "2": "4-7 days",
+      "3": "longer than 1 week",
+      "4": "longer than 1 month",
+      "5": "I can't judge/don't know"
+    }
+  },
+  "hcl16_8": {
+    "Description": "Have you experienced such \"highs\" in the past twelve months?",
+    "Levels": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  "hcl16_9": {
+    "Description": "If yes, please estimate how many days you spent in \"highs\" during the last twelve months:Taking all together: about ______ days"
+  },
+  "hcl_score_total": {
+    "Description": "HCL-16 total: sum of the 16 'high'-symptom items hcl16_3_1-hcl16_3_16 (Yes=1, No=0). Range 0-16. n/a if any of the 16 items is missing.",
+    "Derivative": true
+  }
+}

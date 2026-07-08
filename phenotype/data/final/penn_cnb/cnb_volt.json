@@ -1,0 +1,54 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Visual Object Learning Test (VOLT)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_volt_cr": {
+    "Description": "VOLT Total Correct Responses"
+  },
+  "cnb_volt_rtcr": {
+    "Description": "VOLT Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_volt_w_rtcr": {
+    "Description": "VOLT Weighted Median Response Time for Correct Responses (ms)"
+  },
+  "cnb_volt_er": {
+    "Description": "VOLT Total Incorrect Responses"
+  },
+  "cnb_volt_rter": {
+    "Description": "VOLT Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_volt_w_rter": {
+    "Description": "VOLT Weighted Median Response Time for Incorrect Responses (ms)"
+  },
+  "cnb_volt_rt": {
+    "Description": "VOLT Median Response Time for All Responses (ms)"
+  },
+  "cnb_volt_tp": {
+    "Description": "VOLT True Positive Responses"
+  },
+  "cnb_volt_tn": {
+    "Description": "VOLT True Negative Responses"
+  },
+  "cnb_volt_tprt": {
+    "Description": "VOLT Median Response Time for True Positive Responses (ms)"
+  },
+  "cnb_volt_tnrt": {
+    "Description": "VOLT Median Response Time for True Negative Responses (ms)"
+  },
+  "cnb_volt_fp": {
+    "Description": "VOLT False Positive Responses"
+  },
+  "cnb_volt_fn": {
+    "Description": "VOLT False Negative Responses"
+  },
+  "cnb_volt_fprt": {
+    "Description": "VOLT Median Response Time for False Positive Responses (ms)"
+  },
+  "cnb_volt_fnrt": {
+    "Description": "VOLT Median Response Time for False Negative Responses (ms)"
+  }
+}

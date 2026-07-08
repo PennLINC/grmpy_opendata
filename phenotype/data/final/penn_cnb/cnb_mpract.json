@@ -1,0 +1,15 @@
+{
+  "MeasurementToolMetadata": {
+    "Description": "Motor Praxis Test (MPRACT)",
+    "TermURL": "https://nda.nih.gov/data-structure/penncnb01"
+  },
+  "participant_id": {
+    "Description": "Participant ID Number"
+  },
+  "cnb_mpract_mp2": {
+    "Description": "MPRACT Total Correct Responses"
+  },
+  "cnb_mpract_mp2rtcr": {
+    "Description": "MPRACT Median Response Time for Correct Responses (ms)"
+  }
+}
