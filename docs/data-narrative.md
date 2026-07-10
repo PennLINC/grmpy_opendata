@@ -1139,6 +1139,37 @@ TODO:
 screen session. deno run
 after upload - add protocol PDF to code/.
 
+## fMRIPrep Anatomical Derivatives
+
+```bash
+cd /cbica/projects/grmpy/data/derivatives/fmriprep_anat
+echo "GRMPY fMRIPrep Anatomical Derivatives" >> README.md
+```
+Add the following to the `.bidsignore` file:
+```
+log
+figures
+*space-*
+*.shape.gii
+```
+
+Add some authors (not final list) to the `dataset_description.json` file:
+```json
+    "Authors": [
+	      "S. Parker Singleton",
+        "Brooke L. Sevchik",
+        "Sage Rush",
+        "Matt Cieslak",
+        "Steven L. Meisler",
+        "Taylor Salo",
+        "Tien T. Tong",
+        "Theodore D. Satterthwaite"
+    ],
+```
+
+From a screen session:
+`openneuro upload --affirmDefaced /cbica/projects/grmpy/data/derivatives/fmriprep_anat`
+
 # helpful hints
 
 Use `git log --oneline` in your datalad project directory to get the commit history of your dataset.

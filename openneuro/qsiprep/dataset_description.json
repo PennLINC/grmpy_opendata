@@ -1,0 +1,46 @@
+{
+    "Name": "qsiprep output",
+    "Authors": [
+        "S. Parker Singleton",
+        "Brooke L. Sevchik",
+        "Sage Rush",
+        "Juliette B.H. Brook",
+        "Matt Cieslak",
+        "Elizabeth A. Flook",
+        "Corey Horien",
+        "Steven L. Meisler",
+        "Taylor Salo",
+        "Tien T. Tong",
+        "Monica E. Calkins",
+        "Raquel E. Gur",
+        "Ruben C. Gur",
+        "Ellen Leibenluft",
+        "Kosha Ruparel",
+        "Russel T. Shinohara",
+        "David R. Roalf",
+        "Daniel H. Wolf",
+        "Theodore D. Satterthwaite"
+    ],
+    "BIDSVersion": "1.1.1",
+    "PipelineDescription": {
+        "Name": "qsiprep",
+        "Version": "1.0.2.dev0+gfc89945.d20250405",
+        "CodeURL": "https://github.com/PennLINC/qsiprep/archive/1.0.2.dev0+gfc89945.d20250405.tar.gz"
+    },
+    "Funding": [
+        "R01MH107703"
+    ],
+    "GeneratedBy": [
+        {
+            "Name": "qsiprep",
+            "Version": "1.0.2.dev0+gfc89945.d20250405",
+            "CodeURL": "https://github.com/PennLINC/qsiprep/archive/1.0.2.dev0+gfc89945.d20250405.tar.gz"
+        }
+    ],
+    "CodeURL": "https://github.com/pennlinc/qsiprep",
+    "HowToAcknowledge": "Please cite our paper (https://www.nature.com/articles/s41592-021-01185-5#citeas), and include the generated citation boilerplate within the Methods section of the text.",
+    "SourceDatasetsURLs": [
+        "https://doi.org/"
+    ],
+    "License": "MIT"
+}
