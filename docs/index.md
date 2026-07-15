@@ -6,7 +6,7 @@ nav_order: 1
 
 # GRMPY Open Data
 
-<!-- TODO: expand this intro. Placeholder text for now. -->
+<!-- TODO: expand this intro! Placeholder text for now. -->
 
 This site documents the curation, processing, and release of the GRMPY open
 dataset — from raw DICOMs through BIDS conversion, derivatives, quality control,
