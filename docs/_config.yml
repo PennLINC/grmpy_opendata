@@ -1,8 +1,9 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: GRMPY Open Data
+description: Curation, processing, and release documentation for the GRMPY open dataset.
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+# baseurl (/grmpy_opendata) is injected at build time by the Pages workflow
+url: https://pennlinc.github.io
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  GitHub Repository: https://github.com/PennLINC/grmpy_opendata
