@@ -26,7 +26,7 @@
     "Funding": [
         "R01MH107703"
     ],
-    "PipelineDescription": {
+    "GeneratedBy": {
         "Name": "ASLPrep",
         "Version": "25.1.0",
         "CodeURL": "https://github.com/PennLINC/aslprep/archive/25.1.0.tar.gz"
