@@ -145,6 +145,8 @@ figures
 */ses-1/anat/*desc*
 ```
 
+The dataset_description.json file needed some changes. See the [ASLPrep dataset_description.json](https://github.com/PennLINC/grmpy_opendata/blob/main/openneuro/aslprep/dataset_description.json) commit history for the changes.
+
 From a screen session:
 ```bash
 micromamba activate openneuro
