@@ -142,7 +142,8 @@ figures
 *_mask.*
 *_att.*
 *_aslref.*
-*/ses-1/anat/*desc*
+*.surf.gii
+*.shape.gii
 ```
 
 The dataset_description.json file needed some changes. See the [ASLPrep dataset_description.json](https://github.com/PennLINC/grmpy_opendata/blob/main/openneuro/aslprep/dataset_description.json) commit history for the changes.
