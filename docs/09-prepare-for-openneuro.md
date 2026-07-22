@@ -154,3 +154,33 @@ micromamba activate openneuro
 export OPENNEURO_LOG=DEBUG
 openneuro upload --affirmDefaced . | tee /cbica/projects/grmpy/code/openneuro/aslprep/upload$(date +%Y%m%d_%H%M).log
 ```
+
+This is taking _forever_ to upload.
+
+## QSIRecon Derivatives
+
+ASLPrep is taking so long and CUBIC will be shutdown for upgrades soon.
+Going to try out PARCC.
+
+QSIRecon was rsynced to PARCC (from a screen session):
+
+```bash
+rsync --avzh --partial --append-verify --progress2 /cbica/projects/grmpy/data/derivatives/qsirecon /ceph/projects/sattertt/pennlinc-parcc/grmpy/data/derivatives
+```
+
+
+Now, on PARCC. Micromamba env was created following the above steps.
+
+
+```bash
+micromamba activate openneuro
+cp /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/qsirecon/* .
+```
+
+Bidsignore may need to be updated.
+
+
+```bash
+export OPENNEURO_LOG=DEBUG
+openneuro upload --affirmDefaced . | tee /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/qsirecon/upload$(date +%Y%m%d_%H%M).log
+```
