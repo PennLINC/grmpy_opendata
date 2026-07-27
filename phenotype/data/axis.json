@@ -1,54 +1,21 @@
 {
   "MeasurementToolMetadata": {
-    "Description": "Clinical consensus diagnoses (DSM-IV Axis I / Axis II) and diagnostic flags",
-    "LongName": "Subset of the consensus diagnostic record (derived from the GOASSESS interview and clinical consensus) selected for release. AXIS*_DESC fields are free-text diagnosis descriptions; dx_* are binary diagnostic-category flags. No formal data dictionary was available for these fields, so descriptions below are inferred from the column names and data; treat dx_pscat and dxsum as provisional.",
+    "Description": "Clinical consensus diagnostic flags (dx_*)",
+    "LongName": "Subset of the consensus diagnostic record (derived from the GOASSESS interview and clinical consensus) selected for release, sourced from the updated axis REDCap export provided by the BIT team on 2026-07-27. dx_* fields are diagnostic-category flags (binary present/absent) except dx_pscat, which is a categorical psychosis-spectrum label. No formal data dictionary was available for these fields, so descriptions below are inferred from the column names and data and should be treated as provisional (in particular dx_cogdis, dx_pdd, dx_intdis, dx_sub, dx_sub_other, and dx_pscat). Diagnoses recorded more than 365 days from the scan date were set to n/a, as were participants absent from the REDCap export.",
     "MissingValues": "n/a"
   },
   "participant_id": {
     "Description": "Participant identifier (sub-<BBLID>)."
   },
-  "AXIS1_DESC1": {
-    "Description": "DSM-IV Axis I clinical diagnosis #1 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS1_DESC2": {
-    "Description": "DSM-IV Axis I clinical diagnosis #2 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS1_DESC3": {
-    "Description": "DSM-IV Axis I clinical diagnosis #3 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS1_DESC4": {
-    "Description": "DSM-IV Axis I clinical diagnosis #4 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS1_DESC5": {
-    "Description": "DSM-IV Axis I clinical diagnosis #5 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS1_DESC6": {
-    "Description": "DSM-IV Axis I clinical diagnosis #6 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS1_DESC7": {
-    "Description": "DSM-IV Axis I clinical diagnosis #7 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS1_DESC8": {
-    "Description": "DSM-IV Axis I clinical diagnosis #8 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS1_DESC9": {
-    "Description": "DSM-IV Axis I clinical diagnosis #9 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS1_DESC10": {
-    "Description": "DSM-IV Axis I clinical diagnosis #10 (free text). 'No Diagnosis or Condition on Axis I' = none; n/a = no further diagnosis recorded."
-  },
-  "AXIS2_DESC1": {
-    "Description": "DSM-IV Axis II diagnosis (personality disorders / intellectual disability), free text. 'Deferred Diagnosis' / 'No Diagnosis on Axis II' as recorded; n/a = not available."
-  },
-  "dx_BrderPD": {
-    "Description": "Borderline Personality Disorder - diagnostic flag.",
+  "dx_adhd": {
+    "Description": "Attention-Deficit/Hyperactivity Disorder - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
     }
   },
-  "dx_adhd": {
-    "Description": "Attention-Deficit/Hyperactivity Disorder - diagnostic flag.",
+  "dx_adhd_remit": {
+    "Description": "Attention-Deficit/Hyperactivity Disorder, in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -61,15 +28,57 @@
       "0": "Absent"
     }
   },
-  "dx_bp1": {
-    "Description": "Bipolar I Disorder - diagnostic flag.",
+  "dx_anx_remit": {
+    "Description": "Anxiety disorder, in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
     }
   },
-  "dx_bpoth": {
-    "Description": "Other bipolar-spectrum disorder - diagnostic flag.",
+  "dx_bp": {
+    "Description": "Bipolar disorder (any bipolar-spectrum) - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_bp_remit": {
+    "Description": "Bipolar disorder, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_brderpd": {
+    "Description": "Borderline Personality Disorder - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_brderpd_remit": {
+    "Description": "Borderline Personality Disorder, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_cogdis": {
+    "Description": "Cognitive disorder - diagnostic flag (provisional).",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_cogdis_remit": {
+    "Description": "Cognitive disorder, in remission - diagnostic flag (provisional).",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_intdis": {
+    "Description": "Intellectual disability - diagnostic flag (provisional).",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -82,8 +91,22 @@
       "0": "Absent"
     }
   },
+  "dx_mdd_remit": {
+    "Description": "Major Depressive Disorder, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
   "dx_moodnos": {
     "Description": "Mood disorder not otherwise specified - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_moodnos_remit": {
+    "Description": "Mood disorder not otherwise specified, in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -98,6 +121,20 @@
   },
   "dx_other": {
     "Description": "Other psychiatric diagnosis - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_other_remit": {
+    "Description": "Other psychiatric diagnosis, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_pdd": {
+    "Description": "Pervasive developmental disorder - diagnostic flag (provisional).",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -118,14 +155,23 @@
     }
   },
   "dx_pscat": {
-    "Description": "Psychosis-spectrum category - diagnostic flag.",
+    "Description": "Psychosis-spectrum category (categorical label, provisional).",
+    "Levels": {
+      "psy": "Psychosis",
+      "pro": "Prodromal / clinical high-risk for psychosis",
+      "other": "Other (???)",
+      "noDSMdx": "No DSM diagnosis"
+    }
+  },
+  "dx_psychosis": {
+    "Description": "Psychosis - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
     }
   },
-  "dx_psychosis": {
-    "Description": "Psychosis - diagnostic flag.",
+  "dx_psychosis_remit": {
+    "Description": "Psychosis, in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -138,8 +184,36 @@
       "0": "Absent"
     }
   },
+  "dx_ptsd_remit": {
+    "Description": "Post-Traumatic Stress Disorder, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
   "dx_scz": {
     "Description": "Schizophrenia - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_scz_remit": {
+    "Description": "Schizophrenia, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sleep": {
+    "Description": "Sleep disorder - diagnostic flag (provisional).",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub": {
+    "Description": "Any substance use disorder (abuse or dependence) - diagnostic flag (provisional).",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -159,6 +233,13 @@
       "0": "Absent"
     }
   },
+  "dx_sub_abuse_alc_remit": {
+    "Description": "Alcohol abuse, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
   "dx_sub_abuse_can": {
     "Description": "Cannabis abuse - diagnostic flag.",
     "Levels": {
@@ -166,8 +247,29 @@
       "0": "Absent"
     }
   },
+  "dx_sub_abuse_can_remit": {
+    "Description": "Cannabis abuse, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
   "dx_sub_abuse_oth": {
     "Description": "Other substance abuse - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_abuse_oth_remit": {
+    "Description": "Other substance abuse, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_abuse_remit": {
+    "Description": "Substance abuse (any), in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -187,8 +289,22 @@
       "0": "Absent"
     }
   },
+  "dx_sub_dep_alc_remit": {
+    "Description": "Alcohol dependence, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
   "dx_sub_dep_can": {
     "Description": "Cannabis dependence - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_dep_can_remit": {
+    "Description": "Cannabis dependence, in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -201,7 +317,25 @@
       "0": "Absent"
     }
   },
-  "dxsum": {
-    "Description": "Number of diagnoses recorded for the participant (integer count; observed range 0-7 in these data). 0 = no diagnosis. Exact derivation is not formally documented - provisional."
+  "dx_sub_dep_oth_remit": {
+    "Description": "Other substance dependence, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_dep_remit": {
+    "Description": "Substance dependence (any), in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_other": {
+    "Description": "Other substance-related diagnosis - diagnostic flag (provisional).",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
   }
 }
