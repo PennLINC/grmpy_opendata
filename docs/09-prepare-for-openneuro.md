@@ -165,7 +165,7 @@ Going to try out PARCC.
 QSIRecon was rsynced to PARCC (from a screen session):
 
 ```bash
-rsync --avzh --partial --append-verify --progress2 /cbica/projects/grmpy/data/derivatives/qsirecon /ceph/projects/sattertt/pennlinc-parcc/grmpy/data/derivatives
+rsync -avzh --partial --append-verify --info=progress2 /cbica/projects/grmpy/data/derivatives/qsirecon sps253@login.betty.parcc.upenn.edu:/ceph/projects/sattertt/pennlinc-parcc/grmpy/data/derivatives | tee log.txt
 ```
 
 
@@ -183,4 +183,39 @@ Bidsignore may need to be updated.
 ```bash
 export OPENNEURO_LOG=DEBUG
 openneuro upload --affirmDefaced . | tee /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/qsirecon/upload$(date +%Y%m%d_%H%M).log
+```
+
+Running into some issues with PARCC. Tickets submitted, will come back.
+
+
+## XCPD Derivatives
+
+```bash
+cd /cbica/projects/grmpy/data/derivatives/xcpd
+cp /cbica/projects/grmpy/code/openneuro/xcpd/* .
+```
+
+
+Create a .bidsignore file and add the following:
+```
+*_qc.*
+*_design.*
+*_motion.*
+atlases
+*.html
+log
+logs
+figures
+*_xfm.*
+*_mixing.tsv
+*_timeseries.tsv
+*space-*
+*atlas-*
+*_mask.*
+```
+
+From a screen session:
+```bash
+micromamba activate openneuro
+openneuro upload --affirmDefaced . | tee /cbica/projects/grmpy/code/openneuro/xcpd/upload$(date +%Y%m%d_%H%M).log
 ```
