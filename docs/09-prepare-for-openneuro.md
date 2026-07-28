@@ -8,11 +8,13 @@ nav_order: 10
 
 ## Raw BIDS data
 First, the bids_datalad dataset must be updated following phenotype curation (see above).
-Following phenotype curation, the participants.tsv was updated with the demographics from the [`build_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/build_participants_tmp.py) script using the [`collide_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/collide_participants_tmp.py) script (`86c16852`).
+Following phenotype curation, the participants.tsv was updated with the demographics from the [`build_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/build_participants_tmp.py) script using the [`collide_participants_tmp.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/curation/04_cubids_curation/collide_participants_tmp.py) script (`dda40dae`).
 
-The task timing file `task-fracback_acq-singleband_events.tsv` was removed from the bids_datalad dataset as this has been deprecated and replaced with the individual events.tsv files (4fb4dafd).
+The task timing file `task-fracback_acq-singleband_events.tsv` was removed from the bids_datalad dataset as this has been deprecated and replaced with the individual events.tsv files (`ec68f693`).
 
 `cp -RL data/bids_datalad/ /cbica/comp_space/grmpy/.`
+
+TODO: add the new participants.tsv to the bids_datalad dataset on compspace.
 
 From the new copied bids_datalad dataset:
 ```bash
