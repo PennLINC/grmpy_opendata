@@ -1,7 +1,7 @@
 {
   "MeasurementToolMetadata": {
     "Description": "Clinical consensus diagnostic flags (dx_*)",
-    "LongName": "Subset of the consensus diagnostic record (derived from the GOASSESS interview and clinical consensus) selected for release, sourced from the updated axis REDCap export provided by the BIT team on 2026-07-27. dx_* fields are diagnostic-category flags (binary present/absent) except dx_pscat, which is a categorical psychosis-spectrum label. No formal data dictionary was available for these fields, so descriptions below are inferred from the column names and data and should be treated as provisional (in particular dx_cogdis, dx_pdd, dx_intdis, dx_sub, dx_sub_other, and dx_pscat). Diagnoses recorded more than 365 days from the scan date were set to n/a, as were participants absent from the REDCap export.",
+    "LongName": "Subset of the consensus diagnostic record (derived from the CAPA interview and clinical consensus) selected for release, sourced from the updated axis REDCap export provided by the BIT team on 2026-07-27. Diagnoses recorded more than 365 days from the scan date were set to n/a, as were participants absent from the REDCap export.",
     "MissingValues": "n/a"
   },
   "participant_id": {
@@ -63,27 +63,6 @@
       "0": "Absent"
     }
   },
-  "dx_cogdis": {
-    "Description": "Cognitive disorder - diagnostic flag (provisional).",
-    "Levels": {
-      "1": "Present",
-      "0": "Absent"
-    }
-  },
-  "dx_cogdis_remit": {
-    "Description": "Cognitive disorder, in remission - diagnostic flag (provisional).",
-    "Levels": {
-      "1": "Present",
-      "0": "Absent"
-    }
-  },
-  "dx_intdis": {
-    "Description": "Intellectual disability - diagnostic flag (provisional).",
-    "Levels": {
-      "1": "Present",
-      "0": "Absent"
-    }
-  },
   "dx_mdd": {
     "Description": "Major Depressive Disorder - diagnostic flag.",
     "Levels": {
@@ -119,27 +98,6 @@
       "0": "Absent"
     }
   },
-  "dx_other": {
-    "Description": "Other psychiatric diagnosis - diagnostic flag.",
-    "Levels": {
-      "1": "Present",
-      "0": "Absent"
-    }
-  },
-  "dx_other_remit": {
-    "Description": "Other psychiatric diagnosis, in remission - diagnostic flag.",
-    "Levels": {
-      "1": "Present",
-      "0": "Absent"
-    }
-  },
-  "dx_pdd": {
-    "Description": "Pervasive developmental disorder - diagnostic flag (provisional).",
-    "Levels": {
-      "1": "Present",
-      "0": "Absent"
-    }
-  },
   "dx_prodromal": {
     "Description": "Prodromal / clinical high-risk for psychosis - diagnostic flag.",
     "Levels": {
@@ -155,11 +113,11 @@
     }
   },
   "dx_pscat": {
-    "Description": "Psychosis-spectrum category (categorical label, provisional).",
+    "Description": "Psychosis-spectrum category (categorical label).",
     "Levels": {
       "psy": "Psychosis",
       "pro": "Prodromal / clinical high-risk for psychosis",
-      "other": "Other (???)",
+      "other": "Other (any other DSM diagnosis)",
       "noDSMdx": "No DSM diagnosis"
     }
   },
@@ -205,15 +163,8 @@
       "0": "Absent"
     }
   },
-  "dx_sleep": {
-    "Description": "Sleep disorder - diagnostic flag (provisional).",
-    "Levels": {
-      "1": "Present",
-      "0": "Absent"
-    }
-  },
   "dx_sub": {
-    "Description": "Any substance use disorder (abuse or dependence) - diagnostic flag (provisional).",
+    "Description": "Any substance use disorder (abuse or dependence) - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -326,13 +277,6 @@
   },
   "dx_sub_dep_remit": {
     "Description": "Substance dependence (any), in remission - diagnostic flag.",
-    "Levels": {
-      "1": "Present",
-      "0": "Absent"
-    }
-  },
-  "dx_sub_other": {
-    "Description": "Other substance-related diagnosis - diagnostic flag (provisional).",
     "Levels": {
       "1": "Present",
       "0": "Absent"

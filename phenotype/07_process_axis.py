@@ -41,6 +41,19 @@ MAX_DATE_DIFF_DAYS = 365
 # dx_* columns that hold categorical text rather than an integer flag.
 TEXT_DX_COLS = {"dx_pscat"}
 
+# dx_* columns to exclude from the output (all-zero / uninformative in these
+# data and not confidently interpretable).
+EXCLUDED_DX_COLS = {
+    "dx_cogdis",
+    "dx_cogdis_remit",
+    "dx_intdis",
+    "dx_other",
+    "dx_other_remit",
+    "dx_pdd",
+    "dx_sleep",
+    "dx_sub_other",
+}
+
 
 def parse_args(argv: Iterable[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -78,7 +91,9 @@ def parse_args(argv: Iterable[str]) -> argparse.Namespace:
 
 def build_output_columns(input_columns: List[str]) -> List[str]:
     """participant_id first, then dx_* alphabetically."""
-    dx_cols = sorted(c for c in input_columns if c.startswith("dx_"))
+    dx_cols = sorted(
+        c for c in input_columns if c.startswith("dx_") and c not in EXCLUDED_DX_COLS
+    )
     return [PARTICIPANT_ID_COL, *dx_cols]
 
 
