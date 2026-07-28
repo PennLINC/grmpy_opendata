@@ -1,0 +1,229 @@
+bblid	consensus_type	protocol	visitnum	type	interviewee	hstatus	assess_type	prev_dx_changed	dxsource_proj	dxsource_id	dx_none	dx_prodromal	dx_prodromal_remit	dx_psychosis	dx_psychosis_remit	dx_scz	dx_scz_remit	dx_moodnos	dx_moodnos_remit	dx_mdd	dx_mdd_remit	dx_bp	dx_bp_remit	dx_adhd	dx_adhd_remit	dx_anx	dx_anx_remit	dx_ptsd	dx_ptsd_remit	dx_cogdis	dx_cogdis_remit	dx_other	dx_other_remit	dx_brderpd	dx_brderpd_remit	dx_pdd	dx_intdis	dx_sleep	dx_sub_dep_can	dx_sub_dep_can_remit	dx_sub_dep_alc	dx_sub_dep_alc_remit	dx_sub_dep_oth	dx_sub_dep_oth_remit	dx_sub_dep	dx_sub_dep_remit	dx_sub_abuse_can	dx_sub_abuse_can_remit	dx_sub_abuse_alc	dx_sub_abuse_alc_remit	dx_sub_abuse_oth	dx_sub_abuse_oth_remit	dx_sub_abuse	dx_sub_abuse_remit	dx_sub_other	dx_sub	dxsum	dx_pscat	date_diff_dx_to_scan
+82790	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+83454	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	83454_FP_20160520	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	0
+84354	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+84761	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+84973	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	0
+85173	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+86924	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+88209	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+88770	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+90060	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+93278	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	0
+95460	Faculty Review	822831 - GRMPY	1	P	both	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+97271	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+99604	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	other	0
+105979	Faculty Review	822831 - GRMPY	1	P	proband	O	full	N	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+106071	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+110168	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+116360	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	116360_FP_20160319	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	0
+119302	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+125511	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	0
+129354	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+129926	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	0
+132224	Faculty Review	822831 - GRMPY		FPC	both		update	N	339	132224_FP_20160514	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	0
+20320	Faculty Review	822831 - GRMPY		P	proband	O	full		oracle		0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	1
+20325	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	pro	1
+20809	Faculty Review	822831 - GRMPY		P	proband	O	full		oracle		0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	other	1
+21085	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	1	4	pro	1
+87346	Case Conference	822831 - GRMPY		FP	proband		update	Y	339	87346_FP_20170823	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	1	0	0	1	4	pro	1
+97994	Faculty Review	822831 - GRMPY	1	P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	1
+102041	Faculty Review	822831 - GRMPY	1	P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	1
+112249	Faculty Review	822831 - GRMPY	1	P	proband	O	update	N	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	1
+112332	Faculty Review	822831 - GRMPY		P	proband	PROR	update	Y	oracle		0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	1
+115800	Faculty Review	822831 - GRMPY		P	proband	NC	update		oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	1	1	other	1
+117397	Case Conference	822831 - GRMPY		FP	proband	PRO	update	N	339	117397_FP_20170607	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	3	pro	1
+120217	Case Conference	16-013305 - LIBI_Common		P	proband	PSY	update	Y	oracle		0	0	0	1	0	1	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	psy	1
+121407	Faculty Review	822831 - GRMPY	1	P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	1
+122801	Case Conference	822831 - GRMPY		FP	proband		full	N	339	122801_FP_20180111	0	0	0	1	0	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	1	0	1	0	0	0	0	0	0	0	0	0	0	1	5	psy	1
+93292	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	2
+122522	Faculty Review	822831 - GRMPY	1	P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	2
+127008	Faculty Review	822831 - GRMPY	1	P	proband	O	update	N	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	1	1	other	2
+128154	Faculty Review	822831 - GRMPY	1	P	both	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	2
+89279	Faculty Review	16-013305 - LIBI_Common		P	proband	PRO	update	N	oracle		0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	3
+106246	Faculty Review	822831 - GRMPY	1	P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	3
+112028	Faculty Review	822831 - GRMPY		P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	3
+129720	Faculty Review	822831 - GRMPY	1	P	proband	O	update	Y	oracle		0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	3
+83010	Faculty Review	822831 - GRMPY	1	P	proband	PROR	update	N	oracle		0	0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	4
+83372	Faculty Review	822831 - GRMPY		P	proband	NC	full		oracle		0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	3	other	4
+84688	Faculty Review	822831 - GRMPY	1	P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	4
+98422	Faculty Review	822831 - GRMPY		P	proband	PRO	full	N	oracle		0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	4
+114935	Faculty Review	16-013305 - LIBI_Common		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	4
+20362	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	pro	5
+20974	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	1	0	1	0	0	0	0	0	0	0	0	0	0	1	4	pro	5
+85743	Faculty Review	822831 - GRMPY		P	proband	NC	full		oracle		0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	5
+88760	Faculty Review	16-013305 - LIBI_Common		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	5
+93549	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	5
+104059	Case Conference	822831 - GRMPY	2	P	proband	BP1	update	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	5
+128061	Case Conference	810336 - Go3		IPC	both		full		337	128061_IP_20160516	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	5
+20197	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	6	pro	6
+20888	Faculty Review	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	pro	6
+87804	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	87804_FP_20160106	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	6
+88589	Faculty Review	822831 - GRMPY		P	proband	PRO	update		oracle		0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	6
+93517	Case Conference	822831 - GRMPY		P	proband	PRO	full	Y	oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	6
+20120	Case Conference	822831 - GRMPY		IP	proband		full		337	20120_IP_20180904	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	pro	7
+81760	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	81760_FP_20160505	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	7
+90683	Faculty Review	810336 - Go3		FP	proband		update	N	339	90683_FP_20160501	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	7
+92089	Case Conference	822831 - GRMPY		IP	proband	PRO	full	N	337	92089_IP_20181129	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	1	4	pro	7
+93723	Faculty Review	822831 - GRMPY		P	proband		update	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	7
+105767	Case Conference	822831 - GRMPY	1	P	proband	PRO	update	Y	oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	2	pro	7
+113111	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	7
+131867	Faculty Review	822831 - GRMPY		P	proband	NC	full	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	7
+21056	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	1	4	pro	8
+126176	Case Conference	822831 - GRMPY		FP	proband		update	N	339	126176_FP_20171101	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	psy	8
+132657	Case Conference	822831 - GRMPY		FP	proband		update	Y	339	132657_FP_20171003	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	8
+20313	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	pro	9
+125535	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	125535_FP_20160523	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	9
+82051	Case Conference	810336 - Go3		P	proband	PRO	update	N	oracle		0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	3	pro	10
+91717	Faculty Review	822831 - GRMPY		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	10
+110828	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	10
+116210	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	116210_FP_20160404	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	10
+127236	Case Conference	822831 - GRMPY	1	P	proband	PRO	update	N	oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	pro	10
+20151	Faculty Review	822831 - GRMPY		P	proband	O	full		oracle		0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	other	11
+87990	Case Conference	822831 - GRMPY		P	proband	PRO	update	Y	oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	1	2	pro	11
+109521	Case Conference	822831 - GRMPY		FP	proband		full	Y	339	109521_FP_20180202	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	11
+88402	Faculty Review	822831 - GRMPY		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	12
+103679	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	103679_FP_20160421	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	12
+126903	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	126903_FP_20160421	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	12
+21059	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	13
+104785	Faculty Review	822831 - GRMPY		P	proband	NC	update	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	13
+112126	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	13
+20189	Case Conference	822831 - GRMPY		IP	proband		full		337	20189_IP_20181031	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	psy	14
+20387	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	pro	14
+20589	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	1	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	6	pro	14
+20699	Case Conference	822831 - GRMPY		IP	proband		full		337	20699_IP_20190606	0	1	0	0	0	0	0	0	0	1	0	0	0	1	0	1	0	1	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	7	pro	14
+20949	Case Conference	822831 - GRMPY		P	proband	PSY	full		oracle		0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	psy	14
+20963	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	1	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	pro	14
+21016	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	1	0	1	0	1	4	pro	14
+109735	Case Conference	822831 - GRMPY		P	proband	PRO	update	Y	oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	1	0	0	0	0	0	0	0	0	0	0	1	4	pro	14
+114723	Faculty Review	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	1	2	pro	14
+121001	Faculty Review	822831 - GRMPY	1	P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	14
+126921	Faculty Review	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	14
+104235	Faculty Review	822831 - GRMPY	1	P	proband	PROR	update	N	oracle		0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	1	2	other	15
+121476	Case Conference	822831 - GRMPY		FPC	both		update	N	339	121476_FP_20160825	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	15
+20940	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	4	pro	16
+117226	Case Conference	822831 - GRMPY		FP	proband		update	N	339	117226_FP_20160307	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	1	0	0	0	1	0	0	1	3	other	16
+19977	Case Conference	822831 - GRMPY		IP	proband		full		337	19977_IP_20180507	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	pro	17
+89377	Case Conference	822831 - GRMPY		FP	proband	PRO	update	Y	339	89377_FP_20171006	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	17
+88773	Case Conference	16-013305 - LIBI_Common	1	P	proband	PRO	update	Y	oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	2	pro	20
+92554	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	92554_FP_20160524	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	20
+110354	Case Conference	822831 - GRMPY		FP	proband		update	Y	339	110354_FP_20180829	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	psy	20
+20649	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	5	pro	21
+84103	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	21
+87538	Faculty Review	822831 - GRMPY	1	P	proband	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	21
+95116	Faculty Review	16-013305 - LIBI_Common		P	both	PROR	update	Y	oracle		0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	21
+98394	Case Conference	810336 - Go3	1	P	proband	PRO	full		oracle		0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	1	0	0	1	3	pro	21
+98871	Faculty Review	822831 - GRMPY		P	proband		update	Y	oracle		0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	21
+112061	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	112061_FP_20160219	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	21
+88608	Case Conference	822831 - GRMPY		FP	proband		update	N	339	88608_FP_20160617	0	1	0	0	0	0	0	1	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	pro	22
+109646	Faculty Review	822831 - GRMPY	1	P	proband	O	update	Y	oracle		0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	other	22
+83835	Faculty Review	822831 - GRMPY		P	proband		update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	23
+93787	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	93787_FP_20160616	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	23
+126389	Faculty Review	16-013305 - LIBI_Common	1	P	proband	NC	full	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	23
+97485	Case Conference	818964 - TIPS		IP	proband		update		339	97485_FP_20161024	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	24
+130121	Case Conference	16-013305 - LIBI_Common	1	P	proband	S	update	Y	oracle		0	0	0	1	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	4	psy	25
+105168	Faculty Review	822831 - GRMPY		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	26
+106331	Case Conference	822831 - GRMPY		FP	proband		update	Y	339	106331_FP_20170612	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	26
+105860	Faculty Review	822831 - GRMPY		P	proband	PROR	update	N	oracle		0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	27
+106039	Case Conference	822831 - GRMPY		FP	proband		update	Y	339	106039_FP_20170930	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	4	pro	27
+129552	Case Conference	822831 - GRMPY		P	both	PRO	update	Y	oracle		0	1	0	0	0	0	0	1	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	5	pro	27
+129886	Faculty Review	16-013305 - LIBI_Common		P	proband	PRO	update	Y	oracle		0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	pro	27
+20011	Case Conference	822831 - GRMPY	1	P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	1	0	0	0	0	0	1	0	0	0	0	0	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	6	pro	28
+86722	Case Conference	16-013305 - LIBI_Common		P	proband	PRO	update	N	oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	28
+112694	Case Conference	822831 - GRMPY		FP	proband		full	Y	339	112694_FP_20171208	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	3	pro	28
+20386	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	1	6	pro	29
+20247	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	1	0	1	1	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	1	8	pro	30
+105309	Case Conference	16-013305 - LIBI_Common	1	P	proband	PRO	update	N	oracle		0	1	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	pro	30
+19981	Case Conference	822831 - GRMPY		IP	proband		full		337	19981_IP_20180518	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	psy	31
+116051	Case Conference	822831 - GRMPY		FP	proband		update	Y	339	116051_FP_20160419	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	pro	31
+121050	Faculty Review	16-013305 - LIBI_Common		P	both	NC	update		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	31
+90281	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	90281_FP_20160612	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	32
+20941	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	pro	35
+116354	Case Conference	822831 - GRMPY		P	proband	PRO	update	Y	oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	37
+130759	Faculty Review	822831 - GRMPY	1	P	both	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	39
+80688	Case Conference	822831 - GRMPY		FP	proband		update	Y	339	80688_FP_20180830	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	41
+99949	Case Conference	818964 - TIPS		FP	proband		update	N	339	99949_FP_20161019	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	41
+20322	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	1	5	pro	42
+20461	Case Conference	822831 - GRMPY		IP	proband		full		337	20461_IP_20190420	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	pro	42
+127611	Case Conference	822831 - GRMPY		IPC	both		update	Y	339	127611_FP_20170220	0	1	0	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	pro	44
+20981	Faculty Review	822831 - GRMPY		P	proband	MDD	full		oracle		0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	other	45
+116019	Faculty Review	822831 - GRMPY		FP	proband		update	Y	339	116019_FP_20160406	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	46
+121670	Faculty Review	822831 - GRMPY	1	P	both	O	full	Y	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	48
+90021	Case Conference	16-013305 - LIBI_Common		P	proband	PRO	full	N	oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	1	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	pro	50
+122916	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	122916_FP_20160531	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	52
+80557	Case Conference	822831 - GRMPY		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	62
+20326	Faculty Review	822831 - GRMPY		P	proband	O	full		oracle		0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	63
+94492	Case Conference	16-013305 - LIBI_Common		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	1	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	pro	63
+114990	Case Conference	810336 - Go3	1	P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	4	pro	63
+106802	Faculty Review	16-013305 - LIBI_Common		P	proband	PRO	update	Y	oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	1	0	1	0	0	0	1	0	1	0	1	3	pro	64
+107055	Case Conference	822831 - GRMPY		P	proband	PRO	update	Y	oracle		0	1	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	1	0	0	1	0	0	0	1	0	0	1	5	pro	65
+132179	Case Conference	16-013305 - LIBI_Common		P	proband	PRO	update	Y	oracle		1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	4	pro	68
+20327	Case Conference	822831 - GRMPY		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	1	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	1	6	pro	70
+92927	Faculty Review	815814 - Conte	3	P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	72
+87601	Faculty Review	822831 - GRMPY	1	P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	77
+87646	Faculty Review	822831 - GRMPY	1	P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	77
+93274	Case Conference	16-013305 - LIBI_Common	1	P	proband	PSY	full	Y	oracle		0	0	0	1	0	1	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	1	5	psy	77
+127542	Faculty Review	810336 - Go3		P	both	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	77
+92193	Faculty Review	822831 - GRMPY		P	proband	O	update		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	78
+91919	Case Conference	810336 - Go3	1	P	proband	PRO	update	N	oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	82
+87445	Faculty Review	822831 - GRMPY		P	proband	NC	full		oracle		0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	83
+95257	Faculty Review	822831 - GRMPY		P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	84
+105176	Faculty Review	815814 - Conte	3	P	proband	PRO	update	Y	oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	84
+129405	Case Conference	810336 - Go3		IPC	both		full	N	337	129405_IP_20160213	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	84
+130211	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	130211_FP_20160620	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	87
+93406	Faculty Review	810336 - Go3		P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	89
+127417	Faculty Review	815814 - Conte	2	P	proband	PROR	update	Y	oracle		0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	91
+139272	Faculty Review	810336 - Go3		P	proband	PSY	update	Y	oracle		0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	psy	91
+85083	Case Conference	822831 - GRMPY		FP	proband		update	Y	339	85083_FP_20170217	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	1	0	0	1	3	pro	96
+126554	Faculty Review	822831 - GRMPY	1	P	proband	O	update	N	oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	1	1	other	106
+90262	Faculty Review	810336 - Go3	1	P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	111
+108202	Faculty Review	822831 - GRMPY		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	120
+93051	Faculty Review	810336 - Go3		P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	122
+118393	Faculty Review	810336 - Go3		P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	124
+99352	Case Conference	810336 - Go3		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	2	pro	126
+86287	Case Conference	810336 - Go3		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3	pro	131
+98831	Faculty Review	810336 - Go3		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	133
+99964	Faculty Review	810336 - Go3		P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	133
+82492	Faculty Review	810336 - Go3		P	proband	MDD	full		oracle		0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	134
+118990	Faculty Review	810336 - Go3		FP	proband		update	Y	339	118990_FP_20160107	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	135
+93169	Faculty Review	810336 - Go3		P	proband	O	full		oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	1	0	0	0	1	0	0	1	1	other	136
+93856	Faculty Review	822831 - GRMPY		FP	proband		update	N	339	93856_FP_20160510	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	136
+130687	Case Conference	810336 - Go3		FP	proband		update	Y	339	130687_FP_20160625	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	136
+118864	Faculty Review	810336 - Go3		P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	140
+125554	Faculty Review	810336 - Go3		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	140
+87457	Faculty Review	810336 - Go3		P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	143
+92211	Case Conference	822831 - GRMPY		FP	proband		update	Y	339	92211_FP_20160812	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	144
+114713	Faculty Review	810336 - Go3		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	146
+86350	Case Conference	810336 - Go3		P	proband	PRO	update	Y	oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	1	2	pro	148
+94276	Case Conference	16-013305 - LIBI_Common	1	P	proband	S	update	Y	oracle		0	0	0	1	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	1	3	psy	148
+95015	Faculty Review	810336 - Go3		IPC	both		full		337	95015_IP_20160611	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	148
+86444	Faculty Review	810336 - Go3		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	156
+94848	Case Conference	810336 - Go3		P	both	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	160
+98314	Case Conference	810336 - Go3		P	both	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	160
+97092	Faculty Review	810336 - Go3		P	proband	O	full		oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	1	other	167
+85853	Faculty Review	810336 - Go3		P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	171
+85369	Case Conference	818964 - TIPS		FP	proband	PROR	update	Y	339	85369_FP_20160419	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	174
+127305	Case Conference	810336 - Go3		P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	175
+98535	Case Conference	822831 - GRMPY		P	proband	NC	full		oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	0	1	2	other	176
+106880	Faculty Review	810336 - Go3	1	P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	176
+93734	Faculty Review	810336 - Go3		P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	177
+114709	Faculty Review	810336 - Go3		P	proband	MDD	full		oracle		0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	179
+81725	Case Conference	810336 - Go3		FP	proband	PRO	update	Y	339	81725_FP_20160403	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	184
+119791	Case Conference	810336 - Go3	1	P	proband	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	185
+83999	Faculty Review	810336 - Go3		P	proband	NC	full		oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	188
+87563	Faculty Review	810336 - Go3		P	proband	O	full		oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	1	1	other	190
+91962	Faculty Review	818964 - TIPS	1	P	proband	PRO	update	Y	oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	190
+131224	Case Conference	810336 - Go3		FP	proband		update	Y	339	131224_FP_20160613	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	1	0	0	0	0	0	1	0	0	1	2	pro	192
+96659	Faculty Review	810336 - Go3		FC	collateral		update	N	340	96659_FC_20160329	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	197
+87135	Faculty Review	810336 - Go3		P	proband	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	257
+121085	Faculty Review	810336 - Go3		P	both	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	287
+130896	Faculty Review	810336 - Go3		P	both	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	300
+82063	Case Conference	810336 - Go3		P	proband	PRO	update	N	oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	372
+98567	Faculty Review	810336 - Go3	1	P	both	O	full		oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	417
+133220	Faculty Review	810336 - Go3	1	P	both	O	full		oracle		0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	other	849
+122528	Faculty Review	810336 - Go3		P	proband	MDD	full		oracle		0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	2	other	901
+90077	Faculty Review	810336 - Go3		P	both	MDD	update	Y	oracle		0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	other	948
+120562	Faculty Review	810336 - Go3		P	both	NC	update	N	oracle		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	noDSMdx	1033
+95057	Case Conference	810336 - Go3		P	both	PRO	update	Y	oracle		0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	pro	1065
+86486	Faculty Review	810336 - Go2 Supplement		P	proband	O	full		oracle		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	1	1	other	2126
+92182	Case Conference	810336 - Go2 Supplement		P	both	PRO	full		oracle		0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	pro	2186
