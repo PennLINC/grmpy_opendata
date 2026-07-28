@@ -12,7 +12,8 @@ Sources (all keyed on BBLID -> participant_id = sub-<BBLID>):
         ignore/GRMPYDataEntryInterv-DemographicsAndDates_DATA_2026-03-30_2009.csv
   - bmi:      phenotype/data/demographics.tsv        (matched on participant_id)
   - rbc_id:   ignore/bblid_scanid_sub.csv            (matched on bblid -> rbcid)
-  - dx_*:     phenotype/data/axis.tsv                (matched on participant_id)
+  - dx_*:     phenotype/data/axis.tsv                (all columns, matched on
+              participant_id)
 
 JSON sidecar:
   - Demographic fields get an empty "Description" for you to fill in manually
@@ -64,35 +65,10 @@ DEMO_CSV_COLUMNS = {
     "father_edu": "father_edu",
 }
 
-# dx_* diagnostic flag columns to copy from axis.tsv (in this order).
-DX_COLUMNS = [
-    "dx_BrderPD",
-    "dx_adhd",
-    "dx_anx",
-    "dx_bp1",
-    "dx_bpoth",
-    "dx_mdd",
-    "dx_moodnos",
-    "dx_none",
-    "dx_other",
-    "dx_prodromal",
-    "dx_prodromal_remit",
-    "dx_pscat",
-    "dx_psychosis",
-    "dx_ptsd",
-    "dx_scz",
-    "dx_sub_abuse",
-    "dx_sub_abuse_alc",
-    "dx_sub_abuse_can",
-    "dx_sub_abuse_oth",
-    "dx_sub_dep",
-    "dx_sub_dep_alc",
-    "dx_sub_dep_can",
-    "dx_sub_dep_oth",
-]
-
-# Final column order (excluding participant_id, which is written first).
-OUTPUT_COLUMNS = [
+# Demographic / non-dx output columns (excluding participant_id, which is
+# written first). The dx_* columns are appended dynamically from axis.tsv, so
+# every column in the finalized axis file is carried through automatically.
+DEMO_OUTPUT_COLUMNS = [
     "group",
     "age",
     "race",
@@ -104,7 +80,7 @@ OUTPUT_COLUMNS = [
     "father_edu",
     "bmi",
     "rbc_id",
-] + DX_COLUMNS
+]
 
 # JSON descriptions for the non-dx (demographic) fields.
 # Fill in the "Description" (and any "Levels") manually.
@@ -277,14 +253,16 @@ def main() -> None:
     rbc_map = dict(zip(rbc["bblid"].str.strip(), rbc["rbcid"]))
     out["rbc_id"] = bblid.map(rbc_map).map(clean)
 
-    # dx_* flags from phenotype/data/axis.tsv (keyed on participant_id).
+    # dx_* columns from phenotype/data/axis.tsv (keyed on participant_id). Use
+    # every column present in axis.tsv, preserving its order.
     axis = pd.read_csv(AXIS_TSV, sep="\t", dtype=str).set_index("participant_id")
-    for col in DX_COLUMNS:
-        mapped = out["participant_id"].map(axis[col]) if col in axis.columns else np.nan
-        out[col] = pd.Series(mapped, index=out.index).map(clean)
+    dx_columns = list(axis.columns)
+    for col in dx_columns:
+        out[col] = out["participant_id"].map(axis[col]).map(clean)
 
     # Enforce column order and write.
-    out = out[["participant_id"] + OUTPUT_COLUMNS]
+    output_columns = DEMO_OUTPUT_COLUMNS + dx_columns
+    out = out[["participant_id"] + output_columns]
     out.to_csv(OUT_TSV, sep="\t", index=False, na_rep=NA)
     print(f"Wrote {OUT_TSV} ({len(out)} participants, {len(out.columns)} columns).")
 
@@ -293,12 +271,9 @@ def main() -> None:
         axis_json = json.load(f)
 
     sidecar = {}
-    for col in OUTPUT_COLUMNS:
-        if col in DX_COLUMNS:
-            if col in axis_json:
-                sidecar[col] = axis_json[col]
-            else:
-                sidecar[col] = {"Description": ""}
+    for col in output_columns:
+        if col in dx_columns:
+            sidecar[col] = axis_json.get(col, {"Description": ""})
         else:
             sidecar[col] = DEMO_FIELD_JSON.get(col, {"Description": ""})
 

@@ -124,15 +124,15 @@
   "rbc_id": {
     "Description": "RBC ID used to match the participant to RBC data"
   },
-  "dx_BrderPD": {
-    "Description": "Borderline Personality Disorder - diagnostic flag.",
+  "dx_adhd": {
+    "Description": "Attention-Deficit/Hyperactivity Disorder - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
     }
   },
-  "dx_adhd": {
-    "Description": "Attention-Deficit/Hyperactivity Disorder - diagnostic flag.",
+  "dx_adhd_remit": {
+    "Description": "Attention-Deficit/Hyperactivity Disorder, in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -145,15 +145,36 @@
       "0": "Absent"
     }
   },
-  "dx_bp1": {
-    "Description": "Bipolar I Disorder - diagnostic flag.",
+  "dx_anx_remit": {
+    "Description": "Anxiety disorder, in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
     }
   },
-  "dx_bpoth": {
-    "Description": "Other bipolar-spectrum disorder - diagnostic flag.",
+  "dx_bp": {
+    "Description": "Bipolar disorder (any bipolar-spectrum) - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_bp_remit": {
+    "Description": "Bipolar disorder, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_brderpd": {
+    "Description": "Borderline Personality Disorder - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_brderpd_remit": {
+    "Description": "Borderline Personality Disorder, in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -166,6 +187,13 @@
       "0": "Absent"
     }
   },
+  "dx_mdd_remit": {
+    "Description": "Major Depressive Disorder, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
   "dx_moodnos": {
     "Description": "Mood disorder not otherwise specified - diagnostic flag.",
     "Levels": {
@@ -173,15 +201,15 @@
       "0": "Absent"
     }
   },
-  "dx_none": {
-    "Description": "No psychiatric diagnosis - diagnostic flag.",
+  "dx_moodnos_remit": {
+    "Description": "Mood disorder not otherwise specified, in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
     }
   },
-  "dx_other": {
-    "Description": "Other psychiatric diagnosis - diagnostic flag.",
+  "dx_none": {
+    "Description": "No psychiatric diagnosis - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -202,14 +230,23 @@
     }
   },
   "dx_pscat": {
-    "Description": "Psychosis-spectrum category - diagnostic flag.",
+    "Description": "Psychosis-spectrum category (categorical label).",
+    "Levels": {
+      "psy": "Psychosis",
+      "pro": "Prodromal / clinical high-risk for psychosis",
+      "other": "Other (any other DSM diagnosis)",
+      "noDSMdx": "No DSM diagnosis"
+    }
+  },
+  "dx_psychosis": {
+    "Description": "Psychosis - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
     }
   },
-  "dx_psychosis": {
-    "Description": "Psychosis - diagnostic flag.",
+  "dx_psychosis_remit": {
+    "Description": "Psychosis, in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -222,8 +259,29 @@
       "0": "Absent"
     }
   },
+  "dx_ptsd_remit": {
+    "Description": "Post-Traumatic Stress Disorder, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
   "dx_scz": {
     "Description": "Schizophrenia - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_scz_remit": {
+    "Description": "Schizophrenia, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub": {
+    "Description": "Any substance use disorder (abuse or dependence) - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -243,6 +301,13 @@
       "0": "Absent"
     }
   },
+  "dx_sub_abuse_alc_remit": {
+    "Description": "Alcohol abuse, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
   "dx_sub_abuse_can": {
     "Description": "Cannabis abuse - diagnostic flag.",
     "Levels": {
@@ -250,8 +315,29 @@
       "0": "Absent"
     }
   },
+  "dx_sub_abuse_can_remit": {
+    "Description": "Cannabis abuse, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
   "dx_sub_abuse_oth": {
     "Description": "Other substance abuse - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_abuse_oth_remit": {
+    "Description": "Other substance abuse, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_abuse_remit": {
+    "Description": "Substance abuse (any), in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
@@ -271,6 +357,13 @@
       "0": "Absent"
     }
   },
+  "dx_sub_dep_alc_remit": {
+    "Description": "Alcohol dependence, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
   "dx_sub_dep_can": {
     "Description": "Cannabis dependence - diagnostic flag.",
     "Levels": {
@@ -278,8 +371,29 @@
       "0": "Absent"
     }
   },
+  "dx_sub_dep_can_remit": {
+    "Description": "Cannabis dependence, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
   "dx_sub_dep_oth": {
     "Description": "Other substance dependence - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_dep_oth_remit": {
+    "Description": "Other substance dependence, in remission - diagnostic flag.",
+    "Levels": {
+      "1": "Present",
+      "0": "Absent"
+    }
+  },
+  "dx_sub_dep_remit": {
+    "Description": "Substance dependence (any), in remission - diagnostic flag.",
     "Levels": {
       "1": "Present",
       "0": "Absent"
