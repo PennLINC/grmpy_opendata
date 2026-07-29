@@ -93,6 +93,8 @@ The self-report itemwise data was split into separate files using the [`03_separ
 
 On July 27, 2026 updated axis data was sent by the BIT team. The [`07_process_axis.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/07_process_axis.py) script was updated to process the new axis data and re-run. These data, along with other demographic data, were later merged into the participants.tsv file in the CuBIDS bids datalad dataset before uploading to OpenNeuro. See the [Prepare data for OpenNeuro and NeuroVault](09-prepare-for-openneuro.md) document for more details.
 
+Finally, all tsv files intended for release were quality checked for proper formatting against their jsons and copied to the `phenotype/data/final` directory using the [`10_finalize_phenotype_tsvs.py`](https://github.com/PennLINC/grmpy_opendata/blob/main/phenotype/10_finalize_phenotype_tsvs.py) script.
+
 
 aces - completed + verified. JSON complete.
 
