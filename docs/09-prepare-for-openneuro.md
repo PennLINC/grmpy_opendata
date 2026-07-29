@@ -27,6 +27,7 @@ cp /cbica/projects/grmpy/code/curation/04_cubids_curation/v5/* code/cubids/.
 mkdir phenotype
 cp -r /cbica/projects/grmpy/code/phenotype/data/final/* phenotype/.
 echo "GRMPY Raw data" > README.md
+cp /cbica/projects/grmpy/code/openneuro/bids/dataset_description.json .
 ```
 
 Now prepare the openeuro environment:
