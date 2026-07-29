@@ -2,7 +2,7 @@
 #SBATCH -J qsirecon-upload1
 #SBATCH -p genoa-std-mem
 #SBATCH -c 2
-#SBATCH -t 10-00:00:00
+#SBATCH -t 7-00:00:00
 #SBATCH -o /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/qsirecon/upload_%j.log
 
 set -eo pipefail
