@@ -190,6 +190,13 @@ openneuro upload --affirmDefaced . | tee /ceph/projects/sattertt/pennlinc-parcc/
 
 Running into some issues with PARCC. Tickets submitted, will come back.
 
+Currently running via sbatch with a local openneuro patch. Will come back to document later.
+
+After job is done, check the log:
+
+```bash
+grep -c "Failed to transfer annex object" /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/qsirecon/upload_7313196.log
+```
 
 ## XCPD Derivatives
 
