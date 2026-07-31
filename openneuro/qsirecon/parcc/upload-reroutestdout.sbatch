@@ -22,7 +22,7 @@ LOG=/ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/qsirecon/upload_
 # "WouldBlock: Resource temporarily unavailable (os error 11)".
 # O_NONBLOCK has no effect on regular files, so this cannot happen here.
 deno run --allow-all --config "$CLI/deno.json" "$CLI/mod.ts" \
-  upload --dataset ds008545 --affirmDefaced "$DATA" > "$LOG" 2>&1
+  upload --new --affirmDefaced "$DATA" > "$LOG" 2>&1
 
 echo "upload exited $? - log: $LOG"
 grep -c "Failed to transfer annex object" "$LOG" | sed 's/^/failed transfers: /'
