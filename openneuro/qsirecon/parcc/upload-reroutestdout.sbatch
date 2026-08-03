@@ -5,7 +5,7 @@
 #SBATCH -t 7-00:00:00
 #SBATCH -o /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/qsirecon/slurm_%j.log
 
-set -eo pipefail
+set -o pipefail
 eval "$(micromamba shell hook -s bash)"
 micromamba activate openneuro
 
@@ -20,9 +20,13 @@ LOG=/ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/qsirecon/upload_
 # makes stdout a pipe to slurmstepd; Deno sets stdio pipes non-blocking, so a
 # burst of log lines can fill the pipe and kill the job with
 # "WouldBlock: Resource temporarily unavailable (os error 11)".
-# O_NONBLOCK has no effect on regular files, so this cannot happen here.
+# NOTE: the redirect reduces but does NOT eliminate this - WouldBlock recurred
+# writing to a log on CephFS in job 7348892. The reliable mitigation is less log
+# volume (OPENNEURO_LOG=ERROR) or writing the log to node-local /tmp.
 deno run --allow-all --config "$CLI/deno.json" "$CLI/mod.ts" \
-  upload --new --affirmDefaced "$DATA" > "$LOG" 2>&1
+  upload --dataset ds008547 --affirmDefaced "$DATA" > "$LOG" 2>&1
 
-echo "upload exited $? - log: $LOG"
-grep -c "Failed to transfer annex object" "$LOG" | sed 's/^/failed transfers: /'
+status=$?
+echo "upload exited ${status} - log: ${LOG}"
+echo "failed transfers: $(grep -c "Failed to transfer annex object" "$LOG" || true)"
+exit ${status}
