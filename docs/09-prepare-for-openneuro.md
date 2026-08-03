@@ -202,9 +202,36 @@ export OPENNEURO_LOG=DEBUG
 openneuro upload --affirmDefaced . | tee /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/qsirecon/upload$(date +%Y%m%d_%H%M).log
 ```
 
-Running into some issues with PARCC. Tickets submitted, will come back.
+This initially failed on PARCC: every file reported `could not be added, check if this
+file is accessible and not a broken symlink`, despite the tree containing no symlinks.
+The cause was three separate OpenNeuro CLI bugs, all now fixed upstream.
 
-Currently running via sbatch with a local openneuro patch. Will come back to document later.
+| Bug | Issue | Fix |
+|---|---|---|
+| `setup`/`clone` messages dropped before the git worker finished loading, leaving `context` undefined | [#4040](https://github.com/OpenNeuroOrg/openneuro/issues/4040) | [#4035](https://github.com/OpenNeuroOrg/openneuro/pull/4035), released in CLI 5.4.0 |
+| The underlying error was swallowed and misreported as a broken symlink | — | [#4042](https://github.com/OpenNeuroOrg/openneuro/pull/4042) |
+| git-annex branch committed once per annex key (quadratic; the upload hung for 32h) | [#4047](https://github.com/OpenNeuroOrg/openneuro/issues/4047) | [#4048](https://github.com/OpenNeuroOrg/openneuro/pull/4048) |
+
+Uploaded with CLI 5.4.0 plus the #4048 patch, deployed at
+`/ceph/projects/sattertt/pennlinc-parcc/grmpy/openneuro-cli-patched`.
+
+Scripts in [`openneuro/qsirecon/parcc/`](../openneuro/qsirecon/parcc/):
+
+- [`upload-reroutestdout.sbatch`](../openneuro/qsirecon/parcc/upload-reroutestdout.sbatch) — the upload job
+- [`upload-resume.sbatch`](../openneuro/qsirecon/parcc/upload-resume.sbatch) — resume run; reuses the accession so
+  already-stored keys are skipped, and preserves `.git` so a failed push can be retried
+- [`pushmain.sbatch`](../openneuro/qsirecon/parcc/pushmain.sbatch) — recovery helper
+
+Two problems remain unsolved and needed manual work:
+
+- Deno aborts with `WouldBlock: Resource temporarily unavailable (os error 11)` under high
+  log volume, even writing to a regular file on CephFS. Keep `OPENNEURO_LOG` low, or expect
+  to restart the job.
+- The CLI's final `git push` of `main` times out on a large tree (the timeout comes from
+  Deno's node-http shim and is not configurable). Push it with system git from the
+  preserved `.git` — see `pushmain.sbatch`.
+
+Result: [**ds008547**](https://openneuro.org/datasets/ds008547) — 65,560 files, 226 GB.
 
 
 ## XCPD Derivatives
