@@ -261,6 +261,7 @@ Validate before submitting the upload sbatch:
 ```bash
 micromamba activate openneuro
 deno run -A jsr:@bids/validator .
+sbatch /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/fmriprep_anat/parcc/upload.sbatch
 ```
 
 ## XCPD Derivatives
