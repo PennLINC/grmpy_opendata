@@ -23,7 +23,8 @@ KEEP=/cbica/projects/grmpy/openneuro-worktree/${DSID}.git
 
 # useHttpPath is required: the CLI's credential helper reads the accession out of
 # the URL path, and git withholds the path from helpers by default.
-HELPER="!deno run --allow-all --config $CLI/deno.json $CLI/mod.ts git-credential"
+# --no-lock: the repo's deno.lock is v5 and older Deno versions reject it.
+HELPER="!deno run --allow-all --no-lock --config $CLI/deno.json $CLI/mod.ts git-credential"
 URL=$(git --git-dir="$KEEP" config --get remote.origin.url)
 : "${URL:?could not read remote.origin.url from $KEEP}"
 

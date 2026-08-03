@@ -31,6 +31,21 @@ command -v deno >/dev/null || { echo "deno not on PATH after activating openneur
 [ -f "$HOME/.config/openneuro/config.json" ] || {
   echo "no OpenNeuro credentials for this user - run: openneuro login"; exit 1; }
 
+# --no-lock: the repo's deno.lock is a v5 lockfile written by Deno 2.9. An older
+# Deno rejects it with "Unsupported lockfile version '5'". We run from a known
+# source tree, so skipping the lockfile is fine.
+DENO_RUN=(deno run --allow-all --no-lock --config "$CLI/deno.json")
+
+# Smoke-test the CLI before committing to a multi-hour run - this catches
+# version, permission and import problems in seconds rather than after staging.
+if ! "${DENO_RUN[@]}" "$CLI/mod.ts" --version >/dev/null 2>"$OUT/.preflight.err"; then
+  echo "the CLI failed to start:"
+  sed 's/^/    /' "$OUT/.preflight.err" | tail -5
+  echo "  deno: $(deno --version | head -1)"
+  exit 1
+fi
+rm -f "$OUT/.preflight.err"
+
 # Each screen session gets its own TMPDIR (e.g. /scratch/grmpy/tmp.XXXXXXXX) and
 # the CLI builds its working repo there. It disappears with the session, so the
 # git dir is copied out at the end - see below.
@@ -69,7 +84,7 @@ ticker & TICKER=$!
 trap 'kill $TICKER 2>/dev/null' EXIT
 
 # ----------------------------------------------------------------- run it -----
-deno run --allow-all --config "$CLI/deno.json" "$CLI/mod.ts" \
+"${DENO_RUN[@]}" "$CLI/mod.ts" \
   upload "${TARGET[@]}" --affirmDefaced "$DATA" > "$LOG" 2>&1
 status=$?
 
