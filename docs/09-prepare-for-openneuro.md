@@ -180,8 +180,22 @@ micromamba activate openneuro
 cp /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/qsirecon/* .
 ```
 
-Bidsignore may need to be updated.
+Bidsignore:
 
+```
+*.html
+log/
+sub-*/log
+logs/
+figures/
+*_xfm.*
+*.surf.gii
+*_boldref.nii.gz
+*_bold.func.gii
+*_mixing.tsv
+*_timeseries.tsv
+*space-ACPC*
+```
 
 ```bash
 export OPENNEURO_LOG=DEBUG
@@ -192,11 +206,6 @@ Running into some issues with PARCC. Tickets submitted, will come back.
 
 Currently running via sbatch with a local openneuro patch. Will come back to document later.
 
-After job is done, check the log:
-
-```bash
-grep -c "Failed to transfer annex object" /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/qsirecon/upload_7313196.log
-```
 
 ## XCPD Derivatives
 
