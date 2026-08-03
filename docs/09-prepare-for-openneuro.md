@@ -14,8 +14,6 @@ The task timing file `task-fracback_acq-singleband_events.tsv` was removed from 
 
 `cp -RL data/bids_datalad/ /cbica/comp_space/grmpy/.`
 
-TODO: add the new participants.tsv to the bids_datalad dataset on compspace.
-
 From the new copied bids_datalad dataset:
 ```bash
 mkdir derivatives
@@ -40,15 +38,11 @@ deno install -A --global jsr:@openneuro/cli -n openneuro
 
 Now start a screen session and upload the dataset:
 ```bash
-screen -S openneuro
-micromamba activate openneuro
-deno run -A jsr:@openneuro/cli login
-# paste in API key when prompted. Select 'y' for error reporting.
-openneuro upload --affirmDefaced /cbica/comp_space/grmpy/bids_datalad
+screen -S upload-bids
+bash /cbica/projects/grmpy/code/openneuro/bids/upload-bids.sh
 ```
 
 TODO:
-screen session. deno run
 after upload - add protocol PDF to code/.
 
 ## fMRIPrep Anatomical Derivatives
@@ -233,6 +227,41 @@ Two problems remain unsolved and needed manual work:
 
 Result: [**ds008547**](https://openneuro.org/datasets/ds008547) — 65,560 files, 226 GB.
 
+
+## fMRIPrep Anatomical Derivatives
+
+```bash
+cd /ceph/projects/sattertt/pennlinc-parcc/grmpy/data/derivatives/fmriprep_anat
+cp /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/fmriprep_anat/* .
+```
+
+Bidsignore:
+```
+*.html
+log
+logs
+figures
+*_xfm.*
+*.surf.gii
+*_boldref.*
+*_bold.func.gii
+*_mixing.tsv
+*_timeseries.*
+*T2starmap*
+*_fieldmap.*
+*space-*
+*.shape.gii
+*mask.nii.gz
+*mask.json
+*mask.label.gii
+```
+
+Validate before submitting the upload sbatch:
+
+```bash
+micromamba activate openneuro
+deno run -A jsr:@bids/validator .
+```
 
 ## XCPD Derivatives
 
