@@ -42,39 +42,11 @@ screen -S upload-bids
 bash /cbica/projects/grmpy/code/openneuro/bids/upload-bids.sh
 ```
 
+The upload succeeded and the dataset is now available at [**ds008579**](https://openneuro.org/datasets/ds008579).
+
 TODO:
 after upload - add protocol PDF to code/.
 
-## fMRIPrep Anatomical Derivatives
-
-```bash
-cd /cbica/projects/grmpy/data/derivatives/fmriprep_anat
-echo "GRMPY fMRIPrep Anatomical Derivatives" >> README.md
-```
-Add the following to the `.bidsignore` file:
-```
-log
-figures
-*space-*
-*.shape.gii
-```
-
-Add some authors (not final list) to the `dataset_description.json` file:
-```json
-    "Authors": [
-	    "S. Parker Singleton",
-        "Brooke L. Sevchik",
-        "Sage Rush",
-        "Matt Cieslak",
-        "Steven L. Meisler",
-        "Taylor Salo",
-        "Tien T. Tong",
-        "Theodore D. Satterthwaite"
-    ],
-```
-
-From a screen session:
-`openneuro upload --affirmDefaced /cbica/projects/grmpy/data/derivatives/fmriprep_anat`
 
 ## QSIPrep Derivatives
 
@@ -264,6 +236,44 @@ deno run -A jsr:@bids/validator .
 sbatch /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/fmriprep_anat/parcc/upload.sbatch
 ```
 
+## fMRIPrep Functional Derivatives
+
+```bash
+cd /cbica/projects/grmpy/data/derivatives/fmriprep_func
+cp /cbica/projects/grmpy/code/openneuro/fmriprep_func/* .
+```
+
+Bidsignore:
+```
+*.html
+log
+logs
+figures
+*_xfm.*
+*.surf.gii
+*_boldref.*
+*_bold.func.gii
+*_mixing.tsv
+*_timeseries.*
+*T2starmap*
+*_fieldmap.*
+*space-*
+*.shape.gii
+*mask.nii.gz
+*mask.json
+*mask.label.gii
+```
+
+Validate before submitting the upload script:
+
+```bash
+screen -S upload-fmriprep-func
+micromamba activate openneuro
+deno run -A jsr:@bids/validator .
+bash /cbica/projects/grmpy/code/openneuro/fmriprep_func/upload-bids.sh
+```
+
+
 ## XCPD Derivatives
 
 ```bash
@@ -290,8 +300,11 @@ figures
 *_mask.*
 ```
 
-From a screen session:
+Validate before submitting the upload script:
+
 ```bash
+screen -S upload-xcpd
 micromamba activate openneuro
-openneuro upload --affirmDefaced . | tee /cbica/projects/grmpy/code/openneuro/xcpd/upload$(date +%Y%m%d_%H%M).log
+deno run -A jsr:@bids/validator .
+bash /cbica/projects/grmpy/code/openneuro/xcpd/upload-bids.sh
 ```
