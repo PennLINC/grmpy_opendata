@@ -11,14 +11,14 @@
 # RESUME:     set DATASET to the accession the first run created. Keys already
 #             stored on the remote are skipped, so a resume costs staging time
 #             but not re-transfer.
-DATASET=""
+DATASET="ds008578"
 
 set -o pipefail
 eval "$(micromamba shell hook -s bash)"
 micromamba activate openneuro
 
 export DENO_DIR=/tmp/deno-$USER && mkdir -p "$DENO_DIR"
-export OPENNEURO_LOG=INFO
+export OPENNEURO_LOG=ERROR
 
 CLI=/ceph/projects/sattertt/pennlinc-parcc/grmpy/openneuro-cli-patched
 DATA=/ceph/projects/sattertt/pennlinc-parcc/grmpy/data/derivatives/fmriprep_anat
