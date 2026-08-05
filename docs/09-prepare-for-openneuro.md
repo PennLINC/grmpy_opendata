@@ -270,8 +270,10 @@ Validate before submitting the upload script:
 screen -S upload-fmriprep-func
 micromamba activate openneuro
 deno run -A jsr:@bids/validator .
-bash /cbica/projects/grmpy/code/openneuro/fmriprep_func/upload-bids.sh
+bash /cbica/projects/grmpy/code/openneuro/fmriprep_func/upload-fmriprep-func.sh
 ```
+
+Upload succeeded and the dataset is now available at [**ds008590**](https://openneuro.org/datasets/ds008590).
 
 
 ## XCPD Derivatives
@@ -306,5 +308,5 @@ Validate before submitting the upload script:
 screen -S upload-xcpd
 micromamba activate openneuro
 deno run -A jsr:@bids/validator .
-bash /cbica/projects/grmpy/code/openneuro/xcpd/upload-bids.sh
+bash /cbica/projects/grmpy/code/openneuro/xcpd/upload-xcpd.sh
 ```

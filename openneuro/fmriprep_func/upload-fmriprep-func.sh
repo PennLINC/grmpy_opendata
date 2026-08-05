@@ -16,7 +16,7 @@ set -o pipefail
 
 CLI=/cbica/projects/grmpy/openneuro-cli-patched
 DATA=/cbica/projects/grmpy/data/derivatives/fmriprep_func
-OUT=/cbica/projects/grmpy/code/openneuro/bids
+OUT=/cbica/projects/grmpy/code/openneuro/fmriprep_func
 KEEP=/cbica/projects/grmpy/openneuro-worktree
 LOG=$OUT/upload_$(date +%Y%m%d_%H%M%S).log
 
