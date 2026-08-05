@@ -14,7 +14,7 @@ DATASET=""
 
 set -o pipefail
 
-CLI=/cbica/projects/grmpy/openneuro-cli-patched
+CLI=/cbica/projects/grmpy/openneuro-cli-batched
 DATA=/cbica/projects/grmpy/data/derivatives/xcpd
 OUT=/cbica/projects/grmpy/code/openneuro/xcpd
 KEEP=/cbica/projects/grmpy/openneuro-worktree
@@ -56,7 +56,7 @@ export DENO_DIR="$TMPDIR/deno" && mkdir -p "$DENO_DIR"
 
 if [ -n "$DATASET" ]; then TARGET=(--dataset "$DATASET"); else TARGET=(--new); fi
 
-echo "CLI:     $CLI  (5.4.0 + annex single-commit patch)"
+echo "CLI:     $CLI  (5.4.0 + annex single-commit patch + batched add)"
 echo "dataset: $DATA"
 echo "target:  ${TARGET[*]}"
 echo "TMPDIR:  $TMPDIR"
