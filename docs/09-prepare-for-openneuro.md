@@ -134,6 +134,8 @@ micromamba activate openneuro
 bash /cbica/projects/grmpy/code/openneuro/aslprep/upload-aslprep.sh
 ```
 
+Upload succeeded and the dataset is now available at [**ds008602**](https://openneuro.org/datasets/ds008602).
+
 ## QSIRecon Derivatives
 
 ASLPrep is taking so long and CUBIC will be shutdown for upgrades soon.
