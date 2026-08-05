@@ -124,7 +124,15 @@ export OPENNEURO_LOG=DEBUG
 openneuro upload --affirmDefaced . | tee /cbica/projects/grmpy/code/openneuro/aslprep/upload$(date +%Y%m%d_%H%M).log
 ```
 
-This is taking _forever_ to upload.
+This upload took ~1 week on CUBIC using the 5.3.0 CLI.
+
+There are 39 corrupted files in the openneuro dataset, so will try re-uploading with the patched version of the 5.4.0 CLI:
+
+```bash
+screen -S upload-aslprep
+micromamba activate openneuro
+bash /cbica/projects/grmpy/code/openneuro/aslprep/upload-aslprep.sh
+```
 
 ## QSIRecon Derivatives
 
