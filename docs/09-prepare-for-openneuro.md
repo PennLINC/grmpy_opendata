@@ -87,6 +87,8 @@ export OPENNEURO_LOG=DEBUG
 openneuro upload --affirmDefaced . | tee /cbica/projects/grmpy/code/openneuro/qsiprep/upload$(date +%Y%m%d_%H%M).log
 ```
 
+Upload succeeded and the dataset is now available at [**ds008328**](https://openneuro.org/datasets/ds008328).
+
 ## ASLPrep Derivatives
 
 ```bash
@@ -213,8 +215,8 @@ Result: [**ds008547**](https://openneuro.org/datasets/ds008547) — 65,560 files
 ## fMRIPrep Anatomical Derivatives
 
 ```bash
-cd /ceph/projects/sattertt/pennlinc-parcc/grmpy/data/derivatives/fmriprep_anat
-cp /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/fmriprep_anat/* .
+cd /cbica/projects/grmpy/data/derivatives/fmriprep_anat
+cp /cbica/projects/grmpy/code/openneuro/fmriprep_anat/* .
 ```
 
 Bidsignore:
@@ -238,13 +240,24 @@ figures
 *mask.label.gii
 ```
 
-Validate before submitting the upload sbatch:
+Validate before submitting the upload script:
 
 ```bash
+screen -S upload-fmriprep-anat
 micromamba activate openneuro
 deno run -A jsr:@bids/validator .
-sbatch /ceph/projects/sattertt/pennlinc-parcc/grmpy/code/openneuro/fmriprep_anat/parcc/upload.sbatch
+bash /cbica/projects/grmpy/code/openneuro/fmriprep_anat/upload-fmriprep-anat.sh
 ```
+
+Upload succeeded and the dataset is now available at [**ds008606**](https://openneuro.org/datasets/ds008606).
+However, 63 files were not transferred and had errors like:
+`ERROR Failed to transfer annex object "SHA256E-s36843--2d19d4d42190c003e5e5cf2e55e3d9440fbc70babcc336be439c8ebc3c799591.BA1_exvivo.thresh.label" after 0 attempts`.
+
+Investigating:
+```
+micromamba activate openneuro
+openneuro download --draft ds008606 /cbica/comp_space/grmpy/gettest/ds008606
+cd /cbica/comp_space/grmpy/gettest/ds008606 && git-annex get $(bash /cbica/projects/grmpy/dropbox/failedpaths.sh . /cbica/projects/grmpy/code/openneuro/fmriprep_anat/upload_20260805_164905.log 2>/dev/null)
 
 ## fMRIPrep Functional Derivatives
 
@@ -320,3 +333,5 @@ micromamba activate openneuro
 deno run -A jsr:@bids/validator .
 bash /cbica/projects/grmpy/code/openneuro/xcpd/upload-xcpd.sh
 ```
+
+Upload succeeded and the dataset is now available at [**ds008601**](https://openneuro.org/datasets/ds008601).
