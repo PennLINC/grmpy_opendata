@@ -16,7 +16,7 @@
         "Ruben C. Gur",
         "Ellen Leibenluft",
         "Kosha Ruparel",
-        "Russel T. Shinohara",
+        "Russell T. Shinohara",
         "David R. Roalf",
         "Daniel H. Wolf",
         "Theodore D. Satterthwaite"
@@ -42,13 +42,13 @@
     "HowToAcknowledge": "Include the generated boilerplate in the methods section.",
     "SourceDatasets": [
         {
-            "URL": "https://doi.org/",
+            "URL": "https://openneuro.org/datasets/ds008579",
             "DOI": ""
         }
     ],
     "License": "MIT",
     "DatasetLinks": {
-        "preprocessed": "/scratch/grmpy/SLURM_11202540_1/job-11202540-1-sub-102041/ds/inputs/data/fmriprep_func/fmriprep_func",
+        "preprocessed": "https://openneuro.org/datasets/ds008590",
         "templateflow": "https://github.com/templateflow/templateflow",
         "atlas": "/scratch/grmpy/SLURM_11202540_1/job-11202540-1-sub-102041/ds/outputs/xcpd/atlases",
         "xcpdatlases": "/usr/local/miniconda/lib/python3.10/site-packages/xcp_d/data/atlases",

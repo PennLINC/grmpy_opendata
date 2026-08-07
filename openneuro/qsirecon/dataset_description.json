@@ -15,7 +15,7 @@
         "Ruben C. Gur",
         "Ellen Leibenluft",
         "Kosha Ruparel",
-        "Russel T. Shinohara",
+        "Russell T. Shinohara",
         "David R. Roalf",
         "Daniel H. Wolf",
         "Theodore D. Satterthwaite"
@@ -23,7 +23,7 @@
     "BIDSVersion": "1.1.1",
     "CodeURL": "https://github.com/pennlinc/qsiprep",
     "DatasetLinks": {
-        "preprocessed": "/scratch/grmpy/SLURM_11194840_1/job-11194840-1-sub-102041/ds/inputs/data/qsiprep/qsiprep",
+        "preprocessed": "https://openneuro.org/datasets/ds008328",
         "templateflow": "https://github.com/templateflow/templateflow"
     },
     "DatasetType": "derivative",
@@ -51,6 +51,9 @@
         "Version": "1.0.2.dev0+gfc89945.d20250405"
     },
     "SourceDatasetsURLs": [
-        "https://doi.org/"
+        {
+            "BIDS": "https://openneuro.org/datasets/ds008579",
+            "QSIPrep": "https://openneuro.org/datasets/ds008328"
+        }
     ]
 }

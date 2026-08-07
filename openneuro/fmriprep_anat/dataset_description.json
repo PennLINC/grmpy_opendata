@@ -16,7 +16,7 @@
         "Ruben C. Gur",
         "Ellen Leibenluft",
         "Kosha Ruparel",
-        "Russel T. Shinohara",
+        "Russell T. Shinohara",
         "David R. Roalf",
         "Daniel H. Wolf",
         "Theodore D. Satterthwaite"
@@ -36,13 +36,13 @@
     "HowToAcknowledge": "Please cite our paper (https://doi.org/10.1038/s41592-018-0235-4), and include the generated citation boilerplate within the Methods section of the text.",
     "SourceDatasets": [
         {
-            "URL": "https://doi.org/",
+            "URL": "https://openneuro.org/datasets/ds008579",
             "DOI": ""
         }
     ],
     "License": "MIT",
     "DatasetLinks": {
-        "raw": "/scratch/grmpy/SLURM_11116678_154/job-11116678-154-sub-85853/ds/inputs/data/BIDS",
+        "raw": "https://openneuro.org/datasets/ds008579",
         "templateflow": "https://github.com/templateflow/templateflow"
     }
 }
