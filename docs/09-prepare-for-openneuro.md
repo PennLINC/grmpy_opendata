@@ -253,11 +253,8 @@ Upload succeeded and the dataset is now available at [**ds008606**](https://open
 However, 63 files were not transferred and had errors like:
 `ERROR Failed to transfer annex object "SHA256E-s36843--2d19d4d42190c003e5e5cf2e55e3d9440fbc70babcc336be439c8ebc3c799591.BA1_exvivo.thresh.label" after 0 attempts`.
 
-Investigating:
-```
-micromamba activate openneuro
-openneuro download --draft ds008606 /cbica/comp_space/grmpy/gettest/ds008606
-cd /cbica/comp_space/grmpy/gettest/ds008606 && git-annex get $(bash /cbica/projects/grmpy/dropbox/failedpaths.sh . /cbica/projects/grmpy/code/openneuro/fmriprep_anat/upload_20260805_164905.log 2>/dev/null)
+These files were recovered using the scripts in [`openneuro/recovery/`](../openneuro/recovery/).
+See the [README](../openneuro/recovery/README.md) for details.
 
 ## fMRIPrep Functional Derivatives
 
