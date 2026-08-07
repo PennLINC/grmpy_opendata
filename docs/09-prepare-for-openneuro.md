@@ -12,7 +12,10 @@ Following phenotype curation, the participants.tsv was updated with the demograp
 
 The task timing file `task-fracback_acq-singleband_events.tsv` was removed from the bids_datalad dataset as this has been deprecated and replaced with the individual events.tsv files (`ec68f693`).
 
-`cp -RL data/bids_datalad/ /cbica/comp_space/grmpy/.`
+First, copy the bids_datalad dataset to the comp_space:
+```bash
+cp -RL data/bids_datalad/ /cbica/comp_space/grmpy/.
+```
 
 From the new copied bids_datalad dataset:
 ```bash
@@ -35,6 +38,9 @@ micromamba install -n openneuro -c conda-forge deno
 micromamba activate openneuro
 deno install -A --global jsr:@openneuro/cli -n openneuro
 ```
+
+Note: Before this upload succeeded, several openneuro CLI bugs were fixed (see below).
+The script below uses the patched version of the openneuro CLI.
 
 Now start a screen session and upload the dataset:
 ```bash
@@ -128,7 +134,7 @@ openneuro upload --affirmDefaced . | tee /cbica/projects/grmpy/code/openneuro/as
 
 This upload took ~1 week on CUBIC using the 5.3.0 CLI.
 
-There are 39 corrupted files in the openneuro dataset, so will try re-uploading with the patched version of the 5.4.0 CLI:
+There are 39 corrupted files in the openneuro dataset, so will try re-uploading a fresh datasetwith the patched version of the 5.4.0 CLI:
 
 ```bash
 screen -S upload-aslprep
@@ -183,6 +189,8 @@ openneuro upload --affirmDefaced . | tee /ceph/projects/sattertt/pennlinc-parcc/
 This initially failed on PARCC: every file reported `could not be added, check if this
 file is accessible and not a broken symlink`, despite the tree containing no symlinks.
 The cause was three separate OpenNeuro CLI bugs, all now fixed upstream.
+Ultimately, PARCC was usefule for troublshooting and improving the openneuro CLI, but other than that
+it is easier to upload from screen sessions on CUBIC than it is via sbatch on PARCC.
 
 | Bug | Issue | Fix |
 |---|---|---|
@@ -332,3 +340,5 @@ bash /cbica/projects/grmpy/code/openneuro/xcpd/upload-xcpd.sh
 ```
 
 Upload succeeded and the dataset is now available at [**ds008601**](https://openneuro.org/datasets/ds008601).
+
+TODO: update the dataset_description.json file on openneuro. Currently not letting me.
